@@ -23,8 +23,9 @@ jobs:
       with:
         submodules: true
         
+    # ИСПРАВЛЕНО: Третья попытка - используем vcpkg/setup-vcpkg@v1
     - name: Setup Vcpkg and Install Dependencies (Boost & OpenSSL)
-      uses: lukka/action-vcpkg@v12
+      uses: vcpkg/setup-vcpkg@v1
 
     - name: Configure CMake
       run: |

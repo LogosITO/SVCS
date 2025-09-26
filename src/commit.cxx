@@ -8,8 +8,35 @@
 
 #include "../include/commit.hxx"
 #include <openssl/sha.h>
+#include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <regex>
+#include <utility> // Для std::move
+
+Author::Author() :
+    name("Anonym"), email("anonym@gmail.com") {}
+
+Author::Author(std::string n, std::string e) {
+    this->name = std::move(n); // Используем std::move
+    const std::regex pattern(R"((\w+)(\.|_)?(\w*)@(\w+)(\.(\w+))+)"); // Используем R-строку для паттерна
+    
+    // ВАЖНО: Проверяем входной параметр 'e', а не член класса 'email'.
+    if (std::regex_match(e, pattern)) {
+        this->email = std::move(e); // Используем std::move
+    } else {
+        std::cerr << "Warning: The provided email '" << e << "' is not valid! Using default email: anonym@gmail.com." << std::endl;
+        // Если email невалиден, оставляем email как "anonym@gmail.com"
+        this->email = "anonym@gmail.com"; 
+    }
+}
+
+Author::Author(const Author& a) :
+    name(a.name), email(a.email) {}
+
+std::string Author::get_name() const { return this->name; }
+
+std::string Author::get_email() const { return this->email; }
 
 // --- Constructors ---
 
@@ -18,6 +45,7 @@
  * @param c The Commit object to copy.
  */
 Commit::Commit(const Commit& c) {
+    this->author = c.author;
     this->hash_id = c.hash_id;
     this->user_message = c.user_message;
     this->timestamp = c.timestamp;
@@ -27,6 +55,7 @@ Commit::Commit(const Commit& c) {
 
 /**
  * @brief Primary constructor for initializing a Commit object.
+ * @param auth The Author who created the commit.
  * @param hid Unique commit ID (hash of metadata).
  * @param umsg User-provided commit message.
  * @param tstamp Commit creation timestamp.
@@ -34,14 +63,16 @@ Commit::Commit(const Commit& c) {
  * @param fpath Path where the content (BLOB) is stored on disk.
  */
 Commit::Commit(
-    std::string hid, std::string umsg, std::string tstamp, 
-    std::string chash, std::string fpath
+    Author auth, std::string hid, std::string umsg, 
+    std::string tstamp, std::string chash, std::string fpath
 ) {
-    this->hash_id = hid;
-    this->user_message = umsg;
-    this->timestamp = tstamp;
-    this->content_hash = chash;
-    this->file_path = fpath;
+    // Используем std::move для оптимизации (там, где это безопасно)
+    this->author = std::move(auth);
+    this->hash_id = std::move(hid);
+    this->user_message = std::move(umsg);
+    this->timestamp = std::move(tstamp);
+    this->content_hash = std::move(chash);
+    this->file_path = std::move(fpath);
 }
 
 // --- Utility Functions ---
@@ -51,14 +82,20 @@ Commit::Commit(
  *
  * This function uses the OpenSSL library to produce a unique and tamper-proof 
  * identifier for the file content, represented as a 64-character hexadecimal string.
- * * @param content The string content to be hashed.
+ * @param content The string content to be hashed.
  * @return std::string The SHA-256 hash.
  */
 std::string Commit::calculate_hash(std::string content) {
+    // SHA256_DIGEST_LENGTH равно 32 байтам
     unsigned char hash[SHA256_DIGEST_LENGTH];
+    
+    // Вычисление хеша: data, length, output buffer
     SHA256((const unsigned char*) content.data(), content.length(), hash);
+    
     std::stringstream ss;
     ss << std::hex << std::setfill('0');
+    
+    // Преобразование 32-байтового массива в 64-символьную шестнадцатеричную строку
     for(int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
         ss << std::setw(2) << (int) hash[i];
     }
@@ -66,6 +103,12 @@ std::string Commit::calculate_hash(std::string content) {
 }
 
 // --- Getters ---
+
+/**
+ * @brief Returns the Author object associated with the commit.
+ * @return Author The commit author.
+ */
+Author Commit::get_author() const {return this->author; }
 
 /**
  * @brief Returns the unique commit identifier (hash).

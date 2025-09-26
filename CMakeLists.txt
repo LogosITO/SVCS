@@ -14,8 +14,11 @@ file(GLOB HEADERS "include/*.hxx")
 find_package(Boost 1.88.0 REQUIRED COMPONENTS system date_time)
 include_directories(${Boost_INCLUDE_DIRS})
 
+find_package(OpenSSL REQUIRED COMPONENTS crypto)
+include_directories(${OpenSSL_INCLUDE_DIRS})
+
 add_executable(SVCS ${SOURCES})
 include_directories(SVCS ${HEADERS})
 
-target_link_libraries(SVCS PRIVATE ${Boost_LIBRARIES})
+target_link_libraries(SVCS PRIVATE ${Boost_LIBRARIES} ${OpenSSL_INCLUDE_DIRS})
 

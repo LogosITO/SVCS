@@ -23,9 +23,22 @@ jobs:
       with:
         submodules: true
         
-    # ИСПРАВЛЕНО: Третья попытка - используем vcpkg/setup-vcpkg@v1
-    - name: Setup Vcpkg and Install Dependencies (Boost & OpenSSL)
-      uses: vcpkg/setup-vcpkg@v1
+    - name: Manually Setup Vcpkg and Install Dependencies (Boost & OpenSSL)
+      shell: bash
+      run: |
+        # 1. Клонируем репозиторий Vcpkg
+        git clone https://github.com/microsoft/vcpkg.git
+        
+        # 2. Запускаем Bootstrap скрипт для сборки исполняемого файла Vcpkg
+        if [ "${{ runner.os }}" == "Windows" ]; then
+          ./vcpkg/bootstrap-vcpkg.bat
+        else
+          ./vcpkg/bootstrap-vcpkg.sh
+        fi
+        
+        # 3. Устанавливаем зависимости (Boost, OpenSSL), указанные в vcpkg.json
+        # Vcpkg автоматически прочитает vcpkg.json в корне проекта.
+        ./vcpkg/vcpkg install
 
     - name: Configure CMake
       run: |

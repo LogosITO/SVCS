@@ -2,7 +2,16 @@
     "name": "svcs",
     "version": "0.1",
     "dependencies": [
-        "boost",
+        {
+            "name": "boost",
+            "features": ["system", "filesystem", "asio", "regex"] 
+        },
         "openssl"
-    ]
+    ],
+    "overrides": [
+        {
+        "name": "python3",
+        "version": "skip"
+        }
+    ] 
 }

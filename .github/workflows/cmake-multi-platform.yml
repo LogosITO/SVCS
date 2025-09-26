@@ -56,8 +56,8 @@ jobs:
     - name: Install Dependencies
       shell: bash
       run: |
-        # Устанавливаем только boost и openssl, игнорируем опциональные зависимости
-        ./vcpkg/vcpkg install boost openssl --clean-after-build --x-no-default-features
+        # vcpkg автоматически прочитает зависимости из vcpkg.json
+        ./vcpkg/vcpkg install --clean-after-build
 
     - name: Configure CMake
       run: |

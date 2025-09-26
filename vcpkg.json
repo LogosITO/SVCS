@@ -1,17 +1,21 @@
 {
-    "name": "svcs",
-    "version": "0.1",
-    "dependencies": [
-        {
-            "name": "boost",
-            "features": ["system", "filesystem", "asio", "regex"] 
-        },
-        "openssl"
-    ],
-    "overrides": [
-        {
-        "name": "python3",
-        "version": "skip"
-        }
-    ] 
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "dependencies": [
+    {
+      "name": "boost-asio"
+    },
+    {
+      "name": "boost-system"
+    },
+    {
+      "name": "boost-filesystem"
+    },
+    "openssl"
+  ],
+  "overrides": [
+    {
+      "name": "python3",
+      "version": "skip"
+    }
+  ]
 }

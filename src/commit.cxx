@@ -55,13 +55,8 @@ Commit::Commit(
  * @return std::string The SHA-256 hash.
  */
 std::string Commit::calculate_hash(std::string content) {
-    // SHA256_DIGEST_LENGTH is 32 bytes
     unsigned char hash[SHA256_DIGEST_LENGTH];
-
-    // Compute SHA256
     SHA256((const unsigned char*) content.data(), content.length(), hash);
-
-    // Convert the hash bytes into a hexadecimal string
     std::stringstream ss;
     ss << std::hex << std::setfill('0');
     for(int i = 0; i < SHA256_DIGEST_LENGTH; i++) {

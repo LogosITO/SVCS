@@ -12,21 +12,18 @@
 #include <sstream>
 #include <iomanip>
 #include <regex>
-#include <utility> // Для std::move
+#include <utility>
 
 Author::Author() :
     name("Anonym"), email("anonym@gmail.com") {}
 
 Author::Author(std::string n, std::string e) {
-    this->name = std::move(n); // Используем std::move
-    const std::regex pattern(R"((\w+)(\.|_)?(\w*)@(\w+)(\.(\w+))+)"); // Используем R-строку для паттерна
-    
-    // ВАЖНО: Проверяем входной параметр 'e', а не член класса 'email'.
+    this->name = std::move(n);
+    const std::regex pattern(R"((\w+)(\.|_)?(\w*)@(\w+)(\.(\w+))+)");
+
     if (std::regex_match(e, pattern)) {
-        this->email = std::move(e); // Используем std::move
-    } else {
+        this->email = std::move(e);
         std::cerr << "Warning: The provided email '" << e << "' is not valid! Using default email: anonym@gmail.com." << std::endl;
-        // Если email невалиден, оставляем email как "anonym@gmail.com"
         this->email = "anonym@gmail.com"; 
     }
 }

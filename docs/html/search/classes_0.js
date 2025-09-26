@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['commit_0',['Commit',['../classCommit.html',1,'']]]
+  ['author_0',['Author',['../classAuthor.html',1,'']]]
 ];

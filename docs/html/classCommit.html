@@ -103,12 +103,14 @@ $(function(){initNavTree('classCommit.html','','classCommit-members'); });
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a51088403e31442f173e3df0c02ff72b6" id="r_a51088403e31442f173e3df0c02ff72b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51088403e31442f173e3df0c02ff72b6">Commit</a> (const <a class="el" href="classCommit.html">Commit</a> &amp;c)</td></tr>
 <tr class="memdesc:a51088403e31442f173e3df0c02ff72b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
-<tr class="memitem:a9d5b9b041a5d0c7daa78b6af0a3895a3" id="r_a9d5b9b041a5d0c7daa78b6af0a3895a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d5b9b041a5d0c7daa78b6af0a3895a3">Commit</a> (std::string hid, std::string umsg, std::string tstamp, std::string chash, std::string fpath)</td></tr>
-<tr class="memdesc:a9d5b9b041a5d0c7daa78b6af0a3895a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary constructor for creating a <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> object.  <br /></td></tr>
+<tr class="memitem:a37a685418b33a141657b0d6b2984d477" id="r_a37a685418b33a141657b0d6b2984d477"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37a685418b33a141657b0d6b2984d477">Commit</a> (<a class="el" href="classAuthor.html">Author</a> auth, std::string hid, std::string umsg, std::string tstamp, std::string chash, std::string fpath)</td></tr>
+<tr class="memdesc:a37a685418b33a141657b0d6b2984d477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary constructor for creating a <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> object.  <br /></td></tr>
 <tr class="memitem:afa1a6d26d0bd20cde7a7bb9fe3ec1b96" id="r_afa1a6d26d0bd20cde7a7bb9fe3ec1b96"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa1a6d26d0bd20cde7a7bb9fe3ec1b96">calculate_hash</a> (std::string content)</td></tr>
 <tr class="memdesc:afa1a6d26d0bd20cde7a7bb9fe3ec1b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the cryptographic SHA-256 hash for the given content.  <br /></td></tr>
 <tr class="memitem:a5069cc7fa7e05fa9acb1162f99d33e0e" id="r_a5069cc7fa7e05fa9acb1162f99d33e0e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5069cc7fa7e05fa9acb1162f99d33e0e">get_hash_id</a> () const</td></tr>
 <tr class="memdesc:a5069cc7fa7e05fa9acb1162f99d33e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique commit identifier (hash).  <br /></td></tr>
+<tr class="memitem:a80076f1c56374efb0e79639015b3abc7" id="r_a80076f1c56374efb0e79639015b3abc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAuthor.html">Author</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80076f1c56374efb0e79639015b3abc7">get_author</a> () const</td></tr>
+<tr class="memdesc:a80076f1c56374efb0e79639015b3abc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> object associated with the commit.  <br /></td></tr>
 <tr class="memitem:a50111a8ca6690b4abb7b05e2ea82eff9" id="r_a50111a8ca6690b4abb7b05e2ea82eff9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50111a8ca6690b4abb7b05e2ea82eff9">get_user_message</a> () const</td></tr>
 <tr class="memdesc:a50111a8ca6690b4abb7b05e2ea82eff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the message associated with the commit.  <br /></td></tr>
 <tr class="memitem:a0d8bca2a878f0c366e5bf10d17dcf514" id="r_a0d8bca2a878f0c366e5bf10d17dcf514"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d8bca2a878f0c366e5bf10d17dcf514">get_timestamp</a> () const</td></tr>
@@ -149,8 +151,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9d5b9b041a5d0c7daa78b6af0a3895a3" name="a9d5b9b041a5d0c7daa78b6af0a3895a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d5b9b041a5d0c7daa78b6af0a3895a3">&#9670;&#160;</a></span>Commit() <span class="overload">[2/2]</span></h2>
+<a id="a37a685418b33a141657b0d6b2984d477" name="a37a685418b33a141657b0d6b2984d477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a685418b33a141657b0d6b2984d477">&#9670;&#160;</a></span>Commit() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,6 +160,11 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Commit::Commit </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classAuthor.html">Author</a></td>          <td class="paramname"><span class="paramname"><em>auth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>hid</em></span>, </td>
         </tr>
         <tr>
@@ -185,14 +192,15 @@ Public Member Functions</h2></td></tr>
 
 <p>Primary constructor for creating a <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> object. </p>
 <p>Primary constructor for initializing a <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> object.</p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">auth</td><td>The <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> who created the commit. </td></tr>
     <tr><td class="paramname">hid</td><td>Unique commit ID. </td></tr>
     <tr><td class="paramname">umsg</td><td>User message. </td></tr>
     <tr><td class="paramname">tstamp</td><td>Timestamp. </td></tr>
-    <tr><td class="paramname">chash</td><td>File content hash. </td></tr>
+    <tr><td class="paramname">chash</td><td>File content hash (BLOB). </td></tr>
     <tr><td class="paramname">fpath</td><td>Path to the stored file content.</td></tr>
+    <tr><td class="paramname">auth</td><td>The <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> who created the commit. </td></tr>
     <tr><td class="paramname">hid</td><td>Unique commit ID (hash of metadata). </td></tr>
     <tr><td class="paramname">umsg</td><td>User-provided commit message. </td></tr>
     <tr><td class="paramname">tstamp</td><td><a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> creation timestamp. </td></tr>
@@ -201,8 +209,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -223,15 +229,16 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calculates the cryptographic SHA-256 hash for the given content. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<ul>
+<li>This function is intended to calculate the hash of the serialized commit data or the file content for storage integrity.</li>
+<li><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">content</td><td>The string content to be hashed. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string The SHA-256 hash as a 64-character hexadecimal string.</dd></dl>
-<p>This function uses the OpenSSL library to produce a unique and tamper-proof identifier for the file content, represented as a 64-character hexadecimal string.</p><ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+This function uses the OpenSSL library to produce a unique and tamper-proof identifier for the file content, represented as a 64-character hexadecimal string. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">content</td><td>The string content to be hashed. </td></tr>
   </table>
@@ -240,6 +247,28 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>std::string The SHA-256 hash. </dd></dl>
 </li>
 </ul>
+
+</div>
+</div>
+<a id="a80076f1c56374efb0e79639015b3abc7" name="a80076f1c56374efb0e79639015b3abc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80076f1c56374efb0e79639015b3abc7">&#9670;&#160;</a></span>get_author()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAuthor.html">Author</a> Commit::get_author </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> object associated with the commit. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> The commit author information.</dd>
+<dd>
+<a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> The commit author. </dd></dl>
 
 </div>
 </div>

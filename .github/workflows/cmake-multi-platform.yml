@@ -33,12 +33,6 @@ jobs:
           brew install cmake ninja
         fi
 
-    - name: Install System Prerequisites (Windows)
-      if: runner.os == 'Windows'
-      run: |
-        # Убедитесь, что Visual Studio установлен и доступен
-        echo "Visual Studio should be available in Windows runner"
-
     - name: Cache Vcpkg
       uses: actions/cache@v4
       with:
@@ -64,29 +58,38 @@ jobs:
       run: |
         ./vcpkg/vcpkg install --clean-after-build
 
-    - name: Configure CMake
+    - name: Configure CMake (Windows)
+      if: runner.os == 'Windows'
       shell: bash
       run: |
-        cmake -S ${{ github.workspace }} -B ${{ github.workspace }}/build \
+        cmake -S "$GITHUB_WORKSPACE" -B "$GITHUB_WORKSPACE/build" \
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
-          -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+          -DCMAKE_TOOLCHAIN_FILE="$GITHUB_WORKSPACE/vcpkg/scripts/buildsystems/vcpkg.cmake"
+
+    - name: Configure CMake (Linux/macOS)
+      if: runner.os != 'Windows'
+      shell: bash
+      run: |
+        cmake -S "${{ github.workspace }}" -B "${{ github.workspace }}/build" \
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake"
 
     - name: Build Project
       shell: bash
       run: |
         if [ "${{ runner.os }}" == "Windows" ]; then
-          cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }} --parallel
+          cmake --build "$GITHUB_WORKSPACE/build" --config ${{ matrix.build_type }} --parallel
         else
-          cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }} --parallel
+          cmake --build "${{ github.workspace }}/build" --config ${{ matrix.build_type }} --parallel
         fi
       
     - name: Run Tests
       shell: bash
       run: |
         if [ "${{ runner.os }}" == "Windows" ]; then
-          ctest --test-dir ${{ github.workspace }}/build -C ${{ matrix.build_type }} --output-on-failure
+          ctest --test-dir "$GITHUB_WORKSPACE/build" -C ${{ matrix.build_type }} --output-on-failure
         else
-          ctest --test-dir ${{ github.workspace }}/build -C ${{ matrix.build_type }} --output-on-failure
+          ctest --test-dir "${{ github.workspace }}/build" -C ${{ matrix.build_type }} --output-on-failure
         fi
       
     - name: Upload Artifact

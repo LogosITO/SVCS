@@ -1,0 +1,8 @@
+{
+    "name": "SVCS",
+    "version": "0.1",
+    "dependencies": [
+        "boost",
+        "openssl"
+    ]
+}

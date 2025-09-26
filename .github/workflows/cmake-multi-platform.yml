@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        build_type: [Debug, Release] # Проверка разных конфигураций
+        build_type: [Debug, Release]
         
     runs-on: ${{ matrix.os }}
     
@@ -23,11 +23,17 @@ jobs:
       with:
         submodules: true
         
+    - name: Setup Vcpkg and Install Dependencies (Boost & OpenSSL)
+      uses: vcpkg-tool/setup-vcpkg@v1
+      with:
+        token: ${{ github.token }}
+        
     - name: Configure CMake
       run: |
         cmake -S ${{ github.workspace }} -B ${{ github.workspace }}/build \
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
-        -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/install
+        -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+        # CMAKE_TOOLCHAIN_FILE - ключевой параметр, связывающий CMake и Vcpkg.
 
     - name: Build Project
       run: cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }} --parallel
@@ -39,4 +45,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.os }}-${{ matrix.build_type }}-binaries
-        path: ${{ github.workspace }}/build/bin/* # Измените путь к вашим исполняемым файлам
+        path: ${{ github.workspace }}/build/bin/*

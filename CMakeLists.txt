@@ -8,17 +8,44 @@ project(
 
 cmake_policy(SET CMP0167 NEW)
 
-file(GLOB SOURCES "src/*.cxx")
-file(GLOB HEADERS "include/*.hxx")
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake")
+    set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake")
+endif()
+
+set(SOURCES
+    src/main.cxx
+    src/commit.cxx
+)
+
+set(HEADERS
+    include/header.hxx
+)
 
 find_package(Boost 1.88.0 REQUIRED COMPONENTS system date_time)
-include_directories(${Boost_INCLUDE_DIRS})
 
-find_package(OpenSSL REQUIRED COMPONENTS crypto)
-include_directories(${OpenSSL_INCLUDE_DIRS})
+find_package(OpenSSL REQUIRED)
 
 add_executable(SVCS ${SOURCES})
-include_directories(SVCS ${HEADERS})
 
-target_link_libraries(SVCS PRIVATE ${Boost_LIBRARIES} ${OpenSSL_INCLUDE_DIRS})
+target_include_directories(SVCS PRIVATE include)
 
+target_link_libraries(SVCS PRIVATE 
+    Boost::system
+    Boost::date_time
+    OpenSSL::SSL
+    OpenSSL::Crypto
+)
+
+set_target_properties(SVCS PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED ON
+    CXX_EXTENSIONS OFF
+)
+
+target_compile_definitions(SVCS PRIVATE 
+    BOOST_ALL_NO_LIB=1
+)
+
+set_target_properties(SVCS PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)

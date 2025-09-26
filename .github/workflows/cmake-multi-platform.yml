@@ -24,7 +24,7 @@ jobs:
         submodules: true
         
     - name: Setup Vcpkg and Install Dependencies (Boost & OpenSSL)
-      uses: microsoft/setup-vcpkg@v1
+      uses: lukka/action-vcpkg@v12
 
     - name: Configure CMake
       run: |

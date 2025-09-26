@@ -24,10 +24,8 @@ jobs:
         submodules: true
         
     - name: Setup Vcpkg and Install Dependencies (Boost & OpenSSL)
-      uses: vcpkg-tool/setup-vcpkg@v1
-      with:
-        token: ${{ github.token }}
-        
+      uses: microsoft/setup-vcpkg@v1
+
     - name: Configure CMake
       run: |
         cmake -S ${{ github.workspace }} -B ${{ github.workspace }}/build \

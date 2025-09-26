@@ -23,7 +23,7 @@ jobs:
       with:
         submodules: true
 
-    - name: Install System Prerequisites
+    - name: Install System Prerequisites (Linux/macOS)
       if: runner.os != 'Windows'
       run: |
         if [ "${{ runner.os }}" == "Linux" ]; then
@@ -32,6 +32,12 @@ jobs:
         elif [ "${{ runner.os }}" == "macOS" ]; then
           brew install cmake ninja
         fi
+
+    - name: Install System Prerequisites (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        # Убедитесь, что Visual Studio установлен и доступен
+        echo "Visual Studio should be available in Windows runner"
 
     - name: Cache Vcpkg
       uses: actions/cache@v4
@@ -56,20 +62,32 @@ jobs:
     - name: Install Dependencies
       shell: bash
       run: |
-        # vcpkg автоматически прочитает зависимости из vcpkg.json
         ./vcpkg/vcpkg install --clean-after-build
 
     - name: Configure CMake
+      shell: bash
       run: |
         cmake -S ${{ github.workspace }} -B ${{ github.workspace }}/build \
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
           -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
 
     - name: Build Project
-      run: cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }} --parallel
+      shell: bash
+      run: |
+        if [ "${{ runner.os }}" == "Windows" ]; then
+          cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }} --parallel
+        else
+          cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }} --parallel
+        fi
       
     - name: Run Tests
-      run: ctest --test-dir ${{ github.workspace }}/build -C ${{ matrix.build_type }} --output-on-failure
+      shell: bash
+      run: |
+        if [ "${{ runner.os }}" == "Windows" ]; then
+          ctest --test-dir ${{ github.workspace }}/build -C ${{ matrix.build_type }} --output-on-failure
+        else
+          ctest --test-dir ${{ github.workspace }}/build -C ${{ matrix.build_type }} --output-on-failure
+        fi
       
     - name: Upload Artifact
       uses: actions/upload-artifact@v4

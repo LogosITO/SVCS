@@ -74,6 +74,11 @@ private:
     std::string file_path;
 public:
     /**
+     * @brief Default constructor.
+     */
+    Commit();
+
+    /**
      * @brief Copy constructor.
      * @param c The Commit object to copy.
      */

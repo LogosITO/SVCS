@@ -12,40 +12,50 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake")
     set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake")
 endif()
 
-set(SOURCES
-    src/main.cxx
+set(CORE_SOURCES
     src/commit.cxx
 )
 
-set(HEADERS
-    include/header.hxx
+set(CORE_HEADERS
+    include/Commit.hxx
 )
 
-find_package(Boost 1.88.0 REQUIRED COMPONENTS system date_time)
+add_library(svcs_core STATIC ${CORE_SOURCES})
 
-find_package(OpenSSL REQUIRED)
+target_include_directories(svcs_core PUBLIC include)
 
-add_executable(SVCS ${SOURCES})
-
-target_include_directories(SVCS PRIVATE include)
-
-target_link_libraries(SVCS PRIVATE 
+target_link_libraries(svcs_core PRIVATE 
     Boost::system
     Boost::date_time
-    OpenSSL::SSL
     OpenSSL::Crypto
 )
 
-set_target_properties(SVCS PROPERTIES
+set_target_properties(svcs_core PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
     CXX_EXTENSIONS OFF
+)
+
+set(MAIN_SOURCES
+    src/main.cxx
+)
+
+add_executable(SVCS ${MAIN_SOURCES})
+
+target_link_libraries(SVCS PRIVATE 
+    svcs_core
+    OpenSSL::SSL
+)
+
+set_target_properties(SVCS PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )
 
 target_compile_definitions(SVCS PRIVATE 
     BOOST_ALL_NO_LIB=1
 )
 
-set_target_properties(SVCS PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-)
+find_package(Boost 1.88.0 REQUIRED COMPONENTS system date_time)
+find_package(OpenSSL REQUIRED)
+
+add_subdirectory(tests)

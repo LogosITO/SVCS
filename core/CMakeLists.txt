@@ -1,11 +1,13 @@
 set(CORE_SOURCES
-    src/commit.cxx
-    src/object.cxx
+    src/Commit.cxx
+    src/VcsObject.cxx
+    src/Blob.cxx
 )
 
 set(CORE_HEADERS
-    include/commit.hxx
-    include/object.hxx
+    include/Commit.hxx
+    include/VcsObject.hxx
+    include/Blob.hxx
 )
 
 

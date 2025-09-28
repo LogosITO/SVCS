@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['testableobject_0',['TestableObject',['../classTestableObject.html',1,'']]]
+  ['commit_0',['Commit',['../classCommit.html',1,'']]]
 ];

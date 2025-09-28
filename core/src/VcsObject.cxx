@@ -1,4 +1,4 @@
-#include "../include/object.hxx"
+#include "../include/VcsObject.hxx"
 #include <openssl/sha.h>
 #include <sstream>
 #include <iomanip>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: 📚 SVCS: Simple Version Control System</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('md_README.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">📚 SVCS: Simple Version Control System </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p>This <b>SVCS (Simple Version Control System)</b> project is an <b>educational and research effort</b> aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.</p>
+<p>The main goal of the project is to gain a deep understanding of core concepts:</p>
+<ul>
+<li><b>Immutable Objects:</b> Creating and handling <span class="tt"><a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a></span>, <span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, and <span class="tt">Tree</span> objects based on a single abstract <span class="tt"><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a></span> class.</li>
+<li><b>Data Integrity:</b> Applying cryptographic hashing (presumably SHA-256) for data identification and verification.</li>
+<li><b>Clean Architecture:</b> Implementing OOP principles, inheritance, polymorphism, and separation of concerns.</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+🚀 Build and Technologies</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Technology  </th><th class="markdownTableHeadLeft">Purpose  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>C++ (C++17+)</b>  </td><td class="markdownTableBodyLeft">Primary programming language  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>CMake</b>  </td><td class="markdownTableBodyLeft">Build system and project management  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Google Test</b>  </td><td class="markdownTableBodyLeft">Unit testing framework  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Doxygen</b>  </td><td class="markdownTableBodyLeft">Generating detailed API documentation  </td></tr>
+</table>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+📖 Documentation (API Reference)</h1>
+<p>The detailed code documentation for classes and methods, generated by <b>Doxygen</b>, is automatically deployed to GitHub Pages after every update.</p>
+<p>You can select the documentation interface language:</p>
+<ul>
+<li><b>English Version (EN):</b> <a href="https://LogosITO.github.io/SVCS/en/">Go to Documentation (EN)</a></li>
+<li><b>Russian Version (RU):</b> <a href="https://LogosITO.github.io/SVCS/ru/">Go to Documentation (RU)</a></li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+🛠 Project Status</h1>
+<p>Currently under active development. Focus is on implementing the core foundation (<span class="tt">core</span>) and the object system (<span class="tt"><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a></span>, <span class="tt"><a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a></span>).</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+📝 Author and License</h1>
+<p>© 2025 LogosITO. This project is distributed under the <b>MIT</b> License. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

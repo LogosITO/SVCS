@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "object.hxx"
+#include "VcsObject.hxx"
 #include <string>
 
 /**

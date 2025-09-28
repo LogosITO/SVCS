@@ -1,4 +1,4 @@
-#include "../core/include/object.hxx"
+#include "../core/include/VcsObject.hxx"
 #include <gtest/gtest.h>
 
 TEST(VscObjectHashTest, CreatingHash) {

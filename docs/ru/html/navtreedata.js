@@ -25,6 +25,12 @@
 var NAVTREE =
 [
   [ "SVCS", "index.html", [
+    [ "📚 SVCS: Simple Version Control System", "md_README.html", [
+      [ "🚀 Build and Technologies", "md_README.html#autotoc_md2", null ],
+      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md4", null ],
+      [ "🛠 Project Status", "md_README.html#autotoc_md6", null ],
+      [ "📝 Author and License", "md_README.html#autotoc_md8", null ]
+    ] ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
@@ -43,7 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"Blob_8hxx.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

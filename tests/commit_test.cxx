@@ -1,4 +1,4 @@
-#include "../core/include/commit.hxx"
+#include "../core/include/Commit.hxx"
 #include <gtest/gtest.h>
 
 TEST(AuthorValidationTest, ValidEmailIsAccepted) {

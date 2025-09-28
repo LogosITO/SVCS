@@ -1,4 +1,4 @@
-#include "../include/commit.hxx"
+#include "../include/Commit.hxx"
 #include <iostream>
 #include <regex>
 #include <utility>

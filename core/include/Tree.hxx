@@ -1,5 +1,8 @@
 /**
  * @file Tree.hxx
+ * @copyright 
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  * @brief Defines the Tree class, which represents the hierarchical structure (directory state) of a VCS repository.
  * @details The Tree object stores a list of TreeEntry structures, linking file names and modes to the hash IDs of
  * Blob or other Tree objects. Its hash depends critically on the sorted content of these entries.

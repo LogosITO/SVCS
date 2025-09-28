@@ -94,27 +94,27 @@ $(function(){initNavTree('Blob_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="Blob_8hxx.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;VcsObject.hxx&quot;</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classBlob.html">   18</a></span><span class="keyword">class </span><a class="code hl_function" href="classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff">Blob</a> : <span class="keyword">public</span> <a class="code hl_function" href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::string data; </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff">Blob</a>(<span class="keyword">const</span> std::string&amp; raw_data);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// VcsObject overrides</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::string <a class="code hl_function" href="classBlob.html#ac493b1634f088e53d436ba808ba02e86">getType</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::string <a class="code hl_function" href="classBlob.html#acab4226b36adcfa257c94b96b40c3510">serialize</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classBlob.html#aef90cffb1d8d5492b73ac330ac933006">getData</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;VcsObject.hxx&quot;</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classBlob.html">   21</a></span><span class="keyword">class </span><a class="code hl_function" href="classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff">Blob</a> : <span class="keyword">public</span> <a class="code hl_function" href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::string data; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff">Blob</a>(<span class="keyword">const</span> std::string&amp; raw_data);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// VcsObject overrides</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::string <a class="code hl_function" href="classBlob.html#ac493b1634f088e53d436ba808ba02e86">getType</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::string <a class="code hl_function" href="classBlob.html#acab4226b36adcfa257c94b96b40c3510">serialize</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classBlob.html#aef90cffb1d8d5492b73ac330ac933006">getData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
 </div>
 <div class="ttc" id="aclassBlob_html_a4e29c0b439c4e2b91f05beb63a5e13ff"><div class="ttname"><a href="classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff">Blob::Blob</a></div><div class="ttdeci">Blob(const std::string &amp;raw_data)</div><div class="ttdoc">Constructor for the Blob object.</div><div class="ttdef"><b>Определения</b> Blob.cxx:3</div></div>
 <div class="ttc" id="aclassBlob_html_ac493b1634f088e53d436ba808ba02e86"><div class="ttname"><a href="classBlob.html#ac493b1634f088e53d436ba808ba02e86">Blob::getType</a></div><div class="ttdeci">std::string getType() const override</div><div class="ttdoc">Returns the type of the VCS object.</div><div class="ttdef"><b>Определения</b> Blob.cxx:7</div></div>

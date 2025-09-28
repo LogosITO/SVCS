@@ -1,5 +1,8 @@
 /**
  * @file Blob.hxx
+ * @copyright 
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  * @brief Defines the Blob class, which represents raw file content in the VCS object database.
  * @details This file provides the contract for storing file data as immutable objects, 
  * central to the data integrity of the system.

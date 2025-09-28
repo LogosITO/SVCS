@@ -1,5 +1,8 @@
 /**
  * @file Commit.hxx
+ * @copyright 
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  * @brief Defines the Commit class, representing a permanent snapshot in the VCS history.
  * @details A Commit object links a Tree object (the repository state) with parent commits 
  * and essential metadata like author, timestamp, and the commit message, forming the basis of the project's history.

@@ -67,3 +67,38 @@ public:
      */
     std::string getHashId() const;
 };
+
+
+/**
+ * @class TestableObject
+ * @brief Helper class for testing the non-abstract methods of VcsObject.
+ * * This class implements all pure virtual methods of VcsObject with simple stubs, 
+ * allowing its instances to be created for unit testing the hashing logic 
+ * in VcsObject::computeHash.
+ */
+class TestableObject : public VcsObject {
+private:
+    /// @brief The object type name returned by getType().
+    std::string type_name;
+    /// @brief The content returned by serialize().
+    std::string content_data;
+public:
+    /**
+     * @brief Primary constructor.
+     * @param type The name of the object type (e.g., "test_blob").
+     * @param data The content that will be serialized and hashed.
+     */
+    TestableObject(const std::string& type, const std::string& data);
+    
+    /**
+     * @brief Implementation of the pure virtual method. Returns the stored content.
+     * @copydoc VcsObject::serialize()
+     */
+    std::string serialize() const override;
+
+    /**
+     * @brief Implementation of the pure virtual method. Returns the stored type name.
+     * @copydoc VcsObject::getType()
+     */
+    std::string getType() const override;
+};

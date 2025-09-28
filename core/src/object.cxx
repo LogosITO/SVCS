@@ -20,3 +20,16 @@ void VcsObject::computeHash(const std::string& content) {
 std::string VcsObject::getHashId() const {
     return this->hash_id;
 }
+
+TestableObject::TestableObject(const std::string& type, const std::string& data) :
+    type_name(type), content_data(data) {
+    computeHash(serialize());
+}
+
+std::string TestableObject::serialize() const {
+    return content_data;
+}
+
+std::string TestableObject::getType() const {
+    return type_name;
+}

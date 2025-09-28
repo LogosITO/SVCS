@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Исходный файл core/include/commit.hxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('commit_8hxx_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">commit.hxx</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/***********************************************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file Commit.hxx</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @copyright </span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright 2025 LogosITO</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Licensed under MIT-License</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @brief Definition of the class Commit.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> ***********************************************************************************************/</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;object.hxx&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classAuthor.html">   18</a></span><span class="keyword">class </span><a class="code hl_function" href="classAuthor.html#a5f7059590a8e823fe0713faf66126b17">Author</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::string name;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::string email;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classAuthor.html#a5f7059590a8e823fe0713faf66126b17">Author</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="classAuthor.html#a5f7059590a8e823fe0713faf66126b17">Author</a>(std::string n, std::string e);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classAuthor.html#a5f7059590a8e823fe0713faf66126b17">Author</a>(<span class="keyword">const</span> <a class="code hl_function" href="classAuthor.html#a5f7059590a8e823fe0713faf66126b17">Author</a>&amp; a);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::string <a class="code hl_function" href="classAuthor.html#af7c1dd8b7bbce4e395f893994e7a2773">get_name</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    std::string <a class="code hl_function" href="classAuthor.html#a69b510c9be06b2c4c9d3c7c8eed21d38">get_email</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classCommit.html">   62</a></span><span class="keyword">class </span><a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a> : <span class="keyword">public</span> <a class="code hl_function" href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject</a> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_class" href="classAuthor.html">Author</a> author;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    std::string user_message;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    std::string timestamp;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    std::string content_hash;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    std::string file_path;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a>(<span class="keyword">const</span> <a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a>&amp; c);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a>(<a class="code hl_class" href="classAuthor.html">Author</a> auth, std::string umsg, std::string tstamp, </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>           std::string chash, std::string fpath);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    std::string <a class="code hl_function" href="classCommit.html#a53f442e035ddbdb18d0635bbac2709b5">serialize</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    std::string <a class="code hl_function" href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">getType</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_class" href="classAuthor.html">Author</a> <a class="code hl_function" href="classCommit.html#affbc135945d32485f58ba06f1473518f">getAuthor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    std::string <a class="code hl_function" href="classCommit.html#ad869874b357d6ef88071e114808c79bf">getUserMessage</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    std::string <a class="code hl_function" href="classCommit.html#a03db4066a59de0a5f2f9b3384d233488">getTimestamp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    std::string <a class="code hl_function" href="classCommit.html#a9b064bd7970babd716017d3b8d821dac">getContentHash</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    std::string <a class="code hl_function" href="classCommit.html#af478769059b931e972fea06d5b2bd72b">getFilePath</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>};</div>
+</div>
+<div class="ttc" id="aclassAuthor_html"><div class="ttname"><a href="classAuthor.html">Author</a></div><div class="ttdoc">Stores the name and email of the commit author or committer.</div><div class="ttdef"><b>Определения</b> commit.hxx:18</div></div>
+<div class="ttc" id="aclassAuthor_html_a5f7059590a8e823fe0713faf66126b17"><div class="ttname"><a href="classAuthor.html#a5f7059590a8e823fe0713faf66126b17">Author::Author</a></div><div class="ttdeci">Author()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Определения</b> commit.cxx:6</div></div>
+<div class="ttc" id="aclassAuthor_html_a69b510c9be06b2c4c9d3c7c8eed21d38"><div class="ttname"><a href="classAuthor.html#a69b510c9be06b2c4c9d3c7c8eed21d38">Author::get_email</a></div><div class="ttdeci">std::string get_email() const</div><div class="ttdoc">Returns the author&#39;s email.</div><div class="ttdef"><b>Определения</b> commit.cxx:25</div></div>
+<div class="ttc" id="aclassAuthor_html_af7c1dd8b7bbce4e395f893994e7a2773"><div class="ttname"><a href="classAuthor.html#af7c1dd8b7bbce4e395f893994e7a2773">Author::get_name</a></div><div class="ttdeci">std::string get_name() const</div><div class="ttdoc">Returns the author&#39;s name.</div><div class="ttdef"><b>Определения</b> commit.cxx:23</div></div>
+<div class="ttc" id="aclassCommit_html_a03db4066a59de0a5f2f9b3384d233488"><div class="ttname"><a href="classCommit.html#a03db4066a59de0a5f2f9b3384d233488">Commit::getTimestamp</a></div><div class="ttdeci">std::string getTimestamp() const</div><div class="ttdoc">Returns the commit creation timestamp.</div><div class="ttdef"><b>Определения</b> commit.cxx:79</div></div>
+<div class="ttc" id="aclassCommit_html_a201c5f3c2f29a4db8e40e69d55b2fa1f"><div class="ttname"><a href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit::Commit</a></div><div class="ttdeci">Commit()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Определения</b> commit.cxx:29</div></div>
+<div class="ttc" id="aclassCommit_html_a213b92691c2dae9e7ae7862eb9c369df"><div class="ttname"><a href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">Commit::getType</a></div><div class="ttdeci">std::string getType() const override</div><div class="ttdoc">Returns the type of the VCS object.</div><div class="ttdef"><b>Определения</b> commit.cxx:68</div></div>
+<div class="ttc" id="aclassCommit_html_a53f442e035ddbdb18d0635bbac2709b5"><div class="ttname"><a href="classCommit.html#a53f442e035ddbdb18d0635bbac2709b5">Commit::serialize</a></div><div class="ttdeci">std::string serialize() const override</div><div class="ttdoc">Serializes the commit object&#39;s metadata into a standardized string format.</div><div class="ttdef"><b>Определения</b> commit.cxx:64</div></div>
+<div class="ttc" id="aclassCommit_html_a9b064bd7970babd716017d3b8d821dac"><div class="ttname"><a href="classCommit.html#a9b064bd7970babd716017d3b8d821dac">Commit::getContentHash</a></div><div class="ttdeci">std::string getContentHash() const</div><div class="ttdoc">Returns the file content hash (BLOB).</div><div class="ttdef"><b>Определения</b> commit.cxx:81</div></div>
+<div class="ttc" id="aclassCommit_html_ad869874b357d6ef88071e114808c79bf"><div class="ttname"><a href="classCommit.html#ad869874b357d6ef88071e114808c79bf">Commit::getUserMessage</a></div><div class="ttdeci">std::string getUserMessage() const</div><div class="ttdoc">Returns the message associated with the commit.</div><div class="ttdef"><b>Определения</b> commit.cxx:77</div></div>
+<div class="ttc" id="aclassCommit_html_af478769059b931e972fea06d5b2bd72b"><div class="ttname"><a href="classCommit.html#af478769059b931e972fea06d5b2bd72b">Commit::getFilePath</a></div><div class="ttdeci">std::string getFilePath() const</div><div class="ttdoc">Returns the path to the stored file content in the repository.</div><div class="ttdef"><b>Определения</b> commit.cxx:83</div></div>
+<div class="ttc" id="aclassCommit_html_affbc135945d32485f58ba06f1473518f"><div class="ttname"><a href="classCommit.html#affbc135945d32485f58ba06f1473518f">Commit::getAuthor</a></div><div class="ttdeci">Author getAuthor() const</div><div class="ttdoc">Returns the Author object associated with the commit.</div><div class="ttdef"><b>Определения</b> commit.cxx:75</div></div>
+<div class="ttc" id="aclassVcsObject_html_a58691887a54d3d632038cacb36034075"><div class="ttname"><a href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject::VcsObject</a></div><div class="ttdeci">VcsObject()=default</div><div class="ttdoc">Default constructor. Required for derived classes.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a href="dir_24d671cfcbc5d5238a6bd565a49d198f.html">include</a></li><li class="navelem"><b>commit.hxx</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

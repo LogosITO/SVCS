@@ -61,7 +61,7 @@ PROJECT_BRIEF          = "Simple Version Control System"
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = /home/ggun1t/Downloads/ed2efb67-fbef-4d6b-a9d6-ca3710ad95fd.jpg
+PROJECT_LOGO           = /home/ggun1t/Downloads/100x100tree.jpg
 
 # With the PROJECT_ICON tag one can specify an icon that is included in the tabs
 # when the HTML document is shown. Doxygen will copy the logo to the output

@@ -1,11 +1,19 @@
 find_package(GTest REQUIRED)
 
 add_executable(commit_tests commit_test.cxx)
+add_executable(object_tests object_test.cxx)
 
 target_link_libraries(commit_tests PRIVATE
     GTest::gtest_main
     svcs_core
 )
 
+target_link_libraries(object_tests PRIVATE 
+    GTest::gtest_main
+    svcs_core
+)
+
 include(CTest)
+
 add_test(NAME CommitTests COMMAND commit_tests)
+add_test(NAME ObjectTests COMMAND object_tests)

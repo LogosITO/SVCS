@@ -64,8 +64,7 @@ TEST(HashCalculatingTest, HCT4) {
     EXPECT_NE(res1, res2);
 }
 
-int main(int argc, char *argv[])
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+int main(int argc, char *argv[]){
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

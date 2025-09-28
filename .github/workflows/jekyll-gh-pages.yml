@@ -1,4 +1,4 @@
-name: Развертывание Jekyll с предустановленными зависимостями GitHub Pages
+name: Deploying Jekyll with GitHub Pages Dependencies Pre-Installed
 
 on:
   push:
@@ -19,16 +19,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Извлечение кода
+      - name: Checkout code
         uses: actions/checkout@v4
-      - name: Настройка Pages
+      - name: Configure pages
         uses: actions/configure-pages@v5
-      - name: Сборка с помощью Jekyll
+        
+      - name: Creating English pages
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs/html
-          destination: ./_site
-      - name: Загрузка артефакта
+          source: ./docs/en/html
+          destination: ./_site/en/ 
+      
+      - name: Creating Russian pages
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs/ru/html
+          destination: ./_site/ru/ 
+      
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
@@ -40,6 +48,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Развертывание на GitHub Pages
+      - name: Upload on github pages
         id: deployment
         uses: actions/deploy-pages@v4

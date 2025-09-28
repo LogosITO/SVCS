@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7evcsobject_0',['~VcsObject',['../classVcsObject.html#a866849775b4541573b40b2b85be20df5',1,'VcsObject']]]
+  ['removeentry_0',['removeEntry',['../classTree.html#a85035a45ff8778df5bb8be32f57bf232',1,'Tree']]]
 ];

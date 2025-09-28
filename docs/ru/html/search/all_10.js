@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚀_20build_20and_20technologies_0',['🚀 Build and Technologies',['../md_README.html#autotoc_md2',1,'']]]
+  ['_7evcsobject_0',['~VcsObject',['../classVcsObject.html#a866849775b4541573b40b2b85be20df5',1,'VcsObject']]]
 ];

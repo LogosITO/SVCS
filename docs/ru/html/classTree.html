@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Класс Tree</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classTree.html','','classTree-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс Tree</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Represents the state of a directory in the VCS, implementing the <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> contract.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Tree_8hxx_source.html">Tree.hxx</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Tree:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classTree.png" usemap="#Tree_map" alt=""/>
+  <map id="Tree_map" name="Tree_map">
+<area href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS." alt="VcsObject" shape="rect" coords="0,0,71,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:af660984821d0ae2f73725ee33c73ad20" id="r_af660984821d0ae2f73725ee33c73ad20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af660984821d0ae2f73725ee33c73ad20">Tree</a> (std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt; entries)</td></tr>
+<tr class="memdesc:af660984821d0ae2f73725ee33c73ad20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object.  <br /></td></tr>
+<tr class="memitem:a9b3870b1189b06efecd0a56aad4e467e" id="r_a9b3870b1189b06efecd0a56aad4e467e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b3870b1189b06efecd0a56aad4e467e">getType</a> () const override</td></tr>
+<tr class="memdesc:a9b3870b1189b06efecd0a56aad4e467e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the VCS object.  <br /></td></tr>
+<tr class="memitem:aae4f965e5566b0addf5467ba5db10e3f" id="r_aae4f965e5566b0addf5467ba5db10e3f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae4f965e5566b0addf5467ba5db10e3f">serialize</a> () const override</td></tr>
+<tr class="memdesc:aae4f965e5566b0addf5467ba5db10e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> content into a standardized string format for hashing and storage.  <br /></td></tr>
+<tr class="memitem:a772b4bcfb5e44dda6a9ede2470d23250" id="r_a772b4bcfb5e44dda6a9ede2470d23250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a772b4bcfb5e44dda6a9ede2470d23250">addEntry</a> (const <a class="el" href="structTreeEntry.html">TreeEntry</a> &amp;entry)</td></tr>
+<tr class="memdesc:a772b4bcfb5e44dda6a9ede2470d23250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new entry to the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> or updates an existing entry if the name matches.  <br /></td></tr>
+<tr class="memitem:a85035a45ff8778df5bb8be32f57bf232" id="r_a85035a45ff8778df5bb8be32f57bf232"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85035a45ff8778df5bb8be32f57bf232">removeEntry</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a85035a45ff8778df5bb8be32f57bf232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an entry (file or subdirectory) from the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> by name.  <br /></td></tr>
+<tr class="memitem:aa2eae33f9bffa2b72c3d9c8f425b77f2" id="r_aa2eae33f9bffa2b72c3d9c8f425b77f2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2eae33f9bffa2b72c3d9c8f425b77f2">getEntries</a> () const</td></tr>
+<tr class="memdesc:aa2eae33f9bffa2b72c3d9c8f425b77f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>.  <br /></td></tr>
+<tr class="memitem:a944fe0075293396036606f6a999643f4" id="r_a944fe0075293396036606f6a999643f4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a944fe0075293396036606f6a999643f4">findEntry</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:a944fe0075293396036606f6a999643f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for a specific entry within the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> by name.  <br /></td></tr>
+<tr class="memitem:acef91361893b48ca2ce5a40493e1dd55" id="r_acef91361893b48ca2ce5a40493e1dd55"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acef91361893b48ca2ce5a40493e1dd55">getEntries</a> ()</td></tr>
+<tr class="memdesc:acef91361893b48ca2ce5a40493e1dd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
+<tr class="memitem:a58691887a54d3d632038cacb36034075 inherit pub_methods_classVcsObject" id="r_a58691887a54d3d632038cacb36034075"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>VcsObject</b> ()=default</td></tr>
+<tr class="memdesc:a58691887a54d3d632038cacb36034075 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Required for derived classes. <br /></td></tr>
+<tr class="memitem:af2840ade6006e4d64eb6bd9f15b37539 inherit pub_methods_classVcsObject" id="r_af2840ade6006e4d64eb6bd9f15b37539"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#af2840ade6006e4d64eb6bd9f15b37539">VcsObject</a> (const <a class="el" href="classVcsObject.html">VcsObject</a> &amp;other)=default</td></tr>
+<tr class="memdesc:af2840ade6006e4d64eb6bd9f15b37539 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. Required for derived classes to correctly copy the hash_id.  <br /></td></tr>
+<tr class="memitem:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=default</td></tr>
+<tr class="memdesc:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. Ensures proper cleanup when deleting derived objects via a base class pointer. <br /></td></tr>
+<tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pub_methods_classVcsObject" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
+<tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
+<tr class="memitem:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject" id="r_a0e8cd703d917813ca43d4b0622c70bdd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a0e8cd703d917813ca43d4b0622c70bdd">getHashId</a> () const</td></tr>
+<tr class="memdesc:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique hash identifier of the object.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a85166cfd9d904644216cdacb0b4b7d54" id="r_a85166cfd9d904644216cdacb0b4b7d54"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classTree.html">Tree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85166cfd9d904644216cdacb0b4b7d54">deserialize</a> (const std::string &amp;raw_content)</td></tr>
+<tr class="memdesc:a85166cfd9d904644216cdacb0b4b7d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object from a serialized string read from the object database.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_attribs_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные данные унаследованные от <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
+<tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top">
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></td></tr>
+<tr class="memdesc:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique cryptographic hash identifier (e.g., SHA-256) for this object. Protected to allow internal setting via <a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">computeHash()</a> but prevent external modification. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Represents the state of a directory in the VCS, implementing the <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> contract. </p>
+<ul>
+<li>Stores a collection of <a class="el" href="structTreeEntry.html" title="Represents a single item (file or subdirectory) within a Tree object.">TreeEntry</a> objects, effectively mapping names to hash pointers. </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="af660984821d0ae2f73725ee33c73ad20" name="af660984821d0ae2f73725ee33c73ad20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af660984821d0ae2f73725ee33c73ad20">&#9670;&#160;</a></span>Tree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tree::Tree </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>entries</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object. </p>
+<p>The constructor must internally sort the entries before calling <a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">computeHash()</a>. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entries</td><td>A collection of <a class="el" href="structTreeEntry.html" title="Represents a single item (file or subdirectory) within a Tree object.">TreeEntry</a> structures representing the directory content. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a772b4bcfb5e44dda6a9ede2470d23250" name="a772b4bcfb5e44dda6a9ede2470d23250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a772b4bcfb5e44dda6a9ede2470d23250">&#9670;&#160;</a></span>addEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tree::addEntry </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTreeEntry.html">TreeEntry</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>entry</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a new entry to the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> or updates an existing entry if the name matches. </p>
+<p>If the entries list is modified, the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>'s hash becomes invalid and must be recomputed before saving. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>The <a class="el" href="structTreeEntry.html" title="Represents a single item (file or subdirectory) within a Tree object.">TreeEntry</a> to add or update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a85166cfd9d904644216cdacb0b4b7d54" name="a85166cfd9d904644216cdacb0b4b7d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85166cfd9d904644216cdacb0b4b7d54">&#9670;&#160;</a></span>deserialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTree.html">Tree</a> Tree::deserialize </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>raw_content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object from a serialized string read from the object database. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">raw_content</td><td>The serialized string data, typically read from a decompressed object file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> A fully reconstructed <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object. </dd></dl>
+
+</div>
+</div>
+<a id="a944fe0075293396036606f6a999643f4" name="a944fe0075293396036606f6a999643f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a944fe0075293396036606f6a999643f4">&#9670;&#160;</a></span>findEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt; Tree::findEntry </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Searches for a specific entry within the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> by name. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the entry to find. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::optional&lt;TreeEntry&gt; An optional containing the entry if found, otherwise empty. </dd></dl>
+
+</div>
+</div>
+<a id="acef91361893b48ca2ce5a40493e1dd55" name="acef91361893b48ca2ce5a40493e1dd55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef91361893b48ca2ce5a40493e1dd55">&#9670;&#160;</a></span>getEntries() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt; Tree::getEntries </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>std::vector&lt;TreeEntry&amp;&gt; A constant reference to the internal vector of entries. </dd></dl>
+
+</div>
+</div>
+<a id="aa2eae33f9bffa2b72c3d9c8f425b77f2" name="aa2eae33f9bffa2b72c3d9c8f425b77f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2eae33f9bffa2b72c3d9c8f425b77f2">&#9670;&#160;</a></span>getEntries() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &amp; &gt; Tree::getEntries </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>const std::vector&lt;TreeEntry&amp;&gt; A constant reference to the internal vector of entries. </dd></dl>
+
+</div>
+</div>
+<a id="a9b3870b1189b06efecd0a56aad4e467e" name="a9b3870b1189b06efecd0a56aad4e467e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b3870b1189b06efecd0a56aad4e467e">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Tree::getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the type of the VCS object. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>std::string Always returns "tree".   Pure virtual method to get the type of the VCS object.   </dd></dl>
+<ul>
+<li>This is crucial for object storage and reconstruction (e.g., "commit", "blob", "tree"). <dl class="section return"><dt>Возвращает</dt><dd>std::string The type identifier of the object.    </dd></dl>
+</li>
+</ul>
+
+<p>Замещает <a class="el" href="classVcsObject.html#a6997c320772a504fc61a986f6e8f9ff7">VcsObject</a>.</p>
+
+</div>
+</div>
+<a id="a85035a45ff8778df5bb8be32f57bf232" name="a85035a45ff8778df5bb8be32f57bf232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85035a45ff8778df5bb8be32f57bf232">&#9670;&#160;</a></span>removeEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tree::removeEntry </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes an entry (file or subdirectory) from the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> by name. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the entry to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True if the entry was found and removed, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="aae4f965e5566b0addf5467ba5db10e3f" name="aae4f965e5566b0addf5467ba5db10e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae4f965e5566b0addf5467ba5db10e3f">&#9670;&#160;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Tree::serialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Serializes the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> content into a standardized string format for hashing and storage. </p>
+<p>The serialization must ensure the entries are sorted to guarantee hash consistency. </p><dl class="section return"><dt>Возвращает</dt><dd>std::string The standardized, serialized directory structure.   Pure virtual method to serialize the object's core data.   </dd></dl>
+<ul>
+<li>The returned string content is what will be hashed and stored in the database. <dl class="section return"><dt>Возвращает</dt><dd>std::string The standardized, serialized data of the object.    </dd></dl>
+</li>
+</ul>
+
+<p>Замещает <a class="el" href="classVcsObject.html#a987c76bf8ad51d267297cc6ba7da1eb7">VcsObject</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>core/include/<a class="el" href="Tree_8hxx_source.html">Tree.hxx</a></li>
+<li>core/src/<b>Tree.cxx</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="classTree.html">Tree</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

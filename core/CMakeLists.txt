@@ -2,12 +2,14 @@ set(CORE_SOURCES
     src/Commit.cxx
     src/VcsObject.cxx
     src/Blob.cxx
+    src/Tree.cxx
 )
 
 set(CORE_HEADERS
     include/Commit.hxx
     include/VcsObject.hxx
     include/Blob.hxx
+    include/Tree.hxx
 )
 
 

@@ -7,13 +7,14 @@
 #pragma once
 
 #include "VcsObject.hxx"
+#include <filesystem>
 #include <string>
 #include <memory>
 
 class ObjectStorage {
 private:
     /// @brief The base path to the object directory (e.g., ".svcs/objects").
-    const std::string objects_dir;
+    const std::filesystem::path objects_dir;
 
     /**
      * @brief Compresses data using Zlib's raw deflate standard (Git format).

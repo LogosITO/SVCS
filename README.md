@@ -2,11 +2,24 @@
 
 This **SVCS (Simple Version Control System)** project is an **educational and research effort** aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++. 
 
+[Image of a data structure diagram]
+
+
 The main goal of the project is to gain a deep understanding of core concepts:
 
-* **Immutable Objects:** Creating and handling `Commit`, `Blob`, and `Tree` objects based on a single abstract `VcsObject` class.
-* **Data Integrity:** Applying cryptographic hashing (presumably SHA-256) for data identification and verification.
+* **Immutable Objects:** Creating and handling objects (`Commit`, `Blob`, `Tree`) based on a single abstract `VcsObject` class.
+* **Data Integrity:** Applying cryptographic hashing (presumably SHA-1) for data identification and verification.
 * **Clean Architecture:** Implementing OOP principles, inheritance, polymorphism, and separation of concerns.
+
+---
+
+## 🏗 Key Implemented Components
+
+The core foundation of the system is currently implemented and tested:
+
+* **Object Model (`VcsObject`, `Blob`, `Tree`, `Commit`):** The complete object model, including serialization and deserialization capabilities.
+* **Object Storage (`ObjectStorage`):** The class responsible for **reading, writing, and managing** the lifecycle of VCS objects on disk. It handles Zlib compression/decompression and data integrity checks.
+* **Hashing Utilities:** Implemented a static helper for computing **SHA-1** hashes of Git-format object content.
 
 ---
 
@@ -18,6 +31,16 @@ The main goal of the project is to gain a deep understanding of core concepts:
 | **CMake** | Build system and project management |
 | **Google Test** | Unit testing framework |
 | **Doxygen** | Generating detailed API documentation |
+| **OpenSSL / Zlib** | Cryptographic hashing and data compression |
+
+---
+
+## 🛠 Project Status and Next Steps
+
+The project is currently under active development.
+
+* **Current Focus:** Comprehensive testing and stabilization of the **`ObjectStorage`** module.
+* **Next Stage:** Implementation of the **`Index` (Staging Area)** class to track files in the working directory and prepare data for commit creation.
 
 ---
 
@@ -32,12 +55,6 @@ You can select the documentation interface language:
 
 * **Russian Version (RU):**
     [Go to Documentation (RU)](https://LogosITO.github.io/SVCS/ru/)
-
----
-
-## 🛠 Project Status
-
-Currently under active development. Focus is on implementing the core foundation (`core`) and the object system (`VcsObject`, `Commit`).
 
 ---
 

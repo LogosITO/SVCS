@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -22,7 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="ed2efb67-fbef-4d6b-a9d6-ca3710ad95fd.jpg"/></td>
   <td id="projectalign">
    <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
    </div>
@@ -44,12 +47,26 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('functions_func.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -75,22 +92,29 @@ $(function() {
 <div class="contents">
 <div class="textblock">Here is a list of all documented functions with links to the class documentation for each member:</div><ul>
 <li>Author()&#160;:&#160;<a class="el" href="classAuthor.html#a5f7059590a8e823fe0713faf66126b17">Author</a></li>
-<li>calculate_hash()&#160;:&#160;<a class="el" href="classCommit.html#afa1a6d26d0bd20cde7a7bb9fe3ec1b96">Commit</a></li>
-<li>Commit()&#160;:&#160;<a class="el" href="classCommit.html#a51088403e31442f173e3df0c02ff72b6">Commit</a></li>
-<li>get_author()&#160;:&#160;<a class="el" href="classCommit.html#a80076f1c56374efb0e79639015b3abc7">Commit</a></li>
-<li>get_content_hash()&#160;:&#160;<a class="el" href="classCommit.html#a514c77af5a62ee1fc8dc7d33a7f16be6">Commit</a></li>
+<li>Commit()&#160;:&#160;<a class="el" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a></li>
+<li>computeHash()&#160;:&#160;<a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0">VcsObject</a></li>
 <li>get_email()&#160;:&#160;<a class="el" href="classAuthor.html#a69b510c9be06b2c4c9d3c7c8eed21d38">Author</a></li>
-<li>get_file_path()&#160;:&#160;<a class="el" href="classCommit.html#a6febdc6c56ce8bd67129819de49bfcc7">Commit</a></li>
-<li>get_hash_id()&#160;:&#160;<a class="el" href="classCommit.html#a5069cc7fa7e05fa9acb1162f99d33e0e">Commit</a></li>
 <li>get_name()&#160;:&#160;<a class="el" href="classAuthor.html#af7c1dd8b7bbce4e395f893994e7a2773">Author</a></li>
-<li>get_timestamp()&#160;:&#160;<a class="el" href="classCommit.html#a0d8bca2a878f0c366e5bf10d17dcf514">Commit</a></li>
-<li>get_user_message()&#160;:&#160;<a class="el" href="classCommit.html#a50111a8ca6690b4abb7b05e2ea82eff9">Commit</a></li>
+<li>getAuthor()&#160;:&#160;<a class="el" href="classCommit.html#affbc135945d32485f58ba06f1473518f">Commit</a></li>
+<li>getContentHash()&#160;:&#160;<a class="el" href="classCommit.html#a9b064bd7970babd716017d3b8d821dac">Commit</a></li>
+<li>getFilePath()&#160;:&#160;<a class="el" href="classCommit.html#af478769059b931e972fea06d5b2bd72b">Commit</a></li>
+<li>getHashId()&#160;:&#160;<a class="el" href="classVcsObject.html#a0e8cd703d917813ca43d4b0622c70bdd">VcsObject</a></li>
+<li>getTimestamp()&#160;:&#160;<a class="el" href="classCommit.html#a03db4066a59de0a5f2f9b3384d233488">Commit</a></li>
+<li>getType()&#160;:&#160;<a class="el" href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">Commit</a>, <a class="el" href="classVcsObject.html#a6997c320772a504fc61a986f6e8f9ff7">VcsObject</a></li>
+<li>getUserMessage()&#160;:&#160;<a class="el" href="classCommit.html#ad869874b357d6ef88071e114808c79bf">Commit</a></li>
+<li>serialize()&#160;:&#160;<a class="el" href="classCommit.html#a53f442e035ddbdb18d0635bbac2709b5">Commit</a>, <a class="el" href="classVcsObject.html#a987c76bf8ad51d267297cc6ba7da1eb7">VcsObject</a></li>
+<li>VcsObject()&#160;:&#160;<a class="el" href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject</a></li>
+<li>~VcsObject()&#160;:&#160;<a class="el" href="classVcsObject.html#a866849775b4541573b40b2b85be20df5">VcsObject</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-#include "../include/commit.hxx"
+#include "../core/include/commit.hxx"
 #include <gtest/gtest.h>
 
 TEST(AuthorValidationTest, ValidEmailIsAccepted) {
@@ -25,16 +25,20 @@ TEST(AuthorValidationTest, InvalidEmailIsNotAccepted3) {
 TEST(HashCalculatingTest, HCT1) {
     std::string content = "123123jakdjlasdj123123123123";
     Commit c;
-    std::string res1 = c.calculate_hash(content);
-    std::string res2 = c.calculate_hash(content);
+    c.computeHash(content);
+    std::string res1 = c.getHashId();
+    c.computeHash(content);
+    std::string res2 = c.getHashId();
     EXPECT_EQ(res1, res2);
 }
 
 TEST(HashCalculatingTest, HCT2) {
     std::string content = "i love my mom!";
     Commit c, b;
-    std::string res1 = c.calculate_hash(content);
-    std::string res2 = b.calculate_hash(content);
+    c.computeHash(content);
+    std::string res1 = c.getHashId();
+    b.computeHash(content);
+    std::string res2 = c.getHashId();
     EXPECT_EQ(res1, res2);
 }
 
@@ -42,8 +46,10 @@ TEST(HashCalculatingTest, HCT3) {
     std::string content1 = "123123jakdjlasdj123123123123";
     std::string content2 = "123123jakdjlasdj123123123122";
     Commit c;
-    std::string res1 = c.calculate_hash(content1);
-    std::string res2 = c.calculate_hash(content2);
+    c.computeHash(content1);
+    std::string res1 = c.getHashId();
+    c.computeHash(content2);
+    std::string res2 = c.getHashId();
     EXPECT_NE(res1, res2);
 }
 
@@ -51,9 +57,11 @@ TEST(HashCalculatingTest, HCT4) {
     std::string content1 = "i love my mom!";
     std::string content2 = "i love my mom.";
     Commit c, b;
-    std::string res1 = c.calculate_hash(content1);
-    std::string res2 = b.calculate_hash(content2);
-    EXPECT_EQ(res1, res2);
+    c.computeHash(content1);
+    std::string res1 = c.getHashId();
+    b.computeHash(content2);
+    std::string res2 = c.getHashId();
+    EXPECT_NE(res1, res2);
 }
 
 int main(int argc, char *argv[])

@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -22,7 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="ed2efb67-fbef-4d6b-a9d6-ca3710ad95fd.jpg"/></td>
   <td id="projectalign">
    <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
    </div>
@@ -44,11 +47,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classCommit.html','','classCommit-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -70,12 +89,7 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classCommit-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Commit Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -84,27 +98,59 @@ $(function() {
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="commit_8hxx_source.html">commit.hxx</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Commit:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classCommit.png" usemap="#Commit_map" alt=""/>
+  <map id="Commit_map" name="Commit_map">
+<area href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS." alt="VcsObject" shape="rect" coords="0,0,71,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a201c5f3c2f29a4db8e40e69d55b2fa1f" id="r_a201c5f3c2f29a4db8e40e69d55b2fa1f"><td class="memItemLeft" align="right" valign="top"><a id="a201c5f3c2f29a4db8e40e69d55b2fa1f" name="a201c5f3c2f29a4db8e40e69d55b2fa1f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Commit</b> ()</td></tr>
+<tr class="memdesc:a201c5f3c2f29a4db8e40e69d55b2fa1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
 <tr class="memitem:a51088403e31442f173e3df0c02ff72b6" id="r_a51088403e31442f173e3df0c02ff72b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51088403e31442f173e3df0c02ff72b6">Commit</a> (const <a class="el" href="classCommit.html">Commit</a> &amp;c)</td></tr>
 <tr class="memdesc:a51088403e31442f173e3df0c02ff72b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
-<tr class="memitem:a37a685418b33a141657b0d6b2984d477" id="r_a37a685418b33a141657b0d6b2984d477"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37a685418b33a141657b0d6b2984d477">Commit</a> (<a class="el" href="classAuthor.html">Author</a> auth, std::string hid, std::string umsg, std::string tstamp, std::string chash, std::string fpath)</td></tr>
-<tr class="memdesc:a37a685418b33a141657b0d6b2984d477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary constructor for creating a <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> object.  <br /></td></tr>
-<tr class="memitem:afa1a6d26d0bd20cde7a7bb9fe3ec1b96" id="r_afa1a6d26d0bd20cde7a7bb9fe3ec1b96"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa1a6d26d0bd20cde7a7bb9fe3ec1b96">calculate_hash</a> (std::string content)</td></tr>
-<tr class="memdesc:afa1a6d26d0bd20cde7a7bb9fe3ec1b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the cryptographic SHA-256 hash for the given content.  <br /></td></tr>
-<tr class="memitem:a5069cc7fa7e05fa9acb1162f99d33e0e" id="r_a5069cc7fa7e05fa9acb1162f99d33e0e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5069cc7fa7e05fa9acb1162f99d33e0e">get_hash_id</a> () const</td></tr>
-<tr class="memdesc:a5069cc7fa7e05fa9acb1162f99d33e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique commit identifier (hash).  <br /></td></tr>
-<tr class="memitem:a80076f1c56374efb0e79639015b3abc7" id="r_a80076f1c56374efb0e79639015b3abc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAuthor.html">Author</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80076f1c56374efb0e79639015b3abc7">get_author</a> () const</td></tr>
-<tr class="memdesc:a80076f1c56374efb0e79639015b3abc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> object associated with the commit.  <br /></td></tr>
-<tr class="memitem:a50111a8ca6690b4abb7b05e2ea82eff9" id="r_a50111a8ca6690b4abb7b05e2ea82eff9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50111a8ca6690b4abb7b05e2ea82eff9">get_user_message</a> () const</td></tr>
-<tr class="memdesc:a50111a8ca6690b4abb7b05e2ea82eff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the message associated with the commit.  <br /></td></tr>
-<tr class="memitem:a0d8bca2a878f0c366e5bf10d17dcf514" id="r_a0d8bca2a878f0c366e5bf10d17dcf514"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d8bca2a878f0c366e5bf10d17dcf514">get_timestamp</a> () const</td></tr>
-<tr class="memdesc:a0d8bca2a878f0c366e5bf10d17dcf514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the commit creation timestamp.  <br /></td></tr>
-<tr class="memitem:a514c77af5a62ee1fc8dc7d33a7f16be6" id="r_a514c77af5a62ee1fc8dc7d33a7f16be6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a514c77af5a62ee1fc8dc7d33a7f16be6">get_content_hash</a> () const</td></tr>
-<tr class="memdesc:a514c77af5a62ee1fc8dc7d33a7f16be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the file content hash (BLOB).  <br /></td></tr>
-<tr class="memitem:a6febdc6c56ce8bd67129819de49bfcc7" id="r_a6febdc6c56ce8bd67129819de49bfcc7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6febdc6c56ce8bd67129819de49bfcc7">get_file_path</a> () const</td></tr>
-<tr class="memdesc:a6febdc6c56ce8bd67129819de49bfcc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the stored file content in the repository.  <br /></td></tr>
+<tr class="memitem:abadddaa327de24097293b081f65dd17d" id="r_abadddaa327de24097293b081f65dd17d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abadddaa327de24097293b081f65dd17d">Commit</a> (<a class="el" href="classAuthor.html">Author</a> auth, std::string umsg, std::string tstamp, std::string chash, std::string fpath)</td></tr>
+<tr class="memdesc:abadddaa327de24097293b081f65dd17d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary constructor for creating a <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> object.  <br /></td></tr>
+<tr class="memitem:a53f442e035ddbdb18d0635bbac2709b5" id="r_a53f442e035ddbdb18d0635bbac2709b5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53f442e035ddbdb18d0635bbac2709b5">serialize</a> () const override</td></tr>
+<tr class="memdesc:a53f442e035ddbdb18d0635bbac2709b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the commit object's metadata into a standardized string format.  <br /></td></tr>
+<tr class="memitem:a213b92691c2dae9e7ae7862eb9c369df" id="r_a213b92691c2dae9e7ae7862eb9c369df"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a213b92691c2dae9e7ae7862eb9c369df">getType</a> () const override</td></tr>
+<tr class="memdesc:a213b92691c2dae9e7ae7862eb9c369df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the VCS object.  <br /></td></tr>
+<tr class="memitem:affbc135945d32485f58ba06f1473518f" id="r_affbc135945d32485f58ba06f1473518f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAuthor.html">Author</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affbc135945d32485f58ba06f1473518f">getAuthor</a> () const</td></tr>
+<tr class="memdesc:affbc135945d32485f58ba06f1473518f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> object associated with the commit.  <br /></td></tr>
+<tr class="memitem:ad869874b357d6ef88071e114808c79bf" id="r_ad869874b357d6ef88071e114808c79bf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad869874b357d6ef88071e114808c79bf">getUserMessage</a> () const</td></tr>
+<tr class="memdesc:ad869874b357d6ef88071e114808c79bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the message associated with the commit.  <br /></td></tr>
+<tr class="memitem:a03db4066a59de0a5f2f9b3384d233488" id="r_a03db4066a59de0a5f2f9b3384d233488"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03db4066a59de0a5f2f9b3384d233488">getTimestamp</a> () const</td></tr>
+<tr class="memdesc:a03db4066a59de0a5f2f9b3384d233488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the commit creation timestamp.  <br /></td></tr>
+<tr class="memitem:a9b064bd7970babd716017d3b8d821dac" id="r_a9b064bd7970babd716017d3b8d821dac"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b064bd7970babd716017d3b8d821dac">getContentHash</a> () const</td></tr>
+<tr class="memdesc:a9b064bd7970babd716017d3b8d821dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the file content hash (BLOB).  <br /></td></tr>
+<tr class="memitem:af478769059b931e972fea06d5b2bd72b" id="r_af478769059b931e972fea06d5b2bd72b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af478769059b931e972fea06d5b2bd72b">getFilePath</a> () const</td></tr>
+<tr class="memdesc:af478769059b931e972fea06d5b2bd72b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the stored file content in the repository.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
+<tr class="memitem:a58691887a54d3d632038cacb36034075 inherit pub_methods_classVcsObject" id="r_a58691887a54d3d632038cacb36034075"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>VcsObject</b> ()=default</td></tr>
+<tr class="memdesc:a58691887a54d3d632038cacb36034075 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Required for derived classes. <br /></td></tr>
+<tr class="memitem:af2840ade6006e4d64eb6bd9f15b37539 inherit pub_methods_classVcsObject" id="r_af2840ade6006e4d64eb6bd9f15b37539"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#af2840ade6006e4d64eb6bd9f15b37539">VcsObject</a> (const <a class="el" href="classVcsObject.html">VcsObject</a> &amp;other)=default</td></tr>
+<tr class="memdesc:af2840ade6006e4d64eb6bd9f15b37539 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. Required for derived classes to correctly copy the hash_id.  <br /></td></tr>
+<tr class="memitem:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=default</td></tr>
+<tr class="memdesc:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. Ensures proper cleanup when deleting derived objects via a base class pointer. <br /></td></tr>
+<tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pub_methods_classVcsObject" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
+<tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
+<tr class="memitem:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject" id="r_a0e8cd703d917813ca43d4b0622c70bdd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a0e8cd703d917813ca43d4b0622c70bdd">getHashId</a> () const</td></tr>
+<tr class="memdesc:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique hash identifier of the object.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
+<tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top">
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></td></tr>
+<tr class="memdesc:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique cryptographic hash identifier (e.g., SHA-256) for this object. Protected to allow internal setting via <a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">computeHash()</a> but prevent external modification. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>It is an immutable snapshot of a file version and its metadata. </p>
@@ -137,8 +183,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a37a685418b33a141657b0d6b2984d477" name="a37a685418b33a141657b0d6b2984d477"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37a685418b33a141657b0d6b2984d477">&#9670;&#160;</a></span>Commit() <span class="overload">[2/2]</span></h2>
+<a id="abadddaa327de24097293b081f65dd17d" name="abadddaa327de24097293b081f65dd17d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abadddaa327de24097293b081f65dd17d">&#9670;&#160;</a></span>Commit() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,11 +193,6 @@ Public Member Functions</h2></td></tr>
           <td class="memname">Commit::Commit </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classAuthor.html">Author</a></td>          <td class="paramname"><span class="paramname"><em>auth</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>hid</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -177,7 +218,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Primary constructor for creating a <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> object. </p>
-<p>Primary constructor for initializing a <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> object.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">auth</td><td>The <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> who created the commit. </td></tr>
@@ -185,13 +225,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">umsg</td><td>User message. </td></tr>
     <tr><td class="paramname">tstamp</td><td>Timestamp. </td></tr>
     <tr><td class="paramname">chash</td><td>File content hash (BLOB). </td></tr>
-    <tr><td class="paramname">fpath</td><td>Path to the stored file content.</td></tr>
-    <tr><td class="paramname">auth</td><td>The <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> who created the commit. </td></tr>
-    <tr><td class="paramname">hid</td><td>Unique commit ID (hash of metadata). </td></tr>
-    <tr><td class="paramname">umsg</td><td>User-provided commit message. </td></tr>
-    <tr><td class="paramname">tstamp</td><td><a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> creation timestamp. </td></tr>
-    <tr><td class="paramname">chash</td><td>SHA-256 hash of the file content. </td></tr>
-    <tr><td class="paramname">fpath</td><td>Path where the content (BLOB) is stored on disk. </td></tr>
+    <tr><td class="paramname">fpath</td><td>Path to the stored file content. </td></tr>
   </table>
   </dd>
 </dl>
@@ -199,51 +233,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="afa1a6d26d0bd20cde7a7bb9fe3ec1b96" name="afa1a6d26d0bd20cde7a7bb9fe3ec1b96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa1a6d26d0bd20cde7a7bb9fe3ec1b96">&#9670;&#160;</a></span>calculate_hash()</h2>
+<a id="affbc135945d32485f58ba06f1473518f" name="affbc135945d32485f58ba06f1473518f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affbc135945d32485f58ba06f1473518f">&#9670;&#160;</a></span>getAuthor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Commit::calculate_hash </td>
-          <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculates the cryptographic SHA-256 hash for the given content. </p>
-<ul>
-<li>This function is intended to calculate the hash of the serialized commit data or the file content for storage integrity.</li>
-<li><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">content</td><td>The string content to be hashed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string The SHA-256 hash as a 64-character hexadecimal string.</dd></dl>
-This function uses the OpenSSL library to produce a unique and tamper-proof identifier for the file content, represented as a 64-character hexadecimal string. <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">content</td><td>The string content to be hashed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string The SHA-256 hash. </dd></dl>
-</li>
-</ul>
-
-</div>
-</div>
-<a id="a80076f1c56374efb0e79639015b3abc7" name="a80076f1c56374efb0e79639015b3abc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80076f1c56374efb0e79639015b3abc7">&#9670;&#160;</a></span>get_author()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classAuthor.html">Author</a> Commit::get_author </td>
+          <td class="memname"><a class="el" href="classAuthor.html">Author</a> Commit::getAuthor </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -252,20 +249,18 @@ This function uses the OpenSSL library to produce a unique and tamper-proof iden
 </div><div class="memdoc">
 
 <p>Returns the <a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> object associated with the commit. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> The commit author information.</dd>
-<dd>
-<a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> The commit author. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classAuthor.html" title="Stores the name and email of the commit author or committer.">Author</a> The commit author information. </dd></dl>
 
 </div>
 </div>
-<a id="a514c77af5a62ee1fc8dc7d33a7f16be6" name="a514c77af5a62ee1fc8dc7d33a7f16be6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a514c77af5a62ee1fc8dc7d33a7f16be6">&#9670;&#160;</a></span>get_content_hash()</h2>
+<a id="a9b064bd7970babd716017d3b8d821dac" name="a9b064bd7970babd716017d3b8d821dac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b064bd7970babd716017d3b8d821dac">&#9670;&#160;</a></span>getContentHash()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Commit::get_content_hash </td>
+          <td class="memname">std::string Commit::getContentHash </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -278,14 +273,14 @@ This function uses the OpenSSL library to produce a unique and tamper-proof iden
 
 </div>
 </div>
-<a id="a6febdc6c56ce8bd67129819de49bfcc7" name="a6febdc6c56ce8bd67129819de49bfcc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6febdc6c56ce8bd67129819de49bfcc7">&#9670;&#160;</a></span>get_file_path()</h2>
+<a id="af478769059b931e972fea06d5b2bd72b" name="af478769059b931e972fea06d5b2bd72b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af478769059b931e972fea06d5b2bd72b">&#9670;&#160;</a></span>getFilePath()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Commit::get_file_path </td>
+          <td class="memname">std::string Commit::getFilePath </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -298,34 +293,14 @@ This function uses the OpenSSL library to produce a unique and tamper-proof iden
 
 </div>
 </div>
-<a id="a5069cc7fa7e05fa9acb1162f99d33e0e" name="a5069cc7fa7e05fa9acb1162f99d33e0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5069cc7fa7e05fa9acb1162f99d33e0e">&#9670;&#160;</a></span>get_hash_id()</h2>
+<a id="a03db4066a59de0a5f2f9b3384d233488" name="a03db4066a59de0a5f2f9b3384d233488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03db4066a59de0a5f2f9b3384d233488">&#9670;&#160;</a></span>getTimestamp()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Commit::get_hash_id </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the unique commit identifier (hash). </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string <a class="el" href="classCommit.html" title="It is an immutable snapshot of a file version and its metadata.">Commit</a> ID hash. </dd></dl>
-
-</div>
-</div>
-<a id="a0d8bca2a878f0c366e5bf10d17dcf514" name="a0d8bca2a878f0c366e5bf10d17dcf514"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d8bca2a878f0c366e5bf10d17dcf514">&#9670;&#160;</a></span>get_timestamp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Commit::get_timestamp </td>
+          <td class="memname">std::string Commit::getTimestamp </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -338,14 +313,44 @@ This function uses the OpenSSL library to produce a unique and tamper-proof iden
 
 </div>
 </div>
-<a id="a50111a8ca6690b4abb7b05e2ea82eff9" name="a50111a8ca6690b4abb7b05e2ea82eff9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50111a8ca6690b4abb7b05e2ea82eff9">&#9670;&#160;</a></span>get_user_message()</h2>
+<a id="a213b92691c2dae9e7ae7862eb9c369df" name="a213b92691c2dae9e7ae7862eb9c369df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213b92691c2dae9e7ae7862eb9c369df">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Commit::getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the type of the VCS object. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string The object type, which is "commit". </dd></dl>
+
+<p>Implements <a class="el" href="classVcsObject.html#a6997c320772a504fc61a986f6e8f9ff7">VcsObject</a>.</p>
+
+</div>
+</div>
+<a id="ad869874b357d6ef88071e114808c79bf" name="ad869874b357d6ef88071e114808c79bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad869874b357d6ef88071e114808c79bf">&#9670;&#160;</a></span>getUserMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Commit::get_user_message </td>
+          <td class="memname">std::string Commit::getUserMessage </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -358,15 +363,56 @@ This function uses the OpenSSL library to produce a unique and tamper-proof iden
 
 </div>
 </div>
+<a id="a53f442e035ddbdb18d0635bbac2709b5" name="a53f442e035ddbdb18d0635bbac2709b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f442e035ddbdb18d0635bbac2709b5">&#9670;&#160;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Commit::serialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Serializes the commit object's metadata into a standardized string format. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string The serialized data. </dd></dl>
+
+<p>Implements <a class="el" href="classVcsObject.html#a987c76bf8ad51d267297cc6ba7da1eb7">VcsObject</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="commit_8hxx_source.html">commit.hxx</a></li>
-<li>src/<b>commit.cxx</b></li>
+<li>core/include/<a class="el" href="commit_8hxx_source.html">commit.hxx</a></li>
+<li>core/src/<b>commit.cxx</b></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="classCommit.html">Commit</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
 </body>
 </html>

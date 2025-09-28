@@ -1,12 +1,13 @@
 var classCommit =
 [
+    [ "Commit", "classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f", null ],
     [ "Commit", "classCommit.html#a51088403e31442f173e3df0c02ff72b6", null ],
-    [ "Commit", "classCommit.html#a37a685418b33a141657b0d6b2984d477", null ],
-    [ "calculate_hash", "classCommit.html#afa1a6d26d0bd20cde7a7bb9fe3ec1b96", null ],
-    [ "get_author", "classCommit.html#a80076f1c56374efb0e79639015b3abc7", null ],
-    [ "get_content_hash", "classCommit.html#a514c77af5a62ee1fc8dc7d33a7f16be6", null ],
-    [ "get_file_path", "classCommit.html#a6febdc6c56ce8bd67129819de49bfcc7", null ],
-    [ "get_hash_id", "classCommit.html#a5069cc7fa7e05fa9acb1162f99d33e0e", null ],
-    [ "get_timestamp", "classCommit.html#a0d8bca2a878f0c366e5bf10d17dcf514", null ],
-    [ "get_user_message", "classCommit.html#a50111a8ca6690b4abb7b05e2ea82eff9", null ]
+    [ "Commit", "classCommit.html#abadddaa327de24097293b081f65dd17d", null ],
+    [ "getAuthor", "classCommit.html#affbc135945d32485f58ba06f1473518f", null ],
+    [ "getContentHash", "classCommit.html#a9b064bd7970babd716017d3b8d821dac", null ],
+    [ "getFilePath", "classCommit.html#af478769059b931e972fea06d5b2bd72b", null ],
+    [ "getTimestamp", "classCommit.html#a03db4066a59de0a5f2f9b3384d233488", null ],
+    [ "getType", "classCommit.html#a213b92691c2dae9e7ae7862eb9c369df", null ],
+    [ "getUserMessage", "classCommit.html#ad869874b357d6ef88071e114808c79bf", null ],
+    [ "serialize", "classCommit.html#a53f442e035ddbdb18d0635bbac2709b5", null ]
 ];

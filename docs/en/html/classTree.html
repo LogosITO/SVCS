@@ -120,12 +120,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a772b4bcfb5e44dda6a9ede2470d23250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new entry to the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> or updates an existing entry if the name matches.  <br /></td></tr>
 <tr class="memitem:a85035a45ff8778df5bb8be32f57bf232" id="r_a85035a45ff8778df5bb8be32f57bf232"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85035a45ff8778df5bb8be32f57bf232">removeEntry</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a85035a45ff8778df5bb8be32f57bf232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an entry (file or subdirectory) from the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> by name.  <br /></td></tr>
-<tr class="memitem:aa2eae33f9bffa2b72c3d9c8f425b77f2" id="r_aa2eae33f9bffa2b72c3d9c8f425b77f2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2eae33f9bffa2b72c3d9c8f425b77f2">getEntries</a> () const</td></tr>
-<tr class="memdesc:aa2eae33f9bffa2b72c3d9c8f425b77f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>.  <br /></td></tr>
 <tr class="memitem:a944fe0075293396036606f6a999643f4" id="r_a944fe0075293396036606f6a999643f4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a944fe0075293396036606f6a999643f4">findEntry</a> (const std::string &amp;name) const</td></tr>
 <tr class="memdesc:a944fe0075293396036606f6a999643f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for a specific entry within the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> by name.  <br /></td></tr>
-<tr class="memitem:acef91361893b48ca2ce5a40493e1dd55" id="r_acef91361893b48ca2ce5a40493e1dd55"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acef91361893b48ca2ce5a40493e1dd55">getEntries</a> ()</td></tr>
-<tr class="memdesc:acef91361893b48ca2ce5a40493e1dd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>.  <br /></td></tr>
+<tr class="memitem:a57ecc3c34be17f9e349ef386223eead8" id="r_a57ecc3c34be17f9e349ef386223eead8"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57ecc3c34be17f9e349ef386223eead8">getEntries</a> () const</td></tr>
+<tr class="memdesc:a57ecc3c34be17f9e349ef386223eead8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
 <tr class="memitem:a58691887a54d3d632038cacb36034075 inherit pub_methods_classVcsObject" id="r_a58691887a54d3d632038cacb36034075"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>VcsObject</b> ()=default</td></tr>
@@ -135,8 +133,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top">
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=default</td></tr>
 <tr class="memdesc:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. Ensures proper cleanup when deleting derived objects via a base class pointer. <br /></td></tr>
-<tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pub_methods_classVcsObject" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
-<tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
 <tr class="memitem:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject" id="r_a0e8cd703d917813ca43d4b0622c70bdd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a0e8cd703d917813ca43d4b0622c70bdd">getHashId</a> () const</td></tr>
 <tr class="memdesc:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique hash identifier of the object.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -144,9 +140,15 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a85166cfd9d904644216cdacb0b4b7d54" id="r_a85166cfd9d904644216cdacb0b4b7d54"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classTree.html">Tree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85166cfd9d904644216cdacb0b4b7d54">deserialize</a> (const std::string &amp;raw_content)</td></tr>
 <tr class="memdesc:a85166cfd9d904644216cdacb0b4b7d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object from a serialized string read from the object database.  <br /></td></tr>
+<tr class="inherit_header pub_static_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
+<tr class="memitem:a73ec7fbaac32df9c4570de02b8bda56f inherit pub_static_methods_classVcsObject" id="r_a73ec7fbaac32df9c4570de02b8bda56f"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a73ec7fbaac32df9c4570de02b8bda56f">calculateHash</a> (const std::string &amp;content)</td></tr>
+<tr class="memdesc:a73ec7fbaac32df9c4570de02b8bda56f inherit pub_static_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет SHA-1 хеш для заданного канонического содержимого.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
+<tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pro_methods_classVcsObject" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
+<tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pro_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
 <tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top">
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></td></tr>
@@ -269,34 +271,14 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 </div>
 </div>
-<a id="acef91361893b48ca2ce5a40493e1dd55" name="acef91361893b48ca2ce5a40493e1dd55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acef91361893b48ca2ce5a40493e1dd55">&#9670;&#160;</a></span>getEntries() <span class="overload">[1/2]</span></h2>
+<a id="a57ecc3c34be17f9e349ef386223eead8" name="a57ecc3c34be17f9e349ef386223eead8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ecc3c34be17f9e349ef386223eead8">&#9670;&#160;</a></span>getEntries()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt; Tree::getEntries </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TreeEntry&amp;&gt; A constant reference to the internal vector of entries. </dd></dl>
-
-</div>
-</div>
-<a id="aa2eae33f9bffa2b72c3d9c8f425b77f2" name="aa2eae33f9bffa2b72c3d9c8f425b77f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2eae33f9bffa2b72c3d9c8f425b77f2">&#9670;&#160;</a></span>getEntries() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &amp; &gt; Tree::getEntries </td>
+          <td class="memname">const std::vector&lt; <a class="el" href="structTreeEntry.html">TreeEntry</a> &gt; &amp; Tree::getEntries </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -305,7 +287,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 </div><div class="memdoc">
 
 <p>Returns the list of entries stored in the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>const std::vector&lt;TreeEntry&amp;&gt; A constant reference to the internal vector of entries. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;TreeEntry&gt;&amp; A constant reference to the internal vector of entries. </dd></dl>
 
 </div>
 </div>

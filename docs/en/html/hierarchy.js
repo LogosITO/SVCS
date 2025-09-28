@@ -1,5 +1,9 @@
 var hierarchy =
 [
+    [ "ObjectStorage", "classObjectStorage.html", null ],
+    [ "testing::Test", null, [
+      [ "ObjectStorageTest", "classObjectStorageTest.html", null ]
+    ] ],
     [ "TreeEntry", "structTreeEntry.html", null ],
     [ "VcsObject", "classVcsObject.html", [
       [ "Blob", "classBlob.html", null ],

@@ -125,10 +125,18 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=
 <tr class="memdesc:a987c76bf8ad51d267297cc6ba7da1eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to serialize the object's core data.  <br /></td></tr>
 <tr class="memitem:a6997c320772a504fc61a986f6e8f9ff7" id="r_a6997c320772a504fc61a986f6e8f9ff7"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6997c320772a504fc61a986f6e8f9ff7">getType</a> () const =0</td></tr>
 <tr class="memdesc:a6997c320772a504fc61a986f6e8f9ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to get the type of the VCS object.  <br /></td></tr>
-<tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
-<tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
 <tr class="memitem:a0e8cd703d917813ca43d4b0622c70bdd" id="r_a0e8cd703d917813ca43d4b0622c70bdd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e8cd703d917813ca43d4b0622c70bdd">getHashId</a> () const</td></tr>
 <tr class="memdesc:a0e8cd703d917813ca43d4b0622c70bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique hash identifier of the object.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a73ec7fbaac32df9c4570de02b8bda56f" id="r_a73ec7fbaac32df9c4570de02b8bda56f"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73ec7fbaac32df9c4570de02b8bda56f">calculateHash</a> (const std::string &amp;content)</td></tr>
+<tr class="memdesc:a73ec7fbaac32df9c4570de02b8bda56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет SHA-1 хеш для заданного канонического содержимого.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
+<tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -176,11 +184,48 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a73ec7fbaac32df9c4570de02b8bda56f" name="a73ec7fbaac32df9c4570de02b8bda56f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ec7fbaac32df9c4570de02b8bda56f">&#9670;&#160;</a></span>calculateHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string VcsObject::calculateHash </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет SHA-1 хеш для заданного канонического содержимого. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td>Содержимое объекта Git-формата (header + raw_data). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string Вычисленный 40-символьный хеш. </dd></dl>
+
+</div>
+</div>
 <a id="ae2b7544a63a2f0b1ef764dd4710a13e0" name="ae2b7544a63a2f0b1ef764dd4710a13e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2b7544a63a2f0b1ef764dd4710a13e0">&#9670;&#160;</a></span>computeHash()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void VcsObject::computeHash </td>
@@ -189,6 +234,11 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Computes the cryptographic hash ID for the object's content. </p>

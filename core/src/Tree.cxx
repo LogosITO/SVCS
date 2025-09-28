@@ -88,6 +88,6 @@ std::optional<TreeEntry> Tree::findEntry(const std::string& name) const {
     }
 }
 
-std::vector<TreeEntry> Tree::getEntries() {
+const std::vector<TreeEntry>& Tree::getEntries() const {
     return entries;
 }

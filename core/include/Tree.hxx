@@ -102,20 +102,15 @@ public:
     bool removeEntry(const std::string& name);
 
     /**
-     * @brief Returns the list of entries stored in the Tree.
-     * @return const std::vector<TreeEntry&> A constant reference to the internal vector of entries.
-     */
-    const std::vector<TreeEntry&> getEntries() const;
-
-    /**
      * @brief Searches for a specific entry within the Tree by name.
      * @param name The name of the entry to find.
      * @return std::optional<TreeEntry> An optional containing the entry if found, otherwise empty.
      */
     std::optional<TreeEntry> findEntry(const std::string& name) const;
+    
     /**
      *@brief Returns the list of entries stored in the Tree.
-     *@return std::vector<TreeEntry&> A constant reference to the internal vector of entries.
+     *@return std::vector<TreeEntry>& A constant reference to the internal vector of entries.
      */
-    std::vector<TreeEntry> getEntries();
+    const std::vector<TreeEntry>& getEntries() const;
 };

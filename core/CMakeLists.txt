@@ -1,17 +1,17 @@
 set(CORE_SOURCES
-    src/Commit.cxx
     src/VcsObject.cxx
     src/Blob.cxx
     src/Tree.cxx
     src/Commit.cxx
+    src/ObjectStorage.cxx
 )
 
 set(CORE_HEADERS
-    include/Commit.hxx
     include/VcsObject.hxx
     include/Blob.hxx
     include/Tree.hxx
     include/Commit.hxx
+    include/ObjectStorage.hxx
 )
 
 
@@ -25,7 +25,7 @@ set_target_properties(svcs_core PROPERTIES
 
 target_include_directories(svcs_core PUBLIC include)
 
-target_link_libraries(svcs_core PRIVATE 
+target_link_libraries(svcs_core PUBLIC 
     Boost::system
     Boost::date_time
     OpenSSL::Crypto

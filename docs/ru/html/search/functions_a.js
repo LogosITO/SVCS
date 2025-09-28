@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vcsobject_0',['VcsObject',['../classVcsObject.html#a58691887a54d3d632038cacb36034075',1,'VcsObject::VcsObject()=default'],['../classVcsObject.html#af2840ade6006e4d64eb6bd9f15b37539',1,'VcsObject::VcsObject(const VcsObject &amp;other)=default']]]
+  ['testableobject_0',['TestableObject',['../classTestableObject.html#ad209c046fc6daadbd7ca43387707da00',1,'TestableObject']]],
+  ['tree_1',['Tree',['../classTree.html#af660984821d0ae2f73725ee33c73ad20',1,'Tree']]]
 ];

@@ -13,6 +13,7 @@
       "name": "boost-filesystem"
     },
     "openssl",
+    "zlib",
     "gtest"
   ]
 }

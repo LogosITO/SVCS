@@ -37,8 +37,3 @@ TEST(BlobTest, HandlingEmptyContent) {
     Blob non_empty_blob("A");
     EXPECT_NE(empty_blob.getHashId(), non_empty_blob.getHashId()) << "Empty content hash must be unique";
 }
-
-int main(int argc, char* argv[]) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

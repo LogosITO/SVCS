@@ -25,6 +25,13 @@ protected:
     /// Protected to allow internal setting via computeHash() but prevent external modification.
     std::string hash_id;
 
+    /**
+     * @brief Computes the cryptographic hash ID for the object's content.
+     * * This method should prepend the object's type and content length (Git-style)
+     * before hashing the full content and setting the internal hash_id.
+     * @param content The serialized string data of the object (usually returned by serialize()).
+     */
+    void computeHash(const std::string& content);
 public:
     /// @brief Default constructor. Required for derived classes.
     VcsObject() = default; 
@@ -54,12 +61,11 @@ public:
     virtual std::string getType() const = 0;
 
     /**
-     * @brief Computes the cryptographic hash ID for the object's content.
-     * * This method should prepend the object's type and content length (Git-style)
-     * before hashing the full content and setting the internal hash_id.
-     * @param content The serialized string data of the object (usually returned by serialize()).
+     * @brief Вычисляет SHA-1 хеш для заданного канонического содержимого.
+     * @param content Содержимое объекта Git-формата (header + raw_data).
+     * @return std::string Вычисленный 40-символьный хеш.
      */
-    void computeHash(const std::string& content);
+    static std::string calculateHash(const std::string& content); 
 
     /**
      * @brief Returns the unique hash identifier of the object.

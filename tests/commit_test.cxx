@@ -84,8 +84,3 @@ TEST(CommitTest, SerializationDeserializationRoundTrip) {
     EXPECT_EQ(restored.getParentHashes().size(), 2);
     EXPECT_EQ(original.getParentHashes()[0], restored.getParentHashes()[0]);
 }
-
-int main(int argc, char* argv[]) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

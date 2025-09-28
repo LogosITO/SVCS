@@ -3,6 +3,7 @@ set(CORE_SOURCES
     src/VcsObject.cxx
     src/Blob.cxx
     src/Tree.cxx
+    src/Commit.cxx
 )
 
 set(CORE_HEADERS
@@ -10,6 +11,7 @@ set(CORE_HEADERS
     include/VcsObject.hxx
     include/Blob.hxx
     include/Tree.hxx
+    include/Commit.hxx
 )
 
 
@@ -27,4 +29,5 @@ target_link_libraries(svcs_core PRIVATE
     Boost::system
     Boost::date_time
     OpenSSL::Crypto
+    ZLIB::ZLIB
 )

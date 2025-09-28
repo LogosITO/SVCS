@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['blob_0',['Blob',['../classBlob.html',1,'']]]
+  ['commit_0',['Commit',['../classCommit.html',1,'']]]
 ];

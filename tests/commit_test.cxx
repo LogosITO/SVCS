@@ -1,70 +1,91 @@
 #include "../core/include/Commit.hxx"
 #include <gtest/gtest.h>
 
-TEST(AuthorValidationTest, ValidEmailIsAccepted) {
-    Author a("Jane Doe", "jane.doe@company.org");
-    EXPECT_EQ(a.get_email(), "jane.doe@company.org");
-    EXPECT_EQ(a.get_name(), "Jane Doe"); 
+Commit createTestCommit(
+    const std::string& tree_hash,
+    const std::vector<std::string>& parents,
+    const std::string& message,
+    std::time_t timestamp = 1600000000
+) {
+    return Commit(
+        tree_hash,
+        parents,
+        "Test Author <test@example.com>",
+        message,
+        timestamp
+    );
 }
 
-TEST(AuthorValidationTest, InvalidEmailIsNotAccepted1) {
-    Author a("Bad Sender", "anonym@ann.com@gmail.com");
-    EXPECT_NE(a.get_email(), "anonym@gmail.com");
+const std::string EMPTY_TREE_HASH = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
+
+TEST(CommitTest, BasicInitialCommit) {
+    Commit commit = createTestCommit(
+        EMPTY_TREE_HASH, 
+        {}, 
+        "Initial commit message."
+    );
+
+    EXPECT_FALSE(commit.getHashId().empty()) << "Commit hash must be calculated.";
+    EXPECT_EQ(commit.getType(), "commit");
+    EXPECT_EQ(commit.getTreeHash(), EMPTY_TREE_HASH);
+    EXPECT_TRUE(commit.getParentHashes().empty());
 }
 
-TEST(AuthorValidationTest, InvalidEmailIsNotAccepted2) {
-    Author a("Bad Sender", "@gmail.com");
-    EXPECT_NE(a.get_email(), "anonym@gmail.com");
+TEST(CommitTest, HashIsStableRegardlessOfParentOrder) {
+    std::string parent_a = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    std::string parent_b = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
+
+    Commit commit1 = createTestCommit(
+        EMPTY_TREE_HASH, 
+        {parent_a, parent_b},
+        "Merge commit."
+    );
+
+    Commit commit2 = createTestCommit(
+        EMPTY_TREE_HASH, 
+        {parent_b, parent_a},
+        "Merge commit."
+    );
+
+    EXPECT_EQ(commit1.getHashId(), commit2.getHashId())
+        << "Commit hash must be stable when parent list is reordered.";
 }
 
-TEST(AuthorValidationTest, InvalidEmailIsNotAccepted3) {
-    Author a("Bad Sender", "lol");
-    EXPECT_NE(a.get_email(), "anonym@gmail.com");
+TEST(CommitTest, HashChangesWithDifferentMessage) {
+    Commit commit1 = createTestCommit(EMPTY_TREE_HASH, {}, "Message V1");
+    Commit commit2 = createTestCommit(EMPTY_TREE_HASH, {}, "Message V2");
+
+    EXPECT_NE(commit1.getHashId(), commit2.getHashId())
+        << "Changing commit message must change the commit hash.";
 }
 
-TEST(HashCalculatingTest, HCT1) {
-    std::string content = "123123jakdjlasdj123123123123";
-    Commit c;
-    c.computeHash(content);
-    std::string res1 = c.getHashId();
-    c.computeHash(content);
-    std::string res2 = c.getHashId();
-    EXPECT_EQ(res1, res2);
+TEST(CommitTest, SerializationDeserializationRoundTrip) {
+    std::string complex_message = "Feature commit.\n\n- Line 2\n- Line 3";
+    std::time_t custom_time = 1700000000;
+    
+    Commit original = createTestCommit(
+        "new_tree_hash_12345", 
+        {"p1_hash", "p2_hash"}, 
+        complex_message, 
+        custom_time
+    );
+
+    std::string serialized = original.serialize();
+    
+    Commit restored = Commit::deserialize(serialized);
+    
+    EXPECT_EQ(original.getHashId(), restored.getHashId()) << "Restored commit hash must match original hash.";
+    EXPECT_EQ(original.getTreeHash(), restored.getTreeHash());
+    EXPECT_EQ(original.getMessage(), restored.getMessage());
+    EXPECT_EQ(original.getAuthor(), restored.getAuthor());
+    EXPECT_EQ(original.getTimestamp(), restored.getTimestamp());
+    
+    EXPECT_EQ(original.getParentHashes().size(), 2);
+    EXPECT_EQ(restored.getParentHashes().size(), 2);
+    EXPECT_EQ(original.getParentHashes()[0], restored.getParentHashes()[0]);
 }
 
-TEST(HashCalculatingTest, HCT2) {
-    std::string content = "i love my mom!";
-    Commit c, b;
-    c.computeHash(content);
-    std::string res1 = c.getHashId();
-    b.computeHash(content);
-    std::string res2 = c.getHashId();
-    EXPECT_EQ(res1, res2);
-}
-
-TEST(HashCalculatingTest, HCT3) {
-    std::string content1 = "123123jakdjlasdj123123123123";
-    std::string content2 = "123123jakdjlasdj123123123122";
-    Commit c;
-    c.computeHash(content1);
-    std::string res1 = c.getHashId();
-    c.computeHash(content2);
-    std::string res2 = c.getHashId();
-    EXPECT_NE(res1, res2);
-}
-
-TEST(HashCalculatingTest, HCT4) {
-    std::string content1 = "i love my mom!";
-    std::string content2 = "i love my mom.";
-    Commit c, b;
-    c.computeHash(content1);
-    std::string res1 = c.getHashId();
-    b.computeHash(content2);
-    std::string res2 = c.getHashId();
-    EXPECT_NE(res1, res2);
-}
-
-int main(int argc, char *argv[]){
+int main(int argc, char* argv[]) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }

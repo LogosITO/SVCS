@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Иерархия классов</title>
+<title>SVCS: Файл core/include/Commit.hxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('hierarchy.html','',''); });
+$(function(){initNavTree('Commit_8hxx.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -90,25 +90,41 @@ $(function(){initNavTree('hierarchy.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Иерархия классов</div></div>
+  <div class="headertitle"><div class="title">Файл Commit.hxx</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Иерархия классов.</div><div class="directory">
-<div class="levels">[уровень детализации <span onclick="javascript:dynsection.toggleLevel(1);">1</span><span onclick="javascript:dynsection.toggleLevel(2);">2</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structTreeEntry.html" target="_self">TreeEntry</a></td><td class="desc">Represents a single item (file or subdirectory) within a <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object </td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="dynsection.toggleFolder('1_')"><span class="arrowhead opened"></span></span><span class="icona"><span class="icon">C</span></span><a class="el" href="classVcsObject.html" target="_self">VcsObject</a></td><td class="desc">Abstract base class representing any storable, addressable object within the VCS </td></tr>
-<tr id="row_1_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classBlob.html" target="_self">Blob</a></td><td class="desc">Represents the content of a file (Binary Large Object) </td></tr>
-<tr id="row_1_1_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classCommit.html" target="_self">Commit</a></td><td class="desc">Represents a single, immutable historical point (snapshot) in the repository's history </td></tr>
-<tr id="row_1_2_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classTestableObject.html" target="_self">TestableObject</a></td><td class="desc">Helper class for testing the non-abstract methods of <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> </td></tr>
-<tr id="row_1_3_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classTree.html" target="_self">Tree</a></td><td class="desc">Represents the state of a directory in the VCS, implementing the <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> contract </td></tr>
+
+<p>Defines the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> class, representing a permanent snapshot in the VCS history.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;VcsObject.hxx&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+</div>
+<p><a href="Commit_8hxx_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:Commit" id="r_Commit"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommit.html">Commit</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single, immutable historical point (snapshot) in the repository's history.  <a href="classCommit.html#details">Подробнее...</a><br /></td></tr>
 </table>
-</div><!-- directory -->
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Defines the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> class, representing a permanent snapshot in the VCS history. </p>
+<p>A <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> object links a <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object (the repository state) with parent commits and essential metadata like author, timestamp, and the commit message, forming the basis of the project's history. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a href="dir_24d671cfcbc5d5238a6bd565a49d198f.html">include</a></li><li class="navelem"><a href="Commit_8hxx.html">Commit.hxx</a></li>
     <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

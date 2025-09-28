@@ -11,7 +11,7 @@ endif()
 
 find_package(Boost 1.88.0 REQUIRED COMPONENTS system date_time)
 find_package(OpenSSL REQUIRED)
-
+find_package(ZLIB REQUIRED)
 
 add_subdirectory(core)
 

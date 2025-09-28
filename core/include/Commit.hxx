@@ -1,139 +1,109 @@
-/***********************************************************************************************
+/**
  * @file Commit.hxx
- * @copyright 
- * Copyright 2025 LogosITO
- * Licensed under MIT-License
- * @brief Definition of the class Commit.
- ***********************************************************************************************/
-
+ * @brief Defines the Commit class, representing a permanent snapshot in the VCS history.
+ * @details A Commit object links a Tree object (the repository state) with parent commits 
+ * and essential metadata like author, timestamp, and the commit message, forming the basis of the project's history.
+ */
 #pragma once
 
 #include "VcsObject.hxx"
 #include <string>
-
-/**
- * @class Author
- * @brief Stores the name and email of the commit author or committer.
- */
-class Author {
-private:
-    /// @brief Author's full name.
-    std::string name;
-    /// @brief Author's email address.
-    std::string email;
-public:
-    /**
-     * @brief Default constructor.
-     */
-    Author();
-    
-    /**
-     * @brief Primary constructor.
-     * @param n The author's name.
-     * @param e The author's email.
-     */
-    Author(std::string n, std::string e);
-    
-    /**
-     * @brief Copy constructor.
-     * @param a The Author object to copy.
-     */
-    Author(const Author& a);
-
-    /**
-     * @brief Returns the author's name.
-     * @return std::string Author's name.
-     */
-    std::string get_name() const;
-    
-    /**
-     * @brief Returns the author's email.
-     * @return std::string Author's email.
-     */
-    std::string get_email() const;
-};
+#include <vector>
+#include <ctime>
 
 /**
  * @class Commit
- * @brief It is an immutable snapshot of a file version and its metadata.
- * * The Commit object is the core data structure of the VCS, containing all 
- * necessary information to identify and retrieve a specific version of a file.
+ * @brief Represents a single, immutable historical point (snapshot) in the repository's history.
+ * * This object binds the content structure (Tree hash) with the metadata (author, message, parent history).
  */
 class Commit : public VcsObject {
 private:
-    /// @brief The author who created the commit.
-    Author author;
-    /// @brief User-provided message when creating the commit.
-    std::string user_message;
-    /// @brief Exact creation timestamp in YYYY-MM-DD HH:MM:SS format.
-    std::string timestamp;
-    /// @brief File content hash (BLOB), necessary for integrity checking and deduplication.
-    std::string content_hash;
-    /// @brief Path to the stored file content (object) in the repository.
-    std::string file_path;
+    /// @brief Hash ID of the root Tree object representing the state of the repository at this commit.
+    std::string tree_hash;
+    
+    /// @brief Hash IDs of the parent commits (usually one for normal commits, or two for merge commits).
+    std::vector<std::string> parent_hashes;
+    
+    /// @brief Name and email of the author (e.g., "John Doe <john.doe@example.com>").
+    std::string author;
+    
+    /// @brief Timestamp (UNIX time) of the commit creation.
+    std::time_t timestamp;
+    
+    /// @brief The commit message provided by the user, often spanning multiple lines.
+    std::string message;
+
 public:
     /**
-     * @brief Default constructor.
+     * @brief Main constructor for the Commit object.
+     * @details Initializes the metadata fields, sorts the parent hashes for consistency, and immediately computes the object's hash ID.
+     * @param thash Hash of the root Tree object.
+     * @param phashes Hashes of the immediate parent commit(s).
+     * @param auth Author and email string.
+     * @param msg User-defined commit message.
+     * @param tstamp Time when the commit was created (default is current time).
      */
-    Commit();
+    Commit(
+        std::string thash,
+        std::vector<std::string> phashes,
+        std::string auth,
+        std::string msg,
+        std::time_t tstamp = std::time(nullptr)
+    );
 
-    /**
-     * @brief Copy constructor.
-     * @param c The Commit object to copy.
-     */
-    Commit(const Commit& c);
+    // VcsObject overrides
     
     /**
-     * @brief Primary constructor for creating a Commit object.
-     * @param auth The Author who created the commit.
-     * @param hid Unique commit ID.
-     * @param umsg User message.
-     * @param tstamp Timestamp.
-     * @param chash File content hash (BLOB).
-     * @param fpath Path to the stored file content.
-     */
-    Commit(Author auth, std::string umsg, std::string tstamp, 
-           std::string chash, std::string fpath);
-
-    /**
-     * @brief Serializes the commit object's metadata into a standardized string format.
-     * @return std::string The serialized data.
-     */
-    std::string serialize() const override;
-
-    /**
      * @brief Returns the type of the VCS object.
-     * @return std::string The object type, which is "commit".
+     * @return std::string Always returns "commit".
+     * @copydoc VcsObject::getType()
      */
     std::string getType() const override;
 
     /**
-     * @brief Returns the Author object associated with the commit.
-     * @return Author The commit author information.
+     * @brief Serializes the Commit metadata into a standardized, canonical format for hashing and storage.
+     * @details The serialized format includes key/value pairs (tree, parent, author) followed by the message.
+     * @return std::string The standardized, serialized commit data.
+     * @copydoc VcsObject::serialize()
      */
-    Author getAuthor() const;
+    std::string serialize() const override;
     
     /**
-     * @brief Returns the message associated with the commit.
-     * @return std::string Commit message.
+     * @brief Creates a Commit object from a serialized string read from the object database.
+     * @param raw_content The serialized string data, typically read from a decompressed object file.
+     * @return Commit A fully reconstructed Commit object.
      */
-    std::string getUserMessage() const;
-    
+    static Commit deserialize(const std::string& raw_content);
+
+    // Getters
+
     /**
-     * @brief Returns the commit creation timestamp.
-     * @return std::string Timestamp.
+     * @brief Returns the hash ID of the associated root Tree object.
+     * @return const std::string& The tree hash.
      */
-    std::string getTimestamp() const;
-    
+    const std::string& getTreeHash() const;
+
     /**
-     * @brief Returns the file content hash (BLOB).
-     * @return std::string Content hash.
+     * @brief Returns the hash IDs of the parent commits.
+     * @return const std::vector<std::string>& The list of parent hashes (sorted).
      */
-    std::string getContentHash() const;
-    
+    const std::vector<std::string>& getParentHashes() const;
+
     /**
-     * @brief Returns the path to the stored file content in the repository.
-     * @return std::string File path.
+     * @brief Returns the author and email string for the commit.
+     * @return const std::string& The author string.
      */
-    std::string getFilePath() const;
+    const std::string& getAuthor() const;
+
+    /**
+     * @brief Returns the UNIX timestamp of the commit creation.
+     * @return std::time_t The timestamp value.
+     */
+    std::time_t getTimestamp() const;
+
+    /**
+     * @brief Returns the user-defined commit message.
+     * @return const std::string& The commit message.
+     */
+    const std::string& getMessage() const;
 };

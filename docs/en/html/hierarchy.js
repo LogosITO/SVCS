@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "Author", "classAuthor.html", null ],
     [ "TreeEntry", "structTreeEntry.html", null ],
     [ "VcsObject", "classVcsObject.html", [
       [ "Blob", "classBlob.html", null ],

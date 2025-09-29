@@ -6,7 +6,9 @@
  * ensuring a uniform way to retrieve metadata (name, description, usage)
  * and execute the command's logic.
  *
- * @copyright 2025 (Your Name or Organization)
+ * @copyright 
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  */
 #pragma once
 

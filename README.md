@@ -1,66 +1,105 @@
 # 📚 SVCS: Simple Version Control System
 
-This SVCS (Simple Version Control System) project is an educational and research effort aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+[![Docs](https://img.shields.io/badge/docs-Doxygen-blue)](link-to-en-docs)  
+
+---
+
+**SVCS (Simple Version Control System)** is an educational and research project aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.
 
 The main goal of the project is to gain a deep understanding of core concepts:
 
-- **Immutable Objects**: Creating and handling objects (Commit, Blob, Tree) based on a single abstract VcsObject class.
-- **Data Integrity**: Applying cryptographic hashing (presumably SHA-1) for data identification and verification.
-- **Clean Architecture**: Implementing OOP principles, inheritance, polymorphism, and separation of concerns.
+- **Immutable Objects:** Creating and handling objects (`Commit`, `Blob`, `Tree`) based on a single abstract `VcsObject` class.  
+- **Data Integrity:** Applying cryptographic hashing (**SHA-256**) for data identification and verification.  
+- **Clean Architecture:** Implementing OOP principles, inheritance, polymorphism, and separation of concerns.  
 
-## 🚀 Current Project Status: Core Stability Achieved
+---
 
-The project has achieved a critical milestone by resolving low-level memory issues, ensuring a stable foundation for future development.
+## 🚀 Current Project Status: Core Functionality Stable
 
-### Major Achievements:
+The project has evolved beyond initial memory stability to a functionally robust core.  
+The primary object model (`Blob`, `Tree`, `Commit`) is complete, and a basic command-line interface is now operational, supported by an event-driven logging system.
 
-- **Memory Safety Confirmed**: Successfully resolved the complex architectural issue involving premature virtual function calls (`Repository::notify`) during object construction, which previously caused SIGSEGV and "Conditional jump on uninitialised value" errors.
-- **Valgrind Clean**: The core project is now free of critical memory errors and leaks, ensuring development is predictable and robust.
-- **Repository Initialization**: The mechanism for creating the basic repository structure (`.svcs/refs`, `.svcs/objects`) is fully implemented and stable.
-- **Index Logic Complete**: The entire foundation and core logic of the Index class are implemented.
+### Major Achievements
+- ✅ **Complete Object Model:** `Blob`, `Tree`, and `Commit` are fully implemented and stable.  
+- ✅ **Operational CLI:** A stable command-line interface for user interaction.  
+- ✅ **Event-Driven Logger:** A flexible logging system implemented with the *EventBus* pattern.  
+- ✅ **Memory Safety:** Free of critical memory errors and leaks (confirmed with Valgrind).  
+- ✅ **Strong Data Integrity:** Repository objects are hashed and verified using **SHA-256**.  
+
+---
 
 ## 🏗 Key Implemented Components
 
-The system's foundational components are stable and operational:
+| Component     | Purpose                                       | Status  |
+|---------------|-----------------------------------------------|---------|
+| Repository    | Root object, manages paths and core components | Stable  |
+| ObjectStorage | Saving, loading, and managing VCS objects     | Stable  |
+| Index         | Tracks files prepared for commit (Staging Area) | Stable |
+| Blob          | Stores file content (hashing/compression)     | Stable  |
+| Tree          | Represents the directory structure            | Stable  |
+| Commit        | Finalizes repository state with metadata      | Stable  |
+| CLI           | Command-line interface for user interaction   | Stable  |
+| EventBus      | Implements the Subject/Observer pattern       | Stable  |
+| Logger        | Event-driven logging via EventBus             | Stable  |
 
-| Component | Purpose | Status |
-|-----------|---------|--------|
-| Repository | Root object, manages paths and core components | Stable |
-| ObjectStorage | Saving, loading, and managing VCS objects | Stable |
-| Index (Staging Area) | Tracks files prepared for commit | Ready |
-| Blob | Stores file content (hashing/compression) | Ready |
-| Subject/Observer | Pattern for notifying observers of events (success, errors) | Stable |
+---
 
-## ✨ Index (Staging Area) Functionality
+## 🛠️ Tools and Technologies
 
-The Index class is responsible for the staging area and performs the following key tasks:
+- **C++** — core implementation language for performance and control.  
+- **CMake** — cross-platform build system.  
+- **Doxygen** — generates a comprehensive API reference.  
+- **Google Test** — unit and functional testing framework.  
 
-- **File Staging (`stage_file`)**: Adds a file to the index. This process converts the file content into a Blob object and saves it to the ObjectStorage.
-- **Modification Check (`isFileModified`)**: A smart check that determines if the current working file differs from its entry in the index, based on:
-  - **Existence/Deletion**: Checking if a tracked file was deleted or if an untracked (new) file exists.
-  - **Size**: Detecting changes in file size.
-  - **Modification Time (mtime)**: A fast comparison of the last write time.
-  - **Hash (Content Check)**: If the size or time differs, the Blob hash is recalculated for deep content verification.
-- **Error Handling**: Correctly throws a `std::runtime_error` when attempting to stage an invalid path or a directory.
-- **Persistence**: The saving and loading of the index state to disk are ensured, providing persistence across sessions.
+---
+
+## 🧰 Project Scripts & Usage
+
+Scripts in the `tools/` directory simplify development tasks on Linux/macOS and Windows.  
+
+### Linux / macOS
+
+```bash
+# To set up the environment
+bash tools/setup.sh
+# To build the project
+bash tools/build.sh
+# To run tests
+bash tools/test.sh
+# To install the application
+bash tools/install.sh
+```
+
+### Windows
+
+```bat
+:: To build the project
+tools\build.bat
+:: To run tests
+tools\test.bat
+:: To run tests
+tools\install.bat
+```
+---
 
 ## 🗺️ Next Steps
 
-The immediate focus is stabilizing the final tests for the Index module. Once completed, the project will move to the high-level object structures:
+Future development will expand the feature set:
 
-- **Tree Object**: Implementation of the object representing the directory structure, containing references to Blob and other Tree objects.
-- **Commit Object**: Creation of the object that finalizes the repository state, including a reference to the top-level Tree, author metadata, date, and commit message.
-- **Basic Commit**: Implementation of the core `svcs commit` command logic.
+- Expand CLI commands (`svcs log`, `svcs status`, `svcs checkout`, `svcs branch`)  
+- Branching and merging functionality  
+- Remote repositories (push/pull support)  
+
+---
 
 ## 📖 Documentation (API Reference)
 
-The detailed code documentation for classes and methods, generated by Doxygen, is automatically deployed to GitHub Pages after every update.
+The API documentation (generated by **Doxygen**) is automatically deployed to GitHub Pages:
 
-You can select the documentation interface language:
-
-- **English Version (EN)**: [Go to Documentation (EN)](https://logosito.github.io/SVCS/en/)
-- **Russian Version (RU)**: [Go to Documentation (RU)](https://logosito.github.io/SVCS/ru/)
+- [English Documentation (EN)](https://logosito.github.io/SVCS/en/)  
+- [Russian Documentation (RU)](https://logosito.github.io/SVCS/ru/)  
 
 ## 📝 Author and License
 
-© 2025 LogosITO. This project is distributed under the MIT License.
+##### © 2025 LogosITO. Distributed under the MIT License.

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vcsobject_0',['VcsObject',['../classVcsObject.html',1,'']]]
+  ['nullobserver_0',['NullObserver',['../classNullObserver.html',1,'']]]
 ];

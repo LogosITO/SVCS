@@ -1,9 +1,10 @@
 #include "../include/ObjectStorage.hxx"
-
+#include "../../services/ISubject.hxx"
+#include "../../services/Event.hxx"
 #include "../include/Blob.hxx"
 #include "../include/Tree.hxx"
 #include "../include/Commit.hxx"
-#include "../include/VcsObject.hxx" // Для calculateHash, если он там
+#include "../include/VcsObject.hxx"
 
 #include <zconf.h>
 #include <zlib.h>
@@ -12,34 +13,45 @@
 #include <sstream>
 #include <iostream>
 #include <iterator>
+#include <stdexcept>
 
 namespace fs = std::filesystem;
 
 const size_t CHUNK_SIZE = 16384;
 
-// КРИТИЧЕСКИ ВАЖНО: VcsObject::calculateHash() ДОЛЖЕН быть реализован
-// точно так же, как VcsObject::computeHash (SHA-256, 64 символа),
-// включая использование заголовочной строки ('тип длина\0').
-
-// =========================================================================
-// PUBLIC METHODS
-// =========================================================================
-
-ObjectStorage::ObjectStorage(const std::string& root_path) :
-    // ИСПРАВЛЕНИЕ: Папка должна быть 'objects', а не 'object'
-    objects_dir(fs::path(root_path) / ".svcs" / "objects") {
+ObjectStorage::ObjectStorage(const std::string& root_path, ISubject* subject) :
+    objects_dir(fs::path(root_path) / ".svcs" / "objects"),
+    subject(subject)
+{
     if (!fs::exists(objects_dir)) {
         try {
             fs::create_directories(objects_dir);
+            if (subject) {
+                Event e;
+                e.type = Event::GENERAL_INFO;
+                e.details = "Object storage directory created: " + objects_dir.string();
+                subject->notify(e);
+            }
         } catch (const fs::filesystem_error& e) {
+            if (subject) {
+                Event error_e;
+                error_e.type = Event::FATAL_ERROR;
+                error_e.details = "Failed to initialize object storage: " + std::string(e.what());
+                subject->notify(error_e);
+            }
             throw std::runtime_error("Failed to initialize object storage: " + std::string(e.what()));
         }
     }
 }
 
 std::string ObjectStorage::getObjectPath(const std::string& hash) const {
-    // ИСПРАВЛЕНИЕ: Изменяем ожидаемую длину хеша с 40 (SHA-1) на 64 (SHA-256)
     if (hash.length() != 64) {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Invalid hash length for object path! Expected 64 characters (SHA-256). Hash: " + hash;
+            subject->notify(error_e);
+        }
         throw std::runtime_error("Invalid hash length for object path! Expected 64 characters (SHA-256).");
     }
 
@@ -51,34 +63,70 @@ std::string ObjectStorage::getObjectPath(const std::string& hash) const {
 }
 
 bool ObjectStorage::saveObject(const VcsObject& obj) const {
-    // 1. Создание полного содержимого (должно совпадать с тем, что использовалось для obj.getHashId())
     std::string raw_data = obj.serialize();
-    // VcsObject::calculateHash должен был быть вызван с этим же заголовком!
     std::string header = obj.getType() + " " + std::to_string(raw_data.length()) + '\0';
     std::string final_content = header + raw_data;
 
     std::string hash = obj.getHashId(); 
-    // ИСПРАВЛЕНИЕ: Изменяем ожидаемую длину хеша с 40 (SHA-1) на 64 (SHA-256)
     if (hash.empty() || hash.length() != 64) {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Attempt to save object with invalid hash. Hash: " + (hash.empty() ? "(empty)" : hash.substr(0, 8) + "...");
+            subject->notify(error_e);
+        }
         throw std::runtime_error("Attempt to save object with invalid hash. Check VcsObject constructor and hash length (Expected 64).");
     }
 
-    // 2. Компрессия
-    std::string compressed_data = compress(final_content);
+    std::string compressed_data;
+    try {
+        compressed_data = compress(final_content);
+    } catch (const std::exception& e) {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Compression failed for object " + hash.substr(0, 8) + ": " + e.what();
+            subject->notify(error_e);
+        }
+        throw;
+    }
     
-    // 3. Подготовка и запись файла
     std::string file_path = getObjectPath(hash);
     fs::path dir = fs::path(file_path).parent_path();
     
     if (!fs::exists(dir)) {
-        fs::create_directories(dir);
+        try {
+            fs::create_directories(dir);
+        } catch (const fs::filesystem_error& e) {
+            if (subject) {
+                Event error_e;
+                error_e.type = Event::RUNTIME_ERROR;
+                error_e.details = "Failed to create directory for object " + hash.substr(0, 8) + ": " + std::string(e.what());
+                subject->notify(error_e);
+            }
+            throw std::runtime_error("Failed to create directory for object: " + file_path + ": " + std::string(e.what()));
+        }
     }
 
     std::ofstream ofs(file_path, std::ios::binary | std::ios::trunc);
     if (!ofs) {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Failed to open file for saving object: " + file_path;
+            subject->notify(error_e);
+        }
         throw std::runtime_error("Failed to open file for saving object: " + file_path);
     }
     ofs.write(compressed_data.data(), compressed_data.size());
+
+    if (subject) {
+        Event e;
+        e.type = Event::OBJECT_WRITE_SUCCESS;
+        e.details = "Object saved: " + hash.substr(0, 8) + " type=" + obj.getType() + " size=" + std::to_string(raw_data.length());
+        subject->notify(e);
+    }
+
     return true;
 }
 
@@ -87,60 +135,92 @@ std::unique_ptr<VcsObject> ObjectStorage::loadObject(const std::string& hash) co
 
     std::ifstream ifs(file_path, std::ios::binary);
     if (!ifs) {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Object not found at: " + file_path;
+            subject->notify(error_e);
+        }
         throw std::runtime_error("Object not found at: " + file_path);
     }
 
-    // Чтение всего сжатого контента
     std::string compressed_data((std::istreambuf_iterator<char>(ifs)),
                                  std::istreambuf_iterator<char>());
 
-    // 1. Декомпрессия (должна быть SHA-256)
-    std::string final_content = decompress(compressed_data);
+    std::string final_content;
+    try {
+        final_content = decompress(compressed_data);
+    } catch (const std::exception& e) {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Decompression failed for object " + hash.substr(0, 8) + ": " + e.what();
+            subject->notify(error_e);
+        }
+        throw;
+    }
     
-    // 2. КРИТИЧЕСКАЯ ПРОВЕРКА ЦЕЛОСТНОСТИ:
-    // Хеш должен быть рассчитан на *полном* содержимом.
     std::string calculated_hash = VcsObject::calculateHash(final_content);
     
     if (calculated_hash != hash) {
-        throw std::runtime_error("Object integrity error: Calculated hash mismatch! "
-                             "Expected: " + hash + ", Got: " + calculated_hash + 
-                             ". Content size: " + std::to_string(final_content.length()));
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Object integrity error: Hash mismatch for " + hash.substr(0, 8) + ". Calculated: " + calculated_hash.substr(0, 8);
+            subject->notify(error_e);
+        }
+        throw std::runtime_error("Object integrity error: Calculated hash mismatch!");
     }   
 
-    // 3. Извлечение заголовка и содержимого
     size_t null_byte_pos = final_content.find('\0');
     if (null_byte_pos == std::string::npos) {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Object header missing null terminator for " + hash.substr(0, 8);
+            subject->notify(error_e);
+        }
         throw std::runtime_error("Object header missing null terminator.");
     }
     
     std::string header = final_content.substr(0, null_byte_pos);
     std::string raw_content = final_content.substr(null_byte_pos + 1);
 
-    // 4. Парсинг заголовка
     std::stringstream header_ss(header);
     std::string type_str;
     size_t size_from_header;
     
     if (!(header_ss >> type_str >> size_from_header)) {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Object header format error for " + hash.substr(0, 8) + ". Header: " + header;
+            subject->notify(error_e);
+        }
         throw std::runtime_error("Object header format error: Failed to parse type and size.");
     }
 
-    // 5. ПРОВЕРКА ДЛИНЫ: Убеждаемся, что декомпрессия не повредила данные
     if (size_from_header != raw_content.length()) {
-        throw std::runtime_error("Object integrity error: Content size mismatch. Header size: " + 
-                                std::to_string(size_from_header) + 
-                                ", Actual size: " + std::to_string(raw_content.length()));
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Content size mismatch for " + hash.substr(0, 8) + ". Header size: " + std::to_string(size_from_header) + ", Actual: " + std::to_string(raw_content.length());
+            subject->notify(error_e);
+        }
+        throw std::runtime_error("Object integrity error: Content size mismatch.");
     }
 
-    // 6. Создание объекта
-    return createObjectFromContent(type_str, raw_content);
+    std::unique_ptr<VcsObject> obj = createObjectFromContent(type_str, raw_content);
+
+    if (subject) {
+        Event e;
+        e.type = Event::OBJECT_READ_SUCCESS;
+        e.details = "Object loaded: " + hash.substr(0, 8) + " type=" + type_str;
+        subject->notify(e);
+    }
+
+    return obj;
 }
-
-
-
-// =========================================================================
-// PRIVATE/UTILITY METHODS
-// =========================================================================
 
 std::unique_ptr<VcsObject> ObjectStorage::createObjectFromContent(
     const std::string& type, 
@@ -149,22 +229,24 @@ std::unique_ptr<VcsObject> ObjectStorage::createObjectFromContent(
     if (type == "blob") {
         return std::make_unique<Blob>(content); 
     } else if (type == "tree") {
-        // ИСПРАВЛЕНИЕ: Гарантируем, что объект, возвращаемый deserialize, 
-        // имеет корректный hash_id и корректно перемещается в unique_ptr.
         Tree temp_tree = Tree::deserialize(content);
         return std::make_unique<Tree>(std::move(temp_tree));
     } else if (type == "commit") {
-        // ИСПРАВЛЕНИЕ: Применяем ту же логику для Commit.
         Commit temp_commit = Commit::deserialize(content);
         return std::make_unique<Commit>(std::move(temp_commit));
     } else {
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = "Unknown VCS object type '" + type + "' in database.";
+            subject->notify(error_e);
+        }
         throw std::runtime_error("Unknown VCS object type '" + type + "' in database.");
     }
 }
 
 std::string ObjectStorage::compress(const std::string& data) const {
     z_stream strm = {};
-    // Используем -MAX_WBITS для инициализации без заголовка zlib, как в Git
     auto defi = deflateInit2(&strm, Z_DEFAULT_COMPRESSION, Z_DEFLATED, -MAX_WBITS, 8, Z_DEFAULT_STRATEGY);
     if (defi != Z_OK) {
         throw std::runtime_error("Zlib compression init failed.");
@@ -174,7 +256,7 @@ std::string ObjectStorage::compress(const std::string& data) const {
     strm.avail_in = data.size();
 
     std::string compressed_data;
-    compressed_data.reserve(data.size() * 2); // Резервируем место с запасом
+    compressed_data.reserve(data.size() * 2);
     char out_buffer[CHUNK_SIZE];
     int ret;
 
@@ -189,8 +271,14 @@ std::string ObjectStorage::compress(const std::string& data) const {
     deflateEnd(&strm);
 
     if (ret != Z_STREAM_END) {
-        // Если ret == Z_BUF_ERROR, это обычно не фатально при правильном цикле
-        throw std::runtime_error("Zlib compression failed with error code:" + std::to_string(ret));
+        std::string error_msg = "Zlib compression failed with error code:" + std::to_string(ret);
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = error_msg;
+            subject->notify(error_e);
+        }
+        throw std::runtime_error(error_msg);
     }
     
     return compressed_data;
@@ -199,7 +287,6 @@ std::string ObjectStorage::compress(const std::string& data) const {
 std::string ObjectStorage::decompress(const std::string& compressed_data) const {
     z_stream strm = {};
 
-    // Используем -MAX_WBITS для декомпрессии без заголовка zlib, как в Git
     if (inflateInit2(&strm, -MAX_WBITS) != Z_OK) {
         throw std::runtime_error("Zlib decompression init failed.");
     }
@@ -209,7 +296,6 @@ std::string ObjectStorage::decompress(const std::string& compressed_data) const 
 
     std::string decompressed_data;
 
-    // Резервируем место для оптимизации
     decompressed_data.reserve(compressed_data.size() * 3); 
     char out_buffer[CHUNK_SIZE];
     int ret;
@@ -221,10 +307,16 @@ std::string ObjectStorage::decompress(const std::string& compressed_data) const 
 
         if (ret < 0 && ret != Z_BUF_ERROR && ret != Z_STREAM_END) {
             inflateEnd(&strm);
-            throw std::runtime_error("Zlib decompression failed with error code: " + std::to_string(ret));
+            std::string error_msg = "Zlib decompression failed with error code: " + std::to_string(ret);
+            if (subject) {
+                Event error_e;
+                error_e.type = Event::RUNTIME_ERROR;
+                error_e.details = error_msg;
+                subject->notify(error_e);
+            }
+            throw std::runtime_error(error_msg);
         }
         
-        // Добавляем только реально заполненные байты
         decompressed_data.append(out_buffer, CHUNK_SIZE - strm.avail_out);
 
     } while (ret == Z_OK);
@@ -232,8 +324,24 @@ std::string ObjectStorage::decompress(const std::string& compressed_data) const 
     inflateEnd(&strm);
 
     if (ret != Z_STREAM_END) {
-        throw std::runtime_error("Zlib decompression failed: Corrupt or incomplete stream (ret=" + std::to_string(ret) + ").");
+        std::string error_msg = "Zlib decompression failed: Corrupt or incomplete stream (ret=" + std::to_string(ret) + ").";
+        if (subject) {
+            Event error_e;
+            error_e.type = Event::RUNTIME_ERROR;
+            error_e.details = error_msg;
+            subject->notify(error_e);
+        }
+        throw std::runtime_error(error_msg);
     }
 
     return decompressed_data;
+}
+
+bool ObjectStorage::objectExists(const std::string& hash) const {
+    try {
+        std::string file_path = getObjectPath(hash);
+        return fs::exists(file_path);
+    } catch (const std::exception& e) {
+        return false;
+    }
 }

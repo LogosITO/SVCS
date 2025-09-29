@@ -39,7 +39,9 @@ var NAVTREE =
       [ "Члены классов", "functions.html", [
         [ "Указатель", "functions.html", null ],
         [ "Функции", "functions_func.html", null ],
-        [ "Переменные", "functions_vars.html", null ]
+        [ "Переменные", "functions_vars.html", null ],
+        [ "Перечисления", "functions_enum.html", null ],
+        [ "Элементы перечислений", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Файлы", "files.html", [

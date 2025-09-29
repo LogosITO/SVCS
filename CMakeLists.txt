@@ -14,6 +14,15 @@ find_package(OpenSSL REQUIRED)
 find_package(ZLIB REQUIRED)
 
 add_subdirectory(core)
+add_subdirectory(services) 
+
+target_include_directories(svcs_core PUBLIC
+    ${CMAKE_SOURCE_DIR}/services
+)
+
+target_link_libraries(svcs_core PUBLIC
+    svcs_services
+)
 
 enable_testing()
 

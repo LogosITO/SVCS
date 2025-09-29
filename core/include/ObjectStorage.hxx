@@ -13,11 +13,13 @@
 #include <filesystem>
 #include <string>
 #include <memory>
+#include "../../services/ISubject.hxx"
 
 class ObjectStorage {
 private:
     /// @brief The base path to the object directory (e.g., ".svcs/objects").
     const std::filesystem::path objects_dir;
+    ISubject* subject;
 
     /**
      * @brief Compresses data using Zlib's raw deflate standard (Git format).
@@ -51,8 +53,11 @@ public:
     /**
      * @brief Constructor for ObjectStorage.
      * @param root_path The root path of the repository (e.g., the directory containing ".svcs").
+     * @param subject Pointer to the ISubject interface for event logging.
      */
-    ObjectStorage(const std::string& root_path);
+    ObjectStorage(const std::string& root_path, ISubject* subject = nullptr);
+
+    void setSubject(ISubject* subj) { subject = subj; };
 
     /**
      * @brief Forms the full filesystem path for an object based on its hash.
@@ -78,9 +83,7 @@ public:
      * @return std::unique_ptr<VcsObject> The restored object instance.
      * @throw std::runtime_error if the object is not found, corrupted, or invalid.
      */
-    std::unique_ptr<VcsObject> loadObject(const std::string& hash) const;
-
-    // --- Convenience and Utility Methods ---
+    virtual std::unique_ptr<VcsObject> loadObject(const std::string& hash) const;
 
     /**
      * @brief Checks if an object with the given hash exists on disk.

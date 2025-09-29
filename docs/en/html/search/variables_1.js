@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['file_5fpath_0',['file_path',['../structIndexEntry.html#ac34233bc45be2fc4cc4c4d6f3ef86173',1,'IndexEntry']]],
-  ['file_5fsize_1',['file_size',['../structIndexEntry.html#a10582a2e090f7c30885f54b42da08048',1,'IndexEntry']]]
+  ['details_0',['details',['../structEvent.html#afedba76038909cf242d7642da3b7bfd9',1,'Event']]]
 ];

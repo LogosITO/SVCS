@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7eindex_0',['~Index',['../classIndex.html#a76b7ed4e9cb0b1540264567f84896032',1,'Index']]],
-  ['_7evcsobject_1',['~VcsObject',['../classVcsObject.html#a866849775b4541573b40b2b85be20df5',1,'VcsObject']]]
+  ['update_0',['update',['../classIObserver.html#af15fbd52637f4bf0225fde86051d8354',1,'IObserver::update()'],['../classManualMockObserver.html#a69920f02d27bbea5a79566d616d844fd',1,'ManualMockObserver::update()'],['../classNullObserver.html#a8866a842843f40e6a1a92b27e7148ef7',1,'NullObserver::update()']]]
 ];

@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md2',1,'']]],
-  ['index_1',['Index',['../classIndex.html',1,'Index'],['../classIndex.html#a45a83775032c0afb0ea457ced960f55b',1,'Index::Index()']]],
-  ['indexentry_2',['IndexEntry',['../structIndexEntry.html',1,'']]],
-  ['indextest_3',['IndexTest',['../classIndexTest.html',1,'']]],
-  ['isfilemodified_4',['isFileModified',['../classIndex.html#ae12163a4349daa632044ff28c2818125',1,'Index']]]
+  ['hash_5fid_0',['hash_id',['../structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77',1,'TreeEntry::hash_id'],['../classVcsObject.html#a6c9fd4ab39bb9781c5399da07305d28d',1,'VcsObject::hash_id']]]
 ];

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Класс IObserver</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classIObserver.html','','classIObserver-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс IObserver<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Observer Interface.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="IObserver_8hxx_source.html">IObserver.hxx</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:IObserver:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classIObserver.png" usemap="#IObserver_map" alt=""/>
+  <map id="IObserver_map" name="IObserver_map">
+<area href="classLogger.html" title="Concrete Observer responsible for message output." alt="Logger" shape="rect" coords="0,56,139,80"/>
+<area href="classManualMockObserver.html" alt="ManualMockObserver" shape="rect" coords="149,56,288,80"/>
+<area href="classNullObserver.html" alt="NullObserver" shape="rect" coords="298,56,437,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a1306da2dbaf55620130af5586e3a0373" id="r_a1306da2dbaf55620130af5586e3a0373"><td class="memItemLeft" align="right" valign="top"><a id="a1306da2dbaf55620130af5586e3a0373" name="a1306da2dbaf55620130af5586e3a0373"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IObserver</b> ()=default</td></tr>
+<tr class="memdesc:a1306da2dbaf55620130af5586e3a0373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default virtual destructor. <br /></td></tr>
+<tr class="memitem:a325451b0d0100feaad6f683850a616dc" id="r_a325451b0d0100feaad6f683850a616dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a325451b0d0100feaad6f683850a616dc">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event)=0</td></tr>
+<tr class="memdesc:a325451b0d0100feaad6f683850a616dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called by the subject to notify the observer.  <br /></td></tr>
+<tr class="memitem:af15fbd52637f4bf0225fde86051d8354" id="r_af15fbd52637f4bf0225fde86051d8354"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af15fbd52637f4bf0225fde86051d8354">update</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event)=0</td></tr>
+<tr class="memdesc:af15fbd52637f4bf0225fde86051d8354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to update the observer status.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Observer Interface. </p>
+<ul>
+<li>Any class that wants to receive notifications from the core (<a class="el" href="classRepository.html">Repository</a>, <a class="el" href="classObjectStorage.html">ObjectStorage</a>) must implement this interface. </li>
+</ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a325451b0d0100feaad6f683850a616dc" name="a325451b0d0100feaad6f683850a616dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a325451b0d0100feaad6f683850a616dc">&#9670;&#160;</a></span>notify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IObserver::notify </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEvent.html">Event</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method called by the subject to notify the observer. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Structure <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> with information about what happened. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="classLogger.html#a96a2b88ee6d81d3ecf0fed3a6291c9a2">Logger</a>, <a class="el" href="classManualMockObserver.html#a2d0cef17d9225d64ce23dbf3451bb610">ManualMockObserver</a> и <a class="el" href="classNullObserver.html#aeb635126b1e4270cb50229b157525270">NullObserver</a>.</p>
+
+</div>
+</div>
+<a id="af15fbd52637f4bf0225fde86051d8354" name="af15fbd52637f4bf0225fde86051d8354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af15fbd52637f4bf0225fde86051d8354">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IObserver::update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEvent.html">Event</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method to update the observer status. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Structure <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> with information about what happened. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="classManualMockObserver.html#a69920f02d27bbea5a79566d616d844fd">ManualMockObserver</a> и <a class="el" href="classNullObserver.html#a8866a842843f40e6a1a92b27e7148ef7">NullObserver</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>services/<a class="el" href="IObserver_8hxx_source.html">IObserver.hxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="classIObserver.html">IObserver</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

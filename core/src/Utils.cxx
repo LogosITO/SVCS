@@ -1,6 +1,7 @@
 #include "../include/Utils.hxx"
 
 #include <fstream>
+#include <sstream>
 
 std::string read_file_to_string(const fs::path& full_path) {
     std::ifstream file(full_path, std::ios::in | std::ios::binary | std::ios::ate);

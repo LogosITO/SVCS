@@ -7,6 +7,7 @@ set(ALL_TEST_SOURCES
     commit_test.cxx
     storage_test.cxx
     index_test.cxx
+    repository_test.cxx
 )
 
 add_executable(svcs_unit_tests ${ALL_TEST_SOURCES})

@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['save_0',['save',['../classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21',1,'Index']]],
-  ['saveobject_1',['saveObject',['../classObjectStorage.html#acab6226c60b2979078001d539f56de3b',1,'ObjectStorage::saveObject()'],['../classMockObjectStorage.html#a0d17e41ae6b3787ed45aad9b75ea0518',1,'MockObjectStorage::saveObject()']]],
-  ['serialize_2',['serialize',['../classBlob.html#acab4226b36adcfa257c94b96b40c3510',1,'Blob::serialize()'],['../classCommit.html#a53f442e035ddbdb18d0635bbac2709b5',1,'Commit::serialize()'],['../classTree.html#aae4f965e5566b0addf5467ba5db10e3f',1,'Tree::serialize()'],['../classVcsObject.html#a987c76bf8ad51d267297cc6ba7da1eb7',1,'VcsObject::serialize()'],['../classTestableObject.html#ae79c1d60869dedd6c298a56e8e9f2309',1,'TestableObject::serialize()']]],
-  ['simple_20version_20control_20system_3',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
-  ['stage_5ffile_4',['stage_file',['../classIndex.html#a37a1115070ac00586a9b69cf9c26b115',1,'Index']]],
-  ['status_20and_20next_20steps_5',['🛠 Project Status and Next Steps',['../md_README.html#autotoc_md6',1,'']]],
-  ['steps_6',['🛠 Project Status and Next Steps',['../md_README.html#autotoc_md6',1,'']]],
-  ['svcs_3a_20simple_20version_20control_20system_7',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
-  ['system_8',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]]
+  ['reference_0',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md8',1,'']]],
+  ['removeentry_1',['removeEntry',['../classTree.html#a85035a45ff8778df5bb8be32f57bf232',1,'Tree']]],
+  ['repository_2',['Repository',['../classRepository.html',1,'Repository'],['../classRepository.html#a4daef56a20ce5925937e57ea5b77548e',1,'Repository::Repository()']]],
+  ['repository_2ehxx_3',['Repository.hxx',['../Repository_8hxx.html',1,'']]],
+  ['repository_5finit_5fsuccess_4',['REPOSITORY_INIT_SUCCESS',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04',1,'Event']]],
+  ['repositorytest_5',['RepositoryTest',['../classRepositoryTest.html',1,'']]],
+  ['runtime_5ferror_6',['RUNTIME_ERROR',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c',1,'Event']]]
 ];

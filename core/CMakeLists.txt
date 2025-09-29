@@ -6,6 +6,7 @@ set(CORE_SOURCES
     src/ObjectStorage.cxx
     src/Utils.cxx
     src/Index.cxx
+    src/Repository.cxx
 )
 
 set(CORE_HEADERS
@@ -16,6 +17,7 @@ set(CORE_HEADERS
     include/ObjectStorage.hxx
     include/Utils.hxx
     include/Utils.cxx
+    include/Repository.hxx
 )
 
 

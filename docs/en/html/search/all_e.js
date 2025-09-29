@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['reference_0',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md8',1,'']]],
-  ['removeentry_1',['removeEntry',['../classTree.html#a85035a45ff8778df5bb8be32f57bf232',1,'Tree']]]
+  ['project_20status_20and_20next_20steps_0',['🛠 Project Status and Next Steps',['../md_README.html#autotoc_md6',1,'']]]
 ];

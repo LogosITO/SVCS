@@ -113,7 +113,7 @@ bool Index::isFileModified(const fs::path& file_path) const {
         using std::chrono::time_point_cast;
         using std::chrono::seconds;
 
-        bool time_differs = time_point_cast<seconds>(current_mtime) != time_point_cast<seconds>(entry->last_modified);
+        bool time_differs = current_mtime != entry->last_modified; 
 
         if (time_differs) {
             // Если время изменилось, проверяем хеш

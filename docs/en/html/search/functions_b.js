@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['testableobject_0',['TestableObject',['../classTestableObject.html#ad209c046fc6daadbd7ca43387707da00',1,'TestableObject']]],
-  ['tree_1',['Tree',['../classTree.html#af660984821d0ae2f73725ee33c73ad20',1,'Tree']]]
+  ['save_0',['save',['../classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21',1,'Index']]],
+  ['saveobject_1',['saveObject',['../classObjectStorage.html#acab6226c60b2979078001d539f56de3b',1,'ObjectStorage::saveObject()'],['../classMockObjectStorage.html#a0d17e41ae6b3787ed45aad9b75ea0518',1,'MockObjectStorage::saveObject()']]],
+  ['serialize_2',['serialize',['../classBlob.html#acab4226b36adcfa257c94b96b40c3510',1,'Blob::serialize()'],['../classCommit.html#a53f442e035ddbdb18d0635bbac2709b5',1,'Commit::serialize()'],['../classTree.html#aae4f965e5566b0addf5467ba5db10e3f',1,'Tree::serialize()'],['../classVcsObject.html#a987c76bf8ad51d267297cc6ba7da1eb7',1,'VcsObject::serialize()'],['../classTestableObject.html#ae79c1d60869dedd6c298a56e8e9f2309',1,'TestableObject::serialize()']]],
+  ['stage_5ffile_3',['stage_file',['../classIndex.html#a37a1115070ac00586a9b69cf9c26b115',1,'Index']]]
 ];

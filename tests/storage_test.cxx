@@ -22,17 +22,35 @@ Blob create_blob(const std::string& content) {
     return Blob(content);
 }
 
+class MockSubject : public ISubject {
+public:
+    void notify(const Event& event) override { } 
+    void attach(IObserver* observer) override { } 
+    void detach(IObserver* observer) override { }
+    
+    virtual ~MockSubject() = default; 
+};
+
+class NullObserver : public IObserver {
+public:
+    void update(const Event& event) override {}
+    void notify(const Event& event) override {} 
+};
+
 class ObjectStorageTest : public ::testing::Test {
 protected:
     ObjectStorage* storage;
+    MockSubject* mock_subject;
 
     void SetUp() override {
+        mock_subject = new MockSubject();
         fs::create_directories(OBJECTS_DIR);
-        storage = new ObjectStorage(TEST_ROOT);
+        storage = new ObjectStorage(TEST_ROOT, mock_subject);
     }
 
     void TearDown() override {
         delete storage;
+        delete mock_subject;
         fs::remove_all(TEST_ROOT);
     }
     
@@ -41,6 +59,7 @@ protected:
         return fs::exists(path);
     }
 };
+
 
 TEST_F(ObjectStorageTest, SavesObjectToCorrectPath) {
     Blob blob = create_blob("Hello SVCS");

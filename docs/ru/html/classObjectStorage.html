@@ -105,20 +105,22 @@ $(function(){initNavTree('classObjectStorage.html','','classObjectStorage-member
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:ac8f6df57342812352bede96e4ceb83f3" id="r_ac8f6df57342812352bede96e4ceb83f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8f6df57342812352bede96e4ceb83f3">ObjectStorage</a> (const std::string &amp;root_path)</td></tr>
-<tr class="memdesc:ac8f6df57342812352bede96e4ceb83f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classObjectStorage.html">ObjectStorage</a>.  <br /></td></tr>
+<tr class="memitem:a7ea8230205caa5ba50b121741d97ca26" id="r_a7ea8230205caa5ba50b121741d97ca26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ea8230205caa5ba50b121741d97ca26">ObjectStorage</a> (const std::string &amp;root_path, <a class="el" href="classISubject.html">ISubject</a> *subject=nullptr)</td></tr>
+<tr class="memdesc:a7ea8230205caa5ba50b121741d97ca26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classObjectStorage.html">ObjectStorage</a>.  <br /></td></tr>
+<tr class="memitem:a43822e7263787f3161b0f6739cb313e5" id="r_a43822e7263787f3161b0f6739cb313e5"><td class="memItemLeft" align="right" valign="top"><a id="a43822e7263787f3161b0f6739cb313e5" name="a43822e7263787f3161b0f6739cb313e5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a class="el" href="classISubject.html">ISubject</a> *subj)</td></tr>
 <tr class="memitem:a3bdb2110012cbe733cdeb4d438b583d0" id="r_a3bdb2110012cbe733cdeb4d438b583d0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bdb2110012cbe733cdeb4d438b583d0">getObjectPath</a> (const std::string &amp;hash) const</td></tr>
 <tr class="memdesc:a3bdb2110012cbe733cdeb4d438b583d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms the full filesystem path for an object based on its hash.  <br /></td></tr>
 <tr class="memitem:acab6226c60b2979078001d539f56de3b" id="r_acab6226c60b2979078001d539f56de3b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acab6226c60b2979078001d539f56de3b">saveObject</a> (const <a class="el" href="classVcsObject.html">VcsObject</a> &amp;obj) const</td></tr>
 <tr class="memdesc:acab6226c60b2979078001d539f56de3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves a <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> to the object database.  <br /></td></tr>
-<tr class="memitem:ad287a079892332b3a6d71b10275b925f" id="r_ad287a079892332b3a6d71b10275b925f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classVcsObject.html">VcsObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad287a079892332b3a6d71b10275b925f">loadObject</a> (const std::string &amp;hash) const</td></tr>
+<tr class="memitem:ad287a079892332b3a6d71b10275b925f" id="r_ad287a079892332b3a6d71b10275b925f"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classVcsObject.html">VcsObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad287a079892332b3a6d71b10275b925f">loadObject</a> (const std::string &amp;hash) const</td></tr>
 <tr class="memdesc:ad287a079892332b3a6d71b10275b925f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an object from the disk by its hash ID.  <br /></td></tr>
 <tr class="memitem:abbc8d8426ae0f500aa7a6dba213e0bed" id="r_abbc8d8426ae0f500aa7a6dba213e0bed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbc8d8426ae0f500aa7a6dba213e0bed">objectExists</a> (const std::string &amp;hash) const</td></tr>
 <tr class="memdesc:abbc8d8426ae0f500aa7a6dba213e0bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if an object with the given hash exists on disk.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
-<a id="ac8f6df57342812352bede96e4ceb83f3" name="ac8f6df57342812352bede96e4ceb83f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8f6df57342812352bede96e4ceb83f3">&#9670;&#160;</a></span>ObjectStorage()</h2>
+<a id="a7ea8230205caa5ba50b121741d97ca26" name="a7ea8230205caa5ba50b121741d97ca26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea8230205caa5ba50b121741d97ca26">&#9670;&#160;</a></span>ObjectStorage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,8 +128,12 @@ $(function(){initNavTree('classObjectStorage.html','','classObjectStorage-member
         <tr>
           <td class="memname">ObjectStorage::ObjectStorage </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>root_path</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>root_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classISubject.html">ISubject</a> *</td>          <td class="paramname"><span class="paramname"><em>subject</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -136,6 +142,7 @@ $(function(){initNavTree('classObjectStorage.html','','classObjectStorage-member
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">root_path</td><td>The root path of the repository (e.g., the directory containing ".svcs"). </td></tr>
+    <tr><td class="paramname">subject</td><td>Pointer to the <a class="el" href="classISubject.html" title="Subject (Publisher) Interface.">ISubject</a> interface for event logging. </td></tr>
   </table>
   </dd>
 </dl>
@@ -174,6 +181,9 @@ $(function(){initNavTree('classObjectStorage.html','','classObjectStorage-member
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classVcsObject.html">VcsObject</a> &gt; ObjectStorage::loadObject </td>
@@ -182,6 +192,11 @@ $(function(){initNavTree('classObjectStorage.html','','classObjectStorage-member
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Loads an object from the disk by its hash ID. </p>
@@ -198,6 +213,8 @@ $(function(){initNavTree('classObjectStorage.html','','classObjectStorage-member
   </table>
   </dd>
 </dl>
+
+<p>Переопределяется в <a class="el" href="classMockObjectStorage.html#a6710861deb4109e3c4a716ac9b38fe66">MockObjectStorage</a>.</p>
 
 </div>
 </div>

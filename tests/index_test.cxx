@@ -29,7 +29,7 @@ public:
     
     // Используем реальный временный путь вместо /mock/path
     MockObjectStorage(const fs::path& temp_dir) 
-        : ObjectStorage(temp_dir / ".svcs" / "objects", &g_mock_subject)  
+        : ObjectStorage((temp_dir / ".svcs" / "objects").string(), &g_mock_subject)  
     {}  
     
     bool saveObject(const VcsObject& object) const override {

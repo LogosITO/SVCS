@@ -5,7 +5,7 @@
 
 const size_t HASH_BYTE_SIZE = 32;
 
-inline bool TreeEntry::operator<(const TreeEntry &other) const {
+bool TreeEntry::operator<(const TreeEntry &other) const {
     return name < other.name;
 }
 

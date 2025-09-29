@@ -10,7 +10,7 @@ set(CLI_HEADERS
     include/InitCommand.hxx
     include/CommandFactory.hxx
 )
-add_executable(svcs_cli ${CLI_SOURCES})
+add_executable(svcs ${CLI_SOURCES})
 
 set_target_properties(svcs_core PROPERTIES
     CXX_STANDARD 17
@@ -19,12 +19,12 @@ set_target_properties(svcs_core PROPERTIES
     OUTPUT_NAME "svcs"
 )
 
-target_include_directories(svcs_cli PRIVATE include)
-target_include_directories(svcs_cli PRIVATE ../core/include)
+target_include_directories(svcs PRIVATE include)
+target_include_directories(svcs PRIVATE ../core/include)
 
-target_link_libraries(svcs_cli 
+target_link_libraries(svcs
     svcs_core
     svcs_services
 )
 
-install(TARGETS svcs_cli DESTINATION bin)
+install(TARGETS svcs DESTINATION bin)

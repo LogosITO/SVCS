@@ -11,7 +11,7 @@ Repository::~Repository() {
 }
 
 
-Repository::Repository(const std::string& rpath) 
+Repository::Repository(const std::filesystem::path& rpath) 
     : observers(), 
       root_path(rpath)
 {

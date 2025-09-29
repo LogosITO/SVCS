@@ -54,7 +54,7 @@ public:
      * @brief Constructs the repository manager.
      * @param rpath The root directory of the repository.
      */
-    Repository(const std::string& rpath);   
+    Repository(const std::filesystem::path& rpath);   
 
     /**
      * @brief Initializes the repository's internal dependencies.

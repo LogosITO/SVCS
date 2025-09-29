@@ -1,7 +1,12 @@
 #include "../include/Blob.hxx"
 
 Blob::Blob(const std::string& raw_data) : data(raw_data) {
-    computeHash(serialize());
+    std::string raw_content = this->serialize(); 
+    std::string full_content = this->getType() + " " + 
+                               std::to_string(raw_content.length()) + 
+                               '\0' + 
+                               raw_content;
+    this->hash_id = calculateHash(full_content);
 }
 
 std::string Blob::getType() const {

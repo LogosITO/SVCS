@@ -22,17 +22,16 @@ std::string VcsObject::getHashId() const {
 }
 
 std::string VcsObject::calculateHash(const std::string& content) {
-    unsigned char digest[SHA_DIGEST_LENGTH];
-
-    SHA1((const unsigned char*)content.c_str(), content.length(), digest);
-
-    std::stringstream ss;
-    ss << std::hex << std::noshowbase << std::setfill('0');
+    unsigned char hash[SHA256_DIGEST_LENGTH];
     
-    for (int i = 0; i < SHA_DIGEST_LENGTH; ++i) {
-        ss << std::setw(2) << (int)digest[i];
+    SHA256((const unsigned char*) content.data(), content.length(), hash);
+    
+    std::stringstream ss;
+    ss << std::hex << std::setfill('0');
+    
+    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
+        ss << std::setw(2) << (int) hash[i];
     }
-
     return ss.str();
 }
 

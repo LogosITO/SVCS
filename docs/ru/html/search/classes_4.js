@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vcsobject_0',['VcsObject',['../classVcsObject.html',1,'']]]
+  ['objectstorage_0',['ObjectStorage',['../classObjectStorage.html',1,'']]],
+  ['objectstoragetest_1',['ObjectStorageTest',['../classObjectStorageTest.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['technologies_0',['🚀 Build and Technologies',['../md_README.html#autotoc_md2',1,'']]]
+  ['project_20status_20and_20next_20steps_0',['🛠 Project Status and Next Steps',['../md_README.html#autotoc_md6',1,'']]]
 ];

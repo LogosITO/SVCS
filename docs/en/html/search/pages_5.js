@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['project_20status_0',['🛠 Project Status',['../md_README.html#autotoc_md6',1,'']]]
+  ['key_20implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md2',1,'']]]
 ];

@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Класс Index</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classIndex.html','','classIndex-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс Index</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Manages the Staging Area (<a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a>) of the VCS repository.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Index_8hxx_source.html">Index.hxx</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a45a83775032c0afb0ea457ced960f55b" id="r_a45a83775032c0afb0ea457ced960f55b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45a83775032c0afb0ea457ced960f55b">Index</a> (const fs::path &amp;vcs_root_path, const fs::path &amp;repo_root_path, <a class="el" href="classObjectStorage.html">ObjectStorage</a> &amp;storage)</td></tr>
+<tr class="memdesc:a45a83775032c0afb0ea457ced960f55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> manager, setting up paths and loading the index.  <br /></td></tr>
+<tr class="memitem:a76b7ed4e9cb0b1540264567f84896032" id="r_a76b7ed4e9cb0b1540264567f84896032"><td class="memItemLeft" align="right" valign="top"><a id="a76b7ed4e9cb0b1540264567f84896032" name="a76b7ed4e9cb0b1540264567f84896032"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Index</b> ()</td></tr>
+<tr class="memdesc:a76b7ed4e9cb0b1540264567f84896032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:aa81beeb1a095d360a8c4bba27acd6af1" id="r_aa81beeb1a095d360a8c4bba27acd6af1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa81beeb1a095d360a8c4bba27acd6af1">add_entry</a> (const <a class="el" href="structIndexEntry.html">IndexEntry</a> &amp;entry)</td></tr>
+<tr class="memdesc:aa81beeb1a095d360a8c4bba27acd6af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds or updates an entry in the staging area.  <br /></td></tr>
+<tr class="memitem:acb9b498b11708bbf4394dbf485bcc6b4" id="r_acb9b498b11708bbf4394dbf485bcc6b4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structIndexEntry.html">IndexEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb9b498b11708bbf4394dbf485bcc6b4">getEntry</a> (const fs::path &amp;file_path) const</td></tr>
+<tr class="memdesc:acb9b498b11708bbf4394dbf485bcc6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an entry from the index by its relative file path.  <br /></td></tr>
+<tr class="memitem:a78085a2aae66dd69d50ded6d856462c6" id="r_a78085a2aae66dd69d50ded6d856462c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78085a2aae66dd69d50ded6d856462c6">load</a> ()</td></tr>
+<tr class="memdesc:a78085a2aae66dd69d50ded6d856462c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the index entries from the index file on disk (temporary text format).  <br /></td></tr>
+<tr class="memitem:a4c99f86d04fd91dc90727b9a17e60a21" id="r_a4c99f86d04fd91dc90727b9a17e60a21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c99f86d04fd91dc90727b9a17e60a21">save</a> () const</td></tr>
+<tr class="memdesc:a4c99f86d04fd91dc90727b9a17e60a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the current state of the index entries to the index file (temporary text format).  <br /></td></tr>
+<tr class="memitem:ae12163a4349daa632044ff28c2818125" id="r_ae12163a4349daa632044ff28c2818125"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae12163a4349daa632044ff28c2818125">isFileModified</a> (const fs::path &amp;file_path) const</td></tr>
+<tr class="memdesc:ae12163a4349daa632044ff28c2818125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a file in the working directory has been modified since it was last staged.  <br /></td></tr>
+<tr class="memitem:a37a1115070ac00586a9b69cf9c26b115" id="r_a37a1115070ac00586a9b69cf9c26b115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37a1115070ac00586a9b69cf9c26b115">stage_file</a> (const fs::path &amp;relative_path)</td></tr>
+<tr class="memdesc:a37a1115070ac00586a9b69cf9c26b115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a file by creating a <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> object, saving it to storage, and updating the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> entry (Core logic of 'svcs add').  <br /></td></tr>
+<tr class="memitem:ad10592c0ea7291c0a8b2d8b593b21a85" id="r_ad10592c0ea7291c0a8b2d8b593b21a85"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad10592c0ea7291c0a8b2d8b593b21a85">createTreeObject</a> ()</td></tr>
+<tr class="memdesc:ad10592c0ea7291c0a8b2d8b593b21a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the hierarchical <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> structure based on the current staged entries and saves the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> objects to <a class="el" href="classObjectStorage.html">ObjectStorage</a>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Manages the Staging Area (<a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a>) of the VCS repository. </p>
+<ul>
+<li>The <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> class is responsible for reading and writing the list of staged files to the index file (.svcs/index), managing the 'svcs add' operation, and providing the necessary structure for commit creation. </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a45a83775032c0afb0ea457ced960f55b" name="a45a83775032c0afb0ea457ced960f55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45a83775032c0afb0ea457ced960f55b">&#9670;&#160;</a></span>Index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Index::Index </td>
+          <td>(</td>
+          <td class="paramtype">const fs::path &amp;</td>          <td class="paramname"><span class="paramname"><em>vcs_root_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fs::path &amp;</td>          <td class="paramname"><span class="paramname"><em>repo_root_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classObjectStorage.html">ObjectStorage</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>storage</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> manager, setting up paths and loading the index. </p>
+<ul>
+<li><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vcs_root_path</td><td>The path to the VCS control directory (e.g., .svcs). </td></tr>
+    <tr><td class="paramname">repo_root_path</td><td>The path to the repository's working directory root. </td></tr>
+    <tr><td class="paramname">storage</td><td>Reference to the <a class="el" href="classObjectStorage.html">ObjectStorage</a> instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="aa81beeb1a095d360a8c4bba27acd6af1" name="aa81beeb1a095d360a8c4bba27acd6af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81beeb1a095d360a8c4bba27acd6af1">&#9670;&#160;</a></span>add_entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Index::add_entry </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structIndexEntry.html">IndexEntry</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>entry</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds or updates an entry in the staging area. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>The <a class="el" href="structIndexEntry.html" title="Represents a single file entry in the staging area (Index).">IndexEntry</a> object to be added or updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad10592c0ea7291c0a8b2d8b593b21a85" name="ad10592c0ea7291c0a8b2d8b593b21a85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad10592c0ea7291c0a8b2d8b593b21a85">&#9670;&#160;</a></span>createTreeObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Index::createTreeObject </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates the hierarchical <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> structure based on the current staged entries and saves the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> objects to <a class="el" href="classObjectStorage.html">ObjectStorage</a>. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>The SHA-1 hash (ID) of the final root <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object. </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the index is empty or tree creation fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acb9b498b11708bbf4394dbf485bcc6b4" name="acb9b498b11708bbf4394dbf485bcc6b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9b498b11708bbf4394dbf485bcc6b4">&#9670;&#160;</a></span>getEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structIndexEntry.html">IndexEntry</a> * Index::getEntry </td>
+          <td>(</td>
+          <td class="paramtype">const fs::path &amp;</td>          <td class="paramname"><span class="paramname"><em>file_path</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves an entry from the index by its relative file path. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>The relative path of the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Pointer to the constant <a class="el" href="structIndexEntry.html" title="Represents a single file entry in the staging area (Index).">IndexEntry</a>, or nullptr if not found. </dd></dl>
+
+</div>
+</div>
+<a id="ae12163a4349daa632044ff28c2818125" name="ae12163a4349daa632044ff28c2818125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae12163a4349daa632044ff28c2818125">&#9670;&#160;</a></span>isFileModified()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Index::isFileModified </td>
+          <td>(</td>
+          <td class="paramtype">const fs::path &amp;</td>          <td class="paramname"><span class="paramname"><em>file_path</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a file in the working directory has been modified since it was last staged. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>The relative path of the file to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true If the file is modified, deleted, or untracked; false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a78085a2aae66dd69d50ded6d856462c6" name="a78085a2aae66dd69d50ded6d856462c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78085a2aae66dd69d50ded6d856462c6">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Index::load </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads the index entries from the index file on disk (temporary text format). </p>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the index file cannot be read. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4c99f86d04fd91dc90727b9a17e60a21" name="a4c99f86d04fd91dc90727b9a17e60a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c99f86d04fd91dc90727b9a17e60a21">&#9670;&#160;</a></span>save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Index::save </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saves the current state of the index entries to the index file (temporary text format). </p>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the index file cannot be written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a37a1115070ac00586a9b69cf9c26b115" name="a37a1115070ac00586a9b69cf9c26b115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a1115070ac00586a9b69cf9c26b115">&#9670;&#160;</a></span>stage_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Index::stage_file </td>
+          <td>(</td>
+          <td class="paramtype">const fs::path &amp;</td>          <td class="paramname"><span class="paramname"><em>relative_path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stages a file by creating a <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> object, saving it to storage, and updating the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> entry (Core logic of 'svcs add'). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">relative_path</td><td>The path to the file, relative to the repository's root directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the path is invalid or if read/write operations fail. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>core/include/<a class="el" href="Index_8hxx_source.html">Index.hxx</a></li>
+<li>core/src/<b>Index.cxx</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="classIndex.html">Index</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -9,6 +9,12 @@
 
 namespace fs = std::filesystem;
 
+const std::string DUMMY_HASH_FILE_A = "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2";
+const std::string DUMMY_HASH_PARENT_1 = "p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1";
+const std::string DUMMY_HASH_PARENT_2 = "p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2";
+const std::string DUMMY_HASH_TREE_ROOT = "t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0";
+
+
 const std::string TEST_ROOT = "test_repo_root";
 const std::string OBJECTS_DIR = TEST_ROOT + "/.svcs/objects";
 
@@ -71,7 +77,7 @@ TEST_F(ObjectStorageTest, LoadRestoresOriginalBlob) {
 }
 
 TEST_F(ObjectStorageTest, LoadThrowsExceptionIfNotFound) {
-    const std::string fake_hash = "abcdef0123456789abcdef0123456789abcdef01";
+    const std::string fake_hash = "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789";
     
     EXPECT_THROW({
         storage->loadObject(fake_hash);
@@ -80,7 +86,7 @@ TEST_F(ObjectStorageTest, LoadThrowsExceptionIfNotFound) {
 
 TEST_F(ObjectStorageTest, LoadRestoresOriginalTree) {
     std::vector<TreeEntry> entries = {
-        {"100644", "file.txt", "hash_file_a", "blob"}
+        {"100644", "file.txt", DUMMY_HASH_FILE_A, "blob"}
     };
     Tree original_tree(entries); 
     std::string original_hash = original_tree.getHashId();
@@ -98,8 +104,8 @@ TEST_F(ObjectStorageTest, LoadRestoresOriginalTree) {
 
 TEST_F(ObjectStorageTest, LoadRestoresOriginalCommit) {
     Commit original_commit(
-        "tree_root_hash",
-        {"parent_hash_1", "parent_hash_2"},
+        DUMMY_HASH_TREE_ROOT,
+        {DUMMY_HASH_PARENT_1, DUMMY_HASH_PARENT_2},
         "Alice <alice@example.com>",
         "Testing commit message with\nmultiple lines.",
         1234567890 

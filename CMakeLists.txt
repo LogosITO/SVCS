@@ -15,4 +15,6 @@ find_package(ZLIB REQUIRED)
 
 add_subdirectory(core)
 
+enable_testing()
+
 add_subdirectory(tests)

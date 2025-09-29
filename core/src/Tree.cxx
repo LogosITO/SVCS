@@ -1,6 +1,9 @@
 #include "../include/Tree.hxx"
+#include "../include/Utils.hxx"
 #include <algorithm>
 #include <sstream>
+
+const size_t HASH_BYTE_SIZE = 32;
 
 inline bool TreeEntry::operator<(const TreeEntry &other) const {
     return name < other.name;
@@ -12,29 +15,79 @@ TreeEntry createEntry(std::string name, std::string hash_id) {
 
 Tree::Tree(std::vector<TreeEntry> entrs) : entries(std::move(entrs)) {
     std::sort(entries.begin(), entries.end());
-    computeHash(serialize());
+    
+    // 1. Получаем сырые данные
+    std::string raw_content = this->serialize(); 
+
+    // 2. Создаем ПОЛНОЕ содержимое объекта с заголовком
+    std::string full_content = this->getType() + " " + 
+                               std::to_string(raw_content.length()) + 
+                               '\0' + 
+                               raw_content;
+    
+    this->hash_id = calculateHash(full_content);
 }
 
+
+std::string Tree::serialize() const {
+    std::stringstream ss(std::ios::binary | std::ios::out);
+    
+    for (const auto& entry : entries) { 
+        ss << entry.mode << " " << entry.name;
+        ss.put('\0'); 
+        
+        std::string binary_hash = hex_to_binary_string(entry.hash_id); 
+
+        if (binary_hash.length() != HASH_BYTE_SIZE) {
+            throw std::runtime_error("Tree serialization error: Invalid binary hash length. Expected 32 bytes, got " + std::to_string(binary_hash.length()));
+        }
+        ss.write(binary_hash.data(), HASH_BYTE_SIZE);
+    }
+    return ss.str();
+}
 Tree Tree::deserialize(const std::string &raw_content) {
     std::vector<TreeEntry> entries;
-    std::stringstream ss(raw_content);
-    std::string line;
+    std::istringstream ss(raw_content, std::ios::binary);
+    
+    char hash_buffer[HASH_BYTE_SIZE];
+    
+    while (ss.good()) {
+        std::string mode_and_name_part;
+        
+        if (!std::getline(ss, mode_and_name_part, '\0')) {
+            if (ss.eof() && mode_and_name_part.empty()) {
+                break; 
+            }
+            throw std::runtime_error("Tree deserialization error: Missing name (NULL byte not found).");
+        }
 
-    while(std::getline(ss, line, '\n')) {
-        if (line.empty()) continue;
-        std::stringstream line_ss(line);
+        size_t space_pos = mode_and_name_part.find(' ');
+        if (space_pos == std::string::npos) {
+            throw std::runtime_error("Tree deserialization error: Missing space delimiter in mode/name part.");
+        }
+        
+        std::string mode_str = mode_and_name_part.substr(0, space_pos);
+        std::string name_str = mode_and_name_part.substr(space_pos + 1);
+
+        if (!ss.read(hash_buffer, HASH_BYTE_SIZE)) {
+            if (!ss.eof()) {
+                throw std::runtime_error("Tree deserialization error: Failed to read 32-byte hash.");
+            }
+            throw std::runtime_error("Tree deserialization error: Unexpected end of stream while reading hash.");
+        }
+        
         TreeEntry entry;
-        if (!(line_ss >> entry.mode >> entry.type >> entry.hash_id)) {
-            throw std::runtime_error("Tree deserialization error: Invalid entry format.");
-        }
-        std::string name_part;
-        if(!std::getline(line_ss, name_part)) {
-            throw std::runtime_error("Tree deserialization error: Missing name for entry.");
-        }
-        size_t pos = name_part.find_first_not_of(' ');
-        entry.name = name_part.substr(pos);
+        entry.mode = mode_str;
+        entry.name = name_str;
+        
+        entry.hash_id = binary_to_hex_string(
+            reinterpret_cast<const unsigned char*>(hash_buffer),
+            HASH_BYTE_SIZE
+        );
+
         entries.push_back(std::move(entry));
     }
+    
     return Tree(std::move(entries));
 }
 
@@ -59,17 +112,6 @@ bool Tree::removeEntry(const std::string& name) {
     entries.erase(it, entries.end());
     bool was_erased = entries.size() < initial_size;
     return was_erased;
-}
-
-std::string Tree::serialize() const {
-    std::stringstream ss;
-    for (const auto& entry : entries) {
-        ss << entry.mode << " " 
-        << entry.type << " " 
-        << entry.hash_id << " " 
-        << entry.name << "\n";
-    }
-    return ss.str();
 }
 
 std::string Tree::getType() const {

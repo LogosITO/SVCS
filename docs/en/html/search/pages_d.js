@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚀_20build_20and_20technologies_0',['🚀 Build and Technologies',['../md_README.html#autotoc_md2',1,'']]]
+  ['🏗_20key_20implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md2',1,'']]]
 ];

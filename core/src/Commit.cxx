@@ -15,7 +15,15 @@ Commit::Commit(
     timestamp(tstamp),
     message(std::move(msg)) {
     std::sort(parent_hashes.begin(), parent_hashes.end());
-    computeHash(serialize());
+
+    std::string raw_content = this->serialize();
+
+    std::string full_content = this->getType() + " " +
+                               std::to_string(raw_content.length()) +
+                               '\0' +
+                               raw_content;
+
+    this->hash_id = calculateHash(full_content);
 }
 
 std::string Commit::getType() const {
@@ -24,31 +32,32 @@ std::string Commit::getType() const {
 
 std::string Commit::serialize() const {
     std::stringstream ss;
-    ss << "tree" << tree_hash << "\n";
+    ss << "tree " << tree_hash << "\n";
 
     for(const auto& parent_hash : parent_hashes) {
-        ss << "parent" << parent_hash << "\n";
+        ss << "parent " << parent_hash << "\n";
     }
-
-    ss << "author" << author << " " << timestamp << " +0000\n";
-    ss << "committer" << author << " " << timestamp << " +0000\n";
+    
+    ss << "author " << author << " " << timestamp << " +0000\n";
+    ss << "committer " << author << " " << timestamp << " +0000\n"; 
 
     ss << "\n";
-    ss << message << "\n";
-
+    ss << message; // См. исправление 3: удаляем лишний \n
+    
     return ss.str();
 }
 
 Commit Commit::deserialize(const std::string& raw_content) {
-    std::stringstream ss(raw_content);
+    std::istringstream ss(raw_content);
     std::string line;
     
     std::string thash;
     std::vector<std::string> phashes;
-    std::string auth;
-    std::string committer_auth;
-    std::time_t tstamp = 0;
+    std::string author_line;
+    std::string committer_line;
+    std::time_t tstamp = 0; // Будет извлечен из author_line/committer_line
     
+    // --- 1. Чтение Заголовка ---
     while (std::getline(ss, line) && !line.empty()) {
         
         size_t space_pos = line.find(' ');
@@ -63,60 +72,79 @@ Commit Commit::deserialize(const std::string& raw_content) {
             thash = value;
         } else if (key == "parent") {
             phashes.push_back(value);
-        } else if (key == "author" || key == "committer") {           
-            size_t ts_end_pos = value.rfind(' '); 
-            if (ts_end_pos == std::string::npos) continue;
-            
-            size_t ts_start_pos = value.rfind(' ', ts_end_pos - 1);
-            if (ts_start_pos == std::string::npos) continue;
-            
-            std::string ts_str = value.substr(ts_start_pos + 1, ts_end_pos - ts_start_pos - 1);
-            try {
-                tstamp = (std::time_t)std::stoll(ts_str); 
-            } catch (const std::exception& e) {
-                throw std::runtime_error("Commit deserialization error: Failed to parse timestamp: " + std::string(e.what()));
-            }
-            
-            std::string current_auth = value.substr(0, ts_start_pos);
-
-            size_t last_char = current_auth.find_last_not_of(' ');
-            if (last_char != std::string::npos) {
-                current_auth = current_auth.substr(0, last_char + 1);
-            }
-            
-            if (key == "author") {
-                if (auth.empty()) {
-                    auth = std::move(current_auth);
-                }
-            } else if (key == "committer") {
-                committer_auth = std::move(current_auth);
-            }
+        } else if (key == "author") {
+            author_line = std::move(value);
+        } else if (key == "committer") {
+            committer_line = std::move(value);
         }
     }
 
-    std::string msg_full;
-    std::string temp_message;
-    while (std::getline(ss, line)) {
-        temp_message += line + "\n";
+    // --- 2. Парсинг Времени и Автора/Коммиттера ---
+    // Используем author_line для извлечения данных
+    std::string author_data; // "Имя <email>"
+    
+    // Функция для парсинга поля, чтобы избежать дублирования кода
+    auto parse_user_field = [&](const std::string& field_value, std::string& out_name, std::time_t& out_time) {
+        if (field_value.empty()) return;
+
+        // Поиск последнего пробела (перед часовым поясом)
+        size_t tz_start_pos = field_value.rfind(' '); 
+        if (tz_start_pos == std::string::npos) return;
+
+        // Поиск пробела перед меткой времени (timestamp)
+        size_t ts_start_pos = field_value.rfind(' ', tz_start_pos - 1);
+        if (ts_start_pos == std::string::npos) return;
+        
+        // 1. Извлекаем метку времени
+        std::string ts_str = field_value.substr(ts_start_pos + 1, tz_start_pos - ts_start_pos - 1);
+        try {
+            out_time = (std::time_t)std::stoll(ts_str); 
+        } catch (const std::exception& e) {
+            throw std::runtime_error("Commit deserialization error: Failed to parse timestamp: " + std::string(e.what()));
+        }
+        
+        // 2. Извлекаем имя и email
+        out_name = field_value.substr(0, ts_start_pos);
+        // Удаляем завершающий пробел между email и timestamp (если есть)
+        if (!out_name.empty() && out_name.back() == ' ') {
+            out_name.pop_back(); 
+        }
+    };
+
+    // Парсим author_line. Здесь out_name - это author_data, out_time - это tstamp.
+    parse_user_field(author_line, author_data, tstamp);
+
+    // --- 3. Чтение Сообщения ---
+    std::string message;
+    if (ss.peek() != std::char_traits<char>::eof()) {
+        // Читаем все оставшееся содержимое до конца файла (EOF)
+        message.assign(
+            (std::istreambuf_iterator<char>(ss)),
+             std::istreambuf_iterator<char>()
+        );
     }
 
-    if (!temp_message.empty() && temp_message.back() == '\n') {
-        temp_message.pop_back();
+    // Удаляем потенциально добавленный пустой строкой перевод строки в начале сообщения
+    if (!message.empty() && message.front() == '\n') {
+        message.erase(0, 1);
     }
-    msg_full = std::move(temp_message);
-
-    if (thash.empty() || auth.empty()) {
+    
+    // ВАЖНО: Мы должны вернуть объект, используя только те данные,
+    // которые фактически хранятся в Commit.
+    
+    if (thash.empty() || author_data.empty()) {
         throw std::runtime_error("Commit deserialization error: Missing mandatory field (tree_hash or author).");
     }
 
     return Commit(
         std::move(thash),
         std::move(phashes),
-        std::move(auth),
-        std::move(msg_full),
+        std::move(author_data), // Передаем только имя/email
+        std::move(message),
         tstamp
     );
 }
+
 
 const std::string& Commit::getTreeHash() const {
     return tree_hash;

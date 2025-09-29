@@ -4,6 +4,8 @@ set(CORE_SOURCES
     src/Tree.cxx
     src/Commit.cxx
     src/ObjectStorage.cxx
+    src/Utils.cxx
+    src/Index.cxx
 )
 
 set(CORE_HEADERS
@@ -12,6 +14,8 @@ set(CORE_HEADERS
     include/Tree.hxx
     include/Commit.hxx
     include/ObjectStorage.hxx
+    include/Utils.hxx
+    include/Utils.cxx
 )
 
 

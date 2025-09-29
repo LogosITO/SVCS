@@ -97,6 +97,7 @@ $(function(){initNavTree('ObjectStorage_8hxx.html','',''); });
 <p>Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;VcsObject.hxx&quot;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 </div>
@@ -108,6 +109,7 @@ $(function(){initNavTree('ObjectStorage_8hxx.html','',''); });
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 <p>This class handles file path construction, serialization, Zlib compression/decompression, and acts as a factory for restoring concrete <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> types (<a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a>, <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>, <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a>). </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode_0',['mode',['../structTreeEntry.html#a134f10cecd1f81227572389485e04ad4',1,'TreeEntry']]]
+  ['key_20implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md2',1,'']]]
 ];

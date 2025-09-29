@@ -95,14 +95,24 @@ $(function(){initNavTree('md_README.html','',''); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
 <p>This <b>SVCS (Simple Version Control System)</b> project is an <b>educational and research effort</b> aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.</p>
+<p>[Image of a data structure diagram]</p>
 <p>The main goal of the project is to gain a deep understanding of core concepts:</p>
 <ul>
-<li><b>Immutable Objects:</b> Creating and handling <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>, <span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, and <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span> objects based on a single abstract <span class="tt"><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a></span> class.</li>
-<li><b>Data Integrity:</b> Applying cryptographic hashing (presumably SHA-256) for data identification and verification.</li>
+<li><b>Immutable Objects:</b> Creating and handling objects (<span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>, <span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>) based on a single abstract <span class="tt"><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a></span> class.</li>
+<li><b>Data Integrity:</b> Applying cryptographic hashing (presumably SHA-1) for data identification and verification.</li>
 <li><b>Clean Architecture:</b> Implementing OOP principles, inheritance, polymorphism, and separation of concerns.</li>
 </ul>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+🏗 Key Implemented Components</h1>
+<p>The core foundation of the system is currently implemented and tested:</p>
+<ul>
+<li><b>Object Model (<span class="tt"><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a></span>, <span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>, <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>):</b> The complete object model, including serialization and deserialization capabilities.</li>
+<li><b>Object Storage (<span class="tt"><a class="el" href="classObjectStorage.html">ObjectStorage</a></span>):</b> The class responsible for <b>reading, writing, and managing</b> the lifecycle of VCS objects on disk. It handles Zlib compression/decompression and data integrity checks.</li>
+<li><b>Hashing Utilities:</b> Implemented a static helper for computing <b>SHA-1</b> hashes of Git-format object content.</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 🚀 Build and Technologies</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -115,9 +125,19 @@ $(function(){initNavTree('md_README.html','',''); });
 <td class="markdownTableBodyLeft"><b>Google Test</b>  </td><td class="markdownTableBodyLeft">Unit testing framework  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><b>Doxygen</b>  </td><td class="markdownTableBodyLeft">Generating detailed API documentation  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>OpenSSL / Zlib</b>  </td><td class="markdownTableBodyLeft">Cryptographic hashing and data compression  </td></tr>
 </table>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+🛠 Project Status and Next Steps</h1>
+<p>The project is currently under active development.</p>
+<ul>
+<li><b>Current Focus:</b> Comprehensive testing and stabilization of the <b><span class="tt"><a class="el" href="classObjectStorage.html">ObjectStorage</a></span></b> module.</li>
+<li><b>Next Stage:</b> Implementation of the <b><span class="tt"><a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a></span> (Staging Area)</b> class to track files in the working directory and prepare data for commit creation.</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
 📖 Documentation (API Reference)</h1>
 <p>The detailed code documentation for classes and methods, generated by <b>Doxygen</b>, is automatically deployed to GitHub Pages after every update.</p>
 <p>You can select the documentation interface language:</p>
@@ -126,11 +146,7 @@ $(function(){initNavTree('md_README.html','',''); });
 <li><b>Russian Version (RU):</b> <a href="https://LogosITO.github.io/SVCS/ru/">Go to Documentation (RU)</a></li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
-🛠 Project Status</h1>
-<p>Currently under active development. Focus is on implementing the core foundation (<span class="tt">core</span>) and the object system (<span class="tt"><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a></span>, <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>).</p>
-<hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 📝 Author and License</h1>
 <p>© 2025 LogosITO. This project is distributed under the <b>MIT</b> License. </p>
 </div></div><!-- contents -->

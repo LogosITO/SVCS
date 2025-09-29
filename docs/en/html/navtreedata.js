@@ -26,10 +26,11 @@ var NAVTREE =
 [
   [ "SVCS", "index.html", [
     [ "📚 SVCS: Simple Version Control System", "md_README.html", [
-      [ "🚀 Build and Technologies", "md_README.html#autotoc_md2", null ],
-      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md4", null ],
-      [ "🛠 Project Status", "md_README.html#autotoc_md6", null ],
-      [ "📝 Author and License", "md_README.html#autotoc_md8", null ]
+      [ "🏗 Key Implemented Components", "md_README.html#autotoc_md2", null ],
+      [ "🚀 Build and Technologies", "md_README.html#autotoc_md4", null ],
+      [ "🛠 Project Status and Next Steps", "md_README.html#autotoc_md6", null ],
+      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md8", null ],
+      [ "📝 Author and License", "md_README.html#autotoc_md10", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

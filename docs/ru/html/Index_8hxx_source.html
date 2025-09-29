@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Исходный файл core/include/Index.hxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('Index_8hxx_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Index.hxx</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="ObjectStorage_8hxx.html">../include/ObjectStorage.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>fs = std::filesystem;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structIndexEntry.html">   23</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structIndexEntry.html">IndexEntry</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12">   25</a></span>    std::string <a class="code hl_variable" href="structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12">blob_hash</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structIndexEntry.html#ac34233bc45be2fc4cc4c4d6f3ef86173">   28</a></span>    fs::path <a class="code hl_variable" href="structIndexEntry.html#ac34233bc45be2fc4cc4c4d6f3ef86173">file_path</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structIndexEntry.html#a07371b90dba7b3e77073e25b8974bf69">   31</a></span>    fs::file_time_type <a class="code hl_variable" href="structIndexEntry.html#a07371b90dba7b3e77073e25b8974bf69">last_modified</a>; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structIndexEntry.html#a10582a2e090f7c30885f54b42da08048">   34</a></span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="structIndexEntry.html#a10582a2e090f7c30885f54b42da08048">file_size</a> = 0;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classIndex.html">   43</a></span><span class="keyword">class </span><a class="code hl_function" href="classIndex.html#a45a83775032c0afb0ea457ced960f55b">Index</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::map&lt;fs::path, IndexEntry&gt; entries;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    fs::path index_file_path;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    fs::path repo_root_path;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_class" href="classObjectStorage.html">ObjectStorage</a>&amp; storage_;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> getFileMetaData(<span class="keyword">const</span> fs::path&amp; full_path, </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; size, fs::file_time_type&amp; mtime);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="classIndex.html#a45a83775032c0afb0ea457ced960f55b">Index</a>(<span class="keyword">const</span> fs::path&amp; vcs_root_path, <span class="keyword">const</span> fs::path&amp; repo_root_path, <a class="code hl_class" href="classObjectStorage.html">ObjectStorage</a>&amp; storage);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="classIndex.html#a76b7ed4e9cb0b1540264567f84896032">~Index</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIndex.html#aa81beeb1a095d360a8c4bba27acd6af1">add_entry</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structIndexEntry.html">IndexEntry</a>&amp; entry);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structIndexEntry.html">IndexEntry</a>* <a class="code hl_function" href="classIndex.html#acb9b498b11708bbf4394dbf485bcc6b4">getEntry</a>(<span class="keyword">const</span> fs::path&amp; file_path) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIndex.html#a78085a2aae66dd69d50ded6d856462c6">load</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21">save</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classIndex.html#ae12163a4349daa632044ff28c2818125">isFileModified</a>(<span class="keyword">const</span> fs::path&amp; file_path) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIndex.html#a37a1115070ac00586a9b69cf9c26b115">stage_file</a>(<span class="keyword">const</span> fs::path&amp; relative_path); </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    std::string <a class="code hl_function" href="classIndex.html#ad10592c0ea7291c0a8b2d8b593b21a85">createTreeObject</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>};</div>
+</div>
+<div class="ttc" id="aObjectStorage_8hxx_html"><div class="ttname"><a href="ObjectStorage_8hxx.html">ObjectStorage.hxx</a></div><div class="ttdoc">Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format.</div></div>
+<div class="ttc" id="aclassIndex_html_a37a1115070ac00586a9b69cf9c26b115"><div class="ttname"><a href="classIndex.html#a37a1115070ac00586a9b69cf9c26b115">Index::stage_file</a></div><div class="ttdeci">void stage_file(const fs::path &amp;relative_path)</div><div class="ttdoc">Stages a file by creating a Blob object, saving it to storage, and updating the Index entry (Core log...</div><div class="ttdef"><b>Определения</b> Index.cxx:54</div></div>
+<div class="ttc" id="aclassIndex_html_a45a83775032c0afb0ea457ced960f55b"><div class="ttname"><a href="classIndex.html#a45a83775032c0afb0ea457ced960f55b">Index::Index</a></div><div class="ttdeci">Index(const fs::path &amp;vcs_root_path, const fs::path &amp;repo_root_path, ObjectStorage &amp;storage)</div><div class="ttdoc">Constructs the Index manager, setting up paths and loading the index.</div><div class="ttdef"><b>Определения</b> Index.cxx:32</div></div>
+<div class="ttc" id="aclassIndex_html_a4c99f86d04fd91dc90727b9a17e60a21"><div class="ttname"><a href="classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21">Index::save</a></div><div class="ttdeci">void save() const</div><div class="ttdoc">Saves the current state of the index entries to the index file (temporary text format).</div><div class="ttdef"><b>Определения</b> Index.cxx:139</div></div>
+<div class="ttc" id="aclassIndex_html_a76b7ed4e9cb0b1540264567f84896032"><div class="ttname"><a href="classIndex.html#a76b7ed4e9cb0b1540264567f84896032">Index::~Index</a></div><div class="ttdeci">~Index()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Определения</b> Index.cxx:40</div></div>
+<div class="ttc" id="aclassIndex_html_a78085a2aae66dd69d50ded6d856462c6"><div class="ttname"><a href="classIndex.html#a78085a2aae66dd69d50ded6d856462c6">Index::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">Loads the index entries from the index file on disk (temporary text format).</div><div class="ttdef"><b>Определения</b> Index.cxx:161</div></div>
+<div class="ttc" id="aclassIndex_html_aa81beeb1a095d360a8c4bba27acd6af1"><div class="ttname"><a href="classIndex.html#aa81beeb1a095d360a8c4bba27acd6af1">Index::add_entry</a></div><div class="ttdeci">void add_entry(const IndexEntry &amp;entry)</div><div class="ttdoc">Adds or updates an entry in the staging area.</div><div class="ttdef"><b>Определения</b> Index.cxx:42</div></div>
+<div class="ttc" id="aclassIndex_html_acb9b498b11708bbf4394dbf485bcc6b4"><div class="ttname"><a href="classIndex.html#acb9b498b11708bbf4394dbf485bcc6b4">Index::getEntry</a></div><div class="ttdeci">const IndexEntry * getEntry(const fs::path &amp;file_path) const</div><div class="ttdoc">Retrieves an entry from the index by its relative file path.</div><div class="ttdef"><b>Определения</b> Index.cxx:46</div></div>
+<div class="ttc" id="aclassIndex_html_ad10592c0ea7291c0a8b2d8b593b21a85"><div class="ttname"><a href="classIndex.html#ad10592c0ea7291c0a8b2d8b593b21a85">Index::createTreeObject</a></div><div class="ttdeci">std::string createTreeObject()</div><div class="ttdoc">Creates the hierarchical Tree structure based on the current staged entries and saves the Tree object...</div><div class="ttdef"><b>Определения</b> Index.cxx:211</div></div>
+<div class="ttc" id="aclassIndex_html_ae12163a4349daa632044ff28c2818125"><div class="ttname"><a href="classIndex.html#ae12163a4349daa632044ff28c2818125">Index::isFileModified</a></div><div class="ttdeci">bool isFileModified(const fs::path &amp;file_path) const</div><div class="ttdoc">Checks if a file in the working directory has been modified since it was last staged.</div><div class="ttdef"><b>Определения</b> Index.cxx:87</div></div>
+<div class="ttc" id="aclassObjectStorage_html"><div class="ttname"><a href="classObjectStorage.html">ObjectStorage</a></div><div class="ttdef"><b>Определения</b> ObjectStorage.hxx:17</div></div>
+<div class="ttc" id="astructIndexEntry_html"><div class="ttname"><a href="structIndexEntry.html">IndexEntry</a></div><div class="ttdoc">Represents a single file entry in the staging area (Index).</div><div class="ttdef"><b>Определения</b> Index.hxx:23</div></div>
+<div class="ttc" id="astructIndexEntry_html_a07371b90dba7b3e77073e25b8974bf69"><div class="ttname"><a href="structIndexEntry.html#a07371b90dba7b3e77073e25b8974bf69">IndexEntry::last_modified</a></div><div class="ttdeci">fs::file_time_type last_modified</div><div class="ttdoc">The time of the file&#39;s last modification, used to detect changes.</div><div class="ttdef"><b>Определения</b> Index.hxx:31</div></div>
+<div class="ttc" id="astructIndexEntry_html_a10582a2e090f7c30885f54b42da08048"><div class="ttname"><a href="structIndexEntry.html#a10582a2e090f7c30885f54b42da08048">IndexEntry::file_size</a></div><div class="ttdeci">long long file_size</div><div class="ttdoc">The size of the file in bytes.</div><div class="ttdef"><b>Определения</b> Index.hxx:34</div></div>
+<div class="ttc" id="astructIndexEntry_html_ac34233bc45be2fc4cc4c4d6f3ef86173"><div class="ttname"><a href="structIndexEntry.html#ac34233bc45be2fc4cc4c4d6f3ef86173">IndexEntry::file_path</a></div><div class="ttdeci">fs::path file_path</div><div class="ttdoc">The file&#39;s path, relative to the repository&#39;s root directory.</div><div class="ttdef"><b>Определения</b> Index.hxx:28</div></div>
+<div class="ttc" id="astructIndexEntry_html_af0add5ce12c5dfa70a32542fd4417f12"><div class="ttname"><a href="structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12">IndexEntry::blob_hash</a></div><div class="ttdeci">std::string blob_hash</div><div class="ttdoc">The SHA-256 hash of the file&#39;s content (the Blob object ID).</div><div class="ttdef"><b>Определения</b> Index.hxx:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a href="dir_24d671cfcbc5d5238a6bd565a49d198f.html">include</a></li><li class="navelem"><b>Index.hxx</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

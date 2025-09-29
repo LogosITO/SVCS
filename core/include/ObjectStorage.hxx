@@ -1,5 +1,8 @@
 /**
  * @file ObjectStorage.hxx
+ * @copyright 
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  * @brief Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format.
  * @details This class handles file path construction, serialization, Zlib compression/decompression,
  * and acts as a factory for restoring concrete VcsObject types (Blob, Tree, Commit).
@@ -66,7 +69,7 @@ public:
      * @return bool True if saving was successful.
      * @throw std::runtime_error if hash is invalid or file IO fails.
      */
-    bool saveObject(const VcsObject& obj) const;
+    virtual bool saveObject(const VcsObject& obj) const;
 
     /**
      * @brief Loads an object from the disk by its hash ID.

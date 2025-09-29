@@ -1,6 +1,13 @@
 #include "../core/include/Commit.hxx"
 #include <gtest/gtest.h>
 
+const std::string HASH_TREE_EMPTY = "4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a";
+const std::string HASH_PARENT_A = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+const std::string HASH_PARENT_B = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
+const std::string HASH_TREE_NEW = "c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1";
+const std::string HASH_PARENT_P1 = "d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2";
+const std::string HASH_PARENT_P2 = "e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3";
+
 Commit createTestCommit(
     const std::string& tree_hash,
     const std::vector<std::string>& parents,
@@ -16,34 +23,30 @@ Commit createTestCommit(
     );
 }
 
-const std::string EMPTY_TREE_HASH = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
-
 TEST(CommitTest, BasicInitialCommit) {
     Commit commit = createTestCommit(
-        EMPTY_TREE_HASH, 
+        HASH_TREE_EMPTY, 
         {}, 
         "Initial commit message."
     );
 
     EXPECT_FALSE(commit.getHashId().empty()) << "Commit hash must be calculated.";
     EXPECT_EQ(commit.getType(), "commit");
-    EXPECT_EQ(commit.getTreeHash(), EMPTY_TREE_HASH);
+    EXPECT_EQ(commit.getTreeHash(), HASH_TREE_EMPTY);
     EXPECT_TRUE(commit.getParentHashes().empty());
+    EXPECT_EQ(commit.getHashId().length(), 64);
 }
 
 TEST(CommitTest, HashIsStableRegardlessOfParentOrder) {
-    std::string parent_a = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-    std::string parent_b = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
-
     Commit commit1 = createTestCommit(
-        EMPTY_TREE_HASH, 
-        {parent_a, parent_b},
+        HASH_TREE_EMPTY, 
+        {HASH_PARENT_A, HASH_PARENT_B},
         "Merge commit."
     );
 
     Commit commit2 = createTestCommit(
-        EMPTY_TREE_HASH, 
-        {parent_b, parent_a},
+        HASH_TREE_EMPTY, 
+        {HASH_PARENT_B, HASH_PARENT_A},
         "Merge commit."
     );
 
@@ -52,8 +55,8 @@ TEST(CommitTest, HashIsStableRegardlessOfParentOrder) {
 }
 
 TEST(CommitTest, HashChangesWithDifferentMessage) {
-    Commit commit1 = createTestCommit(EMPTY_TREE_HASH, {}, "Message V1");
-    Commit commit2 = createTestCommit(EMPTY_TREE_HASH, {}, "Message V2");
+    Commit commit1 = createTestCommit(HASH_TREE_EMPTY, {}, "Message V1");
+    Commit commit2 = createTestCommit(HASH_TREE_EMPTY, {}, "Message V2");
 
     EXPECT_NE(commit1.getHashId(), commit2.getHashId())
         << "Changing commit message must change the commit hash.";
@@ -64,8 +67,8 @@ TEST(CommitTest, SerializationDeserializationRoundTrip) {
     std::time_t custom_time = 1700000000;
     
     Commit original = createTestCommit(
-        "new_tree_hash_12345", 
-        {"p1_hash", "p2_hash"}, 
+        HASH_TREE_NEW, 
+        {HASH_PARENT_P1, HASH_PARENT_P2}, 
         complex_message, 
         custom_time
     );
@@ -83,4 +86,5 @@ TEST(CommitTest, SerializationDeserializationRoundTrip) {
     EXPECT_EQ(original.getParentHashes().size(), 2);
     EXPECT_EQ(restored.getParentHashes().size(), 2);
     EXPECT_EQ(original.getParentHashes()[0], restored.getParentHashes()[0]);
+    EXPECT_EQ(original.getParentHashes()[1], restored.getParentHashes()[1]);
 }

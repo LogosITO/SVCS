@@ -19,7 +19,7 @@ namespace fs = std::filesystem;
 
 const size_t CHUNK_SIZE = 16384;
 
-ObjectStorage::ObjectStorage(const std::string& root_path, ISubject* subject) :
+ObjectStorage::ObjectStorage(const std::string& root_path, std::shared_ptr<ISubject> subject) :
     objects_dir(fs::path(root_path) / ".svcs" / "objects"),
     subject(subject)
 {
@@ -42,6 +42,10 @@ ObjectStorage::ObjectStorage(const std::string& root_path, ISubject* subject) :
             throw std::runtime_error("Failed to initialize object storage: " + std::string(e.what()));
         }
     }
+}
+
+ObjectStorage::~ObjectStorage() {
+    std::cout << "DEBUG: ObjectStorage destroyed" << std::endl;
 }
 
 std::string ObjectStorage::getObjectPath(const std::string& hash) const {

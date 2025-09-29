@@ -24,12 +24,13 @@ Blob create_blob(const std::string& content) {
 
 class MockSubject : public ISubject {
 public:
-    void notify(const Event& event) override { } 
-    void attach(IObserver* observer) override { } 
-    void detach(IObserver* observer) override { }
-    
-    virtual ~MockSubject() = default; 
+    void notify(const Event& event) const override { } 
+    void attach(std::shared_ptr<IObserver> observer) override { } 
+    void detach(std::shared_ptr<IObserver> observer) override { } 
+
+    ~MockSubject() override = default;
 };
+
 
 class NullObserver : public IObserver {
 public:
@@ -40,17 +41,16 @@ public:
 class ObjectStorageTest : public ::testing::Test {
 protected:
     ObjectStorage* storage;
-    MockSubject* mock_subject;
+    std::shared_ptr<MockSubject> mock_subject; 
 
     void SetUp() override {
-        mock_subject = new MockSubject();
+        mock_subject = std::make_shared<MockSubject>();
         fs::create_directories(OBJECTS_DIR);
         storage = new ObjectStorage(TEST_ROOT, mock_subject);
     }
 
     void TearDown() override {
         delete storage;
-        delete mock_subject;
         fs::remove_all(TEST_ROOT);
     }
     

@@ -1,11 +1,14 @@
 /**
  * @file ObjectStorage.hxx
+ * @brief Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format.
+ *
+ * This class handles file path construction, serialization, Zlib compression/decompression,
+ * and acts as a factory for restoring concrete VcsObject types (Blob, Tree, Commit).
+ * It uses an injected ISubject for internal event logging.
+ *
  * @copyright 
  * Copyright 2025 LogosITO
  * Licensed under MIT-License
- * @brief Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format.
- * @details This class handles file path construction, serialization, Zlib compression/decompression,
- * and acts as a factory for restoring concrete VcsObject types (Blob, Tree, Commit).
  */
 #pragma once
 
@@ -15,11 +18,20 @@
 #include <memory>
 #include "../../services/ISubject.hxx"
 
+/**
+ * @class ObjectStorage
+ * @brief Manages the version control object database, including persistence and object restoration.
+ *
+ * Implements low-level file system operations (path generation, reading, writing), 
+ * compression, decompression, and object deserialization.
+ */
 class ObjectStorage {
 private:
     /// @brief The base path to the object directory (e.g., ".svcs/objects").
     const std::filesystem::path objects_dir;
-    ISubject* subject;
+    
+    /// @brief Smart pointer to the ISubject interface for publishing internal events (e.g., success, error).
+    std::shared_ptr<ISubject> subject;
 
     /**
      * @brief Compresses data using Zlib's raw deflate standard (Git format).
@@ -39,6 +51,7 @@ private:
     
     /**
      * @brief Object Factory: Creates a concrete VcsObject from its type and content.
+     * * This internal factory is responsible for mapping type strings to concrete VcsObject subclasses.
      * @param type The object type ("blob", "tree", or "commit").
      * @param content The object's serialized data (without header).
      * @return std::unique_ptr<VcsObject> A pointer to the newly created object.
@@ -53,15 +66,25 @@ public:
     /**
      * @brief Constructor for ObjectStorage.
      * @param root_path The root path of the repository (e.g., the directory containing ".svcs").
-     * @param subject Pointer to the ISubject interface for event logging.
+     * @param subject Shared pointer to the ISubject interface for event logging. Defaults to nullptr if logging is not required yet.
      */
-    ObjectStorage(const std::string& root_path, ISubject* subject = nullptr);
+    ObjectStorage(const std::string& root_path, std::shared_ptr<ISubject> subject = nullptr);
 
-    void setSubject(ISubject* subj) { subject = subj; };
+    /**
+     * @brief Destructor.
+     */
+    ~ObjectStorage();
+
+    /**
+     * @brief Sets or replaces the event subject used by the ObjectStorage.
+     * @param subj The new ISubject pointer to use for publishing events.
+     */
+    void setSubject(std::shared_ptr<ISubject> subj) { subject = subj; };
 
     /**
      * @brief Forms the full filesystem path for an object based on its hash.
-     * @details Uses the first two characters of the hash for the subdirectory name.
+     * @details Uses the first two characters of the hash for the subdirectory name 
+     * and the remaining 38 characters for the filename.
      * @param hash The full 40-character SHA-1 hash ID.
      * @return std::string The full, platform-agnostic file path.
      */
@@ -69,7 +92,8 @@ public:
 
     /**
      * @brief Saves a VcsObject to the object database.
-     * @details Serializes the object, prefixes it with a header, compresses it, and writes it to a file.
+     * @details Serializes the object, prefixes it with a header, compresses it, and writes it to a file. 
+     * Publishes events on success/failure.
      * @param obj The VcsObject to save.
      * @return bool True if saving was successful.
      * @throw std::runtime_error if hash is invalid or file IO fails.
@@ -78,7 +102,8 @@ public:
 
     /**
      * @brief Loads an object from the disk by its hash ID.
-     * @details Reads the compressed file, decompresses it, performs integrity checks, and deserializes the object.
+     * @details Reads the compressed file, decompresses it, performs integrity checks, and deserializes the object 
+     * using the internal factory method.
      * @param hash The hash ID of the object to load.
      * @return std::unique_ptr<VcsObject> The restored object instance.
      * @throw std::runtime_error if the object is not found, corrupted, or invalid.

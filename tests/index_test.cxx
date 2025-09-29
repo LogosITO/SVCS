@@ -14,11 +14,12 @@ namespace fs = std::filesystem;
 
 class MockSubject : public ISubject {
 public:
-    void notify(const Event& event) override { } 
-    void attach(IObserver* observer) override { } 
-    void detach(IObserver* observer) override { }
-    virtual ~MockSubject() = default; 
+    void notify(const Event& event) const override { } 
+    void attach(std::shared_ptr<IObserver> observer) override { }
+    void detach(std::shared_ptr<IObserver> observer) override { } 
+    ~MockSubject() override = default;
 };
+
 
 // Глобальный mock subject для использования
 static MockSubject g_mock_subject;
@@ -29,7 +30,7 @@ public:
     
     // Используем реальный временный путь вместо /mock/path
     MockObjectStorage(const fs::path& temp_dir) 
-        : ObjectStorage((temp_dir / ".svcs" / "objects").string(), &g_mock_subject)  
+        : ObjectStorage((temp_dir / ".svcs" / "objects").string(), std::make_shared<MockSubject>(g_mock_subject))  
     {}  
     
     bool saveObject(const VcsObject& object) const override {

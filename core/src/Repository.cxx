@@ -9,7 +9,7 @@ Repository::Repository(const std::string& rpath)
     : observers(), 
       root_path(rpath)
 {
-    objects = std::make_unique<ObjectStorage>(root_path, nullptr); 
+    objects = std::make_unique<ObjectStorage>(root_path.string(), nullptr); 
 }
 
 void Repository::initializeDependencies() {

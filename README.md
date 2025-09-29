@@ -1,63 +1,66 @@
 # 📚 SVCS: Simple Version Control System
 
-This **SVCS (Simple Version Control System)** project is an **educational and research effort** aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++. 
-
-[Image of a data structure diagram]
-
+This SVCS (Simple Version Control System) project is an educational and research effort aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.
 
 The main goal of the project is to gain a deep understanding of core concepts:
 
-* **Immutable Objects:** Creating and handling objects (`Commit`, `Blob`, `Tree`) based on a single abstract `VcsObject` class.
-* **Data Integrity:** Applying cryptographic hashing (presumably SHA-1) for data identification and verification.
-* **Clean Architecture:** Implementing OOP principles, inheritance, polymorphism, and separation of concerns.
+- **Immutable Objects**: Creating and handling objects (Commit, Blob, Tree) based on a single abstract VcsObject class.
+- **Data Integrity**: Applying cryptographic hashing (presumably SHA-1) for data identification and verification.
+- **Clean Architecture**: Implementing OOP principles, inheritance, polymorphism, and separation of concerns.
 
----
+## 🚀 Current Project Status: Core Stability Achieved
+
+The project has achieved a critical milestone by resolving low-level memory issues, ensuring a stable foundation for future development.
+
+### Major Achievements:
+
+- **Memory Safety Confirmed**: Successfully resolved the complex architectural issue involving premature virtual function calls (`Repository::notify`) during object construction, which previously caused SIGSEGV and "Conditional jump on uninitialised value" errors.
+- **Valgrind Clean**: The core project is now free of critical memory errors and leaks, ensuring development is predictable and robust.
+- **Repository Initialization**: The mechanism for creating the basic repository structure (`.svcs/refs`, `.svcs/objects`) is fully implemented and stable.
+- **Index Logic Complete**: The entire foundation and core logic of the Index class are implemented.
 
 ## 🏗 Key Implemented Components
 
-The core foundation of the system is currently implemented and tested:
+The system's foundational components are stable and operational:
 
-* **Object Model (`VcsObject`, `Blob`, `Tree`, `Commit`):** The complete object model, including serialization and deserialization capabilities.
-* **Object Storage (`ObjectStorage`):** The class responsible for **reading, writing, and managing** the lifecycle of VCS objects on disk. It handles Zlib compression/decompression and data integrity checks.
-* **Hashing Utilities:** Implemented a static helper for computing **SHA-1** hashes of Git-format object content.
+| Component | Purpose | Status |
+|-----------|---------|--------|
+| Repository | Root object, manages paths and core components | Stable |
+| ObjectStorage | Saving, loading, and managing VCS objects | Stable |
+| Index (Staging Area) | Tracks files prepared for commit | Ready |
+| Blob | Stores file content (hashing/compression) | Ready |
+| Subject/Observer | Pattern for notifying observers of events (success, errors) | Stable |
 
----
+## ✨ Index (Staging Area) Functionality
 
-## 🚀 Build and Technologies
+The Index class is responsible for the staging area and performs the following key tasks:
 
-| Technology | Purpose |
-| :--- | :--- |
-| **C++ (C++17+)** | Primary programming language |
-| **CMake** | Build system and project management |
-| **Google Test** | Unit testing framework |
-| **Doxygen** | Generating detailed API documentation |
-| **OpenSSL / Zlib** | Cryptographic hashing and data compression |
+- **File Staging (`stage_file`)**: Adds a file to the index. This process converts the file content into a Blob object and saves it to the ObjectStorage.
+- **Modification Check (`isFileModified`)**: A smart check that determines if the current working file differs from its entry in the index, based on:
+  - **Existence/Deletion**: Checking if a tracked file was deleted or if an untracked (new) file exists.
+  - **Size**: Detecting changes in file size.
+  - **Modification Time (mtime)**: A fast comparison of the last write time.
+  - **Hash (Content Check)**: If the size or time differs, the Blob hash is recalculated for deep content verification.
+- **Error Handling**: Correctly throws a `std::runtime_error` when attempting to stage an invalid path or a directory.
+- **Persistence**: The saving and loading of the index state to disk are ensured, providing persistence across sessions.
 
----
+## 🗺️ Next Steps
 
-## 🛠 Project Status and Next Steps
+The immediate focus is stabilizing the final tests for the Index module. Once completed, the project will move to the high-level object structures:
 
-The project is currently under active development.
-
-* **Current Focus:** Comprehensive testing and stabilization of the **`ObjectStorage`** module.
-* **Next Stage:** Implementation of the **`Index` (Staging Area)** class to track files in the working directory and prepare data for commit creation.
-
----
+- **Tree Object**: Implementation of the object representing the directory structure, containing references to Blob and other Tree objects.
+- **Commit Object**: Creation of the object that finalizes the repository state, including a reference to the top-level Tree, author metadata, date, and commit message.
+- **Basic Commit**: Implementation of the core `svcs commit` command logic.
 
 ## 📖 Documentation (API Reference)
 
-The detailed code documentation for classes and methods, generated by **Doxygen**, is automatically deployed to GitHub Pages after every update.
+The detailed code documentation for classes and methods, generated by Doxygen, is automatically deployed to GitHub Pages after every update.
 
 You can select the documentation interface language:
 
-* **English Version (EN):**
-    [Go to Documentation (EN)](https://LogosITO.github.io/SVCS/en/)
-
-* **Russian Version (RU):**
-    [Go to Documentation (RU)](https://LogosITO.github.io/SVCS/ru/)
-
----
+- **English Version (EN)**: [Go to Documentation (EN)]()
+- **Russian Version (RU)**: [Go to Documentation (RU)]()
 
 ## 📝 Author and License
 
-© 2025 LogosITO. This project is distributed under the **MIT** License.
+© 2025 LogosITO. This project is distributed under the MIT License.

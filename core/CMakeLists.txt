@@ -16,7 +16,6 @@ set(CORE_HEADERS
     include/Commit.hxx
     include/ObjectStorage.hxx
     include/Utils.hxx
-    include/Utils.cxx
     include/Repository.hxx
 )
 

@@ -75,19 +75,19 @@ public:
      * @brief Gets the command name (e.g., "init", "commit").
      * @return The command name as a string.
      */
-    virtual std::string getName() const = 0;
+    virtual std::string getName() const override = 0;
     
     /**
      * @brief Gets a brief description of the command.
      * @return The command's description.
      */
-    virtual std::string getDescription() const = 0;
+    virtual std::string getDescription() const override = 0;
     
     /**
      * @brief Gets the command's usage syntax.
      * @return A string with the syntax (e.g., "vcs init <path>").
      */
-    virtual std::string getUsage() const = 0;
+    virtual std::string getUsage() const override = 0;
     
     /**
      * @brief Displays the command's help (Usage and Description).

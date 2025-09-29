@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Исходный файл services/EventBus.hxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('EventBus_8hxx_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">EventBus.hxx</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="EventBus_8hxx.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="IObserver_8hxx.html">IObserver.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">ISubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classEventBus.html">   27</a></span><span class="keyword">class </span><a class="code hl_class" href="classEventBus.html">EventBus</a> : <span class="keyword">public</span> <a class="code hl_class" href="classISubject.html">ISubject</a>, <span class="keyword">public</span> std::enable_shared_from_this&lt;EventBus&gt; {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::vector&lt;std::weak_ptr&lt;IObserver&gt;&gt; observers_;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">mutable</span> std::mutex observers_mutex_; <span class="comment">// Changed to mutable to allow locking inside const notify</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classEventBus.html#af9f702d10d6340e1f3da65e487fd73be">   44</a></span>    <a class="code hl_function" href="classEventBus.html#af9f702d10d6340e1f3da65e487fd73be">~EventBus</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">   51</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">attach</a>(std::shared_ptr&lt;IObserver&gt; observer)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        std::lock_guard&lt;std::mutex&gt; lock(observers_mutex_);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        observers_.push_back(observer);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">   61</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">detach</a>(std::shared_ptr&lt;IObserver&gt; observer_to_remove)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        std::lock_guard&lt;std::mutex&gt; lock(observers_mutex_);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">auto</span> it = std::remove_if(observers_.begin(), observers_.end(),</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            [&amp;](<span class="keyword">const</span> std::weak_ptr&lt;IObserver&gt;&amp; weak_obs) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                auto shared_obs = weak_obs.lock();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                return shared_obs &amp;&amp; (shared_obs == observer_to_remove);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        observers_.erase(it, observers_.end());</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classEventBus.html#a581f243551365d2dc9599665540486dd">   81</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a581f243551365d2dc9599665540486dd">notify</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structEvent.html">Event</a>&amp; event)<span class="keyword"> const override </span>{ </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        std::lock_guard&lt;std::mutex&gt; lock(<span class="keyword">const_cast&lt;</span>std::mutex&amp;<span class="keyword">&gt;</span>(observers_mutex_));</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; wp : observers_) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">if</span> (<span class="keyword">auto</span> observer = wp.lock()) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                observer-&gt;update(event);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
+</div>
+<div class="ttc" id="aIObserver_8hxx_html"><div class="ttname"><a href="IObserver_8hxx.html">IObserver.hxx</a></div><div class="ttdoc">Defines the interface for the Observer pattern component.</div></div>
+<div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
+<div class="ttc" id="aclassEventBus_html"><div class="ttname"><a href="classEventBus.html">EventBus</a></div><div class="ttdoc">A thread-safe implementation of ISubject for centralized event distribution.</div><div class="ttdef"><b>Определения</b> EventBus.hxx:27</div></div>
+<div class="ttc" id="aclassEventBus_html_a131f28abdfe25a80f94a202aff5e6edb"><div class="ttname"><a href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">EventBus::attach</a></div><div class="ttdeci">void attach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Registers a new Observer.</div><div class="ttdef"><b>Определения</b> EventBus.hxx:51</div></div>
+<div class="ttc" id="aclassEventBus_html_a42559fdfdd62a10ae1494f123a06e96a"><div class="ttname"><a href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">EventBus::detach</a></div><div class="ttdeci">void detach(std::shared_ptr&lt; IObserver &gt; observer_to_remove) override</div><div class="ttdoc">Deregisters a specific Observer.</div><div class="ttdef"><b>Определения</b> EventBus.hxx:61</div></div>
+<div class="ttc" id="aclassEventBus_html_a581f243551365d2dc9599665540486dd"><div class="ttname"><a href="classEventBus.html#a581f243551365d2dc9599665540486dd">EventBus::notify</a></div><div class="ttdeci">void notify(const Event &amp;event) const override</div><div class="ttdoc">Sends an event to all active Observers.</div><div class="ttdef"><b>Определения</b> EventBus.hxx:81</div></div>
+<div class="ttc" id="aclassEventBus_html_af9f702d10d6340e1f3da65e487fd73be"><div class="ttname"><a href="classEventBus.html#af9f702d10d6340e1f3da65e487fd73be">EventBus::~EventBus</a></div><div class="ttdeci">~EventBus() override=default</div><div class="ttdoc">Default virtual destructor.</div></div>
+<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">(Forward Declaration) The interface for the Event Bus.</div><div class="ttdef"><b>Определения</b> ISubject.hxx:26</div></div>
+<div class="ttc" id="astructEvent_html"><div class="ttname"><a href="structEvent.html">Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Определения</b> Event.hxx:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_056ec8f0377ddc4293192cbc6b19c99c.html">services</a></li><li class="navelem"><a href="EventBus_8hxx.html">EventBus.hxx</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

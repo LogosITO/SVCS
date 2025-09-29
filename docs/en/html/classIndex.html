@@ -119,7 +119,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a37a1115070ac00586a9b69cf9c26b115" id="r_a37a1115070ac00586a9b69cf9c26b115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37a1115070ac00586a9b69cf9c26b115">stage_file</a> (const fs::path &amp;relative_path)</td></tr>
 <tr class="memdesc:a37a1115070ac00586a9b69cf9c26b115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a file by creating a <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> object, saving it to storage, and updating the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> entry (Core logic of 'svcs add').  <br /></td></tr>
 <tr class="memitem:ad10592c0ea7291c0a8b2d8b593b21a85" id="r_ad10592c0ea7291c0a8b2d8b593b21a85"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad10592c0ea7291c0a8b2d8b593b21a85">createTreeObject</a> ()</td></tr>
-<tr class="memdesc:ad10592c0ea7291c0a8b2d8b593b21a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the hierarchical <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> structure based on the current staged entries and saves the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> objects to <a class="el" href="classObjectStorage.html">ObjectStorage</a>.  <br /></td></tr>
+<tr class="memdesc:ad10592c0ea7291c0a8b2d8b593b21a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the hierarchical <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> structure based on the current staged entries and saves the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> objects to <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the Staging Area (<a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a>) of the VCS repository. </p>
@@ -157,7 +157,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">vcs_root_path</td><td>The path to the VCS control directory (e.g., .svcs). </td></tr>
     <tr><td class="paramname">repo_root_path</td><td>The path to the repository's working directory root. </td></tr>
-    <tr><td class="paramname">storage</td><td>Reference to the <a class="el" href="classObjectStorage.html">ObjectStorage</a> instance. </td></tr>
+    <tr><td class="paramname">storage</td><td>Reference to the <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a> instance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -207,7 +207,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates the hierarchical <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> structure based on the current staged entries and saves the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> objects to <a class="el" href="classObjectStorage.html">ObjectStorage</a>. </p>
+<p>Creates the hierarchical <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> structure based on the current staged entries and saves the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> objects to <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The SHA-1 hash (ID) of the final root <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">

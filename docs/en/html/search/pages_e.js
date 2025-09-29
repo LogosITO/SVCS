@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📖_20documentation_20api_20reference_0',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md8',1,'']]]
+  ['🏗_20key_20implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md3',1,'']]]
 ];

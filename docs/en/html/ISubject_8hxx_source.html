@@ -94,33 +94,33 @@ $(function(){initNavTree('ISubject_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="ISubject_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="IObserver_8hxx.html">IObserver.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classISubject.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classISubject.html">ISubject</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classISubject.html">~ISubject</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classISubject.html#add1b9cce16468869c29b29c2e81e62fb">   24</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISubject.html#add1b9cce16468869c29b29c2e81e62fb">attach</a>(<a class="code hl_class" href="classIObserver.html">IObserver</a>* observer) = 0;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classISubject.html#aa8d47b50af325d0735c05979101b16d0">   30</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISubject.html#aa8d47b50af325d0735c05979101b16d0">detach</a>(<a class="code hl_class" href="classIObserver.html">IObserver</a>* observer) = 0;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classISubject.html#a331138b4245b37120ab8a2d7180b2df5">   38</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISubject.html#a331138b4245b37120ab8a2d7180b2df5">notify</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structEvent.html">Event</a>&amp; event) = 0;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::vector&lt;IObserver*&gt; observers_;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="IObserver_8hxx.html">IObserver.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classISubject.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="classISubject.html">ISubject</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::vector&lt;IObserver*&gt; observers; </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classISubject.html#ae7264a3f132816d45581a1b31845ecac">   34</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classISubject.html#ae7264a3f132816d45581a1b31845ecac">~ISubject</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace">   40</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace">attach</a>(std::shared_ptr&lt;IObserver&gt; observer) = 0;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classISubject.html#aad2217012b14bdd6c91eb240689e5a74">   46</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISubject.html#aad2217012b14bdd6c91eb240689e5a74">detach</a>(std::shared_ptr&lt;IObserver&gt; observer) = 0;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474">   55</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474">notify</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structEvent.html">Event</a>&amp; event) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
 </div>
 <div class="ttc" id="aIObserver_8hxx_html"><div class="ttname"><a href="IObserver_8hxx.html">IObserver.hxx</a></div><div class="ttdoc">Defines the interface for the Observer pattern component.</div></div>
-<div class="ttc" id="aclassIObserver_html"><div class="ttname"><a href="classIObserver.html">IObserver</a></div><div class="ttdoc">Observer Interface.</div><div class="ttdef"><b>Definition</b> IObserver.hxx:17</div></div>
-<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">Subject (Publisher) Interface.</div><div class="ttdef"><b>Definition</b> ISubject.hxx:16</div></div>
-<div class="ttc" id="aclassISubject_html_a331138b4245b37120ab8a2d7180b2df5"><div class="ttname"><a href="classISubject.html#a331138b4245b37120ab8a2d7180b2df5">ISubject::notify</a></div><div class="ttdeci">virtual void notify(const Event &amp;event)=0</div><div class="ttdoc">Notifies all attached observers about an event.</div></div>
-<div class="ttc" id="aclassISubject_html_aa8d47b50af325d0735c05979101b16d0"><div class="ttname"><a href="classISubject.html#aa8d47b50af325d0735c05979101b16d0">ISubject::detach</a></div><div class="ttdeci">virtual void detach(IObserver *observer)=0</div><div class="ttdoc">Detaches an observer from the subject.</div></div>
-<div class="ttc" id="aclassISubject_html_add1b9cce16468869c29b29c2e81e62fb"><div class="ttname"><a href="classISubject.html#add1b9cce16468869c29b29c2e81e62fb">ISubject::attach</a></div><div class="ttdeci">virtual void attach(IObserver *observer)=0</div><div class="ttdoc">Attaches an observer to the subject.</div></div>
-<div class="ttc" id="astructEvent_html"><div class="ttname"><a href="structEvent.html">Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:17</div></div>
+<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">(Forward Declaration) The interface for the Event Bus.</div><div class="ttdef"><b>Definition</b> ISubject.hxx:26</div></div>
+<div class="ttc" id="aclassISubject_html_a4f6d20c5e92b9b0a020e8661becf9ace"><div class="ttname"><a href="classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace">ISubject::attach</a></div><div class="ttdeci">virtual void attach(std::shared_ptr&lt; IObserver &gt; observer)=0</div><div class="ttdoc">Attaches an observer to the subject.</div></div>
+<div class="ttc" id="aclassISubject_html_aa2da71c9f12ce1097f83bc8887fa0474"><div class="ttname"><a href="classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474">ISubject::notify</a></div><div class="ttdeci">virtual void notify(const Event &amp;event) const =0</div><div class="ttdoc">Notifies all attached observers about an event.</div></div>
+<div class="ttc" id="aclassISubject_html_aad2217012b14bdd6c91eb240689e5a74"><div class="ttname"><a href="classISubject.html#aad2217012b14bdd6c91eb240689e5a74">ISubject::detach</a></div><div class="ttdeci">virtual void detach(std::shared_ptr&lt; IObserver &gt; observer)=0</div><div class="ttdoc">Detaches an observer from the subject.</div></div>
+<div class="ttc" id="aclassISubject_html_ae7264a3f132816d45581a1b31845ecac"><div class="ttname"><a href="classISubject.html#ae7264a3f132816d45581a1b31845ecac">ISubject::~ISubject</a></div><div class="ttdeci">virtual ~ISubject()=default</div><div class="ttdoc">Virtual destructor.</div></div>
+<div class="ttc" id="astructEvent_html"><div class="ttname"><a href="structEvent.html">Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

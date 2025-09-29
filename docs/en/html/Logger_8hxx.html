@@ -94,9 +94,13 @@ $(function(){initNavTree('Logger_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Defines the concrete <a class="el" href="classLogger.html" title="Concrete Observer responsible for message output.">Logger</a> class, an implementation of <a class="el" href="classIObserver.html" title="Observer Interface.">IObserver</a>.  
+<p>Defines the <a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a> class, a thread-safe Singleton that acts as an <a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="IObserver_8hxx_source.html">../IObserver.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Event_8hxx_source.html">../Event.hxx</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;mutex&gt;</code><br />
 </div>
 <p><a href="Logger_8hxx_source.html">Go to the source code of this file.</a></p>
@@ -104,18 +108,69 @@ $(function(){initNavTree('Logger_8hxx.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Logger" id="r_Logger"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html">Logger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concrete Observer responsible for message output.  <a href="classLogger.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A thread-safe Singleton class responsible for logging system events.  <a href="classLogger.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:adc57ea2bcc67e64f5f862c259b94837e" id="r_adc57ea2bcc67e64f5f862c259b94837e"><td class="memItemLeft" align="right" valign="top"><a id="adc57ea2bcc67e64f5f862c259b94837e" name="adc57ea2bcc67e64f5f862c259b94837e"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentTime</b> ()</td></tr>
-<tr class="memdesc:adc57ea2bcc67e64f5f862c259b94837e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вспомогательная функция для получения текущего времени. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:aca1fd1d8935433e6ba2e3918214e07f9" id="r_aca1fd1d8935433e6ba2e3918214e07f9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> { <br />
+&#160;&#160;<a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15">DEBUG</a> = 0
+, <a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">INFO</a> = 1
+, <a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277">WARN</a> = 2
+, <a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc">FATAL</a> = 4
+<br />
+ }</td></tr>
+<tr class="memdesc:aca1fd1d8935433e6ba2e3918214e07f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the severity levels for log messages.  <a href="#aca1fd1d8935433e6ba2e3918214e07f9">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines the concrete <a class="el" href="classLogger.html" title="Concrete Observer responsible for message output.">Logger</a> class, an implementation of <a class="el" href="classIObserver.html" title="Observer Interface.">IObserver</a>. </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>Defines the <a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a> class, a thread-safe Singleton that acts as an <a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a>. </p>
+<p>The <a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a> centralizes system logging, handles log level filtering, and subscribes to the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus to automatically process system events.</p>
+<ul>
+<li><dl class="section copyright"><dt>Copyright</dt><dd>2025 LogosITO Under the MIT-License </dd></dl>
+</li>
+</ul>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="aca1fd1d8935433e6ba2e3918214e07f9" name="aca1fd1d8935433e6ba2e3918214e07f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca1fd1d8935433e6ba2e3918214e07f9">&#9670;&#160;</a></span>LogLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Defines the severity levels for log messages. </p>
+<ul>
+<li>Used for filtering output based on the configured level. </li>
+</ul>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15" name="aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15"></a>DEBUG&#160;</td><td class="fielddoc"><p>Detailed information for debugging. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3" name="aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3"></a>INFO&#160;</td><td class="fielddoc"><p>General flow information. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277" name="aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277"></a>WARN&#160;</td><td class="fielddoc"><p>Potentially harmful situations. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5" name="aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"><p>Error events that might still allow the application to continue. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc" name="aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc"></a>FATAL&#160;</td><td class="fielddoc"><p>Very severe error events that will likely cause the application to abort. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

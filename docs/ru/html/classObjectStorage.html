@@ -93,6 +93,11 @@ $(function(){initNavTree('classObjectStorage.html','','classObjectStorage-member
   <div class="headertitle"><div class="title">Класс ObjectStorage</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the version control object database, including persistence and object restoration.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ObjectStorage_8hxx_source.html">ObjectStorage.hxx</a>&gt;</code></p>
 <div class="dynheader">
 Граф наследования:ObjectStorage:</div>
 <div class="dyncontent">
@@ -105,10 +110,13 @@ $(function(){initNavTree('classObjectStorage.html','','classObjectStorage-member
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a7ea8230205caa5ba50b121741d97ca26" id="r_a7ea8230205caa5ba50b121741d97ca26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ea8230205caa5ba50b121741d97ca26">ObjectStorage</a> (const std::string &amp;root_path, <a class="el" href="classISubject.html">ISubject</a> *subject=nullptr)</td></tr>
-<tr class="memdesc:a7ea8230205caa5ba50b121741d97ca26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classObjectStorage.html">ObjectStorage</a>.  <br /></td></tr>
-<tr class="memitem:a43822e7263787f3161b0f6739cb313e5" id="r_a43822e7263787f3161b0f6739cb313e5"><td class="memItemLeft" align="right" valign="top"><a id="a43822e7263787f3161b0f6739cb313e5" name="a43822e7263787f3161b0f6739cb313e5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a class="el" href="classISubject.html">ISubject</a> *subj)</td></tr>
+<tr class="memitem:aa511ec3636de4f1ad6f411e7a2aa2638" id="r_aa511ec3636de4f1ad6f411e7a2aa2638"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa511ec3636de4f1ad6f411e7a2aa2638">ObjectStorage</a> (const std::string &amp;root_path, std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; subject=nullptr)</td></tr>
+<tr class="memdesc:aa511ec3636de4f1ad6f411e7a2aa2638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  <br /></td></tr>
+<tr class="memitem:a84986af89788ac235900ee9278e681d1" id="r_a84986af89788ac235900ee9278e681d1"><td class="memItemLeft" align="right" valign="top"><a id="a84986af89788ac235900ee9278e681d1" name="a84986af89788ac235900ee9278e681d1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~ObjectStorage</b> ()</td></tr>
+<tr class="memdesc:a84986af89788ac235900ee9278e681d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:a0dc7bb15cb48b9795149e3572c4c7c3c" id="r_a0dc7bb15cb48b9795149e3572c4c7c3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dc7bb15cb48b9795149e3572c4c7c3c">setSubject</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; subj)</td></tr>
+<tr class="memdesc:a0dc7bb15cb48b9795149e3572c4c7c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or replaces the event subject used by the <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  <br /></td></tr>
 <tr class="memitem:a3bdb2110012cbe733cdeb4d438b583d0" id="r_a3bdb2110012cbe733cdeb4d438b583d0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bdb2110012cbe733cdeb4d438b583d0">getObjectPath</a> (const std::string &amp;hash) const</td></tr>
 <tr class="memdesc:a3bdb2110012cbe733cdeb4d438b583d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms the full filesystem path for an object based on its hash.  <br /></td></tr>
 <tr class="memitem:acab6226c60b2979078001d539f56de3b" id="r_acab6226c60b2979078001d539f56de3b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acab6226c60b2979078001d539f56de3b">saveObject</a> (const <a class="el" href="classVcsObject.html">VcsObject</a> &amp;obj) const</td></tr>
@@ -118,9 +126,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a cl
 <tr class="memitem:abbc8d8426ae0f500aa7a6dba213e0bed" id="r_abbc8d8426ae0f500aa7a6dba213e0bed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbc8d8426ae0f500aa7a6dba213e0bed">objectExists</a> (const std::string &amp;hash) const</td></tr>
 <tr class="memdesc:abbc8d8426ae0f500aa7a6dba213e0bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if an object with the given hash exists on disk.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
-<a id="a7ea8230205caa5ba50b121741d97ca26" name="a7ea8230205caa5ba50b121741d97ca26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ea8230205caa5ba50b121741d97ca26">&#9670;&#160;</a></span>ObjectStorage()</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Manages the version control object database, including persistence and object restoration. </p>
+<p>Implements low-level file system operations (path generation, reading, writing), compression, decompression, and object deserialization. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="aa511ec3636de4f1ad6f411e7a2aa2638" name="aa511ec3636de4f1ad6f411e7a2aa2638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa511ec3636de4f1ad6f411e7a2aa2638">&#9670;&#160;</a></span>ObjectStorage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,16 +144,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a cl
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classISubject.html">ISubject</a> *</td>          <td class="paramname"><span class="paramname"><em>subject</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>subject</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for <a class="el" href="classObjectStorage.html">ObjectStorage</a>. </p>
+<p>Constructor for <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">root_path</td><td>The root path of the repository (e.g., the directory containing ".svcs"). </td></tr>
-    <tr><td class="paramname">subject</td><td>Pointer to the <a class="el" href="classISubject.html" title="Subject (Publisher) Interface.">ISubject</a> interface for event logging. </td></tr>
+    <tr><td class="paramname">subject</td><td>Shared pointer to the <a class="el" href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus.">ISubject</a> interface for event logging. Defaults to nullptr if logging is not required yet. </td></tr>
   </table>
   </dd>
 </dl>
@@ -166,7 +177,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a cl
 </div><div class="memdoc">
 
 <p>Forms the full filesystem path for an object based on its hash. </p>
-<p>Uses the first two characters of the hash for the subdirectory name. </p><dl class="params"><dt>Аргументы</dt><dd>
+<p>Uses the first two characters of the hash for the subdirectory name and the remaining 38 characters for the filename. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">hash</td><td>The full 40-character SHA-1 hash ID. </td></tr>
   </table>
@@ -200,7 +211,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a cl
 </div><div class="memdoc">
 
 <p>Loads an object from the disk by its hash ID. </p>
-<p>Reads the compressed file, decompresses it, performs integrity checks, and deserializes the object. </p><dl class="params"><dt>Аргументы</dt><dd>
+<p>Reads the compressed file, decompresses it, performs integrity checks, and deserializes the object using the internal factory method. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">hash</td><td>The hash ID of the object to load. </td></tr>
   </table>
@@ -268,7 +279,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a cl
 </div><div class="memdoc">
 
 <p>Saves a <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> to the object database. </p>
-<p>Serializes the object, prefixes it with a header, compresses it, and writes it to a file. </p><dl class="params"><dt>Аргументы</dt><dd>
+<p>Serializes the object, prefixes it with a header, compresses it, and writes it to a file. Publishes events on success/failure. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> to save. </td></tr>
   </table>
@@ -283,6 +294,39 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a cl
 </dl>
 
 <p>Переопределяется в <a class="el" href="classMockObjectStorage.html#a0d17e41ae6b3787ed45aad9b75ea0518">MockObjectStorage</a>.</p>
+
+</div>
+</div>
+<a id="a0dc7bb15cb48b9795149e3572c4c7c3c" name="a0dc7bb15cb48b9795149e3572c4c7c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc7bb15cb48b9795149e3572c4c7c3c">&#9670;&#160;</a></span>setSubject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectStorage::setSubject </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>subj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets or replaces the event subject used by the <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subj</td><td>The new <a class="el" href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus.">ISubject</a> pointer to use for publishing events. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

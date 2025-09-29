@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['object_5fread_5fsuccess_0',['OBJECT_READ_SUCCESS',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092',1,'Event']]],
-  ['object_5fwrite_5fsuccess_1',['OBJECT_WRITE_SUCCESS',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70',1,'Event']]]
+  ['index_5fupdate_0',['INDEX_UPDATE',['../structEvent.html#a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775',1,'Event']]],
+  ['info_1',['INFO',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3',1,'Logger.hxx']]]
 ];

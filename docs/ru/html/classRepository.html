@@ -93,43 +93,88 @@ $(function(){initNavTree('classRepository.html','','classRepository-members'); }
   <div class="headertitle"><div class="title">Класс Repository</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the version control directory structure and core operations.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Repository_8hxx_source.html">Repository.hxx</a>&gt;</code></p>
 <div class="dynheader">
 Граф наследования:Repository:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classRepository.png" usemap="#Repository_map" alt=""/>
   <map id="Repository_map" name="Repository_map">
-<area href="classISubject.html" title="Subject (Publisher) Interface." alt="ISubject" shape="rect" coords="0,0,72,24"/>
+<area href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus." alt="ISubject" shape="rect" coords="0,0,72,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
+<tr class="memitem:a26ba073b495c4b231658713f1e3ffeae" id="r_a26ba073b495c4b231658713f1e3ffeae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26ba073b495c4b231658713f1e3ffeae">~Repository</a> ()</td></tr>
+<tr class="memdesc:a26ba073b495c4b231658713f1e3ffeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 <tr class="memitem:a4daef56a20ce5925937e57ea5b77548e" id="r_a4daef56a20ce5925937e57ea5b77548e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4daef56a20ce5925937e57ea5b77548e">Repository</a> (const std::string &amp;rpath)</td></tr>
 <tr class="memdesc:a4daef56a20ce5925937e57ea5b77548e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the repository manager.  <br /></td></tr>
-<tr class="memitem:a58a23eff67b9a24c3a8916fd8dfacc9a" id="r_a58a23eff67b9a24c3a8916fd8dfacc9a"><td class="memItemLeft" align="right" valign="top"><a id="a58a23eff67b9a24c3a8916fd8dfacc9a" name="a58a23eff67b9a24c3a8916fd8dfacc9a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initializeDependencies</b> ()</td></tr>
-<tr class="memdesc:a58a23eff67b9a24c3a8916fd8dfacc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializing dependencies. <br /></td></tr>
+<tr class="memitem:a58a23eff67b9a24c3a8916fd8dfacc9a" id="r_a58a23eff67b9a24c3a8916fd8dfacc9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58a23eff67b9a24c3a8916fd8dfacc9a">initializeDependencies</a> ()</td></tr>
+<tr class="memdesc:a58a23eff67b9a24c3a8916fd8dfacc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the repository's internal dependencies.  <br /></td></tr>
 <tr class="memitem:aff14558f8e382efc3e5e53263b85e312" id="r_aff14558f8e382efc3e5e53263b85e312"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff14558f8e382efc3e5e53263b85e312">init</a> ()</td></tr>
-<tr class="memdesc:aff14558f8e382efc3e5e53263b85e312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the basic repository structure (.svcs, objects, refs).  <br /></td></tr>
+<tr class="memdesc:aff14558f8e382efc3e5e53263b85e312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the basic repository structure (.svcs, objects, refs) on the disk.  <br /></td></tr>
+<tr class="memitem:ae29372147e4b9dbb7ad3efdd32c1c42e" id="r_ae29372147e4b9dbb7ad3efdd32c1c42e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae29372147e4b9dbb7ad3efdd32c1c42e">is_initialized</a> () const</td></tr>
+<tr class="memdesc:ae29372147e4b9dbb7ad3efdd32c1c42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the repository structure is fully initialized and valid.  <br /></td></tr>
 <tr class="memitem:a74b5a052c07a886d428e42aaaeebeeb5" id="r_a74b5a052c07a886d428e42aaaeebeeb5"><td class="memItemLeft" align="right" valign="top">const std::filesystem::path &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74b5a052c07a886d428e42aaaeebeeb5">getPath</a> () const</td></tr>
 <tr class="memdesc:a74b5a052c07a886d428e42aaaeebeeb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the root path of the repository.  <br /></td></tr>
 <tr class="memitem:a9c1153091e3ffa2d5aaf65e900a41c40" id="r_a9c1153091e3ffa2d5aaf65e900a41c40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObjectStorage.html">ObjectStorage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c1153091e3ffa2d5aaf65e900a41c40">getObjectStorage</a> () const</td></tr>
-<tr class="memdesc:a9c1153091e3ffa2d5aaf65e900a41c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="classObjectStorage.html">ObjectStorage</a> instance for database interaction.  <br /></td></tr>
-<tr class="memitem:a101deb16e0b2c5e89408596751df2ab0" id="r_a101deb16e0b2c5e89408596751df2ab0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a101deb16e0b2c5e89408596751df2ab0">attach</a> (<a class="el" href="classIObserver.html">IObserver</a> *observer) override</td></tr>
-<tr class="memdesc:a101deb16e0b2c5e89408596751df2ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to receive events.  <br /></td></tr>
-<tr class="memitem:a2be25cf244049b8ab1156b2a307c7a9e" id="r_a2be25cf244049b8ab1156b2a307c7a9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2be25cf244049b8ab1156b2a307c7a9e">detach</a> (<a class="el" href="classIObserver.html">IObserver</a> *observer) override</td></tr>
-<tr class="memdesc:a2be25cf244049b8ab1156b2a307c7a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches an observer.  <br /></td></tr>
-<tr class="memitem:a9dcc9525330f8f98eccf2d95aff99a28" id="r_a9dcc9525330f8f98eccf2d95aff99a28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dcc9525330f8f98eccf2d95aff99a28">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) override</td></tr>
-<tr class="memdesc:a9dcc9525330f8f98eccf2d95aff99a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers about an event.  <br /></td></tr>
+<tr class="memdesc:a9c1153091e3ffa2d5aaf65e900a41c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the raw pointer to the managed <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a> instance for database interaction.  <br /></td></tr>
+<tr class="memitem:a250a9e24514ca3a4f8c6d954ad4dcefc" id="r_a250a9e24514ca3a4f8c6d954ad4dcefc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a250a9e24514ca3a4f8c6d954ad4dcefc">attach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer) override</td></tr>
+<tr class="memdesc:a250a9e24514ca3a4f8c6d954ad4dcefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to receive events.  <br /></td></tr>
+<tr class="memitem:a1e421ee99132cf3dcaac6fc54ba0ab7d" id="r_a1e421ee99132cf3dcaac6fc54ba0ab7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e421ee99132cf3dcaac6fc54ba0ab7d">detach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer) override</td></tr>
+<tr class="memdesc:a1e421ee99132cf3dcaac6fc54ba0ab7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches a registered observer.  <br /></td></tr>
+<tr class="memitem:a7ce8792d0a1493d98986fb2732b95c4c" id="r_a7ce8792d0a1493d98986fb2732b95c4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ce8792d0a1493d98986fb2732b95c4c">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) const override</td></tr>
+<tr class="memdesc:a7ce8792d0a1493d98986fb2732b95c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers about an event.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classISubject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classISubject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classISubject.html">ISubject</a></td></tr>
+<tr class="memitem:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_classISubject" id="r_ae7264a3f132816d45581a1b31845ecac"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISubject.html#ae7264a3f132816d45581a1b31845ecac">~ISubject</a> ()=default</td></tr>
+<tr class="memdesc:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_classISubject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:acffdc3fb1a22f69018a4037e9b4feabb" id="r_acffdc3fb1a22f69018a4037e9b4feabb"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classRepository.html">Repository</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acffdc3fb1a22f69018a4037e9b4feabb">findRepository</a> (const std::string &amp;start_path=&quot;.&quot;)</td></tr>
+<tr class="memdesc:acffdc3fb1a22f69018a4037e9b4feabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statically searches for an existing repository starting from a given path and moving up.  <br /></td></tr>
+<tr class="memitem:aed550b2bede1ebe31d4dc4ac42026ba6" id="r_aed550b2bede1ebe31d4dc4ac42026ba6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed550b2bede1ebe31d4dc4ac42026ba6">isRepository</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:aed550b2bede1ebe31d4dc4ac42026ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statically checks if a given path is the root of an SVCS repository.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Дополнительные унаследованные члены</h2></td></tr>
 <tr class="inherit_header pro_attribs_classISubject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classISubject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные данные унаследованные от <a class="el" href="classISubject.html">ISubject</a></td></tr>
-<tr class="memitem:ada785065e1685f6294a4aa22c7a01673 inherit pro_attribs_classISubject" id="r_ada785065e1685f6294a4aa22c7a01673"><td class="memItemLeft" align="right" valign="top">
-std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers_</b></td></tr>
+<tr class="memitem:a66f4ce666ed8b85d694a9b73d6bc16fb inherit pro_attribs_classISubject" id="r_a66f4ce666ed8b85d694a9b73d6bc16fb"><td class="memItemLeft" align="right" valign="top">
+std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Manages the version control directory structure and core operations. </p>
+<ul>
+<li>Implements <a class="el" href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus.">ISubject</a> to serve as an event publisher for the core VCS operations. </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a26ba073b495c4b231658713f1e3ffeae" name="a26ba073b495c4b231658713f1e3ffeae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26ba073b495c4b231658713f1e3ffeae">&#9670;&#160;</a></span>~Repository()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Repository::~Repository </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Virtual destructor. </p>
+<ul>
+<li>Ensures correct cleanup of managed resources (<a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>). </li>
+</ul>
+
+</div>
+</div>
 <a id="a4daef56a20ce5925937e57ea5b77548e" name="a4daef56a20ce5925937e57ea5b77548e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4daef56a20ce5925937e57ea5b77548e">&#9670;&#160;</a></span>Repository()</h2>
 
@@ -148,7 +193,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 <p>Constructs the repository manager. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">root_path</td><td>The root directory of the repository. </td></tr>
+    <tr><td class="paramname">rpath</td><td>The root directory of the repository. </td></tr>
   </table>
   </dd>
 </dl>
@@ -156,8 +201,8 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
-<a id="a101deb16e0b2c5e89408596751df2ab0" name="a101deb16e0b2c5e89408596751df2ab0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a101deb16e0b2c5e89408596751df2ab0">&#9670;&#160;</a></span>attach()</h2>
+<a id="a250a9e24514ca3a4f8c6d954ad4dcefc" name="a250a9e24514ca3a4f8c6d954ad4dcefc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250a9e24514ca3a4f8c6d954ad4dcefc">&#9670;&#160;</a></span>attach()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +213,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
         <tr>
           <td class="memname">void Repository::attach </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIObserver.html">IObserver</a> *</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -182,17 +227,17 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 <p>Attaches an observer to receive events. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>Pointer to the observer instance. </td></tr>
+    <tr><td class="paramname">observer</td><td>Shared pointer to the observer instance. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Замещает <a class="el" href="classISubject.html#add1b9cce16468869c29b29c2e81e62fb">ISubject</a>.</p>
+<p>Замещает <a class="el" href="classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace">ISubject</a>.</p>
 
 </div>
 </div>
-<a id="a2be25cf244049b8ab1156b2a307c7a9e" name="a2be25cf244049b8ab1156b2a307c7a9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2be25cf244049b8ab1156b2a307c7a9e">&#9670;&#160;</a></span>detach()</h2>
+<a id="a1e421ee99132cf3dcaac6fc54ba0ab7d" name="a1e421ee99132cf3dcaac6fc54ba0ab7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e421ee99132cf3dcaac6fc54ba0ab7d">&#9670;&#160;</a></span>detach()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +248,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
         <tr>
           <td class="memname">void Repository::detach </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIObserver.html">IObserver</a> *</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -214,15 +259,49 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Detaches an observer. </p>
+<p>Detaches a registered observer. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>Pointer to the observer instance to detach. </td></tr>
+    <tr><td class="paramname">observer</td><td>Shared pointer to the observer instance to detach. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Замещает <a class="el" href="classISubject.html#aa8d47b50af325d0735c05979101b16d0">ISubject</a>.</p>
+<p>Замещает <a class="el" href="classISubject.html#aad2217012b14bdd6c91eb240689e5a74">ISubject</a>.</p>
+
+</div>
+</div>
+<a id="acffdc3fb1a22f69018a4037e9b4feabb" name="acffdc3fb1a22f69018a4037e9b4feabb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acffdc3fb1a22f69018a4037e9b4feabb">&#9670;&#160;</a></span>findRepository()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classRepository.html">Repository</a> &gt; Repository::findRepository </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>start_path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;.&quot;</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Statically searches for an existing repository starting from a given path and moving up. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_path</td><td>The directory path to begin the search from (defaults to "."). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>A shared pointer to the found <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> instance, or nullptr if none is found. </dd></dl>
 
 </div>
 </div>
@@ -249,8 +328,8 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Gets the <a class="el" href="classObjectStorage.html">ObjectStorage</a> instance for database interaction. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>ObjectStorage* Pointer to the managed <a class="el" href="classObjectStorage.html">ObjectStorage</a> instance. </dd></dl>
+<p>Gets the raw pointer to the managed <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a> instance for database interaction. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ObjectStorage* Pointer to the managed <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a> instance. </dd></dl>
 
 </div>
 </div>
@@ -297,13 +376,89 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the basic repository structure (.svcs, objects, refs). </p>
+<p>Initializes the basic repository structure (.svcs, objects, refs) on the disk. </p>
 <dl class="section return"><dt>Возвращает</dt><dd>bool True if initialization succeeded, false otherwise. </dd></dl>
 
 </div>
 </div>
-<a id="a9dcc9525330f8f98eccf2d95aff99a28" name="a9dcc9525330f8f98eccf2d95aff99a28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dcc9525330f8f98eccf2d95aff99a28">&#9670;&#160;</a></span>notify()</h2>
+<a id="a58a23eff67b9a24c3a8916fd8dfacc9a" name="a58a23eff67b9a24c3a8916fd8dfacc9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a23eff67b9a24c3a8916fd8dfacc9a">&#9670;&#160;</a></span>initializeDependencies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Repository::initializeDependencies </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the repository's internal dependencies. </p>
+<ul>
+<li>This typically involves instantiating and setting up internal components like <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>. </li>
+</ul>
+
+</div>
+</div>
+<a id="ae29372147e4b9dbb7ad3efdd32c1c42e" name="ae29372147e4b9dbb7ad3efdd32c1c42e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29372147e4b9dbb7ad3efdd32c1c42e">&#9670;&#160;</a></span>is_initialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Repository::is_initialized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the repository structure is fully initialized and valid. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true if all necessary directories and files exist. </dd></dl>
+
+</div>
+</div>
+<a id="aed550b2bede1ebe31d4dc4ac42026ba6" name="aed550b2bede1ebe31d4dc4ac42026ba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed550b2bede1ebe31d4dc4ac42026ba6">&#9670;&#160;</a></span>isRepository()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Repository::isRepository </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Statically checks if a given path is the root of an SVCS repository. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true if the path contains the required repository marker files/directories. </dd></dl>
+
+</div>
+</div>
+<a id="a7ce8792d0a1493d98986fb2732b95c4c" name="a7ce8792d0a1493d98986fb2732b95c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce8792d0a1493d98986fb2732b95c4c">&#9670;&#160;</a></span>notify()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,7 +470,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
           <td class="memname">void Repository::notify </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structEvent.html">Event</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -328,12 +483,12 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 <p>Notifies all attached observers about an event. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>The event data structure. </td></tr>
+    <tr><td class="paramname">event</td><td>The constant reference to the event data structure. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Замещает <a class="el" href="classISubject.html#a331138b4245b37120ab8a2d7180b2df5">ISubject</a>.</p>
+<p>Замещает <a class="el" href="classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474">ISubject</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['commit_0',['Commit',['../classCommit.html',1,'']]]
+  ['commandfactory_0',['CommandFactory',['../classCommandFactory.html',1,'']]],
+  ['commit_1',['Commit',['../classCommit.html',1,'']]]
 ];

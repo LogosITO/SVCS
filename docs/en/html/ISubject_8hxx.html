@@ -94,9 +94,10 @@ $(function(){initNavTree('ISubject_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Defines the interface for the Subject (Publisher) pattern component.  
+<p>Defines the interface for the Subject (Publisher) component of the Observer pattern.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="IObserver_8hxx_source.html">IObserver.hxx</a>&quot;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="ISubject_8hxx_source.html">Go to the source code of this file.</a></p>
@@ -104,11 +105,12 @@ $(function(){initNavTree('ISubject_8hxx.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:ISubject" id="r_ISubject"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISubject.html">ISubject</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subject (Publisher) Interface.  <a href="classISubject.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Forward Declaration) The interface for the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus.  <a href="classISubject.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines the interface for the Subject (Publisher) pattern component. </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>2024 (c) Simple VCS Project. All rights reserved. </dd></dl>
+<div class="textblock"><p>Defines the interface for the Subject (Publisher) component of the Observer pattern. </p>
+<p>This interface establishes the contract for any class that wishes to act as an event publisher, allowing Observers to register for notifications. It mandates the use of smart pointers for managing observer lifetimes.</p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Исходный файл cli/include/CommandFactory.hxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('CommandFactory_8hxx_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CommandFactory.hxx</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="CommandFactory_8hxx.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="ICommand_8hxx.html">ICommand.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;mutex&gt;</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span><a class="code hl_class" href="classISubject.html">ISubject</a>; </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classCommandFactory.html">   37</a></span><span class="keyword">class </span>CommandFactory {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    CommandFactory(std::shared_ptr&lt;ISubject&gt; eventBus);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> registerDefaultCommands();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    std::unordered_map&lt;std::string,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                      std::function&lt;std::unique_ptr&lt;ICommand&gt;(std::shared_ptr&lt;ISubject&gt;)&gt;&gt; creators_;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">static</span> std::once_flag initInstanceFlag_;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">   74</a></span>    <a class="code hl_function" href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">CommandFactory</a>(<span class="keyword">const</span> CommandFactory&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">   79</a></span>    CommandFactory&amp; <a class="code hl_function" href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">operator=</a>(<span class="keyword">const</span> CommandFactory&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">static</span> CommandFactory&amp; <a class="code hl_function" href="classCommandFactory.html#a0f4cf9735c3389fa8835e2cbf47a5120">getInstance</a>(std::shared_ptr&lt;ISubject&gt; eventBus = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCommandFactory.html#a2e17e10943e3511d2e64a47454c83161">registerCommand</a>(<span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                        std::function&lt;std::unique_ptr&lt;ICommand&gt;(std::shared_ptr&lt;ISubject&gt;)&gt; creator);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    std::unique_ptr&lt;ICommand&gt; <a class="code hl_function" href="classCommandFactory.html#a4a777093b42a99531b14e6f2321b3542">createCommand</a>(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>};</div>
+</div>
+<div class="ttc" id="aICommand_8hxx_html"><div class="ttname"><a href="ICommand_8hxx.html">ICommand.hxx</a></div><div class="ttdoc">Declaration of the ICommand interface for all executable CLI commands.</div></div>
+<div class="ttc" id="aclassCommandFactory_html_a0f4cf9735c3389fa8835e2cbf47a5120"><div class="ttname"><a href="classCommandFactory.html#a0f4cf9735c3389fa8835e2cbf47a5120">CommandFactory::getInstance</a></div><div class="ttdeci">static CommandFactory &amp; getInstance(std::shared_ptr&lt; ISubject &gt; eventBus=nullptr)</div><div class="ttdoc">Returns the single instance of CommandFactory (Singleton access point).</div><div class="ttdef"><b>Определения</b> CommandFactory.cxx:17</div></div>
+<div class="ttc" id="aclassCommandFactory_html_a2e17e10943e3511d2e64a47454c83161"><div class="ttname"><a href="classCommandFactory.html#a2e17e10943e3511d2e64a47454c83161">CommandFactory::registerCommand</a></div><div class="ttdeci">void registerCommand(const std::string &amp;name, std::function&lt; std::unique_ptr&lt; ICommand &gt;(std::shared_ptr&lt; ISubject &gt;)&gt; creator)</div><div class="ttdoc">Registers a new command with the factory.</div><div class="ttdef"><b>Определения</b> CommandFactory.cxx:56</div></div>
+<div class="ttc" id="aclassCommandFactory_html_a4a777093b42a99531b14e6f2321b3542"><div class="ttname"><a href="classCommandFactory.html#a4a777093b42a99531b14e6f2321b3542">CommandFactory::createCommand</a></div><div class="ttdeci">std::unique_ptr&lt; ICommand &gt; createCommand(const std::string &amp;name)</div><div class="ttdoc">Creates a new command instance by its name.</div><div class="ttdef"><b>Определения</b> CommandFactory.cxx:62</div></div>
+<div class="ttc" id="aclassCommandFactory_html_aa7fb0a11d596213f1b2f62ecea795ae7"><div class="ttname"><a href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">CommandFactory::operator=</a></div><div class="ttdeci">CommandFactory &amp; operator=(const CommandFactory &amp;)=delete</div><div class="ttdoc">Deleted assignment operator.</div></div>
+<div class="ttc" id="aclassCommandFactory_html_ac31cdcf058989c9f45fb228908530d46"><div class="ttname"><a href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">CommandFactory::CommandFactory</a></div><div class="ttdeci">CommandFactory(const CommandFactory &amp;)=delete</div><div class="ttdoc">Deleted copy constructor.</div></div>
+<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">(Forward Declaration) The interface for the Event Bus.</div><div class="ttdef"><b>Определения</b> ISubject.hxx:26</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_2990d7c532eb7441b74916b8f5365141.html">cli</a></li><li class="navelem"><a href="dir_cde9ee1e1149a294439eb6a6d22bd3a6.html">include</a></li><li class="navelem"><a href="CommandFactory_8hxx.html">CommandFactory.hxx</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚀_20build_20and_20technologies_0',['🚀 Build and Technologies',['../md_README.html#autotoc_md4',1,'']]]
+  ['✨_20index_20staging_20area_20functionality_0',['✨ Index (Staging Area) Functionality',['../md_README.html#autotoc_md4',1,'']]]
 ];

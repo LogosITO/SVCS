@@ -99,35 +99,38 @@ Inheritance diagram for MockSubject:</div>
  <div class="center">
   <img src="classMockSubject.png" usemap="#MockSubject_map" alt=""/>
   <map id="MockSubject_map" name="MockSubject_map">
-<area href="classISubject.html" title="Subject (Publisher) Interface." alt="ISubject" shape="rect" coords="0,0,85,24"/>
-<area href="classISubject.html" title="Subject (Publisher) Interface." alt="ISubject" shape="rect" coords="95,0,180,24"/>
+<area href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus." alt="ISubject" shape="rect" coords="0,0,85,24"/>
+<area href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus." alt="ISubject" shape="rect" coords="95,0,180,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a20cec53d2f580fe046cfa89a168a3770" id="r_a20cec53d2f580fe046cfa89a168a3770"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20cec53d2f580fe046cfa89a168a3770">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) override</td></tr>
-<tr class="memdesc:a20cec53d2f580fe046cfa89a168a3770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers about an event.  <br /></td></tr>
-<tr class="memitem:ab9eae9d0cc66623e1504d39a25d3f48f" id="r_ab9eae9d0cc66623e1504d39a25d3f48f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9eae9d0cc66623e1504d39a25d3f48f">attach</a> (<a class="el" href="classIObserver.html">IObserver</a> *observer) override</td></tr>
-<tr class="memdesc:ab9eae9d0cc66623e1504d39a25d3f48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to the subject.  <br /></td></tr>
-<tr class="memitem:aef01f7923c256bb6f9aceba80d6bfd8b" id="r_aef01f7923c256bb6f9aceba80d6bfd8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef01f7923c256bb6f9aceba80d6bfd8b">detach</a> (<a class="el" href="classIObserver.html">IObserver</a> *observer) override</td></tr>
-<tr class="memdesc:aef01f7923c256bb6f9aceba80d6bfd8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches an observer from the subject.  <br /></td></tr>
-<tr class="memitem:a20cec53d2f580fe046cfa89a168a3770" id="r_a20cec53d2f580fe046cfa89a168a3770"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20cec53d2f580fe046cfa89a168a3770">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) override</td></tr>
-<tr class="memdesc:a20cec53d2f580fe046cfa89a168a3770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers about an event.  <br /></td></tr>
-<tr class="memitem:ab9eae9d0cc66623e1504d39a25d3f48f" id="r_ab9eae9d0cc66623e1504d39a25d3f48f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9eae9d0cc66623e1504d39a25d3f48f">attach</a> (<a class="el" href="classIObserver.html">IObserver</a> *observer) override</td></tr>
-<tr class="memdesc:ab9eae9d0cc66623e1504d39a25d3f48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to the subject.  <br /></td></tr>
-<tr class="memitem:aef01f7923c256bb6f9aceba80d6bfd8b" id="r_aef01f7923c256bb6f9aceba80d6bfd8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef01f7923c256bb6f9aceba80d6bfd8b">detach</a> (<a class="el" href="classIObserver.html">IObserver</a> *observer) override</td></tr>
-<tr class="memdesc:aef01f7923c256bb6f9aceba80d6bfd8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches an observer from the subject.  <br /></td></tr>
+<tr class="memitem:a9aaffe9cd012979c90c186ea3ec86fc0" id="r_a9aaffe9cd012979c90c186ea3ec86fc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9aaffe9cd012979c90c186ea3ec86fc0">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) const override</td></tr>
+<tr class="memdesc:a9aaffe9cd012979c90c186ea3ec86fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers about an event.  <br /></td></tr>
+<tr class="memitem:a1cbe4aefca976d0a2f7c5077e9998604" id="r_a1cbe4aefca976d0a2f7c5077e9998604"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cbe4aefca976d0a2f7c5077e9998604">attach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer) override</td></tr>
+<tr class="memdesc:a1cbe4aefca976d0a2f7c5077e9998604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to the subject.  <br /></td></tr>
+<tr class="memitem:a7a19cfe5e16907e32c0ace1ff7d6992e" id="r_a7a19cfe5e16907e32c0ace1ff7d6992e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a19cfe5e16907e32c0ace1ff7d6992e">detach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer) override</td></tr>
+<tr class="memdesc:a7a19cfe5e16907e32c0ace1ff7d6992e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches an observer from the subject.  <br /></td></tr>
+<tr class="memitem:a9aaffe9cd012979c90c186ea3ec86fc0" id="r_a9aaffe9cd012979c90c186ea3ec86fc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9aaffe9cd012979c90c186ea3ec86fc0">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) const override</td></tr>
+<tr class="memdesc:a9aaffe9cd012979c90c186ea3ec86fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers about an event.  <br /></td></tr>
+<tr class="memitem:a1cbe4aefca976d0a2f7c5077e9998604" id="r_a1cbe4aefca976d0a2f7c5077e9998604"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cbe4aefca976d0a2f7c5077e9998604">attach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer) override</td></tr>
+<tr class="memdesc:a1cbe4aefca976d0a2f7c5077e9998604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to the subject.  <br /></td></tr>
+<tr class="memitem:a7a19cfe5e16907e32c0ace1ff7d6992e" id="r_a7a19cfe5e16907e32c0ace1ff7d6992e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a19cfe5e16907e32c0ace1ff7d6992e">detach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer) override</td></tr>
+<tr class="memdesc:a7a19cfe5e16907e32c0ace1ff7d6992e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches an observer from the subject.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classISubject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classISubject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classISubject.html">ISubject</a></td></tr>
+<tr class="memitem:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_classISubject" id="r_ae7264a3f132816d45581a1b31845ecac"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISubject.html#ae7264a3f132816d45581a1b31845ecac">~ISubject</a> ()=default</td></tr>
+<tr class="memdesc:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_classISubject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classISubject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classISubject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classISubject.html">ISubject</a></td></tr>
-<tr class="memitem:ada785065e1685f6294a4aa22c7a01673 inherit pro_attribs_classISubject" id="r_ada785065e1685f6294a4aa22c7a01673"><td class="memItemLeft" align="right" valign="top">
-std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers_</b></td></tr>
+<tr class="memitem:a66f4ce666ed8b85d694a9b73d6bc16fb inherit pro_attribs_classISubject" id="r_a66f4ce666ed8b85d694a9b73d6bc16fb"><td class="memItemLeft" align="right" valign="top">
+std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ab9eae9d0cc66623e1504d39a25d3f48f" name="ab9eae9d0cc66623e1504d39a25d3f48f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9eae9d0cc66623e1504d39a25d3f48f">&#9670;&#160;</a></span>attach() <span class="overload">[1/2]</span></h2>
+<a id="a1cbe4aefca976d0a2f7c5077e9998604" name="a1cbe4aefca976d0a2f7c5077e9998604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cbe4aefca976d0a2f7c5077e9998604">&#9670;&#160;</a></span>attach() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +141,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
         <tr>
           <td class="memname">void MockSubject::attach </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIObserver.html">IObserver</a> *</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -152,17 +155,17 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 <p>Attaches an observer to the subject. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>Pointer to the observer object. </td></tr>
+    <tr><td class="paramname">observer</td><td>A smart pointer to the observer object to attach. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classISubject.html#add1b9cce16468869c29b29c2e81e62fb">ISubject</a>.</p>
+<p>Implements <a class="el" href="classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace">ISubject</a>.</p>
 
 </div>
 </div>
-<a id="ab9eae9d0cc66623e1504d39a25d3f48f" name="ab9eae9d0cc66623e1504d39a25d3f48f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9eae9d0cc66623e1504d39a25d3f48f">&#9670;&#160;</a></span>attach() <span class="overload">[2/2]</span></h2>
+<a id="a1cbe4aefca976d0a2f7c5077e9998604" name="a1cbe4aefca976d0a2f7c5077e9998604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cbe4aefca976d0a2f7c5077e9998604">&#9670;&#160;</a></span>attach() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +176,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
         <tr>
           <td class="memname">void MockSubject::attach </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIObserver.html">IObserver</a> *</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -187,17 +190,17 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 <p>Attaches an observer to the subject. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>Pointer to the observer object. </td></tr>
+    <tr><td class="paramname">observer</td><td>A smart pointer to the observer object to attach. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classISubject.html#add1b9cce16468869c29b29c2e81e62fb">ISubject</a>.</p>
+<p>Implements <a class="el" href="classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace">ISubject</a>.</p>
 
 </div>
 </div>
-<a id="aef01f7923c256bb6f9aceba80d6bfd8b" name="aef01f7923c256bb6f9aceba80d6bfd8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef01f7923c256bb6f9aceba80d6bfd8b">&#9670;&#160;</a></span>detach() <span class="overload">[1/2]</span></h2>
+<a id="a7a19cfe5e16907e32c0ace1ff7d6992e" name="a7a19cfe5e16907e32c0ace1ff7d6992e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a19cfe5e16907e32c0ace1ff7d6992e">&#9670;&#160;</a></span>detach() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,7 +211,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
         <tr>
           <td class="memname">void MockSubject::detach </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIObserver.html">IObserver</a> *</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -222,17 +225,17 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 <p>Detaches an observer from the subject. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>Pointer to the observer object. </td></tr>
+    <tr><td class="paramname">observer</td><td>A smart pointer to the observer object to detach. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classISubject.html#aa8d47b50af325d0735c05979101b16d0">ISubject</a>.</p>
+<p>Implements <a class="el" href="classISubject.html#aad2217012b14bdd6c91eb240689e5a74">ISubject</a>.</p>
 
 </div>
 </div>
-<a id="aef01f7923c256bb6f9aceba80d6bfd8b" name="aef01f7923c256bb6f9aceba80d6bfd8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef01f7923c256bb6f9aceba80d6bfd8b">&#9670;&#160;</a></span>detach() <span class="overload">[2/2]</span></h2>
+<a id="a7a19cfe5e16907e32c0ace1ff7d6992e" name="a7a19cfe5e16907e32c0ace1ff7d6992e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a19cfe5e16907e32c0ace1ff7d6992e">&#9670;&#160;</a></span>detach() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +246,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
         <tr>
           <td class="memname">void MockSubject::detach </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIObserver.html">IObserver</a> *</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>observer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -257,17 +260,17 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 <p>Detaches an observer from the subject. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>Pointer to the observer object. </td></tr>
+    <tr><td class="paramname">observer</td><td>A smart pointer to the observer object to detach. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classISubject.html#aa8d47b50af325d0735c05979101b16d0">ISubject</a>.</p>
+<p>Implements <a class="el" href="classISubject.html#aad2217012b14bdd6c91eb240689e5a74">ISubject</a>.</p>
 
 </div>
 </div>
-<a id="a20cec53d2f580fe046cfa89a168a3770" name="a20cec53d2f580fe046cfa89a168a3770"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20cec53d2f580fe046cfa89a168a3770">&#9670;&#160;</a></span>notify() <span class="overload">[1/2]</span></h2>
+<a id="a9aaffe9cd012979c90c186ea3ec86fc0" name="a9aaffe9cd012979c90c186ea3ec86fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aaffe9cd012979c90c186ea3ec86fc0">&#9670;&#160;</a></span>notify() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,7 +282,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
           <td class="memname">void MockSubject::notify </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structEvent.html">Event</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -290,22 +293,19 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </div><div class="memdoc">
 
 <p>Notifies all attached observers about an event. </p>
-<ul>
-<li>Made PUBLIC so that component classes (like <a class="el" href="classObjectStorage.html">ObjectStorage</a>) can publish events through the injected <a class="el" href="classISubject.html" title="Subject (Publisher) Interface.">ISubject</a> pointer. <dl class="params"><dt>Parameters</dt><dd>
+<p>This method is made public so that component classes (like <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>) can publish events through the injected <a class="el" href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus.">ISubject</a> pointer. The method is declared as <span class="tt">const</span> because event notification is a logically non-mutating action on the Subject's state. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>The event structure to be sent. </td></tr>
+    <tr><td class="paramname">event</td><td>The constant reference to the event structure to be sent. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
-<p>Implements <a class="el" href="classISubject.html#a331138b4245b37120ab8a2d7180b2df5">ISubject</a>.</p>
+<p>Implements <a class="el" href="classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474">ISubject</a>.</p>
 
 </div>
 </div>
-<a id="a20cec53d2f580fe046cfa89a168a3770" name="a20cec53d2f580fe046cfa89a168a3770"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20cec53d2f580fe046cfa89a168a3770">&#9670;&#160;</a></span>notify() <span class="overload">[2/2]</span></h2>
+<a id="a9aaffe9cd012979c90c186ea3ec86fc0" name="a9aaffe9cd012979c90c186ea3ec86fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aaffe9cd012979c90c186ea3ec86fc0">&#9670;&#160;</a></span>notify() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,7 +317,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
           <td class="memname">void MockSubject::notify </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structEvent.html">Event</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -328,17 +328,14 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </div><div class="memdoc">
 
 <p>Notifies all attached observers about an event. </p>
-<ul>
-<li>Made PUBLIC so that component classes (like <a class="el" href="classObjectStorage.html">ObjectStorage</a>) can publish events through the injected <a class="el" href="classISubject.html" title="Subject (Publisher) Interface.">ISubject</a> pointer. <dl class="params"><dt>Parameters</dt><dd>
+<p>This method is made public so that component classes (like <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>) can publish events through the injected <a class="el" href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus.">ISubject</a> pointer. The method is declared as <span class="tt">const</span> because event notification is a logically non-mutating action on the Subject's state. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>The event structure to be sent. </td></tr>
+    <tr><td class="paramname">event</td><td>The constant reference to the event structure to be sent. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
-<p>Implements <a class="el" href="classISubject.html#a331138b4245b37120ab8a2d7180b2df5">ISubject</a>.</p>
+<p>Implements <a class="el" href="classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474">ISubject</a>.</p>
 
 </div>
 </div>

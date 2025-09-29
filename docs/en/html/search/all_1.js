@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['blob_0',['Blob',['../classBlob.html',1,'Blob'],['../classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff',1,'Blob::Blob()']]],
-  ['blob_2ehxx_1',['Blob.hxx',['../Blob_8hxx.html',1,'']]],
-  ['blob_5fhash_2',['blob_hash',['../structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12',1,'IndexEntry']]],
-  ['build_20and_20technologies_3',['🚀 Build and Technologies',['../md_README.html#autotoc_md4',1,'']]]
+  ['basecommand_0',['BaseCommand',['../classBaseCommand.html',1,'BaseCommand'],['../classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1',1,'BaseCommand::BaseCommand()']]],
+  ['basecommand_2ehxx_1',['BaseCommand.hxx',['../BaseCommand_8hxx.html',1,'']]],
+  ['blob_2',['Blob',['../classBlob.html',1,'Blob'],['../classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff',1,'Blob::Blob()']]],
+  ['blob_2ehxx_3',['Blob.hxx',['../Blob_8hxx.html',1,'']]],
+  ['blob_5fhash_4',['blob_hash',['../structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12',1,'IndexEntry']]]
 ];

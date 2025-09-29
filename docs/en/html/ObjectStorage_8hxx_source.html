@@ -94,50 +94,54 @@ $(function(){initNavTree('ObjectStorage_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="ObjectStorage_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;VcsObject.hxx&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../services/ISubject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classObjectStorage.html">   18</a></span><span class="keyword">class </span><a class="code hl_function" href="classObjectStorage.html#a7ea8230205caa5ba50b121741d97ca26">ObjectStorage</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">const</span> std::filesystem::path objects_dir;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="classISubject.html">ISubject</a>* subject;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::string compress(<span class="keyword">const</span> std::string&amp; data) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::string decompress(<span class="keyword">const</span> std::string&amp; compressed_data) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::unique_ptr&lt;VcsObject&gt; createObjectFromContent(</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">const</span> std::string&amp; type, </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">const</span> std::string&amp; content</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    ) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="classObjectStorage.html#a7ea8230205caa5ba50b121741d97ca26">ObjectStorage</a>(<span class="keyword">const</span> std::string&amp; root_path, <a class="code hl_class" href="classISubject.html">ISubject</a>* subject = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> setSubject(<a class="code hl_class" href="classISubject.html">ISubject</a>* subj) { subject = subj; };</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    std::string <a class="code hl_function" href="classObjectStorage.html#a3bdb2110012cbe733cdeb4d438b583d0">getObjectPath</a>(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classObjectStorage.html#acab6226c60b2979078001d539f56de3b">saveObject</a>(<span class="keyword">const</span> <a class="code hl_class" href="classVcsObject.html">VcsObject</a>&amp; obj) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">virtual</span> std::unique_ptr&lt;VcsObject&gt; <a class="code hl_function" href="classObjectStorage.html#ad287a079892332b3a6d71b10275b925f">loadObject</a>(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classObjectStorage.html#abbc8d8426ae0f500aa7a6dba213e0bed">objectExists</a>(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;VcsObject.hxx&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../services/ISubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classObjectStorage.html">   28</a></span><span class="keyword">class </span><a class="code hl_function" href="classObjectStorage.html#aa511ec3636de4f1ad6f411e7a2aa2638">ObjectStorage</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> std::filesystem::path objects_dir;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::shared_ptr&lt;ISubject&gt; subject;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::string compress(<span class="keyword">const</span> std::string&amp; data) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::string decompress(<span class="keyword">const</span> std::string&amp; compressed_data) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    std::unique_ptr&lt;VcsObject&gt; createObjectFromContent(</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">const</span> std::string&amp; type, </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">const</span> std::string&amp; content</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_function" href="classObjectStorage.html#aa511ec3636de4f1ad6f411e7a2aa2638">ObjectStorage</a>(<span class="keyword">const</span> std::string&amp; root_path, std::shared_ptr&lt;ISubject&gt; subject = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="classObjectStorage.html#a84986af89788ac235900ee9278e681d1">~ObjectStorage</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classObjectStorage.html#a0dc7bb15cb48b9795149e3572c4c7c3c">   82</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classObjectStorage.html#a0dc7bb15cb48b9795149e3572c4c7c3c">setSubject</a>(std::shared_ptr&lt;ISubject&gt; subj) { subject = subj; };</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    std::string <a class="code hl_function" href="classObjectStorage.html#a3bdb2110012cbe733cdeb4d438b583d0">getObjectPath</a>(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classObjectStorage.html#acab6226c60b2979078001d539f56de3b">saveObject</a>(<span class="keyword">const</span> <a class="code hl_class" href="classVcsObject.html">VcsObject</a>&amp; obj) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">virtual</span> std::unique_ptr&lt;VcsObject&gt; <a class="code hl_function" href="classObjectStorage.html#ad287a079892332b3a6d71b10275b925f">loadObject</a>(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classObjectStorage.html#abbc8d8426ae0f500aa7a6dba213e0bed">objectExists</a>(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>};</div>
 </div>
-<div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) pattern component.</div></div>
-<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">Subject (Publisher) Interface.</div><div class="ttdef"><b>Definition</b> ISubject.hxx:16</div></div>
-<div class="ttc" id="aclassObjectStorage_html_a3bdb2110012cbe733cdeb4d438b583d0"><div class="ttname"><a href="classObjectStorage.html#a3bdb2110012cbe733cdeb4d438b583d0">ObjectStorage::getObjectPath</a></div><div class="ttdeci">std::string getObjectPath(const std::string &amp;hash) const</div><div class="ttdoc">Forms the full filesystem path for an object based on its hash.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:47</div></div>
-<div class="ttc" id="aclassObjectStorage_html_a7ea8230205caa5ba50b121741d97ca26"><div class="ttname"><a href="classObjectStorage.html#a7ea8230205caa5ba50b121741d97ca26">ObjectStorage::ObjectStorage</a></div><div class="ttdeci">ObjectStorage(const std::string &amp;root_path, ISubject *subject=nullptr)</div><div class="ttdoc">Constructor for ObjectStorage.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:22</div></div>
-<div class="ttc" id="aclassObjectStorage_html_abbc8d8426ae0f500aa7a6dba213e0bed"><div class="ttname"><a href="classObjectStorage.html#abbc8d8426ae0f500aa7a6dba213e0bed">ObjectStorage::objectExists</a></div><div class="ttdeci">bool objectExists(const std::string &amp;hash) const</div><div class="ttdoc">Checks if an object with the given hash exists on disk.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:340</div></div>
-<div class="ttc" id="aclassObjectStorage_html_acab6226c60b2979078001d539f56de3b"><div class="ttname"><a href="classObjectStorage.html#acab6226c60b2979078001d539f56de3b">ObjectStorage::saveObject</a></div><div class="ttdeci">virtual bool saveObject(const VcsObject &amp;obj) const</div><div class="ttdoc">Saves a VcsObject to the object database.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:65</div></div>
-<div class="ttc" id="aclassObjectStorage_html_ad287a079892332b3a6d71b10275b925f"><div class="ttname"><a href="classObjectStorage.html#ad287a079892332b3a6d71b10275b925f">ObjectStorage::loadObject</a></div><div class="ttdeci">virtual std::unique_ptr&lt; VcsObject &gt; loadObject(const std::string &amp;hash) const</div><div class="ttdoc">Loads an object from the disk by its hash ID.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:133</div></div>
+<div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
+<div class="ttc" id="aclassObjectStorage_html_a0dc7bb15cb48b9795149e3572c4c7c3c"><div class="ttname"><a href="classObjectStorage.html#a0dc7bb15cb48b9795149e3572c4c7c3c">ObjectStorage::setSubject</a></div><div class="ttdeci">void setSubject(std::shared_ptr&lt; ISubject &gt; subj)</div><div class="ttdoc">Sets or replaces the event subject used by the ObjectStorage.</div><div class="ttdef"><b>Definition</b> ObjectStorage.hxx:82</div></div>
+<div class="ttc" id="aclassObjectStorage_html_a3bdb2110012cbe733cdeb4d438b583d0"><div class="ttname"><a href="classObjectStorage.html#a3bdb2110012cbe733cdeb4d438b583d0">ObjectStorage::getObjectPath</a></div><div class="ttdeci">std::string getObjectPath(const std::string &amp;hash) const</div><div class="ttdoc">Forms the full filesystem path for an object based on its hash.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:51</div></div>
+<div class="ttc" id="aclassObjectStorage_html_a84986af89788ac235900ee9278e681d1"><div class="ttname"><a href="classObjectStorage.html#a84986af89788ac235900ee9278e681d1">ObjectStorage::~ObjectStorage</a></div><div class="ttdeci">~ObjectStorage()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:47</div></div>
+<div class="ttc" id="aclassObjectStorage_html_aa511ec3636de4f1ad6f411e7a2aa2638"><div class="ttname"><a href="classObjectStorage.html#aa511ec3636de4f1ad6f411e7a2aa2638">ObjectStorage::ObjectStorage</a></div><div class="ttdeci">ObjectStorage(const std::string &amp;root_path, std::shared_ptr&lt; ISubject &gt; subject=nullptr)</div><div class="ttdoc">Constructor for ObjectStorage.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:22</div></div>
+<div class="ttc" id="aclassObjectStorage_html_abbc8d8426ae0f500aa7a6dba213e0bed"><div class="ttname"><a href="classObjectStorage.html#abbc8d8426ae0f500aa7a6dba213e0bed">ObjectStorage::objectExists</a></div><div class="ttdeci">bool objectExists(const std::string &amp;hash) const</div><div class="ttdoc">Checks if an object with the given hash exists on disk.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:344</div></div>
+<div class="ttc" id="aclassObjectStorage_html_acab6226c60b2979078001d539f56de3b"><div class="ttname"><a href="classObjectStorage.html#acab6226c60b2979078001d539f56de3b">ObjectStorage::saveObject</a></div><div class="ttdeci">virtual bool saveObject(const VcsObject &amp;obj) const</div><div class="ttdoc">Saves a VcsObject to the object database.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:69</div></div>
+<div class="ttc" id="aclassObjectStorage_html_ad287a079892332b3a6d71b10275b925f"><div class="ttname"><a href="classObjectStorage.html#ad287a079892332b3a6d71b10275b925f">ObjectStorage::loadObject</a></div><div class="ttdeci">virtual std::unique_ptr&lt; VcsObject &gt; loadObject(const std::string &amp;hash) const</div><div class="ttdoc">Loads an object from the disk by its hash ID.</div><div class="ttdef"><b>Definition</b> ObjectStorage.cxx:137</div></div>
 <div class="ttc" id="aclassVcsObject_html"><div class="ttname"><a href="classVcsObject.html">VcsObject</a></div><div class="ttdoc">Abstract base class representing any storable, addressable object within the VCS.</div><div class="ttdef"><b>Definition</b> VcsObject.hxx:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

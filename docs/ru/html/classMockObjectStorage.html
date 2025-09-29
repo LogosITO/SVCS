@@ -99,7 +99,7 @@ $(function(){initNavTree('classMockObjectStorage.html','','classMockObjectStorag
  <div class="center">
   <img src="classMockObjectStorage.png" usemap="#MockObjectStorage_map" alt=""/>
   <map id="MockObjectStorage_map" name="MockObjectStorage_map">
-<area href="classObjectStorage.html" alt="ObjectStorage" shape="rect" coords="0,0,124,24"/>
+<area href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration." alt="ObjectStorage" shape="rect" coords="0,0,124,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -118,10 +118,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_blob_saved</b> (co
 <tr class="memitem:abd3dd66b1873d619fa6ee4965882de48" id="r_abd3dd66b1873d619fa6ee4965882de48"><td class="memItemLeft" align="right" valign="top"><a id="abd3dd66b1873d619fa6ee4965882de48" name="abd3dd66b1873d619fa6ee4965882de48"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_saved_blobs_count</b> () const</td></tr>
 <tr class="inherit_header pub_methods_classObjectStorage"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classObjectStorage')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classObjectStorage.html">ObjectStorage</a></td></tr>
-<tr class="memitem:a7ea8230205caa5ba50b121741d97ca26 inherit pub_methods_classObjectStorage" id="r_a7ea8230205caa5ba50b121741d97ca26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectStorage.html#a7ea8230205caa5ba50b121741d97ca26">ObjectStorage</a> (const std::string &amp;root_path, <a class="el" href="classISubject.html">ISubject</a> *subject=nullptr)</td></tr>
-<tr class="memdesc:a7ea8230205caa5ba50b121741d97ca26 inherit pub_methods_classObjectStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classObjectStorage.html">ObjectStorage</a>.  <br /></td></tr>
-<tr class="memitem:a43822e7263787f3161b0f6739cb313e5 inherit pub_methods_classObjectStorage" id="r_a43822e7263787f3161b0f6739cb313e5"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubject</b> (<a class="el" href="classISubject.html">ISubject</a> *subj)</td></tr>
+<tr class="memitem:aa511ec3636de4f1ad6f411e7a2aa2638 inherit pub_methods_classObjectStorage" id="r_aa511ec3636de4f1ad6f411e7a2aa2638"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectStorage.html#aa511ec3636de4f1ad6f411e7a2aa2638">ObjectStorage</a> (const std::string &amp;root_path, std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; subject=nullptr)</td></tr>
+<tr class="memdesc:aa511ec3636de4f1ad6f411e7a2aa2638 inherit pub_methods_classObjectStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  <br /></td></tr>
+<tr class="memitem:a84986af89788ac235900ee9278e681d1 inherit pub_methods_classObjectStorage" id="r_a84986af89788ac235900ee9278e681d1"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>~ObjectStorage</b> ()</td></tr>
+<tr class="memdesc:a84986af89788ac235900ee9278e681d1 inherit pub_methods_classObjectStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:a0dc7bb15cb48b9795149e3572c4c7c3c inherit pub_methods_classObjectStorage" id="r_a0dc7bb15cb48b9795149e3572c4c7c3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectStorage.html#a0dc7bb15cb48b9795149e3572c4c7c3c">setSubject</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; subj)</td></tr>
+<tr class="memdesc:a0dc7bb15cb48b9795149e3572c4c7c3c inherit pub_methods_classObjectStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or replaces the event subject used by the <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  <br /></td></tr>
 <tr class="memitem:a3bdb2110012cbe733cdeb4d438b583d0 inherit pub_methods_classObjectStorage" id="r_a3bdb2110012cbe733cdeb4d438b583d0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectStorage.html#a3bdb2110012cbe733cdeb4d438b583d0">getObjectPath</a> (const std::string &amp;hash) const</td></tr>
 <tr class="memdesc:a3bdb2110012cbe733cdeb4d438b583d0 inherit pub_methods_classObjectStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms the full filesystem path for an object based on its hash.  <br /></td></tr>
 <tr class="memitem:abbc8d8426ae0f500aa7a6dba213e0bed inherit pub_methods_classObjectStorage" id="r_abbc8d8426ae0f500aa7a6dba213e0bed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectStorage.html#abbc8d8426ae0f500aa7a6dba213e0bed">objectExists</a> (const std::string &amp;hash) const</td></tr>
@@ -157,7 +160,7 @@ std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" va
 </div><div class="memdoc">
 
 <p>Loads an object from the disk by its hash ID. </p>
-<p>Reads the compressed file, decompresses it, performs integrity checks, and deserializes the object. </p><dl class="params"><dt>Аргументы</dt><dd>
+<p>Reads the compressed file, decompresses it, performs integrity checks, and deserializes the object using the internal factory method. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">hash</td><td>The hash ID of the object to load. </td></tr>
   </table>
@@ -199,7 +202,7 @@ std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" va
 </div><div class="memdoc">
 
 <p>Saves a <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> to the object database. </p>
-<p>Serializes the object, prefixes it with a header, compresses it, and writes it to a file. </p><dl class="params"><dt>Аргументы</dt><dd>
+<p>Serializes the object, prefixes it with a header, compresses it, and writes it to a file. Publishes events on success/failure. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> to save. </td></tr>
   </table>

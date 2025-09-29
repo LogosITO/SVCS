@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['findentry_0',['findEntry',['../classTree.html#a944fe0075293396036606f6a999643f4',1,'Tree']]]
+  ['error_0',['error',['../classLogger.html#ab6042fdfcbb14026098e0df9d6b32f27',1,'Logger']]],
+  ['execute_1',['execute',['../classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0',1,'ICommand::execute()'],['../classInitCommand.html#a208ebec427828e140dd44c105416423f',1,'InitCommand::execute()']]]
 ];

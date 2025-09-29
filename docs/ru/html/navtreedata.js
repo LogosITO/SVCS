@@ -26,12 +26,16 @@ var NAVTREE =
 [
   [ "SVCS", "index.html", [
     [ "📚 SVCS: Simple Version Control System", "md_README.html", [
-      [ "🏗 Key Implemented Components", "md_README.html#autotoc_md2", null ],
-      [ "🚀 Build and Technologies", "md_README.html#autotoc_md4", null ],
-      [ "🛠 Project Status and Next Steps", "md_README.html#autotoc_md6", null ],
-      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md8", null ],
-      [ "📝 Author and License", "md_README.html#autotoc_md10", null ]
+      [ "🚀 Current Project Status: Core Stability Achieved", "md_README.html#autotoc_md1", [
+        [ "Major Achievements:", "md_README.html#autotoc_md2", null ]
+      ] ],
+      [ "🏗 Key Implemented Components", "md_README.html#autotoc_md3", null ],
+      [ "✨ Index (Staging Area) Functionality", "md_README.html#autotoc_md4", null ],
+      [ "🗺️ Next Steps", "md_README.html#autotoc_md5", null ],
+      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md6", null ],
+      [ "📝 Author and License", "md_README.html#autotoc_md7", null ]
     ] ],
+    [ "Список устаревших определений и описаний", "deprecated.html", null ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
@@ -48,7 +52,8 @@ var NAVTREE =
       [ "Файлы", "files.html", "files_dup" ],
       [ "Список членов всех файлов", "globals.html", [
         [ "Указатель", "globals.html", null ],
-        [ "Функции", "globals_func.html", null ]
+        [ "Функции", "globals_func.html", null ],
+        [ "Перечисления", "globals_enum.html", null ]
       ] ]
     ] ]
   ] ]
@@ -56,7 +61,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Blob_8hxx.html"
+"BaseCommand_8hxx.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

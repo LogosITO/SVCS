@@ -26,12 +26,16 @@ var NAVTREE =
 [
   [ "SVCS", "index.html", [
     [ "📚 SVCS: Simple Version Control System", "md_README.html", [
-      [ "🏗 Key Implemented Components", "md_README.html#autotoc_md2", null ],
-      [ "🚀 Build and Technologies", "md_README.html#autotoc_md4", null ],
-      [ "🛠 Project Status and Next Steps", "md_README.html#autotoc_md6", null ],
-      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md8", null ],
-      [ "📝 Author and License", "md_README.html#autotoc_md10", null ]
+      [ "🚀 Current Project Status: Core Stability Achieved", "md_README.html#autotoc_md1", [
+        [ "Major Achievements:", "md_README.html#autotoc_md2", null ]
+      ] ],
+      [ "🏗 Key Implemented Components", "md_README.html#autotoc_md3", null ],
+      [ "✨ Index (Staging Area) Functionality", "md_README.html#autotoc_md4", null ],
+      [ "🗺️ Next Steps", "md_README.html#autotoc_md5", null ],
+      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md6", null ],
+      [ "📝 Author and License", "md_README.html#autotoc_md7", null ]
     ] ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -48,7 +52,8 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Functions", "globals_func.html", null ],
+        [ "Enumerations", "globals_enum.html", null ]
       ] ]
     ] ]
   ] ]
@@ -56,7 +61,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Blob_8hxx.html"
+"BaseCommand_8hxx.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Исходный файл cli/include/BaseCommand.hxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('BaseCommand_8hxx_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BaseCommand.hxx</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="BaseCommand_8hxx.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="ICommand_8hxx.html">ICommand.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="Repository_8hxx.html">../../core/include/Repository.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Note: Assumes ISubject, IObserver, and Event are available via other includes.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// Forward declaration of ISubject is necessary if not already included</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">class </span><a class="code hl_class" href="classISubject.html">ISubject</a>; </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classBaseCommand.html">   35</a></span><span class="keyword">class </span><a class="code hl_function" href="classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1">BaseCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="classICommand.html">ICommand</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">   42</a></span>    std::shared_ptr&lt;ISubject&gt; <a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>; </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classBaseCommand.html#a757e9a5a0d6feb0b100536c7380bf088">   48</a></span>    std::shared_ptr&lt;Repository&gt; <a class="code hl_function" href="classBaseCommand.html#a757e9a5a0d6feb0b100536c7380bf088">findRepository</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb">Repository::findRepository</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classBaseCommand.html#ab8985d7405710050555684f57d20a6d0">   57</a></span>    std::shared_ptr&lt;Repository&gt; <a class="code hl_function" href="classBaseCommand.html#ab8985d7405710050555684f57d20a6d0">createRepository</a>(<span class="keyword">const</span> std::string&amp; path = <span class="stringliteral">&quot;.&quot;</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">return</span> std::make_shared&lt;Repository&gt;(path);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1">   66</a></span>    <a class="code hl_function" href="classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1">BaseCommand</a>(std::shared_ptr&lt;ISubject&gt; subject) : <a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>(std::move(subject)) {}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classBaseCommand.html#a33d060c975bef295836c273a141a166a">   72</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classBaseCommand.html#a33d060c975bef295836c273a141a166a">~BaseCommand</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">   78</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">getName</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classBaseCommand.html#afffa3d917dfb9f5bffc52e6e6271c37a">   84</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classBaseCommand.html#afffa3d917dfb9f5bffc52e6e6271c37a">getDescription</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classBaseCommand.html#a599af70664d26e24107b0700ea551503">   90</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classBaseCommand.html#a599af70664d26e24107b0700ea551503">getUsage</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    </div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb">   96</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb">showHelp</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Usage: &quot;</span> &lt;&lt; <a class="code hl_function" href="classBaseCommand.html#a599af70664d26e24107b0700ea551503">getUsage</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Description: &quot;</span> &lt;&lt; <a class="code hl_function" href="classBaseCommand.html#afffa3d917dfb9f5bffc52e6e6271c37a">getDescription</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classBaseCommand.html#af8ad2f422a83cffbb07da49675443c43">  105</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBaseCommand.html#af8ad2f422a83cffbb07da49675443c43">logDebug</a>(<span class="keyword">const</span> std::string&amp; message)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="comment">// Note: Assuming Event takes (Type, Message, Source/Command Name)</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>-&gt;notify({<a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5">Event::DEBUG_MESSAGE</a>, message, <a class="code hl_function" href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">getName</a>()});</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    </div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classBaseCommand.html#aca2b7d7a6526b60b5ee16a0e25541b62">  116</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBaseCommand.html#aca2b7d7a6526b60b5ee16a0e25541b62">logInfo</a>(<span class="keyword">const</span> std::string&amp; message)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>-&gt;notify({<a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7">Event::GENERAL_INFO</a>, message, <a class="code hl_function" href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">getName</a>()});</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classBaseCommand.html#aa5b4cd9ea94779c697ffb03e5671e3e3">  126</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBaseCommand.html#aa5b4cd9ea94779c697ffb03e5671e3e3">logError</a>(<span class="keyword">const</span> std::string&amp; message)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>-&gt;notify({<a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c">Event::RUNTIME_ERROR</a>, message, <a class="code hl_function" href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">getName</a>()});</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    </div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classBaseCommand.html#a6ffa98742c320a9e9d709d4b6a3b98af">  136</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBaseCommand.html#a6ffa98742c320a9e9d709d4b6a3b98af">logSuccess</a>(<span class="keyword">const</span> std::string&amp; message)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>-&gt;notify({<a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7">Event::GENERAL_INFO</a>, <span class="stringliteral">&quot;SUCCESS: &quot;</span> + message, <a class="code hl_function" href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">getName</a>()});</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    </div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classBaseCommand.html#a6437203ec5207483f41e89a4cad4f7fb">  146</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBaseCommand.html#a6437203ec5207483f41e89a4cad4f7fb">logWarning</a>(<span class="keyword">const</span> std::string&amp; message)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>) {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <a class="code hl_variable" href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">eventSubject_</a>-&gt;notify({<a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c">Event::RUNTIME_ERROR</a>, <span class="stringliteral">&quot;WARNING: &quot;</span> + message, <a class="code hl_function" href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">getName</a>()});</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>};</div>
+</div>
+<div class="ttc" id="aICommand_8hxx_html"><div class="ttname"><a href="ICommand_8hxx.html">ICommand.hxx</a></div><div class="ttdoc">Declaration of the ICommand interface for all executable CLI commands.</div></div>
+<div class="ttc" id="aRepository_8hxx_html"><div class="ttname"><a href="Repository_8hxx.html">Repository.hxx</a></div><div class="ttdoc">Manages the entire version control repository, acts as a Subject for event logging,...</div></div>
+<div class="ttc" id="aclassBaseCommand_html_a33d060c975bef295836c273a141a166a"><div class="ttname"><a href="classBaseCommand.html#a33d060c975bef295836c273a141a166a">BaseCommand::~BaseCommand</a></div><div class="ttdeci">virtual ~BaseCommand()=default</div><div class="ttdoc">Virtual destructor.</div></div>
+<div class="ttc" id="aclassBaseCommand_html_a599af70664d26e24107b0700ea551503"><div class="ttname"><a href="classBaseCommand.html#a599af70664d26e24107b0700ea551503">BaseCommand::getUsage</a></div><div class="ttdeci">virtual std::string getUsage() const =0</div><div class="ttdoc">Gets the command&#39;s usage syntax.</div></div>
+<div class="ttc" id="aclassBaseCommand_html_a6437203ec5207483f41e89a4cad4f7fb"><div class="ttname"><a href="classBaseCommand.html#a6437203ec5207483f41e89a4cad4f7fb">BaseCommand::logWarning</a></div><div class="ttdeci">void logWarning(const std::string &amp;message) const</div><div class="ttdoc">Generates a warning event (RUNTIME_ERROR with WARNING prefix).</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:146</div></div>
+<div class="ttc" id="aclassBaseCommand_html_a6a9e66f6a2b54f905d0fe4e7ca3ecbf0"><div class="ttname"><a href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">BaseCommand::getName</a></div><div class="ttdeci">virtual std::string getName() const =0</div><div class="ttdoc">Gets the command name (e.g., &quot;init&quot;, &quot;commit&quot;).</div></div>
+<div class="ttc" id="aclassBaseCommand_html_a6ada486a8ab81d0283181fd8cd5274e1"><div class="ttname"><a href="classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1">BaseCommand::BaseCommand</a></div><div class="ttdeci">BaseCommand(std::shared_ptr&lt; ISubject &gt; subject)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:66</div></div>
+<div class="ttc" id="aclassBaseCommand_html_a6ffa98742c320a9e9d709d4b6a3b98af"><div class="ttname"><a href="classBaseCommand.html#a6ffa98742c320a9e9d709d4b6a3b98af">BaseCommand::logSuccess</a></div><div class="ttdeci">void logSuccess(const std::string &amp;message) const</div><div class="ttdoc">Generates a successful execution event (GENERAL_INFO with SUCCESS prefix).</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:136</div></div>
+<div class="ttc" id="aclassBaseCommand_html_a757e9a5a0d6feb0b100536c7380bf088"><div class="ttname"><a href="classBaseCommand.html#a757e9a5a0d6feb0b100536c7380bf088">BaseCommand::findRepository</a></div><div class="ttdeci">std::shared_ptr&lt; Repository &gt; findRepository() const</div><div class="ttdoc">Finds an existing repository in the current or parent directories.</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:48</div></div>
+<div class="ttc" id="aclassBaseCommand_html_a98e0e914f24383408fc7e8fc977baccb"><div class="ttname"><a href="classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb">BaseCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Displays the command&#39;s help (Usage and Description).</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:96</div></div>
+<div class="ttc" id="aclassBaseCommand_html_aa5b4cd9ea94779c697ffb03e5671e3e3"><div class="ttname"><a href="classBaseCommand.html#aa5b4cd9ea94779c697ffb03e5671e3e3">BaseCommand::logError</a></div><div class="ttdeci">void logError(const std::string &amp;message) const</div><div class="ttdoc">Generates a runtime error event (RUNTIME_ERROR).</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:126</div></div>
+<div class="ttc" id="aclassBaseCommand_html_ab8985d7405710050555684f57d20a6d0"><div class="ttname"><a href="classBaseCommand.html#ab8985d7405710050555684f57d20a6d0">BaseCommand::createRepository</a></div><div class="ttdeci">std::shared_ptr&lt; Repository &gt; createRepository(const std::string &amp;path=&quot;.&quot;) const</div><div class="ttdoc">Creates a new repository instance.</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:57</div></div>
+<div class="ttc" id="aclassBaseCommand_html_aca2b7d7a6526b60b5ee16a0e25541b62"><div class="ttname"><a href="classBaseCommand.html#aca2b7d7a6526b60b5ee16a0e25541b62">BaseCommand::logInfo</a></div><div class="ttdeci">void logInfo(const std::string &amp;message) const</div><div class="ttdoc">Generates a general informational event (GENERAL_INFO).</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:116</div></div>
+<div class="ttc" id="aclassBaseCommand_html_ad58c272b34bdd6fbfbf294d3f01fbfb8"><div class="ttname"><a href="classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8">BaseCommand::eventSubject_</a></div><div class="ttdeci">std::shared_ptr&lt; ISubject &gt; eventSubject_</div><div class="ttdoc">The Event Subject (Event Bus) instance.</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:42</div></div>
+<div class="ttc" id="aclassBaseCommand_html_af8ad2f422a83cffbb07da49675443c43"><div class="ttname"><a href="classBaseCommand.html#af8ad2f422a83cffbb07da49675443c43">BaseCommand::logDebug</a></div><div class="ttdeci">void logDebug(const std::string &amp;message) const</div><div class="ttdoc">Generates a debug information event (DEBUG_MESSAGE).</div><div class="ttdef"><b>Определения</b> BaseCommand.hxx:105</div></div>
+<div class="ttc" id="aclassBaseCommand_html_afffa3d917dfb9f5bffc52e6e6271c37a"><div class="ttname"><a href="classBaseCommand.html#afffa3d917dfb9f5bffc52e6e6271c37a">BaseCommand::getDescription</a></div><div class="ttdeci">virtual std::string getDescription() const =0</div><div class="ttdoc">Gets a brief description of the command.</div></div>
+<div class="ttc" id="aclassICommand_html"><div class="ttname"><a href="classICommand.html">ICommand</a></div><div class="ttdoc">Interface (abstract base class) for all commands executed via the CLI.</div><div class="ttdef"><b>Определения</b> ICommand.hxx:23</div></div>
+<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">(Forward Declaration) The interface for the Event Bus.</div><div class="ttdef"><b>Определения</b> ISubject.hxx:26</div></div>
+<div class="ttc" id="aclassRepository_html_acffdc3fb1a22f69018a4037e9b4feabb"><div class="ttname"><a href="classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb">Repository::findRepository</a></div><div class="ttdeci">static std::shared_ptr&lt; Repository &gt; findRepository(const std::string &amp;start_path=&quot;.&quot;)</div><div class="ttdoc">Statically searches for an existing repository starting from a given path and moving up.</div><div class="ttdef"><b>Определения</b> Repository.cxx:111</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5">Event::DEBUG_MESSAGE</a></div><div class="ttdeci">@ DEBUG_MESSAGE</div><div class="ttdoc">Message intended for low-level debugging and tracing.</div><div class="ttdef"><b>Определения</b> Event.hxx:41</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c">Event::RUNTIME_ERROR</a></div><div class="ttdeci">@ RUNTIME_ERROR</div><div class="ttdoc">Error preventing an operation from completing (e.g., File I/O error).</div><div class="ttdef"><b>Определения</b> Event.hxx:30</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7">Event::GENERAL_INFO</a></div><div class="ttdeci">@ GENERAL_INFO</div><div class="ttdoc">General informational message relevant to the user.</div><div class="ttdef"><b>Определения</b> Event.hxx:40</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_2990d7c532eb7441b74916b8f5365141.html">cli</a></li><li class="navelem"><a href="dir_cde9ee1e1149a294439eb6a6d22bd3a6.html">include</a></li><li class="navelem"><a href="BaseCommand_8hxx.html">BaseCommand.hxx</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

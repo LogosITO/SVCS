@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode_0',['mode',['../structTreeEntry.html#a134f10cecd1f81227572389485e04ad4',1,'TreeEntry']]]
+  ['last_5fmodified_0',['last_modified',['../structIndexEntry.html#a07371b90dba7b3e77073e25b8974bf69',1,'IndexEntry']]]
 ];

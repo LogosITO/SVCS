@@ -1,11 +1,16 @@
 var annotated_dup =
 [
+    [ "BaseCommand", "classBaseCommand.html", "classBaseCommand" ],
     [ "Blob", "classBlob.html", "classBlob" ],
+    [ "CommandFactory", "classCommandFactory.html", "classCommandFactory" ],
     [ "Commit", "classCommit.html", "classCommit" ],
     [ "Event", "structEvent.html", "structEvent" ],
+    [ "EventBus", "classEventBus.html", "classEventBus" ],
+    [ "ICommand", "classICommand.html", "classICommand" ],
     [ "Index", "classIndex.html", "classIndex" ],
     [ "IndexEntry", "structIndexEntry.html", "structIndexEntry" ],
     [ "IndexTest", "classIndexTest.html", null ],
+    [ "InitCommand", "classInitCommand.html", "classInitCommand" ],
     [ "IObserver", "classIObserver.html", "classIObserver" ],
     [ "ISubject", "classISubject.html", "classISubject" ],
     [ "Logger", "classLogger.html", "classLogger" ],

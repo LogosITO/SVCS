@@ -1,4 +1,11 @@
 var searchData=
 [
-  ['notify_0',['notify',['../classRepository.html#a9dcc9525330f8f98eccf2d95aff99a28',1,'Repository::notify()'],['../classIObserver.html#a325451b0d0100feaad6f683850a616dc',1,'IObserver::notify()'],['../classISubject.html#a331138b4245b37120ab8a2d7180b2df5',1,'ISubject::notify()'],['../classLogger.html#a96a2b88ee6d81d3ecf0fed3a6291c9a2',1,'Logger::notify()'],['../classMockSubject.html#a20cec53d2f580fe046cfa89a168a3770',1,'MockSubject::notify()'],['../classManualMockObserver.html#a2d0cef17d9225d64ce23dbf3451bb610',1,'ManualMockObserver::notify()'],['../classMockSubject.html#a20cec53d2f580fe046cfa89a168a3770',1,'MockSubject::notify()'],['../classNullObserver.html#aeb635126b1e4270cb50229b157525270',1,'NullObserver::notify()']]]
+  ['load_0',['load',['../classIndex.html#a78085a2aae66dd69d50ded6d856462c6',1,'Index']]],
+  ['loadobject_1',['loadObject',['../classObjectStorage.html#ad287a079892332b3a6d71b10275b925f',1,'ObjectStorage::loadObject()'],['../classMockObjectStorage.html#a6710861deb4109e3c4a716ac9b38fe66',1,'MockObjectStorage::loadObject()']]],
+  ['logdebug_2',['logDebug',['../classBaseCommand.html#af8ad2f422a83cffbb07da49675443c43',1,'BaseCommand']]],
+  ['logerror_3',['logError',['../classBaseCommand.html#aa5b4cd9ea94779c697ffb03e5671e3e3',1,'BaseCommand']]],
+  ['logger_4',['Logger',['../classLogger.html#a46f0bc190af0631a7cacfc63dc0e35fa',1,'Logger']]],
+  ['loginfo_5',['logInfo',['../classBaseCommand.html#aca2b7d7a6526b60b5ee16a0e25541b62',1,'BaseCommand']]],
+  ['logsuccess_6',['logSuccess',['../classBaseCommand.html#a6ffa98742c320a9e9d709d4b6a3b98af',1,'BaseCommand']]],
+  ['logwarning_7',['logWarning',['../classBaseCommand.html#a6437203ec5207483f41e89a4cad4f7fb',1,'BaseCommand']]]
 ];

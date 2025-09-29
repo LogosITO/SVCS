@@ -1,6 +1,15 @@
 var hierarchy =
 [
+    [ "CommandFactory", "classCommandFactory.html", null ],
+    [ "std::enable_shared_from_this", null, [
+      [ "EventBus", "classEventBus.html", null ]
+    ] ],
     [ "Event", "structEvent.html", null ],
+    [ "ICommand", "classICommand.html", [
+      [ "BaseCommand", "classBaseCommand.html", [
+        [ "InitCommand", "classInitCommand.html", null ]
+      ] ]
+    ] ],
     [ "Index", "classIndex.html", null ],
     [ "IndexEntry", "structIndexEntry.html", null ],
     [ "IObserver", "classIObserver.html", [
@@ -9,6 +18,7 @@ var hierarchy =
       [ "NullObserver", "classNullObserver.html", null ]
     ] ],
     [ "ISubject", "classISubject.html", [
+      [ "EventBus", "classEventBus.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
       [ "Repository", "classRepository.html", null ]

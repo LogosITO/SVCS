@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🏗_20key_20implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md2',1,'']]]
+  ['✨_20index_20staging_20area_20functionality_0',['✨ Index (Staging Area) Functionality',['../md_README.html#autotoc_md4',1,'']]]
 ];

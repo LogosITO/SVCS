@@ -8,6 +8,7 @@ set(ALL_TEST_SOURCES
     storage_test.cxx
     index_test.cxx
     repository_test.cxx
+    repomanager_test.cxx
 )
 
 add_executable(svcs_unit_tests ${ALL_TEST_SOURCES})

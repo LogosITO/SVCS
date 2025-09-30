@@ -29,10 +29,10 @@
 class CommandFactory {
 private:
     /** @brief Shared pointer to the event bus used for notifications (e.g., errors or info). */
-    std::shared_ptr<ISubject> eventBus_;
+    std::shared_ptr<ISubject> event_bus;
     
     /** @brief Shared pointer to the repository manager used for executing SVCS operations. */
-    std::shared_ptr<RepositoryManager> repoManager_;
+    std::shared_ptr<RepositoryManager> repo_manager;
     
     /** * @brief Map of command creator functions.
      * * Key: The command name (e.g., "add", "commit").
@@ -41,7 +41,7 @@ private:
      */
     std::unordered_map<std::string, 
         std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>, 
-                                              std::shared_ptr<RepositoryManager>)>> creators_;
+                                              std::shared_ptr<RepositoryManager>)>> creators;
 
     /**
      * @brief Registers the set of commands that should be available by default.
@@ -79,13 +79,17 @@ public:
                        std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>,
                                                              std::shared_ptr<RepositoryManager>)> creator);
 
+    std::string getCommandDescription(const std::string& name) const;
+
+    void showCommandHelp(const std::string& name) const;
+
     /**
      * @brief Creates and returns a command object by its name.
      * * Transfers ownership (via unique_ptr) of the created object to the caller.
      * @param name The name of the command (the key in the creators_ map).
      * @return std::unique_ptr<ICommand> holding a new command object, or nullptr if the command is not registered.
      */
-    std::unique_ptr<ICommand> createCommand(const std::string& name);
+    std::unique_ptr<ICommand> createCommand(const std::string& name) const;
     
     /**
      * @brief Retrieves a list of names for all currently registered commands.

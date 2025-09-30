@@ -34,49 +34,62 @@ bool Repository::init() {
     // 1. Определение всех необходимых путей
     fs::path svcs_path = root_path / ".svcs";
     fs::path refs_path = svcs_path / "refs";
+    fs::path heads_path = refs_path / "heads";  // ← ДОБАВЛЯЕМ ЭТУ ДИРЕКТОРИЮ
     fs::path objects_path = svcs_path / "objects";
     fs::path head_file_path = svcs_path / "HEAD";
 
     try {
-        // Проверка: Если папка .svcs уже существует, сообщаем об этом и завершаем.
-        if (fs::exists(svcs_path)) {
+        // ИСПРАВЛЕНИЕ: Если репозиторий уже инициализирован, возвращаем true
+        if (is_initialized()) {
             notify({Event::GENERAL_INFO, "Repository already exists at " + svcs_path.string(), SOURCE});
-            return false;
+            return true;
         }
 
-        // 2. Создание всех основных подкаталогов: .svcs, objects, refs
-        
-        if (!fs::create_directory(svcs_path)) {
-             notify({Event::FATAL_ERROR, "Failed to create .svcs directory at: " + svcs_path.string(), SOURCE});
-             return false;
+        // 2. Создание всех основных подкаталогов: .svcs, objects, refs, refs/heads
+        if (!fs::exists(svcs_path)) {
+            if (!fs::create_directory(svcs_path)) {
+                notify({Event::FATAL_ERROR, "Failed to create .svcs directory at: " + svcs_path.string(), SOURCE});
+                return false;
+            }
+            notify({Event::GENERAL_INFO, "Created .svcs directory.", SOURCE});
         }
-        notify({Event::GENERAL_INFO, "Created .svcs directory.", SOURCE});
 
-        fs::create_directories(objects_path);
-        notify({Event::GENERAL_INFO, "Created objects directory.", SOURCE});
+        if (!fs::exists(objects_path)) {
+            fs::create_directories(objects_path);
+            notify({Event::GENERAL_INFO, "Created objects directory.", SOURCE});
+        }
 
-        fs::create_directories(refs_path);
-        notify({Event::GENERAL_INFO, "Created refs directory.", SOURCE});
+        if (!fs::exists(refs_path)) {
+            fs::create_directories(refs_path);
+            notify({Event::GENERAL_INFO, "Created refs directory.", SOURCE});
+        }
+
+        // ДОБАВЛЯЕМ: Создание директории refs/heads
+        if (!fs::exists(heads_path)) {
+            fs::create_directories(heads_path);
+            notify({Event::GENERAL_INFO, "Created refs/heads directory.", SOURCE});
+        }
         
         // 3. Создание служебных файлов (HEAD)
-        std::ofstream head_file(head_file_path);
-        if (head_file.is_open()) {
-            head_file << "ref: refs/heads/main\n"; 
-            head_file.close();
-            notify({Event::GENERAL_INFO, "Created initial HEAD file.", SOURCE});
-        } else {
-            notify({Event::FATAL_ERROR, "Failed to create HEAD file.", SOURCE});
-            return false;
+        if (!fs::exists(head_file_path)) {
+            std::ofstream head_file(head_file_path);
+            if (head_file.is_open()) {
+                head_file << "ref: refs/heads/main\n"; 
+                head_file.close();
+                notify({Event::GENERAL_INFO, "Created initial HEAD file.", SOURCE});
+            } else {
+                notify({Event::FATAL_ERROR, "Failed to create HEAD file.", SOURCE});
+                return false;
+            }
         }
 
         // 4. Успешное завершение
+        notify({Event::GENERAL_INFO, "Repository initialization completed successfully", SOURCE});
         return true;
         
     } catch (const fs::filesystem_error& e) {
-        // ВРЕМЕННЫЙ ДЕБАГ: Выводим ошибку напрямую, чтобы обойти логгер.
         std::cerr << "!!! FATAL FILESYSTEM ERROR !!!: " << e.what() << std::endl; 
         
-        // Ловим любые исключения файловой системы и сообщаем о них
         notify({
             Event::FATAL_ERROR,
             "Failed to initialize repository structure in " + root_path.string() + ": " + std::string(e.what()),
@@ -86,14 +99,19 @@ bool Repository::init() {
     }
 }
 
-
 bool Repository::is_initialized() const {
     auto svcs_dir = root_path / ".svcs";
+    auto objects_dir = svcs_dir / "objects";
+    auto refs_dir = svcs_dir / "refs";
+    auto heads_dir = refs_dir / "heads";
+    auto head_file = svcs_dir / "HEAD";
+    
     return fs::exists(svcs_dir) && 
-            fs::exists(svcs_dir / "objects") &&
-            fs::exists(svcs_dir / "refs");
+           fs::exists(objects_dir) &&
+           fs::exists(refs_dir) &&
+           fs::exists(heads_dir) &&
+           fs::exists(head_file);
 }
-
 
 void Repository::attach(std::shared_ptr<IObserver> observer) {
     if (observer) {

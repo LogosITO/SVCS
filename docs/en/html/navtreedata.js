@@ -69,8 +69,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"AddCommand_8hxx.html",
-"hierarchy.html"
+"AddCommand_8cxx.html",
+"dir_056ec8f0377ddc4293192cbc6b19c99c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

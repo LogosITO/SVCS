@@ -1,3 +1,11 @@
+/**
+ * @file RepositoryManager.cxx
+ * @brief Implementation of the RepositoryManager class, handling high-level repository creation, initialization, and cleanup utilities.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/RepositoryManager.hxx"
 #include "../../services/ISubject.hxx"
 

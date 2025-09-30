@@ -1,3 +1,11 @@
+/**
+ * @file storage_test.cxx
+ * @brief Unit tests for the ObjectStorage class, verifying persistence, file path generation, compression, and object loading integrity for all VcsObject types (Blob, Tree, Commit).
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../core/include/ObjectStorage.hxx"
 #include "../core/include/Blob.hxx"
 #include "../core/include/Tree.hxx"

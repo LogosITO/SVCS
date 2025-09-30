@@ -1,3 +1,11 @@
+/**
+ * @file Blob.cxx
+ * @brief Implementation of the Blob class, a core SVCS object for file content storage.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/Blob.hxx"
 
 Blob::Blob(const std::string& raw_data) : data(raw_data) {

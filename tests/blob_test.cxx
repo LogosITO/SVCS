@@ -1,4 +1,13 @@
+/**
+ * @file blob_test.cxx
+ * @brief Unit tests for the Blob class, verifying object construction, hash calculation, and data integrity.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../core/include/Blob.hxx"
+
 #include <gtest/gtest.h>
 
 TEST(BlobTest, HashIsCalculatedOnCreation) {

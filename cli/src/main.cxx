@@ -1,3 +1,11 @@
+/**
+ * @file main.cxx
+ * @brief Main entry point and command-line interface (CLI) driver for the SVCS application.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/CommandFactory.hxx"
 #include "../../services/logging/Logger.hxx"
 #include "../../services/EventBus.hxx"

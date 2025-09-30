@@ -1,3 +1,11 @@
+/**
+ * @file AddCommand.cxx
+ * @brief Implementation of the AddCommand class, responsible for processing the 'svcs add' command and staging files for the next commit.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/AddCommand.hxx"
 
 AddCommand::AddCommand(std::shared_ptr<ISubject> subject, 

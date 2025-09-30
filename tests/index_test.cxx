@@ -1,8 +1,16 @@
-#include "gtest/gtest.h"
+/**
+ * @file IndexTest.cxx
+ * @brief Unit tests for the Index class, verifying staging area management, file modification tracking, and index persistence.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../core/include/Index.hxx"
 #include "../core/include/Blob.hxx"
 #include "../core/include/ObjectStorage.hxx" 
 
+#include <gtest/gtest.h>
 #include <filesystem>
 #include <fstream>
 #include <string>

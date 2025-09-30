@@ -1,4 +1,13 @@
+/**
+ * @file object_test.cxx
+ * @brief Unit tests for the core hashing logic of the VcsObject abstract base class.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../core/include/VcsObject.hxx"
+
 #include <gtest/gtest.h>
 
 TEST(VscObjectHashTest, CreatingHash) {

@@ -7,6 +7,6 @@ var searchData=
   ['helpservice_4',['HelpService',['../classHelpService.html',1,'HelpService'],['../classHelpService.html#ac380002930a510d355fe11cf11e946ce',1,'HelpService::HelpService()']]],
   ['helpservice_2ecxx_5',['HelpService.cxx',['../HelpService_8cxx.html',1,'']]],
   ['helpservice_2ehxx_6',['HelpService.hxx',['../HelpService_8hxx.html',1,'']]],
-  ['hex_5fto_5fbinary_5fstring_7',['hex_to_binary_string',['../Utils_8hxx.html#a7fc89ff4883c714ee7a53698eb485ec3',1,'Utils.cxx']]],
+  ['hex_5fto_5fbinary_5fstring_7',['hex_to_binary_string',['../Utils_8hxx.html#a7fc89ff4883c714ee7a53698eb485ec3',1,'hex_to_binary_string(const std::string &amp;hex_string):&#160;Utils.cxx'],['../Utils_8cxx.html#a7fc89ff4883c714ee7a53698eb485ec3',1,'hex_to_binary_string(const std::string &amp;hex_string):&#160;Utils.cxx']]],
   ['how_20to_20report_20a_20vulnerability_8',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md21',1,'']]]
 ];

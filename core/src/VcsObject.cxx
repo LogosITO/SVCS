@@ -1,4 +1,13 @@
+/**
+ * @file Utils.cxx
+ * @brief Implementation of general utility functions for file I/O and hash format conversion.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/VcsObject.hxx"
+
 #include <openssl/sha.h>
 #include <sstream>
 #include <iomanip>

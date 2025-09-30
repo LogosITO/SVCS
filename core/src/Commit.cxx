@@ -1,4 +1,13 @@
+/**
+ * @file Commit.cxx
+ * @brief Implementation of the Commit class, representing a history snapshot in the SVCS.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+ 
 #include "../include/Commit.hxx"
+
 #include <sstream>
 #include <algorithm>
 

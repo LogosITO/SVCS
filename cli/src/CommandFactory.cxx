@@ -1,3 +1,11 @@
+/**
+ * @file CommandFactory.cxx
+ * @brief Implementation of the CommandFactory class, which is responsible for dynamically creating ICommand objects and managing their lifecycle and dependencies.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/CommandFactory.hxx"
 #include "../include/InitCommand.hxx"
 #include "../include/AddCommand.hxx"

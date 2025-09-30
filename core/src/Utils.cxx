@@ -1,3 +1,11 @@
+/**
+ * @file Utils.cxx
+ * @brief Implementation of general utility functions for file I/O and hash format conversion.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/Utils.hxx"
 
 #include <fstream>

@@ -1,8 +1,17 @@
+/**
+ * @file Index.cxx
+ * @brief Implementation of the Index class, managing the staging area and building the commit tree.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/Index.hxx"
 #include "../include/Blob.hxx"
 #include "../include/Utils.hxx"
 #include "../include/Tree.hxx"
 #include "../include/ObjectStorage.hxx" 
+
 #include <iostream>
 #include <algorithm>
 #include <fstream>

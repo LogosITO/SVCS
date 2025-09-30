@@ -1,5 +1,14 @@
+/**
+ * @file Tree.cxx
+ * @brief Implementation of the Tree class, which represents a directory structure in the SVCS and maps names to object hashes.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/Tree.hxx"
 #include "../include/Utils.hxx"
+
 #include <algorithm>
 #include <sstream>
 

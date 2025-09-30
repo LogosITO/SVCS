@@ -1,3 +1,11 @@
+/**
+ * @file ObjectStorage.cxx
+ * @brief Implementation of the ObjectStorage class, managing the storage and retrieval of compressed VcsObject objects.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/ObjectStorage.hxx"
 #include "../../services/ISubject.hxx"
 #include "../../services/Event.hxx"

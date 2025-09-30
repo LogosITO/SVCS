@@ -1,4 +1,13 @@
+/**
+ * @file commit_test.cxx
+ * @brief Unit tests for the Commit class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../core/include/Commit.hxx"
+
 #include <gtest/gtest.h>
 
 const std::string HASH_TREE_EMPTY = "4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a";

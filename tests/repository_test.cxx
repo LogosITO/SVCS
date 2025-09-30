@@ -1,8 +1,16 @@
+/**
+ * @file repository_test.cxx
+ * @brief Unit tests for the Repository class, covering initialization, filesystem structure creation, and Subject/Observer pattern implementation.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../core/include/Repository.hxx" 
 #include "../services/IObserver.hxx"
 #include "../services/Event.hxx" 
 
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include <filesystem>
 #include <vector>
 #include <iostream>

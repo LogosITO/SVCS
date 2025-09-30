@@ -1,3 +1,11 @@
+/**
+ * @file Repository.cxx
+ * @brief Implementation of the Repository class, which serves as the main application facade and core logic for the VCS.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/Repository.hxx"
 #include "../include/Blob.hxx"
 #include "../../services/IObserver.hxx"

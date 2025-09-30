@@ -1,3 +1,11 @@
+/**
+ * @file InitCommand.cxx
+ * @brief Implementation of the InitCommand class, responsible for processing the 'svcs init' command and initializing a new SVCS repository.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/InitCommand.hxx"
 
 InitCommand::InitCommand(std::shared_ptr<ISubject> subject, 

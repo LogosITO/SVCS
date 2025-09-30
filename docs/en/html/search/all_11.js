@@ -17,6 +17,7 @@ var searchData=
   ['stagefile_14',['stageFile',['../classRepository.html#ae75a20286b79919005724ab4dfa80717',1,'Repository']]],
   ['status_3a_20core_20functionality_20stable_15',['🚀 Current Project Status: Core Functionality Stable',['../md_README.html#autotoc_md3',1,'']]],
   ['steps_16',['🗺️ Next Steps',['../md_README.html#autotoc_md14',1,'']]],
-  ['svcs_3a_20simple_20version_20control_20system_17',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
-  ['system_18',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]]
+  ['storage_5ftest_2ecxx_17',['storage_test.cxx',['../storage__test_8cxx.html',1,'']]],
+  ['svcs_3a_20simple_20version_20control_20system_18',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
+  ['system_19',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]]
 ];

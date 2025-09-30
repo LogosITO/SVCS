@@ -70,7 +70,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommand_8hxx.html",
-"structIndexEntry.html#a10582a2e090f7c30885f54b42da08048"
+"structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

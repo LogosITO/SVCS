@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['registercommand_0',['registerCommand',['../classCommandFactory.html#a917e8d9dc3309ac17ddf923943ad873b',1,'CommandFactory']]],
-  ['removeentry_1',['removeEntry',['../classTree.html#a85035a45ff8778df5bb8be32f57bf232',1,'Tree']]],
-  ['repository_2',['Repository',['../classRepository.html#a6630b76df7b7093650373d799367e28d',1,'Repository']]],
-  ['repositorymanager_3',['RepositoryManager',['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager']]]
+  ['objectexists_0',['objectExists',['../classObjectStorage.html#abbc8d8426ae0f500aa7a6dba213e0bed',1,'ObjectStorage']]],
+  ['objectstorage_1',['ObjectStorage',['../classObjectStorage.html#aa511ec3636de4f1ad6f411e7a2aa2638',1,'ObjectStorage']]],
+  ['operator_3c_2',['operator&lt;',['../structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940',1,'TreeEntry']]],
+  ['operator_3d_3',['operator=',['../classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7',1,'CommandFactory']]]
 ];

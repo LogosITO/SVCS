@@ -96,7 +96,7 @@ $(function(){initNavTree('Commit_8hxx_source.html','',''); });
 <a href="Commit_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;VcsObject.hxx&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="VcsObject_8hxx.html">VcsObject.hxx</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
@@ -144,6 +144,7 @@ $(function(){initNavTree('Commit_8hxx_source.html','',''); });
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classCommit.html#a341a1826cec171e37a95f0317183ea5d">getMessage</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>};</div>
 </div>
+<div class="ttc" id="aVcsObject_8hxx_html"><div class="ttname"><a href="VcsObject_8hxx.html">VcsObject.hxx</a></div><div class="ttdoc">Definition of the abstract base class for all Version Control System objects.</div></div>
 <div class="ttc" id="aclassCommit_html_a0f37624e98ed1dc6404795756127be52"><div class="ttname"><a href="classCommit.html#a0f37624e98ed1dc6404795756127be52">Commit::deserialize</a></div><div class="ttdeci">static Commit deserialize(const std::string &amp;raw_content)</div><div class="ttdoc">Creates a Commit object from a serialized string read from the object database.</div><div class="ttdef"><b>Definition</b> Commit.cxx:50</div></div>
 <div class="ttc" id="aclassCommit_html_a213b92691c2dae9e7ae7862eb9c369df"><div class="ttname"><a href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">Commit::getType</a></div><div class="ttdeci">std::string getType() const override</div><div class="ttdoc">Returns the type of the VCS object.</div><div class="ttdef"><b>Definition</b> Commit.cxx:29</div></div>
 <div class="ttc" id="aclassCommit_html_a341a1826cec171e37a95f0317183ea5d"><div class="ttname"><a href="classCommit.html#a341a1826cec171e37a95f0317183ea5d">Commit::getMessage</a></div><div class="ttdeci">const std::string &amp; getMessage() const</div><div class="ttdoc">Returns the user-defined commit message.</div><div class="ttdef"><b>Definition</b> Commit.cxx:164</div></div>

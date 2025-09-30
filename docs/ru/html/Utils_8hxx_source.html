@@ -93,7 +93,7 @@ $(function(){initNavTree('Utils_8hxx_source.html','',''); });
   <div class="headertitle"><div class="title">Utils.hxx</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<a href="Utils_8hxx.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once </span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
@@ -101,18 +101,21 @@ $(function(){initNavTree('Utils_8hxx_source.html','',''); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>fs = std::filesystem;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>std::string read_file_to_string(<span class="keyword">const</span> fs::path&amp; full_path);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>std::string <a class="code hl_function" href="Utils_8hxx.html#aee4ae6af295150b8d2daa18f1b1b1a01">read_file_to_string</a>(<span class="keyword">const</span> fs::path&amp; full_path);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>std::string binary_to_hex_string(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* binary_data, <span class="keywordtype">size_t</span> length);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>std::string <a class="code hl_function" href="Utils_8hxx.html#a3c03f3592ffa57a1f2ad8be7ddab13f4">binary_to_hex_string</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* binary_data, <span class="keywordtype">size_t</span> length);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>std::string hex_to_binary_string(<span class="keyword">const</span> std::string&amp; hex_string);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>std::string <a class="code hl_function" href="Utils_8hxx.html#a7fc89ff4883c714ee7a53698eb485ec3">hex_to_binary_string</a>(<span class="keyword">const</span> std::string&amp; hex_string);</div>
+<div class="ttc" id="aUtils_8hxx_html_a3c03f3592ffa57a1f2ad8be7ddab13f4"><div class="ttname"><a href="Utils_8hxx.html#a3c03f3592ffa57a1f2ad8be7ddab13f4">binary_to_hex_string</a></div><div class="ttdeci">std::string binary_to_hex_string(const unsigned char *binary_data, size_t length)</div><div class="ttdoc">Converts a binary buffer (e.g., a raw SHA-1 hash) into its hexadecimal string representation.</div><div class="ttdef"><b>Определения</b> Utils.cxx:24</div></div>
+<div class="ttc" id="aUtils_8hxx_html_a7fc89ff4883c714ee7a53698eb485ec3"><div class="ttname"><a href="Utils_8hxx.html#a7fc89ff4883c714ee7a53698eb485ec3">hex_to_binary_string</a></div><div class="ttdeci">std::string hex_to_binary_string(const std::string &amp;hex_string)</div><div class="ttdoc">Converts a hexadecimal string (e.g., 40 chars) into its raw binary byte representation (e....</div><div class="ttdef"><b>Определения</b> Utils.cxx:33</div></div>
+<div class="ttc" id="aUtils_8hxx_html_aee4ae6af295150b8d2daa18f1b1b1a01"><div class="ttname"><a href="Utils_8hxx.html#aee4ae6af295150b8d2daa18f1b1b1a01">read_file_to_string</a></div><div class="ttdeci">std::string read_file_to_string(const fs::path &amp;full_path)</div><div class="ttdoc">Reads the entire content of a file into a single std::string.</div><div class="ttdef"><b>Определения</b> Utils.cxx:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a href="dir_24d671cfcbc5d5238a6bd565a49d198f.html">include</a></li><li class="navelem"><b>Utils.hxx</b></li>
+    <li class="navelem"><a href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a href="dir_24d671cfcbc5d5238a6bd565a49d198f.html">include</a></li><li class="navelem"><a href="Utils_8hxx.html">Utils.hxx</a></li>
     <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

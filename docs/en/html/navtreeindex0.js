@@ -20,6 +20,7 @@ var NAVTREEINDEX0 =
 "IObserver_8hxx_source.html":[4,0,2,3],
 "ISubject_8hxx.html":[4,0,2,4],
 "ISubject_8hxx_source.html":[4,0,2,4],
+"Index_8hxx.html":[4,0,1,0,2],
 "Index_8hxx_source.html":[4,0,1,0,2],
 "InitCommand_8hxx.html":[4,0,0,0,4],
 "InitCommand_8hxx_source.html":[4,0,0,0,4],
@@ -40,7 +41,12 @@ var NAVTREEINDEX0 =
 "Tree_8hxx.html":[4,0,1,0,6],
 "Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f":[4,0,1,0,6,2],
 "Tree_8hxx_source.html":[4,0,1,0,6],
+"Utils_8hxx.html":[4,0,1,0,7],
+"Utils_8hxx.html#a3c03f3592ffa57a1f2ad8be7ddab13f4":[4,0,1,0,7,0],
+"Utils_8hxx.html#a7fc89ff4883c714ee7a53698eb485ec3":[4,0,1,0,7,1],
+"Utils_8hxx.html#aee4ae6af295150b8d2daa18f1b1b1a01":[4,0,1,0,7,2],
 "Utils_8hxx_source.html":[4,0,1,0,7],
+"VcsObject_8hxx.html":[4,0,1,0,8],
 "VcsObject_8hxx_source.html":[4,0,1,0,8],
 "annotated.html":[3,0],
 "classBaseCommand.html":[3,0,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX0 =
 "structEvent.html#a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a":[3,0,4,0,0],
 "structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c":[3,0,4,0,1],
 "structEvent.html#a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775":[3,0,4,0,5],
-"structEvent.html#a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61":[3,0,4,0,9],
-"structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7":[3,0,4,0,7],
-"structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3":[3,0,4,3],
-"structEvent.html#af3aea97224cf810339754ab8bd53e893":[3,0,4,2],
-"structEvent.html#afedba76038909cf242d7642da3b7bfd9":[3,0,4,1],
-"structIndexEntry.html":[3,0,8],
-"structIndexEntry.html#a07371b90dba7b3e77073e25b8974bf69":[3,0,8,3]
+"structEvent.html#a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61":[3,0,4,0,9]
 };

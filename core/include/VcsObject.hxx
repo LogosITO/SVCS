@@ -1,12 +1,12 @@
-/***********************************************************************************************
- * @file VcsObject.h
+/**
+ * @file VcsObject.hxx
  * @copyright 
  * Copyright 2025 LogosITO
  * Licensed under MIT-License
  * @brief Definition of the abstract base class for all Version Control System objects.
  * * This class establishes the contract and core properties (like the hash ID) 
  * required for any object stored in the SVCS object database (e.g., Commit, Blob, Tree).
- ***********************************************************************************************/
+ */
 
 #pragma once 
 

@@ -12,6 +12,7 @@
 #include "../include/HelpService.hxx"
 #include "../include/HelpCommand.hxx"
 #include "../include/VersionCommand.hxx"
+#include "../include/SaveCommand.hxx"
 
 #include <iostream>
 #include <memory>
@@ -53,6 +54,12 @@ void CommandFactory::registerDefaultCommands() {
                              std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
         std::cout << "DEBUG: Creating AddCommand instance" << std::endl;
         return std::make_unique<AddCommand>(bus, repoManager);
+    });
+
+    registerCommand("save", [](std::shared_ptr<ISubject> bus, 
+                          std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+        std::cout << "DEBUG: Creating SaveCommand instance" << std::endl;
+        return std::make_unique<SaveCommand>(bus, repoManager);
     });
     
     registerCommand("help", [this](std::shared_ptr<ISubject> bus, 

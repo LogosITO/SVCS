@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🗺️_20next_20steps_0',['🗺️ Next Steps',['../md_README.html#autotoc_md14',1,'']]]
+  ['💻_20available_20commands_0',['💻 Available Commands',['../md_README.html#autotoc_md6',1,'']]]
 ];

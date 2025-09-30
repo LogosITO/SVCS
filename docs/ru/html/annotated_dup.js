@@ -27,8 +27,11 @@ var annotated_dup =
     [ "RepositoryManager", "classRepositoryManager.html", "classRepositoryManager" ],
     [ "RepositoryManagerTest", "classRepositoryManagerTest.html", null ],
     [ "RepositoryTest", "classRepositoryTest.html", null ],
+    [ "SaveCommand", "classSaveCommand.html", "classSaveCommand" ],
+    [ "StatusCommand", "classStatusCommand.html", "classStatusCommand" ],
     [ "TestableObject", "classTestableObject.html", "classTestableObject" ],
     [ "Tree", "classTree.html", "classTree" ],
     [ "TreeEntry", "structTreeEntry.html", "structTreeEntry" ],
-    [ "VcsObject", "classVcsObject.html", "classVcsObject" ]
+    [ "VcsObject", "classVcsObject.html", "classVcsObject" ],
+    [ "VersionCommand", "classVersionCommand.html", "classVersionCommand" ]
 ];

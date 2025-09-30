@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md6',1,'']]]
+  ['guide_0',['🛠️ Quick Start Guide',['../md_README.html#autotoc_md11',1,'']]]
 ];

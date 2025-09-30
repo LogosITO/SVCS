@@ -26,22 +26,30 @@ var NAVTREE =
 [
   [ "SVCS", "index.html", [
     [ "📚 SVCS: Simple Version Control System", "md_README.html", [
-      [ "🚀 Current Project Status: Core Functionality Stable", "md_README.html#autotoc_md3", [
+      [ "🚀 Current Project Status: Production Ready CLI", "md_README.html#autotoc_md3", [
         [ "Major Achievements", "md_README.html#autotoc_md4", null ]
       ] ],
-      [ "🏗 Key Implemented Components", "md_README.html#autotoc_md6", null ],
-      [ "🛠️ Tools and Technologies", "md_README.html#autotoc_md8", null ],
-      [ "🧰 Project Scripts &amp; Usage", "md_README.html#autotoc_md10", [
-        [ "Linux / macOS", "md_README.html#autotoc_md11", null ],
-        [ "Windows", "md_README.html#autotoc_md12", null ]
+      [ "- ✅ <b>Comprehensive Testing:</b> Unit tests for core components", "md_README.html#autotoc_md5", null ],
+      [ "💻 Available Commands", "md_README.html#autotoc_md6", [
+        [ "Core Version Control", "md_README.html#autotoc_md7", null ],
+        [ "Information &amp; Help", "md_README.html#autotoc_md8", null ],
+        [ "Command Aliases &amp; Options", "md_README.html#autotoc_md9", null ]
       ] ],
-      [ "🗺️ Next Steps", "md_README.html#autotoc_md14", null ],
-      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md16", null ],
-      [ "📝 Author and License", "md_README.html#autotoc_md17", null ]
+      [ "- <span class=\"tt\">svcs help &lt;command&gt;</span> → specific command help", "md_README.html#autotoc_md10", null ],
+      [ "🛠️ Quick Start Guide", "md_README.html#autotoc_md11", null ],
+      [ "🏗️ System Architecture", "md_README.html#autotoc_md13", null ],
+      [ "📈 Development Status", "md_README.html#autotoc_md14", [
+        [ "✅ Implemented &amp; Stable", "md_README.html#autotoc_md15", null ],
+        [ "🔄 Planned Enhancements", "md_README.html#autotoc_md16", null ]
+      ] ],
+      [ "- ⏳ Configuration management", "md_README.html#autotoc_md17", null ],
+      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md18", null ],
+      [ "- <a href=\"https://logosito.github.io/SVCS/ru/\">Russian Documentation (RU)</a>", "md_README.html#autotoc_md19", null ],
+      [ "📝 Author and License", "md_README.html#autotoc_md20", null ]
     ] ],
     [ "Security Policy", "md_SECURITY.html", [
-      [ "How to Report a Vulnerability", "md_SECURITY.html#autotoc_md21", null ],
-      [ "Our Process", "md_SECURITY.html#autotoc_md23", null ]
+      [ "How to Report a Vulnerability", "md_SECURITY.html#autotoc_md24", null ],
+      [ "Our Process", "md_SECURITY.html#autotoc_md26", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", [
@@ -70,7 +78,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommand_8cxx.html",
-"dir_056ec8f0377ddc4293192cbc6b19c99c.html"
+"classTestableObject.html#a89133227b30cea6642769a8cad7c1375"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

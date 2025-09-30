@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📝_20author_20and_20license_0',['📝 Author and License',['../md_README.html#autotoc_md17',1,'']]]
+  ['🏗️_20system_20architecture_0',['🏗️ System Architecture',['../md_README.html#autotoc_md13',1,'']]]
 ];

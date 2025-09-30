@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Файл tests/commit_test.cxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('commit__test_8cxx.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл commit_test.cxx</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Unit tests for the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="Commit_8hxx_source.html">../core/include/Commit.hxx</a>&quot;</code><br />
+<code>#include &lt;gtest/gtest.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ae7a926bf7d7dcc3902b15b1de2fe0e6d" id="r_ae7a926bf7d7dcc3902b15b1de2fe0e6d"><td class="memItemLeft" align="right" valign="top"><a id="ae7a926bf7d7dcc3902b15b1de2fe0e6d" name="ae7a926bf7d7dcc3902b15b1de2fe0e6d"></a>
+<a class="el" href="classCommit.html">Commit</a>&#160;</td><td class="memItemRight" valign="bottom"><b>createTestCommit</b> (const std::string &amp;tree_hash, const std::vector&lt; std::string &gt; &amp;parents, const std::string &amp;message, std::time_t timestamp=1600000000)</td></tr>
+<tr class="memitem:a30dc08fac2c0325d5c0b57840807276f" id="r_a30dc08fac2c0325d5c0b57840807276f"><td class="memItemLeft" align="right" valign="top"><a id="a30dc08fac2c0325d5c0b57840807276f" name="a30dc08fac2c0325d5c0b57840807276f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (CommitTest, BasicInitialCommit)</td></tr>
+<tr class="memitem:a56628a9c956d11551faa222eca76cda4" id="r_a56628a9c956d11551faa222eca76cda4"><td class="memItemLeft" align="right" valign="top"><a id="a56628a9c956d11551faa222eca76cda4" name="a56628a9c956d11551faa222eca76cda4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (CommitTest, HashIsStableRegardlessOfParentOrder)</td></tr>
+<tr class="memitem:a799c1e48f2313e727eea83677d8d359d" id="r_a799c1e48f2313e727eea83677d8d359d"><td class="memItemLeft" align="right" valign="top"><a id="a799c1e48f2313e727eea83677d8d359d" name="a799c1e48f2313e727eea83677d8d359d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (CommitTest, HashChangesWithDifferentMessage)</td></tr>
+<tr class="memitem:a73659178faf1e76365387127541b98e4" id="r_a73659178faf1e76365387127541b98e4"><td class="memItemLeft" align="right" valign="top"><a id="a73659178faf1e76365387127541b98e4" name="a73659178faf1e76365387127541b98e4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (CommitTest, SerializationDeserializationRoundTrip)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:ad57cdec7a6e84fefe8d5fe2c2e6cbb90" id="r_ad57cdec7a6e84fefe8d5fe2c2e6cbb90"><td class="memItemLeft" align="right" valign="top"><a id="ad57cdec7a6e84fefe8d5fe2c2e6cbb90" name="ad57cdec7a6e84fefe8d5fe2c2e6cbb90"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_TREE_EMPTY</b> = &quot;4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a&quot;</td></tr>
+<tr class="memitem:af33b3d23844c6ebeafa6e65a17476208" id="r_af33b3d23844c6ebeafa6e65a17476208"><td class="memItemLeft" align="right" valign="top"><a id="af33b3d23844c6ebeafa6e65a17476208" name="af33b3d23844c6ebeafa6e65a17476208"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_PARENT_A</b> = &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;</td></tr>
+<tr class="memitem:adfe7dbab581c64e6c87819aa6380a190" id="r_adfe7dbab581c64e6c87819aa6380a190"><td class="memItemLeft" align="right" valign="top"><a id="adfe7dbab581c64e6c87819aa6380a190" name="adfe7dbab581c64e6c87819aa6380a190"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_PARENT_B</b> = &quot;bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&quot;</td></tr>
+<tr class="memitem:a1127791517517f0b0fa8b95bc4342e31" id="r_a1127791517517f0b0fa8b95bc4342e31"><td class="memItemLeft" align="right" valign="top"><a id="a1127791517517f0b0fa8b95bc4342e31" name="a1127791517517f0b0fa8b95bc4342e31"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_TREE_NEW</b> = &quot;c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1&quot;</td></tr>
+<tr class="memitem:afbd82a565f16d182383e44439950669e" id="r_afbd82a565f16d182383e44439950669e"><td class="memItemLeft" align="right" valign="top"><a id="afbd82a565f16d182383e44439950669e" name="afbd82a565f16d182383e44439950669e"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_PARENT_P1</b> = &quot;d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2&quot;</td></tr>
+<tr class="memitem:a4a3217c574a21f7414c660f7811af020" id="r_a4a3217c574a21f7414c660f7811af020"><td class="memItemLeft" align="right" valign="top"><a id="a4a3217c574a21f7414c660f7811af020" name="a4a3217c574a21f7414c660f7811af020"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_PARENT_P2</b> = &quot;e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3&quot;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Unit tests for the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a href="commit__test_8cxx.html">commit_test.cxx</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

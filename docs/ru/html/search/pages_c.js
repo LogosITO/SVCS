@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['policy_0',['Security Policy',['../md_SECURITY.html',1,'']]],
-  ['process_1',['Our Process',['../md_SECURITY.html#autotoc_md23',1,'']]],
-  ['project_20scripts_20usage_2',['🧰 Project Scripts &amp;amp; Usage',['../md_README.html#autotoc_md10',1,'']]],
-  ['project_20status_3a_20core_20functionality_20stable_3',['🚀 Current Project Status: Core Functionality Stable',['../md_README.html#autotoc_md3',1,'']]]
+  ['planned_20enhancements_0',['🔄 Planned Enhancements',['../md_README.html#autotoc_md16',1,'']]],
+  ['policy_1',['Security Policy',['../md_SECURITY.html',1,'']]],
+  ['process_2',['Our Process',['../md_SECURITY.html#autotoc_md26',1,'']]],
+  ['production_20ready_20cli_3',['🚀 Current Project Status: Production Ready CLI',['../md_README.html#autotoc_md3',1,'']]],
+  ['project_20status_3a_20production_20ready_20cli_4',['🚀 Current Project Status: Production Ready CLI',['../md_README.html#autotoc_md3',1,'']]]
 ];

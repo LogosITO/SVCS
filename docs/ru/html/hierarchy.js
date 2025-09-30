@@ -9,7 +9,10 @@ var hierarchy =
     [ "ICommand", "classICommand.html", [
       [ "BaseCommand", "classBaseCommand.html", null ],
       [ "HelpCommand", "classHelpCommand.html", null ],
-      [ "InitCommand", "classInitCommand.html", null ]
+      [ "InitCommand", "classInitCommand.html", null ],
+      [ "SaveCommand", "classSaveCommand.html", null ],
+      [ "StatusCommand", "classStatusCommand.html", null ],
+      [ "VersionCommand", "classVersionCommand.html", null ]
     ] ],
     [ "Index", "classIndex.html", null ],
     [ "IndexEntry", "structIndexEntry.html", null ],

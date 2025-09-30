@@ -6,6 +6,8 @@ var searchData=
   ['deserialize_3',['deserialize',['../classCommit.html#a0f37624e98ed1dc6404795756127be52',1,'Commit::deserialize()'],['../classTree.html#a85166cfd9d904644216cdacb0b4b7d54',1,'Tree::deserialize()']]],
   ['detach_4',['detach',['../classRepository.html#a1e421ee99132cf3dcaac6fc54ba0ab7d',1,'Repository::detach()'],['../classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a',1,'EventBus::detach()'],['../classISubject.html#aad2217012b14bdd6c91eb240689e5a74',1,'ISubject::detach()'],['../classMockSubject.html#a7a19cfe5e16907e32c0ace1ff7d6992e',1,'MockSubject::detach(std::shared_ptr&lt; IObserver &gt; observer) override'],['../classMockSubject.html#a7a19cfe5e16907e32c0ace1ff7d6992e',1,'MockSubject::detach(std::shared_ptr&lt; IObserver &gt; observer) override']]],
   ['details_5',['details',['../structEvent.html#afedba76038909cf242d7642da3b7bfd9',1,'Event']]],
-  ['distributed_20under_20the_20mit_20license_6',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md18',1,'']]],
-  ['documentation_20api_20reference_7',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md16',1,'']]]
+  ['development_20status_6',['📈 Development Status',['../md_README.html#autotoc_md14',1,'']]],
+  ['distributed_20under_20the_20mit_20license_7',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md21',1,'']]],
+  ['documentation_20api_20reference_8',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md18',1,'']]],
+  ['documentation_20ru_9',['- &lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation (RU)&lt;/a&gt;',['../md_README.html#autotoc_md19',1,'']]]
 ];

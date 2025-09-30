@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['scripts_20usage_0',['🧰 Project Scripts &amp;amp; Usage',['../md_README.html#autotoc_md10',1,'']]],
-  ['security_20policy_1',['Security Policy',['../md_SECURITY.html',1,'']]],
-  ['simple_20version_20control_20system_2',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
-  ['stable_3',['🚀 Current Project Status: Core Functionality Stable',['../md_README.html#autotoc_md3',1,'']]],
-  ['status_3a_20core_20functionality_20stable_4',['🚀 Current Project Status: Core Functionality Stable',['../md_README.html#autotoc_md3',1,'']]],
-  ['steps_5',['🗺️ Next Steps',['../md_README.html#autotoc_md14',1,'']]],
-  ['svcs_3a_20simple_20version_20control_20system_6',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
-  ['system_7',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]]
+  ['ready_20cli_0',['🚀 Current Project Status: Production Ready CLI',['../md_README.html#autotoc_md3',1,'']]],
+  ['reference_1',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md18',1,'']]],
+  ['report_20a_20vulnerability_2',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md24',1,'']]],
+  ['ru_3',['- &lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation (RU)&lt;/a&gt;',['../md_README.html#autotoc_md19',1,'']]],
+  ['russian_20documentation_20ru_4',['- &lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation (RU)&lt;/a&gt;',['../md_README.html#autotoc_md19',1,'']]]
 ];

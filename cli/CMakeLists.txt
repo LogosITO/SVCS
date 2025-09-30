@@ -5,6 +5,7 @@ set(CLI_SOURCES
     src/InitCommand.cxx
     src/AddCommand.cxx
     src/SaveCommand.cxx
+    src/StatusCommand.cxx
     src/CommandFactory.cxx
     src/main.cxx
 )
@@ -18,6 +19,7 @@ set(CLI_HEADERS
     include/InitCommand.hxx
     include/AddCommand.hxx
     include/SaveCommand.hxx
+    include/StatusCommand.hxx
     include/CommandFactory.hxx
 )
 

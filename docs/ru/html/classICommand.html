@@ -104,9 +104,12 @@ $(function(){initNavTree('classICommand.html','','classICommand-members'); });
  <div class="center">
   <img src="classICommand.png" usemap="#ICommand_map" alt=""/>
   <map id="ICommand_map" name="ICommand_map">
-<area href="classBaseCommand.html" title="Base class for all CLI commands." alt="BaseCommand" shape="rect" coords="0,56,95,80"/>
-<area href="classHelpCommand.html" title="Command for displaying help information about other commands." alt="HelpCommand" shape="rect" coords="105,56,200,80"/>
-<area href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS)." alt="InitCommand" shape="rect" coords="210,56,305,80"/>
+<area href="classBaseCommand.html" title="Base class for all CLI commands." alt="BaseCommand" shape="rect" coords="0,56,111,80"/>
+<area href="classHelpCommand.html" title="Command for displaying help information about other commands." alt="HelpCommand" shape="rect" coords="121,56,232,80"/>
+<area href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS)." alt="InitCommand" shape="rect" coords="242,56,353,80"/>
+<area href="classSaveCommand.html" title="Command for saving (committing) staged changes to the repository." alt="SaveCommand" shape="rect" coords="363,56,474,80"/>
+<area href="classStatusCommand.html" title="Command for showing the current status of the repository." alt="StatusCommand" shape="rect" coords="484,56,595,80"/>
+<area href="classVersionCommand.html" title="Command for displaying version information about SVCS." alt="VersionCommand" shape="rect" coords="605,56,716,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -192,7 +195,7 @@ $(function(){initNavTree('classICommand.html','','classICommand-members'); });
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>true if the command execution was successful; false on error. </dd></dl>
 
-<p>Замещается в <a class="el" href="classHelpCommand.html#aacde352bc8bc40668b09415c07857ac7">HelpCommand</a> и <a class="el" href="classInitCommand.html#a208ebec427828e140dd44c105416423f">InitCommand</a>.</p>
+<p>Замещается в <a class="el" href="classHelpCommand.html#aacde352bc8bc40668b09415c07857ac7">HelpCommand</a>, <a class="el" href="classInitCommand.html#a208ebec427828e140dd44c105416423f">InitCommand</a>, <a class="el" href="classSaveCommand.html#a813b7d30d64cd3c3c09822ba4ff9ab18">SaveCommand</a>, <a class="el" href="classStatusCommand.html#afae0046daf1753424c5edc41da5dd471">StatusCommand</a> и <a class="el" href="classVersionCommand.html#a0f222db541460934284006830d4c6340">VersionCommand</a>.</p>
 
 </div>
 </div>
@@ -222,7 +225,7 @@ $(function(){initNavTree('classICommand.html','','classICommand-members'); });
 <p>Retrieves a brief description of what the command does. </p>
 <dl class="section return"><dt>Возвращает</dt><dd>The command's description. </dd></dl>
 
-<p>Замещается в <a class="el" href="classBaseCommand.html#aa9c4557d17068a2f3abe2dee8c0c5198">BaseCommand</a>, <a class="el" href="classHelpCommand.html#a236f111255786e8949a0bea269c48677">HelpCommand</a> и <a class="el" href="classInitCommand.html#a20154938353ae33f1dbd753df40cf273">InitCommand</a>.</p>
+<p>Замещается в <a class="el" href="classBaseCommand.html#aa9c4557d17068a2f3abe2dee8c0c5198">BaseCommand</a>, <a class="el" href="classHelpCommand.html#a236f111255786e8949a0bea269c48677">HelpCommand</a>, <a class="el" href="classInitCommand.html#a20154938353ae33f1dbd753df40cf273">InitCommand</a>, <a class="el" href="classSaveCommand.html#a03f7a93a180bbf0deb017d13127168ea">SaveCommand</a>, <a class="el" href="classStatusCommand.html#a2219bfd5d22ec03748578794d7bd11d1">StatusCommand</a> и <a class="el" href="classVersionCommand.html#a390348862cf0abd962ec2d5a58890526">VersionCommand</a>.</p>
 
 </div>
 </div>
@@ -252,7 +255,7 @@ $(function(){initNavTree('classICommand.html','','classICommand-members'); });
 <p>Retrieves the unique name of the command (e.g., "init"). </p>
 <dl class="section return"><dt>Возвращает</dt><dd>The command name as a string. </dd></dl>
 
-<p>Замещается в <a class="el" href="classBaseCommand.html#a381d6ef985b2460dbbd831b3bbad56a4">BaseCommand</a>, <a class="el" href="classHelpCommand.html#ad7b1ec70f8f31646035b4bbb4ef94899">HelpCommand</a> и <a class="el" href="classInitCommand.html#a06925047a45d9ad66cf429613809bade">InitCommand</a>.</p>
+<p>Замещается в <a class="el" href="classBaseCommand.html#a381d6ef985b2460dbbd831b3bbad56a4">BaseCommand</a>, <a class="el" href="classHelpCommand.html#ad7b1ec70f8f31646035b4bbb4ef94899">HelpCommand</a>, <a class="el" href="classInitCommand.html#a06925047a45d9ad66cf429613809bade">InitCommand</a>, <a class="el" href="classSaveCommand.html#a321fd9d2886313df9539b483c5441e1a">SaveCommand</a>, <a class="el" href="classStatusCommand.html#aaf279d68d3c32ef4485ea6bed4e8d74e">StatusCommand</a> и <a class="el" href="classVersionCommand.html#a2caf6e6bce8782444a1a7383af55441e">VersionCommand</a>.</p>
 
 </div>
 </div>
@@ -282,7 +285,7 @@ $(function(){initNavTree('classICommand.html','','classICommand-members'); });
 <p>Retrieves the command's usage syntax. </p>
 <dl class="section return"><dt>Возвращает</dt><dd>A string with the syntax (e.g., "vcs commit &lt;message&gt;"). </dd></dl>
 
-<p>Замещается в <a class="el" href="classBaseCommand.html#aea8d2b5cbe3c773db9f2477f3d38aa8b">BaseCommand</a>, <a class="el" href="classHelpCommand.html#a682a95b46e84c2489771dabb7c5e240d">HelpCommand</a> и <a class="el" href="classInitCommand.html#a158528947482d476f4e687740296b0a5">InitCommand</a>.</p>
+<p>Замещается в <a class="el" href="classBaseCommand.html#aea8d2b5cbe3c773db9f2477f3d38aa8b">BaseCommand</a>, <a class="el" href="classHelpCommand.html#a682a95b46e84c2489771dabb7c5e240d">HelpCommand</a>, <a class="el" href="classInitCommand.html#a158528947482d476f4e687740296b0a5">InitCommand</a>, <a class="el" href="classSaveCommand.html#a0c5f57f088edabb3ba4e15e6b12fcc7d">SaveCommand</a>, <a class="el" href="classStatusCommand.html#a9b28c176b2739fd29325f6ffa87ca2b3">StatusCommand</a> и <a class="el" href="classVersionCommand.html#ae44c74cb5a13afe68f33b6fc0970ea07">VersionCommand</a>.</p>
 
 </div>
 </div>
@@ -311,7 +314,7 @@ $(function(){initNavTree('classICommand.html','','classICommand-members'); });
 
 <p>Displays detailed help information about the command (Usage and Description). </p>
 
-<p>Замещается в <a class="el" href="classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb">BaseCommand</a>, <a class="el" href="classHelpCommand.html#afacdd5404027b7bd4dc7a6958b2e8c3a">HelpCommand</a> и <a class="el" href="classInitCommand.html#a73f3ea39174694f150375f01cbff53eb">InitCommand</a>.</p>
+<p>Замещается в <a class="el" href="classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb">BaseCommand</a>, <a class="el" href="classHelpCommand.html#afacdd5404027b7bd4dc7a6958b2e8c3a">HelpCommand</a>, <a class="el" href="classInitCommand.html#a73f3ea39174694f150375f01cbff53eb">InitCommand</a>, <a class="el" href="classSaveCommand.html#ac05d0595300a110c9dcc0e24638c33c1">SaveCommand</a>, <a class="el" href="classStatusCommand.html#af033d933495d50bf7e76df821d5ff18f">StatusCommand</a> и <a class="el" href="classVersionCommand.html#a937c22d552201effa893ab364a012096">VersionCommand</a>.</p>
 
 </div>
 </div>

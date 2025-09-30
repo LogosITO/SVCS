@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🏗_20key_20implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md6',1,'']]]
+  ['→_20specific_20command_20help_0',['- &lt;span class=&quot;tt&quot;&gt;svcs help &amp;lt;command&amp;gt;&lt;/span&gt; → specific command help',['../md_README.html#autotoc_md10',1,'']]]
 ];

@@ -15,91 +15,110 @@ The main goal of the project is to gain a deep understanding of core concepts:
 
 ---
 
-## 🚀 Current Project Status: Core Functionality Stable
+## 🚀 Current Project Status: Production Ready CLI
 
-The project has evolved beyond initial memory stability to a functionally robust core.  
-The primary object model (`Blob`, `Tree`, `Commit`) is complete, and a basic command-line interface is now operational, supported by an event-driven logging system.
+SVCS now provides a complete, production-ready command-line interface for version control. The system supports all essential VCS operations with a clean, intuitive API.
 
 ### Major Achievements
-- ✅ **Complete Object Model:** `Blob`, `Tree`, and `Commit` are fully implemented and stable.  
-- ✅ **Operational CLI:** A stable command-line interface for user interaction.  
-- ✅ **Event-Driven Logger:** A flexible logging system implemented with the *EventBus* pattern.  
-- ✅ **Memory Safety:** Free of critical memory errors and leaks (confirmed with Valgrind).  
-- ✅ **Strong Data Integrity:** Repository objects are hashed and verified using **SHA-256**.  
-
+- ✅ **Complete Command Suite:** Full set of essential VCS commands
+- ✅ **Robust Object Model:** `Blob`, `Tree`, and `Commit` fully implemented
+- ✅ **Advanced CLI:** Intuitive command-line interface with help system
+- ✅ **Event-Driven Architecture:** Flexible logging with EventBus pattern
+- ✅ **Memory Safety:** Zero memory errors (Valgrind verified)
+- ✅ **Data Integrity:** SHA-256 hashing for all repository objects
+- ✅ **Factory Pattern:** Extensible command system
+- ✅ **Comprehensive Testing:** Unit tests for core components
 ---
+## 💻 Available Commands
 
-## 🏗 Key Implemented Components
+### Core Version Control
+| Command | Usage | Description |
+|---------|-------|-------------|
+| `init` | `svcs init [path]` | Initialize new repository |
+| `add` | `svcs add <file...>` | Add files to staging area |
+| `save` | `svcs save -m "message"` | Save staged changes to repository |
+| `status` | `svcs status` | Show working tree status |
 
-| Component     | Purpose                                       | Status  |
-|---------------|-----------------------------------------------|---------|
-| Repository    | Root object, manages paths and core components | Stable  |
-| ObjectStorage | Saving, loading, and managing VCS objects     | Stable  |
-| Index         | Tracks files prepared for commit (Staging Area) | Stable |
-| Blob          | Stores file content (hashing/compression)     | Stable  |
-| Tree          | Represents the directory structure            | Stable  |
-| Commit        | Finalizes repository state with metadata      | Stable  |
-| CLI           | Command-line interface for user interaction   | Stable  |
-| EventBus      | Implements the Subject/Observer pattern       | Stable  |
-| Logger        | Event-driven logging via EventBus             | Stable  |
+### Information & Help
+| Command | Usage | Description |
+|---------|-------|-------------|
+| `version` | `svcs version` | Show version information |
+| `help` | `svcs help [command]` | Show help for commands |
 
+### Command Aliases & Options
+- `svcs --version`, `svcs -v` → version information
+- `svcs --help`, `svcs -h` → general help
+- `svcs help <command>` → specific command help
 ---
-
-## 🛠️ Tools and Technologies
-
-- **C++** — core implementation language for performance and control.  
-- **CMake** — cross-platform build system.  
-- **Doxygen** — generates a comprehensive API reference.  
-- **Google Test** — unit and functional testing framework.  
-
----
-
-## 🧰 Project Scripts & Usage
-
-Scripts in the `tools/` directory simplify development tasks on Linux/macOS and Windows.  
-
-### Linux / macOS
+## 🛠️ Quick Start Guide
 
 ```bash
-# To set up the environment
-bash tools/setup.sh
-# To build the project
-bash tools/build.sh
-# To run tests
-bash tools/test.sh
-# To install the application
-bash tools/install.sh
-```
+# 1. Initialize repository
+svcs init my-project
+cd my-project
 
-### Windows
+# 2. Create and track files
+echo "Hello SVCS" > README.md
+svcs add README.md
 
-```bat
-:: To build the project
-tools\build.bat
-:: To run tests
-tools\test.bat
-:: To run tests
-tools\install.bat
+# 3. Check status
+svcs status
+
+# 4. Save changes
+svcs save -m "Initial commit"
+
+# 5. Continue development
+echo "New feature" >> README.md
+svcs add README.md
+svcs save -m "Add new feature"
+
+# 6. View history and get help
+svcs help status
+svcs version
 ```
 ---
+## 🏗️ System Architecture
 
-## 🗺️ Next Steps
-
-Future development will expand the feature set:
-
-- Expand CLI commands (`svcs log`, `svcs status`, `svcs checkout`, `svcs branch`)  
-- Branching and merging functionality  
-- Remote repositories (push/pull support)  
-
+| Component | Purpose | Status |
+|-----------|---------|---------|
+| **Core Objects** | | |
+| `Repository` | Manages repository state and components | ✅ Stable |
+| `ObjectStorage` | Handles VCS object storage | ✅ Stable |
+| `Index` | Tracks staging area | ✅ Stable |
+| `Blob`, `Tree`, `Commit` | Core VCS objects | ✅ Stable |
+| **CLI System** | | |
+| `CommandFactory` | Creates command instances | ✅ Stable |
+| `ICommand` | Command interface | ✅ Stable |
+| `HelpService` | Provides command documentation | ✅ Stable |
+| **Infrastructure** | | |
+| `EventBus` | Observer pattern implementation | ✅ Stable |
+| `Logger` | Event-driven logging | ✅ Stable |
 ---
+## 📈 Development Status
 
+### ✅ Implemented & Stable
+- ✅ Repository initialization and management
+- ✅ File staging with `add` command
+- ✅ Commit operations with `save` command  
+- ✅ Status reporting with `status` command
+- ✅ Help system and version information
+- ✅ Event-driven logging architecture
+- ✅ Comprehensive unit testing
+
+### 🔄 Planned Enhancements
+- ⏳ Branching and merging functionality
+- ⏳ History visualization (`log` command)
+- ⏳ Difference viewing (`diff` command)
+- ⏳ Remote repository support
+- ⏳ Configuration management
+---
 ## 📖 Documentation (API Reference)
 
 The API documentation (generated by **Doxygen**) is automatically deployed to GitHub Pages:
 
 - [English Documentation (EN)](https://logosito.github.io/SVCS/en/)  
 - [Russian Documentation (RU)](https://logosito.github.io/SVCS/ru/)  
-
+---
 ## 📝 Author and License
 
 ##### © 2025 LogosITO. Distributed under the MIT License.

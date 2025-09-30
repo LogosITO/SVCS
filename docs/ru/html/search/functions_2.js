@@ -7,7 +7,7 @@ var searchData=
   ['commit_4',['Commit',['../classCommit.html#aa8cbe918dbe5f319752284ef39f3adb3',1,'Commit']]],
   ['computehash_5',['computeHash',['../classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0',1,'VcsObject']]],
   ['createcommand_6',['createCommand',['../classCommandFactory.html#ab8448b0292b6f5f9cfdafb4fb33102dc',1,'CommandFactory']]],
-  ['createentry_7',['createEntry',['../Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f',1,'Tree.cxx']]],
+  ['createentry_7',['createEntry',['../Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f',1,'createEntry(std::string name, std::string hash_id):&#160;Tree.cxx'],['../Tree_8cxx.html#a15d13a6036a062282a24e34a2fe7751f',1,'createEntry(std::string name, std::string hash_id):&#160;Tree.cxx']]],
   ['createrepository_8',['createRepository',['../classBaseCommand.html#ab8985d7405710050555684f57d20a6d0',1,'BaseCommand']]],
   ['createtreeobject_9',['createTreeObject',['../classIndex.html#ad10592c0ea7291c0a8b2d8b593b21a85',1,'Index']]]
 ];

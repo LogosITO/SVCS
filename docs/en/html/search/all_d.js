@@ -1,7 +1,15 @@
 var searchData=
 [
-  ['name_0',['name',['../structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f',1,'TreeEntry']]],
-  ['next_20steps_1',['🗺️ Next Steps',['../md_README.html#autotoc_md14',1,'']]],
-  ['notify_2',['notify',['../classRepository.html#a7ce8792d0a1493d98986fb2732b95c4c',1,'Repository::notify()'],['../classEventBus.html#a581f243551365d2dc9599665540486dd',1,'EventBus::notify()'],['../classIObserver.html#a325451b0d0100feaad6f683850a616dc',1,'IObserver::notify()'],['../classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474',1,'ISubject::notify()'],['../classLogger.html#a96a2b88ee6d81d3ecf0fed3a6291c9a2',1,'Logger::notify()'],['../classMockSubject.html#a9aaffe9cd012979c90c186ea3ec86fc0',1,'MockSubject::notify()'],['../classMockObserver.html#a8fd6d2d376fb45dfee6968489b2057bb',1,'MockObserver::notify()'],['../classManualMockObserver.html#a2d0cef17d9225d64ce23dbf3451bb610',1,'ManualMockObserver::notify()'],['../classMockSubject.html#a9aaffe9cd012979c90c186ea3ec86fc0',1,'MockSubject::notify()'],['../classNullObserver.html#aeb635126b1e4270cb50229b157525270',1,'NullObserver::notify()']]],
-  ['nullobserver_3',['NullObserver',['../classNullObserver.html',1,'']]]
+  ['object_5fread_5fsuccess_0',['OBJECT_READ_SUCCESS',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092',1,'Event']]],
+  ['object_5ftest_2ecxx_1',['object_test.cxx',['../object__test_8cxx.html',1,'']]],
+  ['object_5fwrite_5fsuccess_2',['OBJECT_WRITE_SUCCESS',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70',1,'Event']]],
+  ['objectexists_3',['objectExists',['../classObjectStorage.html#abbc8d8426ae0f500aa7a6dba213e0bed',1,'ObjectStorage']]],
+  ['objectstorage_4',['ObjectStorage',['../classObjectStorage.html',1,'ObjectStorage'],['../classObjectStorage.html#aa511ec3636de4f1ad6f411e7a2aa2638',1,'ObjectStorage::ObjectStorage()']]],
+  ['objectstorage_2ecxx_5',['ObjectStorage.cxx',['../ObjectStorage_8cxx.html',1,'']]],
+  ['objectstorage_2ehxx_6',['ObjectStorage.hxx',['../ObjectStorage_8hxx.html',1,'']]],
+  ['objectstoragetest_7',['ObjectStorageTest',['../classObjectStorageTest.html',1,'']]],
+  ['operator_3c_8',['operator&lt;',['../structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940',1,'TreeEntry']]],
+  ['operator_3d_9',['operator=',['../classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7',1,'CommandFactory']]],
+  ['options_10',['Command Aliases &amp;amp; Options',['../md_README.html#autotoc_md9',1,'']]],
+  ['our_20process_11',['Our Process',['../md_SECURITY.html#autotoc_md26',1,'']]]
 ];

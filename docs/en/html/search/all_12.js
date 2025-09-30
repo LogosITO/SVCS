@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['technologies_0',['🛠️ Tools and Technologies',['../md_README.html#autotoc_md8',1,'']]],
-  ['testableobject_1',['TestableObject',['../classTestableObject.html',1,'TestableObject'],['../classTestableObject.html#ad209c046fc6daadbd7ca43387707da00',1,'TestableObject::TestableObject()']]],
-  ['the_20mit_20license_2',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md18',1,'']]],
-  ['to_20report_20a_20vulnerability_3',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md21',1,'']]],
-  ['tools_20and_20technologies_4',['🛠️ Tools and Technologies',['../md_README.html#autotoc_md8',1,'']]],
+  ['testableobject_0',['TestableObject',['../classTestableObject.html',1,'TestableObject'],['../classTestableObject.html#ad209c046fc6daadbd7ca43387707da00',1,'TestableObject::TestableObject()']]],
+  ['testing_3a_20unit_20tests_20for_20core_20components_1',['- ✅ &lt;b&gt;Comprehensive Testing:&lt;/b&gt; Unit tests for core components',['../md_README.html#autotoc_md5',1,'']]],
+  ['tests_20for_20core_20components_2',['- ✅ &lt;b&gt;Comprehensive Testing:&lt;/b&gt; Unit tests for core components',['../md_README.html#autotoc_md5',1,'']]],
+  ['the_20mit_20license_3',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md21',1,'']]],
+  ['to_20report_20a_20vulnerability_4',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md24',1,'']]],
   ['tree_5',['Tree',['../classTree.html',1,'Tree'],['../classTree.html#af660984821d0ae2f73725ee33c73ad20',1,'Tree::Tree()']]],
   ['tree_2ecxx_6',['Tree.cxx',['../Tree_8cxx.html',1,'']]],
   ['tree_2ehxx_7',['Tree.hxx',['../Tree_8hxx.html',1,'']]],

@@ -6,5 +6,8 @@ var dir_cde9ee1e1149a294439eb6a6d22bd3a6 =
     [ "HelpCommand.hxx", "HelpCommand_8hxx.html", "HelpCommand_8hxx" ],
     [ "HelpService.hxx", "HelpService_8hxx.html", "HelpService_8hxx" ],
     [ "ICommand.hxx", "ICommand_8hxx.html", "ICommand_8hxx" ],
-    [ "InitCommand.hxx", "InitCommand_8hxx.html", "InitCommand_8hxx" ]
+    [ "InitCommand.hxx", "InitCommand_8hxx.html", "InitCommand_8hxx" ],
+    [ "SaveCommand.hxx", "SaveCommand_8hxx.html", "SaveCommand_8hxx" ],
+    [ "StatusCommand.hxx", "StatusCommand_8hxx.html", "StatusCommand_8hxx" ],
+    [ "VersionCommand.hxx", "VersionCommand_8hxx.html", "VersionCommand_8hxx" ]
 ];

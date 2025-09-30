@@ -14,6 +14,7 @@
 
 #include "../../services/ISubject.hxx"
 #include "ObjectStorage.hxx"
+#include "Index.hxx"
 
 #include <string>
 #include <vector>
@@ -42,7 +43,8 @@ private:
      * @note This member is part of the concrete Subject implementation.
      */
     std::vector<std::weak_ptr<IObserver>> observers;
-    
+
+    std::unique_ptr<Index> index; 
 public:
     /**
      * @brief Virtual destructor.
@@ -117,4 +119,13 @@ public:
      * @return true if the path contains the required repository marker files/directories.
      */
     static bool isRepository(const std::string& path);
+
+    /**
+     * @brief Stages a file by hashing its content, storing it in the object database, 
+     * and updating the staging index.
+     * @param path The path to the file to be staged (relative to the repository root).
+     * @return bool True if the file was successfully staged, false otherwise (e.g., file ignored, permission error).
+     * @throws std::runtime_error if file system or object storage operations fail.
+     */
+    bool stageFile(const std::string& path); 
 };

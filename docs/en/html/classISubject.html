@@ -94,10 +94,10 @@ $(function(){initNavTree('classISubject.html','','classISubject-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>(Forward Declaration) The interface for the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus.  
+<p>The Subject (Publisher) Interface (Abstract Base Class).  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="CommandFactory_8hxx_source.html">CommandFactory.hxx</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ISubject_8hxx_source.html">ISubject.hxx</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ISubject:</div>
 <div class="dyncontent">
@@ -128,8 +128,7 @@ Protected Attributes</h2></td></tr>
 std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>(Forward Declaration) The interface for the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus. </p>
-<p>The Subject (Publisher) Interface (Abstract Base Class).</p>
+<div class="textblock"><p>The Subject (Publisher) Interface (Abstract Base Class). </p>
 <ul>
 <li>Core classes (e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a>, <a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>) implement this interface to allow observers to subscribe to events. The contract requires all management functions (<span class="tt">attach</span>, <span class="tt">detach</span>) to handle <span class="tt">std::shared_ptr&lt;<a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a>&gt;</span>. </li>
 </ul>
@@ -259,7 +258,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </div><div class="memdoc">
 
 <p>Notifies all attached observers about an event. </p>
-<p>This method is made public so that component classes (like <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>) can publish events through the injected <a class="el" href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus.">ISubject</a> pointer. The method is declared as <span class="tt">const</span> because event notification is a logically non-mutating action on the Subject's state. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This method is made public so that component classes (like <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>) can publish events through the injected <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> pointer. The method is declared as <span class="tt">const</span> because event notification is a logically non-mutating action on the Subject's state. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>The constant reference to the event structure to be sent. </td></tr>
   </table>

@@ -6,9 +6,8 @@ var hierarchy =
     ] ],
     [ "Event", "structEvent.html", null ],
     [ "ICommand", "classICommand.html", [
-      [ "BaseCommand", "classBaseCommand.html", [
-        [ "InitCommand", "classInitCommand.html", null ]
-      ] ]
+      [ "BaseCommand", "classBaseCommand.html", null ],
+      [ "InitCommand", "classInitCommand.html", null ]
     ] ],
     [ "Index", "classIndex.html", null ],
     [ "IndexEntry", "structIndexEntry.html", null ],
@@ -26,6 +25,7 @@ var hierarchy =
     [ "ObjectStorage", "classObjectStorage.html", [
       [ "MockObjectStorage", "classMockObjectStorage.html", null ]
     ] ],
+    [ "RepositoryManager", "classRepositoryManager.html", null ],
     [ "testing::Test", null, [
       [ "IndexTest", "classIndexTest.html", null ],
       [ "ObjectStorageTest", "classObjectStorageTest.html", null ],

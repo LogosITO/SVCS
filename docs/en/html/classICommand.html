@@ -105,7 +105,7 @@ Inheritance diagram for ICommand:</div>
   <img src="classICommand.png" usemap="#ICommand_map" alt=""/>
   <map id="ICommand_map" name="ICommand_map">
 <area href="classBaseCommand.html" title="Base class for all CLI commands." alt="BaseCommand" shape="rect" coords="0,56,95,80"/>
-<area href="classInitCommand.html" title="Class implementing the logic for the &#39;init&#39; command." alt="InitCommand" shape="rect" coords="0,112,95,136"/>
+<area href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS)." alt="InitCommand" shape="rect" coords="105,56,200,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -126,7 +126,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface (abstract base class) for all commands executed via the CLI. </p>
-<p>Every concrete command (e.g., <a class="el" href="classInitCommand.html" title="Class implementing the logic for the &#39;init&#39; command.">InitCommand</a>, CommitCommand) must inherit this interface and implement all its pure virtual methods. </p>
+<p>Every concrete command (e.g., <a class="el" href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS).">InitCommand</a>, CommitCommand) must inherit this interface and implement all its pure virtual methods. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa8a6346c5a0dcfe7fd49413a69e854ef" name="aa8a6346c5a0dcfe7fd49413a69e854ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8a6346c5a0dcfe7fd49413a69e854ef">&#9670;&#160;</a></span>~ICommand()</h2>
@@ -221,7 +221,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieves a brief description of what the command does. </p>
 <dl class="section return"><dt>Returns</dt><dd>The command's description. </dd></dl>
 
-<p>Implemented in <a class="el" href="classBaseCommand.html#afffa3d917dfb9f5bffc52e6e6271c37a">BaseCommand</a>, and <a class="el" href="classInitCommand.html#a20154938353ae33f1dbd753df40cf273">InitCommand</a>.</p>
+<p>Implemented in <a class="el" href="classBaseCommand.html#aa9c4557d17068a2f3abe2dee8c0c5198">BaseCommand</a>, and <a class="el" href="classInitCommand.html#a20154938353ae33f1dbd753df40cf273">InitCommand</a>.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieves the unique name of the command (e.g., "init"). </p>
 <dl class="section return"><dt>Returns</dt><dd>The command name as a string. </dd></dl>
 
-<p>Implemented in <a class="el" href="classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">BaseCommand</a>, and <a class="el" href="classInitCommand.html#a06925047a45d9ad66cf429613809bade">InitCommand</a>.</p>
+<p>Implemented in <a class="el" href="classBaseCommand.html#a381d6ef985b2460dbbd831b3bbad56a4">BaseCommand</a>, and <a class="el" href="classInitCommand.html#a06925047a45d9ad66cf429613809bade">InitCommand</a>.</p>
 
 </div>
 </div>
@@ -281,7 +281,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieves the command's usage syntax. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string with the syntax (e.g., "vcs commit &lt;message&gt;"). </dd></dl>
 
-<p>Implemented in <a class="el" href="classBaseCommand.html#a599af70664d26e24107b0700ea551503">BaseCommand</a>, and <a class="el" href="classInitCommand.html#a158528947482d476f4e687740296b0a5">InitCommand</a>.</p>
+<p>Implemented in <a class="el" href="classBaseCommand.html#aea8d2b5cbe3c773db9f2477f3d38aa8b">BaseCommand</a>, and <a class="el" href="classInitCommand.html#a158528947482d476f4e687740296b0a5">InitCommand</a>.</p>
 
 </div>
 </div>
@@ -310,7 +310,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Displays detailed help information about the command (Usage and Description). </p>
 
-<p>Implemented in <a class="el" href="classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb">BaseCommand</a>.</p>
+<p>Implemented in <a class="el" href="classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb">BaseCommand</a>, and <a class="el" href="classInitCommand.html#a73f3ea39174694f150375f01cbff53eb">InitCommand</a>.</p>
 
 </div>
 </div>

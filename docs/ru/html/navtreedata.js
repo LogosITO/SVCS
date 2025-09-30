@@ -26,14 +26,22 @@ var NAVTREE =
 [
   [ "SVCS", "index.html", [
     [ "📚 SVCS: Simple Version Control System", "md_README.html", [
-      [ "🚀 Current Project Status: Core Stability Achieved", "md_README.html#autotoc_md1", [
-        [ "Major Achievements:", "md_README.html#autotoc_md2", null ]
+      [ "🚀 Current Project Status: Core Functionality Stable", "md_README.html#autotoc_md3", [
+        [ "Major Achievements", "md_README.html#autotoc_md4", null ]
       ] ],
-      [ "🏗 Key Implemented Components", "md_README.html#autotoc_md3", null ],
-      [ "✨ Index (Staging Area) Functionality", "md_README.html#autotoc_md4", null ],
-      [ "🗺️ Next Steps", "md_README.html#autotoc_md5", null ],
-      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md6", null ],
-      [ "📝 Author and License", "md_README.html#autotoc_md7", null ]
+      [ "🏗 Key Implemented Components", "md_README.html#autotoc_md6", null ],
+      [ "🛠️ Tools and Technologies", "md_README.html#autotoc_md8", null ],
+      [ "🧰 Project Scripts &amp; Usage", "md_README.html#autotoc_md10", [
+        [ "Linux / macOS", "md_README.html#autotoc_md11", null ],
+        [ "Windows", "md_README.html#autotoc_md12", null ]
+      ] ],
+      [ "🗺️ Next Steps", "md_README.html#autotoc_md14", null ],
+      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md16", null ],
+      [ "📝 Author and License", "md_README.html#autotoc_md17", null ]
+    ] ],
+    [ "Security Policy", "md_SECURITY.html", [
+      [ "How to Report a Vulnerability", "md_SECURITY.html#autotoc_md21", null ],
+      [ "Our Process", "md_SECURITY.html#autotoc_md23", null ]
     ] ],
     [ "Список устаревших определений и описаний", "deprecated.html", null ],
     [ "Классы", "annotated.html", [
@@ -61,7 +69,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"BaseCommand_8hxx.html"
+"AddCommand_8hxx.html",
+"structIndexEntry.html#a10582a2e090f7c30885f54b42da08048"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['warn_0',['WARN',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277',1,'Logger.hxx']]],
-  ['warn_1',['warn',['../classLogger.html#a24b519e0f53e73937f93edd2da37ea76',1,'Logger']]]
+  ['vcsobject_0',['VcsObject',['../classVcsObject.html',1,'VcsObject'],['../classVcsObject.html#a58691887a54d3d632038cacb36034075',1,'VcsObject::VcsObject()=default'],['../classVcsObject.html#af2840ade6006e4d64eb6bd9f15b37539',1,'VcsObject::VcsObject(const VcsObject &amp;other)=default']]],
+  ['version_20control_20system_1',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
+  ['vulnerability_2',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md21',1,'']]]
 ];

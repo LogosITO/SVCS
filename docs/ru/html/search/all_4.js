@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['error_0',['ERROR',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5',1,'Logger.hxx']]],
-  ['error_1',['error',['../classLogger.html#ab6042fdfcbb14026098e0df9d6b32f27',1,'Logger']]],
-  ['error_5fmessage_2',['ERROR_MESSAGE',['../structEvent.html#a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61',1,'Event']]],
-  ['event_3',['Event',['../structEvent.html',1,'']]],
-  ['event_2ehxx_4',['Event.hxx',['../Event_8hxx.html',1,'']]],
-  ['eventbus_5',['EventBus',['../classEventBus.html',1,'']]],
-  ['eventbus_2ehxx_6',['EventBus.hxx',['../EventBus_8hxx.html',1,'']]],
-  ['eventsubject_5f_7',['eventSubject_',['../classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8',1,'BaseCommand']]],
-  ['execute_8',['execute',['../classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0',1,'ICommand::execute()'],['../classInitCommand.html#a208ebec427828e140dd44c105416423f',1,'InitCommand::execute()']]]
+  ['debug_0',['DEBUG',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15',1,'Logger.hxx']]],
+  ['debug_1',['debug',['../classLogger.html#a38b544d566463a65d0dbf4ff7f867962',1,'Logger']]],
+  ['debug_5fmessage_2',['DEBUG_MESSAGE',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5',1,'Event']]],
+  ['deserialize_3',['deserialize',['../classCommit.html#a0f37624e98ed1dc6404795756127be52',1,'Commit::deserialize()'],['../classTree.html#a85166cfd9d904644216cdacb0b4b7d54',1,'Tree::deserialize()']]],
+  ['detach_4',['detach',['../classRepository.html#a1e421ee99132cf3dcaac6fc54ba0ab7d',1,'Repository::detach()'],['../classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a',1,'EventBus::detach()'],['../classISubject.html#aad2217012b14bdd6c91eb240689e5a74',1,'ISubject::detach()'],['../classMockSubject.html#a7a19cfe5e16907e32c0ace1ff7d6992e',1,'MockSubject::detach(std::shared_ptr&lt; IObserver &gt; observer) override'],['../classMockSubject.html#a7a19cfe5e16907e32c0ace1ff7d6992e',1,'MockSubject::detach(std::shared_ptr&lt; IObserver &gt; observer) override']]],
+  ['details_5',['details',['../structEvent.html#afedba76038909cf242d7642da3b7bfd9',1,'Event']]],
+  ['distributed_20under_20the_20mit_20license_6',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md18',1,'']]],
+  ['documentation_20api_20reference_7',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md16',1,'']]]
 ];

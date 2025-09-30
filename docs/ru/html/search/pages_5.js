@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_20implemented_20components_0',['🏗 Key Implemented Components',['../md_README.html#autotoc_md3',1,'']]]
+  ['how_20to_20report_20a_20vulnerability_0',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md21',1,'']]]
 ];

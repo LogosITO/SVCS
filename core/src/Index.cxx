@@ -39,7 +39,7 @@ Index::Index(const fs::path& vcs_root_path, const fs::path& repo_root_path, Obje
 
 Index::~Index() {}
 
-void Index::add_entry(const IndexEntry& entry) {
+void Index::addEntry(const IndexEntry& entry) {
     entries[entry.file_path] = entry;
 }
 
@@ -80,7 +80,7 @@ void Index::stage_file(const fs::path& relative_path) {
     new_entry.file_size = current_size;
     new_entry.last_modified = current_mtime; 
 
-    add_entry(new_entry);
+    addEntry(new_entry);
     save();
 }
 
@@ -175,22 +175,18 @@ void Index::load() {
         std::stringstream ss(line);
         IndexEntry entry;
         
-        // Читаем первые три поля
         if (!(ss >> entry.blob_hash >> entry.file_size)) {
             continue;
         }
 
-        // Читаем временную метку
         long long mtime_ticks;
         if (!(ss >> mtime_ticks)) {
             continue;
         }
 
-        // Читаем остаток строки как путь (может содержать пробелы)
         std::string path_part;
         std::getline(ss, path_part);
         
-        // Убираем ведущий пробел если есть
         if (!path_part.empty() && path_part[0] == ' ') {
             path_part = path_part.substr(1);
         }
@@ -206,6 +202,35 @@ void Index::load() {
         
         entries[entry.file_path] = entry;
     }
+}
+
+bool Index::write() const {
+    std::ofstream ofs(index_file_path, std::ios::out | std::ios::trunc); 
+    if (!ofs.is_open()) {
+        throw std::runtime_error("std::runtime_error If the index file cannot be written.");
+        return false;
+    }
+
+    for (const auto& pair : entries) {
+        const IndexEntry& entry = pair.second;
+        
+        using std::chrono::time_point_cast;
+        using std::chrono::seconds;
+
+        auto duration = time_point_cast<seconds>(entry.last_modified).time_since_epoch();
+        long long mtime_ticks = duration.count();
+
+        ofs << entry.blob_hash << " " 
+            << entry.file_size << " " 
+            << mtime_ticks << " " 
+            << entry.file_path.generic_string() << "\n";
+    }
+
+    if (ofs.fail()) {
+        return false;
+    }
+    
+    return true;
 }
 
 std::string Index::createTreeObject() {

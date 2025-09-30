@@ -1,10 +1,19 @@
 var searchData=
 [
-  ['debug_0',['DEBUG',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15',1,'Logger.hxx']]],
-  ['debug_1',['debug',['../classLogger.html#a38b544d566463a65d0dbf4ff7f867962',1,'Logger']]],
-  ['debug_5fmessage_2',['DEBUG_MESSAGE',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5',1,'Event']]],
-  ['deserialize_3',['deserialize',['../classCommit.html#a0f37624e98ed1dc6404795756127be52',1,'Commit::deserialize()'],['../classTree.html#a85166cfd9d904644216cdacb0b4b7d54',1,'Tree::deserialize()']]],
-  ['detach_4',['detach',['../classRepository.html#a1e421ee99132cf3dcaac6fc54ba0ab7d',1,'Repository::detach()'],['../classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a',1,'EventBus::detach()'],['../classISubject.html#aad2217012b14bdd6c91eb240689e5a74',1,'ISubject::detach()'],['../classMockSubject.html#a7a19cfe5e16907e32c0ace1ff7d6992e',1,'MockSubject::detach(std::shared_ptr&lt; IObserver &gt; observer) override'],['../classMockSubject.html#a7a19cfe5e16907e32c0ace1ff7d6992e',1,'MockSubject::detach(std::shared_ptr&lt; IObserver &gt; observer) override']]],
-  ['details_5',['details',['../structEvent.html#afedba76038909cf242d7642da3b7bfd9',1,'Event']]],
-  ['documentation_20api_20reference_6',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md6',1,'']]]
+  ['calculatehash_0',['calculateHash',['../classVcsObject.html#a73ec7fbaac32df9c4570de02b8bda56f',1,'VcsObject']]],
+  ['clearinstances_1',['clearInstances',['../classLogger.html#af473e558d8af4804863bfec0426433d0',1,'Logger']]],
+  ['commandfactory_2',['CommandFactory',['../classCommandFactory.html',1,'CommandFactory'],['../classCommandFactory.html#a76d2671de0dbcbeb5840775a10ea10a3',1,'CommandFactory::CommandFactory(std::shared_ptr&lt; ISubject &gt; bus, std::shared_ptr&lt; RepositoryManager &gt; repoManager)'],['../classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46',1,'CommandFactory::CommandFactory(const CommandFactory &amp;)=delete']]],
+  ['commandfactory_2ehxx_3',['CommandFactory.hxx',['../CommandFactory_8hxx.html',1,'']]],
+  ['commit_4',['Commit',['../classCommit.html',1,'Commit'],['../classCommit.html#aa8cbe918dbe5f319752284ef39f3adb3',1,'Commit::Commit()']]],
+  ['commit_2ehxx_5',['Commit.hxx',['../Commit_8hxx.html',1,'']]],
+  ['commit_5fcreated_6',['COMMIT_CREATED',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c',1,'Event']]],
+  ['components_7',['🏗 Key Implemented Components',['../md_README.html#autotoc_md6',1,'']]],
+  ['computehash_8',['computeHash',['../classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0',1,'VcsObject']]],
+  ['control_20system_9',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
+  ['core_20functionality_20stable_10',['🚀 Current Project Status: Core Functionality Stable',['../md_README.html#autotoc_md3',1,'']]],
+  ['createcommand_11',['createCommand',['../classCommandFactory.html#a4a777093b42a99531b14e6f2321b3542',1,'CommandFactory']]],
+  ['createentry_12',['createEntry',['../Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f',1,'Tree.cxx']]],
+  ['createrepository_13',['createRepository',['../classBaseCommand.html#ab8985d7405710050555684f57d20a6d0',1,'BaseCommand']]],
+  ['createtreeobject_14',['createTreeObject',['../classIndex.html#ad10592c0ea7291c0a8b2d8b593b21a85',1,'Index']]],
+  ['current_20project_20status_3a_20core_20functionality_20stable_15',['🚀 Current Project Status: Core Functionality Stable',['../md_README.html#autotoc_md3',1,'']]]
 ];

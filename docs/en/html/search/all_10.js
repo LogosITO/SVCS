@@ -1,19 +1,14 @@
 var searchData=
 [
-  ['save_0',['save',['../classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21',1,'Index']]],
-  ['saveobject_1',['saveObject',['../classObjectStorage.html#acab6226c60b2979078001d539f56de3b',1,'ObjectStorage::saveObject()'],['../classMockObjectStorage.html#a0d17e41ae6b3787ed45aad9b75ea0518',1,'MockObjectStorage::saveObject()']]],
-  ['serialize_2',['serialize',['../classBlob.html#acab4226b36adcfa257c94b96b40c3510',1,'Blob::serialize()'],['../classCommit.html#a53f442e035ddbdb18d0635bbac2709b5',1,'Commit::serialize()'],['../classTree.html#aae4f965e5566b0addf5467ba5db10e3f',1,'Tree::serialize()'],['../classVcsObject.html#a987c76bf8ad51d267297cc6ba7da1eb7',1,'VcsObject::serialize()'],['../classTestableObject.html#ae79c1d60869dedd6c298a56e8e9f2309',1,'TestableObject::serialize()']]],
-  ['setlevel_3',['setLevel',['../classLogger.html#ab8a7575ce3865917922563c88ab4f876',1,'Logger']]],
-  ['setpattern_4',['setPattern',['../classLogger.html#a8925c4a17c3ec533a548ea01b3608d01',1,'Logger']]],
-  ['setsubject_5',['setSubject',['../classObjectStorage.html#a0dc7bb15cb48b9795149e3572c4c7c3c',1,'ObjectStorage']]],
-  ['showhelp_6',['showHelp',['../classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb',1,'BaseCommand::showHelp()'],['../classICommand.html#a4e74912364d9172184235e5e5df55c7d',1,'ICommand::showHelp()']]],
-  ['simple_20version_20control_20system_7',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
-  ['source_5fname_8',['source_name',['../structEvent.html#af3aea97224cf810339754ab8bd53e893',1,'Event']]],
-  ['stability_20achieved_9',['🚀 Current Project Status: Core Stability Achieved',['../md_README.html#autotoc_md1',1,'']]],
-  ['stage_5ffile_10',['stage_file',['../classIndex.html#a37a1115070ac00586a9b69cf9c26b115',1,'Index']]],
-  ['staging_20area_20functionality_11',['✨ Index (Staging Area) Functionality',['../md_README.html#autotoc_md4',1,'']]],
-  ['status_3a_20core_20stability_20achieved_12',['🚀 Current Project Status: Core Stability Achieved',['../md_README.html#autotoc_md1',1,'']]],
-  ['steps_13',['🗺️ Next Steps',['../md_README.html#autotoc_md5',1,'']]],
-  ['svcs_3a_20simple_20version_20control_20system_14',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
-  ['system_15',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]]
+  ['reference_0',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md16',1,'']]],
+  ['registercommand_1',['registerCommand',['../classCommandFactory.html#a917e8d9dc3309ac17ddf923943ad873b',1,'CommandFactory']]],
+  ['removeentry_2',['removeEntry',['../classTree.html#a85035a45ff8778df5bb8be32f57bf232',1,'Tree']]],
+  ['report_20a_20vulnerability_3',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md21',1,'']]],
+  ['repository_4',['Repository',['../classRepository.html',1,'Repository'],['../classRepository.html#a6630b76df7b7093650373d799367e28d',1,'Repository::Repository()']]],
+  ['repository_2ehxx_5',['Repository.hxx',['../Repository_8hxx.html',1,'']]],
+  ['repository_5finit_5fsuccess_6',['REPOSITORY_INIT_SUCCESS',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04',1,'Event']]],
+  ['repositorymanager_7',['RepositoryManager',['../classRepositoryManager.html',1,'RepositoryManager'],['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager::RepositoryManager()']]],
+  ['repositorymanager_2ehxx_8',['RepositoryManager.hxx',['../RepositoryManager_8hxx.html',1,'']]],
+  ['repositorytest_9',['RepositoryTest',['../classRepositoryTest.html',1,'']]],
+  ['runtime_5ferror_10',['RUNTIME_ERROR',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c',1,'Event']]]
 ];

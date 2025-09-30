@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚀_20current_20project_20status_3a_20core_20stability_20achieved_0',['🚀 Current Project Status: Core Stability Achieved',['../md_README.html#autotoc_md1',1,'']]]
+  ['устаревших_20определений_20и_20описаний_0',['Список устаревших определений и описаний',['../deprecated.html',1,'']]]
 ];

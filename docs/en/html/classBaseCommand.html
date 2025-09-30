@@ -105,7 +105,6 @@ Inheritance diagram for BaseCommand:</div>
   <img src="classBaseCommand.png" usemap="#BaseCommand_map" alt=""/>
   <map id="BaseCommand_map" name="BaseCommand_map">
 <area href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI." alt="ICommand" shape="rect" coords="0,0,95,24"/>
-<area href="classInitCommand.html" title="Class implementing the logic for the &#39;init&#39; command." alt="InitCommand" shape="rect" coords="0,112,95,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -115,12 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6ada486a8ab81d0283181fd8cd5274e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="memitem:a33d060c975bef295836c273a141a166a" id="r_a33d060c975bef295836c273a141a166a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33d060c975bef295836c273a141a166a">~BaseCommand</a> ()=default</td></tr>
 <tr class="memdesc:a33d060c975bef295836c273a141a166a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
-<tr class="memitem:a6a9e66f6a2b54f905d0fe4e7ca3ecbf0" id="r_a6a9e66f6a2b54f905d0fe4e7ca3ecbf0"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">getName</a> () const =0</td></tr>
-<tr class="memdesc:a6a9e66f6a2b54f905d0fe4e7ca3ecbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command name (e.g., "init", "commit").  <br /></td></tr>
-<tr class="memitem:afffa3d917dfb9f5bffc52e6e6271c37a" id="r_afffa3d917dfb9f5bffc52e6e6271c37a"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afffa3d917dfb9f5bffc52e6e6271c37a">getDescription</a> () const =0</td></tr>
-<tr class="memdesc:afffa3d917dfb9f5bffc52e6e6271c37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a brief description of the command.  <br /></td></tr>
-<tr class="memitem:a599af70664d26e24107b0700ea551503" id="r_a599af70664d26e24107b0700ea551503"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599af70664d26e24107b0700ea551503">getUsage</a> () const =0</td></tr>
-<tr class="memdesc:a599af70664d26e24107b0700ea551503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command's usage syntax.  <br /></td></tr>
+<tr class="memitem:a381d6ef985b2460dbbd831b3bbad56a4" id="r_a381d6ef985b2460dbbd831b3bbad56a4"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a381d6ef985b2460dbbd831b3bbad56a4">getName</a> () const override=0</td></tr>
+<tr class="memdesc:a381d6ef985b2460dbbd831b3bbad56a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command name (e.g., "init", "commit").  <br /></td></tr>
+<tr class="memitem:aa9c4557d17068a2f3abe2dee8c0c5198" id="r_aa9c4557d17068a2f3abe2dee8c0c5198"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9c4557d17068a2f3abe2dee8c0c5198">getDescription</a> () const override=0</td></tr>
+<tr class="memdesc:aa9c4557d17068a2f3abe2dee8c0c5198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a brief description of the command.  <br /></td></tr>
+<tr class="memitem:aea8d2b5cbe3c773db9f2477f3d38aa8b" id="r_aea8d2b5cbe3c773db9f2477f3d38aa8b"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea8d2b5cbe3c773db9f2477f3d38aa8b">getUsage</a> () const override=0</td></tr>
+<tr class="memdesc:aea8d2b5cbe3c773db9f2477f3d38aa8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command's usage syntax.  <br /></td></tr>
 <tr class="memitem:a98e0e914f24383408fc7e8fc977baccb" id="r_a98e0e914f24383408fc7e8fc977baccb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98e0e914f24383408fc7e8fc977baccb">showHelp</a> () const override</td></tr>
 <tr class="memdesc:a98e0e914f24383408fc7e8fc977baccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the command's help (Usage and Description).  <br /></td></tr>
 <tr class="memitem:af8ad2f422a83cffbb07da49675443c43" id="r_af8ad2f422a83cffbb07da49675443c43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8ad2f422a83cffbb07da49675443c43">logDebug</a> (const std::string &amp;message) const</td></tr>
@@ -153,7 +152,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all CLI commands. </p>
-<p>Provides a common infrastructure for interacting with the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus system (<a class="el" href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus.">ISubject</a>) and utility methods for working with the repository. It is responsible for logging via the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus. </p>
+<p>Provides a common infrastructure for interacting with the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus system (<a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a>) and utility methods for working with the repository. It is responsible for logging via the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6ada486a8ab81d0283181fd8cd5274e1" name="a6ada486a8ab81d0283181fd8cd5274e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ada486a8ab81d0283181fd8cd5274e1">&#9670;&#160;</a></span>BaseCommand()</h2>
@@ -181,7 +180,7 @@ Protected Attributes</h2></td></tr>
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">subject</td><td>The <a class="el" href="classISubject.html" title="(Forward Declaration) The interface for the Event Bus.">ISubject</a> (<a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus) instance that will be used for generating events and logs. </td></tr>
+    <tr><td class="paramname">subject</td><td>The <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> (<a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus) instance that will be used for generating events and logs. </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,8 +280,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="afffa3d917dfb9f5bffc52e6e6271c37a" name="afffa3d917dfb9f5bffc52e6e6271c37a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afffa3d917dfb9f5bffc52e6e6271c37a">&#9670;&#160;</a></span>getDescription()</h2>
+<a id="aa9c4557d17068a2f3abe2dee8c0c5198" name="aa9c4557d17068a2f3abe2dee8c0c5198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c4557d17068a2f3abe2dee8c0c5198">&#9670;&#160;</a></span>getDescription()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,7 +298,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -309,12 +308,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classICommand.html#a1018a1a6abaf28e40b27eca8344e78c6">ICommand</a>.</p>
 
-<p>Implemented in <a class="el" href="classInitCommand.html#a20154938353ae33f1dbd753df40cf273">InitCommand</a>.</p>
-
 </div>
 </div>
-<a id="a6a9e66f6a2b54f905d0fe4e7ca3ecbf0" name="a6a9e66f6a2b54f905d0fe4e7ca3ecbf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0">&#9670;&#160;</a></span>getName()</h2>
+<a id="a381d6ef985b2460dbbd831b3bbad56a4" name="a381d6ef985b2460dbbd831b3bbad56a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a381d6ef985b2460dbbd831b3bbad56a4">&#9670;&#160;</a></span>getName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,7 +328,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -341,12 +338,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classICommand.html#ac676ae6b9315436978fc62201e5b31dc">ICommand</a>.</p>
 
-<p>Implemented in <a class="el" href="classInitCommand.html#a06925047a45d9ad66cf429613809bade">InitCommand</a>.</p>
-
 </div>
 </div>
-<a id="a599af70664d26e24107b0700ea551503" name="a599af70664d26e24107b0700ea551503"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a599af70664d26e24107b0700ea551503">&#9670;&#160;</a></span>getUsage()</h2>
+<a id="aea8d2b5cbe3c773db9f2477f3d38aa8b" name="aea8d2b5cbe3c773db9f2477f3d38aa8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea8d2b5cbe3c773db9f2477f3d38aa8b">&#9670;&#160;</a></span>getUsage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +358,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -372,8 +367,6 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A string with the syntax (e.g., "vcs init &lt;path&gt;"). </dd></dl>
 
 <p>Implements <a class="el" href="classICommand.html#a9e912ad55e38e0cf9ae2f6e558d6c401">ICommand</a>.</p>
-
-<p>Implemented in <a class="el" href="classInitCommand.html#a158528947482d476f4e687740296b0a5">InitCommand</a>.</p>
 
 </div>
 </div>

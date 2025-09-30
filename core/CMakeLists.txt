@@ -7,6 +7,7 @@ set(CORE_SOURCES
     src/Utils.cxx
     src/Index.cxx
     src/Repository.cxx
+    src/RepositoryManager.cxx
 )
 
 set(CORE_HEADERS
@@ -17,6 +18,7 @@ set(CORE_HEADERS
     include/ObjectStorage.hxx
     include/Utils.hxx
     include/Repository.hxx
+    include/RepositoryManager.hxx
 )
 
 

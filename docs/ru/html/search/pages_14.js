@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📚_20svcs_3a_20simple_20version_20control_20system_0',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]]
+  ['и_20описаний_0',['Список устаревших определений и описаний',['../deprecated.html',1,'']]]
 ];

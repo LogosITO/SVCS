@@ -94,52 +94,58 @@ $(function(){initNavTree('CommandFactory_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="CommandFactory_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="ICommand_8hxx.html">../include/ICommand.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="RepositoryManager_8hxx.html">../../core/include/RepositoryManager.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../services/ISubject.hxx</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="ICommand_8hxx.html">ICommand.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;mutex&gt;</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span><a class="code hl_class" href="classISubject.html">ISubject</a>; </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classCommandFactory.html">   37</a></span><span class="keyword">class </span>CommandFactory {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    CommandFactory(std::shared_ptr&lt;ISubject&gt; eventBus);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> registerDefaultCommands();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    std::unordered_map&lt;std::string,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                      std::function&lt;std::unique_ptr&lt;ICommand&gt;(std::shared_ptr&lt;ISubject&gt;)&gt;&gt; creators_;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">static</span> std::once_flag initInstanceFlag_;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">   74</a></span>    <a class="code hl_function" href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">CommandFactory</a>(<span class="keyword">const</span> CommandFactory&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">   79</a></span>    CommandFactory&amp; <a class="code hl_function" href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">operator=</a>(<span class="keyword">const</span> CommandFactory&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">static</span> CommandFactory&amp; <a class="code hl_function" href="classCommandFactory.html#a0f4cf9735c3389fa8835e2cbf47a5120">getInstance</a>(std::shared_ptr&lt;ISubject&gt; eventBus = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCommandFactory.html#a2e17e10943e3511d2e64a47454c83161">registerCommand</a>(<span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                        std::function&lt;std::unique_ptr&lt;ICommand&gt;(std::shared_ptr&lt;ISubject&gt;)&gt; creator);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    std::unique_ptr&lt;ICommand&gt; <a class="code hl_function" href="classCommandFactory.html#a4a777093b42a99531b14e6f2321b3542">createCommand</a>(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classCommandFactory.html">   29</a></span><span class="keyword">class </span><a class="code hl_function" href="classCommandFactory.html#a76d2671de0dbcbeb5840775a10ea10a3">CommandFactory</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::shared_ptr&lt;RepositoryManager&gt; repoManager_;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::unordered_map&lt;std::string, </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::function&lt;std::unique_ptr&lt;ICommand&gt;(std::shared_ptr&lt;ISubject&gt;, </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                                              std::shared_ptr&lt;RepositoryManager&gt;)&gt;&gt; creators_;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> registerDefaultCommands();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classCommandFactory.html#a76d2671de0dbcbeb5840775a10ea10a3">CommandFactory</a>(std::shared_ptr&lt;ISubject&gt; bus, </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                          std::shared_ptr&lt;RepositoryManager&gt; repoManager);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">   65</a></span>    <a class="code hl_function" href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">CommandFactory</a>(<span class="keyword">const</span> <a class="code hl_function" href="classCommandFactory.html#a76d2671de0dbcbeb5840775a10ea10a3">CommandFactory</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">   70</a></span>    <a class="code hl_function" href="classCommandFactory.html#a76d2671de0dbcbeb5840775a10ea10a3">CommandFactory</a>&amp; <a class="code hl_function" href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classCommandFactory.html#a76d2671de0dbcbeb5840775a10ea10a3">CommandFactory</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCommandFactory.html#a917e8d9dc3309ac17ddf923943ad873b">registerCommand</a>(<span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                       std::function&lt;std::unique_ptr&lt;ICommand&gt;(std::shared_ptr&lt;ISubject&gt;,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                                                             std::shared_ptr&lt;RepositoryManager&gt;)&gt; creator);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    std::unique_ptr&lt;ICommand&gt; <a class="code hl_function" href="classCommandFactory.html#a4a777093b42a99531b14e6f2321b3542">createCommand</a>(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="classCommandFactory.html#ae390c14a70557144e76f3b114036078e">getRegisteredCommands</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>};</div>
 </div>
 <div class="ttc" id="aICommand_8hxx_html"><div class="ttname"><a href="ICommand_8hxx.html">ICommand.hxx</a></div><div class="ttdoc">Declaration of the ICommand interface for all executable CLI commands.</div></div>
-<div class="ttc" id="aclassCommandFactory_html_a0f4cf9735c3389fa8835e2cbf47a5120"><div class="ttname"><a href="classCommandFactory.html#a0f4cf9735c3389fa8835e2cbf47a5120">CommandFactory::getInstance</a></div><div class="ttdeci">static CommandFactory &amp; getInstance(std::shared_ptr&lt; ISubject &gt; eventBus=nullptr)</div><div class="ttdoc">Returns the single instance of CommandFactory (Singleton access point).</div><div class="ttdef"><b>Definition</b> CommandFactory.cxx:17</div></div>
-<div class="ttc" id="aclassCommandFactory_html_a2e17e10943e3511d2e64a47454c83161"><div class="ttname"><a href="classCommandFactory.html#a2e17e10943e3511d2e64a47454c83161">CommandFactory::registerCommand</a></div><div class="ttdeci">void registerCommand(const std::string &amp;name, std::function&lt; std::unique_ptr&lt; ICommand &gt;(std::shared_ptr&lt; ISubject &gt;)&gt; creator)</div><div class="ttdoc">Registers a new command with the factory.</div><div class="ttdef"><b>Definition</b> CommandFactory.cxx:56</div></div>
-<div class="ttc" id="aclassCommandFactory_html_a4a777093b42a99531b14e6f2321b3542"><div class="ttname"><a href="classCommandFactory.html#a4a777093b42a99531b14e6f2321b3542">CommandFactory::createCommand</a></div><div class="ttdeci">std::unique_ptr&lt; ICommand &gt; createCommand(const std::string &amp;name)</div><div class="ttdoc">Creates a new command instance by its name.</div><div class="ttdef"><b>Definition</b> CommandFactory.cxx:62</div></div>
-<div class="ttc" id="aclassCommandFactory_html_aa7fb0a11d596213f1b2f62ecea795ae7"><div class="ttname"><a href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">CommandFactory::operator=</a></div><div class="ttdeci">CommandFactory &amp; operator=(const CommandFactory &amp;)=delete</div><div class="ttdoc">Deleted assignment operator.</div></div>
-<div class="ttc" id="aclassCommandFactory_html_ac31cdcf058989c9f45fb228908530d46"><div class="ttname"><a href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">CommandFactory::CommandFactory</a></div><div class="ttdeci">CommandFactory(const CommandFactory &amp;)=delete</div><div class="ttdoc">Deleted copy constructor.</div></div>
-<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">(Forward Declaration) The interface for the Event Bus.</div><div class="ttdef"><b>Definition</b> ISubject.hxx:26</div></div>
+<div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
+<div class="ttc" id="aRepositoryManager_8hxx_html"><div class="ttname"><a href="RepositoryManager_8hxx.html">RepositoryManager.hxx</a></div><div class="ttdoc">Declaration of the RepositoryManager class, managing all repository-level file operations.</div></div>
+<div class="ttc" id="aclassCommandFactory_html_a4a777093b42a99531b14e6f2321b3542"><div class="ttname"><a href="classCommandFactory.html#a4a777093b42a99531b14e6f2321b3542">CommandFactory::createCommand</a></div><div class="ttdeci">std::unique_ptr&lt; ICommand &gt; createCommand(const std::string &amp;name)</div><div class="ttdoc">Creates and returns a command object by its name.</div><div class="ttdef"><b>Definition</b> CommandFactory.cxx:39</div></div>
+<div class="ttc" id="aclassCommandFactory_html_a76d2671de0dbcbeb5840775a10ea10a3"><div class="ttname"><a href="classCommandFactory.html#a76d2671de0dbcbeb5840775a10ea10a3">CommandFactory::CommandFactory</a></div><div class="ttdeci">CommandFactory(std::shared_ptr&lt; ISubject &gt; bus, std::shared_ptr&lt; RepositoryManager &gt; repoManager)</div><div class="ttdoc">Constructs the CommandFactory.</div><div class="ttdef"><b>Definition</b> CommandFactory.cxx:8</div></div>
+<div class="ttc" id="aclassCommandFactory_html_a917e8d9dc3309ac17ddf923943ad873b"><div class="ttname"><a href="classCommandFactory.html#a917e8d9dc3309ac17ddf923943ad873b">CommandFactory::registerCommand</a></div><div class="ttdeci">void registerCommand(const std::string &amp;name, std::function&lt; std::unique_ptr&lt; ICommand &gt;(std::shared_ptr&lt; ISubject &gt;, std::shared_ptr&lt; RepositoryManager &gt;)&gt; creator)</div><div class="ttdoc">Registers a creator function for a new command.</div><div class="ttdef"><b>Definition</b> CommandFactory.cxx:32</div></div>
+<div class="ttc" id="aclassCommandFactory_html_aa7fb0a11d596213f1b2f62ecea795ae7"><div class="ttname"><a href="classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7">CommandFactory::operator=</a></div><div class="ttdeci">CommandFactory &amp; operator=(const CommandFactory &amp;)=delete</div><div class="ttdoc">Deletes the assignment operator. The Factory should not be assigned.</div></div>
+<div class="ttc" id="aclassCommandFactory_html_ac31cdcf058989c9f45fb228908530d46"><div class="ttname"><a href="classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46">CommandFactory::CommandFactory</a></div><div class="ttdeci">CommandFactory(const CommandFactory &amp;)=delete</div><div class="ttdoc">Deletes the copy constructor. The Factory should not be copied.</div></div>
+<div class="ttc" id="aclassCommandFactory_html_ae390c14a70557144e76f3b114036078e"><div class="ttname"><a href="classCommandFactory.html#ae390c14a70557144e76f3b114036078e">CommandFactory::getRegisteredCommands</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getRegisteredCommands() const</div><div class="ttdoc">Retrieves a list of names for all currently registered commands.</div><div class="ttdef"><b>Definition</b> CommandFactory.cxx:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

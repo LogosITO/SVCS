@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['project_20status_3a_20core_20stability_20achieved_0',['🚀 Current Project Status: Core Stability Achieved',['../md_README.html#autotoc_md1',1,'']]]
+  ['macos_0',['Linux / macOS',['../md_README.html#autotoc_md11',1,'']]],
+  ['major_20achievements_1',['Major Achievements',['../md_README.html#autotoc_md4',1,'']]],
+  ['mit_20license_2',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md18',1,'']]]
 ];

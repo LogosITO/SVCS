@@ -94,27 +94,42 @@ $(function(){initNavTree('md_README.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
-<p>This SVCS (Simple Version Control System) project is an educational and research effort aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.</p>
+<p>[<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="pointer-events: none;" class="inline"/>](LICENSE) <br  />
+ [<img src="https://img.shields.io/badge/docs-Doxygen-blue" alt="Docs" class="inline"/>](link-to-en-docs) <br  />
+</p>
+<hr  />
+<p><b>SVCS (Simple Version Control System)</b> is an educational and research project aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.</p>
 <p>The main goal of the project is to gain a deep understanding of core concepts:</p>
 <ul>
-<li><b>Immutable Objects</b>: Creating and handling objects (<a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a>, <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a>, <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>) based on a single abstract <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> class.</li>
-<li><b>Data Integrity</b>: Applying cryptographic hashing (presumably SHA-1) for data identification and verification.</li>
-<li><b>Clean Architecture</b>: Implementing OOP principles, inheritance, polymorphism, and separation of concerns.</li>
+<li><b>Immutable Objects:</b> Creating and handling objects (<span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>, <span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>) based on a single abstract <span class="tt"><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a></span> class. <br  />
+</li>
+<li><b>Data Integrity:</b> Applying cryptographic hashing (<b>SHA-256</b>) for data identification and verification. <br  />
+</li>
+<li><b>Clean Architecture:</b> Implementing OOP principles, inheritance, polymorphism, and separation of concerns. <br  />
+</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
-🚀 Current Project Status: Core Stability Achieved</h1>
-<p>The project has achieved a critical milestone by resolving low-level memory issues, ensuring a stable foundation for future development.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
-Major Achievements:</h2>
-<ul>
-<li><b>Memory Safety Confirmed</b>: Successfully resolved the complex architectural issue involving premature virtual function calls (<span class="tt"><a class="el" href="classRepository.html#a7ce8792d0a1493d98986fb2732b95c4c" title="Notifies all attached observers about an event.">Repository::notify</a></span>) during object construction, which previously caused SIGSEGV and "Conditional jump on uninitialised value" errors.</li>
-<li><b>Valgrind Clean</b>: The core project is now free of critical memory errors and leaks, ensuring development is predictable and robust.</li>
-<li><b><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> Initialization</b>: The mechanism for creating the basic repository structure (<span class="tt">.svcs/refs</span>, <span class="tt">.svcs/objects</span>) is fully implemented and stable.</li>
-<li><b><a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> Logic Complete</b>: The entire foundation and core logic of the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> class are implemented.</li>
-</ul>
+<hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+🚀 Current Project Status: Core Functionality Stable</h1>
+<p>The project has evolved beyond initial memory stability to a functionally robust core. <br  />
+ The primary object model (<span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>, <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>) is complete, and a basic command-line interface is now operational, supported by an event-driven logging system.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Major Achievements</h2>
+<ul>
+<li>✅ <b>Complete Object Model:</b> <span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>, and <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span> are fully implemented and stable. <br  />
+</li>
+<li>✅ <b>Operational CLI:</b> A stable command-line interface for user interaction. <br  />
+</li>
+<li>✅ <b>Event-Driven <a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a>:</b> A flexible logging system implemented with the <em><a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a></em> pattern. <br  />
+</li>
+<li>✅ <b>Memory Safety:</b> Free of critical memory errors and leaks (confirmed with Valgrind). <br  />
+</li>
+<li>✅ <b>Strong Data Integrity:</b> <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> objects are hashed and verified using <b>SHA-256</b>. <br  />
+</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 🏗 Key Implemented Components</h1>
-<p>The system's foundational components are stable and operational:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Component  </th><th class="markdownTableHeadNone">Purpose  </th><th class="markdownTableHeadNone">Status  </th></tr>
@@ -123,46 +138,82 @@ Major Achievements:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>  </td><td class="markdownTableBodyNone">Saving, loading, and managing VCS objects  </td><td class="markdownTableBodyNone">Stable  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> (Staging Area)  </td><td class="markdownTableBodyNone">Tracks files prepared for commit  </td><td class="markdownTableBodyNone">Ready  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a>  </td><td class="markdownTableBodyNone">Tracks files prepared for commit (Staging Area)  </td><td class="markdownTableBodyNone">Stable  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a>  </td><td class="markdownTableBodyNone">Stores file content (hashing/compression)  </td><td class="markdownTableBodyNone">Ready  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a>  </td><td class="markdownTableBodyNone">Stores file content (hashing/compression)  </td><td class="markdownTableBodyNone">Stable  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Subject/Observer  </td><td class="markdownTableBodyNone">Pattern for notifying observers of events (success, errors)  </td><td class="markdownTableBodyNone">Stable  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>  </td><td class="markdownTableBodyNone">Represents the directory structure  </td><td class="markdownTableBodyNone">Stable  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a>  </td><td class="markdownTableBodyNone">Finalizes repository state with metadata  </td><td class="markdownTableBodyNone">Stable  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CLI  </td><td class="markdownTableBodyNone">Command-line interface for user interaction  </td><td class="markdownTableBodyNone">Stable  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>  </td><td class="markdownTableBodyNone">Implements the Subject/Observer pattern  </td><td class="markdownTableBodyNone">Stable  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a>  </td><td class="markdownTableBodyNone">Event-driven logging via <a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>  </td><td class="markdownTableBodyNone">Stable  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
-✨ Index (Staging Area) Functionality</h1>
-<p>The <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> class is responsible for the staging area and performs the following key tasks:</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+🛠️ Tools and Technologies</h1>
 <ul>
-<li><b>File Staging (<span class="tt">stage_file</span>)</b>: Adds a file to the index. This process converts the file content into a <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> object and saves it to the <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.</li>
-<li><b>Modification Check (<span class="tt">isFileModified</span>)</b>: A smart check that determines if the current working file differs from its entry in the index, based on:<ul>
-<li><b>Existence/Deletion</b>: Checking if a tracked file was deleted or if an untracked (new) file exists.</li>
-<li><b>Size</b>: Detecting changes in file size.</li>
-<li><b>Modification Time (mtime)</b>: A fast comparison of the last write time.</li>
-<li><b>Hash (Content Check)</b>: If the size or time differs, the <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> hash is recalculated for deep content verification.</li>
-</ul>
+<li><b>C++</b> — core implementation language for performance and control. <br  />
 </li>
-<li><b>Error Handling</b>: Correctly throws a <span class="tt">std::runtime_error</span> when attempting to stage an invalid path or a directory.</li>
-<li><b>Persistence</b>: The saving and loading of the index state to disk are ensured, providing persistence across sessions.</li>
+<li><b>CMake</b> — cross-platform build system. <br  />
+</li>
+<li><b>Doxygen</b> — generates a comprehensive API reference. <br  />
+</li>
+<li><b>Google Test</b> — unit and functional testing framework. <br  />
+</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+🧰 Project Scripts &amp; Usage</h1>
+<p>Scripts in the <span class="tt">tools/</span> directory simplify development tasks on Linux/macOS and Windows. <br  />
+</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Linux / macOS</h2>
+<div class="fragment"><div class="line"># To set up the environment</div>
+<div class="line">bash tools/setup.sh</div>
+<div class="line"># To build the project</div>
+<div class="line">bash tools/build.sh</div>
+<div class="line"># To run tests</div>
+<div class="line">bash tools/test.sh</div>
+<div class="line"># To install the application</div>
+<div class="line">bash tools/install.sh</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Windows</h2>
+<div class="fragment"><div class="line">:: To build the project</div>
+<div class="line">tools\build.bat</div>
+<div class="line">:: To run tests</div>
+<div class="line">tools\test.bat</div>
+<div class="line">:: To run tests</div>
+<div class="line">tools\install.bat</div>
+</div><!-- fragment --> <hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 🗺️ Next Steps</h1>
-<p>The immediate focus is stabilizing the final tests for the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> module. Once completed, the project will move to the high-level object structures:</p>
+<p>Future development will expand the feature set:</p>
 <ul>
-<li><b><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> Object</b>: Implementation of the object representing the directory structure, containing references to <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> and other <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> objects.</li>
-<li><b><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> Object</b>: Creation of the object that finalizes the repository state, including a reference to the top-level <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>, author metadata, date, and commit message.</li>
-<li><b>Basic <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></b>: Implementation of the core <span class="tt">svcs commit</span> command logic.</li>
+<li>Expand CLI commands (<span class="tt">svcs log</span>, <span class="tt">svcs status</span>, <span class="tt">svcs checkout</span>, <span class="tt">svcs branch</span>) <br  />
+</li>
+<li>Branching and merging functionality <br  />
+</li>
+<li>Remote repositories (push/pull support) <br  />
+</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 📖 Documentation (API Reference)</h1>
-<p>The detailed code documentation for classes and methods, generated by Doxygen, is automatically deployed to GitHub Pages after every update.</p>
-<p>You can select the documentation interface language:</p>
+<p>The API documentation (generated by <b>Doxygen</b>) is automatically deployed to GitHub Pages:</p>
 <ul>
-<li><b>English Version (EN)</b>: [Go to Documentation (EN)]()</li>
-<li><b>Russian Version (RU)</b>: [Go to Documentation (RU)]()</li>
+<li><a href="https://logosito.github.io/SVCS/en/">English Documentation (EN)</a> <br  />
+</li>
+<li><a href="https://logosito.github.io/SVCS/ru/">Russian Documentation (RU)</a> <br  />
+</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 📝 Author and License</h1>
-<p>© 2025 LogosITO. This project is distributed under the MIT License. </p>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+© 2025 LogosITO. Distributed under the MIT License.</h4>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

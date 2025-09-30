@@ -1,5 +1,6 @@
 set(CLI_SOURCES
     src/InitCommand.cxx
+    src/AddCommand.cxx
     src/CommandFactory.cxx
     src/main.cxx
 )
@@ -8,6 +9,7 @@ set(CLI_HEADERS
     include/BaseCommand.hxx
     include/ICommand.hxx
     include/InitCommand.hxx
+    include/AddCommand.hxx
     include/CommandFactory.hxx
 )
 add_executable(svcs ${CLI_SOURCES})

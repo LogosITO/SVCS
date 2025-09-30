@@ -1,77 +1,56 @@
 #include "../include/CommandFactory.hxx"
-#include "../include/ICommand.hxx"
-#include "../include/InitCommand.hxx" 
-#include <stdexcept>
+#include "../include/InitCommand.hxx"
+#include "../include/AddCommand.hxx"
+
 #include <iostream>
-#include <utility> 
+#include <memory>
 
-std::once_flag CommandFactory::initInstanceFlag_;
-
-CommandFactory::CommandFactory(std::shared_ptr<ISubject> eventBus) 
-    : eventBus_(std::move(eventBus)) 
-{
+CommandFactory::CommandFactory(std::shared_ptr<ISubject> bus, 
+                             std::shared_ptr<RepositoryManager> repoManager) 
+    : eventBus_(bus), repoManager_(repoManager) {
     registerDefaultCommands();
 }
 
-// --- getInstance (Потокобезопасный Singleton) ---
-CommandFactory& CommandFactory::getInstance(std::shared_ptr<ISubject> eventBus) {
-    // Используем лямбда-функцию для потокобезопасной ленивой инициализации
-    static CommandFactory* instance = nullptr;
-    
-    // Если eventBus передан, но instance еще не создан (первый вызов)
-    if (eventBus && !instance) {
-        std::call_once(initInstanceFlag_, [&]() {
-            instance = new CommandFactory(std::move(eventBus));
-        });
-    }
-    
-    if (!instance) {
-        throw std::runtime_error("CommandFactory not initialized! Must call getInstance with EventBus first.");
-    }
-    return *instance;
-}
-
-// --- registerDefaultCommands (ИЗМЕНЕНИЕ) ---
 void CommandFactory::registerDefaultCommands() {
-    std::cout << "DEBUG: CommandFactory constructor" << std::endl;
+    std::cout << "DEBUG: CommandFactory initializing..." << std::endl;
     
-    // ИЗМЕНЕНИЕ: Теперь лямбда-функция ПРИНИМАЕТ EventBus
-    registerCommand("init", [](std::shared_ptr<ISubject> bus) -> std::unique_ptr<ICommand> {
+    registerCommand("init", [](std::shared_ptr<ISubject> bus, 
+                              std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
         std::cout << "DEBUG: Creating InitCommand instance" << std::endl;
-        return std::make_unique<InitCommand>(bus); // Используем конструктор InitCommand(ISubject)
+        return std::make_unique<InitCommand>(bus, repoManager);
     });
     
-    registerCommand("add", [](std::shared_ptr<ISubject> bus) -> std::unique_ptr<ICommand> {
+    registerCommand("add", [](std::shared_ptr<ISubject> bus, 
+                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
         std::cout << "DEBUG: Creating AddCommand instance" << std::endl;
-        // return std::make_unique<AddCommand>(bus);
-        return nullptr;
+        return std::make_unique<AddCommand>(bus, repoManager);
     });
-    
-    // ... другие команды ...
     
     std::cout << "DEBUG: CommandFactory registered " << creators_.size() << " commands" << std::endl;
 }
 
-// --- registerCommand (ИЗМЕНЕНИЕ) ---
 void CommandFactory::registerCommand(const std::string& name,
-                                   std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>)> creator) {
+                                   std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>,
+                                                                         std::shared_ptr<RepositoryManager>)> creator) {
     creators_[name] = std::move(creator);
+    std::cout << "DEBUG: Registered command: " << name << std::endl;
 }
 
-// --- createCommand (ИЗМЕНЕНИЕ) ---
 std::unique_ptr<ICommand> CommandFactory::createCommand(const std::string& name) {
-    std::cout << "DEBUG: Creating command: " << name << std::endl;
-    
     auto it = creators_.find(name);
-    if (it != creators_.end()) {
-        // ИЗМЕНЕНИЕ: Вызываем хранитель, ПЕРЕДАВАЯ сохраненный EventBus
-        std::unique_ptr<ICommand> command = it->second(eventBus_); 
-        
-        std::cout << "DEBUG: Command created successfully: " << name << std::endl;
-        std::cout << "DEBUG: Command pointer: " << command.get() << std::endl;
-        return command;
+    if (it == creators_.end()) {
+        std::cout << "DEBUG: Command not found: " << name << std::endl;
+        return nullptr;
     }
     
-    std::cout << "DEBUG: Command not found: " << name << std::endl;
-    return nullptr;
+    std::cout << "DEBUG: Creating command: " << name << std::endl;
+    return it->second(eventBus_, repoManager_);
+}
+
+std::vector<std::string> CommandFactory::getRegisteredCommands() const {
+    std::vector<std::string> commands;
+    for (const auto& pair : creators_) {
+        commands.push_back(pair.first);
+    }
+    return commands;
 }

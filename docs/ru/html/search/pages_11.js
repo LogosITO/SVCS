@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['✨_20index_20staging_20area_20functionality_0',['✨ Index (Staging Area) Functionality',['../md_README.html#autotoc_md4',1,'']]]
+  ['version_20control_20system_0',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]],
+  ['vulnerability_1',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md21',1,'']]]
 ];

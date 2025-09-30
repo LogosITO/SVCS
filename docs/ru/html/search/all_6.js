@@ -1,22 +1,12 @@
 var searchData=
 [
-  ['general_5finfo_0',['GENERAL_INFO',['../structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7',1,'Event']]],
-  ['getauthor_1',['getAuthor',['../classCommit.html#a5228b234ccb27af846012c26ccb26912',1,'Commit']]],
-  ['getdata_2',['getData',['../classBlob.html#aef90cffb1d8d5492b73ac330ac933006',1,'Blob']]],
-  ['getdescription_3',['getDescription',['../classBaseCommand.html#afffa3d917dfb9f5bffc52e6e6271c37a',1,'BaseCommand::getDescription()'],['../classICommand.html#a1018a1a6abaf28e40b27eca8344e78c6',1,'ICommand::getDescription()'],['../classInitCommand.html#a20154938353ae33f1dbd753df40cf273',1,'InitCommand::getDescription()']]],
-  ['getentries_4',['getEntries',['../classTree.html#a57ecc3c34be17f9e349ef386223eead8',1,'Tree']]],
-  ['getentry_5',['getEntry',['../classIndex.html#acb9b498b11708bbf4394dbf485bcc6b4',1,'Index']]],
-  ['gethashid_6',['getHashId',['../classVcsObject.html#a0e8cd703d917813ca43d4b0622c70bdd',1,'VcsObject']]],
-  ['getinstance_7',['getInstance',['../classCommandFactory.html#a0f4cf9735c3389fa8835e2cbf47a5120',1,'CommandFactory::getInstance()'],['../classLogger.html#ae89f7f2e31ba586b76734c1e23581504',1,'Logger::getInstance(const std::string &amp;name)']]],
-  ['getlevel_8',['getLevel',['../classLogger.html#af4490985642cdb388e65741ca5815851',1,'Logger']]],
-  ['getmessage_9',['getMessage',['../classCommit.html#a341a1826cec171e37a95f0317183ea5d',1,'Commit']]],
-  ['getname_10',['getName',['../classBaseCommand.html#a6a9e66f6a2b54f905d0fe4e7ca3ecbf0',1,'BaseCommand::getName()'],['../classICommand.html#ac676ae6b9315436978fc62201e5b31dc',1,'ICommand::getName()'],['../classInitCommand.html#a06925047a45d9ad66cf429613809bade',1,'InitCommand::getName()']]],
-  ['getobjectpath_11',['getObjectPath',['../classObjectStorage.html#a3bdb2110012cbe733cdeb4d438b583d0',1,'ObjectStorage']]],
-  ['getobjectstorage_12',['getObjectStorage',['../classRepository.html#a9c1153091e3ffa2d5aaf65e900a41c40',1,'Repository']]],
-  ['getparenthashes_13',['getParentHashes',['../classCommit.html#ab683ee4f53ec36c871a77f6bea0015df',1,'Commit']]],
-  ['getpath_14',['getPath',['../classRepository.html#a74b5a052c07a886d428e42aaaeebeeb5',1,'Repository']]],
-  ['gettimestamp_15',['getTimestamp',['../classCommit.html#a68c3572fa2fdb3a182da27acae0adc69',1,'Commit']]],
-  ['gettreehash_16',['getTreeHash',['../classCommit.html#a8ef0c99b1167987343c99cc63dfef608',1,'Commit']]],
-  ['gettype_17',['getType',['../classBlob.html#ac493b1634f088e53d436ba808ba02e86',1,'Blob::getType()'],['../classCommit.html#a213b92691c2dae9e7ae7862eb9c369df',1,'Commit::getType()'],['../classTree.html#a9b3870b1189b06efecd0a56aad4e467e',1,'Tree::getType()'],['../classVcsObject.html#a6997c320772a504fc61a986f6e8f9ff7',1,'VcsObject::getType()'],['../classTestableObject.html#a89133227b30cea6642769a8cad7c1375',1,'TestableObject::getType()']]],
-  ['getusage_18',['getUsage',['../classBaseCommand.html#a599af70664d26e24107b0700ea551503',1,'BaseCommand::getUsage()'],['../classICommand.html#a9e912ad55e38e0cf9ae2f6e558d6c401',1,'ICommand::getUsage()'],['../classInitCommand.html#a158528947482d476f4e687740296b0a5',1,'InitCommand::getUsage()']]]
+  ['fatal_0',['FATAL',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc',1,'Logger.hxx']]],
+  ['fatal_1',['fatal',['../classLogger.html#ab934865d3713793d0353271a475eaf4b',1,'Logger']]],
+  ['fatal_5ferror_2',['FATAL_ERROR',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a',1,'Event']]],
+  ['file_5fpath_3',['file_path',['../structIndexEntry.html#ac34233bc45be2fc4cc4c4d6f3ef86173',1,'IndexEntry']]],
+  ['file_5fsize_4',['file_size',['../structIndexEntry.html#a10582a2e090f7c30885f54b42da08048',1,'IndexEntry']]],
+  ['findentry_5',['findEntry',['../classTree.html#a944fe0075293396036606f6a999643f4',1,'Tree']]],
+  ['findrepository_6',['findRepository',['../classBaseCommand.html#a757e9a5a0d6feb0b100536c7380bf088',1,'BaseCommand::findRepository()'],['../classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb',1,'Repository::findRepository()']]],
+  ['flush_7',['flush',['../classLogger.html#a5cc08473729523bb4bde48459f2ac468',1,'Logger']]],
+  ['functionality_20stable_8',['🚀 Current Project Status: Core Functionality Stable',['../md_README.html#autotoc_md3',1,'']]]
 ];

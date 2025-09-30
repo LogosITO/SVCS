@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['basecommand_0',['BaseCommand',['../classBaseCommand.html',1,'BaseCommand'],['../classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1',1,'BaseCommand::BaseCommand()']]],
-  ['basecommand_2ehxx_1',['BaseCommand.hxx',['../BaseCommand_8hxx.html',1,'']]],
-  ['blob_2',['Blob',['../classBlob.html',1,'Blob'],['../classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff',1,'Blob::Blob()']]],
-  ['blob_2ehxx_3',['Blob.hxx',['../Blob_8hxx.html',1,'']]],
-  ['blob_5fhash_4',['blob_hash',['../structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12',1,'IndexEntry']]]
+  ['a_20vulnerability_0',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md21',1,'']]],
+  ['achievements_1',['Major Achievements',['../md_README.html#autotoc_md4',1,'']]],
+  ['addcommand_2ehxx_2',['AddCommand.hxx',['../AddCommand_8hxx.html',1,'']]],
+  ['addentry_3',['addEntry',['../classIndex.html#aad567874a307f72668d79ffe867c4de2',1,'Index::addEntry()'],['../classTree.html#a772b4bcfb5e44dda6a9ede2470d23250',1,'Tree::addEntry()']]],
+  ['addfiletostaging_4',['addFileToStaging',['../classRepositoryManager.html#aa4a9d5d690cc49d33ad5372fed9b6a54',1,'RepositoryManager']]],
+  ['and_20license_5',['📝 Author and License',['../md_README.html#autotoc_md17',1,'']]],
+  ['and_20technologies_6',['🛠️ Tools and Technologies',['../md_README.html#autotoc_md8',1,'']]],
+  ['api_20reference_7',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md16',1,'']]],
+  ['attach_8',['attach',['../classRepository.html#a250a9e24514ca3a4f8c6d954ad4dcefc',1,'Repository::attach()'],['../classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb',1,'EventBus::attach()'],['../classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace',1,'ISubject::attach()'],['../classMockSubject.html#a1cbe4aefca976d0a2f7c5077e9998604',1,'MockSubject::attach(std::shared_ptr&lt; IObserver &gt; observer) override'],['../classMockSubject.html#a1cbe4aefca976d0a2f7c5077e9998604',1,'MockSubject::attach(std::shared_ptr&lt; IObserver &gt; observer) override']]],
+  ['author_20and_20license_9',['📝 Author and License',['../md_README.html#autotoc_md17',1,'']]]
 ];

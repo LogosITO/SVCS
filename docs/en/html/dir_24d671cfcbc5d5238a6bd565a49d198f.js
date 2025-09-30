@@ -5,6 +5,7 @@ var dir_24d671cfcbc5d5238a6bd565a49d198f =
     [ "Index.hxx", "Index_8hxx_source.html", null ],
     [ "ObjectStorage.hxx", "ObjectStorage_8hxx.html", "ObjectStorage_8hxx" ],
     [ "Repository.hxx", "Repository_8hxx.html", "Repository_8hxx" ],
+    [ "RepositoryManager.hxx", "RepositoryManager_8hxx.html", "RepositoryManager_8hxx" ],
     [ "Tree.hxx", "Tree_8hxx.html", "Tree_8hxx" ],
     [ "Utils.hxx", "Utils_8hxx_source.html", null ],
     [ "VcsObject.hxx", "VcsObject_8hxx_source.html", null ]

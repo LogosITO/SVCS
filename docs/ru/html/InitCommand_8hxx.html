@@ -94,21 +94,25 @@ $(function(){initNavTree('InitCommand_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of the <a class="el" href="classInitCommand.html" title="Class implementing the logic for the &#39;init&#39; command.">InitCommand</a> class, implementing repository initialization logic.  
+<p>Declaration of the <a class="el" href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS).">InitCommand</a> class.  
 <a href="#details">Подробнее...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="BaseCommand_8hxx_source.html">BaseCommand.hxx</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ICommand_8hxx_source.html">ICommand.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ISubject_8hxx_source.html">../../services/ISubject.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RepositoryManager_8hxx_source.html">../../core/include/RepositoryManager.hxx</a>&quot;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div>
 <p><a href="InitCommand_8hxx_source.html">См. исходные тексты.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
 <tr class="memitem:InitCommand" id="r_InitCommand"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInitCommand.html">InitCommand</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class implementing the logic for the 'init' command.  <a href="classInitCommand.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the "init" command for the Version Control System (VCS).  <a href="classInitCommand.html#details">Подробнее...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Declaration of the <a class="el" href="classInitCommand.html" title="Class implementing the logic for the &#39;init&#39; command.">InitCommand</a> class, implementing repository initialization logic. </p>
-<p><a class="el" href="classInitCommand.html" title="Class implementing the logic for the &#39;init&#39; command.">InitCommand</a> inherits from <a class="el" href="classBaseCommand.html" title="Base class for all CLI commands.">BaseCommand</a> and executes the 'svcs init' command, creating a new repository structure on the disk.</p>
-<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License </dd></dl>
+<div class="textblock"><p>Declaration of the <a class="el" href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS).">InitCommand</a> class. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

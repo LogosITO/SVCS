@@ -79,7 +79,7 @@ public:
      * @brief Adds or updates an entry in the staging area.
      * @param entry The IndexEntry object to be added or updated.
      */
-    void add_entry(const IndexEntry& entry);
+    void addEntry(const IndexEntry& entry);
 
     /**
      * @brief Retrieves an entry from the index by its relative file path.
@@ -99,6 +99,11 @@ public:
      * @throw std::runtime_error If the index file cannot be written.
      */
     void save() const;
+    /**
+     * @brief Another saving function (like load) but returns bool.
+     * @throw std::runtime_error If the index file cannot be written.
+     */
+    bool write() const;
 
     /**
      * @brief Checks if a file in the working directory has been modified since it was last staged.

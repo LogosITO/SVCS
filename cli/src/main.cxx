@@ -5,51 +5,56 @@
 #include <memory>
 #include <vector>
 
-
-
 int main(int argc, char* argv[]) {
-    // 1. Создаем центральный Event Bus
+    // СОЗДАЕМ долгоживущие объекты
     auto eventBus = std::make_shared<EventBus>();
-
-    // 2. Создаем Logger (Observer) и подключаем его к Event Bus
-    // Logger теперь сам форматирует вывод, поэтому имя "svcs_cli" должно быть его именем.
     auto cli_logger = std::make_shared<Logger>("VCS.CLI");
+    auto repo_logger = std::make_shared<Logger>("VCS.Repository");
+    
     eventBus->attach(cli_logger);
+    eventBus->attach(repo_logger);
 
-    // 3. CommandFactory получает ссылку на Event Bus
-    // Предполагается, что CommandFactory::getInstance был изменен для приема subject.
-    auto& factory = CommandFactory::getInstance(eventBus); 
+    // СОЗДАЕМ RepositoryManager и передаем ему eventBus
+    auto repoManager = std::make_shared<RepositoryManager>(eventBus);
+    
+    // СОЗДАЕМ фабрику команд - теперь передаем ДВА аргумента
+    CommandFactory factory(eventBus, repoManager);
 
-    // --- Логика парсинга команд ---
     if (argc < 2) {
         cli_logger->info("SVCS - Simple Version Control System");
-        // ... (остальной вывод help)
+        cli_logger->info("Available commands: init, add");
         return 1;
     }
 
     std::string command_name = argv[1];
     
-    // Специальные команды (help, version) остаются, но используют логгер
     if (command_name == "version" || command_name == "--version" || command_name == "-v") {
         cli_logger->info("SVCS version 1.0.0");
         return 0;
     }
 
+    if (command_name == "help" || command_name == "--help" || command_name == "-h") {
+        cli_logger->info("SVCS - Simple Version Control System");
+        cli_logger->info("Available commands:");
+        cli_logger->info("  init    - Initialize new repository");
+        cli_logger->info("  add     - Add files to staging area");
+        cli_logger->info("  version - Show version information");
+        return 0;
+    }
+
     auto command = factory.createCommand(command_name);
-    
+
     if (!command) {
         cli_logger->error("Unknown command: " + command_name);
-        // ...
+        cli_logger->info("Use 'svcs help' to see available commands");
         return 1;
     }
 
-    // Подготовка аргументов
     std::vector<std::string> args;
     for (int i = 2; i < argc; ++i) {
         args.push_back(argv[i]);
     }
 
-    // Запускаем команду
     eventBus->notify({Event::DEBUG_MESSAGE, 
                       "Executing command: " + command_name, "main"});
 

@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['name_0',['name',['../structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f',1,'TreeEntry']]],
-  ['next_20steps_1',['🗺️ Next Steps',['../md_README.html#autotoc_md5',1,'']]],
-  ['notify_2',['notify',['../classRepository.html#a7ce8792d0a1493d98986fb2732b95c4c',1,'Repository::notify()'],['../classEventBus.html#a581f243551365d2dc9599665540486dd',1,'EventBus::notify()'],['../classIObserver.html#a325451b0d0100feaad6f683850a616dc',1,'IObserver::notify()'],['../classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474',1,'ISubject::notify()'],['../classLogger.html#a96a2b88ee6d81d3ecf0fed3a6291c9a2',1,'Logger::notify()'],['../classMockSubject.html#a9aaffe9cd012979c90c186ea3ec86fc0',1,'MockSubject::notify()'],['../classManualMockObserver.html#a2d0cef17d9225d64ce23dbf3451bb610',1,'ManualMockObserver::notify()'],['../classMockSubject.html#a9aaffe9cd012979c90c186ea3ec86fc0',1,'MockSubject::notify()'],['../classNullObserver.html#aeb635126b1e4270cb50229b157525270',1,'NullObserver::notify()']]],
-  ['nullobserver_3',['NullObserver',['../classNullObserver.html',1,'']]]
+  ['macos_0',['Linux / macOS',['../md_README.html#autotoc_md11',1,'']]],
+  ['major_20achievements_1',['Major Achievements',['../md_README.html#autotoc_md4',1,'']]],
+  ['manualmockobserver_2',['ManualMockObserver',['../classManualMockObserver.html',1,'']]],
+  ['mit_20license_3',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md18',1,'']]],
+  ['mockobjectstorage_4',['MockObjectStorage',['../classMockObjectStorage.html',1,'']]],
+  ['mocksubject_5',['MockSubject',['../classMockSubject.html',1,'']]],
+  ['mode_6',['mode',['../structTreeEntry.html#a134f10cecd1f81227572389485e04ad4',1,'TreeEntry']]]
 ];

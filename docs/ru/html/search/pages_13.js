@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📖_20documentation_20api_20reference_0',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md6',1,'']]]
+  ['©_202025_20logosito_20distributed_20under_20the_20mit_20license_0',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md18',1,'']]]
 ];

@@ -1,27 +1,59 @@
 #include "../include/InitCommand.hxx"
 
+InitCommand::InitCommand(std::shared_ptr<ISubject> subject, 
+                         std::shared_ptr<RepositoryManager> repoManager)
+    : eventBus_(subject), repoManager_(repoManager) {
+}
+
 bool InitCommand::execute(const std::vector<std::string>& args) {
-    logInfo("Initializing new repository");
-    
     std::string path = ".";
-    if (!args.empty()) {
-        path = args[0];
-        logDebug("Custom path specified: " + path);
+    bool force = false;
+    
+    // Парсим аргументы
+    for (const auto& arg : args) {
+        if (arg == "--force" || arg == "-f") {
+            force = true;
+        } else if (arg != ".") {
+            path = arg;
+        }
     }
     
-    try {
-        auto repo = createRepository(path);
-        bool success = repo->init();
-        
-        if (success) {
-            logSuccess("Repository initialized successfully at " + path + "/.svcs");
-        } else {
-            logError("Failed to initialize repository");
-        }
-        return success;
-        
-    } catch (const std::exception& e) {
-        logError("Exception during init: " + std::string(e.what()));
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "Initializing new repository in: " + path, "init"});
+    
+    if (force) {
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "Force flag enabled - will reinitialize if repository exists", "init"});
+    }
+    
+    if (repoManager_->initializeRepository(path, force)) {
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "Initialized empty SVCS repository in " + path + "/.svcs", "init"});
+        return true;
+    } else {
+        eventBus_->notify({Event::ERROR_MESSAGE, 
+                          "Failed to initialize repository", "init"});
         return false;
     }
+}
+
+std::string InitCommand::getDescription() const {
+    return "Initialize a new SVCS repository";
+}
+
+std::string InitCommand::getUsage() const {
+    return "svcs init [path] [--force]";
+}
+
+void InitCommand::showHelp() const {
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "Usage: " + getUsage(), "init"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "Description: " + getDescription(), "init"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "Options:", "init"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "  --force, -f    Reinitialize even if repository exists", "init"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "If no path is provided, uses current directory", "init"});
 }

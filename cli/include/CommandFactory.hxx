@@ -1,106 +1,95 @@
 /**
  * @file CommandFactory.hxx
- * @brief Declaration of the CommandFactory class, updated to work with the EventBus.
+ * @brief Declaration of the CommandFactory class, which implements the Factory pattern for commands.
  *
- * CommandFactory implements the Singleton pattern for centralized command
- * creation management. It is integrated with the EventBus (ISubject),
- * ensuring that every command created (ICommand) automatically
- * receives access to the event bus for logging purposes.
- *
- * @copyright 
- * Copyright 2025 LogosITO
- * Licensed under MIT-License
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
  */
 
 #pragma once
 
-#include "ICommand.hxx"
-#include <functional>
+#include "../include/ICommand.hxx"
+#include "../../core/include/RepositoryManager.hxx"
+#include "../../services/ISubject.hxx"
+
 #include <memory>
-#include <string>
 #include <unordered_map>
-#include <mutex> 
+#include <functional>
+#include <string>
+#include <vector>
 
 /**
- * @class ISubject
- * @brief (Forward Declaration) The interface for the Event Bus.
- */
-class ISubject; 
-
-/**
- * @class CommandFactory
- * @brief Factory for creating CLI commands (ICommand), implemented as a Singleton.
+ * @brief Factory for creating ICommand objects by their string name.
  *
- * The factory is responsible for registering creator functions for each command and
- * providing all created commands with access to the EventBus.
+ * The CommandFactory manages the lifecycle of commands, creating them dynamically
+ * using creator functions registered under unique names. Commands are constructed
+ * with shared ownership of an event bus (@ref ISubject) and a repository manager
+ * (@ref RepositoryManager).
  */
 class CommandFactory {
 private:
-    /**
-     * @brief Pointer to the Event Bus, necessary for creating commands.
-     * * Stored as a shared_ptr to ensure its availability to commands.
-     */
+    /** @brief Shared pointer to the event bus used for notifications (e.g., errors or info). */
     std::shared_ptr<ISubject> eventBus_;
     
-    /**
-     * @brief Private constructor for the Singleton.
-     * * Accepts and stores the EventBus.
-     * @param eventBus A pointer to the EventBus.
+    /** @brief Shared pointer to the repository manager used for executing SVCS operations. */
+    std::shared_ptr<RepositoryManager> repoManager_;
+    
+    /** * @brief Map of command creator functions.
+     * * Key: The command name (e.g., "add", "commit").
+     * Value: A std::function that accepts an ISubject and a RepositoryManager 
+     * and returns a unique pointer to a concrete ICommand implementation.
      */
-    CommandFactory(std::shared_ptr<ISubject> eventBus);
+    std::unordered_map<std::string, 
+        std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>, 
+                                              std::shared_ptr<RepositoryManager>)>> creators_;
 
     /**
-     * @brief Registers the system's default commands (e.g., init).
+     * @brief Registers the set of commands that should be available by default.
+     * * This function is typically called in the constructor to pre-configure the Factory.
      */
     void registerDefaultCommands();
 
-    /**
-     * @brief Map of command creator functions.
-     * * Key: The command's name (string).
-     * * Value: A function that accepts std::shared_ptr<ISubject> and returns std::unique_ptr<ICommand>.
-     */
-    std::unordered_map<std::string,
-                      std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>)>> creators_;
-    
-    /**
-     * @brief Flag to ensure thread-safe initialization of the Singleton (std::call_once).
-     */
-    static std::once_flag initInstanceFlag_;
-
 public:
     /**
-     * @brief Deleted copy constructor.
+     * @brief Constructs the CommandFactory.
+     *
+     * @param bus A shared pointer to the event bus.
+     * @param repoManager A shared pointer to the repository manager.
+     */
+    explicit CommandFactory(std::shared_ptr<ISubject> bus, 
+                          std::shared_ptr<RepositoryManager> repoManager);
+    
+    /**
+     * @brief Deletes the copy constructor. The Factory should not be copied.
      */
     CommandFactory(const CommandFactory&) = delete;
-
+    
     /**
-     * @brief Deleted assignment operator.
+     * @brief Deletes the assignment operator. The Factory should not be assigned.
      */
     CommandFactory& operator=(const CommandFactory&) = delete;
-
+    
     /**
-     * @brief Returns the single instance of CommandFactory (Singleton access point).
-     * @details Must be called *once* with the EventBus on the first access for initialization. 
-     * Subsequent calls may omit the argument. Implements a thread-safe singleton.
-     * @param eventBus Pointer to the EventBus. Used only during the first initialization.
-     * @return Reference to the single CommandFactory instance.
-     */
-    static CommandFactory& getInstance(std::shared_ptr<ISubject> eventBus = nullptr);
-
-    /**
-     * @brief Registers a new command with the factory.
-     * @param name The name of the command used for invoking it.
-     * @param creator The function that will be called to create the command;
-     * must accept std::shared_ptr<ISubject>.
+     * @brief Registers a creator function for a new command.
+     *
+     * @param name The string name under which the command will be callable.
+     * @param creator The function that creates and returns a new ICommand object.
      */
     void registerCommand(const std::string& name,
-                        std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>)> creator);
+                       std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>,
+                                                             std::shared_ptr<RepositoryManager>)> creator);
 
     /**
-     * @brief Creates a new command instance by its name.
-     * * The stored EventBus is automatically passed when the creator function is called.
-     * @param name The name of the command to create.
-     * @return A unique pointer to the created command instance, or nullptr if the command is not found.
+     * @brief Creates and returns a command object by its name.
+     * * Transfers ownership (via unique_ptr) of the created object to the caller.
+     * @param name The name of the command (the key in the creators_ map).
+     * @return std::unique_ptr<ICommand> holding a new command object, or nullptr if the command is not registered.
      */
     std::unique_ptr<ICommand> createCommand(const std::string& name);
+    
+    /**
+     * @brief Retrieves a list of names for all currently registered commands.
+     * @return A vector of strings containing the names of all registered commands.
+     */
+    std::vector<std::string> getRegisteredCommands() const;
 };

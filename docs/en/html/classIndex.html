@@ -106,14 +106,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a76b7ed4e9cb0b1540264567f84896032" id="r_a76b7ed4e9cb0b1540264567f84896032"><td class="memItemLeft" align="right" valign="top"><a id="a76b7ed4e9cb0b1540264567f84896032" name="a76b7ed4e9cb0b1540264567f84896032"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Index</b> ()</td></tr>
 <tr class="memdesc:a76b7ed4e9cb0b1540264567f84896032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
-<tr class="memitem:aa81beeb1a095d360a8c4bba27acd6af1" id="r_aa81beeb1a095d360a8c4bba27acd6af1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa81beeb1a095d360a8c4bba27acd6af1">add_entry</a> (const <a class="el" href="structIndexEntry.html">IndexEntry</a> &amp;entry)</td></tr>
-<tr class="memdesc:aa81beeb1a095d360a8c4bba27acd6af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds or updates an entry in the staging area.  <br /></td></tr>
+<tr class="memitem:aad567874a307f72668d79ffe867c4de2" id="r_aad567874a307f72668d79ffe867c4de2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad567874a307f72668d79ffe867c4de2">addEntry</a> (const <a class="el" href="structIndexEntry.html">IndexEntry</a> &amp;entry)</td></tr>
+<tr class="memdesc:aad567874a307f72668d79ffe867c4de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds or updates an entry in the staging area.  <br /></td></tr>
 <tr class="memitem:acb9b498b11708bbf4394dbf485bcc6b4" id="r_acb9b498b11708bbf4394dbf485bcc6b4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structIndexEntry.html">IndexEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb9b498b11708bbf4394dbf485bcc6b4">getEntry</a> (const fs::path &amp;file_path) const</td></tr>
 <tr class="memdesc:acb9b498b11708bbf4394dbf485bcc6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an entry from the index by its relative file path.  <br /></td></tr>
 <tr class="memitem:a78085a2aae66dd69d50ded6d856462c6" id="r_a78085a2aae66dd69d50ded6d856462c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78085a2aae66dd69d50ded6d856462c6">load</a> ()</td></tr>
 <tr class="memdesc:a78085a2aae66dd69d50ded6d856462c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the index entries from the index file on disk (temporary text format).  <br /></td></tr>
 <tr class="memitem:a4c99f86d04fd91dc90727b9a17e60a21" id="r_a4c99f86d04fd91dc90727b9a17e60a21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c99f86d04fd91dc90727b9a17e60a21">save</a> () const</td></tr>
 <tr class="memdesc:a4c99f86d04fd91dc90727b9a17e60a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the current state of the index entries to the index file (temporary text format).  <br /></td></tr>
+<tr class="memitem:a5e6110ea25938b15f6cfa774c3096451" id="r_a5e6110ea25938b15f6cfa774c3096451"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e6110ea25938b15f6cfa774c3096451">write</a> () const</td></tr>
+<tr class="memdesc:a5e6110ea25938b15f6cfa774c3096451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another saving function (like load) but returns bool.  <br /></td></tr>
 <tr class="memitem:ae12163a4349daa632044ff28c2818125" id="r_ae12163a4349daa632044ff28c2818125"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae12163a4349daa632044ff28c2818125">isFileModified</a> (const fs::path &amp;file_path) const</td></tr>
 <tr class="memdesc:ae12163a4349daa632044ff28c2818125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a file in the working directory has been modified since it was last staged.  <br /></td></tr>
 <tr class="memitem:a37a1115070ac00586a9b69cf9c26b115" id="r_a37a1115070ac00586a9b69cf9c26b115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37a1115070ac00586a9b69cf9c26b115">stage_file</a> (const fs::path &amp;relative_path)</td></tr>
@@ -167,14 +169,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aa81beeb1a095d360a8c4bba27acd6af1" name="aa81beeb1a095d360a8c4bba27acd6af1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa81beeb1a095d360a8c4bba27acd6af1">&#9670;&#160;</a></span>add_entry()</h2>
+<a id="aad567874a307f72668d79ffe867c4de2" name="aad567874a307f72668d79ffe867c4de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad567874a307f72668d79ffe867c4de2">&#9670;&#160;</a></span>addEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Index::add_entry </td>
+          <td class="memname">void Index::addEntry </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structIndexEntry.html">IndexEntry</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>entry</em></span></td><td>)</td>
           <td></td>
@@ -345,6 +347,31 @@ Public Member Functions</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::runtime_error</td><td>If the path is invalid or if read/write operations fail. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5e6110ea25938b15f6cfa774c3096451" name="a5e6110ea25938b15f6cfa774c3096451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6110ea25938b15f6cfa774c3096451">&#9670;&#160;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Index::write </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Another saving function (like load) but returns bool. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the index file cannot be written. </td></tr>
   </table>
   </dd>
 </dl>

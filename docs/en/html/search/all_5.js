@@ -8,5 +8,5 @@ var searchData=
   ['eventbus_5',['EventBus',['../classEventBus.html',1,'']]],
   ['eventbus_2ehxx_6',['EventBus.hxx',['../EventBus_8hxx.html',1,'']]],
   ['eventsubject_5f_7',['eventSubject_',['../classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8',1,'BaseCommand']]],
-  ['execute_8',['execute',['../classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0',1,'ICommand::execute()'],['../classInitCommand.html#a208ebec427828e140dd44c105416423f',1,'InitCommand::execute()']]]
+  ['execute_8',['execute',['../classHelpCommand.html#aacde352bc8bc40668b09415c07857ac7',1,'HelpCommand::execute()'],['../classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0',1,'ICommand::execute()'],['../classInitCommand.html#a208ebec427828e140dd44c105416423f',1,'InitCommand::execute()']]]
 ];

@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Класс HelpService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classHelpService.html','','classHelpService-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс HelpService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Service that provides help information for commands.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="HelpService_8hxx_source.html">HelpService.hxx</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ac380002930a510d355fe11cf11e946ce" id="r_ac380002930a510d355fe11cf11e946ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac380002930a510d355fe11cf11e946ce">HelpService</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; bus, std::function&lt; std::vector&lt; std::string &gt;()&gt; getCommands, std::function&lt; std::string(const std::string &amp;)&gt; getDescription, std::function&lt; void(const std::string &amp;)&gt; showHelp, std::function&lt; std::string(const std::string &amp;)&gt; getUsage=nullptr)</td></tr>
+<tr class="memdesc:ac380002930a510d355fe11cf11e946ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> by injecting necessary dependencies as callbacks.  <br /></td></tr>
+<tr class="memitem:a3e101dee42668c57dd56669a3939d335" id="r_a3e101dee42668c57dd56669a3939d335"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e101dee42668c57dd56669a3939d335">getAvailableCommands</a> () const</td></tr>
+<tr class="memdesc:a3e101dee42668c57dd56669a3939d335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getCommandsCallback_</span> to retrieve the list of all available command names.  <br /></td></tr>
+<tr class="memitem:acc76b5372129d61b894efb2fa25349c2" id="r_acc76b5372129d61b894efb2fa25349c2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc76b5372129d61b894efb2fa25349c2">getCommandDescription</a> (const std::string &amp;commandName) const</td></tr>
+<tr class="memdesc:acc76b5372129d61b894efb2fa25349c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getDescriptionCallback_</span> to retrieve the brief description of a specific command.  <br /></td></tr>
+<tr class="memitem:a1ea55dca8e2d594c97ce5dc3efca8053" id="r_a1ea55dca8e2d594c97ce5dc3efca8053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea55dca8e2d594c97ce5dc3efca8053">showCommandHelp</a> (const std::string &amp;commandName) const</td></tr>
+<tr class="memdesc:a1ea55dca8e2d594c97ce5dc3efca8053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">showHelpCallback_</span> to trigger the display of detailed help for a specific command.  <br /></td></tr>
+<tr class="memitem:a71d1aba53c9ac3d40b16af8890bcac95" id="r_a71d1aba53c9ac3d40b16af8890bcac95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71d1aba53c9ac3d40b16af8890bcac95">commandExists</a> (const std::string &amp;commandName) const</td></tr>
+<tr class="memdesc:a71d1aba53c9ac3d40b16af8890bcac95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for the existence of a command by comparing against the list returned by <span class="tt">getAvailableCommands</span>.  <br /></td></tr>
+<tr class="memitem:a6e1869acb698c4c37d1b15d19b92ce9c" id="r_a6e1869acb698c4c37d1b15d19b92ce9c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e1869acb698c4c37d1b15d19b92ce9c">getCommandUsage</a> (const std::string &amp;commandName) const</td></tr>
+<tr class="memdesc:a6e1869acb698c4c37d1b15d19b92ce9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getUsageCallback_</span> to retrieve the usage syntax of a specific command.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Service that provides help information for commands. </p>
+<p>This service implements the application logic for displaying help. It uses a set of <b>callback functions</b> (<span class="tt">std::function</span>) to retrieve command data (names, descriptions, usage) and display specific help. This design choice prevents a direct dependency on the <a class="el" href="classCommandFactory.html" title="Factory for creating ICommand objects by their string name.">CommandFactory</a>, thereby breaking a potential <b>circular dependency</b>. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ac380002930a510d355fe11cf11e946ce" name="ac380002930a510d355fe11cf11e946ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac380002930a510d355fe11cf11e946ce">&#9670;&#160;</a></span>HelpService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HelpService::HelpService </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>bus</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; std::vector&lt; std::string &gt;()&gt;</td>          <td class="paramname"><span class="paramname"><em>getCommands</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; std::string(const std::string &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>getDescription</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(const std::string &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>showHelp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; std::string(const std::string &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>getUsage</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> by injecting necessary dependencies as callbacks. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bus</td><td>Shared pointer to the event bus for notifications. </td></tr>
+    <tr><td class="paramname">getCommands</td><td>Function (callback) that returns a list of available command names. </td></tr>
+    <tr><td class="paramname">getDescription</td><td>Function (callback) that returns the brief description of a command. </td></tr>
+    <tr><td class="paramname">showHelp</td><td>Function (callback) that triggers the full help display for a command. </td></tr>
+    <tr><td class="paramname">getUsage</td><td>Function (callback) that returns the usage syntax of a command (defaults to nullptr if not strictly needed). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a71d1aba53c9ac3d40b16af8890bcac95" name="a71d1aba53c9ac3d40b16af8890bcac95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71d1aba53c9ac3d40b16af8890bcac95">&#9670;&#160;</a></span>commandExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HelpService::commandExists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commandName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks for the existence of a command by comparing against the list returned by <span class="tt">getAvailableCommands</span>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandName</td><td>The name of the command to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> if the command is registered, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a3e101dee42668c57dd56669a3939d335" name="a3e101dee42668c57dd56669a3939d335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e101dee42668c57dd56669a3939d335">&#9670;&#160;</a></span>getAvailableCommands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; HelpService::getAvailableCommands </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the <span class="tt">getCommandsCallback_</span> to retrieve the list of all available command names. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Vector of strings containing the names of all registered commands. </dd></dl>
+
+</div>
+</div>
+<a id="acc76b5372129d61b894efb2fa25349c2" name="acc76b5372129d61b894efb2fa25349c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc76b5372129d61b894efb2fa25349c2">&#9670;&#160;</a></span>getCommandDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string HelpService::getCommandDescription </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commandName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the <span class="tt">getDescriptionCallback_</span> to retrieve the brief description of a specific command. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandName</td><td>The name of the command. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>The command description, or "Unknown command" if the command name is not valid or the callback fails. </dd></dl>
+
+</div>
+</div>
+<a id="a6e1869acb698c4c37d1b15d19b92ce9c" name="a6e1869acb698c4c37d1b15d19b92ce9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1869acb698c4c37d1b15d19b92ce9c">&#9670;&#160;</a></span>getCommandUsage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string HelpService::getCommandUsage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commandName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the <span class="tt">getUsageCallback_</span> to retrieve the usage syntax of a specific command. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandName</td><td>The name of the command. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>The command usage string, or an empty string if the command is not found or the callback is not set. </dd></dl>
+
+</div>
+</div>
+<a id="a1ea55dca8e2d594c97ce5dc3efca8053" name="a1ea55dca8e2d594c97ce5dc3efca8053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea55dca8e2d594c97ce5dc3efca8053">&#9670;&#160;</a></span>showCommandHelp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HelpService::showCommandHelp </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commandName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the <span class="tt">showHelpCallback_</span> to trigger the display of detailed help for a specific command. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandName</td><td>The name of the command to show help for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>cli/include/<a class="el" href="HelpService_8hxx_source.html">HelpService.hxx</a></li>
+<li>cli/src/<a class="el" href="HelpService_8cxx.html">HelpService.cxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="classHelpService.html">HelpService</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

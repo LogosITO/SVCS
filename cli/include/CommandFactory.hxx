@@ -79,14 +79,29 @@ public:
                        std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>,
                                                              std::shared_ptr<RepositoryManager>)> creator);
 
+    // --- New Method Documentation ---
+
+    /**
+     * @brief Retrieves the brief description for a registered command.
+     * * To do this, it must create a temporary instance of the command.
+     * @param name The name of the command.
+     * @return The command's description string, or an error message if the command is not registered.
+     */
     std::string getCommandDescription(const std::string& name) const;
 
+    /**
+     * @brief Displays the detailed help and usage for a registered command.
+     * * This is accomplished by creating a temporary command instance and calling its showHelp method.
+     * @param name The name of the command.
+     */
     void showCommandHelp(const std::string& name) const;
+
+    // --- Existing Method Documentation (Updated) ---
 
     /**
      * @brief Creates and returns a command object by its name.
      * * Transfers ownership (via unique_ptr) of the created object to the caller.
-     * @param name The name of the command (the key in the creators_ map).
+     * @param name The name of the command (the key in the creators map).
      * @return std::unique_ptr<ICommand> holding a new command object, or nullptr if the command is not registered.
      */
     std::unique_ptr<ICommand> createCommand(const std::string& name) const;

@@ -19,65 +19,71 @@
 /**
  * @brief Command for displaying help information about other commands.
  *
- * The HelpCommand can show general help with all available commands
- * or detailed help for a specific command. It uses HelpService to
- * retrieve command information without direct dependency on CommandFactory.
+ * The **HelpCommand** is the application's built-in help utility. It can show a general
+ * list of all available commands or display detailed usage and descriptions for a specific
+ * command provided as an argument. It delegates the retrieval of command information
+ * to the **HelpService** to maintain a clean separation of concerns.
  */
 class HelpCommand : public ICommand {
 private:
+    /** @brief Shared pointer to the event bus used for notifications (i.e., printing help messages to the user). */
     std::shared_ptr<ISubject> eventBus_;
+    
+    /** @brief Shared pointer to the service responsible for retrieving and formatting command help content. */
     std::shared_ptr<HelpService> helpService_;
 
 public:
     /**
      * @brief Constructs the HelpCommand.
      *
-     * @param subject Shared pointer to the event bus for notifications.
-     * @param helpService Shared pointer to the help service for retrieving command information.
+     * @param subject Shared pointer to the event bus for logging and output notifications.
+     * @param helpService Shared pointer to the help service dependency.
      */
     HelpCommand(std::shared_ptr<ISubject> subject,
                 std::shared_ptr<HelpService> helpService);
     
     /**
-     * @brief Executes the help command.
+     * @brief Executes the help command logic.
      *
-     * @param args Command arguments. If empty, shows general help.
-     *              If contains a command name, shows help for that command.
-     * @return true always, as help command cannot fail.
+     * @param args Command arguments. If the vector is empty, general help is shown.
+     * If it contains one command name, detailed help for that command is shown.
+     * @return \c true always, as the help command is not expected to encounter a runtime failure.
      */
     bool execute(const std::vector<std::string>& args) override;
     
     /**
      * @brief Gets the name of the command.
-     * @return "help"
+     * @return The string "help".
      */
     std::string getName() const override { return "help"; }
     
     /**
-     * @brief Gets the description of the command.
-     * @return "Show help information for commands"
+     * @brief Gets the brief description of the command.
+     * @return The string "Show help information for commands".
      */
     std::string getDescription() const override;
     
     /**
      * @brief Gets the usage syntax of the command.
-     * @return "svcs help [command]"
+     * @return The string "svcs help [command]".
      */
     std::string getUsage() const override;
     
     /**
-     * @brief Shows detailed help information for this command.
+     * @brief Shows detailed help information for this specific command via the event bus.
      */
     void showHelp() const override;
     
 private:
     /**
-     * @brief Shows general help with all available commands.
+     * @brief Shows general help, listing all available commands and their descriptions.
+     * * Utilizes the HelpService to retrieve the list of all registered commands.
      */
     void showGeneralHelp();
     
     /**
-     * @brief Shows detailed help for a specific command.
+     * @brief Shows detailed usage, description, and explanation for a specific command.
+     * * Delegates the task of fetching and displaying the detailed help to the HelpService.
      * @param commandName The name of the command to show help for.
      */
     void showCommandHelp(const std::string& commandName);

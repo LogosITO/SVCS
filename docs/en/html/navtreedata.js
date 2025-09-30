@@ -70,7 +70,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommand_8hxx.html",
-"structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7"
+"hierarchy.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

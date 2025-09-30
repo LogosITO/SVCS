@@ -5,8 +5,10 @@ var hierarchy =
       [ "EventBus", "classEventBus.html", null ]
     ] ],
     [ "Event", "structEvent.html", null ],
+    [ "HelpService", "classHelpService.html", null ],
     [ "ICommand", "classICommand.html", [
       [ "BaseCommand", "classBaseCommand.html", null ],
+      [ "HelpCommand", "classHelpCommand.html", null ],
       [ "InitCommand", "classInitCommand.html", null ]
     ] ],
     [ "Index", "classIndex.html", null ],
@@ -14,6 +16,7 @@ var hierarchy =
     [ "IObserver", "classIObserver.html", [
       [ "Logger", "classLogger.html", null ],
       [ "ManualMockObserver", "classManualMockObserver.html", null ],
+      [ "MockObserver", "classMockObserver.html", null ],
       [ "NullObserver", "classNullObserver.html", null ]
     ] ],
     [ "ISubject", "classISubject.html", [
@@ -29,6 +32,7 @@ var hierarchy =
     [ "testing::Test", null, [
       [ "IndexTest", "classIndexTest.html", null ],
       [ "ObjectStorageTest", "classObjectStorageTest.html", null ],
+      [ "RepositoryManagerTest", "classRepositoryManagerTest.html", null ],
       [ "RepositoryTest", "classRepositoryTest.html", null ]
     ] ],
     [ "TreeEntry", "structTreeEntry.html", null ],

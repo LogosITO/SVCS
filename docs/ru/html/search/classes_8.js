@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['repository_0',['Repository',['../classRepository.html',1,'']]],
-  ['repositorymanager_1',['RepositoryManager',['../classRepositoryManager.html',1,'']]],
-  ['repositorytest_2',['RepositoryTest',['../classRepositoryTest.html',1,'']]]
+  ['objectstorage_0',['ObjectStorage',['../classObjectStorage.html',1,'']]],
+  ['objectstoragetest_1',['ObjectStorageTest',['../classObjectStorageTest.html',1,'']]]
 ];

@@ -20,28 +20,39 @@ struct Event;
 /**
  * @brief Service that provides help information for commands.
  *
- * This service uses callback functions to avoid direct dependency on CommandFactory
- * and prevent circular dependencies.
+ * This service implements the application logic for displaying help. It uses a set of
+ * **callback functions** (`std::function`) to retrieve command data (names, descriptions,
+ * usage) and display specific help. This design choice prevents a direct dependency 
+ * on the CommandFactory, thereby breaking a potential **circular dependency**.
  */
 class HelpService {
 private:
+    /** @brief Shared pointer to the event bus used for logging or notifying the application. */
     std::shared_ptr<ISubject> eventBus_;
     
     // Callback functions instead of direct CommandFactory dependency
+    
+    /** @brief Callback function to retrieve a list of all available command names. */
     std::function<std::vector<std::string>()> getCommandsCallback_;
+    
+    /** @brief Callback function to retrieve the brief description of a specified command. */
     std::function<std::string(const std::string&)> getDescriptionCallback_;
+    
+    /** @brief Callback function to execute the full help output logic for a specified command. */
     std::function<void(const std::string&)> showHelpCallback_;
+    
+    /** @brief Callback function to retrieve the usage syntax for a specified command. */
     std::function<std::string(const std::string&)> getUsageCallback_;
 
 public:
     /**
-     * @brief Constructs the HelpService with callbacks.
+     * @brief Constructs the HelpService by injecting necessary dependencies as callbacks.
      *
      * @param bus Shared pointer to the event bus for notifications.
-     * @param getCommands Function to retrieve available command names.
-     * @param getDescription Function to retrieve command descriptions.
-     * @param showHelp Function to display command help.
-     * @param getUsage Function to retrieve command usage.
+     * @param getCommands Function (callback) that returns a list of available command names.
+     * @param getDescription Function (callback) that returns the brief description of a command.
+     * @param showHelp Function (callback) that triggers the full help display for a command.
+     * @param getUsage Function (callback) that returns the usage syntax of a command (defaults to nullptr if not strictly needed).
      */
     HelpService(std::shared_ptr<ISubject> bus,
                 std::function<std::vector<std::string>()> getCommands,
@@ -50,40 +61,40 @@ public:
                 std::function<std::string(const std::string&)> getUsage = nullptr);
     
     /**
-     * @brief Gets the list of all available command names.
+     * @brief Executes the `getCommandsCallback_` to retrieve the list of all available command names.
      *
      * @return Vector of strings containing the names of all registered commands.
      */
     std::vector<std::string> getAvailableCommands() const;
     
     /**
-     * @brief Gets the description of a specific command.
+     * @brief Executes the `getDescriptionCallback_` to retrieve the brief description of a specific command.
      *
      * @param commandName The name of the command.
-     * @return The command description, or "Unknown command" if not found.
+     * @return The command description, or "Unknown command" if the command name is not valid or the callback fails.
      */
     std::string getCommandDescription(const std::string& commandName) const;
     
     /**
-     * @brief Shows detailed help information for a specific command.
+     * @brief Executes the `showHelpCallback_` to trigger the display of detailed help for a specific command.
      *
      * @param commandName The name of the command to show help for.
      */
     void showCommandHelp(const std::string& commandName) const;
     
     /**
-     * @brief Checks if a command exists.
+     * @brief Checks for the existence of a command by comparing against the list returned by `getAvailableCommands`.
      *
      * @param commandName The name of the command to check.
-     * @return true if the command is registered, false otherwise.
+     * @return \c true if the command is registered, \c false otherwise.
      */
     bool commandExists(const std::string& commandName) const;
     
     /**
-     * @brief Gets the usage syntax of a specific command.
+     * @brief Executes the `getUsageCallback_` to retrieve the usage syntax of a specific command.
      *
      * @param commandName The name of the command.
-     * @return The command usage string, or empty string if not found.
+     * @return The command usage string, or an empty string if the command is not found or the callback is not set.
      */
     std::string getCommandUsage(const std::string& commandName) const;
 };

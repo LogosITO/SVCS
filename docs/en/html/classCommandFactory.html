@@ -111,8 +111,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa7fb0a11d596213f1b2f62ecea795ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the assignment operator. The Factory should not be assigned. <br /></td></tr>
 <tr class="memitem:a917e8d9dc3309ac17ddf923943ad873b" id="r_a917e8d9dc3309ac17ddf923943ad873b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a917e8d9dc3309ac17ddf923943ad873b">registerCommand</a> (const std::string &amp;name, std::function&lt; std::unique_ptr&lt; <a class="el" href="classICommand.html">ICommand</a> &gt;(std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;, std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;)&gt; creator)</td></tr>
 <tr class="memdesc:a917e8d9dc3309ac17ddf923943ad873b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a creator function for a new command.  <br /></td></tr>
-<tr class="memitem:a4a777093b42a99531b14e6f2321b3542" id="r_a4a777093b42a99531b14e6f2321b3542"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classICommand.html">ICommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a777093b42a99531b14e6f2321b3542">createCommand</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a4a777093b42a99531b14e6f2321b3542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a command object by its name.  <br /></td></tr>
+<tr class="memitem:ae02afa8bcfb45a9e847afc4341a6478c" id="r_ae02afa8bcfb45a9e847afc4341a6478c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae02afa8bcfb45a9e847afc4341a6478c">getCommandDescription</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:ae02afa8bcfb45a9e847afc4341a6478c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the brief description for a registered command.  <br /></td></tr>
+<tr class="memitem:a5cf9650357540bf23af2136d08385f64" id="r_a5cf9650357540bf23af2136d08385f64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cf9650357540bf23af2136d08385f64">showCommandHelp</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:a5cf9650357540bf23af2136d08385f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the detailed help and usage for a registered command.  <br /></td></tr>
+<tr class="memitem:ab8448b0292b6f5f9cfdafb4fb33102dc" id="r_ab8448b0292b6f5f9cfdafb4fb33102dc"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classICommand.html">ICommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8448b0292b6f5f9cfdafb4fb33102dc">createCommand</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:ab8448b0292b6f5f9cfdafb4fb33102dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a command object by its name.  <br /></td></tr>
 <tr class="memitem:ae390c14a70557144e76f3b114036078e" id="r_ae390c14a70557144e76f3b114036078e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae390c14a70557144e76f3b114036078e">getRegisteredCommands</a> () const</td></tr>
 <tr class="memdesc:ae390c14a70557144e76f3b114036078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a list of names for all currently registered commands.  <br /></td></tr>
 </table>
@@ -159,8 +163,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a4a777093b42a99531b14e6f2321b3542" name="a4a777093b42a99531b14e6f2321b3542"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a777093b42a99531b14e6f2321b3542">&#9670;&#160;</a></span>createCommand()</h2>
+<a id="ab8448b0292b6f5f9cfdafb4fb33102dc" name="ab8448b0292b6f5f9cfdafb4fb33102dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8448b0292b6f5f9cfdafb4fb33102dc">&#9670;&#160;</a></span>createCommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +173,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classICommand.html">ICommand</a> &gt; CommandFactory::createCommand </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,11 +182,40 @@ Public Member Functions</h2></td></tr>
 <ul>
 <li>Transfers ownership (via unique_ptr) of the created object to the caller. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the command (the key in the creators_ map). </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the command (the key in the creators map). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;ICommand&gt; holding a new command object, or nullptr if the command is not registered. </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="ae02afa8bcfb45a9e847afc4341a6478c" name="ae02afa8bcfb45a9e847afc4341a6478c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae02afa8bcfb45a9e847afc4341a6478c">&#9670;&#160;</a></span>getCommandDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CommandFactory::getCommandDescription </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the brief description for a registered command. </p>
+<ul>
+<li>To do this, it must create a temporary instance of the command. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the command. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The command's description string, or an error message if the command is not registered. </dd></dl>
 </li>
 </ul>
 
@@ -235,6 +268,34 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a5cf9650357540bf23af2136d08385f64" name="a5cf9650357540bf23af2136d08385f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cf9650357540bf23af2136d08385f64">&#9670;&#160;</a></span>showCommandHelp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandFactory::showCommandHelp </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the detailed help and usage for a registered command. </p>
+<ul>
+<li>This is accomplished by creating a temporary command instance and calling its showHelp method. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the command. </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
 
 </div>
 </div>

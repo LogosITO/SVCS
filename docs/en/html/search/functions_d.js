@@ -6,7 +6,8 @@ var searchData=
   ['setlevel_3',['setLevel',['../classLogger.html#ab8a7575ce3865917922563c88ab4f876',1,'Logger']]],
   ['setpattern_4',['setPattern',['../classLogger.html#a8925c4a17c3ec533a548ea01b3608d01',1,'Logger']]],
   ['setsubject_5',['setSubject',['../classObjectStorage.html#a0dc7bb15cb48b9795149e3572c4c7c3c',1,'ObjectStorage']]],
-  ['showhelp_6',['showHelp',['../classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb',1,'BaseCommand::showHelp()'],['../classICommand.html#a4e74912364d9172184235e5e5df55c7d',1,'ICommand::showHelp()'],['../classInitCommand.html#a73f3ea39174694f150375f01cbff53eb',1,'InitCommand::showHelp()']]],
-  ['stage_5ffile_7',['stage_file',['../classIndex.html#a37a1115070ac00586a9b69cf9c26b115',1,'Index']]],
-  ['stagefile_8',['stageFile',['../classRepository.html#ae75a20286b79919005724ab4dfa80717',1,'Repository']]]
+  ['showcommandhelp_6',['showCommandHelp',['../classCommandFactory.html#a5cf9650357540bf23af2136d08385f64',1,'CommandFactory::showCommandHelp()'],['../classHelpService.html#a1ea55dca8e2d594c97ce5dc3efca8053',1,'HelpService::showCommandHelp()']]],
+  ['showhelp_7',['showHelp',['../classBaseCommand.html#a98e0e914f24383408fc7e8fc977baccb',1,'BaseCommand::showHelp()'],['../classHelpCommand.html#afacdd5404027b7bd4dc7a6958b2e8c3a',1,'HelpCommand::showHelp()'],['../classICommand.html#a4e74912364d9172184235e5e5df55c7d',1,'ICommand::showHelp()'],['../classInitCommand.html#a73f3ea39174694f150375f01cbff53eb',1,'InitCommand::showHelp()']]],
+  ['stage_5ffile_8',['stage_file',['../classIndex.html#a37a1115070ac00586a9b69cf9c26b115',1,'Index']]],
+  ['stagefile_9',['stageFile',['../classRepository.html#ae75a20286b79919005724ab4dfa80717',1,'Repository']]]
 ];

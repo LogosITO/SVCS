@@ -14,7 +14,7 @@ HelpCommand::HelpCommand(std::shared_ptr<ISubject> subject,
     : eventBus_(subject), helpService_(helpService) {
 }
 
-bool HelpCommand::execute(const std::vector<std::string>& args) {
+bool HelpCommand::execute(const std::vector<std::string>& args) {   
     if (args.empty()) {
         showGeneralHelp();
         return true;
@@ -24,7 +24,6 @@ bool HelpCommand::execute(const std::vector<std::string>& args) {
     showCommandHelp(commandName);
     return true;
 }
-
 std::string HelpCommand::getDescription() const {
     return "Show help information for commands";
 }

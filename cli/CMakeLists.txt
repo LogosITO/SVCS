@@ -1,6 +1,7 @@
 set(CLI_SOURCES
     src/HelpService.cxx
     src/HelpCommand.cxx
+    src/VersionCommand.cxx
     src/InitCommand.cxx
     src/AddCommand.cxx
     src/CommandFactory.cxx
@@ -9,9 +10,10 @@ set(CLI_SOURCES
 
 set(CLI_HEADERS
     include/HelpService.hxx
-    include/HelpCommand.hxx
     include/BaseCommand.hxx
     include/ICommand.hxx
+    include/HelpCommand.hxx
+    include/VersionCommand.hxx
     include/InitCommand.hxx
     include/AddCommand.hxx
     include/CommandFactory.hxx

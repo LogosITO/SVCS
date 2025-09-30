@@ -11,6 +11,7 @@
 #include "../include/AddCommand.hxx"
 #include "../include/HelpService.hxx"
 #include "../include/HelpCommand.hxx"
+#include "../include/VersionCommand.hxx"
 
 #include <iostream>
 #include <memory>
@@ -37,21 +38,9 @@ CommandFactory::CommandFactory(std::shared_ptr<ISubject> bus,
 void CommandFactory::registerDefaultCommands() {
     std::cout << "DEBUG: CommandFactory initializing..." << std::endl;
 
-    registerCommand("help", [this](std::shared_ptr<ISubject> bus, 
-                                  std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
-        // Создаем HelpService с callback'ами вместо прямого доступа к CommandFactory
-        auto helpService = std::make_shared<HelpService>(
-            bus,
-            [this]() { return this->getRegisteredCommands(); },
-            [this](const std::string& cmd) { return this->getCommandDescription(cmd); },
-            [this](const std::string& cmd) { this->showCommandHelp(cmd); },
-            [this](const std::string& cmd) { 
-                auto command = this->createCommand(cmd);
-                return command ? command->getUsage() : "";
-            }
-        );
-        
-        return std::make_unique<HelpCommand>(bus, helpService);
+    registerCommand("version", [](std::shared_ptr<ISubject> bus, 
+                                 std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+        return std::make_unique<VersionCommand>(bus);
     });
     
     registerCommand("init", [](std::shared_ptr<ISubject> bus, 
@@ -66,6 +55,22 @@ void CommandFactory::registerDefaultCommands() {
         return std::make_unique<AddCommand>(bus, repoManager);
     });
     
+    registerCommand("help", [this](std::shared_ptr<ISubject> bus, 
+                                  std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+        auto helpService = std::make_shared<HelpService>(
+            bus,
+            [this]() { return this->getRegisteredCommands(); },
+            [this](const std::string& cmd) { return this->getCommandDescription(cmd); },
+            [this](const std::string& cmd) { this->showCommandHelp(cmd); },
+            [this](const std::string& cmd) { 
+                auto command = this->createCommand(cmd);
+                return command ? command->getUsage() : "";
+            }
+        );
+        
+        return std::make_unique<HelpCommand>(bus, helpService);
+    });
+
     std::cout << "DEBUG: CommandFactory registered " << creators.size() << " commands" << std::endl;
 }
 

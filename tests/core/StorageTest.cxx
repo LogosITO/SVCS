@@ -30,6 +30,12 @@ Blob create_blob(const std::string& content) {
     return Blob(content);
 }
 
+
+/**
+ * @brief Mock implementation of ISubject.
+ * * This mock silences all event notifications, ensuring ObjectStorage tests run 
+ * without side effects from the event system.
+ */
 class MockSubject : public ISubject {
 public:
     void notify(const Event& event) const override { } 
@@ -39,13 +45,22 @@ public:
     ~MockSubject() override = default;
 };
 
-
+/**
+ * @brief Null implementation of IObserver.
+ * * Used primarily to satisfy the IObserver interface requirements if needed by other components, 
+ * but not directly used for checking events in these ObjectStorage tests.
+ */
 class NullObserver : public IObserver {
 public:
     void update(const Event& event) override {}
     void notify(const Event& event) override {} 
 };
 
+/**
+ * @brief Test fixture for the ObjectStorage class.
+ * * Manages the setup and teardown of the necessary filesystem structure 
+ * (the temporary object storage directory) for isolated testing.
+ */
 class ObjectStorageTest : public ::testing::Test {
 protected:
     ObjectStorage* storage;

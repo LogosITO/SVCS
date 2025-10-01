@@ -17,6 +17,11 @@
 
 namespace fs = std::filesystem;
 
+/**
+ * @brief Manual mock implementation of the IObserver interface.
+ * * This class records all events received via the 'update' or 'notify' methods, 
+ * allowing test assertions on event content and count.
+ */
 class ManualMockObserver : public IObserver {
 public:
     std::vector<Event> received_events;
@@ -58,6 +63,11 @@ public:
     }
 };
 
+/**
+ * @brief Test fixture for Repository class unit tests.
+ * * Manages the setup and teardown of a temporary, isolated directory on the filesystem 
+ * for each test case, ensuring a clean testing environment for repository operations.
+ */
 class RepositoryTest : public ::testing::Test {
 protected:
     fs::path temp_dir_;

@@ -20,6 +20,11 @@
 
 namespace fs = std::filesystem;
 
+/**
+ * @brief Mock implementation of ISubject (Event Bus).
+ * * This mock silences all notifications, ensuring that Index logic is tested
+ * without side effects from the event system.
+ */
 class MockSubject : public ISubject {
 public:
     void notify(const Event& event) const override { } 
@@ -32,6 +37,12 @@ public:
 // Глобальный mock subject для использования
 static MockSubject g_mock_subject;
 
+/**
+ * @brief Mock implementation of ObjectStorage.
+ * * This mock substitutes the actual filesystem I/O for object saving and loading 
+ * with an in-memory map, allowing for fast, isolated testing of the Index's interaction 
+ * with the storage layer.
+ */
 class MockObjectStorage : public ObjectStorage {
 public:
     mutable std::map<std::string, std::string> saved_blobs;

@@ -2,6 +2,8 @@ find_package(GTest REQUIRED)
 
 set(CLI_TEST_SOURCES
     InitCommandTest.cxx
+    AddCommandTest.cxx
+    ClearCommandTest.cxx
 )
 
 add_executable(svcs_cli_unit_tests ${CLI_TEST_SOURCES})

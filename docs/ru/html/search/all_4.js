@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['debug_0',['DEBUG',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15',1,'Logger.hxx']]],
-  ['debug_1',['debug',['../classLogger.html#a38b544d566463a65d0dbf4ff7f867962',1,'Logger']]],
-  ['deserialize_2',['deserialize',['../classCommit.html#a0f37624e98ed1dc6404795756127be52',1,'Commit::deserialize()'],['../classTree.html#a85166cfd9d904644216cdacb0b4b7d54',1,'Tree::deserialize()']]],
-  ['detach_3',['detach',['../classRepository.html#a1e421ee99132cf3dcaac6fc54ba0ab7d',1,'Repository::detach()'],['../classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a',1,'EventBus::detach()'],['../classISubject.html#aad2217012b14bdd6c91eb240689e5a74',1,'ISubject::detach()'],['../classMockSubject.html#a7a19cfe5e16907e32c0ace1ff7d6992e',1,'MockSubject::detach(std::shared_ptr&lt; IObserver &gt; observer) override'],['../classMockSubject.html#a7a19cfe5e16907e32c0ace1ff7d6992e',1,'MockSubject::detach(std::shared_ptr&lt; IObserver &gt; observer) override']]],
-  ['details_4',['details',['../structEvent.html#afedba76038909cf242d7642da3b7bfd9',1,'Event']]],
-  ['development_20status_5',['📈 Development Status',['../md_README.html#autotoc_md14',1,'']]],
-  ['distributed_20under_20the_20mit_20license_6',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md21',1,'']]],
-  ['documentation_20api_20reference_7',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md18',1,'']]],
-  ['documentation_20ru_8',['- &lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation (RU)&lt;/a&gt;',['../md_README.html#autotoc_md19',1,'']]]
+  ['educational_20architecture_20patterns_0',['🎓 Educational Architecture Patterns',['../md_README.html#autotoc_md18',1,'']]],
+  ['error_1',['ERROR',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5',1,'Logger.hxx']]],
+  ['error_2',['error',['../classLogger.html#ab6042fdfcbb14026098e0df9d6b32f27',1,'Logger']]],
+  ['event_3',['Event',['../structEvent.html',1,'']]],
+  ['event_2ehxx_4',['Event.hxx',['../Event_8hxx.html',1,'']]],
+  ['eventbus_5',['EventBus',['../classEventBus.html',1,'']]],
+  ['eventbus_2ehxx_6',['EventBus.hxx',['../EventBus_8hxx.html',1,'']]],
+  ['eventsubject_5f_7',['eventSubject_',['../classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8',1,'BaseCommand']]],
+  ['evolution_8',['📈 Project Evolution',['../md_README.html#autotoc_md20',1,'']]],
+  ['excellence_9',['🏗️ Architectural Excellence',['../md_README.html#autotoc_md16',1,'']]],
+  ['execute_10',['execute',['../classClearCommand.html#a9a6dfeec2af7b10ed370b34ba898a480',1,'ClearCommand::execute()'],['../classHelpCommand.html#aacde352bc8bc40668b09415c07857ac7',1,'HelpCommand::execute()'],['../classHistoryCommand.html#a48844d2bcf6037cdac90a8672df62dbd',1,'HistoryCommand::execute()'],['../classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0',1,'ICommand::execute()'],['../classInitCommand.html#a208ebec427828e140dd44c105416423f',1,'InitCommand::execute()'],['../classRemoveCommand.html#a46919288c69d6c00c77e3ac9ebdf0278',1,'RemoveCommand::execute()'],['../classSaveCommand.html#a813b7d30d64cd3c3c09822ba4ff9ab18',1,'SaveCommand::execute()'],['../classStatusCommand.html#afae0046daf1753424c5edc41da5dd471',1,'StatusCommand::execute()'],['../classVersionCommand.html#a0f222db541460934284006830d4c6340',1,'VersionCommand::execute()']]],
+  ['expand_20your_20learning_11',['🔮 Coming Soon - Expand Your Learning',['../md_README.html#autotoc_md22',1,'']]]
 ];

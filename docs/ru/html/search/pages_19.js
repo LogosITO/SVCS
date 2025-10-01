@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['⏳_20configuration_20management_0',['- ⏳ Configuration management',['../md_README.html#autotoc_md17',1,'']]]
+  ['список_20устаревших_20определений_20и_20описаний_0',['Список устаревших определений и описаний',['../deprecated.html',1,'']]]
 ];

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['development_20status_0',['📈 Development Status',['../md_README.html#autotoc_md14',1,'']]],
-  ['distributed_20under_20the_20mit_20license_1',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md21',1,'']]],
-  ['documentation_20api_20reference_2',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md18',1,'']]],
-  ['documentation_20ru_3',['- &lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation (RU)&lt;/a&gt;',['../md_README.html#autotoc_md19',1,'']]]
+  ['deep_20dive_20documentation_0',['📖 Deep Dive Documentation',['../md_README.html#autotoc_md24',1,'']]],
+  ['discovery_1',['Information &amp;amp; Discovery',['../md_README.html#autotoc_md14',1,'']]],
+  ['dive_20documentation_2',['📖 Deep Dive Documentation',['../md_README.html#autotoc_md24',1,'']]],
+  ['documentation_3',['📖 Deep Dive Documentation',['../md_README.html#autotoc_md24',1,'']]],
+  ['documentation_20документация_20на_20русском_20языке_4',['- &lt;b&gt;&lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation&lt;/a&gt;&lt;/b&gt; - Документация на русском языке',['../md_README.html#autotoc_md25',1,'']]]
 ];

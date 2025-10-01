@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['a_20vulnerability_0',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md24',1,'']]],
-  ['achievements_1',['Major Achievements',['../md_README.html#autotoc_md4',1,'']]],
-  ['addcommand_2ecxx_2',['AddCommand.cxx',['../AddCommand_8cxx.html',1,'']]],
-  ['addcommand_2ehxx_3',['AddCommand.hxx',['../AddCommand_8hxx.html',1,'']]],
-  ['addentry_4',['addEntry',['../classIndex.html#aad567874a307f72668d79ffe867c4de2',1,'Index::addEntry()'],['../classTree.html#a772b4bcfb5e44dda6a9ede2470d23250',1,'Tree::addEntry()']]],
-  ['addfiletostaging_5',['addFileToStaging',['../classRepositoryManager.html#aa4a9d5d690cc49d33ad5372fed9b6a54',1,'RepositoryManager']]],
-  ['aliases_20options_6',['Command Aliases &amp;amp; Options',['../md_README.html#autotoc_md9',1,'']]],
-  ['and_20license_7',['📝 Author and License',['../md_README.html#autotoc_md20',1,'']]],
-  ['api_20reference_8',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md18',1,'']]],
-  ['architecture_9',['🏗️ System Architecture',['../md_README.html#autotoc_md13',1,'']]],
-  ['attach_10',['attach',['../classRepository.html#a250a9e24514ca3a4f8c6d954ad4dcefc',1,'Repository::attach()'],['../classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb',1,'EventBus::attach()'],['../classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace',1,'ISubject::attach()'],['../classMockSubject.html#a1cbe4aefca976d0a2f7c5077e9998604',1,'MockSubject::attach(std::shared_ptr&lt; IObserver &gt; observer) override'],['../classMockSubject.html#a1cbe4aefca976d0a2f7c5077e9998604',1,'MockSubject::attach(std::shared_ptr&lt; IObserver &gt; observer) override']]],
-  ['author_20and_20license_11',['📝 Author and License',['../md_README.html#autotoc_md20',1,'']]],
-  ['available_20commands_12',['💻 Available Commands',['../md_README.html#autotoc_md6',1,'']]]
+  ['basecommand_0',['BaseCommand',['../classBaseCommand.html',1,'BaseCommand'],['../classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1',1,'BaseCommand::BaseCommand()']]],
+  ['basecommand_2ehxx_1',['BaseCommand.hxx',['../BaseCommand_8hxx.html',1,'']]],
+  ['better_2',['⭐ &lt;b&gt;Star this repo if SVCS helped you understand version control better!&lt;/b&gt;',['../md_README.html#autotoc_md28',1,'']]],
+  ['binary_5fto_5fhex_5fstring_3',['binary_to_hex_string',['../core_2include_2Utils_8hxx.html#a3c03f3592ffa57a1f2ad8be7ddab13f4',1,'binary_to_hex_string(const unsigned char *binary_data, size_t length):&#160;Utils.cxx'],['../Utils_8cxx.html#ab217ef02a1053f512a96c2e9002e8ebe',1,'binary_to_hex_string(const unsigned char *data, size_t length):&#160;Utils.cxx']]],
+  ['blob_4',['Blob',['../classBlob.html',1,'Blob'],['../classBlob.html#a4e29c0b439c4e2b91f05beb63a5e13ff',1,'Blob::Blob()']]],
+  ['blob_2ecxx_5',['Blob.cxx',['../Blob_8cxx.html',1,'']]],
+  ['blob_2ehxx_6',['Blob.hxx',['../Blob_8hxx.html',1,'']]],
+  ['blob_5fhash_7',['blob_hash',['../structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12',1,'IndexEntry']]],
+  ['blob_5ftest_2ecxx_8',['blob_test.cxx',['../blob__test_8cxx.html',1,'']]]
 ];

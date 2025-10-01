@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['implemented_20stable_0',['✅ Implemented &amp;amp; Stable',['../md_README.html#autotoc_md15',1,'']]],
-  ['information_20help_1',['Information &amp;amp; Help',['../md_README.html#autotoc_md8',1,'']]]
+  ['learning_0',['🔮 Coming Soon - Expand Your Learning',['../md_README.html#autotoc_md22',1,'']]],
+  ['license_20attribution_1',['📝 License &amp;amp; Attribution',['../md_README.html#autotoc_md26',1,'']]],
+  ['list_2',['Deprecated List',['../deprecated.html',1,'']]]
 ];

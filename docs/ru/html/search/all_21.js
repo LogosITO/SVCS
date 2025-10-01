@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📈_20development_20status_0',['📈 Development Status',['../md_README.html#autotoc_md14',1,'']]]
+  ['🎓_20educational_20architecture_20patterns_0',['🎓 Educational Architecture Patterns',['../md_README.html#autotoc_md18',1,'']]]
 ];

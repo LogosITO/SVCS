@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🔄_20planned_20enhancements_0',['🔄 Planned Enhancements',['../md_README.html#autotoc_md16',1,'']]]
+  ['💻_20available_20commands_0',['💻 Available Commands',['../md_README.html#autotoc_md5',1,'']]]
 ];

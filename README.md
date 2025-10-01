@@ -1,9 +1,10 @@
 # 📚 SVCS: Simple Version Control System
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/LogosITO/SVCS/actions)
+[![C++17](https://img.shields.io/badge/C++-17-orange)](https://isocpp.org/)
+[![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blue)](https://github.com/LogosITO/SVCS)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) 
+[![Docs](https://img.shields.io/badge/docs-Doxygen-blue)](https://logosito.github.io/SVCS/en/)  
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
-[![Docs](https://img.shields.io/badge/docs-Doxygen-blue)](link-to-en-docs)  
-
----
 
 **SVCS (Simple Version Control System)** is an educational and research project aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.
 
@@ -28,27 +29,32 @@ SVCS now provides a complete, production-ready command-line interface for versio
 - ✅ **Data Integrity:** SHA-256 hashing for all repository objects
 - ✅ **Factory Pattern:** Extensible command system
 - ✅ **Comprehensive Testing:** Unit tests for core components
+
 ---
 ## 💻 Available Commands
 
 ### Core Version Control
 | Command | Usage | Description |
 |---------|-------|-------------|
-| `init` | `svcs init [path]` | Initialize new repository |
+| `init` | `svcs init [path] [--force]` | Initialize new repository |
 | `add` | `svcs add <file...>` | Add files to staging area |
 | `save` | `svcs save -m "message"` | Save staged changes to repository |
-| `status` | `svcs status` | Show working tree status |
+| `status` | `svcs status [file...]` | Show working tree status |
+| `remove` | `svcs remove <file...> [--all]` | Remove files from staging area |
+| `clear` | `svcs clear [--force]` | Remove SVCS repository |
 
-### Information & Help
+### Information & History
 | Command | Usage | Description |
 |---------|-------|-------------|
+| `history` | `svcs history` | Show commit history |
 | `version` | `svcs version` | Show version information |
 | `help` | `svcs help [command]` | Show help for commands |
 
-### Command Aliases & Options
+### Command Options
 - `svcs --version`, `svcs -v` → version information
 - `svcs --help`, `svcs -h` → general help
 - `svcs help <command>` → specific command help
+
 ---
 ## 🛠️ Quick Start Guide
 
@@ -72,53 +78,86 @@ echo "New feature" >> README.md
 svcs add README.md
 svcs save -m "Add new feature"
 
-# 6. View history and get help
+# 6. View history
+svcs history
+
+# 7. Get help
 svcs help status
-svcs version
 ```
+## 🎯 Master Version Control Concepts
+
+### Core Workflow Commands
+| Command | Example | What You'll Learn |
+|---------|---------|-------------------|
+| `init` | `svcs init` | Repository initialization and structure |
+| `add` | `svcs add *.cpp` | Staging area mechanics and file tracking |
+| `save` | `svcs save -m "feat: add auth"` | Commit objects and message formatting |
+| `status` | `svcs status file.txt` | Working tree state management |
+
+### Advanced Operations
+| Command | Example | Concept Demonstrated |
+|---------|---------|---------------------|
+| `remove` | `svcs remove temp.txt` | Staging area manipulation |
+| `remove --all` | `svcs remove --all` | Bulk operations with safety |
+| `clear` | `svcs clear --force` | Repository lifecycle management |
+
+### Information & Discovery
+| Command | Example | Purpose |
+|---------|---------|---------|
+| `version` | `svcs version` | System information |
+| `help` | `svcs help status` | Built-in documentation |
+
 ---
-## 🏗️ System Architecture
 
-| Component | Purpose | Status |
-|-----------|---------|---------|
-| **Core Objects** | | |
-| `Repository` | Manages repository state and components | ✅ Stable |
-| `ObjectStorage` | Handles VCS object storage | ✅ Stable |
-| `Index` | Tracks staging area | ✅ Stable |
-| `Blob`, `Tree`, `Commit` | Core VCS objects | ✅ Stable |
-| **CLI System** | | |
-| `CommandFactory` | Creates command instances | ✅ Stable |
-| `ICommand` | Command interface | ✅ Stable |
-| `HelpService` | Provides command documentation | ✅ Stable |
-| **Infrastructure** | | |
-| `EventBus` | Observer pattern implementation | ✅ Stable |
-| `Logger` | Event-driven logging | ✅ Stable |
+## 🏗️ Architectural Excellence
+
+### Core Components
+| Layer | Components | Learning Value |
+|-------|------------|----------------|
+| **Storage** | `Repository`, `ObjectStorage`, `Index` | Data persistence patterns |
+| **Objects** | `Blob`, `Tree`, `Commit` | Polymorphism and inheritance |
+| **CLI** | `CommandFactory`, `ICommand` | Factory and strategy patterns |
+| **Infra** | `EventBus`, `Logger` | Observer pattern and event handling |
+
+### 🎓 Educational Architecture Patterns
+- **Command Pattern** for extensible operations
+- **Observer Pattern** for decoupled communication  
+- **Factory Pattern** for object creation
+- **Strategy Pattern** for algorithm variation
+- **Immutable Objects** for data integrity
+
 ---
-## 📈 Development Status
 
-### ✅ Implemented & Stable
-- ✅ Repository initialization and management
-- ✅ File staging with `add` command
-- ✅ Commit operations with `save` command  
-- ✅ Status reporting with `status` command
-- ✅ Help system and version information
-- ✅ Event-driven logging architecture
-- ✅ Comprehensive unit testing
+## 📈 Project Evolution
 
-### 🔄 Planned Enhancements
-- ⏳ Branching and merging functionality
-- ⏳ History visualization (`log` command)
-- ⏳ Difference viewing (`diff` command)
-- ⏳ Remote repository support
-- ⏳ Configuration management
+### ✅ Production Ready & Stable
+- ✅ Complete Git-like command suite
+- ✅ Robust object model with cryptographic integrity
+- ✅ Professional CLI with help system
+- ✅ Event-driven architecture
+- ✅ Comprehensive testing suite
+- ✅ Cross-platform compatibility
+
+### 🔮 Coming Soon - Expand Your Learning
+- ⏳ Branching and merging mechanics
+- ⏳ Difference analysis with `diff`
+- ⏳ Remote repository operations
+- ⏳ Configuration management systems
+
 ---
-## 📖 Documentation (API Reference)
+## 📖 Deep Dive Documentation
 
-The API documentation (generated by **Doxygen**) is automatically deployed to GitHub Pages:
+Explore the complete technical documentation:
 
-- [English Documentation (EN)](https://logosito.github.io/SVCS/en/)  
-- [Russian Documentation (RU)](https://logosito.github.io/SVCS/ru/)  
+- **[English Documentation](https://logosito.github.io/SVCS/en/)** - Full API reference and architecture guide
+- **[Russian Documentation](https://logosito.github.io/SVCS/ru/)** - Документация на русском языке
 ---
-## 📝 Author and License
+## 📝 License & Attribution
 
-##### © 2025 LogosITO. Distributed under the MIT License.
+**SVCS** © 2025 LogosITO.  
+Released under the **[MIT License](LICENSE)** - free for learning, sharing, and building upon.
+
+---
+### ⭐ **Star this repo if SVCS helped you understand version control better!**
+
+*"The best way to understand a tool is to build it yourself"*

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📚_20svcs_3a_20simple_20version_20control_20system_0',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]]
+  ['🎯_20master_20version_20control_20concepts_0',['🎯 Master Version Control Concepts',['../md_README.html#autotoc_md11',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['©_202025_20logosito_20distributed_20under_20the_20mit_20license_0',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md21',1,'']]]
+  ['документация_20на_20русском_20языке_0',['- &lt;b&gt;&lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation&lt;/a&gt;&lt;/b&gt; - Документация на русском языке',['../md_README.html#autotoc_md25',1,'']]]
 ];

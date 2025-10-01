@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['help_0',['Information &amp;amp; Help',['../md_README.html#autotoc_md8',1,'']]],
-  ['help_1',['- &lt;span class=&quot;tt&quot;&gt;svcs help &amp;lt;command&amp;gt;&lt;/span&gt; → specific command help',['../md_README.html#autotoc_md10',1,'']]],
-  ['help_20→_20specific_20command_20help_2',['- &lt;span class=&quot;tt&quot;&gt;svcs help &amp;lt;command&amp;gt;&lt;/span&gt; → specific command help',['../md_README.html#autotoc_md10',1,'']]],
-  ['how_20to_20report_20a_20vulnerability_3',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md24',1,'']]]
+  ['if_20svcs_20helped_20you_20understand_20version_20control_20better_0',['⭐ &lt;b&gt;Star this repo if SVCS helped you understand version control better!&lt;/b&gt;',['../md_README.html#autotoc_md28',1,'']]],
+  ['information_20discovery_1',['Information &amp;amp; Discovery',['../md_README.html#autotoc_md14',1,'']]],
+  ['information_20history_2',['Information &amp;amp; History',['../md_README.html#autotoc_md7',1,'']]]
 ];

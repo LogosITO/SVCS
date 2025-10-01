@@ -94,10 +94,8 @@ $(function(){initNavTree('md_README.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
-<p>[<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="pointer-events: none;" class="inline"/>](LICENSE) <br  />
- [<img src="https://img.shields.io/badge/docs-Doxygen-blue" alt="Docs" class="inline"/>](link-to-en-docs) <br  />
+<p><a href="https://github.com/LogosITO/SVCS/actions"><img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status" class="inline"/></a> <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/C++-17-orange" alt="C++17" class="inline"/></a> <a href="https://github.com/LogosITO/SVCS"><img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blue" alt="Platforms" class="inline"/></a> [<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="pointer-events: none;" class="inline"/>](LICENSE) <a href="https://logosito.github.io/SVCS/en/"><img src="https://img.shields.io/badge/docs-Doxygen-blue" alt="Docs" class="inline"/></a> <br  />
 </p>
-<hr  />
 <p><b>SVCS (Simple Version Control System)</b> is an educational and research project aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.</p>
 <p>The main goal of the project is to gain a deep understanding of core concepts:</p>
 <ul>
@@ -109,10 +107,10 @@ $(function(){initNavTree('md_README.html','',''); });
 </li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 🚀 Current Project Status: Production Ready CLI</h1>
 <p>SVCS now provides a complete, production-ready command-line interface for version control. The system supports all essential VCS operations with a clean, intuitive API.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Major Achievements</h2>
 <ul>
 <li>✅ <b>Complete Command Suite:</b> Full set of essential VCS commands</li>
@@ -121,45 +119,51 @@ Major Achievements</h2>
 <li>✅ <b>Event-Driven Architecture:</b> Flexible logging with <a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a> pattern</li>
 <li>✅ <b>Memory Safety:</b> Zero memory errors (Valgrind verified)</li>
 <li>✅ <b>Data Integrity:</b> SHA-256 hashing for all repository objects</li>
-<li>✅ <b>Factory Pattern:</b> Extensible command system </li>
+<li>✅ <b>Factory Pattern:</b> Extensible command system</li>
+<li>✅ <b>Comprehensive Testing:</b> Unit tests for core components</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
-- ✅ <b>Comprehensive Testing:</b> Unit tests for core components</h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<hr  />
+ <h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 💻 Available Commands</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Core Version Control</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Command  </th><th class="markdownTableHeadNone">Usage  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">init</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs init [path]</span>  </td><td class="markdownTableBodyNone">Initialize new repository  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">init</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs init [path] [--force]</span>  </td><td class="markdownTableBodyNone">Initialize new repository  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">add</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs add &lt;file...&gt;</span>  </td><td class="markdownTableBodyNone">Add files to staging area  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">save</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs save -m "message"</span>  </td><td class="markdownTableBodyNone">Save staged changes to repository  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">status</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs status</span>  </td><td class="markdownTableBodyNone">Show working tree status  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">status</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs status [file...]</span>  </td><td class="markdownTableBodyNone">Show working tree status  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">remove</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs remove &lt;file...&gt; [--all]</span>  </td><td class="markdownTableBodyNone">Remove files from staging area  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">clear</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs clear [--force]</span>  </td><td class="markdownTableBodyNone">Remove SVCS repository  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
-Information &amp; Help</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Information &amp; History</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Command  </th><th class="markdownTableHeadNone">Usage  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">version</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs version</span>  </td><td class="markdownTableBodyNone">Show version information  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">history</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs history</span>  </td><td class="markdownTableBodyNone">Show commit history  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">version</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs version</span>  </td><td class="markdownTableBodyNone">Show version information  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">help</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs help [command]</span>  </td><td class="markdownTableBodyNone">Show help for commands  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
-Command Aliases &amp; Options</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Command Options</h2>
 <ul>
 <li><span class="tt">svcs --version</span>, <span class="tt">svcs -v</span> → version information</li>
-<li><span class="tt">svcs --help</span>, <span class="tt">svcs -h</span> → general help </li>
+<li><span class="tt">svcs --help</span>, <span class="tt">svcs -h</span> → general help</li>
+<li><span class="tt">svcs help &lt;command&gt;</span> → specific command help</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
-- <span class="tt">svcs help &lt;command&gt;</span> → specific command help</h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<hr  />
+ <h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 🛠️ Quick Start Guide</h1>
 <div class="fragment"><div class="line"># 1. Initialize repository</div>
 <div class="line">svcs init my-project</div>
@@ -180,78 +184,114 @@ Command Aliases &amp; Options</h2>
 <div class="line">svcs add README.md</div>
 <div class="line">svcs save -m &quot;Add new feature&quot;</div>
 <div class="line"> </div>
-<div class="line"># 6. View history and get help</div>
+<div class="line"># 6. View history</div>
+<div class="line">svcs history</div>
+<div class="line"> </div>
+<div class="line"># 7. Get help</div>
 <div class="line">svcs help status</div>
-<div class="line">svcs version</div>
-</div><!-- fragment --> <hr  />
- <h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
-🏗️ System Architecture</h1>
+</div><!-- fragment --> <h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+🎯 Master Version Control Concepts</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Core Workflow Commands</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Component  </th><th class="markdownTableHeadNone">Purpose  </th><th class="markdownTableHeadNone">Status  </th></tr>
+<th class="markdownTableHeadNone">Command  </th><th class="markdownTableHeadNone">Example  </th><th class="markdownTableHeadNone">What You'll Learn  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Core Objects</b>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><span class="tt">init</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs init</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> initialization and structure  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a></span>  </td><td class="markdownTableBodyNone">Manages repository state and components  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">add</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs add *.cpp</span>  </td><td class="markdownTableBodyNone">Staging area mechanics and file tracking  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a></span>  </td><td class="markdownTableBodyNone">Handles VCS object storage  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">save</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs save -m "feat: add auth"</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> objects and message formatting  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a></span>  </td><td class="markdownTableBodyNone">Tracks staging area  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">status</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs status file.txt</span>  </td><td class="markdownTableBodyNone">Working tree state management  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Advanced Operations</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Command  </th><th class="markdownTableHeadNone">Example  </th><th class="markdownTableHeadNone">Concept Demonstrated  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>, <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>  </td><td class="markdownTableBodyNone">Core VCS objects  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">remove</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs remove temp.txt</span>  </td><td class="markdownTableBodyNone">Staging area manipulation  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>CLI System</b>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><span class="tt">remove --all</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs remove --all</span>  </td><td class="markdownTableBodyNone">Bulk operations with safety  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classCommandFactory.html" title="Factory for creating ICommand objects by their string name.">CommandFactory</a></span>  </td><td class="markdownTableBodyNone">Creates command instances  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a></span>  </td><td class="markdownTableBodyNone">Command interface  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">clear</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs clear --force</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> lifecycle management  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Information &amp; Discovery</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Command  </th><th class="markdownTableHeadNone">Example  </th><th class="markdownTableHeadNone">Purpose  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a></span>  </td><td class="markdownTableBodyNone">Provides command documentation  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">version</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs version</span>  </td><td class="markdownTableBodyNone">System information  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Infrastructure</b>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a></span>  </td><td class="markdownTableBodyNone">Observer pattern implementation  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a></span>  </td><td class="markdownTableBodyNone">Event-driven logging  </td><td class="markdownTableBodyNone">✅ Stable  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">help</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs help status</span>  </td><td class="markdownTableBodyNone">Built-in documentation  </td></tr>
 </table>
 <hr  />
- <h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
-📈 Development Status</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
-✅ Implemented &amp; Stable</h2>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+🏗️ Architectural Excellence</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Core Components</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Layer  </th><th class="markdownTableHeadNone">Components  </th><th class="markdownTableHeadNone">Learning Value  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Storage</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a></span>, <span class="tt"><a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a></span>, <span class="tt"><a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a></span>  </td><td class="markdownTableBodyNone">Data persistence patterns  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Objects</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>, <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>  </td><td class="markdownTableBodyNone">Polymorphism and inheritance  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>CLI</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classCommandFactory.html" title="Factory for creating ICommand objects by their string name.">CommandFactory</a></span>, <span class="tt"><a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a></span>  </td><td class="markdownTableBodyNone">Factory and strategy patterns  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Infra</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a></span>, <span class="tt"><a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a></span>  </td><td class="markdownTableBodyNone">Observer pattern and event handling  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+🎓 Educational Architecture Patterns</h2>
 <ul>
-<li>✅ <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> initialization and management</li>
-<li>✅ File staging with <span class="tt">add</span> command</li>
-<li>✅ <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> operations with <span class="tt">save</span> command <br  />
+<li><b>Command Pattern</b> for extensible operations</li>
+<li><b>Observer Pattern</b> for decoupled communication <br  />
 </li>
-<li>✅ Status reporting with <span class="tt">status</span> command</li>
-<li>✅ Help system and version information</li>
-<li>✅ Event-driven logging architecture</li>
-<li>✅ Comprehensive unit testing</li>
+<li><b>Factory Pattern</b> for object creation</li>
+<li><b>Strategy Pattern</b> for algorithm variation</li>
+<li><b>Immutable Objects</b> for data integrity</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
-🔄 Planned Enhancements</h2>
-<ul>
-<li>⏳ Branching and merging functionality</li>
-<li>⏳ History visualization (<span class="tt">log</span> command)</li>
-<li>⏳ Difference viewing (<span class="tt">diff</span> command)</li>
-<li>⏳ Remote repository support </li>
-</ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
-- ⏳ Configuration management</h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
-📖 Documentation (API Reference)</h1>
-<p>The API documentation (generated by <b>Doxygen</b>) is automatically deployed to GitHub Pages:</p>
-<ul>
-<li><a href="https://logosito.github.io/SVCS/en/">English Documentation (EN)</a> <br  />
- </li>
-</ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
-- <a href="https://logosito.github.io/SVCS/ru/">Russian Documentation (RU)</a></h1>
+<hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
-📝 Author and License</h1>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
-© 2025 LogosITO. Distributed under the MIT License.</h4>
+📈 Project Evolution</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+✅ Production Ready &amp; Stable</h2>
+<ul>
+<li>✅ Complete Git-like command suite</li>
+<li>✅ Robust object model with cryptographic integrity</li>
+<li>✅ Professional CLI with help system</li>
+<li>✅ Event-driven architecture</li>
+<li>✅ Comprehensive testing suite</li>
+<li>✅ Cross-platform compatibility</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+🔮 Coming Soon - Expand Your Learning</h2>
+<ul>
+<li>⏳ Branching and merging mechanics</li>
+<li>⏳ Difference analysis with <span class="tt">diff</span></li>
+<li>⏳ Remote repository operations</li>
+<li>⏳ Configuration management systems</li>
+</ul>
+<hr  />
+ <h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+📖 Deep Dive Documentation</h1>
+<p>Explore the complete technical documentation:</p>
+<ul>
+<li><b><a href="https://logosito.github.io/SVCS/en/">English Documentation</a></b> - Full API reference and architecture guide </li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+- <b><a href="https://logosito.github.io/SVCS/ru/">Russian Documentation</a></b> - Документация на русском языке</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+📝 License &amp; Attribution</h1>
+<p><b>SVCS</b> © 2025 LogosITO. <br  />
+ Released under the <b>[MIT License](LICENSE)</b> - free for learning, sharing, and building upon.</p>
+<hr  />
+ <h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+⭐ <b>Star this repo if SVCS helped you understand version control better!</b></h2>
+<p><em>"The best way to understand a tool is to build it yourself"</em> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

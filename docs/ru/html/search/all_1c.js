@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['→_20specific_20command_20help_0',['- &lt;span class=&quot;tt&quot;&gt;svcs help &amp;lt;command&amp;gt;&lt;/span&gt; → specific command help',['../md_README.html#autotoc_md10',1,'']]]
+  ['список_20устаревших_20определений_20и_20описаний_0',['Список устаревших определений и описаний',['../deprecated.html',1,'']]]
 ];

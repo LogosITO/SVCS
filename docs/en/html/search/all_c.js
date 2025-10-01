@@ -1,6 +1,14 @@
 var searchData=
 [
-  ['name_0',['name',['../structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f',1,'TreeEntry']]],
-  ['notify_1',['notify',['../classRepository.html#a7ce8792d0a1493d98986fb2732b95c4c',1,'Repository::notify()'],['../classEventBus.html#a581f243551365d2dc9599665540486dd',1,'EventBus::notify()'],['../classIObserver.html#a325451b0d0100feaad6f683850a616dc',1,'IObserver::notify()'],['../classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474',1,'ISubject::notify()'],['../classLogger.html#a96a2b88ee6d81d3ecf0fed3a6291c9a2',1,'Logger::notify()'],['../classMockSubject.html#a9aaffe9cd012979c90c186ea3ec86fc0',1,'MockSubject::notify()'],['../classMockObserver.html#a8fd6d2d376fb45dfee6968489b2057bb',1,'MockObserver::notify()'],['../classManualMockObserver.html#a2d0cef17d9225d64ce23dbf3451bb610',1,'ManualMockObserver::notify()'],['../classMockSubject.html#a9aaffe9cd012979c90c186ea3ec86fc0',1,'MockSubject::notify()'],['../classNullObserver.html#aeb635126b1e4270cb50229b157525270',1,'NullObserver::notify()']]],
-  ['nullobserver_2',['NullObserver',['../classNullObserver.html',1,'']]]
+  ['object_5ftest_2ecxx_0',['object_test.cxx',['../object__test_8cxx.html',1,'']]],
+  ['objectexists_1',['objectExists',['../classObjectStorage.html#abbc8d8426ae0f500aa7a6dba213e0bed',1,'ObjectStorage']]],
+  ['objectstorage_2',['ObjectStorage',['../classObjectStorage.html',1,'ObjectStorage'],['../classObjectStorage.html#aa511ec3636de4f1ad6f411e7a2aa2638',1,'ObjectStorage::ObjectStorage()']]],
+  ['objectstorage_2ecxx_3',['ObjectStorage.cxx',['../ObjectStorage_8cxx.html',1,'']]],
+  ['objectstorage_2ehxx_4',['ObjectStorage.hxx',['../ObjectStorage_8hxx.html',1,'']]],
+  ['objectstoragetest_5',['ObjectStorageTest',['../classObjectStorageTest.html',1,'']]],
+  ['operations_6',['Advanced Operations',['../md_README.html#autotoc_md13',1,'']]],
+  ['operator_3c_7',['operator&lt;',['../structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940',1,'TreeEntry']]],
+  ['operator_3d_8',['operator=',['../classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7',1,'CommandFactory']]],
+  ['options_9',['Command Options',['../md_README.html#autotoc_md8',1,'']]],
+  ['our_20process_10',['Our Process',['../md_SECURITY.html#autotoc_md33',1,'']]]
 ];

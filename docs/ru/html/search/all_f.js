@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['quick_20start_20guide_0',['🛠️ Quick Start Guide',['../md_README.html#autotoc_md11',1,'']]]
+  ['read_5ffile_5fto_5fstring_0',['read_file_to_string',['../core_2include_2Utils_8hxx.html#aee4ae6af295150b8d2daa18f1b1b1a01',1,'read_file_to_string(const fs::path &amp;full_path):&#160;Utils.cxx'],['../Utils_8cxx.html#aee4ae6af295150b8d2daa18f1b1b1a01',1,'read_file_to_string(const fs::path &amp;full_path):&#160;Utils.cxx']]],
+  ['ready_20cli_1',['🚀 Current Project Status: Production Ready CLI',['../md_README.html#autotoc_md2',1,'']]],
+  ['ready_20stable_2',['✅ Production Ready &amp;amp; Stable',['../md_README.html#autotoc_md21',1,'']]],
+  ['registercommand_3',['registerCommand',['../classCommandFactory.html#a917e8d9dc3309ac17ddf923943ad873b',1,'CommandFactory']]],
+  ['removecommand_4',['RemoveCommand',['../classRemoveCommand.html',1,'RemoveCommand'],['../classRemoveCommand.html#a740894bbd2e7bad0711ffd1191d4691c',1,'RemoveCommand::RemoveCommand()']]],
+  ['removecommand_2ecxx_5',['RemoveCommand.cxx',['../RemoveCommand_8cxx.html',1,'']]],
+  ['removecommand_2ehxx_6',['RemoveCommand.hxx',['../RemoveCommand_8hxx.html',1,'']]],
+  ['removeentry_7',['removeEntry',['../classTree.html#a85035a45ff8778df5bb8be32f57bf232',1,'Tree']]],
+  ['removerepository_8',['removeRepository',['../classRepositoryManager.html#ab28d4e38ff9c3691fce81ca9e67556ba',1,'RepositoryManager']]],
+  ['repo_20if_20svcs_20helped_20you_20understand_20version_20control_20better_9',['⭐ &lt;b&gt;Star this repo if SVCS helped you understand version control better!&lt;/b&gt;',['../md_README.html#autotoc_md28',1,'']]],
+  ['repomanager_5ftest_2ecxx_10',['repomanager_test.cxx',['../repomanager__test_8cxx.html',1,'']]],
+  ['report_20a_20vulnerability_11',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md31',1,'']]],
+  ['repository_12',['Repository',['../classRepository.html',1,'Repository'],['../classRepository.html#a6630b76df7b7093650373d799367e28d',1,'Repository::Repository()']]],
+  ['repository_2ecxx_13',['Repository.cxx',['../Repository_8cxx.html',1,'']]],
+  ['repository_2ehxx_14',['Repository.hxx',['../Repository_8hxx.html',1,'']]],
+  ['repository_5ftest_2ecxx_15',['repository_test.cxx',['../repository__test_8cxx.html',1,'']]],
+  ['repositorymanager_16',['RepositoryManager',['../classRepositoryManager.html',1,'RepositoryManager'],['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager::RepositoryManager()']]],
+  ['repositorymanager_2ecxx_17',['RepositoryManager.cxx',['../RepositoryManager_8cxx.html',1,'']]],
+  ['repositorymanager_2ehxx_18',['RepositoryManager.hxx',['../RepositoryManager_8hxx.html',1,'']]],
+  ['repositorymanagertest_19',['RepositoryManagerTest',['../classRepositoryManagerTest.html',1,'']]],
+  ['repositorytest_20',['RepositoryTest',['../classRepositoryTest.html',1,'']]],
+  ['russian_20documentation_20документация_20на_20русском_20языке_21',['- &lt;b&gt;&lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation&lt;/a&gt;&lt;/b&gt; - Документация на русском языке',['../md_README.html#autotoc_md25',1,'']]]
 ];

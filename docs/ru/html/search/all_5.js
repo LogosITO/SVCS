@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['enhancements_0',['🔄 Planned Enhancements',['../md_README.html#autotoc_md16',1,'']]],
-  ['error_1',['ERROR',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5',1,'Logger.hxx']]],
-  ['error_2',['error',['../classLogger.html#ab6042fdfcbb14026098e0df9d6b32f27',1,'Logger']]],
-  ['event_3',['Event',['../structEvent.html',1,'']]],
-  ['event_2ehxx_4',['Event.hxx',['../Event_8hxx.html',1,'']]],
-  ['eventbus_5',['EventBus',['../classEventBus.html',1,'']]],
-  ['eventbus_2ehxx_6',['EventBus.hxx',['../EventBus_8hxx.html',1,'']]],
-  ['eventsubject_5f_7',['eventSubject_',['../classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8',1,'BaseCommand']]],
-  ['execute_8',['execute',['../classClearCommand.html#a9a6dfeec2af7b10ed370b34ba898a480',1,'ClearCommand::execute()'],['../classHelpCommand.html#aacde352bc8bc40668b09415c07857ac7',1,'HelpCommand::execute()'],['../classHistoryCommand.html#a48844d2bcf6037cdac90a8672df62dbd',1,'HistoryCommand::execute()'],['../classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0',1,'ICommand::execute()'],['../classInitCommand.html#a208ebec427828e140dd44c105416423f',1,'InitCommand::execute()'],['../classRemoveCommand.html#a46919288c69d6c00c77e3ac9ebdf0278',1,'RemoveCommand::execute()'],['../classSaveCommand.html#a813b7d30d64cd3c3c09822ba4ff9ab18',1,'SaveCommand::execute()'],['../classStatusCommand.html#afae0046daf1753424c5edc41da5dd471',1,'StatusCommand::execute()'],['../classVersionCommand.html#a0f222db541460934284006830d4c6340',1,'VersionCommand::execute()']]]
+  ['fatal_0',['FATAL',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc',1,'Logger.hxx']]],
+  ['fatal_1',['fatal',['../classLogger.html#ab934865d3713793d0353271a475eaf4b',1,'Logger']]],
+  ['file_5fpath_2',['file_path',['../structIndexEntry.html#ac34233bc45be2fc4cc4c4d6f3ef86173',1,'IndexEntry']]],
+  ['file_5fsize_3',['file_size',['../structIndexEntry.html#a10582a2e090f7c30885f54b42da08048',1,'IndexEntry']]],
+  ['findentry_4',['findEntry',['../classTree.html#a944fe0075293396036606f6a999643f4',1,'Tree']]],
+  ['findrepository_5',['findRepository',['../classBaseCommand.html#a757e9a5a0d6feb0b100536c7380bf088',1,'BaseCommand::findRepository()'],['../classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb',1,'Repository::findRepository()']]],
+  ['flush_6',['flush',['../classLogger.html#a5cc08473729523bb4bde48459f2ac468',1,'Logger']]]
 ];

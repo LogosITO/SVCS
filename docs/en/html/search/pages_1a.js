@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📖_20documentation_20api_20reference_0',['📖 Documentation (API Reference)',['../md_README.html#autotoc_md18',1,'']]]
+  ['🎓_20educational_20architecture_20patterns_0',['🎓 Educational Architecture Patterns',['../md_README.html#autotoc_md18',1,'']]]
 ];

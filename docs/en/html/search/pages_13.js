@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['©_202025_20logosito_20distributed_20under_20the_20mit_20license_0',['© 2025 LogosITO. Distributed under the MIT License.',['../md_README.html#autotoc_md21',1,'']]]
+  ['you_20understand_20version_20control_20better_0',['⭐ &lt;b&gt;Star this repo if SVCS helped you understand version control better!&lt;/b&gt;',['../md_README.html#autotoc_md28',1,'']]],
+  ['your_20learning_1',['🔮 Coming Soon - Expand Your Learning',['../md_README.html#autotoc_md22',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['→_20specific_20command_20help_0',['- &lt;span class=&quot;tt&quot;&gt;svcs help &amp;lt;command&amp;gt;&lt;/span&gt; → specific command help',['../md_README.html#autotoc_md10',1,'']]]
+  ['на_20русском_20языке_0',['- &lt;b&gt;&lt;a href=&quot;https://logosito.github.io/SVCS/ru/&quot;&gt;Russian Documentation&lt;/a&gt;&lt;/b&gt; - Документация на русском языке',['../md_README.html#autotoc_md25',1,'']]]
 ];

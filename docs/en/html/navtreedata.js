@@ -26,30 +26,37 @@ var NAVTREE =
 [
   [ "SVCS", "index.html", [
     [ "📚 SVCS: Simple Version Control System", "md_README.html", [
-      [ "🚀 Current Project Status: Production Ready CLI", "md_README.html#autotoc_md3", [
-        [ "Major Achievements", "md_README.html#autotoc_md4", null ]
+      [ "🚀 Current Project Status: Production Ready CLI", "md_README.html#autotoc_md2", [
+        [ "Major Achievements", "md_README.html#autotoc_md3", null ]
       ] ],
-      [ "- ✅ <b>Comprehensive Testing:</b> Unit tests for core components", "md_README.html#autotoc_md5", null ],
-      [ "💻 Available Commands", "md_README.html#autotoc_md6", [
-        [ "Core Version Control", "md_README.html#autotoc_md7", null ],
-        [ "Information &amp; Help", "md_README.html#autotoc_md8", null ],
-        [ "Command Aliases &amp; Options", "md_README.html#autotoc_md9", null ]
+      [ "💻 Available Commands", "md_README.html#autotoc_md5", [
+        [ "Core Version Control", "md_README.html#autotoc_md6", null ],
+        [ "Information &amp; History", "md_README.html#autotoc_md7", null ],
+        [ "Command Options", "md_README.html#autotoc_md8", null ]
       ] ],
-      [ "- <span class=\"tt\">svcs help &lt;command&gt;</span> → specific command help", "md_README.html#autotoc_md10", null ],
-      [ "🛠️ Quick Start Guide", "md_README.html#autotoc_md11", null ],
-      [ "🏗️ System Architecture", "md_README.html#autotoc_md13", null ],
-      [ "📈 Development Status", "md_README.html#autotoc_md14", [
-        [ "✅ Implemented &amp; Stable", "md_README.html#autotoc_md15", null ],
-        [ "🔄 Planned Enhancements", "md_README.html#autotoc_md16", null ]
+      [ "🛠️ Quick Start Guide", "md_README.html#autotoc_md10", null ],
+      [ "🎯 Master Version Control Concepts", "md_README.html#autotoc_md11", [
+        [ "Core Workflow Commands", "md_README.html#autotoc_md12", null ],
+        [ "Advanced Operations", "md_README.html#autotoc_md13", null ],
+        [ "Information &amp; Discovery", "md_README.html#autotoc_md14", null ]
       ] ],
-      [ "- ⏳ Configuration management", "md_README.html#autotoc_md17", null ],
-      [ "📖 Documentation (API Reference)", "md_README.html#autotoc_md18", null ],
-      [ "- <a href=\"https://logosito.github.io/SVCS/ru/\">Russian Documentation (RU)</a>", "md_README.html#autotoc_md19", null ],
-      [ "📝 Author and License", "md_README.html#autotoc_md20", null ]
+      [ "🏗️ Architectural Excellence", "md_README.html#autotoc_md16", [
+        [ "Core Components", "md_README.html#autotoc_md17", null ],
+        [ "🎓 Educational Architecture Patterns", "md_README.html#autotoc_md18", null ]
+      ] ],
+      [ "📈 Project Evolution", "md_README.html#autotoc_md20", [
+        [ "✅ Production Ready &amp; Stable", "md_README.html#autotoc_md21", null ],
+        [ "🔮 Coming Soon - Expand Your Learning", "md_README.html#autotoc_md22", null ]
+      ] ],
+      [ "📖 Deep Dive Documentation", "md_README.html#autotoc_md24", null ],
+      [ "- <b><a href=\"https://logosito.github.io/SVCS/ru/\">Russian Documentation</a></b> - Документация на русском языке", "md_README.html#autotoc_md25", null ],
+      [ "📝 License &amp; Attribution", "md_README.html#autotoc_md26", [
+        [ "⭐ <b>Star this repo if SVCS helped you understand version control better!</b>", "md_README.html#autotoc_md28", null ]
+      ] ]
     ] ],
     [ "Security Policy", "md_SECURITY.html", [
-      [ "How to Report a Vulnerability", "md_SECURITY.html#autotoc_md24", null ],
-      [ "Our Process", "md_SECURITY.html#autotoc_md26", null ]
+      [ "How to Report a Vulnerability", "md_SECURITY.html#autotoc_md31", null ],
+      [ "Our Process", "md_SECURITY.html#autotoc_md33", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", [

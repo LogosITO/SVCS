@@ -9,12 +9,37 @@
 
 #pragma once
 
+#include "Event.hxx"
 #include "IObserver.hxx"
 #include "ISubject.hxx"
 #include <algorithm>
 #include <vector>
 #include <memory>
 #include <mutex>
+
+namespace ConsoleColor {
+    const std::string RESET = "\033[0m";
+    const std::string BLACK = "\033[30m";
+    const std::string RED = "\033[31m";
+    const std::string GREEN = "\033[32m";
+    const std::string YELLOW = "\033[33m";
+    const std::string BLUE = "\033[34m";
+    const std::string MAGENTA = "\033[35m";
+    const std::string CYAN = "\033[36m";
+    const std::string WHITE = "\033[37m";
+    const std::string BRIGHT_RED = "\033[91m";
+    const std::string BRIGHT_GREEN = "\033[92m";
+    const std::string BRIGHT_YELLOW = "\033[93m";
+    const std::string BRIGHT_BLUE = "\033[94m";
+    const std::string BRIGHT_MAGENTA = "\033[95m";
+    const std::string BRIGHT_CYAN = "\033[96m";
+    const std::string BRIGHT_WHITE = "\033[97m";
+    
+    const std::string BOLD = "\033[1m";
+    const std::string DIM = "\033[2m";
+    const std::string ITALIC = "\033[3m";
+    const std::string UNDERLINE = "\033[4m";
+}
 
 /**
  * @class EventBus
@@ -36,6 +61,44 @@ private:
      * @brief Mutex to ensure thread-safe access to the observers_ vector.
      */
     mutable std::mutex observers_mutex_; // Changed to mutable to allow locking inside const notify
+
+    std::string getEventColor(Event::Type type) const {
+        switch (type) {
+            case Event::REPOSITORY_INIT_SUCCESS:
+                return ConsoleColor::BRIGHT_GREEN;
+            case Event::SAVE_SUCCESS:
+                return ConsoleColor::BRIGHT_GREEN;
+            case Event::ERROR_MESSAGE:
+                return ConsoleColor::BRIGHT_RED;
+            case Event::WARNING_MESSAGE:
+                return ConsoleColor::BRIGHT_YELLOW;
+            case Event::GENERAL_INFO:
+                return ConsoleColor::BRIGHT_CYAN;
+            case Event::DEBUG_MESSAGE:
+                return ConsoleColor::DIM + ConsoleColor::BRIGHT_BLUE;
+            default:
+                return ConsoleColor::WHITE;
+        }
+    }
+
+    std::string getEventIcon(Event::Type type) const {
+        switch (type) {
+            case Event::REPOSITORY_INIT_SUCCESS:
+                return "✅";
+            case Event::SAVE_SUCCESS:
+                return "💾";
+            case Event::ERROR_MESSAGE:
+                return "❌";
+            case Event::WARNING_MESSAGE:
+                return "⚠️ ";
+            case Event::GENERAL_INFO:
+                return "ℹ️ ";
+            case Event::DEBUG_MESSAGE:
+                return "🐛";
+            default:
+                return "";
+        }
+    };
 
 public:
     /**
@@ -74,16 +137,27 @@ public:
      * @brief Sends an event to all active Observers.
      * * Iterates over the list, safely locking each weak pointer before calling update(). 
      * Invalid (expired) weak pointers are effectively ignored.
-     * * @note Your implementation of `notify` uses `const_cast<std::mutex&>(observers_mutex_)` 
+     * @note Your implementation of `notify` uses `const_cast<std::mutex&>(observers_mutex_)` 
      * because `notify` is `const`. A better practice is to declare `observers_mutex_` as **`mutable`**.
-     * * @param event The constant reference to the Event to be published.
+     * @param event The constant reference to the Event to be published.
      */
-    void notify(const Event& event) const override { 
-        std::lock_guard<std::mutex> lock(const_cast<std::mutex&>(observers_mutex_));
-        for (const auto& wp : observers_) {
-            if (auto observer = wp.lock()) {
-                observer->update(event);
-            }
+    void notify(const Event& event) const override{
+        std::string color = getEventColor(event.type);
+        std::string icon = getEventIcon(event.type);
+        std::string sourceColor = ConsoleColor::DIM + ConsoleColor::BLACK;
+        
+        // Форматируем сообщение с цветами
+        std::string formattedMessage = color + icon + " " + event.details + 
+                                      sourceColor + " [" + event.source_name + "]" + 
+                                      ConsoleColor::RESET;
+        
+        // Создаем копию события с отформатированным сообщением
+        Event coloredEvent = event;
+        coloredEvent.details = formattedMessage;
+        
+        for (auto& observer : observers_) {
+            observer.lock()->update(coloredEvent);
         }
     }
+
 };

@@ -10,6 +10,8 @@
 #include "../../services/ISubject.hxx"
 
 #include <fstream>
+#include <sstream>
+#include <chrono>
 
 RepositoryManager::RepositoryManager(std::shared_ptr<ISubject> bus) 
     : eventBus(bus) {

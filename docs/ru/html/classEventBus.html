@@ -237,10 +237,8 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 
 <p>Sends an event to all active Observers. </p>
 <ul>
-<li>Iterates over the list, safely locking each weak pointer before calling update(). Invalid (expired) weak pointers are effectively ignored.</li>
-<li><dl class="section note"><dt>Заметки</dt><dd>Your implementation of <span class="tt">notify</span> uses <span class="tt">const_cast&lt;std::mutex&amp;&gt;(observers_mutex_)</span> because <span class="tt">notify</span> is <span class="tt">const</span>. A better practice is to declare <span class="tt">observers_mutex_</span> as <b><span class="tt">mutable</span></b>.</dd></dl>
-</li>
-<li><dl class="params"><dt>Аргументы</dt><dd>
+<li>Iterates over the list, safely locking each weak pointer before calling update(). Invalid (expired) weak pointers are effectively ignored. <dl class="section note"><dt>Заметки</dt><dd>Your implementation of <span class="tt">notify</span> uses <span class="tt">const_cast&lt;std::mutex&amp;&gt;(observers_mutex_)</span> because <span class="tt">notify</span> is <span class="tt">const</span>. A better practice is to declare <span class="tt">observers_mutex_</span> as <b><span class="tt">mutable</span></b>. </dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>The constant reference to the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> to be published. </td></tr>
   </table>

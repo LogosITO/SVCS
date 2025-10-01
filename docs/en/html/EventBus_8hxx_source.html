@@ -97,65 +97,143 @@ $(function(){initNavTree('EventBus_8hxx_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="IObserver_8hxx.html">IObserver.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">ISubject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classEventBus.html">   27</a></span><span class="keyword">class </span><a class="code hl_class" href="classEventBus.html">EventBus</a> : <span class="keyword">public</span> <a class="code hl_class" href="classISubject.html">ISubject</a>, <span class="keyword">public</span> std::enable_shared_from_this&lt;EventBus&gt; {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::vector&lt;std::weak_ptr&lt;IObserver&gt;&gt; observers_;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">mutable</span> std::mutex observers_mutex_; <span class="comment">// Changed to mutable to allow locking inside const notify</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classEventBus.html#af9f702d10d6340e1f3da65e487fd73be">   44</a></span>    <a class="code hl_function" href="classEventBus.html#af9f702d10d6340e1f3da65e487fd73be">~EventBus</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">   51</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">attach</a>(std::shared_ptr&lt;IObserver&gt; observer)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        std::lock_guard&lt;std::mutex&gt; lock(observers_mutex_);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        observers_.push_back(observer);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Event_8hxx.html">Event.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="IObserver_8hxx.html">IObserver.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">ISubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span>ConsoleColor {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">const</span> std::string RESET = <span class="stringliteral">&quot;\033[0m&quot;</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">const</span> std::string BLACK = <span class="stringliteral">&quot;\033[30m&quot;</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">const</span> std::string RED = <span class="stringliteral">&quot;\033[31m&quot;</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> std::string GREEN = <span class="stringliteral">&quot;\033[32m&quot;</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> std::string YELLOW = <span class="stringliteral">&quot;\033[33m&quot;</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> std::string BLUE = <span class="stringliteral">&quot;\033[34m&quot;</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">const</span> std::string MAGENTA = <span class="stringliteral">&quot;\033[35m&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> std::string CYAN = <span class="stringliteral">&quot;\033[36m&quot;</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">const</span> std::string WHITE = <span class="stringliteral">&quot;\033[37m&quot;</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">const</span> std::string BRIGHT_RED = <span class="stringliteral">&quot;\033[91m&quot;</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> std::string BRIGHT_GREEN = <span class="stringliteral">&quot;\033[92m&quot;</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> std::string BRIGHT_YELLOW = <span class="stringliteral">&quot;\033[93m&quot;</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> std::string BRIGHT_BLUE = <span class="stringliteral">&quot;\033[94m&quot;</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> std::string BRIGHT_MAGENTA = <span class="stringliteral">&quot;\033[95m&quot;</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">const</span> std::string BRIGHT_CYAN = <span class="stringliteral">&quot;\033[96m&quot;</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> std::string BRIGHT_WHITE = <span class="stringliteral">&quot;\033[97m&quot;</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> std::string BOLD = <span class="stringliteral">&quot;\033[1m&quot;</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> std::string DIM = <span class="stringliteral">&quot;\033[2m&quot;</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> std::string ITALIC = <span class="stringliteral">&quot;\033[3m&quot;</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> std::string UNDERLINE = <span class="stringliteral">&quot;\033[4m&quot;</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classEventBus.html">   52</a></span><span class="keyword">class </span><a class="code hl_class" href="classEventBus.html">EventBus</a> : <span class="keyword">public</span> <a class="code hl_class" href="classISubject.html">ISubject</a>, <span class="keyword">public</span> std::enable_shared_from_this&lt;EventBus&gt; {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    std::vector&lt;std::weak_ptr&lt;IObserver&gt;&gt; observers_;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">mutable</span> std::mutex observers_mutex_; <span class="comment">// Changed to mutable to allow locking inside const notify</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::string getEventColor(<a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a> type)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">switch</span> (type) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">case</span> Event::REPOSITORY_INIT_SUCCESS:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordflow">return</span> ConsoleColor::BRIGHT_GREEN;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">case</span> Event::SAVE_SUCCESS:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">return</span> ConsoleColor::BRIGHT_GREEN;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">case</span> Event::ERROR_MESSAGE:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">return</span> ConsoleColor::BRIGHT_RED;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">case</span> Event::WARNING_MESSAGE:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">return</span> ConsoleColor::BRIGHT_YELLOW;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">case</span> Event::GENERAL_INFO:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">return</span> ConsoleColor::BRIGHT_CYAN;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">case</span> Event::DEBUG_MESSAGE:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">return</span> ConsoleColor::DIM + ConsoleColor::BRIGHT_BLUE;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">return</span> ConsoleColor::WHITE;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    std::string getEventIcon(<a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a> type)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">switch</span> (type) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordflow">case</span> Event::REPOSITORY_INIT_SUCCESS:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;✅&quot;</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">case</span> Event::SAVE_SUCCESS:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;💾&quot;</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">case</span> Event::ERROR_MESSAGE:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;❌&quot;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">case</span> Event::WARNING_MESSAGE:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;⚠️ &quot;</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">case</span> Event::GENERAL_INFO:</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;ℹ️ &quot;</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">case</span> Event::DEBUG_MESSAGE:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;🐛&quot;</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    };</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classEventBus.html#af9f702d10d6340e1f3da65e487fd73be">  107</a></span>    <a class="code hl_function" href="classEventBus.html#af9f702d10d6340e1f3da65e487fd73be">~EventBus</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">  114</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">attach</a>(std::shared_ptr&lt;IObserver&gt; observer)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        std::lock_guard&lt;std::mutex&gt; lock(observers_mutex_);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        observers_.push_back(observer);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">   61</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">detach</a>(std::shared_ptr&lt;IObserver&gt; observer_to_remove)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        std::lock_guard&lt;std::mutex&gt; lock(observers_mutex_);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">auto</span> it = std::remove_if(observers_.begin(), observers_.end(),</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            [&amp;](<span class="keyword">const</span> std::weak_ptr&lt;IObserver&gt;&amp; weak_obs) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                auto shared_obs = weak_obs.lock();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                return shared_obs &amp;&amp; (shared_obs == observer_to_remove);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        );</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        observers_.erase(it, observers_.end());</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">  124</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">detach</a>(std::shared_ptr&lt;IObserver&gt; observer_to_remove)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        std::lock_guard&lt;std::mutex&gt; lock(observers_mutex_);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keyword">auto</span> it = std::remove_if(observers_.begin(), observers_.end(),</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            [&amp;](<span class="keyword">const</span> std::weak_ptr&lt;IObserver&gt;&amp; weak_obs) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                auto shared_obs = weak_obs.lock();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                return shared_obs &amp;&amp; (shared_obs == observer_to_remove);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        );</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        observers_.erase(it, observers_.end());</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classEventBus.html#a581f243551365d2dc9599665540486dd">   81</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a581f243551365d2dc9599665540486dd">notify</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structEvent.html">Event</a>&amp; event)<span class="keyword"> const override </span>{ </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        std::lock_guard&lt;std::mutex&gt; lock(<span class="keyword">const_cast&lt;</span>std::mutex&amp;<span class="keyword">&gt;</span>(observers_mutex_));</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; wp : observers_) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">if</span> (<span class="keyword">auto</span> observer = wp.lock()) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                observer-&gt;update(event);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classEventBus.html#a581f243551365d2dc9599665540486dd">  144</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventBus.html#a581f243551365d2dc9599665540486dd">notify</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structEvent.html">Event</a>&amp; event)<span class="keyword"> const override</span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        std::string color = getEventColor(event.<a class="code hl_variable" href="structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3">type</a>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        std::string icon = getEventIcon(event.<a class="code hl_variable" href="structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3">type</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        std::string sourceColor = ConsoleColor::DIM + ConsoleColor::BLACK;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="comment">// Форматируем сообщение с цветами</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        std::string formattedMessage = color + icon + <span class="stringliteral">&quot; &quot;</span> + <span class="keyword">event</span>.details + </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                                      sourceColor + <span class="stringliteral">&quot; [&quot;</span> + <span class="keyword">event</span>.source_name + <span class="stringliteral">&quot;]&quot;</span> + </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                                      ConsoleColor::RESET;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="comment">// Создаем копию события с отформатированным сообщением</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <a class="code hl_struct" href="structEvent.html">Event</a> coloredEvent = event;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        coloredEvent.<a class="code hl_variable" href="structEvent.html#afedba76038909cf242d7642da3b7bfd9">details</a> = formattedMessage;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; observer : observers_) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            observer.lock()-&gt;update(coloredEvent);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>};</div>
 </div>
+<div class="ttc" id="aEvent_8hxx_html"><div class="ttname"><a href="Event_8hxx.html">Event.hxx</a></div><div class="ttdoc">Defines the event structure used for the Observer pattern notifications.</div></div>
 <div class="ttc" id="aIObserver_8hxx_html"><div class="ttname"><a href="IObserver_8hxx.html">IObserver.hxx</a></div><div class="ttdoc">Defines the interface for the Observer pattern component.</div></div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
-<div class="ttc" id="aclassEventBus_html"><div class="ttname"><a href="classEventBus.html">EventBus</a></div><div class="ttdoc">A thread-safe implementation of ISubject for centralized event distribution.</div><div class="ttdef"><b>Definition</b> EventBus.hxx:27</div></div>
-<div class="ttc" id="aclassEventBus_html_a131f28abdfe25a80f94a202aff5e6edb"><div class="ttname"><a href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">EventBus::attach</a></div><div class="ttdeci">void attach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Registers a new Observer.</div><div class="ttdef"><b>Definition</b> EventBus.hxx:51</div></div>
-<div class="ttc" id="aclassEventBus_html_a42559fdfdd62a10ae1494f123a06e96a"><div class="ttname"><a href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">EventBus::detach</a></div><div class="ttdeci">void detach(std::shared_ptr&lt; IObserver &gt; observer_to_remove) override</div><div class="ttdoc">Deregisters a specific Observer.</div><div class="ttdef"><b>Definition</b> EventBus.hxx:61</div></div>
-<div class="ttc" id="aclassEventBus_html_a581f243551365d2dc9599665540486dd"><div class="ttname"><a href="classEventBus.html#a581f243551365d2dc9599665540486dd">EventBus::notify</a></div><div class="ttdeci">void notify(const Event &amp;event) const override</div><div class="ttdoc">Sends an event to all active Observers.</div><div class="ttdef"><b>Definition</b> EventBus.hxx:81</div></div>
+<div class="ttc" id="aclassEventBus_html"><div class="ttname"><a href="classEventBus.html">EventBus</a></div><div class="ttdoc">A thread-safe implementation of ISubject for centralized event distribution.</div><div class="ttdef"><b>Definition</b> EventBus.hxx:52</div></div>
+<div class="ttc" id="aclassEventBus_html_a131f28abdfe25a80f94a202aff5e6edb"><div class="ttname"><a href="classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb">EventBus::attach</a></div><div class="ttdeci">void attach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Registers a new Observer.</div><div class="ttdef"><b>Definition</b> EventBus.hxx:114</div></div>
+<div class="ttc" id="aclassEventBus_html_a42559fdfdd62a10ae1494f123a06e96a"><div class="ttname"><a href="classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a">EventBus::detach</a></div><div class="ttdeci">void detach(std::shared_ptr&lt; IObserver &gt; observer_to_remove) override</div><div class="ttdoc">Deregisters a specific Observer.</div><div class="ttdef"><b>Definition</b> EventBus.hxx:124</div></div>
+<div class="ttc" id="aclassEventBus_html_a581f243551365d2dc9599665540486dd"><div class="ttname"><a href="classEventBus.html#a581f243551365d2dc9599665540486dd">EventBus::notify</a></div><div class="ttdeci">void notify(const Event &amp;event) const override</div><div class="ttdoc">Sends an event to all active Observers.</div><div class="ttdef"><b>Definition</b> EventBus.hxx:144</div></div>
 <div class="ttc" id="aclassEventBus_html_af9f702d10d6340e1f3da65e487fd73be"><div class="ttname"><a href="classEventBus.html#af9f702d10d6340e1f3da65e487fd73be">EventBus::~EventBus</a></div><div class="ttdeci">~EventBus() override=default</div><div class="ttdoc">Default virtual destructor.</div></div>
 <div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">The Subject (Publisher) Interface (Abstract Base Class).</div><div class="ttdef"><b>Definition</b> ISubject.hxx:26</div></div>
 <div class="ttc" id="astructEvent_html"><div class="ttname"><a href="structEvent.html">Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:17</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a></div><div class="ttdeci">Type</div><div class="ttdoc">Types of events that can be published.</div><div class="ttdef"><b>Definition</b> Event.hxx:21</div></div>
+<div class="ttc" id="astructEvent_html_acb1e67cf0d5f22ac9360447b6f0fb5d3"><div class="ttname"><a href="structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3">Event::type</a></div><div class="ttdeci">Type type</div><div class="ttdoc">The type of event that occurred.</div><div class="ttdef"><b>Definition</b> Event.hxx:39</div></div>
+<div class="ttc" id="astructEvent_html_afedba76038909cf242d7642da3b7bfd9"><div class="ttname"><a href="structEvent.html#afedba76038909cf242d7642da3b7bfd9">Event::details</a></div><div class="ttdeci">std::string details</div><div class="ttdoc">Detailed description or payload (e.g., object hash)</div><div class="ttdef"><b>Definition</b> Event.hxx:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

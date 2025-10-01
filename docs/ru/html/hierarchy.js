@@ -9,6 +9,7 @@ var hierarchy =
     [ "HelpService", "classHelpService.html", null ],
     [ "ICommand", "classICommand.html", [
       [ "BaseCommand", "classBaseCommand.html", null ],
+      [ "ClearCommand", "classClearCommand.html", null ],
       [ "HelpCommand", "classHelpCommand.html", null ],
       [ "HistoryCommand", "classHistoryCommand.html", null ],
       [ "InitCommand", "classInitCommand.html", null ],

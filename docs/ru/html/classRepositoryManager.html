@@ -126,6 +126,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>saveStagedChanges</b>
 <tr class="memdesc:a5e0b90c8ec4bb9890ccd1672b99b0712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a list of all files currently marked as staged (indexed).  <br /></td></tr>
 <tr class="memitem:a9974667b34a6fd455758f519deaba44a" id="r_a9974667b34a6fd455758f519deaba44a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structCommitInfo.html">CommitInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9974667b34a6fd455758f519deaba44a">getCommitHistory</a> ()</td></tr>
 <tr class="memdesc:a9974667b34a6fd455758f519deaba44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the commit history.  <br /></td></tr>
+<tr class="memitem:ab28d4e38ff9c3691fce81ca9e67556ba" id="r_ab28d4e38ff9c3691fce81ca9e67556ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab28d4e38ff9c3691fce81ca9e67556ba">removeRepository</a> (const std::filesystem::path &amp;path)</td></tr>
+<tr class="memdesc:ab28d4e38ff9c3691fce81ca9e67556ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to recursively remove the repository structure (e.g., the .svcs directory).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Manages all physical file and directory operations within the SVCS repository. </p>
@@ -345,6 +347,32 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>saveStagedChanges</b>
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd><code>true</code> if a repository structure is found, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ab28d4e38ff9c3691fce81ca9e67556ba" name="ab28d4e38ff9c3691fce81ca9e67556ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab28d4e38ff9c3691fce81ca9e67556ba">&#9670;&#160;</a></span>removeRepository()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RepositoryManager::removeRepository </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attempts to recursively remove the repository structure (e.g., the .svcs directory). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The root path of the repository to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> if removal was successful, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>

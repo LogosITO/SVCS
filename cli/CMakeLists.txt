@@ -3,6 +3,7 @@ set(CLI_SOURCES
     src/HelpCommand.cxx
     src/VersionCommand.cxx
     src/InitCommand.cxx
+    src/ClearCommand.cxx
     src/AddCommand.cxx
     src/SaveCommand.cxx
     src/StatusCommand.cxx
@@ -19,6 +20,7 @@ set(CLI_HEADERS
     include/HelpCommand.hxx
     include/VersionCommand.hxx
     include/InitCommand.hxx
+    include/ClearCommand.hxx
     include/AddCommand.hxx
     include/SaveCommand.hxx
     include/StatusCommand.hxx

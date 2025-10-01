@@ -10,5 +10,6 @@ var classRepositoryManager =
     [ "getStagedFiles", "classRepositoryManager.html#a5e0b90c8ec4bb9890ccd1672b99b0712", null ],
     [ "initializeRepository", "classRepositoryManager.html#a1ddddb02e8b5f59b06b8a40465716103", null ],
     [ "isRepositoryInitialized", "classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674", null ],
+    [ "removeRepository", "classRepositoryManager.html#ab28d4e38ff9c3691fce81ca9e67556ba", null ],
     [ "saveStagedChanges", "classRepositoryManager.html#a647383203955484c1b57222ce5e5faf8", null ]
 ];

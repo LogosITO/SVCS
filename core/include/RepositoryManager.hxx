@@ -74,14 +74,7 @@ private:
      * @return \c true if the file was created or opened successfully, \c false otherwise.
      */
     bool createFile(const std::filesystem::path& path, const std::string& content = "");
-    
-    /**
-     * @brief Attempts to recursively remove the repository structure (e.g., the .svcs directory).
-     * @param path The root path of the repository to remove.
-     * @return \c true if removal was successful, \c false otherwise.
-     */
-    bool removeRepository(const std::filesystem::path& path);
-    
+
 public:
     /**
      * @brief Constructs a RepositoryManager.
@@ -156,4 +149,11 @@ public:
      * @return Vector of CommitInfo objects representing the commit history
      */
     std::vector<CommitInfo> getCommitHistory();
+
+    /**
+     * @brief Attempts to recursively remove the repository structure (e.g., the .svcs directory).
+     * @param path The root path of the repository to remove.
+     * @return \c true if removal was successful, \c false otherwise.
+     */
+    bool removeRepository(const std::filesystem::path& path);
 };

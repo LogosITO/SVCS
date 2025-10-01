@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "BaseCommand", "classBaseCommand.html", "classBaseCommand" ],
     [ "Blob", "classBlob.html", "classBlob" ],
+    [ "ClearCommand", "classClearCommand.html", "classClearCommand" ],
     [ "CommandFactory", "classCommandFactory.html", "classCommandFactory" ],
     [ "Commit", "classCommit.html", "classCommit" ],
     [ "CommitInfo", "structCommitInfo.html", null ],

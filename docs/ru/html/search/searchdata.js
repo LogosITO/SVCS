@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "abcehilmnorstv",
   2: "abcehilmorstuv",
   3: "abcdefghilnorstuvw~",
-  4: "bdefhlmnst",
+  4: "bcdefhilmnorst",
   5: "flt",
   6: "defimuw",
   7: "abcdeghilmopqrstuvwyдинорсуя✅⭐🎓🎯🏗💻📈📖📚📝🔮🚀🛠"

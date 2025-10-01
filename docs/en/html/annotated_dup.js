@@ -1,9 +1,11 @@
 var annotated_dup =
 [
     [ "AddCommand", "classAddCommand.html", "classAddCommand" ],
+    [ "AddCommandTest", "classAddCommandTest.html", "classAddCommandTest" ],
     [ "BaseCommand", "classBaseCommand.html", "classBaseCommand" ],
     [ "Blob", "classBlob.html", "classBlob" ],
     [ "ClearCommand", "classClearCommand.html", "classClearCommand" ],
+    [ "ClearCommandTest", "classClearCommandTest.html", "classClearCommandTest" ],
     [ "CommandFactory", "classCommandFactory.html", "classCommandFactory" ],
     [ "Commit", "classCommit.html", "classCommit" ],
     [ "CommitInfo", "structCommitInfo.html", null ],
@@ -17,6 +19,7 @@ var annotated_dup =
     [ "IndexEntry", "structIndexEntry.html", "structIndexEntry" ],
     [ "IndexTest", "classIndexTest.html", null ],
     [ "InitCommand", "classInitCommand.html", "classInitCommand" ],
+    [ "InitCommandIntegrationTest", "classInitCommandIntegrationTest.html", "classInitCommandIntegrationTest" ],
     [ "IObserver", "classIObserver.html", "classIObserver" ],
     [ "ISubject", "classISubject.html", "classISubject" ],
     [ "Logger", "classLogger.html", "classLogger" ],

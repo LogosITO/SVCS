@@ -1,12 +1,20 @@
 find_package(GTest REQUIRED)
 
 set(CLI_TEST_SOURCES
+    utils/InitCommandIntegrationTest.cxx
+    utils/ClearCommandTest.cxx
+    utils/IntAddCommandTest.cxx
     InitCommandTest.cxx
     AddCommandTest.cxx
     ClearCommandTest.cxx
 )
 
 add_executable(svcs_cli_unit_tests ${CLI_TEST_SOURCES})
+
+target_include_directories(svcs_cli_unit_tests PRIVATE 
+    ${CMAKE_CURRENT_SOURCE_DIR}/mocks
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils
+)
 
 target_link_libraries(svcs_cli_unit_tests PRIVATE
     svcs_cli_commands

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventsubject_5f_0',['eventSubject_',['../classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8',1,'BaseCommand']]]
+  ['details_0',['details',['../structEvent.html#afedba76038909cf242d7642da3b7bfd9',1,'Event']]]
 ];

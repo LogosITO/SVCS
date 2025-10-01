@@ -31,6 +31,7 @@ var hierarchy =
       [ "EventBus", "classEventBus.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
+      [ "MockSubject", "classMockSubject.html", null ],
       [ "Repository", "classRepository.html", null ]
     ] ],
     [ "ObjectStorage", "classObjectStorage.html", [
@@ -38,7 +39,10 @@ var hierarchy =
     ] ],
     [ "RepositoryManager", "classRepositoryManager.html", null ],
     [ "testing::Test", null, [
+      [ "AddCommandTest", "classAddCommandTest.html", null ],
+      [ "ClearCommandTest", "classClearCommandTest.html", null ],
       [ "IndexTest", "classIndexTest.html", null ],
+      [ "InitCommandIntegrationTest", "classInitCommandIntegrationTest.html", null ],
       [ "ObjectStorageTest", "classObjectStorageTest.html", null ],
       [ "RepositoryManagerTest", "classRepositoryManagerTest.html", null ],
       [ "RepositoryTest", "classRepositoryTest.html", null ]

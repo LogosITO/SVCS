@@ -10,56 +10,11 @@
  * Licensed under MIT-License
  */
 
-#include "../../services/Event.hxx"
-#include "../../core/include/RepositoryManager.hxx"
-#include "../../cli/include/InitCommand.hxx"
+#include "utils/InitCommandIntegrationTest.hxx"
 
 #include <gtest/gtest.h>
 #include <filesystem>
 #include <memory>
-
-/**
- * @brief Mock implementation of ISubject.
- * * This class captures all events published by the system core 
- * without requiring the full Observer system implementation.
- */
-class MockSubject : public ISubject {
-public:
-    std::vector<Event> notifications;
-
-    void attach(std::shared_ptr<IObserver> observer) override {}
-    void detach(std::shared_ptr<IObserver> observer) override {}
-
-    void notify(const Event& event) const override {
-        const_cast<MockSubject*>(this)->notifications.push_back(event);
-    }
-};
-
-class InitCommandIntegrationTest : public ::testing::Test {
-protected:
-    std::shared_ptr<MockSubject> mockEventBus;
-    std::shared_ptr<RepositoryManager> repoManager;
-    std::unique_ptr<InitCommand> command;
-    std::filesystem::path testDir;
-
-    void SetUp() override {
-        mockEventBus = std::make_shared<MockSubject>();
-        repoManager = std::make_shared<RepositoryManager>(mockEventBus);
-        command = std::make_unique<InitCommand>(mockEventBus, repoManager);
-        
-        // Создаем временную директорию для тестов
-        testDir = std::filesystem::temp_directory_path() / "svcs_test_init";
-        std::filesystem::remove_all(testDir);
-        std::filesystem::create_directories(testDir);
-        std::filesystem::current_path(testDir);
-    }
-
-    void TearDown() override {
-        std::filesystem::current_path(std::filesystem::temp_directory_path());
-        std::filesystem::remove_all(testDir);
-        mockEventBus->notifications.clear();
-    }
-};
 
 /**
  * @brief Test fixture for InitCommand integration tests.

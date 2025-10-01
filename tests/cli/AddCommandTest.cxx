@@ -7,91 +7,14 @@
  * Licensed under MIT-License
  */
 
-#include <gtest/gtest.h>
-#include <filesystem>
-#include <fstream>
-#include <memory>
-
-#include "../../services/Event.hxx"
+#include "mocks/MockSubject.hxx"
 #include "../../core/include/RepositoryManager.hxx"
 #include "../../cli/include/AddCommand.hxx"
+#include "utils/IntAddCommandTest.hxx"
 
-/**
- * @brief Mock-реализация ISubject для отслеживания событий.
- */
-class MockSubject : public ISubject {
-public:
-    std::vector<Event> notifications;
-
-    void attach(std::shared_ptr<IObserver> observer) override {}
-    void detach(std::shared_ptr<IObserver> observer) override {}
-
-    void notify(const Event& event) const override {
-        const_cast<MockSubject*>(this)->notifications.push_back(event);
-    }
-    
-    void clear() {
-        notifications.clear();
-    }
-    
-    bool containsMessage(const std::string& message) const {
-        for (const auto& notification : notifications) {
-            if (notification.details.find(message) != std::string::npos) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    bool containsEventType(Event::Event::Type type) const {
-        for (const auto& notification : notifications) {
-            if (notification.type == type) {
-                return true;
-            }
-        }
-        return false;
-    }
-};
-
-class AddCommandTest : public ::testing::Test {
-protected:
-    std::shared_ptr<MockSubject> mockEventBus;
-    std::shared_ptr<RepositoryManager> repoManager;
-    std::unique_ptr<AddCommand> command;
-    std::filesystem::path testDir;
-
-    void SetUp() override {
-        mockEventBus = std::make_shared<MockSubject>();
-        repoManager = std::make_shared<RepositoryManager>(mockEventBus);
-        command = std::make_unique<AddCommand>(mockEventBus, repoManager);
-        
-        // Создаем временную директорию для тестов
-        testDir = std::filesystem::temp_directory_path() / "svcs_test_add";
-        std::filesystem::remove_all(testDir);
-        std::filesystem::create_directories(testDir);
-        std::filesystem::current_path(testDir);
-        
-        // Инициализируем репозиторий
-        repoManager->initializeRepository(".", true);
-        mockEventBus->clear();
-    }
-
-    void TearDown() override {
-        std::filesystem::current_path(std::filesystem::temp_directory_path());
-        std::filesystem::remove_all(testDir);
-        mockEventBus->clear();
-    }
-    
-    void createTestFile(const std::string& filename, const std::string& content = "test content") {
-        std::ofstream file(testDir / filename);
-        file << content;
-        file.close();
-    }
-    
-    void createTestDirectory(const std::string& dirname) {
-        std::filesystem::create_directories(testDir / dirname);
-    }
-};
+#include <gtest/gtest.h>
+#include <filesystem>
+#include <memory>
 
 TEST_F(AddCommandTest, Failure_NoRepository) {
     // Тестируем случай когда репозиторий не инициализирован

@@ -8,5 +8,5 @@ var searchData=
   ['blob_2ecxx_5',['Blob.cxx',['../Blob_8cxx.html',1,'']]],
   ['blob_2ehxx_6',['Blob.hxx',['../Blob_8hxx.html',1,'']]],
   ['blob_5fhash_7',['blob_hash',['../structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12',1,'IndexEntry']]],
-  ['blob_5ftest_2ecxx_8',['blob_test.cxx',['../blob__test_8cxx.html',1,'']]]
+  ['blobtest_2ecxx_8',['BlobTest.cxx',['../BlobTest_8cxx.html',1,'']]]
 ];

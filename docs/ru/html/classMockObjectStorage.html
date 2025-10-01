@@ -93,6 +93,9 @@ $(function(){initNavTree('classMockObjectStorage.html','','classMockObjectStorag
   <div class="headertitle"><div class="title">Класс MockObjectStorage</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Mock implementation of <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  
+ <a href="#details">Подробнее...</a></p>
 <div class="dynheader">
 Граф наследования:MockObjectStorage:</div>
 <div class="dyncontent">
@@ -135,7 +138,12 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_saved_blobs_cou
 <tr class="memitem:a5b9d03f4ac4ee12bd8ae53b23122b04c" id="r_a5b9d03f4ac4ee12bd8ae53b23122b04c"><td class="memItemLeft" align="right" valign="top"><a id="a5b9d03f4ac4ee12bd8ae53b23122b04c" name="a5b9d03f4ac4ee12bd8ae53b23122b04c"></a>
 std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>saved_blobs</b></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Mock implementation of <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>. </p>
+<ul>
+<li>This mock substitutes the actual filesystem I/O for object saving and loading with an in-memory map, allowing for fast, isolated testing of the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a>'s interaction with the storage layer. </li>
+</ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
 <a id="a6710861deb4109e3c4a716ac9b38fe66" name="a6710861deb4109e3c4a716ac9b38fe66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6710861deb4109e3c4a716ac9b38fe66">&#9670;&#160;</a></span>loadObject()</h2>
 
@@ -221,7 +229,7 @@ std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" va
 </div>
 </div>
 <hr/>Объявления и описания членов класса находятся в файле:<ul>
-<li>tests/<b>index_test.cxx</b></li>
+<li>tests/core/<a class="el" href="IndexTest_8cxx.html">IndexTest.cxx</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

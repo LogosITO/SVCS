@@ -7,123 +7,12 @@
  * Licensed under MIT-License
  */
 
+#include "utils/ClearCommandTest.hxx"
+
 #include <gtest/gtest.h>
 #include <filesystem>
-#include <fstream>
 #include <memory>
-#include <sstream>
 #include <iostream>
-
-#include "../../services/Event.hxx"
-#include "../../core/include/RepositoryManager.hxx"
-#include "../../cli/include/ClearCommand.hxx"
-
-/**
- * @brief Mock-реализация ISubject для отслеживания событий.
- */
-class MockSubject : public ISubject {
-public:
-    std::vector<Event> notifications;
-
-    void attach(std::shared_ptr<IObserver> observer) override {}
-    void detach(std::shared_ptr<IObserver> observer) override {}
-
-    void notify(const Event& event) const override {
-        const_cast<MockSubject*>(this)->notifications.push_back(event);
-    }
-    
-    void clear() {
-        notifications.clear();
-    }
-    
-    bool containsMessage(const std::string& message) const {
-        for (const auto& notification : notifications) {
-            if (notification.details.find(message) != std::string::npos) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    bool containsEventType(Event::Event::Type type) const {
-        for (const auto& notification : notifications) {
-            if (notification.type == type) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    bool containsMessage(Event::Event::Type type, const std::string& message) const {
-        for (const auto& notification : notifications) {
-            if (notification.type == type && 
-                notification.details.find(message) != std::string::npos) {
-                return true;
-            }
-        }
-        return false;
-    }
-};
-
-class ClearCommandTest : public ::testing::Test {
-protected:
-    std::shared_ptr<MockSubject> mockEventBus;
-    std::shared_ptr<RepositoryManager> repoManager;
-    std::unique_ptr<ClearCommand> command;
-    std::filesystem::path testDir;
-    
-    // Для тестирования пользовательского ввода
-    std::stringstream inputStream;
-    std::streambuf* originalCin;
-
-    void SetUp() override {
-        mockEventBus = std::make_shared<MockSubject>();
-        repoManager = std::make_shared<RepositoryManager>(mockEventBus);
-        command = std::make_unique<ClearCommand>(mockEventBus, repoManager);
-        
-        // Создаем временную директорию для тестов
-        testDir = std::filesystem::temp_directory_path() / "svcs_test_clear";
-        std::filesystem::remove_all(testDir);
-        std::filesystem::create_directories(testDir);
-        std::filesystem::current_path(testDir);
-        
-        // Инициализируем репозиторий
-        repoManager->initializeRepository(".", true);
-        mockEventBus->clear();
-        
-        // Сохраняем оригинальный cin для восстановления
-        originalCin = std::cin.rdbuf();
-    }
-
-    void TearDown() override {
-        // Восстанавливаем оригинальный cin
-        std::cin.rdbuf(originalCin);
-        
-        std::filesystem::current_path(std::filesystem::temp_directory_path());
-        std::filesystem::remove_all(testDir);
-        mockEventBus->clear();
-    }
-    
-    void createTestFile(const std::string& filename, const std::string& content = "test content") {
-        std::ofstream file(testDir / filename);
-        file << content;
-        file.close();
-    }
-    
-    void createTestDirectory(const std::string& dirname) {
-        std::filesystem::create_directories(testDir / dirname);
-    }
-    
-    void simulateUserInput(const std::string& input) {
-        inputStream.str(input);
-        inputStream.clear();
-        std::cin.rdbuf(inputStream.rdbuf());
-    }
-    
-    bool repositoryExists() const {
-        return std::filesystem::exists(testDir / ".svcs");
-    }
-};
 
 TEST_F(ClearCommandTest, Failure_NoRepository) {
     // Тестируем случай когда репозиторий не инициализирован
@@ -264,9 +153,9 @@ TEST_F(ClearCommandTest, Success_WarningMessages) {
     EXPECT_TRUE(result);
     
     // Должны быть предупреждающие сообщения
-    EXPECT_TRUE(mockEventBus->containsMessage(Event::WARNING_MESSAGE, "permanently remove"));
-    EXPECT_TRUE(mockEventBus->containsMessage(Event::WARNING_MESSAGE, "remove"));
-    EXPECT_TRUE(mockEventBus->containsMessage(Event::WARNING_MESSAGE, "files"));
+    EXPECT_TRUE(mockEventBus->containsMessage("permanently remove"));
+    EXPECT_TRUE(mockEventBus->containsMessage("remove"));
+    EXPECT_TRUE(mockEventBus->containsMessage("files"));
 }
 
 TEST_F(ClearCommandTest, Debug_RepositoryStructure) {

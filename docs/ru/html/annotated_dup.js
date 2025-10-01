@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "AddCommand", "classAddCommand.html", "classAddCommand" ],
     [ "BaseCommand", "classBaseCommand.html", "classBaseCommand" ],
     [ "Blob", "classBlob.html", "classBlob" ],
     [ "ClearCommand", "classClearCommand.html", "classClearCommand" ],

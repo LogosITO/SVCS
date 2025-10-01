@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_0',['Type',['../structEvent.html#a2abf13b5be49315e9e362af02029f058',1,'Event']]]
+  ['loglevel_0',['LogLevel',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'Logger.hxx']]]
 ];

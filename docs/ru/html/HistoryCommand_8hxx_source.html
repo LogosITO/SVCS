@@ -104,72 +104,62 @@ $(function(){initNavTree('HistoryCommand_8hxx_source.html','',''); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classHistoryCommand.html">   26</a></span><span class="keyword">class </span><a class="code hl_function" href="classHistoryCommand.html#a91327f300a414761734016ebdc51c8e6">HistoryCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="classICommand.html">ICommand</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::shared_ptr&lt;RepositoryManager&gt; repoManager_;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="classHistoryCommand.html#a91327f300a414761734016ebdc51c8e6">HistoryCommand</a>(std::shared_ptr&lt;ISubject&gt; subject,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                   std::shared_ptr&lt;RepositoryManager&gt; repoManager);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classHistoryCommand.html#a48844d2bcf6037cdac90a8672df62dbd">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classHistoryCommand.html#a8334db6e45ef2aff5c6aab7e199f0e96">   56</a></span>    std::string <a class="code hl_function" href="classHistoryCommand.html#a8334db6e45ef2aff5c6aab7e199f0e96">getName</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;history&quot;</span>; }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    std::string <a class="code hl_function" href="classHistoryCommand.html#abcd0ec4cd00950437d9a4e804e2d60a8">getDescription</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    std::string <a class="code hl_function" href="classHistoryCommand.html#a92cda98ffa5562e659c0addb3742005b">getUsage</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classHistoryCommand.html#ab46337849e9e68730e844285327e4e2b">showHelp</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">struct </span>HistoryEntry {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        std::string id;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        std::string message;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        std::string author;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        std::string timestamp;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        std::string parentId;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    };</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">bool</span> parseArguments(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                       <span class="keywordtype">bool</span>&amp; showOneline, <span class="keywordtype">int</span>&amp; limit, <span class="keywordtype">bool</span>&amp; showFull) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    std::vector&lt;HistoryEntry&gt; getHistory() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    std::string readHeadFile(<span class="keyword">const</span> std::filesystem::path&amp; headFile) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    HistoryEntry readCommit(<span class="keyword">const</span> std::string&amp; commitId, <span class="keyword">const</span> std::string&amp; repoPath) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    HistoryEntry readCommitFile(<span class="keyword">const</span> std::filesystem::path&amp; commitFile) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    std::vector&lt;HistoryEntry&gt; readCommitHistoryFromObjects(<span class="keyword">const</span> std::filesystem::path&amp; objectsDir) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    HistoryEntry readCommitObject(<span class="keyword">const</span> std::filesystem::path&amp; objectFile) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">void</span> showDefaultHistory(<span class="keyword">const</span> std::vector&lt;HistoryEntry&gt;&amp; entries) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">void</span> showOnelineHistory(<span class="keyword">const</span> std::vector&lt;HistoryEntry&gt;&amp; entries) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">void</span> showFullHistory(<span class="keyword">const</span> std::vector&lt;HistoryEntry&gt;&amp; entries) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    std::string formatTimestamp(<span class="keyword">const</span> std::string&amp; timestamp) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    std::string truncateString(<span class="keyword">const</span> std::string&amp; str, <span class="keywordtype">size_t</span> length) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// Assuming CommitInfo is a structure defined elsewhere, like:</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">struct CommitInfo {</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">    std::string id;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">    std::string parentId;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">    std::string author;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">    std::string timestamp;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">    std::string message;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">};</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classHistoryCommand.html">   37</a></span><span class="keyword">class </span><a class="code hl_function" href="classHistoryCommand.html#a91327f300a414761734016ebdc51c8e6">HistoryCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="classICommand.html">ICommand</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;        </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::shared_ptr&lt;RepositoryManager&gt; repoManager_; </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="classHistoryCommand.html#a91327f300a414761734016ebdc51c8e6">HistoryCommand</a>(std::shared_ptr&lt;ISubject&gt; subject,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                   std::shared_ptr&lt;RepositoryManager&gt; repoManager);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classHistoryCommand.html#a48844d2bcf6037cdac90a8672df62dbd">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classHistoryCommand.html#a8334db6e45ef2aff5c6aab7e199f0e96">   66</a></span>    std::string <a class="code hl_function" href="classHistoryCommand.html#a8334db6e45ef2aff5c6aab7e199f0e96">getName</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;history&quot;</span>; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::string <a class="code hl_function" href="classHistoryCommand.html#abcd0ec4cd00950437d9a4e804e2d60a8">getDescription</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    std::string <a class="code hl_function" href="classHistoryCommand.html#a92cda98ffa5562e659c0addb3742005b">getUsage</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classHistoryCommand.html#ab46337849e9e68730e844285327e4e2b">showHelp</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">bool</span> parseArguments(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                       <span class="keywordtype">bool</span>&amp; showOneline, <span class="keywordtype">int</span>&amp; limit, <span class="keywordtype">bool</span>&amp; showFull) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> showDefaultHistory(<span class="keyword">const</span> std::vector&lt;CommitInfo&gt;&amp; entries) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> showOnelineHistory(<span class="keyword">const</span> std::vector&lt;CommitInfo&gt;&amp; entries) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span> showDetailedHistory(<span class="keyword">const</span> std::vector&lt;CommitInfo&gt;&amp; entries) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    std::string formatTimestamp(<span class="keyword">const</span> std::string&amp; timestamp) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    std::string truncateString(<span class="keyword">const</span> std::string&amp; str, <span class="keywordtype">size_t</span> length) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>};</div>
 </div>
 <div class="ttc" id="aICommand_8hxx_html"><div class="ttname"><a href="ICommand_8hxx.html">ICommand.hxx</a></div><div class="ttdoc">Declaration of the ICommand interface for all executable CLI commands.</div></div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
 <div class="ttc" id="aRepositoryManager_8hxx_html"><div class="ttname"><a href="RepositoryManager_8hxx.html">RepositoryManager.hxx</a></div><div class="ttdoc">Declaration of the RepositoryManager class, managing all repository-level file operations.</div></div>
-<div class="ttc" id="aclassHistoryCommand_html_a48844d2bcf6037cdac90a8672df62dbd"><div class="ttname"><a href="classHistoryCommand.html#a48844d2bcf6037cdac90a8672df62dbd">HistoryCommand::execute</a></div><div class="ttdeci">bool execute(const std::vector&lt; std::string &gt; &amp;args) override</div><div class="ttdoc">Executes the history command.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:23</div></div>
-<div class="ttc" id="aclassHistoryCommand_html_a8334db6e45ef2aff5c6aab7e199f0e96"><div class="ttname"><a href="classHistoryCommand.html#a8334db6e45ef2aff5c6aab7e199f0e96">HistoryCommand::getName</a></div><div class="ttdeci">std::string getName() const override</div><div class="ttdoc">Gets the name of the command.</div><div class="ttdef"><b>Определения</b> HistoryCommand.hxx:56</div></div>
-<div class="ttc" id="aclassHistoryCommand_html_a91327f300a414761734016ebdc51c8e6"><div class="ttname"><a href="classHistoryCommand.html#a91327f300a414761734016ebdc51c8e6">HistoryCommand::HistoryCommand</a></div><div class="ttdeci">HistoryCommand(std::shared_ptr&lt; ISubject &gt; subject, std::shared_ptr&lt; RepositoryManager &gt; repoManager)</div><div class="ttdoc">Constructs the HistoryCommand.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:18</div></div>
-<div class="ttc" id="aclassHistoryCommand_html_a92cda98ffa5562e659c0addb3742005b"><div class="ttname"><a href="classHistoryCommand.html#a92cda98ffa5562e659c0addb3742005b">HistoryCommand::getUsage</a></div><div class="ttdeci">std::string getUsage() const override</div><div class="ttdoc">Gets the usage syntax of the command.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:59</div></div>
-<div class="ttc" id="aclassHistoryCommand_html_ab46337849e9e68730e844285327e4e2b"><div class="ttname"><a href="classHistoryCommand.html#ab46337849e9e68730e844285327e4e2b">HistoryCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Shows detailed help information for this command.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:63</div></div>
-<div class="ttc" id="aclassHistoryCommand_html_abcd0ec4cd00950437d9a4e804e2d60a8"><div class="ttname"><a href="classHistoryCommand.html#abcd0ec4cd00950437d9a4e804e2d60a8">HistoryCommand::getDescription</a></div><div class="ttdeci">std::string getDescription() const override</div><div class="ttdoc">Gets the description of the command.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:55</div></div>
+<div class="ttc" id="aclassHistoryCommand_html_a48844d2bcf6037cdac90a8672df62dbd"><div class="ttname"><a href="classHistoryCommand.html#a48844d2bcf6037cdac90a8672df62dbd">HistoryCommand::execute</a></div><div class="ttdeci">bool execute(const std::vector&lt; std::string &gt; &amp;args) override</div><div class="ttdoc">Executes the &quot;history&quot; command with the given arguments.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:20</div></div>
+<div class="ttc" id="aclassHistoryCommand_html_a8334db6e45ef2aff5c6aab7e199f0e96"><div class="ttname"><a href="classHistoryCommand.html#a8334db6e45ef2aff5c6aab7e199f0e96">HistoryCommand::getName</a></div><div class="ttdeci">std::string getName() const override</div><div class="ttdoc">Gets the name of the command.</div><div class="ttdef"><b>Определения</b> HistoryCommand.hxx:66</div></div>
+<div class="ttc" id="aclassHistoryCommand_html_a91327f300a414761734016ebdc51c8e6"><div class="ttname"><a href="classHistoryCommand.html#a91327f300a414761734016ebdc51c8e6">HistoryCommand::HistoryCommand</a></div><div class="ttdeci">HistoryCommand(std::shared_ptr&lt; ISubject &gt; subject, std::shared_ptr&lt; RepositoryManager &gt; repoManager)</div><div class="ttdoc">Constructor for HistoryCommand.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:15</div></div>
+<div class="ttc" id="aclassHistoryCommand_html_a92cda98ffa5562e659c0addb3742005b"><div class="ttname"><a href="classHistoryCommand.html#a92cda98ffa5562e659c0addb3742005b">HistoryCommand::getUsage</a></div><div class="ttdeci">std::string getUsage() const override</div><div class="ttdoc">Gets the command&#39;s usage syntax.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:66</div></div>
+<div class="ttc" id="aclassHistoryCommand_html_ab46337849e9e68730e844285327e4e2b"><div class="ttname"><a href="classHistoryCommand.html#ab46337849e9e68730e844285327e4e2b">HistoryCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Displays the detailed help information for the command.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:70</div></div>
+<div class="ttc" id="aclassHistoryCommand_html_abcd0ec4cd00950437d9a4e804e2d60a8"><div class="ttname"><a href="classHistoryCommand.html#abcd0ec4cd00950437d9a4e804e2d60a8">HistoryCommand::getDescription</a></div><div class="ttdeci">std::string getDescription() const override</div><div class="ttdoc">Gets a brief description of the command.</div><div class="ttdef"><b>Определения</b> HistoryCommand.cxx:62</div></div>
 <div class="ttc" id="aclassICommand_html"><div class="ttname"><a href="classICommand.html">ICommand</a></div><div class="ttdoc">Interface (abstract base class) for all commands executed via the CLI.</div><div class="ttdef"><b>Определения</b> ICommand.hxx:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

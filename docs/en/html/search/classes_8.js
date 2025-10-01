@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['objectstorage_0',['ObjectStorage',['../classObjectStorage.html',1,'']]],
-  ['objectstoragetest_1',['ObjectStorageTest',['../classObjectStorageTest.html',1,'']]]
+  ['nullobserver_0',['NullObserver',['../classNullObserver.html',1,'']]]
 ];

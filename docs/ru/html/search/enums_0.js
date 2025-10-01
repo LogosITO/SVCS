@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loglevel_0',['LogLevel',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'Logger.hxx']]]
+  ['filestatus_0',['FileStatus',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40c',1,'AddCommand.hxx']]]
 ];

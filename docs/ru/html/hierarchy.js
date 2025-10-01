@@ -8,6 +8,7 @@ var hierarchy =
     [ "Event", "structEvent.html", null ],
     [ "HelpService", "classHelpService.html", null ],
     [ "ICommand", "classICommand.html", [
+      [ "AddCommand", "classAddCommand.html", null ],
       [ "BaseCommand", "classBaseCommand.html", null ],
       [ "ClearCommand", "classClearCommand.html", null ],
       [ "HelpCommand", "classHelpCommand.html", null ],

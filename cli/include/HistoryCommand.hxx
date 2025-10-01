@@ -1,6 +1,6 @@
 /**
  * @file HistoryCommand.hxx
- * @brief Declaration of the HistoryCommand class for viewing save history.
+ * @brief Declaration of the HistoryCommand class for viewing save history (commits).
  *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
@@ -15,170 +15,115 @@
 #include <memory>
 #include <vector>
 #include <string>
-#include <filesystem>
+
+// Assuming CommitInfo is a structure defined elsewhere, like:
+/*
+struct CommitInfo {
+    std::string id;
+    std::string parentId;
+    std::string author;
+    std::string timestamp;
+    std::string message;
+};
+*/
 
 /**
  * @brief Command for viewing the history of saves (commits) in the repository.
  *
- * The HistoryCommand displays the chronological history of all saves
- * with their messages, authors, timestamps, and identifiers.
+ * The **HistoryCommand** displays the chronological history of all saves
+ * with their messages, authors, timestamps, and unique identifiers. It supports
+ * different output formats, including default, one-line, and detailed views.
  */
 class HistoryCommand : public ICommand {
 private:
-    std::shared_ptr<ISubject> eventBus_;
-    std::shared_ptr<RepositoryManager> repoManager_;
+    std::shared_ptr<ISubject> eventBus_;        ///< Shared pointer to the event bus for user notifications.
+    std::shared_ptr<RepositoryManager> repoManager_; ///< Shared pointer to the repository manager for accessing commit data.
 
 public:
     /**
-     * @brief Constructs the HistoryCommand.
-     *
-     * @param subject Shared pointer to the event bus for notifications.
-     * @param repoManager Shared pointer to the repository manager.
+     * @brief Constructor for HistoryCommand.
+     * @param subject A shared pointer to the ISubject (event bus).
+     * @param repoManager A shared pointer to the RepositoryManager.
      */
     HistoryCommand(std::shared_ptr<ISubject> subject,
                    std::shared_ptr<RepositoryManager> repoManager);
-    
+
     /**
-     * @brief Executes the history command.
+     * @brief Executes the "history" command with the given arguments.
      *
-     * @param args Command arguments. Supported options:
-     *             - "--oneline" or "-o": Compact single-line format
-     *             - "--last N" or "-n N": Show last N entries
-     *             - "--full" or "-f": Full detailed output
-     * @return true if history displayed successfully, false otherwise.
+     * This method is the main entry point for the command, handling argument parsing
+     * and delegating to the appropriate history display function.
+     *
+     * @param args The vector of string arguments for the command (e.g., limit, format options).
+     * @return true if the command executed successfully, false otherwise.
      */
     bool execute(const std::vector<std::string>& args) override;
-    
+
     /**
      * @brief Gets the name of the command.
-     * @return "history"
+     * @return The command name, "history".
      */
     std::string getName() const override { return "history"; }
-    
+
     /**
-     * @brief Gets the description of the command.
-     * @return "Show history of saves"
+     * @brief Gets a brief description of the command.
+     * @return A string describing the command's purpose.
      */
     std::string getDescription() const override;
-    
+
     /**
-     * @brief Gets the usage syntax of the command.
-     * @return "svcs history [--oneline|--last N|--full]"
+     * @brief Gets the command's usage syntax.
+     * @return A string showing how to use the command.
      */
     std::string getUsage() const override;
-    
+
     /**
-     * @brief Shows detailed help information for this command.
+     * @brief Displays the detailed help information for the command.
      */
     void showHelp() const override;
-    
+
 private:
     /**
-     * @brief Represents a single save entry in history.
-     */
-    struct HistoryEntry {
-        std::string id;
-        std::string message;
-        std::string author;
-        std::string timestamp;
-        std::string parentId;
-    };
-    
-    /**
-     * @brief Parses command line arguments.
-     *
-     * @param args Command arguments.
-     * @param showOneline Output parameter for oneline format.
-     * @param limit Output parameter for entry limit.
-     * @param showFull Output parameter for full details.
-     * @return true if arguments parsed successfully, false on error.
+     * @brief Parses the command line arguments to determine display options.
+     * @param args The command line arguments.
+     * @param showOneline Output parameter: true to show history in one line format.
+     * @param limit Output parameter: the maximum number of commits to display (0 for no limit).
+     * @param showFull Output parameter: true to show history in detailed/full format.
+     * @return true if arguments were parsed successfully, false otherwise.
      */
     bool parseArguments(const std::vector<std::string>& args,
                        bool& showOneline, int& limit, bool& showFull) const;
-    
+
     /**
-     * @brief Retrieves the history entries from repository.
-     *
-     * @return Vector of history entries in chronological order (newest first).
+     * @brief Displays the commit history using the default format.
+     * @param entries A vector of CommitInfo objects to display.
      */
-    std::vector<HistoryEntry> getHistory() const;
-    
+    void showDefaultHistory(const std::vector<CommitInfo>& entries) const;
+
     /**
-     * @brief Reads the current HEAD reference to find the latest commit.
-     *
-     * @param headFile Path to the HEAD file.
-     * @return Commit ID from HEAD, or empty string if not found.
+     * @brief Displays the commit history using the concise one-line format.
+     * @param entries A vector of CommitInfo objects to display.
      */
-    std::string readHeadFile(const std::filesystem::path& headFile) const;
-    
+    void showOnelineHistory(const std::vector<CommitInfo>& entries) const;
+
     /**
-     * @brief Reads a commit object from the repository.
-     *
-     * @param commitId The commit ID to read.
-     * @param repoPath Path to the repository root.
-     * @return HistoryEntry with commit information.
+     * @brief Displays the commit history using the detailed/full format.
+     * @param entries A vector of CommitInfo objects to display.
      */
-    HistoryEntry readCommit(const std::string& commitId, const std::string& repoPath) const;
-    
+    void showDetailedHistory(const std::vector<CommitInfo>& entries) const;
+
     /**
-     * @brief Reads commit information from a commit file.
-     *
-     * @param commitFile Path to the commit file.
-     * @return HistoryEntry with commit information.
-     */
-    HistoryEntry readCommitFile(const std::filesystem::path& commitFile) const;
-    
-    /**
-     * @brief Reads commit history from objects directory (Git-like structure).
-     *
-     * @param objectsDir Path to the objects directory.
-     * @return Vector of history entries.
-     */
-    std::vector<HistoryEntry> readCommitHistoryFromObjects(const std::filesystem::path& objectsDir) const;
-    
-    /**
-     * @brief Reads a commit object file.
-     *
-     * @param objectFile Path to the object file.
-     * @return HistoryEntry with commit information.
-     */
-    HistoryEntry readCommitObject(const std::filesystem::path& objectFile) const;
-    
-    /**
-     * @brief Displays history in default format.
-     *
-     * @param entries History entries to display.
-     */
-    void showDefaultHistory(const std::vector<HistoryEntry>& entries) const;
-    
-    /**
-     * @brief Displays history in compact oneline format.
-     *
-     * @param entries History entries to display.
-     */
-    void showOnelineHistory(const std::vector<HistoryEntry>& entries) const;
-    
-    /**
-     * @brief Displays history with full details.
-     *
-     * @param entries History entries to display.
-     */
-    void showFullHistory(const std::vector<HistoryEntry>& entries) const;
-    
-    /**
-     * @brief Formats a timestamp for display.
-     *
-     * @param timestamp Raw timestamp string.
-     * @return Formatted timestamp.
+     * @brief Formats a raw timestamp string into a user-friendly readable format.
+     * @param timestamp The raw timestamp string (e.g., ISO 8601).
+     * @return The formatted timestamp string.
      */
     std::string formatTimestamp(const std::string& timestamp) const;
-    
+
     /**
-     * @brief Truncates a string to specified length with ellipsis.
-     *
-     * @param str String to truncate.
-     * @param length Maximum length.
-     * @return Truncated string.
+     * @brief Truncates a string to a specified maximum length, adding an ellipsis if truncated.
+     * @param str The string to truncate.
+     * @param length The maximum desired length.
+     * @return The truncated string.
      */
     std::string truncateString(const std::string& str, size_t length) const;
 };

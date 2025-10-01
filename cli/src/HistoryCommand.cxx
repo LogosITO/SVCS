@@ -9,11 +9,8 @@
 #include "../include/HistoryCommand.hxx"
 #include "../../services/ISubject.hxx"
 
-#include <filesystem>
-#include <fstream>
+#include <iostream>
 #include <sstream>
-
-namespace fs = std::filesystem;
 
 HistoryCommand::HistoryCommand(std::shared_ptr<ISubject> subject,
                                std::shared_ptr<RepositoryManager> repoManager)
@@ -29,6 +26,15 @@ bool HistoryCommand::execute(const std::vector<std::string>& args) {
         return false;
     }
     
+    // Парсим аргументы
+    bool showOneline = false;
+    bool showFull = false;
+    int limit = -1; // -1 means no limit
+    
+    if (!parseArguments(args, showOneline, limit, showFull)) {
+        return false; // Парсинг завершился с ошибкой
+    }
+    
     // Получаем историю коммитов
     auto commits = repoManager_->getCommitHistory();
     if (commits.empty()) {
@@ -37,21 +43,22 @@ bool HistoryCommand::execute(const std::vector<std::string>& args) {
         return true;
     }
     
-    eventBus_->notify({Event::GENERAL_INFO, 
-                      "Commit history (" + std::to_string(commits.size()) + " commits):", SOURCE});
+    // Применяем лимит если указан
+    if (limit > 0 && limit < static_cast<int>(commits.size())) {
+        commits.resize(limit);
+    }
     
-    for (size_t i = 0; i < commits.size(); ++i) {
-        const auto& commit = commits[i];
-        std::stringstream commitInfo;
-        commitInfo << "[" << (i + 1) << "] " << commit.hash.substr(0, 8) << " - " << commit.message;
-        commitInfo << " (" << commit.files_count << " files)";
-        
-        eventBus_->notify({Event::GENERAL_INFO, commitInfo.str(), SOURCE});
+    // Выбираем формат вывода
+    if (showOneline) {
+        showOnelineHistory(commits);
+    } else if (showFull) {
+        showDetailedHistory(commits);
+    } else {
+        showDefaultHistory(commits);
     }
     
     return true;
 }
-
 std::string HistoryCommand::getDescription() const {
     return "Show history of saves";
 }
@@ -121,163 +128,64 @@ bool HistoryCommand::parseArguments(const std::vector<std::string>& args,
 }
 
 
-std::vector<HistoryCommand::HistoryEntry> HistoryCommand::getHistory() const {
-    std::vector<HistoryEntry> entries;
-    std::string repoPath = repoManager_->getRepositoryPath();
+void HistoryCommand::showDefaultHistory(const std::vector<CommitInfo>& commits) const {
+    const std::string SOURCE = "history";
     
-    try {
-        // Read current HEAD to find the latest commit
-        fs::path headFile = fs::path(repoPath) / ".svcs" / "HEAD";
-        std::string currentCommitId = readHeadFile(headFile);
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "Commit history (" + std::to_string(commits.size()) + " commits):", SOURCE});
+    
+    for (size_t i = 0; i < commits.size(); ++i) {
+        const auto& commit = commits[i];
+        std::stringstream commitInfo;
+        commitInfo << "[" << (i + 1) << "] " << commit.hash.substr(0, 8) << " - " << commit.message;
+        commitInfo << " (" << commit.files_count << " files)";
         
-        if (currentCommitId.empty()) {
-            eventBus_->notify({Event::DEBUG_MESSAGE, 
-                              "No commits found in repository", "history"});
-            return entries;
-        }
-        
-        // Traverse commit history starting from HEAD
-        std::string commitId = currentCommitId;
-        while (!commitId.empty()) {
-            HistoryEntry entry = readCommit(commitId, repoPath);
-            if (!entry.id.empty()) {
-                entries.push_back(entry);
-                commitId = entry.parentId; // Move to parent commit
-            } else {
-                break; // Stop if commit cannot be read
-            }
-            
-            // Safety limit to prevent infinite loops
-            if (entries.size() > 1000) {
-                eventBus_->notify({Event::WARNING_MESSAGE,
-                                  "History truncated: too many commits", "history"});
-                break;
-            }
-        }
-        
-    } catch (const fs::filesystem_error& e) {
-        eventBus_->notify({Event::ERROR_MESSAGE, 
-                          "Error reading history: " + std::string(e.what()), "history"});
+        eventBus_->notify({Event::GENERAL_INFO, commitInfo.str(), SOURCE});
     }
-    
-    return entries;
 }
 
-std::string HistoryCommand::readHeadFile(const fs::path& headFile) const {
-    if (!fs::exists(headFile)) {
-        return "";
-    }
+void HistoryCommand::showOnelineHistory(const std::vector<CommitInfo>& commits) const {
+    const std::string SOURCE = "history";
     
-    try {
-        std::ifstream file(headFile);
-        std::string line;
-        if (std::getline(file, line)) {
-            // Format: "ref: refs/heads/main" or direct commit hash
-            if (line.find("ref: refs/heads/") == 0) {
-                // Read branch file to get commit hash
-                std::string branchName = line.substr(16); // After "ref: refs/heads/"
-                fs::path branchFile = headFile.parent_path() / "refs" / "heads" / branchName;
-                if (fs::exists(branchFile)) {
-                    std::ifstream branch(branchFile);
-                    if (std::getline(branch, line)) {
-                        return line; // Commit hash
-                    }
-                }
-            } else {
-                // Direct commit hash in HEAD (detached HEAD state)
-                return line;
-            }
-        }
-    } catch (const std::exception& e) {
-        eventBus_->notify({Event::DEBUG_MESSAGE, 
-                          "Error reading HEAD: " + std::string(e.what()), "history"});
-    }
-    
-    return "";
-}
-
-HistoryCommand::HistoryEntry HistoryCommand::readCommit(const std::string& commitId, 
-                                                       const std::string& repoPath) const {
-    HistoryEntry entry;
-    entry.id = commitId;
-    
-    try {
-        // Commit objects are stored in .svcs/objects/ab/cdef123...
-        std::string objectPath = commitId.substr(0, 2) + "/" + commitId.substr(2);
-        fs::path commitFile = fs::path(repoPath) / ".svcs" / "objects" / objectPath;
-        
-        if (!fs::exists(commitFile)) {
-            eventBus_->notify({Event::DEBUG_MESSAGE, 
-                              "Commit object not found: " + commitId, "history"});
-            return entry;
-        }
-        
-        std::ifstream file(commitFile);
-        std::string line;
-        
-        while (std::getline(file, line)) {
-            if (line.find("message ") == 0) {
-                entry.message = line.substr(8); // After "message "
-            } else if (line.find("author ") == 0) {
-                entry.author = line.substr(7); // After "author "
-            } else if (line.find("timestamp ") == 0) {
-                entry.timestamp = line.substr(10); // After "timestamp "
-            } else if (line.find("parent ") == 0) {
-                entry.parentId = line.substr(7); // After "parent "
-            } else if (line == "---") {
-                break; // End of commit header
-            }
-        }
-        
-    } catch (const std::exception& e) {
-        eventBus_->notify({Event::DEBUG_MESSAGE, 
-                          "Error reading commit " + commitId + ": " + std::string(e.what()), "history"});
-    }
-    
-    return entry;
-}
-
-
-void HistoryCommand::showDefaultHistory(const std::vector<HistoryEntry>& entries) const {
-    for (const auto& entry : entries) {
+    for (const auto& commit : commits) {
         std::stringstream ss;
-        ss << "Save: " << entry.id.substr(0, 7) << " - " << entry.message;
-        eventBus_->notify({Event::GENERAL_INFO, ss.str(), "history"});
-        
-        ss.str("");
-        ss << "  Author: " << entry.author << " | Date: " << formatTimestamp(entry.timestamp);
-        eventBus_->notify({Event::GENERAL_INFO, ss.str(), "history"});
-        
-        if (&entry != &entries.back()) {
-            eventBus_->notify({Event::GENERAL_INFO, "", "history"}); // Empty line between entries
-        }
+        ss << commit.hash.substr(0, 8) << " - " << truncateString(commit.message, 50);
+        eventBus_->notify({Event::GENERAL_INFO, ss.str(), SOURCE});
     }
 }
 
-void HistoryCommand::showOnelineHistory(const std::vector<HistoryEntry>& entries) const {
-    for (const auto& entry : entries) {
-        std::stringstream ss;
-        ss << entry.id.substr(0, 7) << " - " << truncateString(entry.message, 50);
-        eventBus_->notify({Event::GENERAL_INFO, ss.str(), "history"});
-    }
-}
 
-void HistoryCommand::showFullHistory(const std::vector<HistoryEntry>& entries) const {
-    for (const auto& entry : entries) {
-        eventBus_->notify({Event::GENERAL_INFO, "Save ID: " + entry.id, "history"});
-        eventBus_->notify({Event::GENERAL_INFO, "Message:  " + entry.message, "history"});
-        eventBus_->notify({Event::GENERAL_INFO, "Author:   " + entry.author, "history"});
-        eventBus_->notify({Event::GENERAL_INFO, "Date:     " + formatTimestamp(entry.timestamp), "history"});
-        if (!entry.parentId.empty()) {
-            eventBus_->notify({Event::GENERAL_INFO, "Parent:   " + entry.parentId.substr(0, 7), "history"});
+void HistoryCommand::showDetailedHistory(const std::vector<CommitInfo>& commits) const {
+    const std::string SOURCE = "history";
+    
+    for (size_t i = 0; i < commits.size(); ++i) {
+        const auto& commit = commits[i];
+        
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "Commit " + std::to_string(i + 1) + ":", SOURCE});
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "  Hash:    " + commit.hash, SOURCE});
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "  Message: " + commit.message, SOURCE});
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "  Files:   " + std::to_string(commit.files_count), SOURCE});
+        
+        if (!commit.author.empty()) {
+            eventBus_->notify({Event::GENERAL_INFO, 
+                              "  Author:  " + commit.author, SOURCE});
         }
         
-        if (&entry != &entries.back()) {
-            eventBus_->notify({Event::GENERAL_INFO, "---", "history"});
+        if (!commit.timestamp.empty()) {
+            eventBus_->notify({Event::GENERAL_INFO, 
+                              "  Date:    " + formatTimestamp(commit.timestamp), SOURCE});
+        }
+        
+        // Добавляем разделитель между коммитами (кроме последнего)
+        if (i < commits.size() - 1) {
+            eventBus_->notify({Event::GENERAL_INFO, "", SOURCE});
         }
     }
 }
-
 std::string HistoryCommand::formatTimestamp(const std::string& timestamp) const {
     // Simple formatting - could be enhanced with locale-specific formatting
     // For now, just return as-is or do simple reformatting

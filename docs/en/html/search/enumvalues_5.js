@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['index_5fupdate_0',['INDEX_UPDATE',['../structEvent.html#a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775',1,'Event']]],
-  ['info_1',['INFO',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3',1,'Logger.hxx']]]
+  ['unmodified_0',['UNMODIFIED',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8',1,'AddCommand.hxx']]],
+  ['untracked_1',['UNTRACKED',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2',1,'AddCommand.hxx']]]
 ];

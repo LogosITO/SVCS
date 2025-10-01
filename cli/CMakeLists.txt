@@ -6,11 +6,13 @@ set(CLI_SOURCES
     src/AddCommand.cxx
     src/SaveCommand.cxx
     src/StatusCommand.cxx
+    src/HistoryCommand.cxx
     src/CommandFactory.cxx
     src/main.cxx
 )
 
 set(CLI_HEADERS
+    include/Utils.hxx
     include/HelpService.hxx
     include/BaseCommand.hxx
     include/ICommand.hxx
@@ -20,6 +22,7 @@ set(CLI_HEADERS
     include/AddCommand.hxx
     include/SaveCommand.hxx
     include/StatusCommand.hxx
+    include/HistoryCommand.hxx
     include/CommandFactory.hxx
 )
 

@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "CommandFactory", "classCommandFactory.html", null ],
+    [ "CommitInfo", "structCommitInfo.html", null ],
     [ "std::enable_shared_from_this", null, [
       [ "EventBus", "classEventBus.html", null ]
     ] ],
@@ -9,6 +10,7 @@ var hierarchy =
     [ "ICommand", "classICommand.html", [
       [ "BaseCommand", "classBaseCommand.html", null ],
       [ "HelpCommand", "classHelpCommand.html", null ],
+      [ "HistoryCommand", "classHistoryCommand.html", null ],
       [ "InitCommand", "classInitCommand.html", null ],
       [ "SaveCommand", "classSaveCommand.html", null ],
       [ "StatusCommand", "classStatusCommand.html", null ],

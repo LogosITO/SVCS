@@ -57,7 +57,7 @@ public:
      * @brief Returns the command name.
      * @return The string "init".
      */
-    std::string getName() const override { return "init"; }
+    std::string getName() const override;
     
     /**
      * @brief Returns a brief description of the command's purpose.

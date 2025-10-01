@@ -7,6 +7,6 @@ var dir_24d671cfcbc5d5238a6bd565a49d198f =
     [ "Repository.hxx", "Repository_8hxx.html", "Repository_8hxx" ],
     [ "RepositoryManager.hxx", "RepositoryManager_8hxx.html", "RepositoryManager_8hxx" ],
     [ "Tree.hxx", "Tree_8hxx.html", "Tree_8hxx" ],
-    [ "Utils.hxx", "Utils_8hxx.html", "Utils_8hxx" ],
+    [ "Utils.hxx", "core_2include_2Utils_8hxx.html", "core_2include_2Utils_8hxx" ],
     [ "VcsObject.hxx", "VcsObject_8hxx.html", "VcsObject_8hxx" ]
 ];

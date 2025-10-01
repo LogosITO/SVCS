@@ -35,7 +35,7 @@ bool InitCommand::execute(const std::vector<std::string>& args) {
     }
     
     if (repoManager_->initializeRepository(path, force)) {
-        eventBus_->notify({Event::GENERAL_INFO, 
+        eventBus_->notify({Event::REPOSITORY_INIT_SUCCESS, 
                           "Initialized empty SVCS repository in " + path + "/.svcs", "init"});
         return true;
     } else {
@@ -43,6 +43,10 @@ bool InitCommand::execute(const std::vector<std::string>& args) {
                           "Failed to initialize repository", "init"});
         return false;
     }
+}
+
+std::string InitCommand::getName() const {
+    return "init";
 }
 
 std::string InitCommand::getDescription() const {

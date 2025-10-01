@@ -111,8 +111,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a353deb6fb41260c3144988ecebed3243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the determined root path of the currently active repository.  <br /></td></tr>
 <tr class="memitem:aa4a9d5d690cc49d33ad5372fed9b6a54" id="r_aa4a9d5d690cc49d33ad5372fed9b6a54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4a9d5d690cc49d33ad5372fed9b6a54">addFileToStaging</a> (const std::string &amp;filePath)</td></tr>
 <tr class="memdesc:aa4a9d5d690cc49d33ad5372fed9b6a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to add a file to the staging area (index).  <br /></td></tr>
+<tr class="memitem:aaa22558f7b80455c3d5c5f1bc8e0fb65" id="r_aaa22558f7b80455c3d5c5f1bc8e0fb65"><td class="memItemLeft" align="right" valign="top"><a id="aaa22558f7b80455c3d5c5f1bc8e0fb65" name="aaa22558f7b80455c3d5c5f1bc8e0fb65"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getHeadCommit</b> ()</td></tr>
+<tr class="memdesc:aaa22558f7b80455c3d5c5f1bc8e0fb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current HEAD commit hash. <br /></td></tr>
+<tr class="memitem:a8e4a9346964bfdff6d44304bca90e2d3" id="r_a8e4a9346964bfdff6d44304bca90e2d3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4a9346964bfdff6d44304bca90e2d3">createCommit</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:a8e4a9346964bfdff6d44304bca90e2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a commit from staged files.  <br /></td></tr>
+<tr class="memitem:a1af28901603c2e70dce49af751105bef" id="r_a1af28901603c2e70dce49af751105bef"><td class="memItemLeft" align="right" valign="top"><a id="a1af28901603c2e70dce49af751105bef" name="a1af28901603c2e70dce49af751105bef"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>clearStagingArea</b> ()</td></tr>
+<tr class="memdesc:a1af28901603c2e70dce49af751105bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the staging area. <br /></td></tr>
+<tr class="memitem:a647383203955484c1b57222ce5e5faf8" id="r_a647383203955484c1b57222ce5e5faf8"><td class="memItemLeft" align="right" valign="top"><a id="a647383203955484c1b57222ce5e5faf8" name="a647383203955484c1b57222ce5e5faf8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>saveStagedChanges</b> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:a647383203955484c1b57222ce5e5faf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save staged changes (convenience method for <a class="el" href="classSaveCommand.html" title="Command for saving (committing) staged changes to the repository.">SaveCommand</a>) <br /></td></tr>
 <tr class="memitem:a5e0b90c8ec4bb9890ccd1672b99b0712" id="r_a5e0b90c8ec4bb9890ccd1672b99b0712"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e0b90c8ec4bb9890ccd1672b99b0712">getStagedFiles</a> ()</td></tr>
 <tr class="memdesc:a5e0b90c8ec4bb9890ccd1672b99b0712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a list of all files currently marked as staged (indexed).  <br /></td></tr>
+<tr class="memitem:a9974667b34a6fd455758f519deaba44a" id="r_a9974667b34a6fd455758f519deaba44a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structCommitInfo.html">CommitInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9974667b34a6fd455758f519deaba44a">getCommitHistory</a> ()</td></tr>
+<tr class="memdesc:a9974667b34a6fd455758f519deaba44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the commit history.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages all physical file and directory operations within the SVCS repository. </p>
@@ -178,6 +191,52 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file was successfully added, <code>false</code> otherwise. </dd></dl>
 </li>
 </ul>
+
+</div>
+</div>
+<a id="a8e4a9346964bfdff6d44304bca90e2d3" name="a8e4a9346964bfdff6d44304bca90e2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4a9346964bfdff6d44304bca90e2d3">&#9670;&#160;</a></span>createCommit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RepositoryManager::createCommit </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a commit from staged files. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> message </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> hash if successful, empty string otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a9974667b34a6fd455758f519deaba44a" name="a9974667b34a6fd455758f519deaba44a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9974667b34a6fd455758f519deaba44a">&#9670;&#160;</a></span>getCommitHistory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structCommitInfo.html">CommitInfo</a> &gt; RepositoryManager::getCommitHistory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the commit history. </p>
+<dl class="section return"><dt>Returns</dt><dd>Vector of <a class="el" href="structCommitInfo.html">CommitInfo</a> objects representing the commit history </dd></dl>
 
 </div>
 </div>

@@ -56,6 +56,8 @@ public:
      * @return \c true в случае успеха, \c false в противном случае.
      */
     bool execute(const std::vector<std::string>& args) override;
+
+    std::vector<std::string> getAllFilesInDirectory(const std::string& directory) const;
     
     /**
      * @brief Возвращает имя команды.

@@ -29,7 +29,7 @@ bool AddCommand::execute(const std::vector<std::string>& args) {
     bool success = true;
     for (const auto& file : args) {
         if (repoManager_->addFileToStaging(file)) {
-            eventBus_->notify({Event::GENERAL_INFO, 
+            eventBus_->notify({Event::SAVE_SUCCESS, 
                               "Added " + file + " to staging area", "add"});
         } else {
             eventBus_->notify({Event::ERROR_MESSAGE, 
@@ -37,8 +37,48 @@ bool AddCommand::execute(const std::vector<std::string>& args) {
             success = false;
         }
     }
-    
+    int counter = 0;
+    for (const auto& path : args) {
+        if (path == ".") {
+            auto files = getAllFilesInDirectory(".");
+            for (const auto& file : files) {
+                if (repoManager_->addFileToStaging(file)) {
+                    counter++;
+                }
+            }
+        } else if (std::filesystem::is_directory(path)) {
+            auto files = getAllFilesInDirectory(path);
+            for (const auto& file : files) {
+                if (repoManager_->addFileToStaging(file)) {
+                    counter++;
+                }
+            }
+        } else {
+            if (repoManager_->addFileToStaging(path)) {
+                counter++;
+            }
+        }
+    }
     return success;
+}
+
+std::vector<std::string> AddCommand::getAllFilesInDirectory(const std::string& directory) const {
+    std::vector<std::string> files;
+    try {
+        for (const auto& entry : std::filesystem::recursive_directory_iterator(directory)) {
+            if (entry.is_regular_file()) {
+                std::string filePath = entry.path().string();
+                if (filePath.find("/.svcs/") == std::string::npos && 
+                    filePath.find("\\.svcs\\") == std::string::npos) {
+                    files.push_back(filePath);
+                }
+            }
+        }
+    } catch (const std::exception& e) {
+        eventBus_->notify({Event::ERROR_MESSAGE, 
+                          "Error reading directory: " + std::string(e.what()), "add"});
+    }
+    return files;
 }
 
 std::string AddCommand::getDescription() const {

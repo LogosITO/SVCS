@@ -42,7 +42,7 @@ bool SaveCommand::execute(const std::vector<std::string>& args) {
     
     // Create the save point (commit)
     if (createSavePoint(message)) {
-        eventBus_->notify({Event::GENERAL_INFO, 
+        eventBus_->notify({Event::SAVE_SUCCESS, 
                           "Changes saved successfully!", SOURCE});
         return true;
     } else {
@@ -114,19 +114,26 @@ bool SaveCommand::hasStagedChanges() const {
 }
 
 bool SaveCommand::createSavePoint(const std::string& message) const {
-    // TODO: Implement actual commit logic
-    // This should:
-    // 1. Create a commit object with the staged files
-    // 2. Generate a commit hash
-    // 3. Update HEAD reference
-    // 4. Clear the staging area
-    
-    eventBus_->notify({Event::DEBUG_MESSAGE, 
-                      "Creating save point with message: " + message, "save"});
-    
-    // For now, just simulate success
-    // In real implementation, this would interact with Repository/RepositoryManager
-    // to create actual commits
-    
-    return true;
+    try {
+        eventBus_->notify({Event::DEBUG_MESSAGE, 
+                          "Creating save point with message: " + message, "save"});
+        
+        // Используем готовый метод saveStagedChanges, который уже содержит всю логику
+        bool success = repoManager_->saveStagedChanges(message);
+        
+        if (success) {
+            eventBus_->notify({Event::SAVE_SUCCESS, 
+                              "Save point created successfully!", "save"});
+            return true;
+        } else {
+            eventBus_->notify({Event::ERROR_MESSAGE, 
+                              "Failed to create save point", "save"});
+            return false;
+        }
+        
+    } catch (const std::exception& e) {
+        eventBus_->notify({Event::ERROR_MESSAGE, 
+                          "Error creating save point: " + std::string(e.what()), "save"});
+        return false;
+    }
 }

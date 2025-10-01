@@ -60,8 +60,7 @@ var NAVTREE =
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ]
+        [ "Enumerations", "functions_enum.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -78,7 +77,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommand_8cxx.html",
-"classTestableObject.html#a89133227b30cea6642769a8cad7c1375"
+"classSaveCommand.html#a813b7d30d64cd3c3c09822ba4ff9ab18"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

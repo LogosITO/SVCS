@@ -101,82 +101,44 @@ $(function(){initNavTree('structEvent.html','','structEvent-members'); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Открытые типы</h2></td></tr>
-<tr class="memitem:a2abf13b5be49315e9e362af02029f058" id="r_a2abf13b5be49315e9e362af02029f058"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2abf13b5be49315e9e362af02029f058">Type</a> { <br />
-&#160;&#160;<a class="el" href="#a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a">FATAL_ERROR</a>
-, <a class="el" href="#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c">RUNTIME_ERROR</a>
-, <a class="el" href="#a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04">REPOSITORY_INIT_SUCCESS</a>
-, <a class="el" href="#a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70">OBJECT_WRITE_SUCCESS</a>
+<tr class="memitem:a2abf13b5be49315e9e362af02029f058" id="r_a2abf13b5be49315e9e362af02029f058"><td class="memItemLeft" align="right" valign="top"><a id="a2abf13b5be49315e9e362af02029f058" name="a2abf13b5be49315e9e362af02029f058"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2abf13b5be49315e9e362af02029f058">Type</a> { <br />
+&#160;&#160;<b>FATAL_ERROR</b>
+, <b>RUNTIME_ERROR</b>
+, <b>REPOSITORY_INIT_SUCCESS</b>
+, <b>STAGE_SUCCESS</b>
 , <br />
-&#160;&#160;<a class="el" href="#a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092">OBJECT_READ_SUCCESS</a>
-, <a class="el" href="#a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775">INDEX_UPDATE</a>
-, <a class="el" href="#a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c">COMMIT_CREATED</a>
-, <a class="el" href="#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7">GENERAL_INFO</a>
+&#160;&#160;<b>SAVE_SUCCESS</b>
+, <b>OBJECT_WRITE_SUCCESS</b>
+, <b>OBJECT_READ_SUCCESS</b>
+, <b>INDEX_UPDATE</b>
 , <br />
-&#160;&#160;<a class="el" href="#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5">DEBUG_MESSAGE</a>
-, <a class="el" href="#a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61">ERROR_MESSAGE</a>
+&#160;&#160;<b>COMMIT_CREATED</b>
+, <b>GENERAL_INFO</b>
+, <b>DEBUG_MESSAGE</b>
+, <b>ERROR_MESSAGE</b>
+, <br />
+&#160;&#160;<b>WARNING_MESSAGE</b>
 <br />
  }</td></tr>
-<tr class="memdesc:a2abf13b5be49315e9e362af02029f058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of event types that can be published.  <a href="#a2abf13b5be49315e9e362af02029f058">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:a2abf13b5be49315e9e362af02029f058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types of events that can be published. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Открытые атрибуты</h2></td></tr>
 <tr class="memitem:acb1e67cf0d5f22ac9360447b6f0fb5d3" id="r_acb1e67cf0d5f22ac9360447b6f0fb5d3"><td class="memItemLeft" align="right" valign="top"><a id="acb1e67cf0d5f22ac9360447b6f0fb5d3" name="acb1e67cf0d5f22ac9360447b6f0fb5d3"></a>
 <a class="el" href="#a2abf13b5be49315e9e362af02029f058">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
-<tr class="memdesc:acb1e67cf0d5f22ac9360447b6f0fb5d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The specific type of event that occurred, defined by the <a class="el" href="#a2abf13b5be49315e9e362af02029f058" title="Enumeration of event types that can be published.">Type</a> enum. <br /></td></tr>
+<tr class="memdesc:acb1e67cf0d5f22ac9360447b6f0fb5d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of event that occurred. <br /></td></tr>
 <tr class="memitem:afedba76038909cf242d7642da3b7bfd9" id="r_afedba76038909cf242d7642da3b7bfd9"><td class="memItemLeft" align="right" valign="top"><a id="afedba76038909cf242d7642da3b7bfd9" name="afedba76038909cf242d7642da3b7bfd9"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>details</b></td></tr>
-<tr class="memdesc:afedba76038909cf242d7642da3b7bfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detailed description or payload (e.g., file path, object hash, error text). <br /></td></tr>
+<tr class="memdesc:afedba76038909cf242d7642da3b7bfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detailed description or payload (e.g., object hash) <br /></td></tr>
 <tr class="memitem:af3aea97224cf810339754ab8bd53e893" id="r_af3aea97224cf810339754ab8bd53e893"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3aea97224cf810339754ab8bd53e893">source_name</a></td></tr>
 <tr class="memdesc:af3aea97224cf810339754ab8bd53e893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source of the event (e.g., "main", "InitCommand", "Repository").  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Structure describing an event published by the VCS core. </p>
 <ul>
-<li>This is the "message" that the Subject (Publisher, e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> or Command) sends to all its Observers (Subscribers, e.g., <a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a>). </li>
+<li>This is the "message" that the Subject (Publisher, e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a>) sends to all its Observers. </li>
 </ul>
-</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Перечисления</h2>
-<a id="a2abf13b5be49315e9e362af02029f058" name="a2abf13b5be49315e9e362af02029f058"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2abf13b5be49315e9e362af02029f058">&#9670;&#160;</a></span>Type</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a2abf13b5be49315e9e362af02029f058">Event::Type</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enumeration of event types that can be published. </p>
-<ul>
-<li>Categories include Error Levels, Success/Core Process Notifications, and General Information. </li>
-</ul>
-<table class="fieldtable">
-<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a" name="a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a"></a>FATAL_ERROR&#160;</td><td class="fielddoc"><p>Critical error leading to program termination. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c" name="a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c"></a>RUNTIME_ERROR&#160;</td><td class="fielddoc"><p>Error preventing an operation from completing (e.g., File I/O error). </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04" name="a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04"></a>REPOSITORY_INIT_SUCCESS&#160;</td><td class="fielddoc"><p><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> successfully initialized. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70" name="a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70"></a>OBJECT_WRITE_SUCCESS&#160;</td><td class="fielddoc"><p>Object successfully written to storage. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092" name="a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092"></a>OBJECT_READ_SUCCESS&#160;</td><td class="fielddoc"><p>Object successfully read from storage. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775" name="a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775"></a>INDEX_UPDATE&#160;</td><td class="fielddoc"><p>The working area index has been updated. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c" name="a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c"></a>COMMIT_CREATED&#160;</td><td class="fielddoc"><p>A new commit object was successfully created. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7" name="a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7"></a>GENERAL_INFO&#160;</td><td class="fielddoc"><p>General informational message relevant to the user. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5" name="a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5"></a>DEBUG_MESSAGE&#160;</td><td class="fielddoc"><p>Message intended for low-level debugging and tracing. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61" name="a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61"></a>ERROR_MESSAGE&#160;</td><td class="fielddoc"><p>General error message (less severe than RUNTIME_ERROR, often used for debugging context). </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
 <a id="af3aea97224cf810339754ab8bd53e893" name="af3aea97224cf810339754ab8bd53e893"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3aea97224cf810339754ab8bd53e893">&#9670;&#160;</a></span>source_name</h2>
 
@@ -190,7 +152,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>details</b></t
 </div><div class="memdoc">
 
 <p>Source of the event (e.g., "main", "InitCommand", "Repository"). </p>
-<p>Added to support three-argument aggregate initialization in notify() calls and to help observers filter or format messages based on the sender module. The module or command that generated the event. </p>
+<p>Added to support three-argument aggregate initialization in notify() calls. The module or command that generated the event </p>
 
 </div>
 </div>

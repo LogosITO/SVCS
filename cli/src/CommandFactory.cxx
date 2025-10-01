@@ -6,6 +6,7 @@
  * @license **MIT License**
  */
 
+#include "../include/Utils.hxx"
 #include "../include/CommandFactory.hxx"
 #include "../include/InitCommand.hxx"
 #include "../include/AddCommand.hxx"
@@ -14,6 +15,7 @@
 #include "../include/VersionCommand.hxx"
 #include "../include/SaveCommand.hxx"
 #include "../include/StatusCommand.hxx"
+#include "../include/HistoryCommand.hxx"
 
 #include <iostream>
 #include <memory>
@@ -30,43 +32,50 @@ CommandFactory::CommandFactory(std::shared_ptr<ISubject> bus,
     }
     
     isInitializing = true;
-    std::cout << "DEBUG: CommandFactory constructor called" << std::endl;
+    printDebug("CommandFactory constructor called");
     
     registerDefaultCommands();
     
     isInitializing = false;
-    std::cout << "DEBUG: CommandFactory initialization completed" << std::endl;
+    printDebug("CommandFactory initialization completed");
 }
 void CommandFactory::registerDefaultCommands() {
-    std::cout << "DEBUG: CommandFactory initializing..." << std::endl;
+    printDebug("CommandFactory initializing...");
 
     registerCommand("version", [](std::shared_ptr<ISubject> bus, 
                                  std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+        printDebug("Creating VersionCommand instance");
         return std::make_unique<VersionCommand>(bus);
     });
     
     registerCommand("init", [](std::shared_ptr<ISubject> bus, 
                               std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
-        std::cout << "DEBUG: Creating InitCommand instance" << std::endl;
+        printDebug("Creating InitCommand instance");
         return std::make_unique<InitCommand>(bus, repoManager);
     });
     
     registerCommand("add", [](std::shared_ptr<ISubject> bus, 
                              std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
-        std::cout << "DEBUG: Creating AddCommand instance" << std::endl;
+        printDebug("Creating AddCommand instance");
         return std::make_unique<AddCommand>(bus, repoManager);
     });
 
     registerCommand("save", [](std::shared_ptr<ISubject> bus, 
                           std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
-        std::cout << "DEBUG: Creating SaveCommand instance" << std::endl;
+        printDebug("Creaing SaveCommand instance");
         return std::make_unique<SaveCommand>(bus, repoManager);
     });
 
     registerCommand("status", [](std::shared_ptr<ISubject> bus, 
                           std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
-        std::cout << "DEBUG: Creating SaveCommand instance" << std::endl;
+        printDebug("Creating StatusCommand instance");
         return std::make_unique<StatusCommand>(bus, repoManager);
+    });
+
+    registerCommand("history", [](std::shared_ptr<ISubject> bus, 
+                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+        printDebug("Creating HistoryCommand instance");
+        return std::make_unique<HistoryCommand>(bus, repoManager);
     });
     
     registerCommand("help", [this](std::shared_ptr<ISubject> bus, 
@@ -111,17 +120,17 @@ void CommandFactory::registerCommand(const std::string& name,
                                    std::function<std::unique_ptr<ICommand>(std::shared_ptr<ISubject>,
                                                                          std::shared_ptr<RepositoryManager>)> creator) {
     creators[name] = std::move(creator);
-    std::cout << "DEBUG: Registered command: " << name << std::endl;
+    printDebug("Registered command" + name);
 }
 
 std::unique_ptr<ICommand> CommandFactory::createCommand(const std::string& name) const {
     auto it = creators.find(name);
     if (it == creators.end()) {
-        std::cout << "DEBUG: Command not found: " << name << std::endl;
+        printDebug("Command not found: " + name);
         return nullptr;
     }
     
-    std::cout << "DEBUG: Creating command: " << name << std::endl;
+    printDebug("Creating command: " + name);
     return it->second(event_bus, repo_manager);
 }
 

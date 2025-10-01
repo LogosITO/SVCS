@@ -15,6 +15,14 @@
 #include <vector>
 #include <memory>
 
+struct CommitInfo {
+    std::string hash;
+    std::string message;
+    int files_count = 0;
+    std::string author;
+    std::string timestamp;
+};
+
 /**
  * @brief Manages all physical file and directory operations within the SVCS repository.
  *
@@ -25,10 +33,10 @@
 class RepositoryManager {
 private:
     /** @brief The full path to the root of the currently active SVCS repository (.svcs directory). */
-    std::string currentRepoPath_;
+    std::string currentRepoPath;
     
     /** @brief Shared pointer to the event bus for internal logging and notifications. */
-    std::shared_ptr<ISubject> eventBus_;
+    std::shared_ptr<ISubject> eventBus;
     
     // --- Private Utility Methods for Logging ---
     
@@ -103,7 +111,7 @@ public:
      * @brief Returns the determined root path of the currently active repository.
      * @return The string path to the repository root.
      */
-    std::string getRepositoryPath() const { return currentRepoPath_; }
+    std::string getRepositoryPath() const { return currentRepoPath; }
     
     // --- Public Staging Management Methods ---
     
@@ -114,10 +122,38 @@ public:
      * @return \c true if the file was successfully added, \c false otherwise.
      */
     bool addFileToStaging(const std::string& filePath);
+
+    /**
+     * @brief Get the current HEAD commit hash
+     */
+    std::string getHeadCommit();
+
+    /**
+     * @brief Create a commit from staged files
+     * @param message Commit message
+     * @return Commit hash if successful, empty string otherwise
+     */
+    std::string createCommit(const std::string& message);
+
+    /**
+     * @brief Clear the staging area
+     */
+    bool clearStagingArea();
+
+    /**
+     * @brief Save staged changes (convenience method for SaveCommand)
+     */
+    bool saveStagedChanges(const std::string& message);
     
     /**
      * @brief Retrieves a list of all files currently marked as staged (indexed).
      * @return A vector of strings containing the file paths in the staging area.
      */
     std::vector<std::string> getStagedFiles();
+
+    /**
+     * @brief Get the commit history
+     * @return Vector of CommitInfo objects representing the commit history
+     */
+    std::vector<CommitInfo> getCommitHistory();
 };

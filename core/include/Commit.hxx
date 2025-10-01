@@ -10,6 +10,7 @@
 #pragma once
 
 #include "VcsObject.hxx"
+
 #include <string>
 #include <vector>
 #include <ctime>
@@ -37,6 +38,8 @@ private:
     std::string message;
 
 public:
+    Commit();
+    
     /**
      * @brief Main constructor for the Commit object.
      * @details Initializes the metadata fields, sorts the parent hashes for consistency, and immediately computes the object's hash ID.
@@ -109,4 +112,12 @@ public:
      * @return const std::string& The commit message.
      */
     const std::string& getMessage() const;
+
+    void setMessage(const std::string& msg);
+
+    void setTimestamp(const std::time_t tstamp);
+
+    void setTimestampNow();
+
+    void setParent(const std::string& parent);
 };

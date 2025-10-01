@@ -103,55 +103,81 @@ $(function(){initNavTree('RepositoryManager_8hxx_source.html','',''); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classRepositoryManager.html">   25</a></span><span class="keyword">class </span><a class="code hl_function" href="classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf">RepositoryManager</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::string currentRepoPath_;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// --- Private Utility Methods for Logging ---</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> logError(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structCommitInfo.html">   18</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structCommitInfo.html">CommitInfo</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::string hash;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::string message;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> files_count = 0;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::string author;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::string timestamp;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classRepositoryManager.html">   33</a></span><span class="keyword">class </span><a class="code hl_function" href="classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf">RepositoryManager</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::string currentRepoPath;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::shared_ptr&lt;ISubject&gt; eventBus;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> logDebug(<span class="keyword">const</span> std::string&amp; message);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> logInfo(<span class="keyword">const</span> std::string&amp; message);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// --- Private Utility Methods for File System Operations ---</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// --- Private Utility Methods for Logging ---</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> logError(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> logDebug(<span class="keyword">const</span> std::string&amp; message);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">bool</span> createDirectory(<span class="keyword">const</span> std::filesystem::path&amp; path);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">bool</span> createFile(<span class="keyword">const</span> std::filesystem::path&amp; path, <span class="keyword">const</span> std::string&amp; content = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> logInfo(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">// --- Private Utility Methods for File System Operations ---</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">bool</span> createDirectory(<span class="keyword">const</span> std::filesystem::path&amp; path);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">bool</span> removeRepository(<span class="keyword">const</span> std::filesystem::path&amp; path);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf">RepositoryManager</a>(std::shared_ptr&lt;ISubject&gt; bus);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// --- Public Repository Management Methods ---</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepositoryManager.html#a1ddddb02e8b5f59b06b8a40465716103">initializeRepository</a>(<span class="keyword">const</span> std::string&amp; path, <span class="keywordtype">bool</span> force = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674">isRepositoryInitialized</a>(<span class="keyword">const</span> std::string&amp; path = <span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classRepositoryManager.html#a353deb6fb41260c3144988ecebed3243">  106</a></span>    std::string <a class="code hl_function" href="classRepositoryManager.html#a353deb6fb41260c3144988ecebed3243">getRepositoryPath</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currentRepoPath_; }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// --- Public Staging Management Methods ---</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">bool</span> createFile(<span class="keyword">const</span> std::filesystem::path&amp; path, <span class="keyword">const</span> std::string&amp; content = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">bool</span> removeRepository(<span class="keyword">const</span> std::filesystem::path&amp; path);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf">RepositoryManager</a>(std::shared_ptr&lt;ISubject&gt; bus);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// --- Public Repository Management Methods ---</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepositoryManager.html#a1ddddb02e8b5f59b06b8a40465716103">initializeRepository</a>(<span class="keyword">const</span> std::string&amp; path, <span class="keywordtype">bool</span> force = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674">isRepositoryInitialized</a>(<span class="keyword">const</span> std::string&amp; path = <span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepositoryManager.html#aa4a9d5d690cc49d33ad5372fed9b6a54">addFileToStaging</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classRepositoryManager.html#a353deb6fb41260c3144988ecebed3243">  114</a></span>    std::string <a class="code hl_function" href="classRepositoryManager.html#a353deb6fb41260c3144988ecebed3243">getRepositoryPath</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currentRepoPath; }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// --- Public Staging Management Methods ---</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="classRepositoryManager.html#a5e0b90c8ec4bb9890ccd1672b99b0712">getStagedFiles</a>();</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepositoryManager.html#aa4a9d5d690cc49d33ad5372fed9b6a54">addFileToStaging</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    std::string <a class="code hl_function" href="classRepositoryManager.html#aaa22558f7b80455c3d5c5f1bc8e0fb65">getHeadCommit</a>();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    std::string <a class="code hl_function" href="classRepositoryManager.html#a8e4a9346964bfdff6d44304bca90e2d3">createCommit</a>(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepositoryManager.html#a1af28901603c2e70dce49af751105bef">clearStagingArea</a>();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepositoryManager.html#a647383203955484c1b57222ce5e5faf8">saveStagedChanges</a>(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="classRepositoryManager.html#a5e0b90c8ec4bb9890ccd1672b99b0712">getStagedFiles</a>();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    std::vector&lt;CommitInfo&gt; <a class="code hl_function" href="classRepositoryManager.html#a9974667b34a6fd455758f519deaba44a">getCommitHistory</a>();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>};</div>
 </div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_a1af28901603c2e70dce49af751105bef"><div class="ttname"><a href="classRepositoryManager.html#a1af28901603c2e70dce49af751105bef">RepositoryManager::clearStagingArea</a></div><div class="ttdeci">bool clearStagingArea()</div><div class="ttdoc">Clear the staging area.</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:339</div></div>
 <div class="ttc" id="aclassRepositoryManager_html_a1ddddb02e8b5f59b06b8a40465716103"><div class="ttname"><a href="classRepositoryManager.html#a1ddddb02e8b5f59b06b8a40465716103">RepositoryManager::initializeRepository</a></div><div class="ttdeci">bool initializeRepository(const std::string &amp;path, bool force=false)</div><div class="ttdoc">Initializes a new SVCS repository in the specified path.</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:129</div></div>
-<div class="ttc" id="aclassRepositoryManager_html_a353deb6fb41260c3144988ecebed3243"><div class="ttname"><a href="classRepositoryManager.html#a353deb6fb41260c3144988ecebed3243">RepositoryManager::getRepositoryPath</a></div><div class="ttdeci">std::string getRepositoryPath() const</div><div class="ttdoc">Returns the determined root path of the currently active repository.</div><div class="ttdef"><b>Definition</b> RepositoryManager.hxx:106</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_a353deb6fb41260c3144988ecebed3243"><div class="ttname"><a href="classRepositoryManager.html#a353deb6fb41260c3144988ecebed3243">RepositoryManager::getRepositoryPath</a></div><div class="ttdeci">std::string getRepositoryPath() const</div><div class="ttdoc">Returns the determined root path of the currently active repository.</div><div class="ttdef"><b>Definition</b> RepositoryManager.hxx:114</div></div>
 <div class="ttc" id="aclassRepositoryManager_html_a458ddacf912fdc1774ab351f736a19cf"><div class="ttname"><a href="classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf">RepositoryManager::RepositoryManager</a></div><div class="ttdeci">RepositoryManager(std::shared_ptr&lt; ISubject &gt; bus)</div><div class="ttdoc">Constructs a RepositoryManager.</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:14</div></div>
-<div class="ttc" id="aclassRepositoryManager_html_a5e0b90c8ec4bb9890ccd1672b99b0712"><div class="ttname"><a href="classRepositoryManager.html#a5e0b90c8ec4bb9890ccd1672b99b0712">RepositoryManager::getStagedFiles</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getStagedFiles()</div><div class="ttdoc">Retrieves a list of all files currently marked as staged (indexed).</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:251</div></div>
-<div class="ttc" id="aclassRepositoryManager_html_aa4a9d5d690cc49d33ad5372fed9b6a54"><div class="ttname"><a href="classRepositoryManager.html#aa4a9d5d690cc49d33ad5372fed9b6a54">RepositoryManager::addFileToStaging</a></div><div class="ttdeci">bool addFileToStaging(const std::string &amp;filePath)</div><div class="ttdoc">Attempts to add a file to the staging area (index).</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:222</div></div>
-<div class="ttc" id="aclassRepositoryManager_html_ae03ccf6c40689d204f8579b6ac860674"><div class="ttname"><a href="classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674">RepositoryManager::isRepositoryInitialized</a></div><div class="ttdeci">bool isRepositoryInitialized(const std::string &amp;path=&quot;.&quot;)</div><div class="ttdoc">Checks if a SVCS repository is initialized in the given path or its parents.</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:197</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_a5e0b90c8ec4bb9890ccd1672b99b0712"><div class="ttname"><a href="classRepositoryManager.html#a5e0b90c8ec4bb9890ccd1672b99b0712">RepositoryManager::getStagedFiles</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getStagedFiles()</div><div class="ttdoc">Retrieves a list of all files currently marked as staged (indexed).</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:313</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_a647383203955484c1b57222ce5e5faf8"><div class="ttname"><a href="classRepositoryManager.html#a647383203955484c1b57222ce5e5faf8">RepositoryManager::saveStagedChanges</a></div><div class="ttdeci">bool saveStagedChanges(const std::string &amp;message)</div><div class="ttdoc">Save staged changes (convenience method for SaveCommand)</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:438</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_a8e4a9346964bfdff6d44304bca90e2d3"><div class="ttname"><a href="classRepositoryManager.html#a8e4a9346964bfdff6d44304bca90e2d3">RepositoryManager::createCommit</a></div><div class="ttdeci">std::string createCommit(const std::string &amp;message)</div><div class="ttdoc">Create a commit from staged files.</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:362</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_a9974667b34a6fd455758f519deaba44a"><div class="ttname"><a href="classRepositoryManager.html#a9974667b34a6fd455758f519deaba44a">RepositoryManager::getCommitHistory</a></div><div class="ttdeci">std::vector&lt; CommitInfo &gt; getCommitHistory()</div><div class="ttdoc">Get the commit history.</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:517</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_aa4a9d5d690cc49d33ad5372fed9b6a54"><div class="ttname"><a href="classRepositoryManager.html#aa4a9d5d690cc49d33ad5372fed9b6a54">RepositoryManager::addFileToStaging</a></div><div class="ttdeci">bool addFileToStaging(const std::string &amp;filePath)</div><div class="ttdoc">Attempts to add a file to the staging area (index).</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:284</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_aaa22558f7b80455c3d5c5f1bc8e0fb65"><div class="ttname"><a href="classRepositoryManager.html#aaa22558f7b80455c3d5c5f1bc8e0fb65">RepositoryManager::getHeadCommit</a></div><div class="ttdeci">std::string getHeadCommit()</div><div class="ttdoc">Get the current HEAD commit hash.</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:470</div></div>
+<div class="ttc" id="aclassRepositoryManager_html_ae03ccf6c40689d204f8579b6ac860674"><div class="ttname"><a href="classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674">RepositoryManager::isRepositoryInitialized</a></div><div class="ttdeci">bool isRepositoryInitialized(const std::string &amp;path=&quot;.&quot;)</div><div class="ttdoc">Checks if a SVCS repository is initialized in the given path or its parents.</div><div class="ttdef"><b>Definition</b> RepositoryManager.cxx:259</div></div>
+<div class="ttc" id="astructCommitInfo_html"><div class="ttname"><a href="structCommitInfo.html">CommitInfo</a></div><div class="ttdef"><b>Definition</b> RepositoryManager.hxx:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -10,6 +10,9 @@ var searchData=
   ['helpservice_7',['HelpService',['../classHelpService.html',1,'HelpService'],['../classHelpService.html#ac380002930a510d355fe11cf11e946ce',1,'HelpService::HelpService()']]],
   ['helpservice_2ecxx_8',['HelpService.cxx',['../HelpService_8cxx.html',1,'']]],
   ['helpservice_2ehxx_9',['HelpService.hxx',['../HelpService_8hxx.html',1,'']]],
-  ['hex_5fto_5fbinary_5fstring_10',['hex_to_binary_string',['../Utils_8hxx.html#a7fc89ff4883c714ee7a53698eb485ec3',1,'hex_to_binary_string(const std::string &amp;hex_string):&#160;Utils.cxx'],['../Utils_8cxx.html#a7fc89ff4883c714ee7a53698eb485ec3',1,'hex_to_binary_string(const std::string &amp;hex_string):&#160;Utils.cxx']]],
-  ['how_20to_20report_20a_20vulnerability_11',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md24',1,'']]]
+  ['hex_5fto_5fbinary_5fstring_10',['hex_to_binary_string',['../core_2include_2Utils_8hxx.html#a7fc89ff4883c714ee7a53698eb485ec3',1,'hex_to_binary_string(const std::string &amp;hex_string):&#160;Utils.cxx'],['../Utils_8cxx.html#a7fc89ff4883c714ee7a53698eb485ec3',1,'hex_to_binary_string(const std::string &amp;hex_string):&#160;Utils.cxx']]],
+  ['historycommand_11',['HistoryCommand',['../classHistoryCommand.html',1,'HistoryCommand'],['../classHistoryCommand.html#a91327f300a414761734016ebdc51c8e6',1,'HistoryCommand::HistoryCommand()']]],
+  ['historycommand_2ecxx_12',['HistoryCommand.cxx',['../HistoryCommand_8cxx.html',1,'']]],
+  ['historycommand_2ehxx_13',['HistoryCommand.hxx',['../HistoryCommand_8hxx.html',1,'']]],
+  ['how_20to_20report_20a_20vulnerability_14',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md24',1,'']]]
 ];

@@ -10,6 +10,7 @@
 
 #include <sstream>
 #include <algorithm>
+#include <chrono>
 
 Commit::Commit(
     std::string thash,
@@ -170,6 +171,26 @@ const std::string& Commit::getAuthor() const {
 std::time_t Commit::getTimestamp() const {
     return timestamp;
 }
+
 const std::string& Commit::getMessage() const {
     return message;
+}
+
+void Commit::setMessage(const std::string& msg) { 
+        if (message.empty()) {
+            throw std::invalid_argument("Commit message cannot be empty");
+        }
+        message = msg; 
+    }
+    
+void Commit::setTimestamp(const std::time_t tstamp) { 
+    timestamp = tstamp; 
+}
+
+void Commit::setTimestampNow() {
+    timestamp = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+}
+
+void Commit::setParent(const std::string& parent) { 
+    parent_hashes.push_back(parent); 
 }

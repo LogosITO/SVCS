@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['general_5finfo_0',['GENERAL_INFO',['../structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7',1,'Event']]]
+  ['warn_0',['WARN',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277',1,'Logger.hxx']]]
 ];

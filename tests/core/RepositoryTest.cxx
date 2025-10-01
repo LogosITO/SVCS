@@ -6,9 +6,9 @@
  * @license **MIT License**
  */
 
-#include "../core/include/Repository.hxx" 
-#include "../services/IObserver.hxx"
-#include "../services/Event.hxx" 
+#include "../../core/include/Repository.hxx" 
+#include "../../services/IObserver.hxx"
+#include "../../services/Event.hxx" 
 
 #include <gtest/gtest.h>
 #include <filesystem>

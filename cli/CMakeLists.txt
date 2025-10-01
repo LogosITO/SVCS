@@ -10,7 +10,6 @@ set(CLI_SOURCES
     src/StatusCommand.cxx
     src/HistoryCommand.cxx
     src/CommandFactory.cxx
-    src/main.cxx
 )
 
 set(CLI_HEADERS
@@ -30,7 +29,8 @@ set(CLI_HEADERS
     include/CommandFactory.hxx
 )
 
-add_executable(svcs ${CLI_SOURCES})
+add_library(svcs_cli_commands STATIC ${CLI_SOURCES})
+add_executable(svcs src/main.cxx ${CLI_SOURCES})
 
 set_target_properties(svcs_core PROPERTIES
     CXX_STANDARD 17

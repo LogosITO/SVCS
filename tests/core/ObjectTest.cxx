@@ -6,7 +6,7 @@
  * @license **MIT License**
  */
 
-#include "../core/include/VcsObject.hxx"
+#include "../../core/include/VcsObject.hxx"
 
 #include <gtest/gtest.h>
 

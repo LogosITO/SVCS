@@ -6,7 +6,7 @@
  * @license **MIT License**
  */
 
-#include "../core/include/Commit.hxx"
+#include "../../core/include/Commit.hxx"
 
 #include <gtest/gtest.h>
 

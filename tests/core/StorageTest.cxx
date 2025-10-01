@@ -6,10 +6,10 @@
  * @license **MIT License**
  */
 
-#include "../core/include/ObjectStorage.hxx"
-#include "../core/include/Blob.hxx"
-#include "../core/include/Tree.hxx"
-#include "../core/include/Commit.hxx"
+#include "../../core/include/ObjectStorage.hxx"
+#include "../../core/include/Blob.hxx"
+#include "../../core/include/Tree.hxx"
+#include "../../core/include/Commit.hxx"
 
 #include <gtest/gtest.h>
 #include <filesystem>

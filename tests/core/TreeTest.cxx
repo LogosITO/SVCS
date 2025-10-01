@@ -6,7 +6,7 @@
  * @license **MIT License**
  */
 
-#include "../core/include/Tree.hxx"
+#include "../../core/include/Tree.hxx"
 
 #include <gtest/gtest.h>
 

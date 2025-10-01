@@ -16,14 +16,27 @@ InitCommand::InitCommand(std::shared_ptr<ISubject> subject,
 bool InitCommand::execute(const std::vector<std::string>& args) {
     std::string path = ".";
     bool force = false;
+    bool showHelpFlag = false;
     
     // Парсим аргументы
     for (const auto& arg : args) {
         if (arg == "--force" || arg == "-f") {
             force = true;
-        } else if (arg != ".") {
+        } else if (arg == "--help" || arg == "-h") {
+            showHelpFlag = true;
+        } else if (arg.find("-") == 0) {
+            // Неизвестная опция
+            eventBus_->notify({Event::WARNING_MESSAGE, 
+                              "Unknown option: " + arg, "init"});
+        } else {
+            // Это путь (может быть ".")
             path = arg;
         }
+    }
+    
+    if (showHelpFlag) {
+        showHelp();
+        return true;
     }
     
     eventBus_->notify({Event::GENERAL_INFO, 
@@ -66,6 +79,8 @@ void InitCommand::showHelp() const {
                       "Options:", "init"});
     eventBus_->notify({Event::GENERAL_INFO, 
                       "  --force, -f    Reinitialize even if repository exists", "init"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "  --help, -h     Show this help", "init"});
     eventBus_->notify({Event::GENERAL_INFO, 
                       "If no path is provided, uses current directory", "init"});
 }

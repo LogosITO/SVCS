@@ -6,9 +6,9 @@
  * @license **MIT License**
  */
 
-#include "../core/include/Index.hxx"
-#include "../core/include/Blob.hxx"
-#include "../core/include/ObjectStorage.hxx" 
+#include "../../core/include/Index.hxx"
+#include "../../core/include/Blob.hxx"
+#include "../../core/include/ObjectStorage.hxx" 
 
 #include <gtest/gtest.h>
 #include <filesystem>

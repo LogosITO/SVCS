@@ -6,9 +6,9 @@
  * @license **MIT License**
  */
 
-#include "../core/include/RepositoryManager.hxx"
-#include "../services/EventBus.hxx"
-#include "../services/logging/Logger.hxx"
+#include "../../core/include/RepositoryManager.hxx"
+#include "../../services/EventBus.hxx"
+#include "../../services/logging/Logger.hxx"
 
 #include "gtest/gtest.h"
 #include <filesystem>

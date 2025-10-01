@@ -132,7 +132,8 @@ $(function(){initNavTree('classStatusCommand.html','','classStatusCommand-member
 <li>Current branch</li>
 <li>Staged changes (ready to save)</li>
 <li>Unstaged changes (not yet added)</li>
-<li>Untracked files (new files) </li>
+<li>Untracked files (new files)</li>
+<li>Status of specific files when provided as arguments </li>
 </ul>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="accc3fc5aaec6e577f370a01ebb4bd64f" name="accc3fc5aaec6e577f370a01ebb4bd64f"></a>
@@ -192,7 +193,7 @@ $(function(){initNavTree('classStatusCommand.html','','classStatusCommand-member
 <p>Executes the status command. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">args</td><td>Command arguments (ignored for status command). </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments - if provided, shows status for specific files. </td></tr>
   </table>
   </dd>
 </dl>
@@ -286,7 +287,7 @@ $(function(){initNavTree('classStatusCommand.html','','classStatusCommand-member
 </div><div class="memdoc">
 
 <p>Gets the usage syntax of the command. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>"svcs status" </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"svcs status [file1 file2 ...]" </dd></dl>
 
 <p>Замещает <a class="el" href="classICommand.html#a9e912ad55e38e0cf9ae2f6e558d6c401">ICommand</a>.</p>
 

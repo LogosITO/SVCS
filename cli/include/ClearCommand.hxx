@@ -39,7 +39,7 @@ public:
     /**
      * @brief Executes the clear command.
      *
-     * @param args Command arguments (currently unused).
+     * @param args Command arguments (--force to skip confirmation).
      * @return true if clear succeeded, false otherwise.
      */
     bool execute(const std::vector<std::string>& args) override;
@@ -58,7 +58,7 @@ public:
     
     /**
      * @brief Gets the usage syntax of the command.
-     * @return "svcs clear"
+     * @return "svcs clear [--force]"
      */
     std::string getUsage() const override;
     
@@ -74,4 +74,11 @@ private:
      * @return true if user confirms, false otherwise.
      */
     bool confirmClear() const;
+    
+    /**
+     * @brief Removes the repository.
+     *
+     * @return true if removal succeeded, false otherwise.
+     */
+    bool removeRepository() const;
 };

@@ -13,6 +13,7 @@ var hierarchy =
       [ "HelpCommand", "classHelpCommand.html", null ],
       [ "HistoryCommand", "classHistoryCommand.html", null ],
       [ "InitCommand", "classInitCommand.html", null ],
+      [ "RemoveCommand", "classRemoveCommand.html", null ],
       [ "SaveCommand", "classSaveCommand.html", null ],
       [ "StatusCommand", "classStatusCommand.html", null ],
       [ "VersionCommand", "classVersionCommand.html", null ]

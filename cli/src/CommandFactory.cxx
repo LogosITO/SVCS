@@ -11,6 +11,7 @@
 #include "../include/InitCommand.hxx"
 #include "../include/ClearCommand.hxx"
 #include "../include/AddCommand.hxx"
+#include "../include/RemoveCommand.hxx"
 #include "../include/HelpService.hxx"
 #include "../include/HelpCommand.hxx"
 #include "../include/VersionCommand.hxx"
@@ -65,6 +66,12 @@ void CommandFactory::registerDefaultCommands() {
                              std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating AddCommand instance");
         return std::make_unique<AddCommand>(bus, repoManager);
+    });
+
+    registerCommand("remove", [](std::shared_ptr<ISubject> bus, 
+                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+        printDebug("Creating AddCommand instance");
+        return std::make_unique<RemoveCommand>(bus, repoManager);
     });
 
     registerCommand("save", [](std::shared_ptr<ISubject> bus, 

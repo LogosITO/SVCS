@@ -26,6 +26,7 @@ var annotated_dup =
     [ "NullObserver", "classNullObserver.html", "classNullObserver" ],
     [ "ObjectStorage", "classObjectStorage.html", "classObjectStorage" ],
     [ "ObjectStorageTest", "classObjectStorageTest.html", null ],
+    [ "RemoveCommand", "classRemoveCommand.html", "classRemoveCommand" ],
     [ "Repository", "classRepository.html", "classRepository" ],
     [ "RepositoryManager", "classRepositoryManager.html", "classRepositoryManager" ],
     [ "RepositoryManagerTest", "classRepositoryManagerTest.html", null ],

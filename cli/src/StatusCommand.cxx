@@ -29,6 +29,18 @@ bool StatusCommand::execute(const std::vector<std::string>& args) {
         return false;
     }
     
+    // Если указаны конкретные файлы - показываем статус только для них
+    if (!args.empty()) {
+        return showFileStatus(args);
+    }
+    
+    // Иначе показываем полный статус
+    return showFullStatus();
+}
+
+bool StatusCommand::showFullStatus() const {
+    const std::string SOURCE = "status";
+    
     eventBus_->notify({Event::GENERAL_INFO, 
                       "Repository status:", SOURCE});
     
@@ -43,25 +55,110 @@ bool StatusCommand::execute(const std::vector<std::string>& args) {
     return true;
 }
 
+bool StatusCommand::showFileStatus(const std::vector<std::string>& files) const {
+    const std::string SOURCE = "status";
+    
+    int shownCount = 0;
+    int missingCount = 0;
+    
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "File status:", SOURCE});
+    
+    for (const auto& file : files) {
+        // Проверяем существует ли файл
+        if (!fs::exists(file)) {
+            eventBus_->notify({Event::WARNING_MESSAGE, 
+                              "  [missing] " + file, SOURCE});
+            missingCount++;
+            continue;
+        }
+        
+        // Получаем статус файла
+        auto [status, description] = getFileStatus(file);
+        
+        // Форматируем вывод с цветами
+        std::string color;
+        switch (status) {
+            case 'A': color = "\033[92m"; break; // Зеленый для staged
+            case 'M': color = "\033[93m"; break; // Желтый для modified
+            case '?': color = "\033[90m"; break; // Серый для untracked
+            case 'D': color = "\033[91m"; break; // Красный для deleted
+            default:  color = "\033[0m";  break; // Стандартный цвет
+        }
+        
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "  " + color + description + "\033[0m", SOURCE});
+        shownCount++;
+    }
+    
+    // Сводка
+    if (shownCount > 0 || missingCount > 0) {
+        std::string summary = "Shown " + std::to_string(shownCount) + " file(s)";
+        if (missingCount > 0) {
+            summary += ", " + std::to_string(missingCount) + " missing";
+        }
+        eventBus_->notify({Event::GENERAL_INFO, summary, SOURCE});
+    } else {
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "No files to display.", SOURCE});
+    }
+    
+    return true;
+}
+
 std::string StatusCommand::getDescription() const {
     return "Show the working tree status";
 }
 
 std::string StatusCommand::getUsage() const {
-    return "svcs status";
+    return "svcs status [file1 file2 ...]";
 }
 
 void StatusCommand::showHelp() const {
     eventBus_->notify({Event::GENERAL_INFO, "Usage: " + getUsage(), "status"});
     eventBus_->notify({Event::GENERAL_INFO, "Description: " + getDescription(), "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "Shows the current state of the repository including:", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  - Current branch", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  - Staged changes (ready to save)", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  - Unstaged changes (modified files)", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  - Untracked files (new files)", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "This command does not accept any arguments.", "status"});
+    eventBus_->notify({Event::GENERAL_INFO, "Shows the current state of the repository.", "status"});
+    eventBus_->notify({Event::GENERAL_INFO, "Options:", "status"});
+    eventBus_->notify({Event::GENERAL_INFO, "  [no args]       Show full repository status", "status"});
+    eventBus_->notify({Event::GENERAL_INFO, "  <file>          Show status for specific files", "status"});
+    eventBus_->notify({Event::GENERAL_INFO, "Examples:", "status"});
+    eventBus_->notify({Event::GENERAL_INFO, "  svcs status                    Show full status", "status"});
+    eventBus_->notify({Event::GENERAL_INFO, "  svcs status file.txt           Show status for file.txt", "status"});
+    eventBus_->notify({Event::GENERAL_INFO, "  svcs status file1.txt file2.txt Show status for multiple files", "status"});
 }
 
+// Остальные методы остаются без изменений...
+
+std::pair<char, std::string> StatusCommand::getFileStatus(const std::string& filePath) const {
+    auto stagedFiles = repoManager_->getStagedFiles();
+    
+    // Проверяем staged статус
+    bool isStaged = std::find(stagedFiles.begin(), stagedFiles.end(), filePath) != stagedFiles.end();
+    
+    // Проверяем существует ли файл
+    if (!fs::exists(filePath)) {
+        if (isStaged) {
+            return {'D', "[deleted]   " + filePath + " (staged but file missing)"};
+        } else {
+            return {'?', "[missing]   " + filePath};
+        }
+    }
+    
+    // Проверяем modified статус
+    bool isModified = isFileModified(fs::path(filePath));
+    
+    if (isStaged) {
+        if (isModified) {
+            return {'M', "[modified]  " + filePath + " (staged but modified)"};
+        } else {
+            return {'A', "[staged]    " + filePath};
+        }
+    } else {
+        return {'?', "[untracked] " + filePath};
+    }
+}
+
+// Остальные существующие методы остаются без изменений...
 void StatusCommand::showBranchInfo() const {
     std::string branch = getCurrentBranch();
     eventBus_->notify({Event::GENERAL_INFO, "On branch: " + branch, "status"});
@@ -154,22 +251,11 @@ std::string StatusCommand::getCurrentBranch() const {
     return "main"; // Fallback
 }
 
-bool StatusCommand::isFileModified(const fs::path& filePath) const {
-    // Basic implementation for now
-    // In a real VCS, you would compare file content hashes with staged version
-    
+bool StatusCommand::isFileModified(const fs::path& filePath) const { 
     try {
         if (!fs::exists(filePath)) {
             return false; // File doesn't exist - handled separately in showUnstagedChanges
         }
-        
-        // Simple heuristic: check if file was modified recently
-        // This is a placeholder - real implementation would compare with staged content
-        
-        // For now, we'll use a simple approach based on file existence in staging
-        // A file is considered "modified" if it exists and is in the staging area
-        // This will be improved when we have proper content comparison
-        
         std::string repoPath = repoManager_->getRepositoryPath();
         std::string relativePath = fs::relative(filePath, repoPath).string();
         

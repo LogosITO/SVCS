@@ -25,6 +25,7 @@
  * - Staged changes (ready to save)
  * - Unstaged changes (not yet added)
  * - Untracked files (new files)
+ * - Status of specific files when provided as arguments
  */
 class StatusCommand : public ICommand {
 private:
@@ -44,7 +45,7 @@ public:
     /**
      * @brief Executes the status command.
      *
-     * @param args Command arguments (ignored for status command).
+     * @param args Command arguments - if provided, shows status for specific files.
      * @return true always, as status command cannot fail.
      */
     bool execute(const std::vector<std::string>& args) override;
@@ -63,7 +64,7 @@ public:
     
     /**
      * @brief Gets the usage syntax of the command.
-     * @return "svcs status"
+     * @return "svcs status [file1 file2 ...]"
      */
     std::string getUsage() const override;
     
@@ -73,6 +74,17 @@ public:
     void showHelp() const override;
     
 private:
+    /**
+     * @brief Shows the full repository status.
+     */
+    bool showFullStatus() const;
+    
+    /**
+     * @brief Shows status for specific files.
+     * @param files List of files to show status for.
+     */
+    bool showFileStatus(const std::vector<std::string>& files) const;
+    
     /**
      * @brief Shows the current branch information.
      */
@@ -122,4 +134,11 @@ private:
      * @return Formatted status string.
      */
     std::string formatFileStatus(char status, const std::string& filePath) const;
+    
+    /**
+     * @brief Gets the status of a specific file.
+     * @param filePath The file to check.
+     * @return Status character and description.
+     */
+    std::pair<char, std::string> getFileStatus(const std::string& filePath) const;
 };

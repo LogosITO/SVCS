@@ -8,6 +8,7 @@
 
 #include "../include/ClearCommand.hxx"
 #include <iostream>
+#include <algorithm>
 
 ClearCommand::ClearCommand(std::shared_ptr<ISubject> subject,
                            std::shared_ptr<RepositoryManager> repoManager)
@@ -26,34 +27,63 @@ bool ClearCommand::execute(const std::vector<std::string>& args) {
     
     std::string repoPath = repoManager_->getRepositoryPath();
     
+    // Check for --help flag
+    if (std::find(args.begin(), args.end(), "--help") != args.end() ||
+        std::find(args.begin(), args.end(), "-h") != args.end()) {
+        showHelp();
+        return true;
+    }
+    
+    // Check for --force flag
+    bool force = std::find(args.begin(), args.end(), "--force") != args.end() ||
+                 std::find(args.begin(), args.end(), "-f") != args.end();
+    
     eventBus_->notify({Event::WARNING_MESSAGE, 
                       "This will permanently remove the SVCS repository from:", SOURCE});
     eventBus_->notify({Event::WARNING_MESSAGE, 
                       "  " + repoPath + "/.svcs", SOURCE});
     
-    // Ask for confirmation
-    if (!confirmClear()) {
+    // Count files that will be removed
+    std::filesystem::path svcsDir = std::filesystem::path(repoPath) / ".svcs";
+    size_t fileCount = 0;
+    size_t dirCount = 0;
+    
+    try {
+        if (std::filesystem::exists(svcsDir)) {
+            for (const auto& entry : std::filesystem::recursive_directory_iterator(svcsDir)) {
+                if (entry.is_regular_file()) {
+                    fileCount++;
+                } else if (entry.is_directory()) {
+                    dirCount++;
+                }
+            }
+        }
+        
+        if (fileCount > 0) {
+            eventBus_->notify({Event::WARNING_MESSAGE, 
+                              "This will remove " + std::to_string(fileCount) + " files and " + 
+                              std::to_string(dirCount) + " directories.", SOURCE});
+        }
+    } catch (const std::exception& e) {
+        eventBus_->notify({Event::DEBUG_MESSAGE, 
+                          "Error counting repository files: " + std::string(e.what()), SOURCE});
+    }
+    
+    // Ask for confirmation unless --force is used
+    if (!force && !confirmClear()) {
         eventBus_->notify({Event::GENERAL_INFO, 
                           "Clear operation cancelled.", SOURCE});
         return false;
     }
     
     // Remove repository
-    std::filesystem::path svcsDir = std::filesystem::path(repoPath) / ".svcs";
-    
-    try {
-        if (repoManager_->removeRepository(svcsDir)) {
-            eventBus_->notify({Event::GENERAL_INFO, 
-                              "SVCS repository successfully removed.", SOURCE});
-            return true;
-        } else {
-            eventBus_->notify({Event::ERROR_MESSAGE, 
-                              "Failed to remove repository.", SOURCE});
-            return false;
-        }
-    } catch (const std::exception& e) {
+    if (removeRepository()) {
+        eventBus_->notify({Event::GENERAL_INFO, 
+                          "SVCS repository successfully removed.", SOURCE});
+        return true;
+    } else {
         eventBus_->notify({Event::ERROR_MESSAGE, 
-                          "Error removing repository: " + std::string(e.what()), SOURCE});
+                          "Failed to remove repository.", SOURCE});
         return false;
     }
 }
@@ -63,7 +93,7 @@ std::string ClearCommand::getDescription() const {
 }
 
 std::string ClearCommand::getUsage() const {
-    return "svcs clear";
+    return "svcs clear [--force]";
 }
 
 void ClearCommand::showHelp() const {
@@ -76,7 +106,19 @@ void ClearCommand::showHelp() const {
     eventBus_->notify({Event::GENERAL_INFO, 
                       "This action cannot be undone!", "clear"});
     eventBus_->notify({Event::GENERAL_INFO, 
-                      "The command will ask for confirmation before proceeding.", "clear"});
+                      "Options:", "clear"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "  --force, -f    Skip confirmation prompt", "clear"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "  --help, -h     Show this help message", "clear"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "Examples:", "clear"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "  svcs clear              Remove repository (with confirmation)", "clear"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "  svcs clear --force      Remove repository (without confirmation)", "clear"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "  svcs clear -f           Remove repository (without confirmation)", "clear"});
 }
 
 bool ClearCommand::confirmClear() const {
@@ -85,4 +127,17 @@ bool ClearCommand::confirmClear() const {
     std::getline(std::cin, response);
     
     return (response == "y" || response == "Y" || response == "yes");
+}
+
+bool ClearCommand::removeRepository() const {
+    std::string repoPath = repoManager_->getRepositoryPath();
+    std::filesystem::path svcsDir = std::filesystem::path(repoPath) / ".svcs";
+    
+    try {
+        return repoManager_->removeRepository(svcsDir);
+    } catch (const std::exception& e) {
+        eventBus_->notify({Event::ERROR_MESSAGE, 
+                          "Error removing repository: " + std::string(e.what()), "clear"});
+        return false;
+    }
 }

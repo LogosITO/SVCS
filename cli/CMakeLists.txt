@@ -5,6 +5,7 @@ set(CLI_SOURCES
     src/InitCommand.cxx
     src/ClearCommand.cxx
     src/AddCommand.cxx
+    src/RemoveCommand.cxx
     src/SaveCommand.cxx
     src/StatusCommand.cxx
     src/HistoryCommand.cxx
@@ -22,6 +23,7 @@ set(CLI_HEADERS
     include/InitCommand.hxx
     include/ClearCommand.hxx
     include/AddCommand.hxx
+    include/RemoveCommand.hxx
     include/SaveCommand.hxx
     include/StatusCommand.hxx
     include/HistoryCommand.hxx

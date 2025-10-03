@@ -97,27 +97,27 @@ std::string ClearCommand::getUsage() const {
 }
 
 void ClearCommand::showHelp() const {
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Usage: " + getUsage(), "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Description: " + getDescription(), "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Permanently removes the .svcs directory and all repository data.", "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "This action cannot be undone!", "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Options:", "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --force, -f    Skip confirmation prompt", "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --help, -h     Show this help message", "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Examples:", "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs clear              Remove repository (with confirmation)", "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs clear --force      Remove repository (without confirmation)", "clear"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs clear -f           Remove repository (without confirmation)", "clear"});
 }
 

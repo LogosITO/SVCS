@@ -69,23 +69,23 @@ std::string SaveCommand::getUsage() const {
 }
 
 void SaveCommand::showHelp() const {
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Usage: " + getUsage(), "save"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Description: " + getDescription(), "save"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Creates a permanent snapshot of all staged changes with the given message.", "save"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Options:", "save"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  -m, --message <msg>    Message describing the changes (required)", "save"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Examples:", "save"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs save -m \"Add new feature\"", "save"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs save --message \"Fix bug in calculation\"", "save"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Note: Use 'svcs add' to stage files before saving.", "save"});
 }
 

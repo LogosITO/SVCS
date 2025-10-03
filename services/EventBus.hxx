@@ -76,6 +76,8 @@ private:
                 return ConsoleColor::BRIGHT_CYAN;
             case Event::DEBUG_MESSAGE:
                 return ConsoleColor::DIM + ConsoleColor::BRIGHT_BLUE;
+            case Event::HELP_MESSAGE:
+                return ConsoleColor::GREEN;
             default:
                 return ConsoleColor::WHITE;
         }
@@ -95,6 +97,8 @@ private:
                 return "ℹ️ ";
             case Event::DEBUG_MESSAGE:
                 return "🐛";
+            case Event::HELP_MESSAGE:
+                return "💡";
             default:
                 return "";
         }

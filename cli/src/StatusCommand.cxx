@@ -120,16 +120,16 @@ std::string StatusCommand::getUsage() const {
 }
 
 void StatusCommand::showHelp() const {
-    eventBus_->notify({Event::GENERAL_INFO, "Usage: " + getUsage(), "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "Description: " + getDescription(), "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "Shows the current state of the repository.", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "Options:", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  [no args]       Show full repository status", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  <file>          Show status for specific files", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "Examples:", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs status                    Show full status", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs status file.txt           Show status for file.txt", "status"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs status file1.txt file2.txt Show status for multiple files", "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Usage: " + getUsage(), "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Description: " + getDescription(), "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Shows the current state of the repository.", "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Options:", "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  [no args]       Show full repository status", "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  <file>          Show status for specific files", "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Examples:", "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs status                    Show full status", "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs status file.txt           Show status for file.txt", "status"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs status file1.txt file2.txt Show status for multiple files", "status"});
 }
 
 // Остальные методы остаются без изменений...

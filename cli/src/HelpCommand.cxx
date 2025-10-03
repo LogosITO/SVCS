@@ -54,17 +54,17 @@ void HelpCommand::showGeneralHelp() {
         return;
     }
     
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "SVCS - Simple Version Control System", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Version 1.0.0", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Usage: svcs <command> [options] [arguments]", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Available commands:", "help"});
     
     // Get available commands using HelpService
@@ -73,23 +73,23 @@ void HelpCommand::showGeneralHelp() {
     for (const auto& commandName : commands) {
         // Get command description using HelpService
         std::string description = helpService_->getCommandDescription(commandName);
-        eventBus_->notify({Event::GENERAL_INFO, 
+        eventBus_->notify({Event::HELP_MESSAGE, 
                           "  " + commandName + " - " + description, "help"});
     }
     
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Global options:", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --version, -v    Show version information", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --help, -h       Show this help message", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "For more information about a specific command, use:", "help"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs help <command>", "help"});
 }
 

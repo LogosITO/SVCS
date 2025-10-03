@@ -31,6 +31,7 @@ struct Event {
         COMMIT_CREATED, 
         
         GENERAL_INFO,  
+        HELP_MESSAGE,
         DEBUG_MESSAGE,          
         ERROR_MESSAGE,          
         WARNING_MESSAGE

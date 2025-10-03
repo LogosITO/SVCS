@@ -121,37 +121,37 @@ std::string RemoveCommand::getUsage() const {
 }
 
 void RemoveCommand::showHelp() const {
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Usage: " + getUsage(), "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Description: " + getDescription(), "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Removes files from the staging area (index).", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "The actual files on disk are not affected.", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Options:", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  <file>           Remove specific file from staging", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --all, -a        Remove all files from staging area", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --force, -f      Skip confirmation (use with --all)", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  .                Remove all files (legacy, no confirmation)", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --help, -h       Show this help message", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Examples:", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs remove file.txt                 Remove single file", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs remove file1.txt file2.txt      Remove multiple files", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs remove --all                    Remove all files (with confirmation)", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs remove --all --force            Remove all files (without confirmation)", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  svcs remove .                        Remove all files (legacy, no confirmation)", "remove"});
 }
 

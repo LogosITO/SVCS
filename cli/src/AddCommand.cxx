@@ -286,20 +286,20 @@ std::string AddCommand::getUsage() const {
 }
 
 void AddCommand::showHelp() const {
-    eventBus_->notify({Event::GENERAL_INFO, "Usage: " + getUsage(), "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "Description: " + getDescription(), "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "Files are added to the staging area for the next commit", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "Options:", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --dry-run, -n       Show what would be added without actually adding", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --interactive, -i   Interactive mode", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --patch, -p         Patch mode (select parts of files to add)", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --update, -u        Only add tracked files", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --force, -f         Force add ignored files", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --exclude <pattern> Exclude files matching pattern", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --help, -h          Show this help", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "Examples:", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs add file.txt              Add single file", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs add .                     Add all files in current directory", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs add --dry-run .           Show what would be added", "add"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs add src/ include/         Add directories", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Usage: " + getUsage(), "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Description: " + getDescription(), "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Files are added to the staging area for the next commit", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Options:", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --dry-run, -n       Show what would be added without actually adding", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --interactive, -i   Interactive mode", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --patch, -p         Patch mode (select parts of files to add)", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --update, -u        Only add tracked files", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --force, -f         Force add ignored files", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --exclude <pattern> Exclude files matching pattern", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --help, -h          Show this help", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Examples:", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs add file.txt              Add single file", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs add .                     Add all files in current directory", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs add --dry-run .           Show what would be added", "add"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs add src/ include/         Add directories", "add"});
 }

@@ -71,16 +71,16 @@ std::string InitCommand::getUsage() const {
 }
 
 void InitCommand::showHelp() const {
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Usage: " + getUsage(), "init"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Description: " + getDescription(), "init"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Options:", "init"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --force, -f    Reinitialize even if repository exists", "init"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "  --help, -h     Show this help", "init"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "If no path is provided, uses current directory", "init"});
 }

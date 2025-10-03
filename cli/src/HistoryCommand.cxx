@@ -136,7 +136,7 @@ bool HistoryCommand::parseArguments(const std::vector<std::string>& args,
 void HistoryCommand::showDefaultHistory(const std::vector<CommitInfo>& commits) const {
     const std::string SOURCE = "history";
     
-    eventBus_->notify({Event::GENERAL_INFO,  // ← ИЗМЕНИТЬ
+    eventBus_->notify({Event::GENERAL_INFO,
                       "Commit history (" + std::to_string(commits.size()) + " commits):", SOURCE});
     
     for (size_t i = 0; i < commits.size(); ++i) {
@@ -145,7 +145,7 @@ void HistoryCommand::showDefaultHistory(const std::vector<CommitInfo>& commits) 
         commitInfo << "[" << (i + 1) << "] " << commit.hash.substr(0, 8) << " - " << commit.message;
         commitInfo << " (" << commit.files_count << " files)";
         
-        eventBus_->notify({Event::GENERAL_INFO,  // ← ИЗМЕНИТЬ
+        eventBus_->notify({Event::GENERAL_INFO,
                           commitInfo.str(), SOURCE});
     }
 }
@@ -156,7 +156,7 @@ void HistoryCommand::showOnelineHistory(const std::vector<CommitInfo>& commits) 
     for (const auto& commit : commits) {
         std::stringstream ss;
         ss << commit.hash.substr(0, 8) << " - " << truncateString(commit.message, 50);
-        eventBus_->notify({Event::GENERAL_INFO,  // ← ИЗМЕНИТЬ
+        eventBus_->notify({Event::GENERAL_INFO,
                           ss.str(), SOURCE});
     }
 }
@@ -167,7 +167,7 @@ void HistoryCommand::showDetailedHistory(const std::vector<CommitInfo>& commits)
     for (size_t i = 0; i < commits.size(); ++i) {
         const auto& commit = commits[i];
         
-        eventBus_->notify({Event::GENERAL_INFO,  // ← ИЗМЕНИТЬ
+        eventBus_->notify({Event::GENERAL_INFO,
                           "Commit " + std::to_string(i + 1) + ":", SOURCE});
         eventBus_->notify({Event::GENERAL_INFO, 
                           "  Hash:    " + commit.hash, SOURCE});

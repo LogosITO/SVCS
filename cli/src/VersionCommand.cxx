@@ -37,13 +37,13 @@ std::string VersionCommand::getUsage() const {
 }
 
 void VersionCommand::showHelp() const {
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Usage: " + getUsage(), "version"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Description: " + getDescription(), "version"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "Shows the current version of SVCS, build information, and copyright details.", "version"});
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::HELP_MESSAGE, 
                       "This command does not accept any arguments.", "version"});
 }
 

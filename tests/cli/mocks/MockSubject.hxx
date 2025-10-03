@@ -10,6 +10,8 @@
 
 #include "../../../services/ISubject.hxx"
 
+#include <gmock/gmock.h>
+
 /**
  * @brief Mock implementation of ISubject.
  * * This class captures all events published by the system core 
@@ -65,5 +67,16 @@ public:
             }
         }
         return false;
+    }
+    void storeNotification(const Event& event) {
+        notifications.push_back(event);
+    }
+    
+    void clearNotifications() {
+        notifications.clear();
+    }
+    
+    const std::vector<Event>& getNotifications() const {
+        return notifications;
     }
 };

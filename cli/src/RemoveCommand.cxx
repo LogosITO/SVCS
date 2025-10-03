@@ -35,6 +35,33 @@ bool RemoveCommand::execute(const std::vector<std::string>& args) {
         return false;
     }
     
+    // Parse flags first
+    bool remove_all = false;
+    bool force_remove = false;
+    bool show_help = false;
+    std::vector<std::string> filesToRemove;
+    
+    for (const auto& arg : args) {
+        if (arg == "--help" || arg == "-h") {
+            show_help = true;
+        } else if (arg == "--all" || arg == "-a") {
+            remove_all = true;
+        } else if (arg == "--force" || arg == "-f") {
+            force_remove = true;
+        } else if (arg == ".") {
+            remove_all = true;
+            force_remove = true; // Legacy behavior - no confirmation
+        } else {
+            filesToRemove.push_back(arg);
+        }
+    }
+    
+    // Handle help
+    if (show_help) {
+        showHelp();
+        return true;
+    }
+    
     // Check if there are staged files
     auto stagedFiles = repoManager_->getStagedFiles();
     if (stagedFiles.empty()) {
@@ -43,32 +70,9 @@ bool RemoveCommand::execute(const std::vector<std::string>& args) {
         return true;
     }
     
-    // Handle different cases
-    for (size_t i = 0; i < args.size(); ++i) {
-        const auto& arg = args[i];
-        
-        if (arg == "--help" || arg == "-h") {
-            showHelp();
-            return true;
-        } else if (arg == "--all" || arg == "-a") {
-            // Remove all files with confirmation
-            if (confirmRemoveAll()) {
-                if (removeAllFromStaging()) {
-                    eventBus_->notify({Event::GENERAL_INFO, 
-                                      "Removed all files from staging area.", SOURCE});
-                    return true;
-                } else {
-                    eventBus_->notify({Event::ERROR_MESSAGE, 
-                                      "Failed to remove all files from staging area.", SOURCE});
-                    return false;
-                }
-            } else {
-                eventBus_->notify({Event::GENERAL_INFO, 
-                                  "Remove operation cancelled.", SOURCE});
-                return false;
-            }
-        } else if (arg == ".") {
-            // Legacy support for "." - remove all files without confirmation
+    // Handle remove all
+    if (remove_all) {
+        if (force_remove || confirmRemoveAll()) {
             if (removeAllFromStaging()) {
                 eventBus_->notify({Event::GENERAL_INFO, 
                                   "Removed all files from staging area.", SOURCE});
@@ -78,19 +82,34 @@ bool RemoveCommand::execute(const std::vector<std::string>& args) {
                                   "Failed to remove all files from staging area.", SOURCE});
                 return false;
             }
-        } else if (arg == "--force" || arg == "-f") {
-            // Skip confirmation for next operation
-            continue;
         } else {
-            // Remove specific file
-            if (removeFileFromStaging(arg)) {
-                eventBus_->notify({Event::GENERAL_INFO, 
-                                  "Removed from staging: " + arg, SOURCE});
-            }
+            eventBus_->notify({Event::GENERAL_INFO, 
+                              "Remove operation cancelled.", SOURCE});
+            return false;
         }
     }
     
-    return true;
+    // Handle specific file removal
+    if (filesToRemove.empty()) {
+        eventBus_->notify({Event::ERROR_MESSAGE, 
+                          "No files specified for removal.", SOURCE});
+        return false;
+    }
+    
+    bool any_removed = false;
+    bool any_errors = true;
+
+    for (const auto& file : filesToRemove) {
+        if (removeFileFromStaging(file)) {
+            eventBus_->notify({Event::GENERAL_INFO, 
+                              "Removed from staging: " + file, SOURCE});
+            any_removed = true;
+        } else {
+            any_errors = true;
+        }
+    }
+    
+    return any_removed || !any_errors;
 }
 
 std::string RemoveCommand::getDescription() const {
@@ -113,13 +132,13 @@ void RemoveCommand::showHelp() const {
     eventBus_->notify({Event::GENERAL_INFO, 
                       "Options:", "remove"});
     eventBus_->notify({Event::GENERAL_INFO, 
-                      "  --all, -a        Remove all files from staging area (with confirmation)", "remove"});
+                      "  <file>           Remove specific file from staging", "remove"});
+    eventBus_->notify({Event::GENERAL_INFO, 
+                      "  --all, -a        Remove all files from staging area", "remove"});
     eventBus_->notify({Event::GENERAL_INFO, 
                       "  --force, -f      Skip confirmation (use with --all)", "remove"});
     eventBus_->notify({Event::GENERAL_INFO, 
-                      "  .                Remove all files from staging area (legacy, no confirmation)", "remove"});
-    eventBus_->notify({Event::GENERAL_INFO, 
-                      "  <file>           Remove specific file from staging", "remove"});
+                      "  .                Remove all files (legacy, no confirmation)", "remove"});
     eventBus_->notify({Event::GENERAL_INFO, 
                       "  --help, -h       Show this help message", "remove"});
     eventBus_->notify({Event::GENERAL_INFO, 

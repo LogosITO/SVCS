@@ -1,3 +1,15 @@
+/**
+ * @file IntHistoryCommandTest.cxx
+ * @brief Implementation of the integration tests for the HistoryCommand class.
+ *
+ * @details This file contains the test cases for verifying the correct behavior of 
+ * the HistoryCommand class when interacting with a real RepositoryManager and 
+ * the file system. It includes setup/teardown logic and helper functions for 
+ * creating files and commits to simulate a repository's history.
+ * * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "IntHistoryCommandTest.hxx"
 
 #include <fstream>

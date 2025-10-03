@@ -1,3 +1,15 @@
+/**
+ * @file IntStatusCommandTest.hxx
+ * @brief Test fixture header for integration tests of the StatusCommand class.
+ *
+ * @details Declares the StatusCommandTest fixture, which sets up a controlled
+ * environment for testing the 'svcs status' command. This includes initializing 
+ * mock and core components (MockSubject, RepositoryManager) and providing helper 
+ * functions for file manipulation and checking command output.
+ * * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #pragma once
 
 #include <gtest/gtest.h>

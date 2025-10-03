@@ -1,7 +1,16 @@
 /**
- * @file IntRemoveCommandTest.cxx
- * @brief Integration tests for RemoveCommand.
+ * @file HistoryCommandTest.cxx
+ * @brief Integration tests for the HistoryCommand class, covering history display, 
+ * options (--oneline, --last N, --full), and argument validation.
+ *
+ * @details This file implements the test cases for the HistoryCommandTest fixture. 
+ * It verifies the command's behavior in various repository states, including no 
+ * commits, multiple commits, and scenarios with invalid or conflicting command-line 
+ * arguments. Debug statements are included in some tests to aid in tracing output.
+ * * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
  */
+
 
 #include "utils/IntRemoveCommandTest.hxx"
 

@@ -41,11 +41,15 @@ var hierarchy =
     [ "testing::Test", null, [
       [ "AddCommandTest", "classAddCommandTest.html", null ],
       [ "ClearCommandTest", "classClearCommandTest.html", null ],
+      [ "HistoryCommandTest", "classHistoryCommandTest.html", null ],
       [ "IndexTest", "classIndexTest.html", null ],
       [ "InitCommandIntegrationTest", "classInitCommandIntegrationTest.html", null ],
       [ "ObjectStorageTest", "classObjectStorageTest.html", null ],
+      [ "RemoveCommandTest", "classRemoveCommandTest.html", null ],
       [ "RepositoryManagerTest", "classRepositoryManagerTest.html", null ],
-      [ "RepositoryTest", "classRepositoryTest.html", null ]
+      [ "RepositoryTest", "classRepositoryTest.html", null ],
+      [ "SaveCommandTest", "classSaveCommandTest.html", null ],
+      [ "StatusCommandTest", "classStatusCommandTest.html", null ]
     ] ],
     [ "TreeEntry", "structTreeEntry.html", null ],
     [ "VcsObject", "classVcsObject.html", [

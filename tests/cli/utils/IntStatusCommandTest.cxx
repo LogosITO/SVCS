@@ -1,3 +1,16 @@
+/**
+ * @file IntStatusCommandTest.cxx
+ * @brief Implementation of the integration tests for the StatusCommand class.
+ *
+ * @details This file provides the concrete implementation for the StatusCommandTest fixture. 
+ * It sets up a temporary SVCS repository with initial untracked files and includes 
+ * helper functions for creating files, directories, and staging changes. The fixture 
+ * is designed to test the `svcs status` command's ability to report the working 
+ * tree's state accurately.
+ * * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "IntStatusCommandTest.hxx"
 
 #include <fstream>

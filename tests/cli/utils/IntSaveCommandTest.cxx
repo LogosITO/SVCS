@@ -1,3 +1,16 @@
+/**
+ * @file IntSaveCommandTest.cxx
+ * @brief Implementation of integration tests for the SaveCommand class.
+ *
+ * @details This file contains the concrete implementation for the SaveCommandTest fixture. 
+ * It sets up a temporary SVCS repository and provides utility methods (like file creation 
+ * and staging) to simulate real-world usage scenarios for testing the 'svcs save' 
+ * (commit) command's logic, message handling, and repository state changes.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "IntSaveCommandTest.hxx"
 
 #include <fstream>

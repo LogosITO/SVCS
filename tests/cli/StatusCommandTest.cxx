@@ -1,6 +1,14 @@
 /**
  * @file StatusCommandTest.cxx
- * @brief Unit tests for StatusCommand class.
+ * @brief Integration tests for the StatusCommand class.
+ *
+ * @details This file implements the test cases for the StatusCommandTest fixture. 
+ * It verifies the command's ability to display the working tree status, covering 
+ * the full repository status display and status checks for specific files. 
+ * Tests include verifying correct reporting for staged, unstaged, and missing 
+ * files, as well as handling the 'no repository' error condition.
+ * * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
  */
 
 #include "utils/IntStatusCommandTest.hxx"

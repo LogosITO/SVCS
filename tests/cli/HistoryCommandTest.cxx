@@ -1,6 +1,15 @@
 /**
  * @file HistoryCommandTest.cxx
- * @brief Unit tests for HistoryCommand class.
+ * @brief Integration tests for the HistoryCommand class, covering core functionality, 
+ * format options, limit handling, and argument validation.
+ *
+ * @details This file implements the test cases for the HistoryCommandTest fixture. 
+ * It verifies the command's behavior in various repository states and rigorously 
+ * checks argument parsing and error reporting for all supported flags. 
+ * Two tests include verbose debugging output to `std::cout` to assist in tracing 
+ * the internal state of the repository manager and the event notifications.
+ * * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
  */
 
 #include "utils/IntHistoryCommandTest.hxx"

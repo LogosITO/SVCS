@@ -13,5 +13,7 @@ var searchData=
   ['historycommand_10',['HistoryCommand',['../classHistoryCommand.html',1,'HistoryCommand'],['../classHistoryCommand.html#a91327f300a414761734016ebdc51c8e6',1,'HistoryCommand::HistoryCommand()']]],
   ['historycommand_2ecxx_11',['HistoryCommand.cxx',['../HistoryCommand_8cxx.html',1,'']]],
   ['historycommand_2ehxx_12',['HistoryCommand.hxx',['../HistoryCommand_8hxx.html',1,'']]],
-  ['how_20to_20report_20a_20vulnerability_13',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md31',1,'']]]
+  ['historycommandtest_13',['HistoryCommandTest',['../classHistoryCommandTest.html',1,'']]],
+  ['historycommandtest_2ecxx_14',['HistoryCommandTest.cxx',['../HistoryCommandTest_8cxx.html',1,'']]],
+  ['how_20to_20report_20a_20vulnerability_15',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md31',1,'']]]
 ];

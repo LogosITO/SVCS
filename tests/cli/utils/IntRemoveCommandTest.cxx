@@ -1,3 +1,16 @@
+/**
+ * @file IntRemoveCommandTest.cxx
+ * @brief Implementation of integration tests for the RemoveCommand class.
+ *
+ * @details This file provides the concrete implementation for the RemoveCommandTest fixture,
+ * setting up a temporary SVCS repository with staged and unstaged files to thoroughly
+ * test the 'svcs rm' command's logic, including handling files, directories, 
+ * and various options.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "IntRemoveCommandTest.hxx"
 
 #include <fstream>

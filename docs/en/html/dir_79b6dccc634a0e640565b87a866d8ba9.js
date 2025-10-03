@@ -11,5 +11,6 @@ var dir_79b6dccc634a0e640565b87a866d8ba9 =
     [ "RemoveCommand.cxx", "RemoveCommand_8cxx.html", null ],
     [ "SaveCommand.cxx", "SaveCommand_8cxx.html", null ],
     [ "StatusCommand.cxx", "StatusCommand_8cxx.html", null ],
+    [ "UndoCommand.cxx", "UndoCommand_8cxx.html", null ],
     [ "VersionCommand.cxx", "VersionCommand_8cxx.html", null ]
 ];

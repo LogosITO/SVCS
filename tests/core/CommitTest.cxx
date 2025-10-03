@@ -1,7 +1,6 @@
 /**
  * @file commit_test.cxx
  * @brief Unit tests for the Commit class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity.
- *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
  */

@@ -18,6 +18,7 @@
 #include "../include/SaveCommand.hxx"
 #include "../include/StatusCommand.hxx"
 #include "../include/HistoryCommand.hxx"
+#include "../include/UndoCommand.hxx"
 
 #include <iostream>
 #include <memory>
@@ -90,6 +91,12 @@ void CommandFactory::registerDefaultCommands() {
                              std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating HistoryCommand instance");
         return std::make_unique<HistoryCommand>(bus, repoManager);
+    });
+
+        registerCommand("undo", [](std::shared_ptr<ISubject> bus, 
+                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+        printDebug("Creating UndoCommand instance");
+        return std::make_unique<UndoCommand>(bus, repoManager);
     });
     
     registerCommand("help", [this](std::shared_ptr<ISubject> bus, 

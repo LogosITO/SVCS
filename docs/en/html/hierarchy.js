@@ -19,6 +19,7 @@ var hierarchy =
       [ "RemoveCommand", "classRemoveCommand.html", null ],
       [ "SaveCommand", "classSaveCommand.html", null ],
       [ "StatusCommand", "classStatusCommand.html", null ],
+      [ "UndoCommand", "classUndoCommand.html", null ],
       [ "VersionCommand", "classVersionCommand.html", null ]
     ] ],
     [ "Index", "classIndex.html", null ],
@@ -53,6 +54,7 @@ var hierarchy =
       [ "RepositoryTest", "classRepositoryTest.html", null ],
       [ "SaveCommandTest", "classSaveCommandTest.html", null ],
       [ "StatusCommandTest", "classStatusCommandTest.html", null ],
+      [ "UndoCommandTest", "classUndoCommandTest.html", null ],
       [ "VersionCommandTest", "classVersionCommandTest.html", null ]
     ] ],
     [ "TreeEntry", "structTreeEntry.html", null ],

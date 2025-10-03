@@ -1,3 +1,17 @@
+/**
+ * @file IntAddCommandTest.cxx
+ * @brief Implementation of the AddCommandTest integration test fixture.
+ *
+ * @details This file defines the `SetUp` and `TearDown` routines, along with 
+ * helper methods essential for testing the `AddCommand`. The setup includes:
+ * 1. Initializing mock components (MockSubject).
+ * 2. Initializing core components (RepositoryManager, AddCommand).
+ * 3. Managing a temporary, isolated SVCS repository directory.
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "IntAddCommandTest.hxx"
 #include "../mocks/MockSubject.hxx"
 #include "../../../core/include/RepositoryManager.hxx"

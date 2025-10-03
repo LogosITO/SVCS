@@ -2,6 +2,11 @@
  * @file RepositoryManager.hxx
  * @brief Declaration of the RepositoryManager class, managing all repository-level file operations.
  *
+ * @details This class is the core service provider for the SVCS application, handling 
+ * all low-level file system interactions related to the repository structure, staging area, 
+ * commits, and history. It relies on the ISubject interface for all internal logging and 
+ * error reporting.
+ *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
  */
@@ -10,25 +15,37 @@
 
 #include "../../services/ISubject.hxx"
 
+#include <optional>
 #include <string>
 #include <filesystem>
 #include <vector>
 #include <memory>
 
+/**
+ * @struct CommitInfo
+ * @brief Structure containing essential metadata for a single commit.
+ */
 struct CommitInfo {
+    /// @brief The unique identifier (hash) of the commit.
     std::string hash;
+    /// @brief The message provided by the user when creating the commit.
     std::string message;
+    /// @brief The count of files included in this commit.
     int files_count = 0;
+    /// @brief The author or user who created the commit.
     std::string author;
+    /// @brief Timestamp of when the commit was created.
     std::string timestamp;
 };
 
 /**
+ * @class RepositoryManager
  * @brief Manages all physical file and directory operations within the SVCS repository.
  *
- * The RepositoryManager is the core layer responsible for interacting directly with 
- * the file system for tasks like initialization, path management, staging, and logging.
- * It is typically a singleton or a globally available service.
+ * @ingroup Core
+ *
+ * @details The RepositoryManager is the core layer responsible for interacting directly with 
+ * the file system for tasks like initialization, path management, staging, committing, and logging.
  */
 class RepositoryManager {
 private:
@@ -75,6 +92,8 @@ private:
      */
     bool createFile(const std::filesystem::path& path, const std::string& content = "");
 
+    void updateBranchReference(const std::string& branchName, const std::string& commitHash);
+
 public:
     /**
      * @brief Constructs a RepositoryManager.
@@ -82,13 +101,13 @@ public:
      */
     explicit RepositoryManager(std::shared_ptr<ISubject> bus);
     
-    // --- Public Repository Management Methods ---
+    void updateHead(const std::string& commit_hash);
     
     /**
      * @brief Initializes a new SVCS repository in the specified path.
-     * * Creates the necessary internal directories and files (e.g., .svcs/).
+     * @details Creates the necessary internal directories and files (e.g., .svcs/).
      * @param path The directory path where the repository should be created.
-     * @param force If true, forces initialization even if the directory exists. (Currently unused in method signature, but common pattern).
+     * @param force If true, forces initialization even if the directory exists (implementation dependent).
      * @return \c true if initialization was successful, \c false otherwise.
      */
     bool initializeRepository(const std::string& path, bool force = false);
@@ -106,35 +125,70 @@ public:
      */
     std::string getRepositoryPath() const { return currentRepoPath; }
     
-    // --- Public Staging Management Methods ---
+    // --- Staging and History Management Methods ---
     
     /**
      * @brief Attempts to add a file to the staging area (index).
-     * * This typically involves reading the file and updating the index state.
+     * @details This typically involves reading the file and updating the index state.
      * @param filePath The path to the file to be staged.
      * @return \c true if the file was successfully added, \c false otherwise.
      */
     bool addFileToStaging(const std::string& filePath);
 
     /**
-     * @brief Get the current HEAD commit hash
+     * @brief Retrieves the hash of the current HEAD commit in the repository.
+     * @return The commit hash string.
      */
     std::string getHeadCommit();
 
     /**
-     * @brief Create a commit from staged files
-     * @param message Commit message
-     * @return Commit hash if successful, empty string otherwise
+     * @brief Creates a commit from the currently staged files.
+     * @param message Commit message provided by the user.
+     * @return The newly created commit hash if successful, empty string otherwise.
      */
     std::string createCommit(const std::string& message);
 
+    void updateCommitReferences(const std::string& removedCommitHash, const std::string& newParentHash);
+
     /**
-     * @brief Clear the staging area
+     * @brief Reverts the repository state to a previous commit.
+     * @details This is typically used to undo the effects of a previous 'save' (commit).
+     * @param commit_hash The hash of the commit to revert to (or the one before the commit to undo).
+     * @return \c true if the revert was successful, \c false otherwise.
+     */
+    bool revertCommit(const std::string& commit_hash);
+
+    /**
+     * @brief Retrieves the CommitInfo structure for a given commit hash.
+     * @param commit_hash The hash of the commit to retrieve.
+     * @return An optional containing the CommitInfo if found, or std::nullopt otherwise.
+     */
+    std::optional<CommitInfo> getCommitByHash(const std::string& commit_hash);
+
+    /**
+     * @brief Retrieves the hash of the parent commit for a given commit.
+     * @param commit_hash The hash of the child commit.
+     * @return The parent commit hash string (empty if it is the initial commit).
+     */
+    std::string getParentCommitHash(const std::string& commit_hash) const;
+
+    /**
+     * @brief Restores the working directory files to the state recorded in a specific commit.
+     * @param commit The CommitInfo structure representing the target state.
+     * @return \c true if files were restored successfully, \c false otherwise.
+     */
+    bool restoreFilesFromCommit(const CommitInfo& commit);
+
+    /**
+     * @brief Clears the contents of the staging area (index).
+     * @return \c true if the staging area was successfully cleared, \c false otherwise.
      */
     bool clearStagingArea();
 
     /**
-     * @brief Save staged changes (convenience method for SaveCommand)
+     * @brief Creates a commit from staged changes. (Convenience method often used by the SaveCommand).
+     * @param message Commit message.
+     * @return \c true if the save (commit) was successful, \c false otherwise.
      */
     bool saveStagedChanges(const std::string& message);
     
@@ -145,13 +199,13 @@ public:
     std::vector<std::string> getStagedFiles();
 
     /**
-     * @brief Get the commit history
-     * @return Vector of CommitInfo objects representing the commit history
+     * @brief Retrieves the complete commit history for the current branch.
+     * @return Vector of CommitInfo objects representing the commit history, typically newest first.
      */
     std::vector<CommitInfo> getCommitHistory();
 
     /**
-     * @brief Attempts to recursively remove the repository structure (e.g., the .svcs directory).
+     * @brief Attempts to recursively remove the entire SVCS repository structure (e.g., the .svcs directory) and its contents.
      * @param path The root path of the repository to remove.
      * @return \c true if removal was successful, \c false otherwise.
      */

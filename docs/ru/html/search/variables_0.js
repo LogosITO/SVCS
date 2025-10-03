@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['blob_5fhash_0',['blob_hash',['../structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12',1,'IndexEntry']]]
+  ['author_0',['author',['../structCommitInfo.html#ade2668c2ddc4785889792a443f88cc4a',1,'CommitInfo']]]
 ];

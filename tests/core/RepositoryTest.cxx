@@ -1,7 +1,6 @@
 /**
  * @file repository_test.cxx
  * @brief Unit tests for the Repository class, covering initialization, filesystem structure creation, and Subject/Observer pattern implementation.
- *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
  */

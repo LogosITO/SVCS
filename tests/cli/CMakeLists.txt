@@ -10,6 +10,7 @@ set(CLI_TEST_SOURCES
     utils/IntSaveCommandTest.cxx
     utils/IntStatusCommandTest.cxx
     utils/IntHistoryCommandTest.cxx
+    utils/IntUndoCommandTest.cxx
     InitCommandTest.cxx
     VersionCommandTest.cxx
     HelpCommandTest.cxx
@@ -19,6 +20,7 @@ set(CLI_TEST_SOURCES
     SaveCommandTest.cxx
     StatusCommandTest.cxx
     HistoryCommandTest.cxx
+    UndoCommandTest.cxx
 )
 
 add_executable(svcs_cli_unit_tests ${CLI_TEST_SOURCES})

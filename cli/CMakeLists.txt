@@ -9,6 +9,7 @@ set(CLI_SOURCES
     src/SaveCommand.cxx
     src/StatusCommand.cxx
     src/HistoryCommand.cxx
+    src/UndoCommand.cxx
     src/CommandFactory.cxx
 )
 
@@ -26,6 +27,7 @@ set(CLI_HEADERS
     include/SaveCommand.hxx
     include/StatusCommand.hxx
     include/HistoryCommand.hxx
+    include/UndoCommand.hxx
     include/CommandFactory.hxx
 )
 

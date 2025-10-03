@@ -21,6 +21,7 @@
  * * Manages the setup and teardown of a temporary, isolated directory on the filesystem 
  * for each test case. It uses the real RepositoryManager to test actual repository 
  * creation logic and a MockSubject to verify event publications.
+ * @ingroup IntegrationTests
  */
 class InitCommandIntegrationTest : public ::testing::Test {
 protected:

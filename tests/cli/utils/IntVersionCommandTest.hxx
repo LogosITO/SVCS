@@ -23,7 +23,7 @@
  * @class VersionCommandTest
  * @brief Google Test fixture for running unit/integration tests against the VersionCommand.
  *
- * @ingroup UnitTests
+ * @ingroup IntegrationTests
  *
  * @details This fixture provides the necessary infrastructure for testing the VersionCommand:
  * - **SetUp/TearDown:** Initialize and clean up the mock event bus and the command object.

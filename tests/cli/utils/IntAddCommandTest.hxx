@@ -1,9 +1,8 @@
 /**
  * @file AddCommandTest.hxx
  * @brief Declaration of the test fixture for AddCommand integration tests.
- * * This fixture sets up an isolated environment with an initialized SVCS repository
+ * This fixture sets up an isolated environment with an initialized SVCS repository
  * and provides helper functions for creating test files and directories.
- *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
  */
@@ -18,9 +17,10 @@
 
 /**
  * @brief Test fixture for AddCommand integration tests.
- * * Manages the setup and teardown of a temporary, initialized SVCS repository. 
+ * Manages the setup and teardown of a temporary, initialized SVCS repository. 
  * Provides utility methods to create various file system structures for testing the 
  * staging logic of the AddCommand.
+ * @ingroup IntegrationTests
  */
 class AddCommandTest : public ::testing::Test {
 protected:

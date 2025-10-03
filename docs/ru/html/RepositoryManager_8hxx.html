@@ -97,6 +97,7 @@ $(function(){initNavTree('RepositoryManager_8hxx.html','',''); });
 <p>Declaration of the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> class, managing all repository-level file operations.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ISubject_8hxx_source.html">../../services/ISubject.hxx</a>&quot;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -107,11 +108,13 @@ $(function(){initNavTree('RepositoryManager_8hxx.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
 <tr class="memitem:CommitInfo" id="r_CommitInfo"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommitInfo.html">CommitInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure containing essential metadata for a single commit.  <a href="structCommitInfo.html#details">Подробнее...</a><br /></td></tr>
 <tr class="memitem:RepositoryManager" id="r_RepositoryManager"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRepositoryManager.html">RepositoryManager</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages all physical file and directory operations within the SVCS repository.  <a href="classRepositoryManager.html#details">Подробнее...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Declaration of the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> class, managing all repository-level file operations. </p>
+<p>This class is the core service provider for the SVCS application, handling all low-level file system interactions related to the repository structure, staging area, commits, and history. It relies on the <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> interface for all internal logging and error reporting.</p>
 <dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

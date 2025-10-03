@@ -1,7 +1,6 @@
 /**
  * @file tree_test.cxx
  * @brief Unit tests for the Tree class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity.
- *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
  */

@@ -8,7 +8,7 @@ var annotated_dup =
     [ "ClearCommandTest", "classClearCommandTest.html", "classClearCommandTest" ],
     [ "CommandFactory", "classCommandFactory.html", "classCommandFactory" ],
     [ "Commit", "classCommit.html", "classCommit" ],
-    [ "CommitInfo", "structCommitInfo.html", null ],
+    [ "CommitInfo", "structCommitInfo.html", "structCommitInfo" ],
     [ "Event", "structEvent.html", "structEvent" ],
     [ "EventBus", "classEventBus.html", "classEventBus" ],
     [ "HelpCommand", "classHelpCommand.html", "classHelpCommand" ],
@@ -46,6 +46,8 @@ var annotated_dup =
     [ "TestableObject", "classTestableObject.html", "classTestableObject" ],
     [ "Tree", "classTree.html", "classTree" ],
     [ "TreeEntry", "structTreeEntry.html", "structTreeEntry" ],
+    [ "UndoCommand", "classUndoCommand.html", "classUndoCommand" ],
+    [ "UndoCommandTest", "classUndoCommandTest.html", "classUndoCommandTest" ],
     [ "VcsObject", "classVcsObject.html", "classVcsObject" ],
     [ "VersionCommand", "classVersionCommand.html", "classVersionCommand" ],
     [ "VersionCommandTest", "classVersionCommandTest.html", null ]

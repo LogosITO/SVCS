@@ -84,8 +84,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classICommand.html#a1018a1a6abaf28e40b27eca8344e78c6",
-"functions_func_l.html"
+"classHistoryCommandTest.html#a8147f4e97007f6aaa9041b79b0529c9a",
+"dir_056ec8f0377ddc4293192cbc6b19c99c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

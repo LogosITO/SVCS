@@ -1,7 +1,6 @@
 /**
  * @file repomanager_test.cxx
  * @brief Unit tests for RepositoryManager class
- *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
  */

@@ -7,5 +7,7 @@ var searchData=
   ['removerepository_4',['removeRepository',['../classRepositoryManager.html#ab28d4e38ff9c3691fce81ca9e67556ba',1,'RepositoryManager']]],
   ['repository_5',['Repository',['../classRepository.html#a6630b76df7b7093650373d799367e28d',1,'Repository']]],
   ['repositoryexists_6',['repositoryExists',['../classClearCommandTest.html#acfc70a9daa3a28208acea85449211517',1,'ClearCommandTest']]],
-  ['repositorymanager_7',['RepositoryManager',['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager']]]
+  ['repositorymanager_7',['RepositoryManager',['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager']]],
+  ['restorefilesfromcommit_8',['restoreFilesFromCommit',['../classRepositoryManager.html#a7564eef967c7eec3fbaeba51aa05147b',1,'RepositoryManager']]],
+  ['revertcommit_9',['revertCommit',['../classRepositoryManager.html#abf991881ef84930dd6e81667360ebdef',1,'RepositoryManager']]]
 ];

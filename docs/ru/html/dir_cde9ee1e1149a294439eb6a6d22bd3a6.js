@@ -12,6 +12,7 @@ var dir_cde9ee1e1149a294439eb6a6d22bd3a6 =
     [ "RemoveCommand.hxx", "RemoveCommand_8hxx.html", "RemoveCommand_8hxx" ],
     [ "SaveCommand.hxx", "SaveCommand_8hxx.html", "SaveCommand_8hxx" ],
     [ "StatusCommand.hxx", "StatusCommand_8hxx.html", "StatusCommand_8hxx" ],
+    [ "UndoCommand.hxx", "UndoCommand_8hxx.html", "UndoCommand_8hxx" ],
     [ "Utils.hxx", "cli_2include_2Utils_8hxx_source.html", null ],
     [ "VersionCommand.hxx", "VersionCommand_8hxx.html", "VersionCommand_8hxx" ]
 ];

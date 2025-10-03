@@ -23,6 +23,7 @@
  * * Manages the setup and teardown of a temporary, initialized SVCS repository. 
  * Provides utility methods to create test files/directories and to simulate 
  * user input required for the 'clear' confirmation prompt.
+ * @ingroup IntegrationTests
  */
 class ClearCommandTest : public ::testing::Test {
 protected:

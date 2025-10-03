@@ -11,6 +11,7 @@ var structEvent =
       [ "INDEX_UPDATE", "structEvent.html#a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775", null ],
       [ "COMMIT_CREATED", "structEvent.html#a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c", null ],
       [ "GENERAL_INFO", "structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7", null ],
+      [ "HELP_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b", null ],
       [ "DEBUG_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5", null ],
       [ "ERROR_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61", null ],
       [ "WARNING_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4", null ]

@@ -1,7 +1,6 @@
 /**
  * @file IndexTest.cxx
  * @brief Unit tests for the Index class, verifying staging area management, file modification tracking, and index persistence.
- *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
  */

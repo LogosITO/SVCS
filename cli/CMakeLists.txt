@@ -47,4 +47,10 @@ target_link_libraries(svcs
     svcs_services
 )
 
-install(TARGETS svcs DESTINATION bin)
+if(UNIX)
+    install(TARGETS svcs DESTINATION bin)
+endif()
+  
+if(WIN32)
+    install(TARGETS svcs DESTINATION .)
+endif()

@@ -17,6 +17,14 @@ SaveCommand::SaveCommand(std::shared_ptr<ISubject> subject,
 bool SaveCommand::execute(const std::vector<std::string>& args) {
     const std::string SOURCE = "save";
     
+    // Check for help FIRST - before any other validation
+    for (const auto& arg : args) {
+        if (arg == "--help" || arg == "-h") {
+            showHelp();
+            return true;
+        }
+    }
+    
     // Check if repository is initialized
     if (!repoManager_->isRepositoryInitialized()) {
         eventBus_->notify({Event::ERROR_MESSAGE, 

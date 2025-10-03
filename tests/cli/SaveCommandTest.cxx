@@ -3,7 +3,7 @@
  * @brief Unit tests for SaveCommand class.
  */
 
-#include "utils/IntSaveCommand.hxx"
+#include "utils/IntSaveCommandTest.hxx"
 
  TEST_F(SaveCommandTest, SaveWithStagedChanges) {
     // Stage files first

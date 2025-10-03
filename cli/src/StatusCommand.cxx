@@ -22,6 +22,13 @@ StatusCommand::StatusCommand(std::shared_ptr<ISubject> subject,
 
 bool StatusCommand::execute(const std::vector<std::string>& args) {
     const std::string SOURCE = "status";
+
+    for (const auto& arg : args) {
+        if (arg == "--help" || arg == "-h") {
+            showHelp();
+            return true;
+        }
+    }
     
     if (!repoManager_->isRepositoryInitialized()) {
         eventBus_->notify({Event::ERROR_MESSAGE, 
@@ -29,12 +36,10 @@ bool StatusCommand::execute(const std::vector<std::string>& args) {
         return false;
     }
     
-    // Если указаны конкретные файлы - показываем статус только для них
     if (!args.empty()) {
         return showFileStatus(args);
     }
     
-    // Иначе показываем полный статус
     return showFullStatus();
 }
 

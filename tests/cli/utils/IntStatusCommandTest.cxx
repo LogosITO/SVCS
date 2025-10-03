@@ -1,14 +1,14 @@
-#include "IntSaveCommand.hxx"
+#include "IntStatusCommandTest.hxx"
 
 #include <fstream>
 #include <algorithm>
 
-void SaveCommandTest::SetUp() {
+void StatusCommandTest::SetUp() {
     this->mockEventBus = std::make_shared<MockSubject>();
     this->repoManager = std::make_shared<RepositoryManager>(this->mockEventBus);
-    this->command = std::make_unique<SaveCommand>(this->mockEventBus, this->repoManager);
+    this->command = std::make_unique<StatusCommand>(this->mockEventBus, this->repoManager);
     
-    this->testDir = std::filesystem::temp_directory_path() / "svcs_test_save";
+    this->testDir = std::filesystem::temp_directory_path() / "svcs_test_status";
     
     std::filesystem::remove_all(this->testDir);
     std::filesystem::create_directories(this->testDir);
@@ -21,34 +21,42 @@ void SaveCommandTest::SetUp() {
     // Create test files
     createTestFile("file1.txt", "content1");
     createTestFile("file2.txt", "content2");
+    createTestFile("file3.txt", "content3");
     createTestDirectory("subdir");
-    createTestFile("subdir/file3.txt", "content3");
+    createTestFile("subdir/file4.txt", "content4");
 }
 
-void SaveCommandTest::TearDown() {
+void StatusCommandTest::TearDown() {
     std::filesystem::current_path(std::filesystem::temp_directory_path());
     std::filesystem::remove_all(testDir);
     mockEventBus->clear();
 }
 
-void SaveCommandTest::createTestFile(const std::string& filename, const std::string& content) {
+void StatusCommandTest::createTestFile(const std::string& filename, const std::string& content) {
     std::ofstream file(testDir / filename);
     file << content;
     file.close();
 }
 
-void SaveCommandTest::createTestDirectory(const std::string& dirname) {
+void StatusCommandTest::createTestDirectory(const std::string& dirname) {
     std::filesystem::create_directories(testDir / dirname);
 }
 
-void SaveCommandTest::stageFiles(const std::vector<std::string>& files) {
+void StatusCommandTest::stageFiles(const std::vector<std::string>& files) {
     for (const auto& file : files) {
         repoManager->addFileToStaging(file);
     }
 }
 
-bool SaveCommandTest::containsMessage(const std::vector<Event>& notifications, const std::string& message) {
+bool StatusCommandTest::containsMessage(const std::vector<Event>& notifications, const std::string& message) {
     return std::any_of(notifications.begin(), notifications.end(),
+        [&message](const Event& event) {
+            return event.details.find(message) != std::string::npos;
+        });
+}
+
+int StatusCommandTest::countMessages(const std::vector<Event>& notifications, const std::string& message) {
+    return std::count_if(notifications.begin(), notifications.end(),
         [&message](const Event& event) {
             return event.details.find(message) != std::string::npos;
         });

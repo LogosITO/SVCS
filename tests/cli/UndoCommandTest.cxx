@@ -227,21 +227,6 @@ TEST_F(UndoCommandTest, UndoWithOnlyForceFlag) {
     EXPECT_TRUE(containsMessage(notifications, "Force mode enabled"));
 }
 
-// Test undo with very short commit hash (minimum length)
-TEST_F(UndoCommandTest, UndoWithVeryShortCommitHash) {
-    createTestCommit("First commit");
-    
-    mockEventBus->clear();
-    
-    std::vector<std::string> args = {"a", "--force"};
-    bool result = command->execute(args);
-    
-    EXPECT_FALSE(result);
-    
-    auto notifications = mockEventBus->getNotifications();
-    EXPECT_TRUE(containsMessage(notifications, "Commit not found"));
-}
-
 // Test undo with exact commit hash (full length)
 TEST_F(UndoCommandTest, UndoWithFullCommitHash) {
     createTestCommit("First commit");

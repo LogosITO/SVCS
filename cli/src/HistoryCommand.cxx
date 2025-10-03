@@ -19,23 +19,28 @@ HistoryCommand::HistoryCommand(std::shared_ptr<ISubject> subject,
 
 bool HistoryCommand::execute(const std::vector<std::string>& args) {
     const std::string SOURCE = "history";
+
+    for (const auto& arg : args) {
+        if (arg == "--help" || arg == "-h") {
+            showHelp();
+            return true;
+        }
+    }
     
     if (!repoManager_->isRepositoryInitialized()) {
         eventBus_->notify({Event::ERROR_MESSAGE, 
                           "Not a SVCS repository. Run 'svcs init' first.", SOURCE});
         return false;
     }
-    
-    // Парсим аргументы
+
     bool showOneline = false;
     bool showFull = false;
-    int limit = -1; // -1 means no limit
+    int limit = -1;
     
     if (!parseArguments(args, showOneline, limit, showFull)) {
-        return false; // Парсинг завершился с ошибкой
+        return false;
     }
     
-    // Получаем историю коммитов
     auto commits = repoManager_->getCommitHistory();
     if (commits.empty()) {
         eventBus_->notify({Event::GENERAL_INFO, 
@@ -43,12 +48,12 @@ bool HistoryCommand::execute(const std::vector<std::string>& args) {
         return true;
     }
     
-    // Применяем лимит если указан
-    if (limit > 0 && limit < static_cast<int>(commits.size())) {
-        commits.resize(limit);
+    if (limit > 0) {
+        if (limit < static_cast<int>(commits.size())) {
+            commits.resize(limit);
+        }
     }
-    
-    // Выбираем формат вывода
+
     if (showOneline) {
         showOnelineHistory(commits);
     } else if (showFull) {
@@ -59,6 +64,7 @@ bool HistoryCommand::execute(const std::vector<std::string>& args) {
     
     return true;
 }
+
 std::string HistoryCommand::getDescription() const {
     return "Show history of saves";
 }
@@ -127,11 +133,10 @@ bool HistoryCommand::parseArguments(const std::vector<std::string>& args,
     return true;
 }
 
-
 void HistoryCommand::showDefaultHistory(const std::vector<CommitInfo>& commits) const {
     const std::string SOURCE = "history";
     
-    eventBus_->notify({Event::GENERAL_INFO, 
+    eventBus_->notify({Event::GENERAL_INFO,  // ← ИЗМЕНИТЬ
                       "Commit history (" + std::to_string(commits.size()) + " commits):", SOURCE});
     
     for (size_t i = 0; i < commits.size(); ++i) {
@@ -140,7 +145,8 @@ void HistoryCommand::showDefaultHistory(const std::vector<CommitInfo>& commits) 
         commitInfo << "[" << (i + 1) << "] " << commit.hash.substr(0, 8) << " - " << commit.message;
         commitInfo << " (" << commit.files_count << " files)";
         
-        eventBus_->notify({Event::GENERAL_INFO, commitInfo.str(), SOURCE});
+        eventBus_->notify({Event::GENERAL_INFO,  // ← ИЗМЕНИТЬ
+                          commitInfo.str(), SOURCE});
     }
 }
 
@@ -150,10 +156,10 @@ void HistoryCommand::showOnelineHistory(const std::vector<CommitInfo>& commits) 
     for (const auto& commit : commits) {
         std::stringstream ss;
         ss << commit.hash.substr(0, 8) << " - " << truncateString(commit.message, 50);
-        eventBus_->notify({Event::GENERAL_INFO, ss.str(), SOURCE});
+        eventBus_->notify({Event::GENERAL_INFO,  // ← ИЗМЕНИТЬ
+                          ss.str(), SOURCE});
     }
 }
-
 
 void HistoryCommand::showDetailedHistory(const std::vector<CommitInfo>& commits) const {
     const std::string SOURCE = "history";
@@ -161,7 +167,7 @@ void HistoryCommand::showDetailedHistory(const std::vector<CommitInfo>& commits)
     for (size_t i = 0; i < commits.size(); ++i) {
         const auto& commit = commits[i];
         
-        eventBus_->notify({Event::GENERAL_INFO, 
+        eventBus_->notify({Event::GENERAL_INFO,  // ← ИЗМЕНИТЬ
                           "Commit " + std::to_string(i + 1) + ":", SOURCE});
         eventBus_->notify({Event::GENERAL_INFO, 
                           "  Hash:    " + commit.hash, SOURCE});
@@ -186,6 +192,7 @@ void HistoryCommand::showDetailedHistory(const std::vector<CommitInfo>& commits)
         }
     }
 }
+
 std::string HistoryCommand::formatTimestamp(const std::string& timestamp) const {
     // Simple formatting - could be enhanced with locale-specific formatting
     // For now, just return as-is or do simple reformatting

@@ -2,8 +2,8 @@ var searchData=
 [
   ['getallfilesindirectory_0',['getAllFilesInDirectory',['../classAddCommand.html#ab8dae07ff8a1cc76baab967e509d0cfc',1,'AddCommand']]],
   ['getauthor_1',['getAuthor',['../classCommit.html#a5228b234ccb27af846012c26ccb26912',1,'Commit']]],
-  ['getavailablecommands_2',['getAvailableCommands',['../classHelpService.html#a3e101dee42668c57dd56669a3939d335',1,'HelpService']]],
-  ['getcommanddescription_3',['getCommandDescription',['../classCommandFactory.html#ae02afa8bcfb45a9e847afc4341a6478c',1,'CommandFactory::getCommandDescription()'],['../classHelpService.html#acc76b5372129d61b894efb2fa25349c2',1,'HelpService::getCommandDescription(const std::string &amp;commandName) const']]],
+  ['getavailablecommands_2',['getAvailableCommands',['../classHelpService.html#a3e101dee42668c57dd56669a3939d335',1,'HelpService::getAvailableCommands()'],['../classMockHelpService.html#a48d91142003d63d20ca19b3215e2a5d2',1,'MockHelpService::getAvailableCommands()']]],
+  ['getcommanddescription_3',['getCommandDescription',['../classCommandFactory.html#ae02afa8bcfb45a9e847afc4341a6478c',1,'CommandFactory::getCommandDescription()'],['../classHelpService.html#acc76b5372129d61b894efb2fa25349c2',1,'HelpService::getCommandDescription()'],['../classMockHelpService.html#acd98a15f199035212c810e95aa496a62',1,'MockHelpService::getCommandDescription()']]],
   ['getcommandusage_4',['getCommandUsage',['../classHelpService.html#a6e1869acb698c4c37d1b15d19b92ce9c',1,'HelpService']]],
   ['getcommithistory_5',['getCommitHistory',['../classRepositoryManager.html#a9974667b34a6fd455758f519deaba44a',1,'RepositoryManager']]],
   ['getdata_6',['getData',['../classBlob.html#aef90cffb1d8d5492b73ac330ac933006',1,'Blob']]],

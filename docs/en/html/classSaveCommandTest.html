@@ -94,7 +94,7 @@ $(function(){initNavTree('classSaveCommandTest.html','','classSaveCommandTest-me
 </div><!--header-->
 <div class="contents">
 
-<p>Test fixture for <a class="el" href="classSaveCommand.html" title="Command for saving (committing) staged changes to the repository.">SaveCommand</a> tests.  
+<p>Google Test fixture for running integration tests against the <a class="el" href="classSaveCommand.html" title="Command for saving (committing) staged changes to the repository.">SaveCommand</a> (commit).  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IntSaveCommandTest_8hxx_source.html">IntSaveCommandTest.hxx</a>&gt;</code></p>
@@ -107,33 +107,242 @@ Inheritance diagram for SaveCommandTest:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a18b39c15087110afbe4f669ce36efc0e" id="r_a18b39c15087110afbe4f669ce36efc0e"><td class="memItemLeft" align="right" valign="top"><a id="a18b39c15087110afbe4f669ce36efc0e" name="a18b39c15087110afbe4f669ce36efc0e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetUp</b> () override</td></tr>
-<tr class="memitem:accf541fe18a23379bb833eaaa6750d45" id="r_accf541fe18a23379bb833eaaa6750d45"><td class="memItemLeft" align="right" valign="top"><a id="accf541fe18a23379bb833eaaa6750d45" name="accf541fe18a23379bb833eaaa6750d45"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>TearDown</b> () override</td></tr>
-<tr class="memitem:af4c62b884cd988e8f1ff6b9970e03bf4" id="r_af4c62b884cd988e8f1ff6b9970e03bf4"><td class="memItemLeft" align="right" valign="top"><a id="af4c62b884cd988e8f1ff6b9970e03bf4" name="af4c62b884cd988e8f1ff6b9970e03bf4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createTestFile</b> (const std::string &amp;filename, const std::string &amp;content)</td></tr>
-<tr class="memitem:abbb2a3e30fad0a9626d224b2c890abc2" id="r_abbb2a3e30fad0a9626d224b2c890abc2"><td class="memItemLeft" align="right" valign="top"><a id="abbb2a3e30fad0a9626d224b2c890abc2" name="abbb2a3e30fad0a9626d224b2c890abc2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createTestDirectory</b> (const std::string &amp;dirname)</td></tr>
-<tr class="memitem:a82fc477fb849e9ea7335ae225e35e7b6" id="r_a82fc477fb849e9ea7335ae225e35e7b6"><td class="memItemLeft" align="right" valign="top"><a id="a82fc477fb849e9ea7335ae225e35e7b6" name="a82fc477fb849e9ea7335ae225e35e7b6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>stageFiles</b> (const std::vector&lt; std::string &gt; &amp;files)</td></tr>
-<tr class="memitem:a2024312f64f0b9e394110506c0cf26b0" id="r_a2024312f64f0b9e394110506c0cf26b0"><td class="memItemLeft" align="right" valign="top"><a id="a2024312f64f0b9e394110506c0cf26b0" name="a2024312f64f0b9e394110506c0cf26b0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>containsMessage</b> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memitem:a18b39c15087110afbe4f669ce36efc0e" id="r_a18b39c15087110afbe4f669ce36efc0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18b39c15087110afbe4f669ce36efc0e">SetUp</a> () override</td></tr>
+<tr class="memdesc:a18b39c15087110afbe4f669ce36efc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the testing environment before each test.  <br /></td></tr>
+<tr class="memitem:accf541fe18a23379bb833eaaa6750d45" id="r_accf541fe18a23379bb833eaaa6750d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accf541fe18a23379bb833eaaa6750d45">TearDown</a> () override</td></tr>
+<tr class="memdesc:accf541fe18a23379bb833eaaa6750d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tears down the testing environment after each test.  <br /></td></tr>
+<tr class="memitem:af4c62b884cd988e8f1ff6b9970e03bf4" id="r_af4c62b884cd988e8f1ff6b9970e03bf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c62b884cd988e8f1ff6b9970e03bf4">createTestFile</a> (const std::string &amp;filename, const std::string &amp;content)</td></tr>
+<tr class="memdesc:af4c62b884cd988e8f1ff6b9970e03bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test file with specified content in the temporary directory.  <br /></td></tr>
+<tr class="memitem:abbb2a3e30fad0a9626d224b2c890abc2" id="r_abbb2a3e30fad0a9626d224b2c890abc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbb2a3e30fad0a9626d224b2c890abc2">createTestDirectory</a> (const std::string &amp;dirname)</td></tr>
+<tr class="memdesc:abbb2a3e30fad0a9626d224b2c890abc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory in the temporary location.  <br /></td></tr>
+<tr class="memitem:a82fc477fb849e9ea7335ae225e35e7b6" id="r_a82fc477fb849e9ea7335ae225e35e7b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82fc477fb849e9ea7335ae225e35e7b6">stageFiles</a> (const std::vector&lt; std::string &gt; &amp;files)</td></tr>
+<tr class="memdesc:a82fc477fb849e9ea7335ae225e35e7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files using the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging logic.  <br /></td></tr>
+<tr class="memitem:a2024312f64f0b9e394110506c0cf26b0" id="r_a2024312f64f0b9e394110506c0cf26b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2024312f64f0b9e394110506c0cf26b0">containsMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memdesc:a2024312f64f0b9e394110506c0cf26b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific message (substring) exists in any event notification.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aa37b2eb8820070c5079889220fd8ef57" id="r_aa37b2eb8820070c5079889220fd8ef57"><td class="memItemLeft" align="right" valign="top"><a id="aa37b2eb8820070c5079889220fd8ef57" name="aa37b2eb8820070c5079889220fd8ef57"></a>
 std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockEventBus</b></td></tr>
+<tr class="memdesc:aa37b2eb8820070c5079889220fd8ef57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the mock event bus (observer). <br /></td></tr>
 <tr class="memitem:a14fdcfd46ec656cd52e1a6241320d49a" id="r_a14fdcfd46ec656cd52e1a6241320d49a"><td class="memItemLeft" align="right" valign="top"><a id="a14fdcfd46ec656cd52e1a6241320d49a" name="a14fdcfd46ec656cd52e1a6241320d49a"></a>
 std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
+<tr class="memdesc:a14fdcfd46ec656cd52e1a6241320d49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the repository core logic component. <br /></td></tr>
 <tr class="memitem:aac4baff35723bce4d333802a72ca1e76" id="r_aac4baff35723bce4d333802a72ca1e76"><td class="memItemLeft" align="right" valign="top"><a id="aac4baff35723bce4d333802a72ca1e76" name="aac4baff35723bce4d333802a72ca1e76"></a>
 std::unique_ptr&lt; <a class="el" href="classSaveCommand.html">SaveCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+<tr class="memdesc:aac4baff35723bce4d333802a72ca1e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the command being tested. <br /></td></tr>
 <tr class="memitem:af74e76c9d6f76befea2da0c84ef6631c" id="r_af74e76c9d6f76befea2da0c84ef6631c"><td class="memItemLeft" align="right" valign="top"><a id="af74e76c9d6f76befea2da0c84ef6631c" name="af74e76c9d6f76befea2da0c84ef6631c"></a>
 std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>testDir</b></td></tr>
+<tr class="memdesc:af74e76c9d6f76befea2da0c84ef6631c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the temporary test repository directory. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Test fixture for <a class="el" href="classSaveCommand.html" title="Command for saving (committing) staged changes to the repository.">SaveCommand</a> tests. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Google Test fixture for running integration tests against the <a class="el" href="classSaveCommand.html" title="Command for saving (committing) staged changes to the repository.">SaveCommand</a> (commit). </p>
+<p>This fixture provides the necessary infrastructure for testing the save command:</p><ul>
+<li><b>SetUp/TearDown:</b> Manage a temporary SVCS repository directory.</li>
+<li><b>Core Components:</b> Instances of <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject.">MockSubject</a> (for event bus) and <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> (for core logic).</li>
+<li><b>Helper Methods:</b> Simplify file creation, directory setup, staging, and verification of notifications. </li>
+</ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a2024312f64f0b9e394110506c0cf26b0" name="a2024312f64f0b9e394110506c0cf26b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2024312f64f0b9e394110506c0cf26b0">&#9670;&#160;</a></span>containsMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SaveCommandTest::containsMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a specific message (substring) exists in any event notification. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifications</td><td>The list of captured events. </td></tr>
+    <tr><td class="paramname">message</td><td>The substring to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the message is found, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="abbb2a3e30fad0a9626d224b2c890abc2" name="abbb2a3e30fad0a9626d224b2c890abc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb2a3e30fad0a9626d224b2c890abc2">&#9670;&#160;</a></span>createTestDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveCommandTest::createTestDirectory </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dirname</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a test directory in the temporary location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirname</td><td>The relative path/name of the directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af4c62b884cd988e8f1ff6b9970e03bf4" name="af4c62b884cd988e8f1ff6b9970e03bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c62b884cd988e8f1ff6b9970e03bf4">&#9670;&#160;</a></span>createTestFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveCommandTest::createTestFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a test file with specified content in the temporary directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The relative path/name of the file. </td></tr>
+    <tr><td class="paramname">content</td><td>The content to write to the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a18b39c15087110afbe4f669ce36efc0e" name="a18b39c15087110afbe4f669ce36efc0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b39c15087110afbe4f669ce36efc0e">&#9670;&#160;</a></span>SetUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveCommandTest::SetUp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets up the testing environment before each test. </p>
+<p>Initializes components, creates the temporary directory, and initializes the repository. </p>
+
+</div>
+</div>
+<a id="a82fc477fb849e9ea7335ae225e35e7b6" name="a82fc477fb849e9ea7335ae225e35e7b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82fc477fb849e9ea7335ae225e35e7b6">&#9670;&#160;</a></span>stageFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveCommandTest::stageFiles </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>files</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stages a list of files using the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging logic. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">files</td><td>A vector of file names to stage. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="accf541fe18a23379bb833eaaa6750d45" name="accf541fe18a23379bb833eaaa6750d45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf541fe18a23379bb833eaaa6750d45">&#9670;&#160;</a></span>TearDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveCommandTest::TearDown </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tears down the testing environment after each test. </p>
+<p>Cleans up the temporary directory and restores the working path. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>tests/cli/utils/<a class="el" href="IntSaveCommandTest_8hxx_source.html">IntSaveCommandTest.hxx</a></li>
 <li>tests/cli/utils/<a class="el" href="IntSaveCommandTest_8cxx.html">IntSaveCommandTest.cxx</a></li>
 </ul>

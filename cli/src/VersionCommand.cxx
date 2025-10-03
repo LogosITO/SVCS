@@ -14,7 +14,12 @@ VersionCommand::VersionCommand(std::shared_ptr<ISubject> subject)
 }
 
 bool VersionCommand::execute(const std::vector<std::string>& args) {
-    // Ignore arguments for version command
+    for (const auto& arg : args) {
+        if (arg == "--help" || arg == "-h") {
+            showHelp();
+            return true;
+        }
+    }
     
     eventBus_->notify({Event::GENERAL_INFO, getVersionString(), "version"});
     eventBus_->notify({Event::GENERAL_INFO, getBuildInfo(), "version"});

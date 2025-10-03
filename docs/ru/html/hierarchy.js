@@ -6,7 +6,9 @@ var hierarchy =
       [ "EventBus", "classEventBus.html", null ]
     ] ],
     [ "Event", "structEvent.html", null ],
-    [ "HelpService", "classHelpService.html", null ],
+    [ "HelpService", "classHelpService.html", [
+      [ "MockHelpService", "classMockHelpService.html", null ]
+    ] ],
     [ "ICommand", "classICommand.html", [
       [ "AddCommand", "classAddCommand.html", null ],
       [ "BaseCommand", "classBaseCommand.html", null ],
@@ -41,6 +43,7 @@ var hierarchy =
     [ "testing::Test", null, [
       [ "AddCommandTest", "classAddCommandTest.html", null ],
       [ "ClearCommandTest", "classClearCommandTest.html", null ],
+      [ "HelpCommandTest", "classHelpCommandTest.html", null ],
       [ "HistoryCommandTest", "classHistoryCommandTest.html", null ],
       [ "IndexTest", "classIndexTest.html", null ],
       [ "InitCommandIntegrationTest", "classInitCommandIntegrationTest.html", null ],
@@ -49,7 +52,8 @@ var hierarchy =
       [ "RepositoryManagerTest", "classRepositoryManagerTest.html", null ],
       [ "RepositoryTest", "classRepositoryTest.html", null ],
       [ "SaveCommandTest", "classSaveCommandTest.html", null ],
-      [ "StatusCommandTest", "classStatusCommandTest.html", null ]
+      [ "StatusCommandTest", "classStatusCommandTest.html", null ],
+      [ "VersionCommandTest", "classVersionCommandTest.html", null ]
     ] ],
     [ "TreeEntry", "structTreeEntry.html", null ],
     [ "VcsObject", "classVcsObject.html", [

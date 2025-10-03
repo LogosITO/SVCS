@@ -2,6 +2,8 @@ find_package(GTest REQUIRED)
 
 set(CLI_TEST_SOURCES
     utils/InitCommandIntegrationTest.cxx
+    utils/IntVersionCommandTest.cxx
+    utils/IntHelpCommandTest.cxx
     utils/ClearCommandTest.cxx
     utils/IntAddCommandTest.cxx
     utils/IntRemoveCommandTest.cxx
@@ -9,6 +11,8 @@ set(CLI_TEST_SOURCES
     utils/IntStatusCommandTest.cxx
     utils/IntHistoryCommandTest.cxx
     InitCommandTest.cxx
+    VersionCommandTest.cxx
+    HelpCommandTest.cxx
     AddCommandTest.cxx
     ClearCommandTest.cxx
     RemoveCommandTest.cxx

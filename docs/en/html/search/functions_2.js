@@ -1,7 +1,7 @@
 var searchData=
 [
   ['calculatehash_0',['calculateHash',['../classVcsObject.html#a73ec7fbaac32df9c4570de02b8bda56f',1,'VcsObject']]],
-  ['clear_1',['clear',['../classMockSubject.html#ac26a01d646eb4972bbda3c3eaa6cbb46',1,'MockSubject']]],
+  ['clear_1',['clear',['../classMockHelpService.html#a1e5c10b1ef3a05be719dcaece9c8855e',1,'MockHelpService::clear()'],['../classMockSubject.html#ac26a01d646eb4972bbda3c3eaa6cbb46',1,'MockSubject::clear()']]],
   ['clearcommand_2',['ClearCommand',['../classClearCommand.html#a4bf463b32c04877d6e906acd0f227327',1,'ClearCommand']]],
   ['clearinstances_3',['clearInstances',['../classLogger.html#af473e558d8af4804863bfec0426433d0',1,'Logger']]],
   ['clearstagingarea_4',['clearStagingArea',['../classRepositoryManager.html#a1af28901603c2e70dce49af751105bef',1,'RepositoryManager']]],
@@ -10,12 +10,14 @@ var searchData=
   ['commit_7',['Commit',['../classCommit.html#aa8cbe918dbe5f319752284ef39f3adb3',1,'Commit']]],
   ['computehash_8',['computeHash',['../classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0',1,'VcsObject']]],
   ['containseventtype_9',['containsEventType',['../classMockSubject.html#a56dbd48a68db3ce98b57bbf261d0cd3b',1,'MockSubject']]],
-  ['containsmessage_10',['containsMessage',['../classMockSubject.html#a74308a4946c1ecb59f75feaa6c6862ae',1,'MockSubject']]],
-  ['createcommand_11',['createCommand',['../classCommandFactory.html#ab8448b0292b6f5f9cfdafb4fb33102dc',1,'CommandFactory']]],
-  ['createcommit_12',['createCommit',['../classRepositoryManager.html#a8e4a9346964bfdff6d44304bca90e2d3',1,'RepositoryManager']]],
-  ['createentry_13',['createEntry',['../Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f',1,'createEntry(std::string name, std::string hash_id):&#160;Tree.cxx'],['../Tree_8cxx.html#a15d13a6036a062282a24e34a2fe7751f',1,'createEntry(std::string name, std::string hash_id):&#160;Tree.cxx']]],
-  ['createrepository_14',['createRepository',['../classBaseCommand.html#ab8985d7405710050555684f57d20a6d0',1,'BaseCommand']]],
-  ['createtestdirectory_15',['createTestDirectory',['../classClearCommandTest.html#ac33891a7d4c4574bcd35413c70532548',1,'ClearCommandTest::createTestDirectory()'],['../classAddCommandTest.html#a9a1ef607b1a678750a531c1b309cd9d1',1,'AddCommandTest::createTestDirectory()']]],
-  ['createtestfile_16',['createTestFile',['../classClearCommandTest.html#a909eec840641ec6d302bf97cf8f4961a',1,'ClearCommandTest::createTestFile()'],['../classAddCommandTest.html#ac6b5b9dcc95890beb548607259f9da9f',1,'AddCommandTest::createTestFile()']]],
-  ['createtreeobject_17',['createTreeObject',['../classIndex.html#ad10592c0ea7291c0a8b2d8b593b21a85',1,'Index']]]
+  ['containsmessage_10',['containsMessage',['../classMockSubject.html#a74308a4946c1ecb59f75feaa6c6862ae',1,'MockSubject::containsMessage()'],['../classHelpCommandTest.html#a1030123741ad553f0114c700cf6db1e7',1,'HelpCommandTest::containsMessage()'],['../classHistoryCommandTest.html#a77e801070bf0f2f32aef24ec99967070',1,'HistoryCommandTest::containsMessage()'],['../classRemoveCommandTest.html#aea5058104cb64f2573de6ec9acc24f51',1,'RemoveCommandTest::containsMessage()'],['../classSaveCommandTest.html#a2024312f64f0b9e394110506c0cf26b0',1,'SaveCommandTest::containsMessage()'],['../classStatusCommandTest.html#a2d962d5ecae575783a8f43e377650430',1,'StatusCommandTest::containsMessage()']]],
+  ['countmessages_11',['countMessages',['../classHelpCommandTest.html#a1ad9fd0189edb0eac480032be0c842ed',1,'HelpCommandTest::countMessages()'],['../classHistoryCommandTest.html#a8147f4e97007f6aaa9041b79b0529c9a',1,'HistoryCommandTest::countMessages()'],['../classStatusCommandTest.html#ab7d44e5852460b81086e8d060d919d84',1,'StatusCommandTest::countMessages()']]],
+  ['createcommand_12',['createCommand',['../classCommandFactory.html#ab8448b0292b6f5f9cfdafb4fb33102dc',1,'CommandFactory']]],
+  ['createcommit_13',['createCommit',['../classRepositoryManager.html#a8e4a9346964bfdff6d44304bca90e2d3',1,'RepositoryManager']]],
+  ['createentry_14',['createEntry',['../Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f',1,'createEntry(std::string name, std::string hash_id):&#160;Tree.cxx'],['../Tree_8cxx.html#a15d13a6036a062282a24e34a2fe7751f',1,'createEntry(std::string name, std::string hash_id):&#160;Tree.cxx']]],
+  ['createrepository_15',['createRepository',['../classBaseCommand.html#ab8985d7405710050555684f57d20a6d0',1,'BaseCommand']]],
+  ['createtestcommit_16',['createTestCommit',['../classHistoryCommandTest.html#a2dd0c94ab6f27bbc313407531e4a8524',1,'HistoryCommandTest']]],
+  ['createtestdirectory_17',['createTestDirectory',['../classClearCommandTest.html#ac33891a7d4c4574bcd35413c70532548',1,'ClearCommandTest::createTestDirectory()'],['../classAddCommandTest.html#a9a1ef607b1a678750a531c1b309cd9d1',1,'AddCommandTest::createTestDirectory()'],['../classHistoryCommandTest.html#a96e4c593dd35234a30b9cb6c61fcc77b',1,'HistoryCommandTest::createTestDirectory()'],['../classRemoveCommandTest.html#a90e4479ea9547df7885ea31f7ae08be5',1,'RemoveCommandTest::createTestDirectory()'],['../classSaveCommandTest.html#abbb2a3e30fad0a9626d224b2c890abc2',1,'SaveCommandTest::createTestDirectory()'],['../classStatusCommandTest.html#ae506c0d397d564d8a6251daf19e40343',1,'StatusCommandTest::createTestDirectory()']]],
+  ['createtestfile_18',['createTestFile',['../classClearCommandTest.html#a909eec840641ec6d302bf97cf8f4961a',1,'ClearCommandTest::createTestFile()'],['../classAddCommandTest.html#ac6b5b9dcc95890beb548607259f9da9f',1,'AddCommandTest::createTestFile()'],['../classHistoryCommandTest.html#a1f1a7ef0b1c680c004fa01807191e74e',1,'HistoryCommandTest::createTestFile()'],['../classRemoveCommandTest.html#a84749538ba2d893f044554a9c18b5ff1',1,'RemoveCommandTest::createTestFile()'],['../classSaveCommandTest.html#af4c62b884cd988e8f1ff6b9970e03bf4',1,'SaveCommandTest::createTestFile()'],['../classStatusCommandTest.html#a8587508fb0b6d664f65104295a92e427',1,'StatusCommandTest::createTestFile()']]],
+  ['createtreeobject_19',['createTreeObject',['../classIndex.html#ad10592c0ea7291c0a8b2d8b593b21a85',1,'Index']]]
 ];

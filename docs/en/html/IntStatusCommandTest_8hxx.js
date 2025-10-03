@@ -1,4 +1,4 @@
 var IntStatusCommandTest_8hxx =
 [
-    [ "StatusCommandTest", "classStatusCommandTest.html", null ]
+    [ "StatusCommandTest", "classStatusCommandTest.html", "classStatusCommandTest" ]
 ];

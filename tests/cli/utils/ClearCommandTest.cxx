@@ -12,10 +12,6 @@
 #include <stdexcept>
 #include <fstream>
 
-// ----------------------------------------------------------------------
-// РЕАЛИЗАЦИЯ МЕТОДОВ ТЕСТОВОГО ФИКСТУРА ClearCommandTest
-// ----------------------------------------------------------------------
-
 /**
  * @brief Sets up the test environment before each test case.
  * * 1. Initializes the `RepositoryManager` and `ClearCommand` using the `MockSubject`.

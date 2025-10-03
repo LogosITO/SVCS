@@ -84,8 +84,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classInitCommand.html#a484eda89d41a65ec3a9849b381577dfc",
-"structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3"
+"classICommand.html#a1018a1a6abaf28e40b27eca8344e78c6",
+"functions_func_l.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

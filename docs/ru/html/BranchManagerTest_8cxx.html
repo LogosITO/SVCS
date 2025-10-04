@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Файл tests/core/BranchManagerTest.cxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('BranchManagerTest_8cxx.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл BranchManagerTest.cxx</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementation of unit tests for the <a class="el" href="classBranchManager.html" title="Core service for managing version control branches (creation, deletion, switching).">BranchManager</a> class.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="BranchManager_8hxx_source.html">../../core/include/BranchManager.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MockSubject_8hxx_source.html">../cli/mocks/MockSubject.hxx</a>&quot;</code><br />
+<code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:BranchManagerTest" id="r_BranchManagerTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBranchManagerTest.html">BranchManagerTest</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a150d36704d95a401888ce6bcc1558c51" id="r_a150d36704d95a401888ce6bcc1558c51"><td class="memItemLeft" align="right" valign="top"><a id="a150d36704d95a401888ce6bcc1558c51" name="a150d36704d95a401888ce6bcc1558c51"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, CreateValidBranch)</td></tr>
+<tr class="memitem:a413f2199710fd82c0dac53cd02e63d42" id="r_a413f2199710fd82c0dac53cd02e63d42"><td class="memItemLeft" align="right" valign="top"><a id="a413f2199710fd82c0dac53cd02e63d42" name="a413f2199710fd82c0dac53cd02e63d42"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, CreateDuplicateBranch)</td></tr>
+<tr class="memitem:ad2d394a7fec9999e602c7715b154d756" id="r_ad2d394a7fec9999e602c7715b154d756"><td class="memItemLeft" align="right" valign="top"><a id="ad2d394a7fec9999e602c7715b154d756" name="ad2d394a7fec9999e602c7715b154d756"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, CreateBranchWithInvalidName)</td></tr>
+<tr class="memitem:ac3c1c643e65ea76ef3072d2b6949f1d0" id="r_ac3c1c643e65ea76ef3072d2b6949f1d0"><td class="memItemLeft" align="right" valign="top"><a id="ac3c1c643e65ea76ef3072d2b6949f1d0" name="ac3c1c643e65ea76ef3072d2b6949f1d0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, DeleteExistingBranch)</td></tr>
+<tr class="memitem:a3c54746a478466add7a814adac6fe10d" id="r_a3c54746a478466add7a814adac6fe10d"><td class="memItemLeft" align="right" valign="top"><a id="a3c54746a478466add7a814adac6fe10d" name="a3c54746a478466add7a814adac6fe10d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, DeleteNonExistentBranch)</td></tr>
+<tr class="memitem:a7bff41a784359030bcdc1bbb312c8e13" id="r_a7bff41a784359030bcdc1bbb312c8e13"><td class="memItemLeft" align="right" valign="top"><a id="a7bff41a784359030bcdc1bbb312c8e13" name="a7bff41a784359030bcdc1bbb312c8e13"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, DeleteCurrentBranch)</td></tr>
+<tr class="memitem:ab1bbeca70e5bf740cfdf26117a2c5ca0" id="r_ab1bbeca70e5bf740cfdf26117a2c5ca0"><td class="memItemLeft" align="right" valign="top"><a id="ab1bbeca70e5bf740cfdf26117a2c5ca0" name="ab1bbeca70e5bf740cfdf26117a2c5ca0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, RenameBranch)</td></tr>
+<tr class="memitem:a2fb2ab7793ec446056df94331ab478ce" id="r_a2fb2ab7793ec446056df94331ab478ce"><td class="memItemLeft" align="right" valign="top"><a id="a2fb2ab7793ec446056df94331ab478ce" name="a2fb2ab7793ec446056df94331ab478ce"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, RenameToExistingBranch)</td></tr>
+<tr class="memitem:aeebbdfca245a52a70051bd9712b3f0e7" id="r_aeebbdfca245a52a70051bd9712b3f0e7"><td class="memItemLeft" align="right" valign="top"><a id="aeebbdfca245a52a70051bd9712b3f0e7" name="aeebbdfca245a52a70051bd9712b3f0e7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, SwitchBetweenBranches)</td></tr>
+<tr class="memitem:ad56c3d6ef7e9bae84579982b375cc0ab" id="r_ad56c3d6ef7e9bae84579982b375cc0ab"><td class="memItemLeft" align="right" valign="top"><a id="ad56c3d6ef7e9bae84579982b375cc0ab" name="ad56c3d6ef7e9bae84579982b375cc0ab"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, SwitchToNonExistentBranch)</td></tr>
+<tr class="memitem:a4e901417184077dac6eac1dc636407fa" id="r_a4e901417184077dac6eac1dc636407fa"><td class="memItemLeft" align="right" valign="top"><a id="a4e901417184077dac6eac1dc636407fa" name="a4e901417184077dac6eac1dc636407fa"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, GetAllBranches)</td></tr>
+<tr class="memitem:a127165a611bef283430a7b849a1a2000" id="r_a127165a611bef283430a7b849a1a2000"><td class="memItemLeft" align="right" valign="top"><a id="a127165a611bef283430a7b849a1a2000" name="a127165a611bef283430a7b849a1a2000"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, BranchPersistence)</td></tr>
+<tr class="memitem:a14865f65660c4ae5a074898394e51dfd" id="r_a14865f65660c4ae5a074898394e51dfd"><td class="memItemLeft" align="right" valign="top"><a id="a14865f65660c4ae5a074898394e51dfd" name="a14865f65660c4ae5a074898394e51dfd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, LoadFromExistingBranchesFile)</td></tr>
+<tr class="memitem:a869a2d69730d62e12f3f706d8f9fa71f" id="r_a869a2d69730d62e12f3f706d8f9fa71f"><td class="memItemLeft" align="right" valign="top"><a id="a869a2d69730d62e12f3f706d8f9fa71f" name="a869a2d69730d62e12f3f706d8f9fa71f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, BranchNameValidation)</td></tr>
+<tr class="memitem:a5f4a7a7d747909a39056ab9fdfb58d97" id="r_a5f4a7a7d747909a39056ab9fdfb58d97"><td class="memItemLeft" align="right" valign="top"><a id="a5f4a7a7d747909a39056ab9fdfb58d97" name="a5f4a7a7d747909a39056ab9fdfb58d97"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, MultipleOperationsSequence)</td></tr>
+<tr class="memitem:aa5f79283663f6d3632e3532c43a8b8c9" id="r_aa5f79283663f6d3632e3532c43a8b8c9"><td class="memItemLeft" align="right" valign="top"><a id="aa5f79283663f6d3632e3532c43a8b8c9" name="aa5f79283663f6d3632e3532c43a8b8c9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, GetBranchHeadForNonExistentBranch)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Implementation of unit tests for the <a class="el" href="classBranchManager.html" title="Core service for managing version control branches (creation, deletion, switching).">BranchManager</a> class. </p>
+<p>This file implements the Google Test fixture and individual test cases to verify the functionality of the <a class="el" href="classBranchManager.html" title="Core service for managing version control branches (creation, deletion, switching).">BranchManager</a>, including branch creation, deletion, renaming, switching, persistence (loading/saving state to the file system), and input validation.</p>
+<dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a href="dir_7aaa9be0db659c034f76fbd23c494013.html">core</a></li><li class="navelem"><a href="BranchManagerTest_8cxx.html">BranchManagerTest.cxx</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

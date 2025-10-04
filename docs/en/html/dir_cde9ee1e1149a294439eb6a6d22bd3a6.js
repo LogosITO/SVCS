@@ -2,6 +2,7 @@ var dir_cde9ee1e1149a294439eb6a6d22bd3a6 =
 [
     [ "AddCommand.hxx", "AddCommand_8hxx.html", "AddCommand_8hxx" ],
     [ "BaseCommand.hxx", "BaseCommand_8hxx.html", "BaseCommand_8hxx" ],
+    [ "BranchCommand.hxx", "BranchCommand_8hxx_source.html", null ],
     [ "ClearCommand.hxx", "ClearCommand_8hxx.html", "ClearCommand_8hxx" ],
     [ "CommandFactory.hxx", "CommandFactory_8hxx.html", "CommandFactory_8hxx" ],
     [ "HelpCommand.hxx", "HelpCommand_8hxx.html", "HelpCommand_8hxx" ],

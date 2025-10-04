@@ -1,0 +1,332 @@
+/**
+ * @file BranchCommand.cxx
+ * @brief Implementation of the BranchCommand for managing branches.
+ *
+ * @details This command acts as the command-line interface for branch operations. 
+ * It parses command-line arguments to determine the required action (list, create, 
+ * delete, rename, switch, or show current) and calls the appropriate method 
+ * on the core BranchManager.
+ *
+ * @copyright 
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ */
+
+#include "../include/BranchCommand.hxx"
+#include "../../services/Event.hxx"
+
+#include <sstream>
+
+BranchCommand::BranchCommand(std::shared_ptr<ISubject> event_bus,
+                           std::shared_ptr<BranchManager> branch_manager)
+    : event_bus_(std::move(event_bus))
+    , branch_manager_(std::move(branch_manager)) {}
+
+std::string BranchCommand::getName() const {
+    return "branch";
+}
+
+std::string BranchCommand::getDescription() const {
+    return "List, create, delete, or rename branches";
+}
+
+std::string BranchCommand::getUsage() const {
+    return "svcs branch [<branch-name>] [-d | --delete <branch-name>] "
+           "[-m | --move <old-name> <new-name>] [-c | --show-current] "
+           "[-f | --force]";
+}
+
+bool BranchCommand::execute(const std::vector<std::string>& args) {
+    if (args.empty()) {
+        return listBranches();
+    }
+    
+    std::string subcommand;
+    std::vector<std::string> branch_names;
+    bool force_delete = false;
+    bool show_current = false;
+    
+    for (size_t i = 0; i < args.size(); ++i) {
+        const auto& arg = args[i];
+        
+        if (arg == "-d" || arg == "--delete") {
+            subcommand = "delete";
+        } else if (arg == "-h" || arg == "--help") {
+            subcommand = "help";
+        } else if (arg == "-D") {
+            subcommand = "delete";
+            force_delete = true;
+        } else if (arg == "-m" || arg == "--move") {
+            subcommand = "rename";
+        } else if (arg == "-c" || arg == "--show-current") {
+            show_current = true;
+        } else if (arg == "-f" || arg == "--force") {
+            force_delete = true;
+        } else if (!arg.empty() && arg[0] != '-') {
+            branch_names.push_back(arg);
+        } else {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Unknown option: " + arg, "branch"});
+            }
+            return false;
+        }
+    }
+    
+    if (show_current) {
+        return showCurrentBranch();
+    }
+    
+    if (subcommand == "delete") {
+        if (branch_names.empty()) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Branch name required for delete operation", "branch"});
+            }
+            return false;
+        }
+        return deleteBranch(branch_names[0], force_delete);
+    }
+
+    if (subcommand == "help") {
+        showHelp();
+        return true;
+    }
+    
+    if (subcommand == "rename") {
+        if (branch_names.size() < 2) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Both old and new branch names required for rename", "branch"});
+            }
+            return false;
+        }
+        return renameBranch(branch_names[0], branch_names[1]);
+    }
+    
+    if (branch_names.size() == 1) {
+        if (branchExists(branch_names[0])) {
+            return switchBranch(branch_names[0]);
+        } else {
+            return createBranch(branch_names[0]);
+        }
+    }
+    
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Invalid arguments for branch command", "branch"});
+    }
+    showHelp();
+    return false;
+}
+
+void BranchCommand::showHelp() const {
+    event_bus_->notify({Event::HELP_MESSAGE, "Usage: " + getUsage(), "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "Description: " + getDescription(), "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "Options:", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  <branch-name>           Create new branch or switch to existing branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  -d, --delete <branch>   Delete a branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  -D                      Force delete a branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  -m, --move <old> <new>  Rename a branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  -c, --show-current      Show current branch name", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  -f, --force             Force operation", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "Examples:", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch                          # List all branches", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch feature/new-feature      # Create new branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch develop                  # Switch to existing branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -d old-branch            # Delete branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -m old-name new-name     # Rename branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -c                       # Show current branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -D protected-branch      # Force delete branch", "branch"});
+}
+
+bool BranchCommand::listBranches() {
+    try {
+        auto branches = branch_manager_->getAllBranches();
+        
+        if (branches.empty()) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::WARNING_MESSAGE, "No branches found", "branch"});
+            }
+            return true;
+        }
+        
+        std::stringstream ss;
+        ss << "Available branches:\n";
+        
+        for (const auto& branch : branches) {
+            if (branch.is_current) {
+                ss << "* " << branch.name << "\n";
+            } else {
+                ss << "  " << branch.name << "\n";
+            }
+        }
+        
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::GENERAL_INFO, ss.str(), "branch"});
+        }
+        return true;
+        
+    } catch (const std::exception& e) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to list branches: " + std::string(e.what()), "branch"});
+        }
+        return false;
+    }
+}
+
+bool BranchCommand::createBranch(const std::string& branch_name) {
+    if (!isValidBranchName(branch_name)) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Invalid branch name: " + branch_name, "branch"});
+        }
+        return false;
+    }
+    
+    if (branchExists(branch_name)) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Branch already exists: " + branch_name, "branch"});
+        }
+        return false;
+    }
+    
+    try {
+        // For now, use empty commit hash - in real implementation 
+        // we would get the current HEAD commit
+        bool success = branch_manager_->createBranch(branch_name, "");
+        if (success) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::GENERAL_INFO, "Created branch: " + branch_name, "branch"});
+            }
+            return true;
+        } else {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to create branch: " + branch_name, "branch"});
+            }
+            return false;
+        }
+        
+    } catch (const std::exception& e) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to create branch: " + std::string(e.what()), "branch"});
+        }
+        return false;
+    }
+}
+
+bool BranchCommand::deleteBranch(const std::string& branch_name, bool force) {
+    if (!branchExists(branch_name)) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Branch not found: " + branch_name, "branch"});
+        }
+        return false;
+    }
+    
+    try {
+        bool success = branch_manager_->deleteBranch(branch_name, force);
+        if (success) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::GENERAL_INFO, "Deleted branch: " + branch_name, "branch"});
+            }
+            return true;
+        } else {
+            if (!force) {
+                if (event_bus_) {
+                    event_bus_->notify({Event::Type::WARNING_MESSAGE, "Branch contains unmerged changes. Use -D to force delete.", "branch"});
+                }
+            }
+            return false;
+        }
+        
+    } catch (const std::exception& e) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to delete branch: " + std::string(e.what()), "branch"});
+        }
+        return false;
+    }
+}
+
+bool BranchCommand::renameBranch(const std::string& old_name, const std::string& new_name) {
+    if (!branchExists(old_name)) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Branch not found: " + old_name, "branch"});
+        }
+        return false;
+    }
+    
+    if (!isValidBranchName(new_name)) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Invalid new branch name: " + new_name, "branch"});
+        }
+        return false;
+    }
+    
+    if (branchExists(new_name)) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Branch already exists: " + new_name, "branch"});
+        }
+        return false;
+    }
+    
+    try {
+        bool success = branch_manager_->renameBranch(old_name, new_name);
+        if (success) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::GENERAL_INFO, "Renamed branch " + old_name + " to " + new_name, "branch"});
+            }
+            return true;
+        } else {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to rename branch", "branch"});
+            }
+            return false;
+        }
+        
+    } catch (const std::exception& e) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to rename branch: " + std::string(e.what()), "branch"});
+        }
+        return false;
+    }
+}
+
+bool BranchCommand::showCurrentBranch() {
+    try {
+        auto current_branch = branch_manager_->getCurrentBranch();
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::GENERAL_INFO, "Current branch: " + current_branch, "branch"});
+        }
+        return true;
+    } catch (const std::exception& e) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to get current branch: " + std::string(e.what()), "branch"});
+        }
+        return false;
+    }
+}
+
+bool BranchCommand::switchBranch(const std::string& branch_name) {
+    try {
+        bool success = branch_manager_->switchBranch(branch_name);
+        if (success) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::GENERAL_INFO, "Switched to branch: " + branch_name, "branch"});
+            }
+            return true;
+        } else {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to switch to branch: " + branch_name, "branch"});
+            }
+            return false;
+        }
+    } catch (const std::exception& e) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to switch branch: " + std::string(e.what()), "branch"});
+        }
+        return false;
+    }
+}
+
+bool BranchCommand::isValidBranchName(const std::string& name) const {
+    return BranchManager::isValidBranchName(name);
+}
+
+bool BranchCommand::branchExists(const std::string& name) const {
+    return branch_manager_->branchExists(name);
+}

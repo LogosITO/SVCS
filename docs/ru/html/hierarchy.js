@@ -1,5 +1,7 @@
 var hierarchy =
 [
+    [ "BranchManager::Branch", "structBranchManager_1_1Branch.html", null ],
+    [ "BranchManager", "classBranchManager.html", null ],
     [ "CommandFactory", "classCommandFactory.html", null ],
     [ "CommitInfo", "structCommitInfo.html", null ],
     [ "std::enable_shared_from_this", null, [
@@ -12,6 +14,7 @@ var hierarchy =
     [ "ICommand", "classICommand.html", [
       [ "AddCommand", "classAddCommand.html", null ],
       [ "BaseCommand", "classBaseCommand.html", null ],
+      [ "BranchCommand", "classBranchCommand.html", null ],
       [ "ClearCommand", "classClearCommand.html", null ],
       [ "HelpCommand", "classHelpCommand.html", null ],
       [ "HistoryCommand", "classHistoryCommand.html", null ],
@@ -43,6 +46,7 @@ var hierarchy =
     [ "RepositoryManager", "classRepositoryManager.html", null ],
     [ "testing::Test", null, [
       [ "AddCommandTest", "classAddCommandTest.html", null ],
+      [ "BranchManagerTest", "classBranchManagerTest.html", null ],
       [ "ClearCommandTest", "classClearCommandTest.html", null ],
       [ "HelpCommandTest", "classHelpCommandTest.html", null ],
       [ "HistoryCommandTest", "classHistoryCommandTest.html", null ],

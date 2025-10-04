@@ -41,10 +41,12 @@ var searchData=
   ['intversioncommandtest_2ehxx_38',['IntVersionCommandTest.hxx',['../IntVersionCommandTest_8hxx.html',1,'']]],
   ['iobserver_39',['IObserver',['../classIObserver.html',1,'']]],
   ['iobserver_2ehxx_40',['IObserver.hxx',['../IObserver_8hxx.html',1,'']]],
-  ['is_5finitialized_41',['is_initialized',['../classRepository.html#ae29372147e4b9dbb7ad3efdd32c1c42e',1,'Repository']]],
-  ['isfilemodified_42',['isFileModified',['../classIndex.html#ae12163a4349daa632044ff28c2818125',1,'Index']]],
-  ['isrepository_43',['isRepository',['../classRepository.html#aed550b2bede1ebe31d4dc4ac42026ba6',1,'Repository']]],
-  ['isrepositoryinitialized_44',['isRepositoryInitialized',['../classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674',1,'RepositoryManager']]],
-  ['isubject_45',['ISubject',['../classISubject.html',1,'']]],
-  ['isubject_2ehxx_46',['ISubject.hxx',['../ISubject_8hxx.html',1,'']]]
+  ['is_5fcurrent_41',['is_current',['../structBranchManager_1_1Branch.html#a24e9cf18a5f02f34ccb34119da97dea2',1,'BranchManager::Branch']]],
+  ['is_5finitialized_42',['is_initialized',['../classRepository.html#ae29372147e4b9dbb7ad3efdd32c1c42e',1,'Repository']]],
+  ['isfilemodified_43',['isFileModified',['../classIndex.html#ae12163a4349daa632044ff28c2818125',1,'Index']]],
+  ['isrepository_44',['isRepository',['../classRepository.html#aed550b2bede1ebe31d4dc4ac42026ba6',1,'Repository']]],
+  ['isrepositoryinitialized_45',['isRepositoryInitialized',['../classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674',1,'RepositoryManager']]],
+  ['isubject_46',['ISubject',['../classISubject.html',1,'']]],
+  ['isubject_2ehxx_47',['ISubject.hxx',['../ISubject_8hxx.html',1,'']]],
+  ['isvalidbranchname_48',['isValidBranchName',['../classBranchManager.html#a2bed7bba95e0d75b22b5264c9058b600',1,'BranchManager']]]
 ];

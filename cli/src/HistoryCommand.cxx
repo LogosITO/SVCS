@@ -74,18 +74,18 @@ std::string HistoryCommand::getUsage() const {
 }
 
 void HistoryCommand::showHelp() const {
-    eventBus_->notify({Event::GENERAL_INFO, "Usage: " + getUsage(), "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "Description: " + getDescription(), "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "Shows the chronological history of all saves in the repository.", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "Options:", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --oneline, -o    Compact single-line format", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --last N, -n N   Show last N entries", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "  --full, -f       Show full details", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "Examples:", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs history                    # Full history", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs history --oneline          # Compact view", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs history --last 5           # Last 5 saves", "history"});
-    eventBus_->notify({Event::GENERAL_INFO, "  svcs history -n 3 -o            # Last 3 in compact format", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Usage: " + getUsage(), "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Description: " + getDescription(), "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Shows the chronological history of all saves in the repository.", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Options:", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --oneline, -o    Compact single-line format", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --last N, -n N   Show last N entries", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  --full, -f       Show full details", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "Examples:", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs history                    # Full history", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs history --oneline          # Compact view", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs history --last 5           # Last 5 saves", "history"});
+    eventBus_->notify({Event::HELP_MESSAGE, "  svcs history -n 3 -o            # Last 3 in compact format", "history"});
 }
 
 bool HistoryCommand::parseArguments(const std::vector<std::string>& args,

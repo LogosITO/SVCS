@@ -1,6 +1,7 @@
 var dir_90fd98a0ba30abf7a6068a44995d2d6b =
 [
     [ "Blob.cxx", "Blob_8cxx.html", null ],
+    [ "BranchManager.cxx", "BranchManager_8cxx.html", null ],
     [ "Commit.cxx", "Commit_8cxx.html", null ],
     [ "Index.cxx", "Index_8cxx.html", null ],
     [ "ObjectStorage.cxx", "ObjectStorage_8cxx.html", null ],

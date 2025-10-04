@@ -8,5 +8,14 @@ var searchData=
   ['blob_2ecxx_5',['Blob.cxx',['../Blob_8cxx.html',1,'']]],
   ['blob_2ehxx_6',['Blob.hxx',['../Blob_8hxx.html',1,'']]],
   ['blob_5fhash_7',['blob_hash',['../structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12',1,'IndexEntry']]],
-  ['blobtest_2ecxx_8',['BlobTest.cxx',['../BlobTest_8cxx.html',1,'']]]
+  ['blobtest_2ecxx_8',['BlobTest.cxx',['../BlobTest_8cxx.html',1,'']]],
+  ['branch_9',['Branch',['../structBranchManager_1_1Branch.html',1,'BranchManager::Branch'],['../structBranchManager_1_1Branch.html#a07c4c42049d006d14f7c63bc58a81177',1,'BranchManager::Branch::Branch()']]],
+  ['branchcommand_10',['BranchCommand',['../classBranchCommand.html',1,'BranchCommand'],['../classBranchCommand.html#a4eaa697694eb6ff5f25638bd57cad585',1,'BranchCommand::BranchCommand()']]],
+  ['branchcommand_2ecxx_11',['BranchCommand.cxx',['../BranchCommand_8cxx.html',1,'']]],
+  ['branchexists_12',['branchExists',['../classBranchManager.html#a6d9226441cbc178c6afe0b957b50d406',1,'BranchManager']]],
+  ['branchmanager_13',['BranchManager',['../classBranchManager.html',1,'BranchManager'],['../classBranchManager.html#a4f034befce006a84693d8ce6673805dc',1,'BranchManager::BranchManager()']]],
+  ['branchmanager_2ecxx_14',['BranchManager.cxx',['../BranchManager_8cxx.html',1,'']]],
+  ['branchmanager_2ehxx_15',['BranchManager.hxx',['../BranchManager_8hxx.html',1,'']]],
+  ['branchmanagertest_16',['BranchManagerTest',['../classBranchManagerTest.html',1,'']]],
+  ['branchmanagertest_2ecxx_17',['BranchManagerTest.cxx',['../BranchManagerTest_8cxx.html',1,'']]]
 ];

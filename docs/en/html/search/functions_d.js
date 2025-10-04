@@ -5,9 +5,10 @@ var searchData=
   ['removecommand_2',['RemoveCommand',['../classRemoveCommand.html#a740894bbd2e7bad0711ffd1191d4691c',1,'RemoveCommand']]],
   ['removeentry_3',['removeEntry',['../classTree.html#a85035a45ff8778df5bb8be32f57bf232',1,'Tree']]],
   ['removerepository_4',['removeRepository',['../classRepositoryManager.html#ab28d4e38ff9c3691fce81ca9e67556ba',1,'RepositoryManager']]],
-  ['repository_5',['Repository',['../classRepository.html#a6630b76df7b7093650373d799367e28d',1,'Repository']]],
-  ['repositoryexists_6',['repositoryExists',['../classClearCommandTest.html#acfc70a9daa3a28208acea85449211517',1,'ClearCommandTest']]],
-  ['repositorymanager_7',['RepositoryManager',['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager']]],
-  ['restorefilesfromcommit_8',['restoreFilesFromCommit',['../classRepositoryManager.html#a7564eef967c7eec3fbaeba51aa05147b',1,'RepositoryManager']]],
-  ['revertcommit_9',['revertCommit',['../classRepositoryManager.html#abf991881ef84930dd6e81667360ebdef',1,'RepositoryManager']]]
+  ['renamebranch_5',['renameBranch',['../classBranchManager.html#a32cb34d10f0c6075951fef6ae6e21dd9',1,'BranchManager']]],
+  ['repository_6',['Repository',['../classRepository.html#a6630b76df7b7093650373d799367e28d',1,'Repository']]],
+  ['repositoryexists_7',['repositoryExists',['../classClearCommandTest.html#acfc70a9daa3a28208acea85449211517',1,'ClearCommandTest']]],
+  ['repositorymanager_8',['RepositoryManager',['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager']]],
+  ['restorefilesfromcommit_9',['restoreFilesFromCommit',['../classRepositoryManager.html#a7564eef967c7eec3fbaeba51aa05147b',1,'RepositoryManager']]],
+  ['revertcommit_10',['revertCommit',['../classRepositoryManager.html#abf991881ef84930dd6e81667360ebdef',1,'RepositoryManager']]]
 ];

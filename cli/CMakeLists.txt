@@ -10,6 +10,7 @@ set(CLI_SOURCES
     src/StatusCommand.cxx
     src/HistoryCommand.cxx
     src/UndoCommand.cxx
+    src/BranchCommand.cxx
     src/CommandFactory.cxx
 )
 
@@ -28,6 +29,7 @@ set(CLI_HEADERS
     include/StatusCommand.hxx
     include/HistoryCommand.hxx
     include/UndoCommand.hxx
+    include/BranchCommand.hxx
     include/CommandFactory.hxx
 )
 

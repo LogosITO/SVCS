@@ -120,10 +120,16 @@ $(function(){initNavTree('classBranchManager.html','','classBranchManager-member
 <tr class="memdesc:a846faa415db0516c4eccda9f7ef3c316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a list of all known branches, including their state.  <br /></td></tr>
 <tr class="memitem:ad9f599e0b37e4319fef083063bc47883" id="r_ad9f599e0b37e4319fef083063bc47883"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9f599e0b37e4319fef083063bc47883">getCurrentBranch</a> () const</td></tr>
 <tr class="memdesc:ad9f599e0b37e4319fef083063bc47883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the name of the currently active branch.  <br /></td></tr>
+<tr class="memitem:a0cdd864c1c3ed12af16e77bf932e63ce" id="r_a0cdd864c1c3ed12af16e77bf932e63ce"><td class="memItemLeft" align="right" valign="top"><a id="a0cdd864c1c3ed12af16e77bf932e63ce" name="a0cdd864c1c3ed12af16e77bf932e63ce"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>updateBranchHead</b> (const std::string &amp;branch_name, const std::string &amp;commit_hash)</td></tr>
 <tr class="memitem:a6d9226441cbc178c6afe0b957b50d406" id="r_a6d9226441cbc178c6afe0b957b50d406"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d9226441cbc178c6afe0b957b50d406">branchExists</a> (const std::string &amp;name) const</td></tr>
 <tr class="memdesc:a6d9226441cbc178c6afe0b957b50d406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a branch with the given name exists.  <br /></td></tr>
 <tr class="memitem:acd0aa8b6f71b83cc190081c1845e3284" id="r_acd0aa8b6f71b83cc190081c1845e3284"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd0aa8b6f71b83cc190081c1845e3284">getBranchHead</a> (const std::string &amp;branch_name) const</td></tr>
 <tr class="memdesc:acd0aa8b6f71b83cc190081c1845e3284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the commit hash that a specific branch points to.  <br /></td></tr>
+<tr class="memitem:ab0982ccff90a6853cde203afd456320d" id="r_ab0982ccff90a6853cde203afd456320d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0982ccff90a6853cde203afd456320d">createBranchFromCommit</a> (const std::string &amp;name, const std::string &amp;commit_hash)</td></tr>
+<tr class="memdesc:ab0982ccff90a6853cde203afd456320d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new branch from a specific commit.  <br /></td></tr>
+<tr class="memitem:aa283114845b47d8be2c7aab97009afb3" id="r_aa283114845b47d8be2c7aab97009afb3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa283114845b47d8be2c7aab97009afb3">commitExists</a> (const std::string &amp;commit_hash) const</td></tr>
+<tr class="memdesc:aa283114845b47d8be2c7aab97009afb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a commit exists.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Открытые статические члены</h2></td></tr>
@@ -194,6 +200,32 @@ $(function(){initNavTree('classBranchManager.html','','classBranchManager-member
 
 </div>
 </div>
+<a id="aa283114845b47d8be2c7aab97009afb3" name="aa283114845b47d8be2c7aab97009afb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa283114845b47d8be2c7aab97009afb3">&#9670;&#160;</a></span>commitExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BranchManager::commitExists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a commit exists. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>Hash to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true if commit exists, false otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a3a7c3b3d35734ace8f4c3defc8b54f2c" name="a3a7c3b3d35734ace8f4c3defc8b54f2c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a7c3b3d35734ace8f4c3defc8b54f2c">&#9670;&#160;</a></span>createBranch()</h2>
 
@@ -222,6 +254,37 @@ $(function(){initNavTree('classBranchManager.html','','classBranchManager-member
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd><code>true</code> if the branch was created successfully, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ab0982ccff90a6853cde203afd456320d" name="ab0982ccff90a6853cde203afd456320d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0982ccff90a6853cde203afd456320d">&#9670;&#160;</a></span>createBranchFromCommit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BranchManager::createBranchFromCommit </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new branch from a specific commit. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td><a class="el" href="structBranchManager_1_1Branch.html" title="Structure to hold the metadata for a single branch.">Branch</a> name </td></tr>
+    <tr><td class="paramname">commit_hash</td><td>Hash of the commit to branch from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true if successful, false otherwise </dd></dl>
 
 </div>
 </div>

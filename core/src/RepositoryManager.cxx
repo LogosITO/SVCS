@@ -39,6 +39,123 @@ void RepositoryManager::logInfo(const std::string& message) {
     }
 }
 
+bool RepositoryManager::initializeRepository(const std::string& path, bool force) {
+    std::filesystem::path repoPath;
+    
+    if (path.empty() || path == ".") {
+        repoPath = std::filesystem::current_path();
+    } else {
+        repoPath = std::filesystem::absolute(path);
+    }
+    
+    std::filesystem::path svcsDir = repoPath / ".svcs";
+    
+    logInfo("=== START INITIALIZATION ===");
+    logInfo("Target path: " + path);
+    logInfo("Absolute repo path: " + repoPath.string());
+    logInfo("SVCS dir will be: " + svcsDir.string());
+    logInfo("Current working dir: " + std::filesystem::current_path().string());
+    
+    // Проверяем существование .svcs ДО удаления
+    if (std::filesystem::exists(svcsDir)) {
+        logInfo(".svcs exists before removal: YES");
+        if (force) {
+            logInfo("Repository already exists, forcing reinitialization");
+            if (!removeRepository(svcsDir)) {
+                logError("Failed to remove existing repository");
+                return false;
+            }
+        } else {
+            logError("Repository already exists at: " + svcsDir.string());
+            logInfo("Use --force to reinitialize");
+            return false;
+        }
+    } else {
+        logInfo(".svcs exists before removal: NO");
+    }
+    
+    logInfo("Creating directory structure...");
+    
+    if (!createDirectory(svcsDir)) {
+        logError("FAILED to create .svcs directory");
+        return false;
+    }
+    logInfo("CREATED: " + svcsDir.string());
+    
+    if (!createDirectory(svcsDir / "objects")) {
+        logError("FAILED to create objects directory");
+        return false;
+    }
+    logInfo("CREATED: " + (svcsDir / "objects").string());
+    
+    if (!createDirectory(svcsDir / "refs")) {
+        logError("FAILED to create refs directory");
+        return false;
+    }
+    logInfo("CREATED: " + (svcsDir / "refs").string());
+    
+    if (!createDirectory(svcsDir / "refs" / "heads")) {
+        logError("FAILED to create refs/heads directory");
+        return false;
+    }
+    logInfo("CREATED: " + (svcsDir / "refs" / "heads").string());
+    
+    // Создаем файлы с детальным логированием
+    logInfo("Creating files...");
+    
+    if (!createFile(svcsDir / "HEAD", "ref: refs/heads/main\n")) {
+        logError("FAILED to create HEAD file");
+        return false;
+    }
+    logInfo("CREATED: HEAD file");
+    
+    if (!createFile(svcsDir / "index", "")) {
+        logError("FAILED to create index file");
+        return false;
+    }
+    logInfo("CREATED: index file");
+    
+    if (!createFile(svcsDir / "config", 
+        "[core]\n    repositoryformatversion = 0\n    filemode = true\n    bare = false\n")) {
+        logError("FAILED to create config file");
+        return false;
+    }
+    logInfo("CREATED: config file");
+    
+    currentRepoPath = repoPath.string();
+    
+    // ФИНАЛЬНАЯ ПРОВЕРКА - что реально создалось
+    logInfo("=== FINAL VERIFICATION ===");
+    logInfo("Checking created structure...");
+    
+    bool allOk = true;
+    for (const auto& checkPath : {
+        svcsDir,
+        svcsDir / "objects", 
+        svcsDir / "refs",
+        svcsDir / "refs" / "heads",
+        svcsDir / "HEAD",
+        svcsDir / "index",
+        svcsDir / "config"
+    }) {
+        if (std::filesystem::exists(checkPath)) {
+            logInfo("VERIFIED: " + checkPath.string());
+        } else {
+            logError("MISSING: " + checkPath.string());
+            allOk = false;
+        }
+    }
+    
+    if (allOk) {
+        logInfo("=== INITIALIZATION SUCCESSFUL ===");
+        logInfo("Repository initialized at: " + currentRepoPath);
+    } else {
+        logError("=== INITIALIZATION FAILED ===");
+    }
+    
+    return allOk;
+}
+
 bool RepositoryManager::removeRepository(const std::filesystem::path& path) {
     try {
         if (!std::filesystem::exists(path)) {
@@ -149,7 +266,7 @@ void RepositoryManager::updateBranchReference(const std::string& branchName, con
         } else {
             // Записать хеш коммита в файл ветки
             std::ofstream file(branchFile);
-            file << commitHash << "\n";
+            file << commitHash;
             logDebug("Updated branch " + branchName + " to commit: " + commitHash.substr(0, 8));
         }
         
@@ -158,168 +275,54 @@ void RepositoryManager::updateBranchReference(const std::string& branchName, con
     }
 }
 
-void RepositoryManager::updateHead(const std::string& commitHash) {
-    const std::string SOURCE = "RepositoryManager";
-    
+std::string RepositoryManager::getCurrentBranchFromHead() {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path headFile = repoPath / ".svcs" / "HEAD";
         
-        std::filesystem::create_directories(headFile.parent_path());
-        
-        if (commitHash.empty()) {
-            std::ofstream file(headFile);
-            file << "ref: refs/heads/main\n";
-            
-            std::filesystem::path refsDir = repoPath / ".svcs" / "refs" / "heads";
-            std::filesystem::create_directories(refsDir);
-            std::filesystem::path mainRef = refsDir / "main";
-            
-            if (!std::filesystem::exists(mainRef)) {
-                std::ofstream refFile(mainRef);
-            }
-            
-            logDebug("Reset HEAD to default branch");
-        } else {
-            std::ofstream file(headFile);
-            file << commitHash << "\n";
-            logDebug("Updated HEAD to commit: " + commitHash.substr(0, 8));
+        if (!std::filesystem::exists(headFile)) {
+            return "main"; // default branch
         }
+        
+        std::ifstream file(headFile);
+        std::string line;
+        
+        if (std::getline(file, line)) {
+            if (line.find("ref: refs/heads/") == 0) {
+                return line.substr(16); // Extract branch name
+            }
+        }
+        
+        return "main"; // default branch
         
     } catch (const std::exception& e) {
-        logError("Error updating HEAD: " + std::string(e.what()));
+        logError("Error reading current branch: " + std::string(e.what()));
+        return "main";
     }
 }
 
-bool RepositoryManager::initializeRepository(const std::string& path, bool force) {
-    std::filesystem::path repoPath;
-    
-    if (path.empty() || path == ".") {
-        repoPath = std::filesystem::current_path();
-    } else {
-        repoPath = std::filesystem::absolute(path);
-    }
-    
-    std::filesystem::path svcsDir = repoPath / ".svcs";
-    
-    logInfo("=== START INITIALIZATION ===");
-    logInfo("Target path: " + path);
-    logInfo("Absolute repo path: " + repoPath.string());
-    logInfo("SVCS dir will be: " + svcsDir.string());
-    logInfo("Current working dir: " + std::filesystem::current_path().string());
-    
-    // Проверяем существование .svcs ДО удаления
-    if (std::filesystem::exists(svcsDir)) {
-        logInfo(".svcs exists before removal: YES");
-        logInfo(".svcs contents before removal:");
-        try {
-            for (const auto& entry : std::filesystem::recursive_directory_iterator(svcsDir)) {
-                logInfo("  " + entry.path().string());
-            }
-        } catch (const std::exception& e) {
-            logError("Error listing .svcs: " + std::string(e.what()));
+std::string RepositoryManager::getBranchHead(const std::string& branchName) {
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path branchFile = repoPath / ".svcs" / "refs" / "heads" / branchName;
+        
+        if (!std::filesystem::exists(branchFile)) {
+            return "";
         }
-    } else {
-        logInfo(".svcs exists before removal: NO");
-    }
-    
-    // Проверяем, не существует ли уже репозиторий
-    if (std::filesystem::exists(svcsDir)) {
-        if (force) {
-            logInfo("Repository already exists, forcing reinitialization");
-            if (!removeRepository(svcsDir)) {
-                logError("Failed to remove existing repository");
-                return false;
-            }
-        } else {
-            logError("Repository already exists at: " + svcsDir.string());
-            logInfo("Use --force to reinitialize");
-            return false;
+        
+        std::ifstream file(branchFile);
+        std::string commitHash;
+        if (std::getline(file, commitHash)) {
+            return commitHash;
         }
+        
+        return "";
+        
+    } catch (const std::exception& e) {
+        logError("Error reading branch head: " + std::string(e.what()));
+        return "";
     }
-    
-    logInfo("Creating directory structure...");
-    
-    if (!createDirectory(svcsDir)) {
-        logError("FAILED to create .svcs directory");
-        return false;
-    }
-    logInfo("CREATED: " + svcsDir.string());
-    
-    if (!createDirectory(svcsDir / "objects")) {
-        logError("FAILED to create objects directory");
-        return false;
-    }
-    logInfo("CREATED: " + (svcsDir / "objects").string());
-    
-    if (!createDirectory(svcsDir / "refs")) {
-        logError("FAILED to create refs directory");
-        return false;
-    }
-    logInfo("CREATED: " + (svcsDir / "refs").string());
-    
-    if (!createDirectory(svcsDir / "refs" / "heads")) {
-        logError("FAILED to create refs/heads directory");
-        return false;
-    }
-    logInfo("CREATED: " + (svcsDir / "refs" / "heads").string());
-    
-    // Создаем файлы с детальным логированием
-    logInfo("Creating files...");
-    
-    if (!createFile(svcsDir / "HEAD", "ref: refs/heads/main\n")) {
-        logError("FAILED to create HEAD file");
-        return false;
-    }
-    logInfo("CREATED: HEAD file");
-    
-    if (!createFile(svcsDir / "index", "")) {
-        logError("FAILED to create index file");
-        return false;
-    }
-    logInfo("CREATED: index file");
-    
-    if (!createFile(svcsDir / "config", 
-        "[core]\n    repositoryformatversion = 0\n    filemode = true\n    bare = false\n")) {
-        logError("FAILED to create config file");
-        return false;
-    }
-    logInfo("CREATED: config file");
-    
-    currentRepoPath = repoPath.string();
-    
-    // ФИНАЛЬНАЯ ПРОВЕРКА - что реально создалось
-    logInfo("=== FINAL VERIFICATION ===");
-    logInfo("Checking created structure...");
-    
-    bool allOk = true;
-    for (const auto& checkPath : {
-        svcsDir,
-        svcsDir / "objects", 
-        svcsDir / "refs",
-        svcsDir / "refs" / "heads",
-        svcsDir / "HEAD",
-        svcsDir / "index",
-        svcsDir / "config"
-    }) {
-        if (std::filesystem::exists(checkPath)) {
-            logInfo("VERIFIED: " + checkPath.string());
-        } else {
-            logError("MISSING: " + checkPath.string());
-            allOk = false;
-        }
-    }
-    
-    if (allOk) {
-        logInfo("=== INITIALIZATION SUCCESSFUL ===");
-        logInfo("Repository initialized at: " + currentRepoPath);
-    } else {
-        logError("=== INITIALIZATION FAILED ===");
-    }
-    
-    return allOk;
 }
-
 
 bool RepositoryManager::isRepositoryInitialized(const std::string& path) {
     std::filesystem::path checkPath;
@@ -424,6 +427,40 @@ bool RepositoryManager::clearStagingArea() {
     }
 }
 
+void RepositoryManager::updateHead(const std::string& commitHash) {
+    const std::string SOURCE = "RepositoryManager";
+    
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path headFile = repoPath / ".svcs" / "HEAD";
+        
+        std::filesystem::create_directories(headFile.parent_path());
+        
+        if (commitHash.empty()) {
+            std::ofstream file(headFile);
+            file << "ref: refs/heads/main\n";
+            
+            std::filesystem::path refsDir = repoPath / ".svcs" / "refs" / "heads";
+            std::filesystem::create_directories(refsDir);
+            std::filesystem::path mainRef = refsDir / "main";
+            
+            if (!std::filesystem::exists(mainRef)) {
+                std::ofstream refFile(mainRef);
+            }
+            
+            logDebug("Reset HEAD to default branch");
+        } else {
+            std::ofstream file(headFile);
+            file << commitHash << "\n";
+            logDebug("Updated HEAD to commit: " + commitHash.substr(0, 8));
+        }
+        
+    } catch (const std::exception& e) {
+        logError("Error updating HEAD: " + std::string(e.what()));
+    }
+}
+
+
 std::string RepositoryManager::createCommit(const std::string& message) {
     if (!isRepositoryInitialized()) {
         logError("No repository found for commit operation");
@@ -437,26 +474,13 @@ std::string RepositoryManager::createCommit(const std::string& message) {
     }
 
     try {
-        std::string parentCommit = getHeadCommit();
-        logDebug("Creating new commit with parent: '" + parentCommit + "'");
+        // Получаем текущую ветку
+        std::string current_branch = getCurrentBranchFromHead();
+        std::string parentCommit = getBranchHead(current_branch);
         
-        // ВАЖНО: Проверить что родительский коммит существует
-        if (!parentCommit.empty()) {
-            std::filesystem::path objectsDir = std::filesystem::path(getRepositoryPath()) / ".svcs" / "objects";
-            std::filesystem::path commitDir = objectsDir / parentCommit.substr(0, 2);
-            std::filesystem::path commitFile = commitDir / parentCommit.substr(2);
-            
-            if (!std::filesystem::exists(commitFile)) {
-                logDebug("HEAD points to non-existent commit, resetting: " + parentCommit);
-                parentCommit = "none"; // Установить как первый коммит
-                // ОБНОВИТЬ ФАЙЛ ВЕТКИ
-                updateBranchReference("main", ""); // Очистить ссылку ветки
-            }
-        } else {
-            parentCommit = "none";
-            logDebug("First commit - no parent");
-        }
+        logDebug("Creating new commit on branch '" + current_branch + "' with parent: '" + parentCommit + "'");
         
+        // Создаем коммит
         auto now = std::chrono::system_clock::now();
         auto timestamp = std::chrono::duration_cast<std::chrono::seconds>(
             now.time_since_epoch()).count();
@@ -466,6 +490,7 @@ std::string RepositoryManager::createCommit(const std::string& message) {
         commitContent << "author User <user@example.com>\n";
         commitContent << "timestamp " << timestamp << "\n";
         commitContent << "message " << message << "\n";
+        commitContent << "branch " << current_branch << "\n"; // ← ДОБАВЛЯЕМ информацию о ветке
         commitContent << "files " << stagedFiles.size() << "\n";
         for (const auto& file : stagedFiles) {
             commitContent << file << "\n";
@@ -482,6 +507,7 @@ std::string RepositoryManager::createCommit(const std::string& message) {
         logDebug("Commit content:\n" + content);
         logDebug("Generated commit hash: " + commitHash);
         
+        // Сохраняем коммит
         std::filesystem::path commitDir = std::filesystem::path(currentRepoPath) / ".svcs" / "objects" / commitHash.substr(0, 2);
         std::filesystem::path commitFile = commitDir / commitHash.substr(2);
         
@@ -490,11 +516,10 @@ std::string RepositoryManager::createCommit(const std::string& message) {
             return "";
         }
         
-        // ВАЖНО: Обновить и HEAD и файл ветки
-        updateHead(commitHash);
-        updateBranchReference("main", commitHash);
+        // ОБНОВЛЯЕМ ТОЛЬКО ТЕКУЩУЮ ВЕТКУ
+        updateBranchReference(current_branch, commitHash);
         
-        logInfo("Created commit: " + commitHash.substr(0, 8) + " - " + message);
+        logInfo("Created commit: " + commitHash.substr(0, 8) + " - " + message + " on branch '" + current_branch + "'");
         return commitHash;
         
     } catch (const std::exception& e) {
@@ -502,7 +527,6 @@ std::string RepositoryManager::createCommit(const std::string& message) {
         return "";
     }
 }
-
 
 std::string RepositoryManager::getParentCommitHash(const std::string& commitHash) const {
     const std::string SOURCE = "RepositoryManager";
@@ -798,18 +822,24 @@ std::string RepositoryManager::getHeadCommit() {
 }
 
 std::vector<CommitInfo> RepositoryManager::getCommitHistory() {
+    // По умолчанию возвращаем историю текущей ветки
+    return getBranchHistory(getCurrentBranchFromHead());
+}
+
+std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& branch_name) {
     const std::string SOURCE = "RepositoryManager";
     
     std::vector<CommitInfo> commits;
     
     try {
-        std::filesystem::path repoPath = getRepositoryPath();
-        std::string currentHash = getHeadCommit();
+        // Начинаем с HEAD текущей ветки
+        std::string currentHash = getBranchHead(branch_name);
         std::set<std::string> visited;
         
         while (!currentHash.empty() && visited.find(currentHash) == visited.end()) {
             visited.insert(currentHash);
             
+            std::filesystem::path repoPath = getRepositoryPath();
             std::filesystem::path objectsDir = repoPath / ".svcs" / "objects";
             std::filesystem::path commitDir = objectsDir / currentHash.substr(0, 2);
             std::filesystem::path commitFile = commitDir / currentHash.substr(2);
@@ -825,6 +855,7 @@ std::vector<CommitInfo> RepositoryManager::getCommitHistory() {
             std::ifstream file(commitFile);
             std::string line;
             std::string parentHash = "";
+            std::string commitBranch = "";
             
             while (std::getline(file, line)) {
                 if (line.find("parent ") == 0) {
@@ -837,10 +868,16 @@ std::vector<CommitInfo> RepositoryManager::getCommitHistory() {
                     commit.author = line.substr(7);
                 } else if (line.find("timestamp ") == 0) {
                     commit.timestamp = line.substr(10);
+                } else if (line.find("branch ") == 0) {
+                    commitBranch = line.substr(7);
+                    commit.branch = commitBranch;
                 }
             }
             
-            commits.push_back(commit);
+            // Добавляем коммит только если он принадлежит этой ветке
+            if (commitBranch == branch_name) {
+                commits.push_back(commit);
+            }
             
             if (parentHash != "none" && !parentHash.empty()) {
                 std::filesystem::path parentDir = objectsDir / parentHash.substr(0, 2);
@@ -857,11 +894,15 @@ std::vector<CommitInfo> RepositoryManager::getCommitHistory() {
             }
         }
         
-        logDebug("Retrieved " + std::to_string(commits.size()) + " valid commits from history");
+        logDebug("Retrieved " + std::to_string(commits.size()) + " commits for branch '" + branch_name + "'");
         return commits;
         
     } catch (const std::exception& e) {
-        logError("Error reading commit history: " + std::string(e.what()));
+        logError("Error reading branch history: " + std::string(e.what()));
         return commits;
     }
+}
+
+std::string RepositoryManager::getCurrentBranch() {
+    return getCurrentBranchFromHead();
 }

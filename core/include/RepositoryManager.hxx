@@ -36,6 +36,8 @@ struct CommitInfo {
     std::string author;
     /// @brief Timestamp of when the commit was created.
     std::string timestamp;
+    /// @brief The branch this commit belongs to.
+    std::string branch;
 };
 
 /**
@@ -92,7 +94,25 @@ private:
      */
     bool createFile(const std::filesystem::path& path, const std::string& content = "");
 
+    /**
+     * @brief Updates branch reference file with commit hash.
+     * @param branchName The name of the branch to update.
+     * @param commitHash The commit hash to set as branch head.
+     */
     void updateBranchReference(const std::string& branchName, const std::string& commitHash);
+
+    /**
+     * @brief Gets the current branch name from HEAD file.
+     * @return The current branch name.
+     */
+    std::string getCurrentBranchFromHead();
+
+    /**
+     * @brief Gets the commit hash for a branch.
+     * @param branchName The branch name.
+     * @return The commit hash for the branch.
+     */
+    std::string getBranchHead(const std::string& branchName);
 
 public:
     /**
@@ -101,6 +121,10 @@ public:
      */
     explicit RepositoryManager(std::shared_ptr<ISubject> bus);
     
+    /**
+     * @brief Updates HEAD reference.
+     * @param commit_hash The commit hash to set as HEAD.
+     */
     void updateHead(const std::string& commit_hash);
     
     /**
@@ -148,6 +172,11 @@ public:
      */
     std::string createCommit(const std::string& message);
 
+    /**
+     * @brief Updates commit references when a commit is removed.
+     * @param removedCommitHash The hash of the commit being removed.
+     * @param newParentHash The new parent hash for dependent commits.
+     */
     void updateCommitReferences(const std::string& removedCommitHash, const std::string& newParentHash);
 
     /**
@@ -203,6 +232,19 @@ public:
      * @return Vector of CommitInfo objects representing the commit history, typically newest first.
      */
     std::vector<CommitInfo> getCommitHistory();
+
+    /**
+     * @brief Retrieves the commit history for a specific branch.
+     * @param branch_name The name of the branch.
+     * @return Vector of CommitInfo objects for the branch.
+     */
+    std::vector<CommitInfo> getBranchHistory(const std::string& branch_name);
+
+    /**
+     * @brief Gets the current branch name.
+     * @return The current branch name.
+     */
+    std::string getCurrentBranch();
 
     /**
      * @brief Attempts to recursively remove the entire SVCS repository structure (e.g., the .svcs directory) and its contents.

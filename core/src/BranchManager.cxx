@@ -95,6 +95,16 @@ bool BranchManager::renameBranch(const std::string& old_name, const std::string&
     return false;
 }
 
+bool BranchManager::updateBranchHead(const std::string& branch_name, const std::string& commit_hash) {
+    auto it = branches.find(branch_name);
+    if (it != branches.end()) {
+        it->second.head_commit = commit_hash;
+        saveBranches();
+        return true;
+    }
+    return false;
+}
+
 bool BranchManager::switchBranch(const std::string& name) {
     if (!branchExists(name)) {
         return false;
@@ -160,6 +170,99 @@ bool BranchManager::isValidBranchName(const std::string& name) {
     }
     
     return true;
+}
+
+bool BranchManager::createBranchFromCommit(const std::string& name, const std::string& commit_hash) {
+    if (!isValidBranchName(name)) {
+        return false;
+    }
+    
+    if (branchExists(name)) {
+        return false;
+    }
+    
+    if (!commitExists(commit_hash)) {
+        if (event_bus) {
+            event_bus->notify({Event::ERROR_MESSAGE, "Commit not found: " + commit_hash, "branch-manager"});
+        }
+        return false;
+    }
+    
+    branches.emplace(name, Branch(name, commit_hash));
+    saveBranches();
+    
+    if (event_bus) {
+        std::string short_hash = commit_hash.length() >= 8 ? commit_hash.substr(0, 8) : commit_hash;
+        event_bus->notify({Event::GENERAL_INFO, "Created branch '" + name + "' from commit " + short_hash, "branch-manager"});
+    }
+    
+    return true;
+}
+
+bool BranchManager::commitExists(const std::string& commit_hash) const {
+    if (commit_hash.empty()) {
+        return false;
+    }
+    
+    std::vector<std::string> exact_paths = {
+        ".svcs/objects/" + commit_hash,
+        ".svcs/commits/" + commit_hash,
+        ".svcs/refs/commits/" + commit_hash,
+        ".svcs/logs/" + commit_hash,
+        ".svcs/objects/" + commit_hash.substr(0, 2) + "/" + commit_hash.substr(2)
+    };
+    
+    for (const auto& path : exact_paths) {
+        if (fileExists(path)) {
+            return true;
+        }
+    }
+    
+    if (commit_hash.length() >= 4) {
+        std::string partial_hash = commit_hash;
+        
+        std::vector<std::string> search_dirs = {
+            ".svcs/objects",
+            ".svcs/commits", 
+            ".svcs/refs/commits",
+            ".svcs/logs"
+        };
+        
+        for (const auto& dir : search_dirs) {
+            if (!fileExists(dir)) continue;
+            
+            try {
+                for (const auto& entry : std::filesystem::recursive_directory_iterator(dir)) {
+                    if (!entry.is_regular_file()) continue;
+                    
+                    std::string filename = entry.path().filename().string();
+                    std::string stem = entry.path().stem().string();
+                    
+                    if (filename.find(partial_hash) == 0 || stem.find(partial_hash) == 0) {
+                        return true;
+                    }
+                }
+            } catch (const std::filesystem::filesystem_error& e) {
+                if (event_bus) {
+                    event_bus->notify({Event::DEBUG_MESSAGE, "Directory error while searching commits: " + std::string(e.what()), "branch-manager"});
+                }
+                continue;
+            }
+        }
+    }
+    
+    std::string history_file = ".svcs/history";
+    if (fileExists(history_file)) {
+        try {
+            std::string content = readFile(history_file);
+            if (content.find(commit_hash) != std::string::npos) {
+                return true;
+            }
+        } catch (const std::exception&) {
+        }
+    }
+    
+    return false;
 }
 
 void BranchManager::loadBranches() {

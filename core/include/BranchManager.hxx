@@ -110,6 +110,8 @@ public:
      */
     std::string getCurrentBranch() const;
 
+    bool updateBranchHead(const std::string& branch_name, const std::string& commit_hash);
+
     /**
      * @brief Checks if a branch with the given name exists.
      * @param name The name of the branch to check.
@@ -132,6 +134,21 @@ public:
      * @return \c true if the name is valid, \c false otherwise.
      */
     static bool isValidBranchName(const std::string& name);
+
+    /**
+     * @brief Creates a new branch from a specific commit
+     * @param name Branch name
+     * @param commit_hash Hash of the commit to branch from
+     * @return true if successful, false otherwise
+     */
+    bool createBranchFromCommit(const std::string& name, const std::string& commit_hash);
+    
+    /**
+     * @brief Checks if a commit exists
+     * @param commit_hash Hash to check
+     * @return true if commit exists, false otherwise
+     */
+    bool commitExists(const std::string& commit_hash) const;
     
 private:
     // --- Private Persistence Methods ---

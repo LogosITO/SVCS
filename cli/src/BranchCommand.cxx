@@ -36,6 +36,56 @@ std::string BranchCommand::getUsage() const {
            "[-f | --force]";
 }
 
+bool BranchCommand::createBranchFromCommit(const std::string& branch_name, const std::string& commit_hash) {
+    if (!isValidBranchName(branch_name)) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Invalid branch name: " + branch_name, "branch"});
+        }
+        return false;
+    }
+    
+    if (branchExists(branch_name)) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Branch already exists: " + branch_name, "branch"});
+        }
+        return false;
+    }
+    
+    try {
+        bool success = branch_manager_->createBranchFromCommit(branch_name, commit_hash);
+        if (success) {
+            std::string short_hash = commit_hash.length() >= 8 ? commit_hash.substr(0, 8) : commit_hash;
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::GENERAL_INFO, "Created branch '" + branch_name + "' from commit " + short_hash, "branch"});
+            }
+            return true;
+        } else {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to create branch from commit: " + commit_hash, "branch"});
+            }
+            return false;
+        }
+        
+    } catch (const std::exception& e) {
+        if (event_bus_) {
+            event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to create branch: " + std::string(e.what()), "branch"});
+        }
+        return false;
+    }
+}
+
+bool BranchCommand::isValidCommitHash(const std::string& hash) const {
+    // Базовая проверка - хеш должен содержать только hex символы и быть достаточно длинным
+    if (hash.length() < 7) return false;
+    
+    for (char c : hash) {
+        if (!std::isxdigit(c)) return false;
+    }
+    
+    return true;
+}
+
+
 bool BranchCommand::execute(const std::vector<std::string>& args) {
     if (args.empty()) {
         return listBranches();
@@ -43,8 +93,10 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
     
     std::string subcommand;
     std::vector<std::string> branch_names;
+    std::string commit_hash;
     bool force_delete = false;
     bool show_current = false;
+    bool create_from_commit = false;
     
     for (size_t i = 0; i < args.size(); ++i) {
         const auto& arg = args[i];
@@ -52,7 +104,8 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
         if (arg == "-d" || arg == "--delete") {
             subcommand = "delete";
         } else if (arg == "-h" || arg == "--help") {
-            subcommand = "help";
+            showHelp();
+            return true;
         } else if (arg == "-D") {
             subcommand = "delete";
             force_delete = true;
@@ -62,6 +115,11 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
             show_current = true;
         } else if (arg == "-f" || arg == "--force") {
             force_delete = true;
+        } else if (arg == "-C" || arg == "--commit") {
+            create_from_commit = true;
+            if (i + 1 < args.size()) {
+                commit_hash = args[++i];
+            }
         } else if (!arg.empty() && arg[0] != '-') {
             branch_names.push_back(arg);
         } else {
@@ -85,11 +143,6 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
         }
         return deleteBranch(branch_names[0], force_delete);
     }
-
-    if (subcommand == "help") {
-        showHelp();
-        return true;
-    }
     
     if (subcommand == "rename") {
         if (branch_names.size() < 2) {
@@ -101,6 +154,25 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
         return renameBranch(branch_names[0], branch_names[1]);
     }
     
+    // Создание ветки от коммита с флагом --commit
+    if (create_from_commit && !branch_names.empty()) {
+        if (commit_hash.empty()) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Commit hash required with --commit flag", "branch"});
+            }
+            return false;
+        }
+        return createBranchFromCommit(branch_names[0], commit_hash);
+    }
+    
+    // Создание ветки от коммита (альтернативный синтаксис)
+    if (branch_names.size() == 2) {
+        if (isValidCommitHash(branch_names[1])) {
+            return createBranchFromCommit(branch_names[0], branch_names[1]);
+        }
+    }
+    
+    // Стандартное поведение
     if (branch_names.size() == 1) {
         if (branchExists(branch_names[0])) {
             return switchBranch(branch_names[0]);
@@ -116,24 +188,26 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
     return false;
 }
 
+
 void BranchCommand::showHelp() const {
     event_bus_->notify({Event::HELP_MESSAGE, "Usage: " + getUsage(), "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "Description: " + getDescription(), "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "Options:", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  <branch-name>           Create new branch or switch to existing branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  <branch-name> <commit>  Create branch from specific commit", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  -d, --delete <branch>   Delete a branch", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  -D                      Force delete a branch", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  -m, --move <old> <new>  Rename a branch", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  -c, --show-current      Show current branch name", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  -f, --force             Force operation", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  -C, --commit <hash>     Create branch from specific commit", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "Examples:", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch                          # List all branches", "branch"});
-    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch feature/new-feature      # Create new branch", "branch"});
-    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch develop                  # Switch to existing branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch feature/new              # Create/switch to branch", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch fix-bug abc123def        # Create from commit", "branch"});
+    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -C abc123def hotfix      # Create from commit", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -d old-branch            # Delete branch", "branch"});
-    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -m old-name new-name     # Rename branch", "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -c                       # Show current branch", "branch"});
-    event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -D protected-branch      # Force delete branch", "branch"});
 }
 
 bool BranchCommand::listBranches() {

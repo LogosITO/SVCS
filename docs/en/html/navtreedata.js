@@ -85,7 +85,7 @@ var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
 "classHelpCommandTest.html#a3dcdc65f33f359240348f5990f6f635b",
-"classVcsObject.html"
+"classUndoCommandTest.html#aaab6fd7b2ac1845cea035509a4b27fd8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

@@ -9,6 +9,7 @@ set(CORE_TEST_SOURCES
     IndexTest.cxx
     RepositoryTest.cxx
     RepoManagerTest.cxx
+    BranchManagerTest.cxx
 )
 
 add_executable(svcs_core_unit_tests ${CORE_TEST_SOURCES})

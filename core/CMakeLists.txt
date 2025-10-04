@@ -8,6 +8,7 @@ set(CORE_SOURCES
     src/Index.cxx
     src/Repository.cxx
     src/RepositoryManager.cxx
+    src/BranchManager.cxx
 )
 
 set(CORE_HEADERS
@@ -19,6 +20,7 @@ set(CORE_HEADERS
     include/Utils.hxx
     include/Repository.hxx
     include/RepositoryManager.hxx
+    include/BranchManager.hxx
 )
 
 

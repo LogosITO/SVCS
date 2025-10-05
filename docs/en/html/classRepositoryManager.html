@@ -109,8 +109,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1ddddb02e8b5f59b06b8a40465716103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new SVCS repository in the specified path.  <br /></td></tr>
 <tr class="memitem:ae03ccf6c40689d204f8579b6ac860674" id="r_ae03ccf6c40689d204f8579b6ac860674"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae03ccf6c40689d204f8579b6ac860674">isRepositoryInitialized</a> (const std::string &amp;path=&quot;.&quot;)</td></tr>
 <tr class="memdesc:ae03ccf6c40689d204f8579b6ac860674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a SVCS repository is initialized in the given path or its parents.  <br /></td></tr>
-<tr class="memitem:a353deb6fb41260c3144988ecebed3243" id="r_a353deb6fb41260c3144988ecebed3243"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353deb6fb41260c3144988ecebed3243">getRepositoryPath</a> () const</td></tr>
-<tr class="memdesc:a353deb6fb41260c3144988ecebed3243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the determined root path of the currently active repository.  <br /></td></tr>
+<tr class="memitem:a15baa6a4dfe3f36cee563571be19cd30" id="r_a15baa6a4dfe3f36cee563571be19cd30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15baa6a4dfe3f36cee563571be19cd30">updateBranchReference</a> (const std::string &amp;branchName, const std::string &amp;commitHash)</td></tr>
+<tr class="memdesc:a15baa6a4dfe3f36cee563571be19cd30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates branch reference file with commit hash.  <br /></td></tr>
+<tr class="memitem:a9e2cecca02ba6ac2638d31ec11d4bc62" id="r_a9e2cecca02ba6ac2638d31ec11d4bc62"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e2cecca02ba6ac2638d31ec11d4bc62">getRepositoryPath</a> () const</td></tr>
+<tr class="memdesc:a9e2cecca02ba6ac2638d31ec11d4bc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the determined root path of the currently active repository.  <br /></td></tr>
 <tr class="memitem:aa4a9d5d690cc49d33ad5372fed9b6a54" id="r_aa4a9d5d690cc49d33ad5372fed9b6a54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4a9d5d690cc49d33ad5372fed9b6a54">addFileToStaging</a> (const std::string &amp;filePath)</td></tr>
 <tr class="memdesc:aa4a9d5d690cc49d33ad5372fed9b6a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to add a file to the staging area (index).  <br /></td></tr>
 <tr class="memitem:aaa22558f7b80455c3d5c5f1bc8e0fb65" id="r_aaa22558f7b80455c3d5c5f1bc8e0fb65"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa22558f7b80455c3d5c5f1bc8e0fb65">getHeadCommit</a> ()</td></tr>
@@ -123,8 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abf991881ef84930dd6e81667360ebdef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverts the repository state to a previous commit.  <br /></td></tr>
 <tr class="memitem:a9bdb30e54b05b9a3289a65f2430655e7" id="r_a9bdb30e54b05b9a3289a65f2430655e7"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structCommitInfo.html">CommitInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bdb30e54b05b9a3289a65f2430655e7">getCommitByHash</a> (const std::string &amp;commit_hash)</td></tr>
 <tr class="memdesc:a9bdb30e54b05b9a3289a65f2430655e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the <a class="el" href="structCommitInfo.html" title="Structure containing essential metadata for a single commit.">CommitInfo</a> structure for a given commit hash.  <br /></td></tr>
-<tr class="memitem:a68c480cfc28657b5027566f3500b6e23" id="r_a68c480cfc28657b5027566f3500b6e23"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68c480cfc28657b5027566f3500b6e23">getParentCommitHash</a> (const std::string &amp;commit_hash) const</td></tr>
-<tr class="memdesc:a68c480cfc28657b5027566f3500b6e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the hash of the parent commit for a given commit.  <br /></td></tr>
+<tr class="memitem:ab2fb070bcb09a170997616359d10497e" id="r_ab2fb070bcb09a170997616359d10497e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2fb070bcb09a170997616359d10497e">getParentCommitHash</a> (const std::string &amp;commit_hash)</td></tr>
+<tr class="memdesc:ab2fb070bcb09a170997616359d10497e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the hash of the parent commit for a given commit.  <br /></td></tr>
+<tr class="memitem:aa8cc4f01a4d6167153c9974360053bdb" id="r_aa8cc4f01a4d6167153c9974360053bdb"><td class="memItemLeft" align="right" valign="top"><a id="aa8cc4f01a4d6167153c9974360053bdb" name="aa8cc4f01a4d6167153c9974360053bdb"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>generateCommitHash</b> (const std::string &amp;content)</td></tr>
 <tr class="memitem:a7564eef967c7eec3fbaeba51aa05147b" id="r_a7564eef967c7eec3fbaeba51aa05147b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7564eef967c7eec3fbaeba51aa05147b">restoreFilesFromCommit</a> (const <a class="el" href="structCommitInfo.html">CommitInfo</a> &amp;commit)</td></tr>
 <tr class="memdesc:a7564eef967c7eec3fbaeba51aa05147b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores the working directory files to the state recorded in a specific commit.  <br /></td></tr>
 <tr class="memitem:a1af28901603c2e70dce49af751105bef" id="r_a1af28901603c2e70dce49af751105bef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af28901603c2e70dce49af751105bef">clearStagingArea</a> ()</td></tr>
@@ -141,6 +145,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a67d0b711d58e1ad9da876eb957ca7e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current branch name.  <br /></td></tr>
 <tr class="memitem:ab28d4e38ff9c3691fce81ca9e67556ba" id="r_ab28d4e38ff9c3691fce81ca9e67556ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab28d4e38ff9c3691fce81ca9e67556ba">removeRepository</a> (const std::filesystem::path &amp;path)</td></tr>
 <tr class="memdesc:ab28d4e38ff9c3691fce81ca9e67556ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to recursively remove the entire SVCS repository structure (e.g., the .svcs directory) and its contents.  <br /></td></tr>
+<tr class="memitem:a76e89939936f7e0491b7fd1e3652ce73" id="r_a76e89939936f7e0491b7fd1e3652ce73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76e89939936f7e0491b7fd1e3652ce73">branchExists</a> (const std::string &amp;branch_name)</td></tr>
+<tr class="memdesc:a76e89939936f7e0491b7fd1e3652ce73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a branch exists.  <br /></td></tr>
+<tr class="memitem:ac9615e269262b71beb015798d0546875" id="r_ac9615e269262b71beb015798d0546875"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9615e269262b71beb015798d0546875">getBranchHead</a> (const std::string &amp;branch_name)</td></tr>
+<tr class="memdesc:ac9615e269262b71beb015798d0546875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the head commit of a branch.  <br /></td></tr>
+<tr class="memitem:adb3204cc1414d590c02bf722461794b5" id="r_adb3204cc1414d590c02bf722461794b5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb3204cc1414d590c02bf722461794b5">getFileContentAtCommit</a> (const std::string &amp;commit_hash, const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:adb3204cc1414d590c02bf722461794b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the content of a file at a specific commit.  <br /></td></tr>
+<tr class="memitem:af1a8da636f0fa2e15bed780b44ee1a32" id="r_af1a8da636f0fa2e15bed780b44ee1a32"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1a8da636f0fa2e15bed780b44ee1a32">getCommitFiles</a> (const std::string &amp;commit_hash)</td></tr>
+<tr class="memdesc:af1a8da636f0fa2e15bed780b44ee1a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all files changed in a commit.  <br /></td></tr>
+<tr class="memitem:ad8a0ba20eb16ecb44768083ec214ad61" id="r_ad8a0ba20eb16ecb44768083ec214ad61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8a0ba20eb16ecb44768083ec214ad61">setMergeState</a> (const std::string &amp;branch_name, const std::string &amp;commit_hash)</td></tr>
+<tr class="memdesc:ad8a0ba20eb16ecb44768083ec214ad61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets merge state (for conflict resolution).  <br /></td></tr>
+<tr class="memitem:a1e5512b6922b2d93937cd89dfbe82d64" id="r_a1e5512b6922b2d93937cd89dfbe82d64"><td class="memItemLeft" align="right" valign="top"><a id="a1e5512b6922b2d93937cd89dfbe82d64" name="a1e5512b6922b2d93937cd89dfbe82d64"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearMergeState</b> ()</td></tr>
+<tr class="memdesc:a1e5512b6922b2d93937cd89dfbe82d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears merge state (after merge completion/abort). <br /></td></tr>
+<tr class="memitem:a96df66aebc25ab049d0013cae0efb28d" id="r_a96df66aebc25ab049d0013cae0efb28d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96df66aebc25ab049d0013cae0efb28d">isMergeInProgress</a> ()</td></tr>
+<tr class="memdesc:a96df66aebc25ab049d0013cae0efb28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a merge is in progress.  <br /></td></tr>
+<tr class="memitem:a8a3a51188fd036a76379d1cca9fc7198" id="r_a8a3a51188fd036a76379d1cca9fc7198"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a3a51188fd036a76379d1cca9fc7198">getMergeBranch</a> ()</td></tr>
+<tr class="memdesc:a8a3a51188fd036a76379d1cca9fc7198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the branch being merged.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages all physical file and directory operations within the SVCS repository. </p>
@@ -206,6 +227,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a76e89939936f7e0491b7fd1e3652ce73" name="a76e89939936f7e0491b7fd1e3652ce73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76e89939936f7e0491b7fd1e3652ce73">&#9670;&#160;</a></span>branchExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RepositoryManager::branchExists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branch_name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a branch exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branch_name</td><td>The branch name to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if branch exists, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="a1af28901603c2e70dce49af751105bef" name="a1af28901603c2e70dce49af751105bef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1af28901603c2e70dce49af751105bef">&#9670;&#160;</a></span>clearStagingArea()</h2>
 
@@ -249,6 +296,32 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The newly created commit hash if successful, empty string otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ac9615e269262b71beb015798d0546875" name="ac9615e269262b71beb015798d0546875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9615e269262b71beb015798d0546875">&#9670;&#160;</a></span>getBranchHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RepositoryManager::getBranchHead </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branch_name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the head commit of a branch. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branch_name</td><td>The branch name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The commit hash of the branch head. </dd></dl>
 
 </div>
 </div>
@@ -304,6 +377,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af1a8da636f0fa2e15bed780b44ee1a32" name="af1a8da636f0fa2e15bed780b44ee1a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a8da636f0fa2e15bed780b44ee1a32">&#9670;&#160;</a></span>getCommitFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; RepositoryManager::getCommitFiles </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all files changed in a commit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>The commit hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of file paths. </dd></dl>
+
+</div>
+</div>
 <a id="a9974667b34a6fd455758f519deaba44a" name="a9974667b34a6fd455758f519deaba44a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9974667b34a6fd455758f519deaba44a">&#9670;&#160;</a></span>getCommitHistory()</h2>
 
@@ -344,6 +443,37 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="adb3204cc1414d590c02bf722461794b5" name="adb3204cc1414d590c02bf722461794b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb3204cc1414d590c02bf722461794b5">&#9670;&#160;</a></span>getFileContentAtCommit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RepositoryManager::getFileContentAtCommit </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>file_path</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the content of a file at a specific commit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>The commit hash. </td></tr>
+    <tr><td class="paramname">file_path</td><td>The file path. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The file content. </dd></dl>
+
+</div>
+</div>
 <a id="aaa22558f7b80455c3d5c5f1bc8e0fb65" name="aaa22558f7b80455c3d5c5f1bc8e0fb65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa22558f7b80455c3d5c5f1bc8e0fb65">&#9670;&#160;</a></span>getHeadCommit()</h2>
 
@@ -364,8 +494,28 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a68c480cfc28657b5027566f3500b6e23" name="a68c480cfc28657b5027566f3500b6e23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68c480cfc28657b5027566f3500b6e23">&#9670;&#160;</a></span>getParentCommitHash()</h2>
+<a id="a8a3a51188fd036a76379d1cca9fc7198" name="a8a3a51188fd036a76379d1cca9fc7198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3a51188fd036a76379d1cca9fc7198">&#9670;&#160;</a></span>getMergeBranch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RepositoryManager::getMergeBranch </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the branch being merged. </p>
+<dl class="section return"><dt>Returns</dt><dd>Branch name if merge in progress, empty string otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ab2fb070bcb09a170997616359d10497e" name="ab2fb070bcb09a170997616359d10497e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2fb070bcb09a170997616359d10497e">&#9670;&#160;</a></span>getParentCommitHash()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,7 +524,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">std::string RepositoryManager::getParentCommitHash </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -390,27 +540,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a353deb6fb41260c3144988ecebed3243" name="a353deb6fb41260c3144988ecebed3243"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a353deb6fb41260c3144988ecebed3243">&#9670;&#160;</a></span>getRepositoryPath()</h2>
+<a id="a9e2cecca02ba6ac2638d31ec11d4bc62" name="a9e2cecca02ba6ac2638d31ec11d4bc62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e2cecca02ba6ac2638d31ec11d4bc62">&#9670;&#160;</a></span>getRepositoryPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string RepositoryManager::getRepositoryPath </td>
+          <td class="memname">std::filesystem::path RepositoryManager::getRepositoryPath </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Returns the determined root path of the currently active repository. </p>
@@ -466,6 +608,26 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if initialization was successful, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a96df66aebc25ab049d0013cae0efb28d" name="a96df66aebc25ab049d0013cae0efb28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96df66aebc25ab049d0013cae0efb28d">&#9670;&#160;</a></span>isMergeInProgress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RepositoryManager::isMergeInProgress </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a merge is in progress. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if merge is in progress, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -596,6 +758,66 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the save (commit) was successful, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ad8a0ba20eb16ecb44768083ec214ad61" name="ad8a0ba20eb16ecb44768083ec214ad61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a0ba20eb16ecb44768083ec214ad61">&#9670;&#160;</a></span>setMergeState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RepositoryManager::setMergeState </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branch_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets merge state (for conflict resolution). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branch_name</td><td>Branch being merged. </td></tr>
+    <tr><td class="paramname">commit_hash</td><td><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> being merged. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a15baa6a4dfe3f36cee563571be19cd30" name="a15baa6a4dfe3f36cee563571be19cd30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15baa6a4dfe3f36cee563571be19cd30">&#9670;&#160;</a></span>updateBranchReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RepositoryManager::updateBranchReference </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branchName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commitHash</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates branch reference file with commit hash. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branchName</td><td>The name of the branch to update. </td></tr>
+    <tr><td class="paramname">commitHash</td><td>The commit hash to set as branch head. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

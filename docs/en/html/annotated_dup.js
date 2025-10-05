@@ -29,6 +29,7 @@ var annotated_dup =
     [ "ISubject", "classISubject.html", "classISubject" ],
     [ "Logger", "classLogger.html", "classLogger" ],
     [ "ManualMockObserver", "classManualMockObserver.html", "classManualMockObserver" ],
+    [ "MergeCommand", "classMergeCommand.html", "classMergeCommand" ],
     [ "MockHelpService", "classMockHelpService.html", "classMockHelpService" ],
     [ "MockObjectStorage", "classMockObjectStorage.html", "classMockObjectStorage" ],
     [ "MockObserver", "classMockObserver.html", "classMockObserver" ],

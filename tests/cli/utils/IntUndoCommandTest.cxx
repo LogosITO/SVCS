@@ -44,13 +44,13 @@ void UndoCommandTest::TearDown() {
     mockEventBus->clear();
 }
 
-void UndoCommandTest::createTestFile(const std::string& filename, const std::string& content) {
+void UndoCommandTest::createTestFile(const std::string& filename, const std::string& content) const {
     std::ofstream file(testDir / filename);
     file << content;
     file.close();
 }
 
-void UndoCommandTest::createTestDirectory(const std::string& dirname) {
+void UndoCommandTest::createTestDirectory(const std::string& dirname) const {
     std::filesystem::create_directories(testDir / dirname);
 }
 
@@ -79,4 +79,5 @@ int UndoCommandTest::countMessages(const std::vector<Event>& notifications, cons
         });
 }
 
-void UndoCommandTest::simulateUserInput(const std::string& input) {}    
+void UndoCommandTest::simulateUserInput(const std::string& input) {}
+

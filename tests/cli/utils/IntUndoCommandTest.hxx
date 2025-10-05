@@ -56,13 +56,13 @@ protected:
      * @param filename The relative path/name of the file.
      * @param content The content to write to the file.
      */
-    void createTestFile(const std::string& filename, const std::string& content);
+    void createTestFile(const std::string& filename, const std::string& content) const;
     
     /**
      * @brief Creates a test directory in the temporary location.
      * @param dirname The relative path/name of the directory.
      */
-    void createTestDirectory(const std::string& dirname);
+    void createTestDirectory(const std::string& dirname) const;
     
     /**
      * @brief Stages a list of files using the RepositoryManager's staging logic.
@@ -84,7 +84,7 @@ protected:
      * @param message The substring to search for.
      * @return true if the message is found in any notification, false otherwise.
      */
-    bool containsMessage(const std::vector<Event>& notifications, const std::string& message);
+    static bool containsMessage(const std::vector<Event>& notifications, const std::string& message);
     
     /**
      * @brief Counts the occurrences of a specific message (substring) across all event notifications.
@@ -92,14 +92,14 @@ protected:
      * @param message The substring to count.
      * @return The number of events containing the substring.
      */
-    int countMessages(const std::vector<Event>& notifications, const std::string& message);
+    static int countMessages(const std::vector<Event>& notifications, const std::string& message);
 
     /**
      * @brief Simulates user input by pushing the string into the mock event bus's input queue.
      * @details This is crucial for testing the confirmation prompt in the UndoCommand.
      * @param input The string to simulate as user input (e.g., "y\n" or "n\n").
      */
-    void simulateUserInput(const std::string& input);
+    static void simulateUserInput(const std::string& input);
     
     /// Shared pointer to the mock event bus (observer/input simulator).
     std::shared_ptr<MockSubject> mockEventBus;

@@ -22,7 +22,7 @@
  * by uncommenting the definition in this file), the printDebug() function will 
  * output its messages. Otherwise, it compiles to a no-op.
  */
-#define DEBUG_MODE // Uncommenting this line enables debug logging
+//#define DEBUG_MODE // Uncommenting this line enables debug logging
 
 /**
  * @brief Conditionally prints a debug message to standard output.

@@ -43,6 +43,11 @@ public:
         std::string head_commit;
         /// @brief Flag indicating if this is the currently active branch.
         bool is_current;
+
+        /**
+         * @brief Default constructor
+         */
+        Branch() : name(""), head_commit(""), is_current(false) {}
         
         /**
          * @brief Constructor for the Branch structure.
@@ -59,7 +64,9 @@ public:
      * @param event_bus A shared pointer to the event bus (ISubject) for communication.
      */
     explicit BranchManager(std::shared_ptr<ISubject> event_bus);
-    
+
+    void createDefaultBranches();
+
     // --- Public Branch Operations ---
     
     /**
@@ -168,6 +175,10 @@ private:
      */
     void saveBranches();
 
+    void saveBranchToFile(const std::string &branch_name, const std::string &commit_hash);
+
+    void deleteBranchFile(const std::string &branch_name);
+
     /**
      * @brief Loads the name of the currently active branch from the file system.
      */
@@ -176,7 +187,7 @@ private:
     /**
      * @brief Persists the name of the currently active branch to the file system (updates HEAD).
      */
-    void saveCurrentBranch();
+    bool saveCurrentBranch();
     
     // --- Private File System Abstraction Methods ---
 

@@ -468,19 +468,29 @@ std::string RepositoryManager::createCommit(const std::string& message) {
     try {
         // Получаем текущую ветку
         std::string current_branch = getCurrentBranchFromHead();
+
+        // ВАЖНО: получаем родительский коммит из ТЕКУЩЕЙ ВЕТКИ
         std::string parentCommit = getBranchHead(current_branch);
-        
+
         logDebug("Creating new commit on branch '" + current_branch + "' with parent: '" + parentCommit + "'");
-        
+
         // Создаем коммит
         auto now = std::chrono::system_clock::now();
         auto timestamp = std::chrono::duration_cast<std::chrono::seconds>(
             now.time_since_epoch()).count();
-        
+
         std::stringstream commitContent;
-        
-        // Формат коммита
-        commitContent << "parent " << (parentCommit.empty() ? "none" : parentCommit) << "\n";
+
+        // ВАЖНО: Всегда указываем родителя, даже если это первый коммит в ветке
+        // Если родителя нет (первый коммит), указываем "none"
+        if (parentCommit.empty()) {
+            commitContent << "parent none\n";
+            logDebug("Creating root commit (no parent)");
+        } else {
+            commitContent << "parent " << parentCommit << "\n";
+            logDebug("Creating commit with parent: " + parentCommit);
+        }
+
         commitContent << "author User <user@example.com>\n";
         commitContent << "timestamp " << timestamp << "\n";
         commitContent << "message " << message << "\n";
@@ -489,33 +499,33 @@ std::string RepositoryManager::createCommit(const std::string& message) {
         for (const auto& file : stagedFiles) {
             commitContent << file << "\n";
         }
-        
+
         std::string content = commitContent.str();
-        
+
         // Генерируем хеш коммита
         std::string commitHash = generateCommitHash(content);
-        
+
         logDebug("Commit content:\n" + content);
         logDebug("Generated commit hash: " + commitHash);
-        
+
         // Сохраняем коммит в objects
         std::filesystem::path commitDir = std::filesystem::path(currentRepoPath) / ".svcs" / "objects" / commitHash.substr(0, 2);
         std::filesystem::path commitFile = commitDir / commitHash.substr(2);
-        
+
         if (!createFile(commitFile, content)) {
             logError("Failed to store commit object");
             return "";
         }
-        
-        // Обновляем ветку
+
+        // ВАЖНО: Обновляем HEAD текущей ветки
         updateBranchReference(current_branch, commitHash);
-        
+
         // Очищаем staging area
         clearStagingArea();
-        
+
         logInfo("Created commit: " + commitHash.substr(0, 8) + " - " + message + " on branch '" + current_branch + "'");
         return commitHash;
-        
+
     } catch (const std::exception& e) {
         logError("Error creating commit: " + std::string(e.what()));
         return "";
@@ -804,31 +814,39 @@ std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& b
     std::vector<CommitInfo> commits;
     
     try {
-        // Начинаем с HEAD текущей ветки
+        // Начинаем с HEAD указанной ветки
         std::string currentHash = getBranchHead(branch_name);
         std::set<std::string> visited;
-        
+
+        logDebug("Building history for branch: " + branch_name + " starting from: " + currentHash);
+
         while (!currentHash.empty() && visited.find(currentHash) == visited.end()) {
             visited.insert(currentHash);
-            
+
             std::filesystem::path repoPath = getRepositoryPath();
             std::filesystem::path objectsDir = repoPath / ".svcs" / "objects";
             std::filesystem::path commitDir = objectsDir / currentHash.substr(0, 2);
             std::filesystem::path commitFile = commitDir / currentHash.substr(2);
-            
+
             if (!std::filesystem::exists(commitFile)) {
-                logDebug("Commit file not found: " + commitFile.string());
+                logDebug("Commit file not found, stopping history traversal: " + commitFile.string());
                 break;
             }
-            
+
             CommitInfo commit;
             commit.hash = currentHash;
-            
+            std::string parentHash = "";
+
             std::ifstream file(commitFile);
             std::string line;
-            
+
             while (std::getline(file, line)) {
-                if (line.find("message ") == 0) {
+                if (line.find("parent ") == 0) {
+                    parentHash = line.substr(7);
+                    if (parentHash == "none") {
+                        parentHash = "";
+                    }
+                } else if (line.find("message ") == 0) {
                     commit.message = line.substr(8);
                 } else if (line.find("author ") == 0) {
                     commit.author = line.substr(7);
@@ -840,15 +858,19 @@ std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& b
                     commit.files_count = std::stoi(line.substr(6));
                 }
             }
-            
+
+            // Добавляем коммит в историю ВНЕ ЗАВИСИМОСТИ от ветки
+            // Это важно для правильного построения графа коммитов
             commits.push_back(commit);
-            
-            // Получаем родительский коммит через отдельный метод
-            std::string parentHash = getParentCommitHash(currentHash);
-            if (parentHash == "none" || parentHash.empty()) {
+
+            // Переходим к родительскому коммиту
+            if (!parentHash.empty()) {
+                currentHash = parentHash;
+                logDebug("Moving to parent commit: " + currentHash);
+            } else {
+                logDebug("Reached root commit, stopping");
                 break;
             }
-            currentHash = parentHash;
         }
         
         logDebug("Retrieved " + std::to_string(commits.size()) + " commits for branch '" + branch_name + "'");

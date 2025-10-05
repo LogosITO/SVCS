@@ -62,7 +62,7 @@ private:
      */
     mutable std::mutex observers_mutex_; // Changed to mutable to allow locking inside const notify
 
-    std::string getEventColor(Event::Type type) const {
+    static std::string getEventColor(Event::Type type) {
         switch (type) {
             case Event::REPOSITORY_INIT_SUCCESS:
                 return ConsoleColor::BRIGHT_GREEN;
@@ -83,7 +83,7 @@ private:
         }
     }
 
-    std::string getEventIcon(Event::Type type) const {
+    static std::string getEventIcon(Event::Type type) {
         switch (type) {
             case Event::REPOSITORY_INIT_SUCCESS:
                 return "✅";

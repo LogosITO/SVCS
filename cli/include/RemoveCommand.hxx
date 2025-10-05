@@ -49,19 +49,19 @@ public:
      * @brief Gets the name of the command.
      * @return "remove"
      */
-    std::string getName() const override { return "remove"; }
+    [[nodiscard]] std::string getName() const override { return "remove"; }
     
     /**
      * @brief Gets the description of the command.
      * @return "Remove files from staging area"
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
     
     /**
      * @brief Gets the usage syntax of the command.
      * @return "svcs remove <file> [file2 ...]"
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
     
     /**
      * @brief Shows detailed help information for this command.
@@ -75,19 +75,19 @@ private:
      * @param filePath The file to remove from staging.
      * @return true if successful, false otherwise.
      */
-    bool removeFileFromStaging(const std::string& filePath);
+    bool removeFileFromStaging(const std::string& filePath) const;
     
     /**
      * @brief Removes all files from staging area.
      *
      * @return true if successful, false otherwise.
      */
-    bool removeAllFromStaging();
+    bool removeAllFromStaging() const;
     
     /**
      * @brief Shows confirmation prompt for removing all files.
      *
      * @return true if user confirms, false otherwise.
      */
-    bool confirmRemoveAll() const;
+    [[nodiscard]] bool confirmRemoveAll() const;
 };

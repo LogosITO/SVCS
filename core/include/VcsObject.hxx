@@ -51,14 +51,14 @@ public:
      * * The returned string content is what will be hashed and stored in the database.
      * @return std::string The standardized, serialized data of the object.
      */
-    virtual std::string serialize() const = 0;
+    [[nodiscard]] virtual std::string serialize() const = 0;
 
     /**
      * @brief Pure virtual method to get the type of the VCS object.
      * * This is crucial for object storage and reconstruction (e.g., "commit", "blob", "tree").
      * @return std::string The type identifier of the object.
      */
-    virtual std::string getType() const = 0;
+    [[nodiscard]] virtual std::string getType() const = 0;
 
     /**
      * @brief Вычисляет SHA-1 хеш для заданного канонического содержимого.
@@ -71,7 +71,7 @@ public:
      * @brief Returns the unique hash identifier of the object.
      * @return std::string The cryptographic hash ID.
      */
-    std::string getHashId() const;
+    [[nodiscard]] std::string getHashId() const;
 };
 
 
@@ -94,17 +94,17 @@ public:
      * @param type The name of the object type (e.g., "test_blob").
      * @param data The content that will be serialized and hashed.
      */
-    TestableObject(const std::string& type, const std::string& data);
+    TestableObject(std::string  type, std::string  data);
     
     /**
      * @brief Implementation of the pure virtual method. Returns the stored content.
      * @copydoc VcsObject::serialize()
      */
-    std::string serialize() const override;
+    [[nodiscard]] std::string serialize() const override;
 
     /**
      * @brief Implementation of the pure virtual method. Returns the stored type name.
      * @copydoc VcsObject::getType()
      */
-    std::string getType() const override;
+    [[nodiscard]] std::string getType() const override;
 };

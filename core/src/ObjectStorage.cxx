@@ -27,7 +27,7 @@ namespace fs = std::filesystem;
 
 const size_t CHUNK_SIZE = 16384;
 
-ObjectStorage::ObjectStorage(const std::string& root_path, std::shared_ptr<ISubject> subject) :
+ObjectStorage::ObjectStorage(const std::string& root_path, const std::shared_ptr<ISubject>& subject) :
     objects_dir(fs::path(root_path) / ".svcs" / "objects"),
     subject(subject)
 {
@@ -313,13 +313,13 @@ std::string ObjectStorage::decompress(const std::string& compressed_data) const 
     int ret;
     
     do {
-        strm.next_out = (Bytef*)out_buffer;
+        strm.next_out = reinterpret_cast<Bytef *>(out_buffer);
         strm.avail_out = CHUNK_SIZE;
         ret = inflate(&strm, Z_NO_FLUSH);
 
         if (ret < 0 && ret != Z_BUF_ERROR && ret != Z_STREAM_END) {
             inflateEnd(&strm);
-            std::string error_msg = "Zlib decompression failed with error code: " + std::to_string(ret);
+            const std::string error_msg = "Zlib decompression failed with error code: " + std::to_string(ret);
             if (subject) {
                 Event error_e;
                 error_e.type = Event::RUNTIME_ERROR;

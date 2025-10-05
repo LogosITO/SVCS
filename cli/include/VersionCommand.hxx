@@ -45,19 +45,19 @@ public:
      * @brief Gets the name of the command.
      * @return "version"
      */
-    std::string getName() const override { return "version"; }
+    [[nodiscard]] std::string getName() const override { return "version"; }
     
     /**
      * @brief Gets the description of the command.
      * @return "Show version information"
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
     
     /**
      * @brief Gets the usage syntax of the command.
      * @return "svcs version"
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
     
     /**
      * @brief Shows detailed help information for this command.
@@ -69,17 +69,17 @@ private:
      * @brief Gets the full version string.
      * @return Formatted version information.
      */
-    std::string getVersionString() const;
+    [[nodiscard]] static std::string getVersionString() ;
     
     /**
      * @brief Gets build information (debug/release, compiler, etc.).
      * @return Build information string.
      */
-    std::string getBuildInfo() const;
+    [[nodiscard]] static std::string getBuildInfo() ;
     
     /**
      * @brief Gets copyright information.
      * @return Copyright string.
      */
-    std::string getCopyright() const;
+    [[nodiscard]] static std::string getCopyright() ;
 };

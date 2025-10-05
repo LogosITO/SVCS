@@ -10,10 +10,11 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+#include <utility>
 
 RemoveCommand::RemoveCommand(std::shared_ptr<ISubject> subject,
                            std::shared_ptr<RepositoryManager> repoManager)
-    : eventBus_(subject), repoManager_(repoManager) {
+    : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
 }
 
 bool RemoveCommand::execute(const std::vector<std::string>& args) {
@@ -155,7 +156,7 @@ void RemoveCommand::showHelp() const {
                       "  svcs remove .                        Remove all files (legacy, no confirmation)", "remove"});
 }
 
-bool RemoveCommand::removeFileFromStaging(const std::string& filePath) {
+bool RemoveCommand::removeFileFromStaging(const std::string& filePath) const {
     // Get current staged files
     auto stagedFiles = repoManager_->getStagedFiles();
     
@@ -197,7 +198,7 @@ bool RemoveCommand::removeFileFromStaging(const std::string& filePath) {
     }
 }
 
-bool RemoveCommand::removeAllFromStaging() {
+bool RemoveCommand::removeAllFromStaging() const {
     return repoManager_->clearStagingArea();
 }
 

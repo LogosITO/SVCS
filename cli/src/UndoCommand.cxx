@@ -11,10 +11,11 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
+#include <utility>
 
 UndoCommand::UndoCommand(std::shared_ptr<ISubject> subject,
                          std::shared_ptr<RepositoryManager> repoManager)
-    : event_bus(subject), repo_manager(repoManager) {
+    : event_bus(std::move(subject)), repo_manager(std::move(repoManager)) {
 }
 
 std::string UndoCommand::getName() const {
@@ -84,7 +85,7 @@ bool UndoCommand::execute(const std::vector<std::string>& args) {
     }
 }
 
-bool UndoCommand::undoLastCommit(bool force) {
+bool UndoCommand::undoLastCommit(bool force) const {
     const std::string SOURCE = "undo";
     
     auto commits = repo_manager->getCommitHistory();
@@ -129,9 +130,8 @@ bool UndoCommand::undoLastCommit(bool force) {
     }
     
     // Perform undo operation
-    bool success = repo_manager->revertCommit(lastCommit.hash);
-    
-    if (success) {
+
+    if (repo_manager->revertCommit(lastCommit.hash)) {
         event_bus->notify({Event::GENERAL_INFO, 
                           "Successfully undone commit: " + lastCommit.message, SOURCE});
         return true;
@@ -148,7 +148,7 @@ bool UndoCommand::undoLastCommit(bool force) {
     }
 }
 
-bool UndoCommand::undoSpecificCommit(const std::string& commitHash, bool force) {
+bool UndoCommand::undoSpecificCommit(const std::string& commitHash, bool force) const {
     const std::string SOURCE = "undo";
     
     auto commits = repo_manager->getCommitHistory();
@@ -197,10 +197,8 @@ bool UndoCommand::undoSpecificCommit(const std::string& commitHash, bool force) 
                           "Undo cancelled.", SOURCE});
         return false;
     }
-    
-    bool success = repo_manager->revertCommit(commit.hash);
-    
-    if (success) {
+
+    if (repo_manager->revertCommit(commit.hash)) {
         event_bus->notify({Event::GENERAL_INFO, 
                           "Successfully undone commit: " + commit.message, SOURCE});
         return true;
@@ -229,7 +227,7 @@ bool UndoCommand::confirmUndo(const std::string& commitMessage, const std::strin
     return (response == "y" || response == "Y" || response == "yes");
 }
 
-bool UndoCommand::forceResetRepository() {
+bool UndoCommand::forceResetRepository() const {
     const std::string SOURCE = "undo";
     
     event_bus->notify({Event::WARNING_MESSAGE, 

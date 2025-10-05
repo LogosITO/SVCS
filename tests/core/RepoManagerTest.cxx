@@ -33,11 +33,11 @@ public:
         received_events.push_back(event);
     }
 
-    size_t getEventCount() const {
+    [[nodiscard]] size_t getEventCount() const {
         return received_events.size();
     }
 
-    bool containsMessage(const std::string& text) const {
+    [[nodiscard]] bool containsMessage(const std::string& text) const {
         for (const auto& event : received_events) {
             if (event.details.find(text) != std::string::npos) {
                 return true;
@@ -89,7 +89,7 @@ protected:
         return std::make_unique<RepositoryManager>(event_bus_);
     }
 
-    bool isValidRepositoryStructure(const fs::path& path) {
+    static bool isValidRepositoryStructure(const fs::path& path) {
         fs::path svcs_dir = path / ".svcs";
         return fs::exists(svcs_dir) &&
                fs::exists(svcs_dir / "objects") &&
@@ -109,7 +109,7 @@ protected:
     }
 
     // НОВЫЙ МЕТОД: Получить относительный путь относительно корня репозитория
-    std::string getRelativePath(const std::string& filename) {
+    static std::string getRelativePath(const std::string& filename) {
         return filename; // Просто возвращаем имя файла, так как мы в корне репозитория
     }
 };

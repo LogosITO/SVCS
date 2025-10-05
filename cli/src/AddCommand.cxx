@@ -6,11 +6,13 @@
  * @license **MIT License**
  */
 
+#include <utility>
+
 #include "../include/AddCommand.hxx"
 
 AddCommand::AddCommand(std::shared_ptr<ISubject> subject, 
                        std::shared_ptr<RepositoryManager> repoManager)
-    : eventBus_(subject), repoManager_(repoManager) {
+    : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
 }
 
 AddCommand::AddOptions AddCommand::parseArguments(const std::vector<std::string>& args) const {
@@ -33,7 +35,7 @@ AddCommand::AddOptions AddCommand::parseArguments(const std::vector<std::string>
             options.showHelp = true;
         } else if (arg == "--exclude" && i + 1 < args.size()) {
             options.excludePatterns.push_back(args[++i]);
-        } else if (arg.find("-") == 0) {
+        } else if (arg.find('-') == 0) {
             // Unknown option - treat as error or ignore?
             eventBus_->notify({Event::WARNING_MESSAGE, 
                               "Unknown option: " + arg, "add"});
@@ -55,7 +57,6 @@ bool AddCommand::execute(const std::vector<std::string>& args) {
         return false;
     }
 
-    // Парсим аргументы
     AddOptions options = parseArguments(args);
     
     if (options.showHelp) {

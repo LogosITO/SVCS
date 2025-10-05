@@ -61,21 +61,21 @@ private:
      * @brief Handles the interactive staging mode.
      * @return true if successful, false otherwise.
      */
-    bool addInteractive() const;
+    [[nodiscard]] bool addInteractive() const;
 
     /**
      * @brief Handles the patch mode for staging specific hunks.
      * @param filePath The path to the file to stage hunks from.
      * @return true if successful, false otherwise.
      */
-    bool addPatch(const std::string& filePath) const;
+    [[nodiscard]] bool addPatch(const std::string& filePath) const;
 
     /**
      * @brief Shows the result of a dry run without modifying the index.
      * @param files The list of files that would be processed.
      * @return true if successful, false otherwise.
      */
-    bool showDryRun(const std::vector<std::string>& files) const;
+    [[nodiscard]] bool showDryRun(const std::vector<std::string>& files) const;
 
     /**
      * @brief Determines if a file should be added based on its status and force flag.
@@ -83,7 +83,7 @@ private:
      * @param force True if force flag is set.
      * @return true if the file should be added, false otherwise.
      */
-    bool shouldAddFile(const std::string& file, bool force) const;
+    [[nodiscard]] bool shouldAddFile(const std::string& file, bool force) const;
 
     // Argument Parsing
     /**
@@ -91,7 +91,7 @@ private:
      * @param args The vector of string arguments passed to the command.
      * @return The populated AddOptions structure.
      */
-    AddOptions parseArguments(const std::vector<std::string>& args) const;
+    [[nodiscard]] AddOptions parseArguments(const std::vector<std::string>& args) const;
 
 public:
     /**
@@ -114,25 +114,25 @@ public:
      * @param directory The path to the directory.
      * @return A vector of strings containing all file paths.
      */
-    std::vector<std::string> getAllFilesInDirectory(const std::string& directory) const;
+    [[nodiscard]] std::vector<std::string> getAllFilesInDirectory(const std::string& directory) const;
 
     /**
      * @brief Gets the name of the command.
      * @return The command name, "add".
      */
-    std::string getName() const override { return "add"; }
+    [[nodiscard]] std::string getName() const override { return "add"; }
 
     /**
      * @brief Gets a brief description of the command.
      * @return A string describing the command's purpose.
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
 
     /**
      * @brief Gets the command's usage syntax.
      * @return A string showing how to use the command.
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
 
     /**
      * @brief Displays the detailed help information for the command.

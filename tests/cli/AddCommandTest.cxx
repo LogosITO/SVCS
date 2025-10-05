@@ -308,7 +308,7 @@ TEST_F(AddCommandTest, Success_InteractiveModeBasic) {
 TEST_F(AddCommandTest, Warning_UnknownOption) {
     createTestFile("test.txt");
     
-    bool result = command->execute({"--unknown-option", "test.txt"});
+    command->execute({"--unknown-option", "test.txt"});
     
     // Неизвестная опция должна показать warning, но команда может продолжить
     EXPECT_TRUE(mockEventBus->containsMessage("Unknown option"));

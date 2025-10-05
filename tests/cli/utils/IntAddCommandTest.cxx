@@ -43,12 +43,12 @@ void AddCommandTest::TearDown() {
     mockEventBus->clear();
 }
 
-void AddCommandTest::createTestFile(const std::string& filename, const std::string& content) {
+void AddCommandTest::createTestFile(const std::string& filename, const std::string& content) const {
     std::ofstream file(testDir / filename);
     file << content;
     file.close();
 }
 
-void AddCommandTest::createTestDirectory(const std::string& dirname) {
+void AddCommandTest::createTestDirectory(const std::string& dirname) const {
     std::filesystem::create_directories(testDir / dirname);
 }

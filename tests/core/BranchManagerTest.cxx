@@ -42,34 +42,34 @@ protected:
         std::filesystem::remove_all(testDir);
     }
 
-    void createTestHeadFile(const std::string& branch_name) {
+    static void createTestHeadFile(const std::string& branch_name) {
         std::ofstream head_file(".svcs/HEAD");
         head_file << "ref: refs/heads/" << branch_name;
         head_file.close();
     }
 
-    void createTestBranchFile(const std::string& branch_name, const std::string& commit_hash) {
+    static void createTestBranchFile(const std::string& branch_name, const std::string& commit_hash) {
         std::string branch_file = ".svcs/refs/heads/" + branch_name;
         std::ofstream file(branch_file);
         file << commit_hash;
         file.close();
     }
 
-    void createTestBranchesFile(const std::vector<std::pair<std::string, std::string>>& branches) {
+    static void createTestBranchesFile(const std::vector<std::pair<std::string, std::string>>& branches) {
         // Create individual branch files (new format)
         for (const auto& [name, commit] : branches) {
             createTestBranchFile(name, commit);
         }
     }
 
-    std::string readHeadFile() {
+    static std::string readHeadFile() {
         std::ifstream head_file(".svcs/HEAD");
         std::string content;
         std::getline(head_file, content);
         return content;
     }
 
-    std::string readBranchFile(const std::string& branch_name) {
+    static std::string readBranchFile(const std::string& branch_name) {
         std::string branch_file = ".svcs/refs/heads/" + branch_name;
         if (!std::filesystem::exists(branch_file)) {
             return "";

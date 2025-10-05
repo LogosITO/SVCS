@@ -48,19 +48,19 @@ public:
      * @brief Gets the name of the command.
      * @return "clear"
      */
-    std::string getName() const override { return "clear"; }
+    [[nodiscard]] std::string getName() const override { return "clear"; }
     
     /**
      * @brief Gets the description of the command.
      * @return "Remove SVCS repository from current directory"
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
     
     /**
      * @brief Gets the usage syntax of the command.
      * @return "svcs clear [--force]"
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
     
     /**
      * @brief Shows detailed help information for this command.
@@ -73,12 +73,12 @@ private:
      *
      * @return true if user confirms, false otherwise.
      */
-    bool confirmClear() const;
+    [[nodiscard]] static bool confirmClear() ;
     
     /**
      * @brief Removes the repository.
      *
      * @return true if removal succeeded, false otherwise.
      */
-    bool removeRepository() const;
+    [[nodiscard]] bool removeRepository() const;
 };

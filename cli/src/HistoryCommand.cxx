@@ -11,10 +11,11 @@
 
 #include <iostream>
 #include <sstream>
+#include <utility>
 
 HistoryCommand::HistoryCommand(std::shared_ptr<ISubject> subject,
                                std::shared_ptr<RepositoryManager> repoManager)
-    : eventBus_(subject), repoManager_(repoManager) {
+    : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
 }
 
 bool HistoryCommand::execute(const std::vector<std::string>& args) {
@@ -109,7 +110,7 @@ bool HistoryCommand::parseArguments(const std::vector<std::string>& args,
                     return false;
                 }
                 ++i; // Skip the next argument since we used it
-            } catch (const std::exception& e) {
+            } catch ([[maybe_unused]] const std::exception& e) {
                 eventBus_->notify({Event::ERROR_MESSAGE, 
                                   "Invalid number for " + args[i] + " option", "history"});
                 return false;
@@ -185,15 +186,14 @@ void HistoryCommand::showDetailedHistory(const std::vector<CommitInfo>& commits)
             eventBus_->notify({Event::GENERAL_INFO, 
                               "  Date:    " + formatTimestamp(commit.timestamp), SOURCE});
         }
-        
-        // Добавляем разделитель между коммитами (кроме последнего)
+
         if (i < commits.size() - 1) {
             eventBus_->notify({Event::GENERAL_INFO, "", SOURCE});
         }
     }
 }
 
-std::string HistoryCommand::formatTimestamp(const std::string& timestamp) const {
+std::string HistoryCommand::formatTimestamp(const std::string& timestamp) {
     // Simple formatting - could be enhanced with locale-specific formatting
     // For now, just return as-is or do simple reformatting
     if (timestamp.length() > 10) {
@@ -202,7 +202,7 @@ std::string HistoryCommand::formatTimestamp(const std::string& timestamp) const 
     return timestamp;
 }
 
-std::string HistoryCommand::truncateString(const std::string& str, size_t length) const {
+std::string HistoryCommand::truncateString(const std::string& str, const size_t length) {
     if (str.length() <= length) {
         return str;
     }

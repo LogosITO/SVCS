@@ -33,33 +33,33 @@ public:
     ~MergeCommand() override = default;
     
     // ICommand interface implementation
-    std::string getName() const override;
-    std::string getDescription() const override;
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getName() const override;
+    [[nodiscard]] std::string getDescription() const override;
+    [[nodiscard]] std::string getUsage() const override;
     bool execute(const std::vector<std::string>& args) override;
     void showHelp() const override;
     
 private:
-    void debugBranchHistory(const std::string& branch_name, const std::string& head_commit);
+    void debugBranchHistory(const std::string& branch_name, const std::string& head_commit) const;
 
     /**
      * @brief Merges a branch into the current branch.
      * @param branch_name Name of the branch to merge
      * @return true if successful, false otherwise
      */
-    bool mergeBranch(const std::string& branch_name);
+    bool mergeBranch(const std::string& branch_name) const;
     
     /**
      * @brief Aborts an ongoing merge operation.
      * @return true if successful, false otherwise
      */
-    bool abortMerge();
+    bool abortMerge() const;
     
     /**
      * @brief Checks if a merge is in progress.
      * @return true if merge is in progress, false otherwise
      */
-    bool isMergeInProgress() const;
+    [[nodiscard]] bool isMergeInProgress() const;
     
     /**
      * @brief Finds the common ancestor of two commits.
@@ -67,7 +67,7 @@ private:
      * @param commit2 Second commit hash
      * @return Common ancestor commit hash
      */
-    std::string findCommonAncestor(const std::string& commit1, const std::string& commit2);
+    std::string findCommonAncestor(const std::string& commit1, const std::string& commit2) const;
     
     /**
      * @brief Performs a three-way merge.
@@ -78,7 +78,7 @@ private:
      */
     bool performThreeWayMerge(const std::string& ancestor, 
                              const std::string& current, 
-                             const std::string& other);
+                             const std::string& other) const;
     
     /**
      * @brief Detects merge conflicts between file versions.
@@ -88,10 +88,10 @@ private:
      * @param merged_content Output merged content
      * @return true if no conflicts, false if conflicts detected
      */
-    bool mergeFileContent(const std::string& ancestor_content,
+    static bool mergeFileContent(const std::string& ancestor_content,
                          const std::string& current_content,
                          const std::string& other_content,
-                         std::string& merged_content) const;
+                         std::string& merged_content) ;
     
     std::shared_ptr<ISubject> event_bus_;
     std::shared_ptr<RepositoryManager> repo_manager_;

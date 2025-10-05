@@ -34,19 +34,19 @@ public:
      * @brief Retrieves the unique name of the command (e.g., "init").
      * @return The command name as a string.
      */
-    virtual std::string getName() const = 0;
+    [[nodiscard]] virtual std::string getName() const = 0;
     
     /**
      * @brief Retrieves a brief description of what the command does.
      * @return The command's description.
      */
-    virtual std::string getDescription() const = 0;
+    [[nodiscard]] virtual std::string getDescription() const = 0;
     
     /**
      * @brief Retrieves the command's usage syntax.
      * @return A string with the syntax (e.g., "vcs commit <message>").
      */
-    virtual std::string getUsage() const = 0;
+    [[nodiscard]] virtual std::string getUsage() const = 0;
     
     /**
      * @brief Executes the main logic of the command.

@@ -42,17 +42,17 @@ void HistoryCommandTest::TearDown() {
     mockEventBus->clear();
 }
 
-void HistoryCommandTest::createTestFile(const std::string& filename, const std::string& content) {
+void HistoryCommandTest::createTestFile(const std::string& filename, const std::string& content) const {
     std::ofstream file(testDir / filename);
     file << content;
     file.close();
 }
 
-void HistoryCommandTest::createTestDirectory(const std::string& dirname) {
+void HistoryCommandTest::createTestDirectory(const std::string& dirname) const {
     std::filesystem::create_directories(testDir / dirname);
 }
 
-void HistoryCommandTest::stageFiles(const std::vector<std::string>& files) {
+void HistoryCommandTest::stageFiles(const std::vector<std::string>& files) const {
     for (const auto& file : files) {
         repoManager->addFileToStaging(file);
     }

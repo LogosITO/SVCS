@@ -16,6 +16,7 @@
 #include "../../services/ISubject.hxx"
 
 #include <string>
+#include <utility>
 #include <vector>
 #include <memory>
 #include <unordered_map>
@@ -55,8 +56,8 @@ public:
          * @param head_commit The hash of the commit this branch points to.
          * @param is_current Flag indicating if the branch is active.
          */
-        Branch(const std::string& name, const std::string& head_commit, bool is_current = false)
-            : name(name), head_commit(head_commit), is_current(is_current) {}
+        Branch(std::string  name, std::string  head_commit, bool is_current = false)
+            : name(std::move(name)), head_commit(std::move(head_commit)), is_current(is_current) {}
     };
 
     /**
@@ -160,7 +161,7 @@ public:
      * @param commit_hash Hash to check
      * @return true if commit exists, false otherwise
      */
-    bool commitExists(const std::string& commit_hash) const;
+    static bool commitExists(const std::string& commit_hash) ;
     
 private:
     // --- Private Persistence Methods ---
@@ -175,9 +176,9 @@ private:
      */
     void saveBranches();
 
-    void saveBranchToFile(const std::string &branch_name, const std::string &commit_hash);
+    static void saveBranchToFile(const std::string &branch_name, const std::string &commit_hash);
 
-    void deleteBranchFile(const std::string &branch_name);
+    static void deleteBranchFile(const std::string &branch_name);
 
     /**
      * @brief Loads the name of the currently active branch from the file system.
@@ -187,7 +188,7 @@ private:
     /**
      * @brief Persists the name of the currently active branch to the file system (updates HEAD).
      */
-    bool saveCurrentBranch();
+    bool saveCurrentBranch() const;
     
     // --- Private File System Abstraction Methods ---
 
@@ -196,27 +197,27 @@ private:
      * @param path The path to the file.
      * @return The content of the file.
      */
-    std::string readFile(const std::string& path) const;
+    static std::string readFile(const std::string& path) ;
 
     /**
      * @brief Writes content to a file, overwriting existing content.
      * @param path The path to the file.
      * @param content The string content to write.
      */
-    void writeFile(const std::string& path, const std::string& content) const;
+    static void writeFile(const std::string& path, const std::string& content) ;
 
     /**
      * @brief Checks if a file exists at the given path.
      * @param path The path to the file.
      * @return \c true if the file exists, \c false otherwise.
      */
-    bool fileExists(const std::string& path) const;
+    static bool fileExists(const std::string& path) ;
 
     /**
      * @brief Creates a directory.
      * @param path The path of the directory to create.
      */
-    void createDirectory(const std::string& path) const;
+    static void createDirectory(const std::string& path) ;
     
     // --- Private Path Generation Methods ---
 
@@ -224,19 +225,19 @@ private:
      * @brief Generates the full path to the file where branch metadata is stored.
      * @return The file path string.
      */
-    std::string getBranchesFilePath() const;
+    static std::string getBranchesFilePath() ;
 
     /**
      * @brief Generates the full path to the HEAD file, which indicates the current branch.
      * @return The file path string.
      */
-    std::string getHeadFilePath() const;
+    static std::string getHeadFilePath() ;
 
     /**
      * @brief Generates the full path to the directory containing branch data.
      * @return The directory path string.
      */
-    std::string getBranchesDirectory() const;
+    static std::string getBranchesDirectory() ;
     
     /// @brief Internal map storing all branches, indexed by branch name.
     std::unordered_map<std::string, Branch> branches;

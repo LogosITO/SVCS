@@ -57,7 +57,7 @@ public:
      * to the mock's own control methods, and stores the mock event bus.
      * @param mockEventBus The shared pointer to the MockSubject used for notifications.
      */
-    MockHelpService(std::shared_ptr<MockSubject> mockEventBus)
+    explicit MockHelpService(const std::shared_ptr<MockSubject>& mockEventBus)
         : HelpService(
             mockEventBus, // bus
             [this]() { return this->getAvailableCommands(); }, // commandsFunc
@@ -74,7 +74,7 @@ public:
      * @brief Returns the pre-configured list of available commands.
      * @return A vector of command names.
      */
-    std::vector<std::string> getAvailableCommands() const {
+    [[nodiscard]] std::vector<std::string> getAvailableCommands() const {
         return availableCommands_;
     }
     
@@ -83,7 +83,7 @@ public:
      * @param commandName The name of the command.
      * @return The configured description, or "No description available" if not set.
      */
-    std::string getCommandDescription(const std::string& commandName) const {
+    [[nodiscard]] std::string getCommandDescription(const std::string& commandName) const {
         auto it = commandDescriptions_.find(commandName);
         if (it != commandDescriptions_.end()) {
             return it->second;
@@ -128,7 +128,7 @@ public:
      * @param commandName The name of the command to check.
      * @return true if showCommandHelp() was called with this name, false otherwise.
      */
-    bool wasCommandHelpCalled(const std::string& commandName) const {
+    [[nodiscard]] bool wasCommandHelpCalled(const std::string& commandName) const {
         return calledCommandHelp_.find(commandName) != calledCommandHelp_.end();
     }
     

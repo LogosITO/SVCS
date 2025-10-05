@@ -63,19 +63,19 @@ public:
      * @brief Gets the name of the command.
      * @return The command name, "history".
      */
-    std::string getName() const override { return "history"; }
+    [[nodiscard]] std::string getName() const override { return "history"; }
 
     /**
      * @brief Gets a brief description of the command.
      * @return A string describing the command's purpose.
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
 
     /**
      * @brief Gets the command's usage syntax.
      * @return A string showing how to use the command.
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
 
     /**
      * @brief Displays the detailed help information for the command.
@@ -117,7 +117,7 @@ private:
      * @param timestamp The raw timestamp string (e.g., ISO 8601).
      * @return The formatted timestamp string.
      */
-    std::string formatTimestamp(const std::string& timestamp) const;
+    [[nodiscard]] static std::string formatTimestamp(const std::string& timestamp) ;
 
     /**
      * @brief Truncates a string to a specified maximum length, adding an ellipsis if truncated.
@@ -125,5 +125,5 @@ private:
      * @param length The maximum desired length.
      * @return The truncated string.
      */
-    std::string truncateString(const std::string& str, size_t length) const;
+    [[nodiscard]] static std::string truncateString(const std::string& str, size_t length) ;
 };

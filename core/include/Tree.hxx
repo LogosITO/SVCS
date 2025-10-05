@@ -61,7 +61,7 @@ public:
      * @details The constructor must internally sort the entries before calling computeHash().
      * @param entries A collection of TreeEntry structures representing the directory content.
      */
-    Tree(std::vector<TreeEntry> entries);
+    explicit Tree(std::vector<TreeEntry> entries);
 
     // VcsObject overrides
 
@@ -70,7 +70,7 @@ public:
      * @return std::string Always returns "tree".
      * @copydoc VcsObject::getType()
      */
-    std::string getType() const override;
+    [[nodiscard]] std::string getType() const override;
 
     /**
      * @brief Serializes the Tree content into a standardized string format for hashing and storage.
@@ -78,7 +78,7 @@ public:
      * @return std::string The standardized, serialized directory structure.
      * @copydoc VcsObject::serialize()
      */
-    std::string serialize() const override;
+    [[nodiscard]] std::string serialize() const override;
 
     /**
      * @brief Creates a Tree object from a serialized string read from the object database.
@@ -106,11 +106,11 @@ public:
      * @param name The name of the entry to find.
      * @return std::optional<TreeEntry> An optional containing the entry if found, otherwise empty.
      */
-    std::optional<TreeEntry> findEntry(const std::string& name) const;
+    [[nodiscard]] std::optional<TreeEntry> findEntry(const std::string& name) const;
     
     /**
      *@brief Returns the list of entries stored in the Tree.
      *@return std::vector<TreeEntry>& A constant reference to the internal vector of entries.
      */
-    const std::vector<TreeEntry>& getEntries() const;
+    [[nodiscard]] const std::vector<TreeEntry>& getEntries() const;
 };

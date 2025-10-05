@@ -47,7 +47,7 @@ public:
      * @param message The substring to search for within notification details.
      * @return true if a matching message is found, false otherwise.
      */
-    bool containsMessage(const std::string& message) const {
+    [[nodiscard]] bool containsMessage(const std::string& message) const {
         for (const auto& notification : notifications) {
             if (notification.details.find(message) != std::string::npos) {
                 return true;
@@ -60,7 +60,7 @@ public:
      * @param type The Event::Type enumeration value to search for.
      * @return true if an event of the specified type is found, false otherwise.
      */
-    bool containsEventType(Event::Event::Type type) const {
+    [[nodiscard]] bool containsEventType(Event::Event::Type type) const {
         for (const auto& notification : notifications) {
             if (notification.type == type) {
                 return true;
@@ -76,7 +76,7 @@ public:
         notifications.clear();
     }
     
-    const std::vector<Event>& getNotifications() const {
+    [[nodiscard]] const std::vector<Event>& getNotifications() const {
         return notifications;
     }
 };

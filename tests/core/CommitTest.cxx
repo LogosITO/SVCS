@@ -22,13 +22,13 @@ Commit createTestCommit(
     const std::string& message,
     std::time_t timestamp = 1600000000
 ) {
-    return Commit(
+    return {
         tree_hash,
         parents,
         "Test Author <test@example.com>",
         message,
         timestamp
-    );
+    };
 }
 
 TEST(CommitTest, BasicInitialCommit) {

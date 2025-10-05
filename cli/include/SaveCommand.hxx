@@ -49,19 +49,19 @@ public:
      * @brief Gets the name of the command.
      * @return "save"
      */
-    std::string getName() const override { return "save"; }
+    [[nodiscard]] std::string getName() const override { return "save"; }
     
     /**
      * @brief Gets the description of the command.
      * @return "Save staged changes to the repository"
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
     
     /**
      * @brief Gets the usage syntax of the command.
      * @return "svcs save -m \"message\""
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
     
     /**
      * @brief Shows detailed help information for this command.
@@ -75,7 +75,7 @@ private:
      * @param args Command arguments.
      * @return The commit message, or empty string if not found.
      */
-    std::string parseMessage(const std::vector<std::string>& args) const;
+    [[nodiscard]] static std::string parseMessage(const std::vector<std::string>& args) ;
     
     /**
      * @brief Validates that a message is provided and not empty.
@@ -83,14 +83,14 @@ private:
      * @param message The commit message to validate.
      * @return true if message is valid, false otherwise.
      */
-    bool validateMessage(const std::string& message) const;
+    [[nodiscard]] bool validateMessage(const std::string& message) const;
     
     /**
      * @brief Checks if there are any staged changes to save.
      *
      * @return true if there are staged changes, false otherwise.
      */
-    bool hasStagedChanges() const;
+    [[nodiscard]] bool hasStagedChanges() const;
     
     /**
      * @brief Creates a save point (commit) with the given message.
@@ -98,5 +98,5 @@ private:
      * @param message The commit message.
      * @return true if save succeeded, false otherwise.
      */
-    bool createSavePoint(const std::string& message) const;
+    [[nodiscard]] bool createSavePoint(const std::string& message) const;
 };

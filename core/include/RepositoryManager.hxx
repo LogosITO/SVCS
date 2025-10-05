@@ -63,19 +63,19 @@ private:
      * @brief Notifies the event bus with an error message.
      * @param message The error message to be logged.
      */
-    void logError(const std::string& message);
+    void logError(const std::string& message) const;
     
     /**
      * @brief Notifies the event bus with a debug message.
      * @param message The debug message to be logged.
      */
-    void logDebug(const std::string& message);
+    void logDebug(const std::string& message) const;
     
     /**
      * @brief Notifies the event bus with an informational message.
      * @param message The information message to be logged.
      */
-    void logInfo(const std::string& message);
+    void logInfo(const std::string& message) const;
     
     // --- Private Utility Methods for File System Operations ---
     
@@ -84,7 +84,7 @@ private:
      * @param path The filesystem path where the directory should be created.
      * @return \c true if creation succeeded or the directory already exists, \c false otherwise.
      */
-    bool createDirectory(const std::filesystem::path& path);
+    bool createDirectory(const std::filesystem::path& path) const;
     
     /**
      * @brief Attempts to create a file at the specified path with optional content.
@@ -92,13 +92,13 @@ private:
      * @param content Optional string content to write to the file.
      * @return \c true if the file was created or opened successfully, \c false otherwise.
      */
-    bool createFile(const std::filesystem::path& path, const std::string& content = "");
+    bool createFile(const std::filesystem::path& path, const std::string& content = "") const;
 
     /**
      * @brief Gets the current branch name from HEAD file.
      * @return The current branch name.
      */
-    std::string getCurrentBranchFromHead();
+    std::string getCurrentBranchFromHead() const;
 
 public:
     /**
@@ -111,7 +111,7 @@ public:
      * @brief Updates HEAD reference.
      * @param commit_hash The commit hash to set as HEAD.
      */
-    void updateHead(const std::string& commit_hash);
+    void updateHead(const std::string& commit_hash) const;
     
     /**
      * @brief Initializes a new SVCS repository in the specified path.
@@ -134,13 +134,13 @@ public:
      * @param branchName The name of the branch to update.
      * @param commitHash The commit hash to set as branch head.
      */
-    void updateBranchReference(const std::string& branchName, const std::string& commitHash);
+    void updateBranchReference(const std::string& branchName, const std::string& commitHash) const;
     
     /**
      * @brief Returns the determined root path of the currently active repository.
      * @return The string path to the repository root.
      */
-    std::filesystem::path getRepositoryPath() const;
+    [[nodiscard]] std::filesystem::path getRepositoryPath() const;
     
     // --- Staging and History Management Methods ---
     
@@ -156,7 +156,7 @@ public:
      * @brief Retrieves the hash of the current HEAD commit in the repository.
      * @return The commit hash string.
      */
-    std::string getHeadCommit();
+    std::string getHeadCommit() const;
 
     /**
      * @brief Creates a commit from the currently staged files.
@@ -170,7 +170,7 @@ public:
      * @param removedCommitHash The hash of the commit being removed.
      * @param newParentHash The new parent hash for dependent commits.
      */
-    void updateCommitReferences(const std::string& removedCommitHash, const std::string& newParentHash);
+    void updateCommitReferences(const std::string& removedCommitHash, const std::string& newParentHash) const;
 
     /**
      * @brief Reverts the repository state to a previous commit.
@@ -185,22 +185,22 @@ public:
      * @param commit_hash The hash of the commit to retrieve.
      * @return An optional containing the CommitInfo if found, or std::nullopt otherwise.
      */
-    std::optional<CommitInfo> getCommitByHash(const std::string& commit_hash);
+    std::optional<CommitInfo> getCommitByHash(const std::string& commit_hash) const;
 
     /**
      * @brief Retrieves the hash of the parent commit for a given commit.
      * @param commit_hash The hash of the child commit.
      * @return The parent commit hash string (empty if it is the initial commit).
      */
-    std::string getParentCommitHash(const std::string& commit_hash);
+    std::string getParentCommitHash(const std::string& commit_hash) const;
 
-    std::string generateCommitHash(const std::string& content);
+    static std::string generateCommitHash(const std::string& content);
     /**
      * @brief Restores the working directory files to the state recorded in a specific commit.
      * @param commit The CommitInfo structure representing the target state.
      * @return \c true if files were restored successfully, \c false otherwise.
      */
-    bool restoreFilesFromCommit(const CommitInfo& commit);
+    bool restoreFilesFromCommit(const CommitInfo& commit) const;
 
     /**
      * @brief Clears the contents of the staging area (index).
@@ -223,43 +223,43 @@ public:
 
     /**
      * @brief Retrieves the complete commit history for the current branch.
-     * @return Vector of CommitInfo objects representing the commit history, typically newest first.
+     * @return Vector of CommitInfo objects representing the commit history, typically the newest first.
      */
-    std::vector<CommitInfo> getCommitHistory();
+    std::vector<CommitInfo> getCommitHistory() const;
 
     /**
      * @brief Retrieves the commit history for a specific branch.
      * @param branch_name The name of the branch.
      * @return Vector of CommitInfo objects for the branch.
      */
-    std::vector<CommitInfo> getBranchHistory(const std::string& branch_name);
+    std::vector<CommitInfo> getBranchHistory(const std::string& branch_name) const;
 
     /**
      * @brief Gets the current branch name.
      * @return The current branch name.
      */
-    std::string getCurrentBranch();
+    std::string getCurrentBranch() const;
 
     /**
      * @brief Attempts to recursively remove the entire SVCS repository structure (e.g., the .svcs directory) and its contents.
      * @param path The root path of the repository to remove.
      * @return \c true if removal was successful, \c false otherwise.
      */
-    bool removeRepository(const std::filesystem::path& path);
+    bool removeRepository(const std::filesystem::path& path) const;
 
     /**
      * @brief Checks if a branch exists.
      * @param branch_name The branch name to check.
      * @return true if branch exists, false otherwise.
      */
-    bool branchExists(const std::string& branch_name);
+    bool branchExists(const std::string& branch_name) const;
     
     /**
      * @brief Gets the head commit of a branch.
      * @param branch_name The branch name.
      * @return The commit hash of the branch head.
      */
-    std::string getBranchHead(const std::string& branch_name);
+    std::string getBranchHead(const std::string& branch_name) const;
     
     /**
      * @brief Gets the content of a file at a specific commit.
@@ -267,36 +267,36 @@ public:
      * @param file_path The file path.
      * @return The file content.
      */
-    std::string getFileContentAtCommit(const std::string& commit_hash, const std::string& file_path);
+    std::string getFileContentAtCommit(const std::string& commit_hash, const std::string& file_path) const;
     
     /**
      * @brief Gets all files changed in a commit.
      * @param commit_hash The commit hash.
      * @return Vector of file paths.
      */
-    std::vector<std::string> getCommitFiles(const std::string& commit_hash);
+    std::vector<std::string> getCommitFiles(const std::string& commit_hash) const;
     
     /**
      * @brief Sets merge state (for conflict resolution).
      * @param branch_name Branch being merged.
      * @param commit_hash Commit being merged.
      */
-    void setMergeState(const std::string& branch_name, const std::string& commit_hash);
+    void setMergeState(const std::string& branch_name, const std::string& commit_hash) const;
     
     /**
      * @brief Clears merge state (after merge completion/abort).
      */
-    void clearMergeState();
+    void clearMergeState() const;
     
     /**
      * @brief Checks if a merge is in progress.
      * @return true if merge is in progress, false otherwise.
      */
-    bool isMergeInProgress();
+    bool isMergeInProgress() const;
     
     /**
      * @brief Gets the branch being merged.
      * @return Branch name if merge in progress, empty string otherwise.
      */
-    std::string getMergeBranch();
+    std::string getMergeBranch() const;
 };

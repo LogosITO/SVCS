@@ -45,7 +45,7 @@ protected:
      * @brief Finds an existing repository in the current or parent directories.
      * @return A smart pointer to the found Repository or nullptr if no repository is found.
      */
-    std::shared_ptr<Repository> findRepository() const {
+    static std::shared_ptr<Repository> findRepository() {
         return Repository::findRepository();
     }
     
@@ -54,7 +54,7 @@ protected:
      * @param path The path where the repository should be created (defaults to '.').
      * @return A smart pointer to the new Repository.
      */
-    std::shared_ptr<Repository> createRepository(const std::string& path = ".") const {
+    static std::shared_ptr<Repository> createRepository(const std::string& path = ".") {
         return std::make_shared<Repository>(path);
     }
 
@@ -69,7 +69,7 @@ public:
      * @brief Virtual destructor.
      * * Ensures correct cleanup of derived classes.
      */
-    virtual ~BaseCommand() = default;
+    ~BaseCommand() override = default;
 
     /**
      * @brief Gets the command name (e.g., "init", "commit").

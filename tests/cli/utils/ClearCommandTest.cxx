@@ -69,7 +69,7 @@ void ClearCommandTest::TearDown() {
  * @param content The content to write into the file.
  * @throw std::runtime_error if the file cannot be opened for writing.
  */
-void ClearCommandTest::createTestFile(const std::string& filename, const std::string& content) {
+void ClearCommandTest::createTestFile(const std::string& filename, const std::string& content) const {
     std::ofstream file(testDir / filename);
     if (!file.is_open()) {
         throw std::runtime_error("Failed to open test file for writing: " + filename);
@@ -82,7 +82,7 @@ void ClearCommandTest::createTestFile(const std::string& filename, const std::st
  * @brief Creates a test directory inside the test repository directory.
  * @param dirname The name of the directory to create (relative to testDir).
  */
-void ClearCommandTest::createTestDirectory(const std::string& dirname) {
+void ClearCommandTest::createTestDirectory(const std::string& dirname) const {
     std::filesystem::create_directories(testDir / dirname);
 }
 

@@ -47,7 +47,7 @@ public:
     mutable std::map<std::string, std::string> saved_blobs;
     
     // Используем реальный временный путь вместо /mock/path
-    MockObjectStorage(const fs::path& temp_dir) 
+    explicit MockObjectStorage(const fs::path& temp_dir)
         : ObjectStorage((temp_dir / ".svcs" / "objects").string(), std::make_shared<MockSubject>(g_mock_subject))  
     {}  
     
@@ -125,7 +125,7 @@ protected:
         }
     }
     
-    void create_file_with_delay(const fs::path& path, const std::string& content, int ms_delay = 10) {
+    static void create_file_with_delay(const fs::path& path, const std::string& content, int ms_delay = 10) {
         if (fs::exists(path)) {
             fs::remove(path);
         }
@@ -145,7 +145,7 @@ protected:
     }
     
     // Вспомогательный метод для вывода содержимого индекса
-    void print_index_contents() const {
+    static void print_index_contents() {
         std::cout << "Index contents:" << std::endl;
         // Если у Index есть метод для получения всех записей, используйте его
         // Иначе этот метод нужно адаптировать под ваш интерфейс Index

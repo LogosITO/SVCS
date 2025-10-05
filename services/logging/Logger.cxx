@@ -8,8 +8,8 @@
 std::unordered_map<std::string, std::shared_ptr<Logger>> Logger::instances_;
 std::mutex Logger::instances_mutex_;
 
-Logger::Logger(const std::string& name) 
-    : name_(name), log_level_(LogLevel::INFO) 
+Logger::Logger(const std::string& name)
+    : name_(name), log_level_(LogLevel::INFO)
 {
     setPattern("[%Y-%m-%d %H:%M:%S] [%n] [%l] %v");
 }

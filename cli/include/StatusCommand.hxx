@@ -54,19 +54,19 @@ public:
      * @brief Gets the name of the command.
      * @return "status"
      */
-    std::string getName() const override { return "status"; }
+    [[nodiscard]] std::string getName() const override { return "status"; }
     
     /**
      * @brief Gets the description of the command.
      * @return "Show the working tree status"
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
     
     /**
      * @brief Gets the usage syntax of the command.
      * @return "svcs status [file1 file2 ...]"
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
     
     /**
      * @brief Shows detailed help information for this command.
@@ -77,13 +77,13 @@ private:
     /**
      * @brief Shows the full repository status.
      */
-    bool showFullStatus() const;
+    [[nodiscard]] bool showFullStatus() const;
     
     /**
      * @brief Shows status for specific files.
      * @param files List of files to show status for.
      */
-    bool showFileStatus(const std::vector<std::string>& files) const;
+    [[nodiscard]] bool showFileStatus(const std::vector<std::string>& files) const;
     
     /**
      * @brief Shows the current branch information.
@@ -109,7 +109,7 @@ private:
      * @brief Gets the current branch name.
      * @return Current branch name, or "main" by default.
      */
-    std::string getCurrentBranch() const;
+    [[nodiscard]] std::string getCurrentBranch() const;
     
     /**
      * @brief Checks if a file has been modified compared to staged version.
@@ -117,14 +117,14 @@ private:
      * @param filePath The path to the file to check.
      * @return true if file has been modified, false otherwise.
      */
-    bool isFileModified(const std::filesystem::path& filePath) const;
+    [[nodiscard]] bool isFileModified(const std::filesystem::path& filePath) const;
     
     /**
      * @brief Finds all untracked files in the repository.
      *
      * @return Vector of paths to untracked files.
      */
-    std::vector<std::filesystem::path> findUntrackedFiles() const;
+    [[nodiscard]] std::vector<std::filesystem::path> findUntrackedFiles() const;
     
     /**
      * @brief Formats file status with colors/icons (simple version).
@@ -133,12 +133,12 @@ private:
      * @param filePath The file path.
      * @return Formatted status string.
      */
-    std::string formatFileStatus(char status, const std::string& filePath) const;
+    [[nodiscard]] static std::string formatFileStatus(char status, const std::string& filePath) ;
     
     /**
      * @brief Gets the status of a specific file.
      * @param filePath The file to check.
      * @return Status character and description.
      */
-    std::pair<char, std::string> getFileStatus(const std::string& filePath) const;
+    [[nodiscard]] std::pair<char, std::string> getFileStatus(const std::string& filePath) const;
 };

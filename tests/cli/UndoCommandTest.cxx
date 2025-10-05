@@ -102,7 +102,7 @@ TEST_F(UndoCommandTest, ForceUndoInitialCommit) {
     mockEventBus->clear();
 
     std::vector<std::string> args = {"--force"};
-    bool result = command->execute(args);
+    command->execute(args);
 
     auto notifications = mockEventBus->getNotifications();
 
@@ -147,7 +147,7 @@ TEST_F(UndoCommandTest, MultipleUndoCommandsWithForce) {
     mockEventBus->clear();
 
     std::vector<std::string> args2 = {"--force"};
-    bool result2 = command->execute(args2);
+    command->execute(args2);
 
     auto notifications = mockEventBus->getNotifications();
 

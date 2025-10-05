@@ -65,7 +65,7 @@ public:
      *
      * @return Vector of strings containing the names of all registered commands.
      */
-    std::vector<std::string> getAvailableCommands() const;
+    [[nodiscard]] std::vector<std::string> getAvailableCommands() const;
     
     /**
      * @brief Executes the `getDescriptionCallback_` to retrieve the brief description of a specific command.
@@ -73,7 +73,7 @@ public:
      * @param commandName The name of the command.
      * @return The command description, or "Unknown command" if the command name is not valid or the callback fails.
      */
-    std::string getCommandDescription(const std::string& commandName) const;
+    [[nodiscard]] std::string getCommandDescription(const std::string& commandName) const;
     
     /**
      * @brief Executes the `showHelpCallback_` to trigger the display of detailed help for a specific command.
@@ -88,7 +88,7 @@ public:
      * @param commandName The name of the command to check.
      * @return \c true if the command is registered, \c false otherwise.
      */
-    bool commandExists(const std::string& commandName) const;
+    [[nodiscard]] bool commandExists(const std::string& commandName) const;
     
     /**
      * @brief Executes the `getUsageCallback_` to retrieve the usage syntax of a specific command.
@@ -96,5 +96,5 @@ public:
      * @param commandName The name of the command.
      * @return The command usage string, or an empty string if the command is not found or the callback is not set.
      */
-    std::string getCommandUsage(const std::string& commandName) const;
+    [[nodiscard]] std::string getCommandUsage(const std::string& commandName) const;
 };

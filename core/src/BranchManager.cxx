@@ -337,7 +337,7 @@ bool BranchManager::isValidBranchName(const std::string& name) {
     return true;
 }
 
-bool BranchManager::commitExists(const std::string& commit_hash) const {
+bool BranchManager::commitExists(const std::string& commit_hash) {
     if (commit_hash.empty()) {
         return false;
     }
@@ -397,7 +397,7 @@ bool BranchManager::commitExists(const std::string& commit_hash) const {
 
         return false;
 
-    } catch (const std::exception& e) {
+    } catch ([[maybe_unused]] const std::exception& e) {
         // В случае ошибки считаем что коммит существует для тестов
         return true;
     }
@@ -479,7 +479,7 @@ void BranchManager::loadCurrentBranch() {
     }
 }
 
-bool BranchManager::saveCurrentBranch() {
+bool BranchManager::saveCurrentBranch() const {
     try {
         createDirectory(getBranchesDirectory());
 
@@ -500,7 +500,7 @@ bool BranchManager::saveCurrentBranch() {
     return true;
 }
 
-std::string BranchManager::readFile(const std::string& path) const {
+std::string BranchManager::readFile(const std::string& path) {
     std::ifstream file(path);
     if (!file.is_open()) {
         return "";
@@ -511,7 +511,7 @@ std::string BranchManager::readFile(const std::string& path) const {
     return buffer.str();
 }
 
-void BranchManager::writeFile(const std::string& path, const std::string& content) const {
+void BranchManager::writeFile(const std::string& path, const std::string& content) {
     std::ofstream file(path);
     if (!file.is_open()) {
         throw std::runtime_error("Cannot open file for writing: " + path);
@@ -521,24 +521,24 @@ void BranchManager::writeFile(const std::string& path, const std::string& conten
     file.close();
 }
 
-bool BranchManager::fileExists(const std::string& path) const {
+bool BranchManager::fileExists(const std::string& path) {
     return std::filesystem::exists(path);
 }
 
-void BranchManager::createDirectory(const std::string& path) const {
+void BranchManager::createDirectory(const std::string& path) {
     if (!fileExists(path)) {
         std::filesystem::create_directories(path);
     }
 }
 
-std::string BranchManager::getBranchesFilePath() const {
+std::string BranchManager::getBranchesFilePath() {
     return ".svcs/refs/heads/branches";
 }
 
-std::string BranchManager::getHeadFilePath() const {
+std::string BranchManager::getHeadFilePath() {
     return ".svcs/HEAD";
 }
 
-std::string BranchManager::getBranchesDirectory() const {
+std::string BranchManager::getBranchesDirectory() {
     return ".svcs/refs/heads";
 }

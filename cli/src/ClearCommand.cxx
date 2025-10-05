@@ -9,10 +9,11 @@
 #include "../include/ClearCommand.hxx"
 #include <iostream>
 #include <algorithm>
+#include <utility>
 
 ClearCommand::ClearCommand(std::shared_ptr<ISubject> subject,
                            std::shared_ptr<RepositoryManager> repoManager)
-    : eventBus_(subject), repoManager_(repoManager) {
+    : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
 }
 
 bool ClearCommand::execute(const std::vector<std::string>& args) {
@@ -45,10 +46,10 @@ bool ClearCommand::execute(const std::vector<std::string>& args) {
     
     // Count files that will be removed
     std::filesystem::path svcsDir = std::filesystem::path(repoPath) / ".svcs";
-    size_t fileCount = 0;
-    size_t dirCount = 0;
-    
+
     try {
+        size_t dirCount = 0;
+        size_t fileCount = 0;
         if (std::filesystem::exists(svcsDir)) {
             for (const auto& entry : std::filesystem::recursive_directory_iterator(svcsDir)) {
                 if (entry.is_regular_file()) {
@@ -121,7 +122,7 @@ void ClearCommand::showHelp() const {
                       "  svcs clear -f           Remove repository (without confirmation)", "clear"});
 }
 
-bool ClearCommand::confirmClear() const {
+bool ClearCommand::confirmClear() {
     std::cout << "Are you sure you want to remove the SVCS repository? [y/N]: ";
     std::string response;
     std::getline(std::cin, response);

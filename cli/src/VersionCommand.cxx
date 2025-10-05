@@ -6,11 +6,13 @@
  * @license **MIT License**
  */
 
+#include <utility>
+
 #include "../include/VersionCommand.hxx"
 #include "../../services/ISubject.hxx"
 
 VersionCommand::VersionCommand(std::shared_ptr<ISubject> subject)
-    : eventBus_(subject) {
+    : eventBus_(std::move(subject)) {
 }
 
 bool VersionCommand::execute(const std::vector<std::string>& args) {
@@ -47,11 +49,11 @@ void VersionCommand::showHelp() const {
                       "This command does not accept any arguments.", "version"});
 }
 
-std::string VersionCommand::getVersionString() const {
+std::string VersionCommand::getVersionString() {
     return "SVCS (Simple Version Control System) version 1.0.0";
 }
 
-std::string VersionCommand::getBuildInfo() const {
+std::string VersionCommand::getBuildInfo() {
     std::string buildInfo = "Build: ";
     
     // Detect build type
@@ -83,6 +85,6 @@ std::string VersionCommand::getBuildInfo() const {
     return buildInfo;
 }
 
-std::string VersionCommand::getCopyright() const {
+std::string VersionCommand::getCopyright() {
     return "Copyright (c) 2025 LogosITO. Licensed under MIT License.";
 }

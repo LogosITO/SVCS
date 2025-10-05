@@ -55,19 +55,19 @@ public:
      * @brief Gets the name of the command.
      * @return The string "help".
      */
-    std::string getName() const override { return "help"; }
+    [[nodiscard]] std::string getName() const override { return "help"; }
     
     /**
      * @brief Gets the brief description of the command.
      * @return The string "Show help information for commands".
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
     
     /**
      * @brief Gets the usage syntax of the command.
      * @return The string "svcs help [command]".
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
     
     /**
      * @brief Shows detailed help information for this specific command via the event bus.
@@ -79,12 +79,12 @@ private:
      * @brief Shows general help, listing all available commands and their descriptions.
      * * Utilizes the HelpService to retrieve the list of all registered commands.
      */
-    void showGeneralHelp();
+    void showGeneralHelp() const;
     
     /**
      * @brief Shows detailed usage, description, and explanation for a specific command.
      * * Delegates the task of fetching and displaying the detailed help to the HelpService.
      * @param commandName The name of the command to show help for.
      */
-    void showCommandHelp(const std::string& commandName);
+    void showCommandHelp(const std::string& commandName) const;
 };

@@ -16,6 +16,7 @@
 #include <filesystem>
 #include <string>
 #include <memory>
+#include <utility>
 #include "../../services/ISubject.hxx"
 
 /**
@@ -39,7 +40,7 @@ private:
      * @return std::string The compressed binary data.
      * @throw std::runtime_error if Zlib compression fails.
      */
-    std::string compress(const std::string& data) const;
+    [[nodiscard]] std::string compress(const std::string& data) const;
 
     /**
      * @brief Decompresses Zlib raw deflate data.
@@ -47,7 +48,7 @@ private:
      * @return std::string The decompressed data (including header).
      * @throw std::runtime_error if Zlib decompression fails or stream is corrupt.
      */
-    std::string decompress(const std::string& compressed_data) const;
+    [[nodiscard]] std::string decompress(const std::string& compressed_data) const;
     
     /**
      * @brief Object Factory: Creates a concrete VcsObject from its type and content.
@@ -57,7 +58,7 @@ private:
      * @return std::unique_ptr<VcsObject> A pointer to the newly created object.
      * @throw std::runtime_error if the type is unknown.
      */
-    std::unique_ptr<VcsObject> createObjectFromContent(
+    [[nodiscard]] std::unique_ptr<VcsObject> createObjectFromContent(
         const std::string& type, 
         const std::string& content
     ) const;
@@ -68,18 +69,18 @@ public:
      * @param root_path The root path of the repository (e.g., the directory containing ".svcs").
      * @param subject Shared pointer to the ISubject interface for event logging. Defaults to nullptr if logging is not required yet.
      */
-    ObjectStorage(const std::string& root_path, std::shared_ptr<ISubject> subject = nullptr);
+    explicit ObjectStorage(const std::string& root_path, const std::shared_ptr<ISubject>& subject = nullptr);
 
     /**
      * @brief Destructor.
      */
-    ~ObjectStorage();
+    virtual ~ObjectStorage();
 
     /**
      * @brief Sets or replaces the event subject used by the ObjectStorage.
      * @param subj The new ISubject pointer to use for publishing events.
      */
-    void setSubject(std::shared_ptr<ISubject> subj) { subject = subj; };
+    void setSubject(std::shared_ptr<ISubject> subj) { subject = std::move(subj); };
 
     /**
      * @brief Forms the full filesystem path for an object based on its hash.
@@ -88,7 +89,7 @@ public:
      * @param hash The full 40-character SHA-1 hash ID.
      * @return std::string The full, platform-agnostic file path.
      */
-    std::string getObjectPath(const std::string& hash) const;
+    [[nodiscard]] std::string getObjectPath(const std::string& hash) const;
 
     /**
      * @brief Saves a VcsObject to the object database.
@@ -98,7 +99,7 @@ public:
      * @return bool True if saving was successful.
      * @throw std::runtime_error if hash is invalid or file IO fails.
      */
-    virtual bool saveObject(const VcsObject& obj) const;
+    [[nodiscard]] virtual bool saveObject(const VcsObject& obj) const;
 
     /**
      * @brief Loads an object from the disk by its hash ID.
@@ -108,12 +109,12 @@ public:
      * @return std::unique_ptr<VcsObject> The restored object instance.
      * @throw std::runtime_error if the object is not found, corrupted, or invalid.
      */
-    virtual std::unique_ptr<VcsObject> loadObject(const std::string& hash) const;
+    [[nodiscard]] virtual std::unique_ptr<VcsObject> loadObject(const std::string& hash) const;
 
     /**
      * @brief Checks if an object with the given hash exists on disk.
      * @param hash The hash ID to check.
      * @return bool True if the object file exists.
      */
-    bool objectExists(const std::string& hash) const;
+    [[nodiscard]] bool objectExists(const std::string& hash) const;
 };

@@ -6,9 +6,11 @@
  * @license **MIT License**
  */
 
+#include <utility>
+
 #include "../include/Blob.hxx"
 
-Blob::Blob(const std::string& raw_data) : data(raw_data) {
+Blob::Blob(std::string  raw_data) : data(std::move(raw_data)) {
     std::string raw_content = this->serialize(); 
     std::string full_content = this->getType() + " " + 
                                std::to_string(raw_content.length()) + 

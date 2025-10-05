@@ -38,7 +38,7 @@ private:
     std::string message;
 
 public:
-    Commit();
+    Commit() : tree_hash(""), parent_hashes({}), author(""), timestamp(time_t()), message("") {};
     
     /**
      * @brief Main constructor for the Commit object.
@@ -64,7 +64,7 @@ public:
      * @return std::string Always returns "commit".
      * @copydoc VcsObject::getType()
      */
-    std::string getType() const override;
+    [[nodiscard]] std::string getType() const override;
 
     /**
      * @brief Serializes the Commit metadata into a standardized, canonical format for hashing and storage.
@@ -72,7 +72,7 @@ public:
      * @return std::string The standardized, serialized commit data.
      * @copydoc VcsObject::serialize()
      */
-    std::string serialize() const override;
+    [[nodiscard]] std::string serialize() const override;
     
     /**
      * @brief Creates a Commit object from a serialized string read from the object database.
@@ -87,35 +87,35 @@ public:
      * @brief Returns the hash ID of the associated root Tree object.
      * @return const std::string& The tree hash.
      */
-    const std::string& getTreeHash() const;
+    [[nodiscard]] const std::string& getTreeHash() const;
 
     /**
      * @brief Returns the hash IDs of the parent commits.
      * @return const std::vector<std::string>& The list of parent hashes (sorted).
      */
-    const std::vector<std::string>& getParentHashes() const;
+    [[nodiscard]] const std::vector<std::string>& getParentHashes() const;
 
     /**
      * @brief Returns the author and email string for the commit.
      * @return const std::string& The author string.
      */
-    const std::string& getAuthor() const;
+    [[nodiscard]] const std::string& getAuthor() const;
 
     /**
      * @brief Returns the UNIX timestamp of the commit creation.
      * @return std::time_t The timestamp value.
      */
-    std::time_t getTimestamp() const;
+    [[nodiscard]] std::time_t getTimestamp() const;
 
     /**
      * @brief Returns the user-defined commit message.
      * @return const std::string& The commit message.
      */
-    const std::string& getMessage() const;
+    [[nodiscard]] const std::string& getMessage() const;
 
     void setMessage(const std::string& msg);
 
-    void setTimestamp(const std::time_t tstamp);
+    void setTimestamp(std::time_t tstamp);
 
     void setTimestampNow();
 

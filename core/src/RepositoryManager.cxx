@@ -17,24 +17,25 @@
 #include <chrono>
 #include <set>
 #include <iomanip>
+#include <utility>
 
 RepositoryManager::RepositoryManager(std::shared_ptr<ISubject> bus) 
-    : eventBus(bus) {
+    : eventBus(std::move(bus)) {
 }
 
-void RepositoryManager::logError(const std::string& message) {
+void RepositoryManager::logError(const std::string& message) const {
     if (eventBus) {
         eventBus->notify({Event::ERROR_MESSAGE, message, "RepositoryManager"});
     }
 }
 
-void RepositoryManager::logDebug(const std::string& message) {
+void RepositoryManager::logDebug(const std::string& message) const {
     if (eventBus) {
         eventBus->notify({Event::DEBUG_MESSAGE, message, "RepositoryManager"});
     }
 }
 
-void RepositoryManager::logInfo(const std::string& message) {
+void RepositoryManager::logInfo(const std::string& message) const {
     if (eventBus) {
         eventBus->notify({Event::GENERAL_INFO, message, "RepositoryManager"});
     }
@@ -157,7 +158,7 @@ bool RepositoryManager::initializeRepository(const std::string& path, bool force
     return allOk;
 }
 
-bool RepositoryManager::removeRepository(const std::filesystem::path& path) {
+bool RepositoryManager::removeRepository(const std::filesystem::path& path) const {
     try {
         if (!std::filesystem::exists(path)) {
             logDebug("Repository doesn't exist, nothing to remove: " + path.string());
@@ -202,7 +203,7 @@ bool RepositoryManager::removeRepository(const std::filesystem::path& path) {
     }
 }
 
-bool RepositoryManager::createDirectory(const std::filesystem::path& path) {
+bool RepositoryManager::createDirectory(const std::filesystem::path& path) const {
     try {
         if (std::filesystem::exists(path)) {
             logDebug("Directory already exists: " + path.string());
@@ -222,7 +223,7 @@ bool RepositoryManager::createDirectory(const std::filesystem::path& path) {
     }
 }
 
-bool RepositoryManager::createFile(const std::filesystem::path& path, const std::string& content) {
+bool RepositoryManager::createFile(const std::filesystem::path& path, const std::string& content) const {
     try {
         // Создаем родительские директории если нужно
         if (!createDirectory(path.parent_path())) {
@@ -250,7 +251,7 @@ bool RepositoryManager::createFile(const std::filesystem::path& path, const std:
     }
 }
 
-void RepositoryManager::updateBranchReference(const std::string& branchName, const std::string& commitHash) {
+void RepositoryManager::updateBranchReference(const std::string& branchName, const std::string& commitHash) const {
     const std::string SOURCE = "RepositoryManager";
     
     try {
@@ -276,7 +277,7 @@ void RepositoryManager::updateBranchReference(const std::string& branchName, con
     }
 }
 
-std::string RepositoryManager::getCurrentBranchFromHead() {
+std::string RepositoryManager::getCurrentBranchFromHead() const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path headFile = repoPath / ".svcs" / "HEAD";
@@ -405,7 +406,7 @@ bool RepositoryManager::clearStagingArea() {
     }
 }
 
-void RepositoryManager::updateHead(const std::string& commitHash) {
+void RepositoryManager::updateHead(const std::string& commitHash) const {
     const std::string SOURCE = "RepositoryManager";
     
     try {
@@ -532,7 +533,7 @@ std::string RepositoryManager::createCommit(const std::string& message) {
     }
 }
 
-std::string RepositoryManager::getParentCommitHash(const std::string& commitHash) {
+std::string RepositoryManager::getParentCommitHash(const std::string& commitHash) const {
     const std::string SOURCE = "RepositoryManager";
     
     try {
@@ -571,7 +572,7 @@ std::string RepositoryManager::getParentCommitHash(const std::string& commitHash
     }
 }
 
-void RepositoryManager::updateCommitReferences(const std::string& removedCommitHash, const std::string& newParentHash) {
+void RepositoryManager::updateCommitReferences(const std::string& removedCommitHash, const std::string& newParentHash) const {
     const std::string SOURCE = "RepositoryManager";
     
     try {
@@ -642,7 +643,7 @@ bool RepositoryManager::revertCommit(const std::string& commitHash) {
             return false;
         }
         
-        CommitInfo commitToRemove = *commitIt;
+        const CommitInfo& commitToRemove = *commitIt;
         
         if (commits.size() == 1) {
             logError("Cannot revert the initial commit");
@@ -663,14 +664,14 @@ bool RepositoryManager::revertCommit(const std::string& commitHash) {
         logDebug("Removed commit file: " + commitFile.string());
         
         std::string newHeadHash = "";
-        for (auto it = commits.begin(); it != commits.end(); ++it) {
-            if (it->hash == commitToRemove.hash) continue; 
+        for (auto & commit : commits) {
+            if (commit.hash == commitToRemove.hash) continue;
             
-            std::filesystem::path checkDir = objectsDir / it->hash.substr(0, 2);
-            std::filesystem::path checkFile = checkDir / it->hash.substr(2);
+            std::filesystem::path checkDir = objectsDir / commit.hash.substr(0, 2);
+            std::filesystem::path checkFile = checkDir / commit.hash.substr(2);
             
             if (std::filesystem::exists(checkFile)) {
-                newHeadHash = it->hash;
+                newHeadHash = commit.hash;
                 break;
             }
         }
@@ -694,7 +695,7 @@ bool RepositoryManager::revertCommit(const std::string& commitHash) {
     }
 }
 
-std::optional<CommitInfo> RepositoryManager::getCommitByHash(const std::string& commitHash) {
+std::optional<CommitInfo> RepositoryManager::getCommitByHash(const std::string& commitHash) const {
     auto commits = getCommitHistory();
     
     for (const auto& commit : commits) {
@@ -706,7 +707,7 @@ std::optional<CommitInfo> RepositoryManager::getCommitByHash(const std::string& 
     return std::nullopt;
 }
 
-bool RepositoryManager::restoreFilesFromCommit(const CommitInfo& commit) {
+bool RepositoryManager::restoreFilesFromCommit(const CommitInfo& commit) const {
     const std::string SOURCE = "RepositoryManager";
     
     try {
@@ -736,7 +737,7 @@ bool RepositoryManager::restoreFilesFromCommit(const CommitInfo& commit) {
                     break;
                 }
                 
-                std::string filename = line;
+                const std::string& filename = line;
                 
                 std::filesystem::path filePath = repoPath / filename;
                 
@@ -765,7 +766,7 @@ bool RepositoryManager::saveStagedChanges(const std::string& message) {
     return true;
 }
 
-std::string RepositoryManager::getHeadCommit() {
+std::string RepositoryManager::getHeadCommit() const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path headFile = repoPath / ".svcs" / "HEAD";
@@ -806,11 +807,11 @@ std::string RepositoryManager::getHeadCommit() {
     }
 }
 
-std::vector<CommitInfo> RepositoryManager::getCommitHistory() {
+std::vector<CommitInfo> RepositoryManager::getCommitHistory() const {
     return getBranchHistory(getCurrentBranchFromHead());
 }
 
-std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& branch_name) {
+std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& branch_name) const {
     std::vector<CommitInfo> commits;
     
     try {
@@ -882,11 +883,11 @@ std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& b
     }
 }
 
-std::string RepositoryManager::getCurrentBranch() {
+std::string RepositoryManager::getCurrentBranch() const {
     return getCurrentBranchFromHead();
 }
 
-bool RepositoryManager::branchExists(const std::string& branch_name) {
+bool RepositoryManager::branchExists(const std::string& branch_name) const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path branchFile = repoPath / ".svcs" / "refs" / "heads" / branch_name;
@@ -897,7 +898,7 @@ bool RepositoryManager::branchExists(const std::string& branch_name) {
     }
 }
 
-std::string RepositoryManager::getBranchHead(const std::string& branch_name) {
+std::string RepositoryManager::getBranchHead(const std::string& branch_name) const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path branchFile = repoPath / ".svcs" / "refs" / "heads" / branch_name;
@@ -919,7 +920,7 @@ std::string RepositoryManager::getBranchHead(const std::string& branch_name) {
     }
 }
 
-std::string RepositoryManager::getFileContentAtCommit(const std::string& commit_hash, const std::string& file_path) {
+std::string RepositoryManager::getFileContentAtCommit(const std::string& commit_hash, const std::string& file_path) const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path full_path = repoPath / file_path;
@@ -938,7 +939,7 @@ std::string RepositoryManager::getFileContentAtCommit(const std::string& commit_
     }
 }
 
-std::vector<std::string> RepositoryManager::getCommitFiles(const std::string& commit_hash) {
+std::vector<std::string> RepositoryManager::getCommitFiles(const std::string& commit_hash) const {
     std::vector<std::string> files;
     
     try {
@@ -976,7 +977,7 @@ std::vector<std::string> RepositoryManager::getCommitFiles(const std::string& co
     return files;
 }
 
-void RepositoryManager::setMergeState(const std::string& branch_name, const std::string& commit_hash) {
+void RepositoryManager::setMergeState(const std::string& branch_name, const std::string& commit_hash) const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path mergeHeadFile = repoPath / ".svcs" / "MERGE_HEAD";
@@ -996,7 +997,7 @@ void RepositoryManager::setMergeState(const std::string& branch_name, const std:
     }
 }
 
-void RepositoryManager::clearMergeState() {
+void RepositoryManager::clearMergeState() const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path mergeHeadFile = repoPath / ".svcs" / "MERGE_HEAD";
@@ -1016,7 +1017,7 @@ void RepositoryManager::clearMergeState() {
     }
 }
 
-bool RepositoryManager::isMergeInProgress() {
+bool RepositoryManager::isMergeInProgress() const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path mergeHeadFile = repoPath / ".svcs" / "MERGE_HEAD";
@@ -1027,7 +1028,7 @@ bool RepositoryManager::isMergeInProgress() {
     }
 }
 
-std::string RepositoryManager::getMergeBranch() {
+std::string RepositoryManager::getMergeBranch() const {
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path mergeMsgFile = repoPath / ".svcs" / "MERGE_MSG";
@@ -1040,8 +1041,8 @@ std::string RepositoryManager::getMergeBranch() {
         std::string line;
         if (std::getline(file, line)) {
             // Extract branch name from "Merge branch 'branch_name'"
-            size_t start = line.find("'");
-            size_t end = line.rfind("'");
+            size_t start = line.find('\'');
+            size_t end = line.rfind('\'');
             if (start != std::string::npos && end != std::string::npos && end > start + 1) {
                 return line.substr(start + 1, end - start - 1);
             }

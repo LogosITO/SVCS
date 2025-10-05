@@ -12,12 +12,13 @@
 #include <algorithm>
 #include <fstream>
 #include <set>
+#include <utility>
 
 namespace fs = std::filesystem;
 
 StatusCommand::StatusCommand(std::shared_ptr<ISubject> subject,
                              std::shared_ptr<RepositoryManager> repoManager)
-    : eventBus_(subject), repoManager_(repoManager) {
+    : eventBus_(std::move(std::move(subject))), repoManager_(std::move(repoManager)) {
 }
 
 bool StatusCommand::execute(const std::vector<std::string>& args) {
@@ -183,10 +184,10 @@ void StatusCommand::showStagedChanges() const {
 }
 
 void StatusCommand::showUnstagedChanges() const {
-    std::vector<std::string> unstagedFiles;
     std::string repoPath = repoManager_->getRepositoryPath();
     
     try {
+        std::vector<std::string> unstagedFiles;
         auto stagedFiles = repoManager_->getStagedFiles();
         
         // Check each staged file for modifications
@@ -321,7 +322,7 @@ std::vector<fs::path> StatusCommand::findUntrackedFiles() const {
     return untrackedFiles;
 }
 
-std::string StatusCommand::formatFileStatus(char status, const std::string& filePath) const {
+std::string StatusCommand::formatFileStatus(char status, const std::string& filePath) {
     switch (status) {
         case 'A': return "[staged]    " + filePath;
         case 'M': return "[modified]  " + filePath;

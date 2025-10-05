@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
+#include <utility>
 
 namespace fs = std::filesystem;
 
@@ -23,9 +24,9 @@ Repository::~Repository() {
 }
 
 
-Repository::Repository(const std::filesystem::path& rpath) 
+Repository::Repository(std::filesystem::path  rpath)
     : observers(), 
-      root_path(rpath)
+      root_path(std::move(rpath))
 {
     objects = std::make_unique<ObjectStorage>(root_path.string(), nullptr); 
 }
@@ -228,7 +229,7 @@ bool Repository::stageFile(const std::string& path) {
 
     try {
         ObjectStorage* objStore = getObjectStorage();
-        Blob blob = {content};
+        const Blob blob = {content};
         objStore->saveObject(blob);
     } catch (const std::exception& e) {
         notify({Event::RUNTIME_ERROR, "Failed to store object for " + path + ": " + e.what(), SOURCE});
@@ -236,10 +237,10 @@ bool Repository::stageFile(const std::string& path) {
     }
 
     try {
-        unsigned int fileMode = static_cast<unsigned int>(fs::status(absolutePath).permissions()); 
-        
+        [[maybe_unused]] unsigned int fileMode = static_cast<unsigned int>(fs::status(absolutePath).permissions());
 
-        IndexEntry ie = {objectHash, path};
+
+        const IndexEntry ie = {objectHash, path};
         index->addEntry(ie); 
         
         if (!index->write()) {

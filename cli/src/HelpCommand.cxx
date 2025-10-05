@@ -6,12 +6,14 @@
  * @license **MIT License**
  */
 
+#include <utility>
+
 #include "../include/HelpCommand.hxx"
 #include "../../services/ISubject.hxx"
 
 HelpCommand::HelpCommand(std::shared_ptr<ISubject> subject,
                          std::shared_ptr<HelpService> helpService)
-    : eventBus_(subject), helpService_(helpService) {
+    : eventBus_(std::move(subject)), helpService_(std::move(helpService)) {
 }
 
 bool HelpCommand::execute(const std::vector<std::string>& args) {   
@@ -20,7 +22,7 @@ bool HelpCommand::execute(const std::vector<std::string>& args) {
         return true;
     }
     
-    std::string commandName = args[0];
+    const std::string& commandName = args[0];
     showCommandHelp(commandName);
     return true;
 }
@@ -47,7 +49,7 @@ void HelpCommand::showHelp() const {
                       "  svcs help init     # Show help for init command", "help"});
 }
 
-void HelpCommand::showGeneralHelp() {
+void HelpCommand::showGeneralHelp() const {
     if (!helpService_) {
         eventBus_->notify({Event::ERROR_MESSAGE, 
                           "Help service not available", "help"});
@@ -74,7 +76,7 @@ void HelpCommand::showGeneralHelp() {
         // Get command description using HelpService
         std::string description = helpService_->getCommandDescription(commandName);
         eventBus_->notify({Event::HELP_MESSAGE, 
-                          "  " + commandName + " - " + description, "help"});
+                          "  " + commandName + " - " + description, "help"}); // NOLINT(*-inefficient-string-concatenation)
     }
     
     eventBus_->notify({Event::HELP_MESSAGE, 
@@ -93,7 +95,7 @@ void HelpCommand::showGeneralHelp() {
                       "  svcs help <command>", "help"});
 }
 
-void HelpCommand::showCommandHelp(const std::string& commandName) {
+void HelpCommand::showCommandHelp(const std::string& commandName) const {
     if (!helpService_) {
         eventBus_->notify({Event::ERROR_MESSAGE, 
                           "Help service not available", "help"});

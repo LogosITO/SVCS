@@ -1,5 +1,5 @@
 /**
- * @file DebugUtils.hxx
+ * @file Utils.hxx
  * @brief Utility functions for conditional debugging output.
  *
  * @details This header defines the `printDebug` function, which provides a simple 
@@ -34,7 +34,7 @@
  *
  * @param message The string message to output, prefixed with "DEBUG: ".
  */
-inline void printDebug(std::string message) {
+inline void printDebug(const std::string& message) {
     #ifdef DEBUG_MODE
         std::cout << "DEBUG: " << message << std::endl;
     #endif

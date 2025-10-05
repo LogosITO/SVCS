@@ -57,19 +57,19 @@ public:
      * @brief Returns the command name.
      * @return The string "init".
      */
-    std::string getName() const override;
+    [[nodiscard]] std::string getName() const override;
     
     /**
      * @brief Returns a brief description of the command's purpose.
      * @return A string containing the description.
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
     
     /**
      * @brief Returns the usage syntax for the command.
      * @return A string containing the usage: "svcs init".
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
     
     /**
      * @brief Displays detailed help information about the command via the event bus.

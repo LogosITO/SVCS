@@ -53,19 +53,19 @@ public:
      * @brief Gets the command's primary name.
      * @return The string "undo".
      */
-    std::string getName() const override;
+    [[nodiscard]] std::string getName() const override;
 
     /**
      * @brief Gets the short description of the command.
      * @return A string describing the command's function.
      */
-    std::string getDescription() const override;
+    [[nodiscard]] std::string getDescription() const override;
 
     /**
      * @brief Gets the usage syntax of the command.
      * @return A string detailing how the command is used.
      */
-    std::string getUsage() const override;
+    [[nodiscard]] std::string getUsage() const override;
 
     /**
      * @brief Displays detailed help information for the command.
@@ -78,7 +78,7 @@ private:
      * @param force Flag to skip confirmation prompt (\c true for forced undo).
      * @return \c true if the undo operation was successful, \c false otherwise.
      */
-    bool undoLastCommit(bool force);
+    bool undoLastCommit(bool force) const;
 
     /**
      * @brief Reverts the repository state to a specific commit hash.
@@ -86,7 +86,7 @@ private:
      * @param force Flag to skip confirmation prompt (\c true for forced undo).
      * @return \c true if the undo operation was successful, \c false otherwise.
      */
-    bool undoSpecificCommit(const std::string& commitHash, bool force);
+    bool undoSpecificCommit(const std::string& commitHash, bool force) const;
 
     /**
      * @brief Prompts the user for confirmation before performing the undo operation.
@@ -96,19 +96,13 @@ private:
      * @param force The flag indicating if the confirmation should be skipped.
      * @return \c true if the user confirms or if the operation is forced, \c false otherwise.
      */
-    bool confirmUndo(const std::string& commitMessage, const std::string& commitHash, bool force);
-    
-    /**
-     * @brief Retrieves the name of the current branch from the repository manager.
-     * @return The name of the current branch.
-     */
-    std::string getCurrentBranch() const;
+    static bool confirmUndo(const std::string& commitMessage, const std::string& commitHash, bool force);
 
     /**
      * @brief Resets the current repository state to the previous valid commit, discarding all staged and working directory changes.
      * @return \c true if the forced reset was successful, \c false otherwise.
      */
-    bool forceResetRepository();
+    bool forceResetRepository() const;
     
     /// @brief Shared pointer to the event bus for communication.
     std::shared_ptr<ISubject> event_bus;

@@ -32,20 +32,18 @@ int main(int argc, char* argv[]) {
     
     // Обработка глобальных опций ДО создания команды
     if (command_name == "version" || command_name == "--version" || command_name == "-v") {
-        auto command = factory.createCommand("version");
-        if (command) {
+        if (auto command = factory.createCommand("version")) {
             command->execute({});
             return 0;
         }
     }
 
     if (command_name == "help" || command_name == "--help" || command_name == "-h") {
-        auto command = factory.createCommand("help");
-        if (command) {
+        if (auto command = factory.createCommand("help")) {
             // ПЕРЕДАЕМ ВСЕ АРГУМЕНТЫ команде help, кроме первого (самого "help")
             std::vector<std::string> help_args;
             for (int i = 2; i < argc; ++i) {
-                help_args.push_back(argv[i]);
+                help_args.emplace_back(argv[i]);
             }
             command->execute(help_args);
             return 0;
@@ -63,16 +61,14 @@ int main(int argc, char* argv[]) {
     // Аргументы для обычных команд (исключая имя команды)
     std::vector<std::string> args;
     for (int i = 2; i < argc; ++i) {
-        args.push_back(argv[i]);
+        args.emplace_back(argv[i]);
     }
 
     eventBus->notify({Event::DEBUG_MESSAGE, 
                       "Executing command: " + command_name, "main"});
 
     try {
-        bool success = command->execute(args);
-        
-        if (success) {
+        if (command->execute(args)) {
             eventBus->notify({Event::DEBUG_MESSAGE, 
                               "Command " + command_name + " completed successfully", "main"});
             return 0;

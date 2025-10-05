@@ -75,7 +75,7 @@ public:
     /**
      * @brief Destructor.
      */
-    ~Logger();
+    ~Logger() override;
     
     // -------------------------------------------------------------------------
     // IObserver Methods
@@ -162,7 +162,7 @@ public:
      * @brief Retrieves the current minimum log level.
      * @return The current LogLevel.
      */
-    LogLevel getLevel() const;
+    [[nodiscard]] LogLevel getLevel() const;
     
     /**
      * @brief Sets the output formatting pattern for messages.

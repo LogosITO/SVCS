@@ -17,6 +17,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <sstream>
+#include <utility>
 #include <vector>
 #include <map>
 
@@ -38,15 +39,15 @@ void Index::getFileMetaData(const fs::path& full_path, long long& size, fs::file
     }
 }
 
-Index::Index(const fs::path& vcs_root_path, const fs::path& repo_root_path, ObjectStorage& storage) 
+Index::Index(const fs::path& vcs_root_path, fs::path  repo_root_path, ObjectStorage& storage)
     : index_file_path(vcs_root_path / "index"),
-      repo_root_path(repo_root_path),
+      repo_root_path(std::move(repo_root_path)),
       storage_(storage)
 {
     load();
 }
 
-Index::~Index() {}
+Index::~Index() = default;
 
 void Index::addEntry(const IndexEntry& entry) {
     entries[entry.file_path] = entry;

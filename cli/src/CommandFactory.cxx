@@ -24,12 +24,13 @@
 
 #include <iostream>
 #include <memory>
+#include <utility>
 
 static bool isInitializing = false;
 
 CommandFactory::CommandFactory(std::shared_ptr<ISubject> bus, 
                              std::shared_ptr<RepositoryManager> repoManager) 
-    : event_bus(bus), repo_manager(repoManager) {
+    : event_bus(std::move(bus)), repo_manager(std::move(repoManager)) {
     
     if (isInitializing) {
         std::cerr << "ERROR: Recursive CommandFactory construction detected!" << std::endl;
@@ -47,75 +48,75 @@ CommandFactory::CommandFactory(std::shared_ptr<ISubject> bus,
 void CommandFactory::registerDefaultCommands() {
     printDebug("CommandFactory initializing...");
 
-    registerCommand("version", [](std::shared_ptr<ISubject> bus, 
-                                 std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("version", [](const std::shared_ptr<ISubject>& bus,
+                                 const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating VersionCommand instance");
         return std::make_unique<VersionCommand>(bus);
     });
     
-    registerCommand("init", [](std::shared_ptr<ISubject> bus, 
-                              std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("init", [](const std::shared_ptr<ISubject>& bus,
+                              const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating InitCommand instance");
         return std::make_unique<InitCommand>(bus, repoManager);
     });
 
-    registerCommand("clear", [](std::shared_ptr<ISubject> bus, 
-                            std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("clear", [](const std::shared_ptr<ISubject>& bus,
+                            const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating ClearCommand instance");
         return std::make_unique<ClearCommand>(bus, repoManager);
     });
     
-    registerCommand("add", [](std::shared_ptr<ISubject> bus, 
-                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("add", [](const std::shared_ptr<ISubject>& bus,
+                             const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating AddCommand instance");
         return std::make_unique<AddCommand>(bus, repoManager);
     });
 
-    registerCommand("remove", [](std::shared_ptr<ISubject> bus, 
-                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("remove", [](const std::shared_ptr<ISubject>& bus,
+                             const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating AddCommand instance");
         return std::make_unique<RemoveCommand>(bus, repoManager);
     });
 
-    registerCommand("save", [](std::shared_ptr<ISubject> bus, 
-                          std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
-        printDebug("Creaing SaveCommand instance");
+    registerCommand("save", [](const std::shared_ptr<ISubject>& bus,
+                          const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
+        printDebug("Creating SaveCommand instance");
         return std::make_unique<SaveCommand>(bus, repoManager);
     });
 
-    registerCommand("status", [](std::shared_ptr<ISubject> bus, 
-                          std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("status", [](const std::shared_ptr<ISubject>& bus,
+                          const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating StatusCommand instance");
         return std::make_unique<StatusCommand>(bus, repoManager);
     });
 
-    registerCommand("history", [](std::shared_ptr<ISubject> bus, 
-                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("history", [](const std::shared_ptr<ISubject>& bus,
+                             const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating HistoryCommand instance");
         return std::make_unique<HistoryCommand>(bus, repoManager);
     });
 
-    registerCommand("undo", [](std::shared_ptr<ISubject> bus, 
-                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("undo", [](const std::shared_ptr<ISubject>& bus,
+                             const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating UndoCommand instance");
         return std::make_unique<UndoCommand>(bus, repoManager);
     });
 
-    registerCommand("branch", [](std::shared_ptr<ISubject> bus, 
-                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("branch", [](const std::shared_ptr<ISubject>& bus,
+                             const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating BranchCommand instance");
         auto branch_manager = std::make_shared<BranchManager>(bus);
         return std::make_unique<BranchCommand>(bus, branch_manager);
     });
 
-    registerCommand("merge", [](std::shared_ptr<ISubject> bus, 
-                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("merge", [](const std::shared_ptr<ISubject>& bus,
+                             const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating MergeCommand instance");
         return std::make_unique<MergeCommand>(bus, repoManager);
     });
     
-    registerCommand("help", [this](std::shared_ptr<ISubject> bus, 
-                                  std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+    registerCommand("help", [this](const std::shared_ptr<ISubject>& bus,
+                                  const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         auto helpService = std::make_shared<HelpService>(
             bus,
             [this]() { return this->getRegisteredCommands(); },
@@ -134,16 +135,14 @@ void CommandFactory::registerDefaultCommands() {
 }
 
 std::string CommandFactory::getCommandDescription(const std::string& name) const {
-    auto command = createCommand(name);
-    if (command) {
+    if (auto command = createCommand(name)) {
         return command->getDescription();
     }
     return "Unknown command";
 }
 
 void CommandFactory::showCommandHelp(const std::string& name) const {
-    auto command = createCommand(name);
-    if (command) {
+    if (auto command = createCommand(name)) {
         command->showHelp();
     } else {
         // Используем прямой вывод для избежания рекурсии через eventBus

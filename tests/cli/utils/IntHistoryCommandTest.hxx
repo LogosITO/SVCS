@@ -57,19 +57,19 @@ protected:
      * @param filename The relative path/name of the file.
      * @param content The content to write to the file.
      */
-    void createTestFile(const std::string& filename, const std::string& content);
+    void createTestFile(const std::string& filename, const std::string& content) const;
     
     /**
      * @brief Creates a test directory in the temporary location.
      * @param dirname The relative path/name of the directory.
      */
-    void createTestDirectory(const std::string& dirname);
+    void createTestDirectory(const std::string& dirname) const;
     
     /**
      * @brief Stages a list of files using the RepositoryManager's staging logic.
      * @param files A vector of file names to stage.
      */
-    void stageFiles(const std::vector<std::string>& files);
+    void stageFiles(const std::vector<std::string>& files) const;
     
     /**
      * @brief Creates a new commit (save) with a specified message.
@@ -85,7 +85,7 @@ protected:
      * @param message The substring to search for.
      * @return true if the message is found, false otherwise.
      */
-    bool containsMessage(const std::vector<Event>& notifications, const std::string& message);
+    static bool containsMessage(const std::vector<Event>& notifications, const std::string& message);
     
     /**
      * @brief Counts the occurrences of a specific message (substring) across all event notifications.

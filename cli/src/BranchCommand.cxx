@@ -36,7 +36,7 @@ std::string BranchCommand::getUsage() const {
            "[-f | --force]";
 }
 
-bool BranchCommand::createBranchFromCommit(const std::string& branch_name, const std::string& commit_hash) {
+bool BranchCommand::createBranchFromCommit(const std::string& branch_name, const std::string& commit_hash) const {
     if (!isValidBranchName(branch_name)) {
         if (event_bus_) {
             event_bus_->notify({Event::Type::ERROR_MESSAGE, "Invalid branch name: " + branch_name, "branch"});
@@ -52,8 +52,7 @@ bool BranchCommand::createBranchFromCommit(const std::string& branch_name, const
     }
     
     try {
-        bool success = branch_manager_->createBranchFromCommit(branch_name, commit_hash);
-        if (success) {
+        if (branch_manager_->createBranchFromCommit(branch_name, commit_hash)) {
             std::string short_hash = commit_hash.length() >= 8 ? commit_hash.substr(0, 8) : commit_hash;
             if (event_bus_) {
                 event_bus_->notify({Event::Type::GENERAL_INFO, "Created branch '" + branch_name + "' from commit " + short_hash, "branch"});
@@ -74,11 +73,11 @@ bool BranchCommand::createBranchFromCommit(const std::string& branch_name, const
     }
 }
 
-bool BranchCommand::isValidCommitHash(const std::string& hash) const {
+bool BranchCommand::isValidCommitHash(const std::string& hash) {
     // Базовая проверка - хеш должен содержать только hex символы и быть достаточно длинным
     if (hash.length() < 7) return false;
     
-    for (char c : hash) {
+    for (char c : hash) { // NOLINT(*-use-anyofallof)
         if (!std::isxdigit(c)) return false;
     }
     
@@ -152,8 +151,7 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
         }
         return renameBranch(branch_names[0], branch_names[1]);
     }
-    
-    // Создание ветки от коммита с флагом --commit
+
     if (create_from_commit && !branch_names.empty()) {
         if (commit_hash.empty()) {
             if (event_bus_) {
@@ -163,8 +161,7 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
         }
         return createBranchFromCommit(branch_names[0], commit_hash);
     }
-    
-    // Создание ветки от коммита (альтернативный синтаксис)
+
     if (branch_names.size() == 2) {
         if (isValidCommitHash(branch_names[1])) {
             return createBranchFromCommit(branch_names[0], branch_names[1]);
@@ -208,7 +205,7 @@ void BranchCommand::showHelp() const {
     event_bus_->notify({Event::HELP_MESSAGE, "  svcs branch -c                       # Show current branch", "branch"});
 }
 
-bool BranchCommand::listBranches() {
+bool BranchCommand::listBranches() const {
     try {
         auto branches = branch_manager_->getAllBranches();
         
@@ -243,7 +240,7 @@ bool BranchCommand::listBranches() {
     }
 }
 
-bool BranchCommand::createBranch(const std::string& branch_name) {
+bool BranchCommand::createBranch(const std::string& branch_name) const {
     if (!isValidBranchName(branch_name)) {
         if (event_bus_) {
             event_bus_->notify({Event::Type::ERROR_MESSAGE, "Invalid branch name: " + branch_name, "branch"});
@@ -268,10 +265,8 @@ bool BranchCommand::createBranch(const std::string& branch_name) {
             }
             return false;
         }
-        
-        // Используем createBranchFromCommit вместо createBranch
-        bool success = branch_manager_->createBranchFromCommit(branch_name, current_head);
-        if (success) {
+
+        if (branch_manager_->createBranchFromCommit(branch_name, current_head)) {
             if (event_bus_) {
                 event_bus_->notify({Event::Type::GENERAL_INFO, "Created branch '" + branch_name + "' from current HEAD", "branch"});
             }
@@ -291,7 +286,7 @@ bool BranchCommand::createBranch(const std::string& branch_name) {
     }
 }
 
-bool BranchCommand::deleteBranch(const std::string& branch_name, bool force) {
+bool BranchCommand::deleteBranch(const std::string& branch_name, bool force) const {
     if (!branchExists(branch_name)) {
         if (event_bus_) {
             event_bus_->notify({Event::Type::ERROR_MESSAGE, "Branch not found: " + branch_name, "branch"});
@@ -300,8 +295,7 @@ bool BranchCommand::deleteBranch(const std::string& branch_name, bool force) {
     }
     
     try {
-        bool success = branch_manager_->deleteBranch(branch_name, force);
-        if (success) {
+        if (branch_manager_->deleteBranch(branch_name, force)) {
             if (event_bus_) {
                 event_bus_->notify({Event::Type::GENERAL_INFO, "Deleted branch: " + branch_name, "branch"});
             }
@@ -323,7 +317,7 @@ bool BranchCommand::deleteBranch(const std::string& branch_name, bool force) {
     }
 }
 
-bool BranchCommand::renameBranch(const std::string& old_name, const std::string& new_name) {
+bool BranchCommand::renameBranch(const std::string& old_name, const std::string& new_name) const {
     if (!branchExists(old_name)) {
         if (event_bus_) {
             event_bus_->notify({Event::Type::ERROR_MESSAGE, "Branch not found: " + old_name, "branch"});
@@ -346,8 +340,7 @@ bool BranchCommand::renameBranch(const std::string& old_name, const std::string&
     }
     
     try {
-        bool success = branch_manager_->renameBranch(old_name, new_name);
-        if (success) {
+        if (branch_manager_->renameBranch(old_name, new_name)) {
             if (event_bus_) {
                 event_bus_->notify({Event::Type::GENERAL_INFO, "Renamed branch " + old_name + " to " + new_name, "branch"});
             }
@@ -367,7 +360,7 @@ bool BranchCommand::renameBranch(const std::string& old_name, const std::string&
     }
 }
 
-bool BranchCommand::showCurrentBranch() {
+bool BranchCommand::showCurrentBranch() const {
     try {
         auto current_branch = branch_manager_->getCurrentBranch();
         if (event_bus_) {
@@ -382,10 +375,9 @@ bool BranchCommand::showCurrentBranch() {
     }
 }
 
-bool BranchCommand::switchBranch(const std::string& branch_name) {
+bool BranchCommand::switchBranch(const std::string& branch_name) const {
     try {
-        bool success = branch_manager_->switchBranch(branch_name);
-        if (success) {
+        if (branch_manager_->switchBranch(branch_name)) {
             if (event_bus_) {
                 event_bus_->notify({Event::Type::GENERAL_INFO, "Switched to branch: " + branch_name, "branch"});
             }
@@ -404,8 +396,8 @@ bool BranchCommand::switchBranch(const std::string& branch_name) {
     }
 }
 
-bool BranchCommand::isValidBranchName(const std::string& name) const {
-    return branch_manager_->isValidBranchName(name);
+bool BranchCommand::isValidBranchName(const std::string& name) {
+    return BranchManager::isValidBranchName(name);
 }
 
 bool BranchCommand::branchExists(const std::string& name) const {

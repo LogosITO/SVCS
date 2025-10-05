@@ -6,19 +6,20 @@
  * @license **MIT License**
  */
 
+#include <utility>
+
 #include "../include/InitCommand.hxx"
 
 InitCommand::InitCommand(std::shared_ptr<ISubject> subject, 
                          std::shared_ptr<RepositoryManager> repoManager)
-    : eventBus_(subject), repoManager_(repoManager) {
+    : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
 }
 
 bool InitCommand::execute(const std::vector<std::string>& args) {
     std::string path = ".";
     bool force = false;
     bool showHelpFlag = false;
-    
-    // Парсим аргументы
+
     for (const auto& arg : args) {
         if (arg == "--force" || arg == "-f") {
             force = true;

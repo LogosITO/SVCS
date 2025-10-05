@@ -12,7 +12,7 @@
 #include <algorithm>
 #include <sstream>
 
-const size_t HASH_BYTE_SIZE = 32;
+constexpr size_t HASH_BYTE_SIZE = 32;
 
 bool TreeEntry::operator<(const TreeEntry &other) const {
     return name < other.name;
@@ -26,10 +26,10 @@ Tree::Tree(std::vector<TreeEntry> entrs) : entries(std::move(entrs)) {
     std::sort(entries.begin(), entries.end());
     
     // 1. Получаем сырые данные
-    std::string raw_content = this->serialize(); 
+    std::string raw_content = this->Tree::serialize();
 
     // 2. Создаем ПОЛНОЕ содержимое объекта с заголовком
-    std::string full_content = this->getType() + " " + 
+    std::string full_content = this->Tree::getType() + " " +
                                std::to_string(raw_content.length()) + 
                                '\0' + 
                                raw_content;

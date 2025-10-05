@@ -10,17 +10,18 @@
 #include "../../services/ISubject.hxx"
 
 #include <algorithm>
+#include <utility>
 
 HelpService::HelpService(std::shared_ptr<ISubject> bus,
                          std::function<std::vector<std::string>()> getCommands,
                          std::function<std::string(const std::string&)> getDescription,
                          std::function<void(const std::string&)> showHelp,
                          std::function<std::string(const std::string&)> getUsage)
-    : eventBus_(bus), 
-      getCommandsCallback_(getCommands),
-      getDescriptionCallback_(getDescription),
-      showHelpCallback_(showHelp),
-      getUsageCallback_(getUsage) {
+    : eventBus_(std::move(bus)),
+      getCommandsCallback_(std::move(std::move(getCommands))),
+      getDescriptionCallback_(std::move(getDescription)),
+      showHelpCallback_(std::move(showHelp)),
+      getUsageCallback_(std::move(getUsage)) {
 }
 
 std::vector<std::string> HelpService::getAvailableCommands() const {

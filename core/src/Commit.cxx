@@ -26,9 +26,9 @@ Commit::Commit(
     message(std::move(msg)) {
     std::sort(parent_hashes.begin(), parent_hashes.end());
 
-    std::string raw_content = this->serialize();
+    std::string raw_content = this->Commit::serialize();
 
-    std::string full_content = this->getType() + " " +
+    std::string full_content = this->Commit::getType() + " " +
                                std::to_string(raw_content.length()) +
                                '\0' +
                                raw_content;
@@ -52,7 +52,7 @@ std::string Commit::serialize() const {
     ss << "committer " << author << " " << timestamp << " +0000\n"; 
 
     ss << "\n";
-    ss << message; // См. исправление 3: удаляем лишний \n
+    ss << message;
     
     return ss.str();
 }
@@ -64,7 +64,6 @@ Commit Commit::deserialize(const std::string& raw_content) {
     std::string thash;
     std::vector<std::string> phashes;
     std::string author_line;
-    std::string committer_line;
     std::time_t tstamp = 0; // Будет извлечен из author_line/committer_line
     
     // --- 1. Чтение Заголовка ---
@@ -85,12 +84,11 @@ Commit Commit::deserialize(const std::string& raw_content) {
         } else if (key == "author") {
             author_line = std::move(value);
         } else if (key == "committer") {
+            std::string committer_line;
             committer_line = std::move(value);
         }
     }
 
-    // --- 2. Парсинг Времени и Автора/Коммиттера ---
-    // Используем author_line для извлечения данных
     std::string author_data; // "Имя <email>"
     
     // Функция для парсинга поля, чтобы избежать дублирования кода
@@ -108,7 +106,7 @@ Commit Commit::deserialize(const std::string& raw_content) {
         // 1. Извлекаем метку времени
         std::string ts_str = field_value.substr(ts_start_pos + 1, tz_start_pos - ts_start_pos - 1);
         try {
-            out_time = (std::time_t)std::stoll(ts_str); 
+            out_time = static_cast<std::time_t>(std::stoll(ts_str));
         } catch (const std::exception& e) {
             throw std::runtime_error("Commit deserialization error: Failed to parse timestamp: " + std::string(e.what()));
         }
@@ -146,13 +144,13 @@ Commit Commit::deserialize(const std::string& raw_content) {
         throw std::runtime_error("Commit deserialization error: Missing mandatory field (tree_hash or author).");
     }
 
-    return Commit(
+    return {
         std::move(thash),
         std::move(phashes),
         std::move(author_data), // Передаем только имя/email
         std::move(message),
         tstamp
-    );
+    };
 }
 
 

@@ -29,7 +29,7 @@ public:
      * * Initializes the object and immediately computes its hash ID based on the raw_data.
      * @param raw_data The raw file content to be stored and hashed.
      */
-    Blob(const std::string& raw_data);
+    Blob(std::string  raw_data);
 
     // VcsObject overrides
     
@@ -38,18 +38,18 @@ public:
      * @return std::string Always returns "blob".
      * @copydoc VcsObject::getType()
      */
-    std::string getType() const override;
+    [[nodiscard]] std::string getType() const override;
     
     /**
      * @brief Serializes the object's core data for hashing and storage.
      * @return std::string Returns the raw file content (data) itself.
      * @copydoc VcsObject::serialize()
      */
-    std::string serialize() const override;
+    [[nodiscard]] std::string serialize() const override;
 
     /**
      * @brief Returns the raw data content stored in the Blob.
      * @return const std::string& A constant reference to the file content.
      */
-    const std::string& getData() const;
+    [[nodiscard]] const std::string& getData() const;
 };

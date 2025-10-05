@@ -42,12 +42,12 @@ public:
         std::cout << "Observer received event via update(): " << event.details << std::endl;
     }
 
-    size_t get_event_count() const {
+    [[nodiscard]] size_t get_event_count() const {
         return received_events.size();
     }
     
     // Вспомогательный метод для поиска событий
-    bool contains_event_with_text(const std::string& text) const {
+    [[nodiscard]] bool contains_event_with_text(const std::string& text) const {
         for (const auto& event : received_events) {
             if (event.details.find(text) != std::string::npos) {
                 return true;

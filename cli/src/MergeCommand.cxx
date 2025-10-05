@@ -75,7 +75,7 @@ void MergeCommand::showHelp() const {
     event_bus_->notify({Event::HELP_MESSAGE, "  svcs merge --abort          # Abort ongoing merge", "merge"});
 }
 
-void MergeCommand::debugBranchHistory(const std::string& branch_name, const std::string& head_commit) {
+void MergeCommand::debugBranchHistory(const std::string& branch_name, const std::string& head_commit) const {
     event_bus_->notify({Event::ERROR_MESSAGE, "=== DEBUG HISTORY FOR BRANCH: " + branch_name + " ===", "merge"});
     event_bus_->notify({Event::ERROR_MESSAGE, "HEAD: " + head_commit, "merge"});
     
@@ -118,7 +118,7 @@ void MergeCommand::debugBranchHistory(const std::string& branch_name, const std:
 }
 
 
-bool MergeCommand::mergeBranch(const std::string& branch_name) {
+bool MergeCommand::mergeBranch(const std::string& branch_name) const {
     try {  
         // Check if repository is initialized
         if (!repo_manager_->isRepositoryInitialized()) {
@@ -239,7 +239,7 @@ bool MergeCommand::mergeBranch(const std::string& branch_name) {
     }
 }
 
-std::string MergeCommand::findCommonAncestor(const std::string& commit1, const std::string& commit2) {
+std::string MergeCommand::findCommonAncestor(const std::string& commit1, const std::string& commit2) const {
     event_bus_->notify({Event::DEBUG_MESSAGE, 
                        "Finding common ancestor between: " + commit1 + " and " + commit2, "merge"});
     
@@ -312,7 +312,7 @@ std::string MergeCommand::findCommonAncestor(const std::string& commit1, const s
     return "";
 }
 
-bool MergeCommand::abortMerge() {
+bool MergeCommand::abortMerge() const {
     try {
         if (!isMergeInProgress()) {
             event_bus_->notify({Event::ERROR_MESSAGE, "No merge in progress to abort", "merge"});
@@ -345,7 +345,7 @@ bool MergeCommand::isMergeInProgress() const {
 
 bool MergeCommand::performThreeWayMerge(const std::string& ancestor, 
                                        const std::string& current, 
-                                       const std::string& other) {
+                                       const std::string& other) const {
     bool has_conflicts = false;
     
     // Get files from all three commits
@@ -400,7 +400,7 @@ bool MergeCommand::performThreeWayMerge(const std::string& ancestor,
 bool MergeCommand::mergeFileContent(const std::string& ancestor_content,
                                    const std::string& current_content,
                                    const std::string& other_content,
-                                   std::string& merged_content) const {
+                                   std::string& merged_content) {
     // TODO: Implement file content merging
     // This is a simplified version - real implementation would be more complex
     

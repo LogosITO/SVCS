@@ -54,7 +54,7 @@ protected:
      * @param message The substring to search for.
      * @return true if the message is found, false otherwise.
      */
-    bool containsMessage(const std::vector<Event>& notifications, const std::string& message);
+    static bool containsMessage(const std::vector<Event>& notifications, const std::string& message);
     
     /**
      * @brief Counts the occurrences of a specific message (substring) across all event notifications.

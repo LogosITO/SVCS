@@ -26,7 +26,7 @@ const std::string TEST_ROOT = "test_repo_root";
 const std::string OBJECTS_DIR = TEST_ROOT + "/.svcs/objects";
 
 Blob create_blob(const std::string& content) {
-    return Blob(content);
+    return {content};
 }
 
 
@@ -62,7 +62,7 @@ public:
  */
 class ObjectStorageTest : public ::testing::Test {
 protected:
-    ObjectStorage* storage;
+    ObjectStorage* storage{};
     std::shared_ptr<MockSubject> mock_subject; 
 
     void SetUp() override {
@@ -76,7 +76,7 @@ protected:
         fs::remove_all(TEST_ROOT);
     }
     
-    bool fileExistsOnDisk(const std::string& hash) const {
+    [[nodiscard]] bool fileExistsOnDisk(const std::string& hash) const {
         std::string path = storage->getObjectPath(hash);
         return fs::exists(path);
     }

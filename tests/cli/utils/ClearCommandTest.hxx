@@ -62,13 +62,13 @@ protected:
      * @param filename The name of the file to create.
      * @param content The content of the file (defaults to "test content").
      */
-    void createTestFile(const std::string& filename, const std::string& content = "test content");
+    void createTestFile(const std::string& filename, const std::string& content = "test content") const;
     
     /**
      * @brief Creates a test directory inside the test directory.
      * @param dirname The name of the directory to create.
      */
-    void createTestDirectory(const std::string& dirname);
+    void createTestDirectory(const std::string& dirname) const;
     
     /**
      * @brief Simulates user input by redirecting std::cin to a string stream.

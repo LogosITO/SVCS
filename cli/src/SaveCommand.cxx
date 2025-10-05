@@ -6,12 +6,14 @@
  * @license **MIT License**
  */
 
+#include <utility>
+
 #include "../include/SaveCommand.hxx"
 #include "../../services/ISubject.hxx"
 
 SaveCommand::SaveCommand(std::shared_ptr<ISubject> subject,
                          std::shared_ptr<RepositoryManager> repoManager)
-    : eventBus_(subject), repoManager_(repoManager) {
+    : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
 }
 
 bool SaveCommand::execute(const std::vector<std::string>& args) {
@@ -89,7 +91,7 @@ void SaveCommand::showHelp() const {
                       "Note: Use 'svcs add' to stage files before saving.", "save"});
 }
 
-std::string SaveCommand::parseMessage(const std::vector<std::string>& args) const {
+std::string SaveCommand::parseMessage(const std::vector<std::string>& args) {
     for (size_t i = 0; i < args.size(); ++i) {
         if ((args[i] == "-m" || args[i] == "--message") && i + 1 < args.size()) {
             return args[i + 1];
@@ -125,11 +127,8 @@ bool SaveCommand::createSavePoint(const std::string& message) const {
     try {
         eventBus_->notify({Event::DEBUG_MESSAGE, 
                           "Creating save point with message: " + message, "save"});
-        
-        // Используем готовый метод saveStagedChanges, который уже содержит всю логику
-        bool success = repoManager_->saveStagedChanges(message);
-        
-        if (success) {
+
+        if (repoManager_->saveStagedChanges(message)) {
             eventBus_->notify({Event::SAVE_SUCCESS, 
                               "Save point created successfully!", "save"});
             return true;

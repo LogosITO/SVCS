@@ -50,13 +50,13 @@ public:
      * @brief Virtual destructor.
      * * Ensures correct cleanup of managed resources (ObjectStorage).
      */
-    ~Repository();
+    ~Repository() override;
 
     /**
      * @brief Constructs the repository manager.
      * @param rpath The root directory of the repository.
      */
-    Repository(const std::filesystem::path& rpath);   
+    explicit Repository(std::filesystem::path  rpath);
 
     /**
      * @brief Initializes the repository's internal dependencies.
@@ -74,19 +74,19 @@ public:
      * @brief Checks if the repository structure is fully initialized and valid.
      * @return true if all necessary directories and files exist.
      */
-    bool is_initialized() const;
+    [[nodiscard]] bool is_initialized() const;
 
     /**
      * @brief Gets the root path of the repository.
      * @return const std::filesystem::path& The repository root path.
      */
-    const std::filesystem::path& getPath() const { return root_path; }
+    [[nodiscard]] const std::filesystem::path& getPath() const { return root_path; }
 
     /**
      * @brief Gets the raw pointer to the managed ObjectStorage instance for database interaction.
      * @return ObjectStorage* Pointer to the managed ObjectStorage instance.
      */
-    ObjectStorage* getObjectStorage() const { return objects.get(); }
+    [[nodiscard]] ObjectStorage* getObjectStorage() const { return objects.get(); }
 
     /**
      * @brief Attaches an observer to receive events.

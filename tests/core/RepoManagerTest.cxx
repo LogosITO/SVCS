@@ -324,7 +324,7 @@ TEST_F(RepositoryManagerTest, BasicRepositoryOperations) {
     EXPECT_TRUE(is_initialized) << "Repository detection should work";
     
     // Get path should work
-    std::string repo_path = repo_manager->getRepositoryPath();
+    std::string repo_path = repo_manager->getRepositoryPath().string();
     EXPECT_FALSE(repo_path.empty()) << "Should return repository path";
     
     // Staged files should be empty for new repo

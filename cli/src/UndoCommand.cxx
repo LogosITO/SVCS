@@ -234,7 +234,7 @@ bool UndoCommand::forceResetRepository() const {
                       "Performing force reset of repository...", SOURCE});
     
     try {
-        std::string repoPath = repo_manager->getRepositoryPath();
+        std::string repoPath = repo_manager->getRepositoryPath().string();
         
         repo_manager->updateHead("");
         

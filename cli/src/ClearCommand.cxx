@@ -26,7 +26,7 @@ bool ClearCommand::execute(const std::vector<std::string>& args) {
         return false;
     }
     
-    std::string repoPath = repoManager_->getRepositoryPath();
+    std::string repoPath = repoManager_->getRepositoryPath().string();
     
     // Check for --help flag
     if (std::find(args.begin(), args.end(), "--help") != args.end() ||
@@ -131,7 +131,7 @@ bool ClearCommand::confirmClear() {
 }
 
 bool ClearCommand::removeRepository() const {
-    std::string repoPath = repoManager_->getRepositoryPath();
+    std::string repoPath = repoManager_->getRepositoryPath().string();
     std::filesystem::path svcsDir = std::filesystem::path(repoPath) / ".svcs";
     
     try {

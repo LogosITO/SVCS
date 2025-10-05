@@ -184,7 +184,7 @@ void StatusCommand::showStagedChanges() const {
 }
 
 void StatusCommand::showUnstagedChanges() const {
-    std::string repoPath = repoManager_->getRepositoryPath();
+    std::string repoPath = repoManager_->getRepositoryPath().string();
     
     try {
         std::vector<std::string> unstagedFiles;
@@ -235,7 +235,7 @@ void StatusCommand::showUntrackedFiles() const {
 }
 
 std::string StatusCommand::getCurrentBranch() const {
-    std::string repoPath = repoManager_->getRepositoryPath();
+    std::string repoPath = repoManager_->getRepositoryPath().string();
     fs::path headFile = fs::path(repoPath) / ".svcs" / "HEAD";
     
     try {
@@ -262,7 +262,7 @@ bool StatusCommand::isFileModified(const fs::path& filePath) const {
         if (!fs::exists(filePath)) {
             return false; // File doesn't exist - handled separately in showUnstagedChanges
         }
-        std::string repoPath = repoManager_->getRepositoryPath();
+        std::string repoPath = repoManager_->getRepositoryPath().string();
         std::string relativePath = fs::relative(filePath, repoPath).string();
         
         auto stagedFiles = repoManager_->getStagedFiles();
@@ -283,7 +283,7 @@ bool StatusCommand::isFileModified(const fs::path& filePath) const {
 
 std::vector<fs::path> StatusCommand::findUntrackedFiles() const {
     std::vector<fs::path> untrackedFiles;
-    std::string repoPath = repoManager_->getRepositoryPath();
+    std::string repoPath = repoManager_->getRepositoryPath().string();
     
     try {
         auto stagedFiles = repoManager_->getStagedFiles();

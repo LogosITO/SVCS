@@ -85,7 +85,6 @@ bool BranchCommand::isValidCommitHash(const std::string& hash) const {
     return true;
 }
 
-
 bool BranchCommand::execute(const std::vector<std::string>& args) {
     if (args.empty()) {
         return listBranches();
@@ -188,7 +187,6 @@ bool BranchCommand::execute(const std::vector<std::string>& args) {
     return false;
 }
 
-
 void BranchCommand::showHelp() const {
     event_bus_->notify({Event::HELP_MESSAGE, "Usage: " + getUsage(), "branch"});
     event_bus_->notify({Event::HELP_MESSAGE, "Description: " + getDescription(), "branch"});
@@ -261,17 +259,26 @@ bool BranchCommand::createBranch(const std::string& branch_name) {
     }
     
     try {
-        // For now, use empty commit hash - in real implementation 
-        // we would get the current HEAD commit
-        bool success = branch_manager_->createBranch(branch_name, "");
+        // Получаем текущий HEAD коммит через BranchManager
+        std::string current_head = branch_manager_->getHeadCommit();
+        
+        if (current_head.empty()) {
+            if (event_bus_) {
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Cannot create branch: no commits in repository", "branch"});
+            }
+            return false;
+        }
+        
+        // Используем createBranchFromCommit вместо createBranch
+        bool success = branch_manager_->createBranchFromCommit(branch_name, current_head);
         if (success) {
             if (event_bus_) {
-                event_bus_->notify({Event::Type::GENERAL_INFO, "Created branch: " + branch_name, "branch"});
+                event_bus_->notify({Event::Type::GENERAL_INFO, "Created branch '" + branch_name + "' from current HEAD", "branch"});
             }
             return true;
         } else {
             if (event_bus_) {
-                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to create branch: " + branch_name, "branch"});
+                event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to create branch '" + branch_name + "'", "branch"});
             }
             return false;
         }
@@ -398,7 +405,7 @@ bool BranchCommand::switchBranch(const std::string& branch_name) {
 }
 
 bool BranchCommand::isValidBranchName(const std::string& name) const {
-    return BranchManager::isValidBranchName(name);
+    return branch_manager_->isValidBranchName(name);
 }
 
 bool BranchCommand::branchExists(const std::string& name) const {

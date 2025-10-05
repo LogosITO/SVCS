@@ -24,23 +24,14 @@ BranchManager::BranchManager(std::shared_ptr<ISubject> event_bus)
     loadCurrentBranch();
 }
 
-bool BranchManager::createBranch(const std::string& name, const std::string& commit_hash) {
-    if (!isValidBranchName(name)) {
-        return false;
+bool BranchManager::createBranch(const std::string& branch_name) {
+    std::string current_head = getHeadCommit();
+    
+    if (current_head.empty()) {
+        return false; 
     }
     
-    if (branchExists(name)) {
-        return false;
-    }
-    
-    branches.emplace(name, Branch(name, commit_hash));
-    saveBranches();
-    
-    if (event_bus) {
-        event_bus->notify({Event::Type::GENERAL_INFO, "Created branch: " + name});
-    }
-    
-    return true;
+    return createBranchFromCommit(branch_name, current_head);
 }
 
 bool BranchManager::deleteBranch(const std::string& name, bool force) {
@@ -134,6 +125,72 @@ std::vector<BranchManager::Branch> BranchManager::getAllBranches() const {
               [](const Branch& a, const Branch& b) { return a.name < b.name; });
     
     return result;
+}
+
+std::string BranchManager::getHeadCommit() {
+    try {
+        std::string head_file_path = getHeadFilePath();
+        
+        // ДИАГНОСТИКА: проверяем существование HEAD файла
+        if (!fileExists(head_file_path)) {
+            if (event_bus) {
+                event_bus->notify({Event::DEBUG_MESSAGE, 
+                                  "HEAD file not found: " + head_file_path, "branch-manager"});
+            }
+            return "";
+        }
+        
+        std::string head_ref = readFile(head_file_path);
+        
+        // УБЕРИТЕ ЛИШНИЕ СИМВОЛЫ ПЕРЕНОСА СТРОКИ
+        head_ref.erase(std::remove(head_ref.begin(), head_ref.end(), '\n'), head_ref.end());
+        head_ref.erase(std::remove(head_ref.begin(), head_ref.end(), '\r'), head_ref.end());
+        
+        if (event_bus) {
+            event_bus->notify({Event::DEBUG_MESSAGE, 
+                              "HEAD reference content: '" + head_ref + "'", "branch-manager"});
+        }
+        
+        if (head_ref.find("ref: refs/heads/") == 0) {
+            std::string branch_name = head_ref.substr(16); // "ref: refs/heads/"
+            
+            if (event_bus) {
+                event_bus->notify({Event::DEBUG_MESSAGE, 
+                                  "Resolving branch: " + branch_name, "branch-manager"});
+            }
+            
+            // Получаем HEAD коммит через getBranchHead
+            std::string branch_head = getBranchHead(branch_name);
+            
+            if (event_bus) {
+                event_bus->notify({Event::DEBUG_MESSAGE, 
+                                  "Branch '" + branch_name + "' head: '" + branch_head + "'", "branch-manager"});
+            }
+            
+            return branch_head;
+        }
+        // Если HEAD указывает напрямую на коммит (detached HEAD)
+        else if (!head_ref.empty()) {
+            if (event_bus) {
+                event_bus->notify({Event::DEBUG_MESSAGE, 
+                                  "HEAD points directly to commit: " + head_ref, "branch-manager"});
+            }
+            return head_ref;
+        }
+        
+        if (event_bus) {
+            event_bus->notify({Event::DEBUG_MESSAGE, 
+                              "HEAD reference is empty or invalid", "branch-manager"});
+        }
+        return "";
+        
+    } catch (const std::exception& e) {
+        if (event_bus) {
+            event_bus->notify({Event::DEBUG_MESSAGE, 
+                              "Error in getHeadCommit: " + std::string(e.what()), "branch-manager"});
+        }
+        return "";
+    }
 }
 
 std::string BranchManager::getCurrentBranch() const {

@@ -95,24 +95,10 @@ private:
     bool createFile(const std::filesystem::path& path, const std::string& content = "");
 
     /**
-     * @brief Updates branch reference file with commit hash.
-     * @param branchName The name of the branch to update.
-     * @param commitHash The commit hash to set as branch head.
-     */
-    void updateBranchReference(const std::string& branchName, const std::string& commitHash);
-
-    /**
      * @brief Gets the current branch name from HEAD file.
      * @return The current branch name.
      */
     std::string getCurrentBranchFromHead();
-
-    /**
-     * @brief Gets the commit hash for a branch.
-     * @param branchName The branch name.
-     * @return The commit hash for the branch.
-     */
-    std::string getBranchHead(const std::string& branchName);
 
 public:
     /**
@@ -142,12 +128,19 @@ public:
      * @return \c true if a repository structure is found, \c false otherwise.
      */
     bool isRepositoryInitialized(const std::string& path = ".");
+
+    /**
+     * @brief Updates branch reference file with commit hash.
+     * @param branchName The name of the branch to update.
+     * @param commitHash The commit hash to set as branch head.
+     */
+    void updateBranchReference(const std::string& branchName, const std::string& commitHash);
     
     /**
      * @brief Returns the determined root path of the currently active repository.
      * @return The string path to the repository root.
      */
-    std::string getRepositoryPath() const { return currentRepoPath; }
+    std::filesystem::path getRepositoryPath() const;
     
     // --- Staging and History Management Methods ---
     
@@ -199,8 +192,9 @@ public:
      * @param commit_hash The hash of the child commit.
      * @return The parent commit hash string (empty if it is the initial commit).
      */
-    std::string getParentCommitHash(const std::string& commit_hash) const;
+    std::string getParentCommitHash(const std::string& commit_hash);
 
+    std::string generateCommitHash(const std::string& content);
     /**
      * @brief Restores the working directory files to the state recorded in a specific commit.
      * @param commit The CommitInfo structure representing the target state.
@@ -252,4 +246,57 @@ public:
      * @return \c true if removal was successful, \c false otherwise.
      */
     bool removeRepository(const std::filesystem::path& path);
+
+    /**
+     * @brief Checks if a branch exists.
+     * @param branch_name The branch name to check.
+     * @return true if branch exists, false otherwise.
+     */
+    bool branchExists(const std::string& branch_name);
+    
+    /**
+     * @brief Gets the head commit of a branch.
+     * @param branch_name The branch name.
+     * @return The commit hash of the branch head.
+     */
+    std::string getBranchHead(const std::string& branch_name);
+    
+    /**
+     * @brief Gets the content of a file at a specific commit.
+     * @param commit_hash The commit hash.
+     * @param file_path The file path.
+     * @return The file content.
+     */
+    std::string getFileContentAtCommit(const std::string& commit_hash, const std::string& file_path);
+    
+    /**
+     * @brief Gets all files changed in a commit.
+     * @param commit_hash The commit hash.
+     * @return Vector of file paths.
+     */
+    std::vector<std::string> getCommitFiles(const std::string& commit_hash);
+    
+    /**
+     * @brief Sets merge state (for conflict resolution).
+     * @param branch_name Branch being merged.
+     * @param commit_hash Commit being merged.
+     */
+    void setMergeState(const std::string& branch_name, const std::string& commit_hash);
+    
+    /**
+     * @brief Clears merge state (after merge completion/abort).
+     */
+    void clearMergeState();
+    
+    /**
+     * @brief Checks if a merge is in progress.
+     * @return true if merge is in progress, false otherwise.
+     */
+    bool isMergeInProgress();
+    
+    /**
+     * @brief Gets the branch being merged.
+     * @return Branch name if merge in progress, empty string otherwise.
+     */
+    std::string getMergeBranch();
 };

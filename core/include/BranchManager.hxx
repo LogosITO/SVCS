@@ -65,10 +65,23 @@ public:
     /**
      * @brief Creates a new branch pointing to a specific commit.
      * @param name The name of the new branch.
-     * @param commit_hash The hash of the commit the new branch will point to.
      * @return \c true if the branch was created successfully, \c false otherwise.
      */
-    bool createBranch(const std::string& name, const std::string& commit_hash);
+    bool createBranch(const std::string& name);
+
+    /**
+     * @brief Creates a new branch from a specific commit
+     * @param name Branch name
+     * @param commit_hash Hash of the commit to branch from
+     * @return true if successful, false otherwise
+     */
+    bool createBranchFromCommit(const std::string& name, const std::string& commit_hash);
+
+    /**
+     * @brief Get the current HEAD commit hash
+     * @return std::string The commit hash of current HEAD, or empty string if not found
+     */
+    std::string getHeadCommit();
 
     /**
      * @brief Deletes an existing branch.
@@ -134,14 +147,6 @@ public:
      * @return \c true if the name is valid, \c false otherwise.
      */
     static bool isValidBranchName(const std::string& name);
-
-    /**
-     * @brief Creates a new branch from a specific commit
-     * @param name Branch name
-     * @param commit_hash Hash of the commit to branch from
-     * @return true if successful, false otherwise
-     */
-    bool createBranchFromCommit(const std::string& name, const std::string& commit_hash);
     
     /**
      * @brief Checks if a commit exists

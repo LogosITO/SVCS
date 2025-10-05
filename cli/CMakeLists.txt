@@ -11,6 +11,7 @@ set(CLI_SOURCES
     src/HistoryCommand.cxx
     src/UndoCommand.cxx
     src/BranchCommand.cxx
+    src/MergeCommand.cxx
     src/CommandFactory.cxx
 )
 
@@ -30,6 +31,7 @@ set(CLI_HEADERS
     include/HistoryCommand.hxx
     include/UndoCommand.hxx
     include/BranchCommand.hxx
+    include/MergeCommand.hxx
     include/CommandFactory.hxx
 )
 

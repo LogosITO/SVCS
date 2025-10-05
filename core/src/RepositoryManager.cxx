@@ -16,6 +16,7 @@
 #include <sstream>
 #include <chrono>
 #include <set>
+#include <iomanip>
 
 RepositoryManager::RepositoryManager(std::shared_ptr<ISubject> bus) 
     : eventBus(bus) {
@@ -301,29 +302,6 @@ std::string RepositoryManager::getCurrentBranchFromHead() {
     }
 }
 
-std::string RepositoryManager::getBranchHead(const std::string& branchName) {
-    try {
-        std::filesystem::path repoPath = getRepositoryPath();
-        std::filesystem::path branchFile = repoPath / ".svcs" / "refs" / "heads" / branchName;
-        
-        if (!std::filesystem::exists(branchFile)) {
-            return "";
-        }
-        
-        std::ifstream file(branchFile);
-        std::string commitHash;
-        if (std::getline(file, commitHash)) {
-            return commitHash;
-        }
-        
-        return "";
-        
-    } catch (const std::exception& e) {
-        logError("Error reading branch head: " + std::string(e.what()));
-        return "";
-    }
-}
-
 bool RepositoryManager::isRepositoryInitialized(const std::string& path) {
     std::filesystem::path checkPath;
     
@@ -460,6 +438,20 @@ void RepositoryManager::updateHead(const std::string& commitHash) {
     }
 }
 
+// Простая хеш-функция для генерации ID коммита
+std::string RepositoryManager::generateCommitHash(const std::string& content) {
+    std::hash<std::string> hasher;
+    auto timestamp = std::chrono::duration_cast<std::chrono::nanoseconds>(
+        std::chrono::system_clock::now().time_since_epoch()).count();
+    
+    // Комбинируем контент с временной меткой для уникальности
+    std::string uniqueInput = content + std::to_string(timestamp);
+    size_t hashValue = hasher(uniqueInput);
+    
+    std::stringstream ss;
+    ss << std::hex << std::setw(16) << std::setfill('0') << hashValue;
+    return ss.str();
+}
 
 std::string RepositoryManager::createCommit(const std::string& message) {
     if (!isRepositoryInitialized()) {
@@ -486,11 +478,13 @@ std::string RepositoryManager::createCommit(const std::string& message) {
             now.time_since_epoch()).count();
         
         std::stringstream commitContent;
-        commitContent << "parent " << parentCommit << "\n";
+        
+        // Формат коммита
+        commitContent << "parent " << (parentCommit.empty() ? "none" : parentCommit) << "\n";
         commitContent << "author User <user@example.com>\n";
         commitContent << "timestamp " << timestamp << "\n";
         commitContent << "message " << message << "\n";
-        commitContent << "branch " << current_branch << "\n"; // ← ДОБАВЛЯЕМ информацию о ветке
+        commitContent << "branch " << current_branch << "\n";
         commitContent << "files " << stagedFiles.size() << "\n";
         for (const auto& file : stagedFiles) {
             commitContent << file << "\n";
@@ -498,16 +492,13 @@ std::string RepositoryManager::createCommit(const std::string& message) {
         
         std::string content = commitContent.str();
         
-        std::hash<std::string> hasher;
-        size_t hashValue = hasher(content);
-        std::stringstream hashStream;
-        hashStream << std::hex << hashValue;
-        std::string commitHash = hashStream.str();
+        // Генерируем хеш коммита
+        std::string commitHash = generateCommitHash(content);
         
         logDebug("Commit content:\n" + content);
         logDebug("Generated commit hash: " + commitHash);
         
-        // Сохраняем коммит
+        // Сохраняем коммит в objects
         std::filesystem::path commitDir = std::filesystem::path(currentRepoPath) / ".svcs" / "objects" / commitHash.substr(0, 2);
         std::filesystem::path commitFile = commitDir / commitHash.substr(2);
         
@@ -516,8 +507,11 @@ std::string RepositoryManager::createCommit(const std::string& message) {
             return "";
         }
         
-        // ОБНОВЛЯЕМ ТОЛЬКО ТЕКУЩУЮ ВЕТКУ
+        // Обновляем ветку
         updateBranchReference(current_branch, commitHash);
+        
+        // Очищаем staging area
+        clearStagingArea();
         
         logInfo("Created commit: " + commitHash.substr(0, 8) + " - " + message + " on branch '" + current_branch + "'");
         return commitHash;
@@ -528,7 +522,7 @@ std::string RepositoryManager::createCommit(const std::string& message) {
     }
 }
 
-std::string RepositoryManager::getParentCommitHash(const std::string& commitHash) const {
+std::string RepositoryManager::getParentCommitHash(const std::string& commitHash) {
     const std::string SOURCE = "RepositoryManager";
     
     try {
@@ -538,8 +532,7 @@ std::string RepositoryManager::getParentCommitHash(const std::string& commitHash
         std::filesystem::path commitFile = commitDir / commitHash.substr(2);
         
         if (!std::filesystem::exists(commitFile)) {
-            eventBus->notify({Event::DEBUG_MESSAGE, 
-                              "Commit file not found: " + commitFile.string(), SOURCE});
+            logDebug("Commit file not found: " + commitFile.string());
             return "";
         }
         
@@ -549,17 +542,21 @@ std::string RepositoryManager::getParentCommitHash(const std::string& commitHash
         while (std::getline(file, line)) {
             if (line.find("parent ") == 0) {
                 std::string parentHash = line.substr(7); // Remove "parent "
-                if (parentHash != "none") {
-                    return parentHash;
+                // Remove newline characters
+                parentHash.erase(std::remove(parentHash.begin(), parentHash.end(), '\n'), parentHash.end());
+                parentHash.erase(std::remove(parentHash.begin(), parentHash.end(), '\r'), parentHash.end());
+                
+                if (parentHash == "none") {
+                    return ""; // No parent
                 }
+                return parentHash;
             }
         }
         
         return ""; // No parent found (initial commit)
         
     } catch (const std::exception& e) {
-        eventBus->notify({Event::DEBUG_MESSAGE, 
-                          "Error reading parent commit: " + std::string(e.what()), SOURCE});
+        logError("Error reading parent commit: " + std::string(e.what()));
         return "";
     }
 }
@@ -710,8 +707,7 @@ bool RepositoryManager::restoreFilesFromCommit(const CommitInfo& commit) {
         std::filesystem::path commitFile = commitDir / commit.hash.substr(2);
         
         if (!std::filesystem::exists(commitFile)) {
-            eventBus->notify({Event::ERROR_MESSAGE, 
-                              "Commit file not found: " + commitFile.string(), SOURCE});
+            logError("Commit file not found: " + commitFile.string());
             return false;
         }
         
@@ -743,44 +739,23 @@ bool RepositoryManager::restoreFilesFromCommit(const CommitInfo& commit) {
         return true;
         
     } catch (const std::filesystem::filesystem_error& e) {
-        eventBus->notify({Event::ERROR_MESSAGE, 
-                          "Filesystem error restoring files: " + std::string(e.what()), SOURCE});
+        logError("Filesystem error restoring files: " + std::string(e.what()));
         return false;
     }
 }
 
-
 bool RepositoryManager::saveStagedChanges(const std::string& message) {
-    if (!isRepositoryInitialized()) {
-        logError("No repository found for save operation");
-        return false;
-    }
-
-    auto stagedFiles = getStagedFiles();
-    if (stagedFiles.empty()) {
-        logError("No files staged for commit");
-        return false;
-    }
-
-    logInfo("Creating commit with " + std::to_string(stagedFiles.size()) + " staged files");
-
     std::string commitHash = createCommit(message);
     if (commitHash.empty()) {
         logError("Failed to create commit");
         return false;
     }
-
-    if (!clearStagingArea()) {
-        logError("Commit created but failed to clear staging area");
-    }
-
-    logInfo("Successfully saved changes with commit: " + commitHash);
+    
+    logInfo("Successfully saved changes with commit: " + commitHash.substr(0, 8));
     return true;
 }
 
 std::string RepositoryManager::getHeadCommit() {
-    const std::string SOURCE = "RepositoryManager";
-    
     try {
         std::filesystem::path repoPath = getRepositoryPath();
         std::filesystem::path headFile = repoPath / ".svcs" / "HEAD";
@@ -809,7 +784,7 @@ std::string RepositoryManager::getHeadCommit() {
                     return "";
                 }
             } else {
-                return line;
+                return line; // detached HEAD
             }
         }
         
@@ -822,13 +797,10 @@ std::string RepositoryManager::getHeadCommit() {
 }
 
 std::vector<CommitInfo> RepositoryManager::getCommitHistory() {
-    // По умолчанию возвращаем историю текущей ветки
     return getBranchHistory(getCurrentBranchFromHead());
 }
 
 std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& branch_name) {
-    const std::string SOURCE = "RepositoryManager";
-    
     std::vector<CommitInfo> commits;
     
     try {
@@ -845,7 +817,7 @@ std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& b
             std::filesystem::path commitFile = commitDir / currentHash.substr(2);
             
             if (!std::filesystem::exists(commitFile)) {
-                logDebug("Skipping non-existent commit in history: " + currentHash);
+                logDebug("Commit file not found: " + commitFile.string());
                 break;
             }
             
@@ -854,44 +826,29 @@ std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& b
             
             std::ifstream file(commitFile);
             std::string line;
-            std::string parentHash = "";
-            std::string commitBranch = "";
             
             while (std::getline(file, line)) {
-                if (line.find("parent ") == 0) {
-                    parentHash = line.substr(7);
-                } else if (line.find("message ") == 0) {
+                if (line.find("message ") == 0) {
                     commit.message = line.substr(8);
-                } else if (line.find("files ") == 0) {
-                    commit.files_count = std::stoi(line.substr(6));
                 } else if (line.find("author ") == 0) {
                     commit.author = line.substr(7);
                 } else if (line.find("timestamp ") == 0) {
                     commit.timestamp = line.substr(10);
                 } else if (line.find("branch ") == 0) {
-                    commitBranch = line.substr(7);
-                    commit.branch = commitBranch;
+                    commit.branch = line.substr(7);
+                } else if (line.find("files ") == 0) {
+                    commit.files_count = std::stoi(line.substr(6));
                 }
             }
             
-            // Добавляем коммит только если он принадлежит этой ветке
-            if (commitBranch == branch_name) {
-                commits.push_back(commit);
-            }
+            commits.push_back(commit);
             
-            if (parentHash != "none" && !parentHash.empty()) {
-                std::filesystem::path parentDir = objectsDir / parentHash.substr(0, 2);
-                std::filesystem::path parentFile = parentDir / parentHash.substr(2);
-                
-                if (std::filesystem::exists(parentFile)) {
-                    currentHash = parentHash;
-                } else {
-                    logDebug("Parent commit not found, stopping: " + parentHash);
-                    break;
-                }
-            } else {
-                currentHash = "";
+            // Получаем родительский коммит через отдельный метод
+            std::string parentHash = getParentCommitHash(currentHash);
+            if (parentHash == "none" || parentHash.empty()) {
+                break;
             }
+            currentHash = parentHash;
         }
         
         logDebug("Retrieved " + std::to_string(commits.size()) + " commits for branch '" + branch_name + "'");
@@ -905,4 +862,194 @@ std::vector<CommitInfo> RepositoryManager::getBranchHistory(const std::string& b
 
 std::string RepositoryManager::getCurrentBranch() {
     return getCurrentBranchFromHead();
+}
+
+bool RepositoryManager::branchExists(const std::string& branch_name) {
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path branchFile = repoPath / ".svcs" / "refs" / "heads" / branch_name;
+        return std::filesystem::exists(branchFile);
+    } catch (const std::exception& e) {
+        logError("Error checking branch existence: " + std::string(e.what()));
+        return false;
+    }
+}
+
+std::string RepositoryManager::getBranchHead(const std::string& branch_name) {
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path branchFile = repoPath / ".svcs" / "refs" / "heads" / branch_name;
+        
+        if (!std::filesystem::exists(branchFile)) {
+            return "";
+        }
+        
+        std::ifstream file(branchFile);
+        std::string commit_hash;
+        if (std::getline(file, commit_hash)) {
+            return commit_hash;
+        }
+        
+        return "";
+    } catch (const std::exception& e) {
+        logError("Error reading branch head: " + std::string(e.what()));
+        return "";
+    }
+}
+
+std::string RepositoryManager::getFileContentAtCommit(const std::string& commit_hash, const std::string& file_path) {
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path full_path = repoPath / file_path;
+        
+        if (std::filesystem::exists(full_path)) {
+            std::ifstream file(full_path);
+            std::stringstream content;
+            content << file.rdbuf();
+            return content.str();
+        }
+        
+        return "";
+    } catch (const std::exception& e) {
+        logError("Error reading file content: " + std::string(e.what()));
+        return "";
+    }
+}
+
+std::vector<std::string> RepositoryManager::getCommitFiles(const std::string& commit_hash) {
+    std::vector<std::string> files;
+    
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path objectsDir = repoPath / ".svcs" / "objects";
+        std::filesystem::path commitDir = objectsDir / commit_hash.substr(0, 2);
+        std::filesystem::path commitFile = commitDir / commit_hash.substr(2);
+        
+        if (!std::filesystem::exists(commitFile)) {
+            return files;
+        }
+        
+        std::ifstream file(commitFile);
+        std::string line;
+        bool in_files_section = false;
+        
+        while (std::getline(file, line)) {
+            if (line.find("files ") == 0) {
+                in_files_section = true;
+                continue;
+            }
+            
+            if (in_files_section) {
+                if (line.empty() || line.find("parent") == 0 || line.find("author") == 0 || 
+                    line.find("timestamp") == 0 || line.find("message") == 0) {
+                    break;
+                }
+                files.push_back(line);
+            }
+        }
+    } catch (const std::exception& e) {
+        logError("Error reading commit files: " + std::string(e.what()));
+    }
+    
+    return files;
+}
+
+void RepositoryManager::setMergeState(const std::string& branch_name, const std::string& commit_hash) {
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path mergeHeadFile = repoPath / ".svcs" / "MERGE_HEAD";
+        std::filesystem::path mergeMsgFile = repoPath / ".svcs" / "MERGE_MSG";
+        
+        // Write MERGE_HEAD with commit hash
+        std::ofstream head_file(mergeHeadFile);
+        head_file << commit_hash;
+        
+        // Write MERGE_MSG with default message
+        std::ofstream msg_file(mergeMsgFile);
+        msg_file << "Merge branch '" << branch_name << "'";
+        
+        logDebug("Set merge state for branch: " + branch_name);
+    } catch (const std::exception& e) {
+        logError("Error setting merge state: " + std::string(e.what()));
+    }
+}
+
+void RepositoryManager::clearMergeState() {
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path mergeHeadFile = repoPath / ".svcs" / "MERGE_HEAD";
+        std::filesystem::path mergeMsgFile = repoPath / ".svcs" / "MERGE_MSG";
+        
+        if (std::filesystem::exists(mergeHeadFile)) {
+            std::filesystem::remove(mergeHeadFile);
+        }
+        
+        if (std::filesystem::exists(mergeMsgFile)) {
+            std::filesystem::remove(mergeMsgFile);
+        }
+        
+        logDebug("Cleared merge state");
+    } catch (const std::exception& e) {
+        logError("Error clearing merge state: " + std::string(e.what()));
+    }
+}
+
+bool RepositoryManager::isMergeInProgress() {
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path mergeHeadFile = repoPath / ".svcs" / "MERGE_HEAD";
+        return std::filesystem::exists(mergeHeadFile);
+    } catch (const std::exception& e) {
+        logError("Error checking merge state: " + std::string(e.what()));
+        return false;
+    }
+}
+
+std::string RepositoryManager::getMergeBranch() {
+    try {
+        std::filesystem::path repoPath = getRepositoryPath();
+        std::filesystem::path mergeMsgFile = repoPath / ".svcs" / "MERGE_MSG";
+        
+        if (!std::filesystem::exists(mergeMsgFile)) {
+            return "";
+        }
+        
+        std::ifstream file(mergeMsgFile);
+        std::string line;
+        if (std::getline(file, line)) {
+            // Extract branch name from "Merge branch 'branch_name'"
+            size_t start = line.find("'");
+            size_t end = line.rfind("'");
+            if (start != std::string::npos && end != std::string::npos && end > start + 1) {
+                return line.substr(start + 1, end - start - 1);
+            }
+        }
+        
+        return "";
+    } catch (const std::exception& e) {
+        logError("Error reading merge branch: " + std::string(e.what()));
+        return "";
+    }
+}
+
+std::filesystem::path RepositoryManager::getRepositoryPath() const {
+    if (!currentRepoPath.empty()) {
+        return currentRepoPath;
+    }
+    
+    // Поиск репозитория от текущей директории вверх
+    std::filesystem::path current = std::filesystem::current_path();
+    while (!current.empty()) {
+        std::filesystem::path svcsDir = current / ".svcs";
+        if (std::filesystem::exists(svcsDir) && std::filesystem::exists(svcsDir / "HEAD")) {
+            return current;
+        }
+        
+        if (current == current.parent_path()) {
+            break;
+        }
+        current = current.parent_path();
+    }
+    
+    return std::filesystem::current_path();
 }

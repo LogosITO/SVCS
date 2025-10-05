@@ -20,6 +20,7 @@
 #include "../include/HistoryCommand.hxx"
 #include "../include/UndoCommand.hxx"
 #include "../include/BranchCommand.hxx"
+#include "../include/MergeCommand.hxx"
 
 #include <iostream>
 #include <memory>
@@ -105,6 +106,12 @@ void CommandFactory::registerDefaultCommands() {
         printDebug("Creating BranchCommand instance");
         auto branch_manager = std::make_shared<BranchManager>(bus);
         return std::make_unique<BranchCommand>(bus, branch_manager);
+    });
+
+    registerCommand("merge", [](std::shared_ptr<ISubject> bus, 
+                             std::shared_ptr<RepositoryManager> repoManager) -> std::unique_ptr<ICommand> {
+        printDebug("Creating MergeCommand instance");
+        return std::make_unique<MergeCommand>(bus, repoManager);
     });
     
     registerCommand("help", [this](std::shared_ptr<ISubject> bus, 

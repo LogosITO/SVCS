@@ -77,7 +77,7 @@ protected:
 
 // Test basic branch creation
 TEST_F(BranchManagerTest, CreateValidBranch) {
-    bool result = branchManager->createBranch("feature/test", "abc123");
+    bool result = branchManager->createBranchFromCommit("feature/test", "abc123");
     
     EXPECT_TRUE(result);
     EXPECT_TRUE(branchManager->branchExists("feature/test"));
@@ -86,25 +86,25 @@ TEST_F(BranchManagerTest, CreateValidBranch) {
 
 // Test creating duplicate branch
 TEST_F(BranchManagerTest, CreateDuplicateBranch) {
-    branchManager->createBranch("feature/test", "abc123");
-    bool result = branchManager->createBranch("feature/test", "def456");
+    branchManager->createBranchFromCommit("feature/test", "abc123");
+    bool result = branchManager->createBranchFromCommit("feature/test", "def456");
     
     EXPECT_FALSE(result);
 }
 
 // Test creating branch with invalid name
 TEST_F(BranchManagerTest, CreateBranchWithInvalidName) {
-    EXPECT_FALSE(branchManager->createBranch("", "abc123"));
-    EXPECT_FALSE(branchManager->createBranch("feature~test", "abc123"));
-    EXPECT_FALSE(branchManager->createBranch("feature/", "abc123"));
-    EXPECT_FALSE(branchManager->createBranch(".", "abc123"));
-    EXPECT_FALSE(branchManager->createBranch("..", "abc123"));
+    EXPECT_FALSE(branchManager->createBranchFromCommit("", "abc123"));
+    EXPECT_FALSE(branchManager->createBranchFromCommit("feature~test", "abc123"));
+    EXPECT_FALSE(branchManager->createBranchFromCommit("feature/", "abc123"));
+    EXPECT_FALSE(branchManager->createBranchFromCommit(".", "abc123"));
+    EXPECT_FALSE(branchManager->createBranchFromCommit("..", "abc123"));
 }
 
 // Test branch deletion
 TEST_F(BranchManagerTest, DeleteExistingBranch) {
-    branchManager->createBranch("feature/test", "abc123");
-    branchManager->createBranch("develop", "def456");
+    branchManager->createBranchFromCommit("feature/test", "abc123");
+    branchManager->createBranchFromCommit("develop", "def456");
     
     bool result = branchManager->deleteBranch("feature/test");
     
@@ -122,7 +122,7 @@ TEST_F(BranchManagerTest, DeleteNonExistentBranch) {
 
 // Test deleting current branch
 TEST_F(BranchManagerTest, DeleteCurrentBranch) {
-    branchManager->createBranch("feature/test", "abc123");
+    branchManager->createBranchFromCommit("feature/test", "abc123");
     branchManager->switchBranch("feature/test");
     
     bool result = branchManager->deleteBranch("feature/test");
@@ -133,7 +133,7 @@ TEST_F(BranchManagerTest, DeleteCurrentBranch) {
 
 // Test branch renaming
 TEST_F(BranchManagerTest, RenameBranch) {
-    branchManager->createBranch("old-name", "abc123");
+    branchManager->createBranchFromCommit("old-name", "abc123");
     
     bool result = branchManager->renameBranch("old-name", "new-name");
     
@@ -145,8 +145,8 @@ TEST_F(BranchManagerTest, RenameBranch) {
 
 // Test renaming to existing branch name
 TEST_F(BranchManagerTest, RenameToExistingBranch) {
-    branchManager->createBranch("branch1", "abc123");
-    branchManager->createBranch("branch2", "def456");
+    branchManager->createBranchFromCommit("branch1", "abc123");
+    branchManager->createBranchFromCommit("branch2", "def456");
     
     bool result = branchManager->renameBranch("branch1", "branch2");
     
@@ -157,8 +157,8 @@ TEST_F(BranchManagerTest, RenameToExistingBranch) {
 
 // Test switching branches
 TEST_F(BranchManagerTest, SwitchBetweenBranches) {
-    branchManager->createBranch("develop", "abc123");
-    branchManager->createBranch("feature/test", "def456");
+    branchManager->createBranchFromCommit("develop", "abc123");
+    branchManager->createBranchFromCommit("feature/test", "def456");
     
     bool result1 = branchManager->switchBranch("develop");
     bool result2 = branchManager->switchBranch("feature/test");
@@ -178,8 +178,8 @@ TEST_F(BranchManagerTest, SwitchToNonExistentBranch) {
 
 // Test getting all branches
 TEST_F(BranchManagerTest, GetAllBranches) {
-    branchManager->createBranch("develop", "abc123");
-    branchManager->createBranch("feature/test", "def456");
+    branchManager->createBranchFromCommit("develop", "abc123");
+    branchManager->createBranchFromCommit("feature/test", "def456");
     branchManager->switchBranch("develop");
     
     auto branches = branchManager->getAllBranches();
@@ -202,8 +202,8 @@ TEST_F(BranchManagerTest, GetAllBranches) {
 // Test branch persistence
 TEST_F(BranchManagerTest, BranchPersistence) {
     // Create branches with first instance
-    branchManager->createBranch("develop", "abc123");
-    branchManager->createBranch("feature/test", "def456");
+    branchManager->createBranchFromCommit("develop", "abc123");
+    branchManager->createBranchFromCommit("feature/test", "def456");
     branchManager->switchBranch("develop");
     
     // Create new BranchManager instance (simulating restart)
@@ -263,9 +263,9 @@ TEST_F(BranchManagerTest, BranchNameValidation) {
 // Test multiple operations sequence
 TEST_F(BranchManagerTest, MultipleOperationsSequence) {
     // Create multiple branches
-    EXPECT_TRUE(branchManager->createBranch("develop", "commit1"));
-    EXPECT_TRUE(branchManager->createBranch("feature/auth", "commit2"));
-    EXPECT_TRUE(branchManager->createBranch("feature/ui", "commit3"));
+    EXPECT_TRUE(branchManager->createBranchFromCommit("develop", "commit1"));
+    EXPECT_TRUE(branchManager->createBranchFromCommit("feature/auth", "commit2"));
+    EXPECT_TRUE(branchManager->createBranchFromCommit("feature/ui", "commit3"));
     
     // Switch between them
     EXPECT_TRUE(branchManager->switchBranch("develop"));

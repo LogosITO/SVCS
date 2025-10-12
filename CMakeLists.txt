@@ -17,6 +17,7 @@ find_package(ZLIB REQUIRED)
 
 add_subdirectory(core)
 add_subdirectory(cli)
+add_subdirectory(server)
 add_subdirectory(services) 
 
 target_include_directories(svcs_core PUBLIC

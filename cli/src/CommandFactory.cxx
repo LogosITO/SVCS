@@ -22,6 +22,8 @@
 #include "../include/BranchCommand.hxx"
 #include "../include/MergeCommand.hxx"
 
+#include "../../server/include/HubCommand.hxx"
+
 #include <iostream>
 #include <memory>
 #include <utility>
@@ -58,6 +60,12 @@ void CommandFactory::registerDefaultCommands() {
                               const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating InitCommand instance");
         return std::make_unique<InitCommand>(bus, repoManager);
+    });
+
+    registerCommand("hub", [](const std::shared_ptr<ISubject>& bus,
+                                const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
+        printDebug("Creating HubCommand instance");
+        return std::make_unique<HubCommand>(bus, repoManager);
     });
 
     registerCommand("clear", [](const std::shared_ptr<ISubject>& bus,

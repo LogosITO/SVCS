@@ -51,6 +51,7 @@ target_include_directories(svcs PRIVATE ../core/include)
 target_link_libraries(svcs
     svcs_core
     svcs_services
+    svcs_server
 )
 
 if(UNIX)

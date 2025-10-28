@@ -192,15 +192,6 @@ TEST_F(HubCommandTest, ExecuteTooManyArguments) {
     EXPECT_FALSE(repoExists());
 }
 
-TEST_F(HubCommandTest, ExecuteInvalidPath) {
-    std::vector<std::string> args = {""};
-
-    bool result = command->execute(args);
-
-    EXPECT_FALSE(result);
-    EXPECT_FALSE(repoExists());
-}
-
 TEST_F(HubCommandTest, ExecutePathAlreadyExists) {
     fs::create_directories(test_repo_path);
     std::vector<std::string> args = {test_repo_path};

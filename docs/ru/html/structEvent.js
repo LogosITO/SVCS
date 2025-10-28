@@ -14,7 +14,15 @@ var structEvent =
       [ "HELP_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b", null ],
       [ "DEBUG_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5", null ],
       [ "ERROR_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61", null ],
-      [ "WARNING_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4", null ]
+      [ "WARNING_MESSAGE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4", null ],
+      [ "PROTOCOL_START", "structEvent.html#a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d", null ],
+      [ "PROTOCOL_SUCCESS", "structEvent.html#a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7", null ],
+      [ "PROTOCOL_ERROR", "structEvent.html#a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89", null ],
+      [ "NETWORK_SEND", "structEvent.html#a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be", null ],
+      [ "NETWORK_RECEIVE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad", null ],
+      [ "OBJECT_TRANSFER", "structEvent.html#a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec", null ],
+      [ "REFERENCE_UPDATE", "structEvent.html#a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5", null ],
+      [ "NEGOTIATION_PHASE", "structEvent.html#a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e", null ]
     ] ],
     [ "details", "structEvent.html#afedba76038909cf242d7642da3b7bfd9", null ],
     [ "source_name", "structEvent.html#af3aea97224cf810339754ab8bd53e893", null ],

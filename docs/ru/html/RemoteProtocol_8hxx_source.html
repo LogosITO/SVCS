@@ -163,16 +163,34 @@ $(function(){initNavTree('RemoteProtocol_8hxx_source.html','',''); });
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordtype">void</span> notifyInfo(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span></div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordtype">void</span> notifyError(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    std::shared_ptr&lt;ISubject&gt; event_bus_;           </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    std::shared_ptr&lt;RepositoryManager&gt; repository_manager_; </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>};</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordtype">void</span> notifyProtocolStart(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordtype">void</span> notifyProtocolSuccess(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keywordtype">void</span> notifyProtocolError(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordtype">void</span> notifyNetworkSend(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordtype">void</span> notifyNetworkReceive(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordtype">void</span> notifyObjectTransfer(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordtype">void</span> notifyReferenceUpdate(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordtype">void</span> notifyNegotiation(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordtype">bool</span> sendProtocolError(<span class="keyword">const</span> std::string&amp; error) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    std::shared_ptr&lt;ISubject&gt; event_bus_;           </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    std::shared_ptr&lt;RepositoryManager&gt; repository_manager_; </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>};</div>
 </div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
 <div class="ttc" id="aRepositoryManager_8hxx_html"><div class="ttname"><a href="RepositoryManager_8hxx.html">RepositoryManager.hxx</a></div><div class="ttdoc">Declaration of the RepositoryManager class, managing all repository-level file operations.</div></div>
-<div class="ttc" id="aclassRemoteProtocol_html_a54d6ce28df9c8a53e79908c038493372"><div class="ttname"><a href="classRemoteProtocol.html#a54d6ce28df9c8a53e79908c038493372">RemoteProtocol::handleReceivePack</a></div><div class="ttdeci">bool handleReceivePack()</div><div class="ttdoc">Handles the &#39;receive-pack&#39; protocol for push operations.</div><div class="ttdef"><b>Определения</b> RemoteProtocol.cxx:27</div></div>
-<div class="ttc" id="aclassRemoteProtocol_html_a67939ef40e01647387fc991cff543485"><div class="ttname"><a href="classRemoteProtocol.html#a67939ef40e01647387fc991cff543485">RemoteProtocol::handleUploadPack</a></div><div class="ttdeci">bool handleUploadPack()</div><div class="ttdoc">Handles the &#39;upload-pack&#39; protocol for pull operations.</div><div class="ttdef"><b>Определения</b> RemoteProtocol.cxx:39</div></div>
-<div class="ttc" id="aclassRemoteProtocol_html_ae13f8845715408297f5466fdcecce981"><div class="ttname"><a href="classRemoteProtocol.html#ae13f8845715408297f5466fdcecce981">RemoteProtocol::RemoteProtocol</a></div><div class="ttdeci">RemoteProtocol(std::shared_ptr&lt; ISubject &gt; event_bus, std::shared_ptr&lt; RepositoryManager &gt; repository_manager)</div><div class="ttdoc">Constructs a RemoteProtocol with necessary dependencies.</div><div class="ttdef"><b>Определения</b> RemoteProtocol.cxx:20</div></div>
+<div class="ttc" id="aclassRemoteProtocol_html_a54d6ce28df9c8a53e79908c038493372"><div class="ttname"><a href="classRemoteProtocol.html#a54d6ce28df9c8a53e79908c038493372">RemoteProtocol::handleReceivePack</a></div><div class="ttdeci">bool handleReceivePack()</div><div class="ttdoc">Handles the &#39;receive-pack&#39; protocol for push operations.</div><div class="ttdef"><b>Определения</b> RemoteProtocol.cxx:26</div></div>
+<div class="ttc" id="aclassRemoteProtocol_html_a67939ef40e01647387fc991cff543485"><div class="ttname"><a href="classRemoteProtocol.html#a67939ef40e01647387fc991cff543485">RemoteProtocol::handleUploadPack</a></div><div class="ttdeci">bool handleUploadPack()</div><div class="ttdoc">Handles the &#39;upload-pack&#39; protocol for pull operations.</div><div class="ttdef"><b>Определения</b> RemoteProtocol.cxx:38</div></div>
+<div class="ttc" id="aclassRemoteProtocol_html_ae13f8845715408297f5466fdcecce981"><div class="ttname"><a href="classRemoteProtocol.html#ae13f8845715408297f5466fdcecce981">RemoteProtocol::RemoteProtocol</a></div><div class="ttdeci">RemoteProtocol(std::shared_ptr&lt; ISubject &gt; event_bus, std::shared_ptr&lt; RepositoryManager &gt; repository_manager)</div><div class="ttdoc">Constructs a RemoteProtocol with necessary dependencies.</div><div class="ttdef"><b>Определения</b> RemoteProtocol.cxx:19</div></div>
 <div class="ttc" id="aclassRemoteProtocol_html_af00770931128eaaaf4b9bfc19ef73e69"><div class="ttname"><a href="classRemoteProtocol.html#af00770931128eaaaf4b9bfc19ef73e69">RemoteProtocol::~RemoteProtocol</a></div><div class="ttdeci">~RemoteProtocol()=default</div><div class="ttdoc">Default destructor.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

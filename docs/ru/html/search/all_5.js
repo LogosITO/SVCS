@@ -7,6 +7,6 @@ var searchData=
   ['files_5fcount_4',['files_count',['../structCommitInfo.html#a5d011d8d9edd88ef6953f8bc146681b2',1,'CommitInfo']]],
   ['filestatus_5',['FileStatus',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40c',1,'AddCommand.hxx']]],
   ['findentry_6',['findEntry',['../classTree.html#a944fe0075293396036606f6a999643f4',1,'Tree']]],
-  ['findrepository_7',['findRepository',['../classBaseCommand.html#a757e9a5a0d6feb0b100536c7380bf088',1,'BaseCommand::findRepository()'],['../classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb',1,'Repository::findRepository()']]],
+  ['findrepository_7',['findRepository',['../classBaseCommand.html#aeda1ecf978bfb02f534a15f99520065a',1,'BaseCommand::findRepository()'],['../classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb',1,'Repository::findRepository()']]],
   ['flush_8',['flush',['../classLogger.html#a5cc08473729523bb4bde48459f2ac468',1,'Logger']]]
 ];

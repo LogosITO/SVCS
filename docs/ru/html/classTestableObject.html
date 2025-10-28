@@ -110,8 +110,8 @@ $(function(){initNavTree('classTestableObject.html','','classTestableObject-memb
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:ad209c046fc6daadbd7ca43387707da00" id="r_ad209c046fc6daadbd7ca43387707da00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad209c046fc6daadbd7ca43387707da00">TestableObject</a> (const std::string &amp;type, const std::string &amp;data)</td></tr>
-<tr class="memdesc:ad209c046fc6daadbd7ca43387707da00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary constructor.  <br /></td></tr>
+<tr class="memitem:acf53db7ed6ce4f127322860e1d68b6a5" id="r_acf53db7ed6ce4f127322860e1d68b6a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf53db7ed6ce4f127322860e1d68b6a5">TestableObject</a> (std::string type, std::string data)</td></tr>
+<tr class="memdesc:acf53db7ed6ce4f127322860e1d68b6a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary constructor.  <br /></td></tr>
 <tr class="memitem:ae79c1d60869dedd6c298a56e8e9f2309" id="r_ae79c1d60869dedd6c298a56e8e9f2309"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae79c1d60869dedd6c298a56e8e9f2309">serialize</a> () const override</td></tr>
 <tr class="memdesc:ae79c1d60869dedd6c298a56e8e9f2309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the pure virtual method. Returns the stored content.  <br /></td></tr>
 <tr class="memitem:a89133227b30cea6642769a8cad7c1375" id="r_a89133227b30cea6642769a8cad7c1375"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89133227b30cea6642769a8cad7c1375">getType</a> () const override</td></tr>
@@ -147,8 +147,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 <li>This class implements all pure virtual methods of <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> with simple stubs, allowing its instances to be created for unit testing the hashing logic in <a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">VcsObject::computeHash</a>. </li>
 </ul>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
-<a id="ad209c046fc6daadbd7ca43387707da00" name="ad209c046fc6daadbd7ca43387707da00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad209c046fc6daadbd7ca43387707da00">&#9670;&#160;</a></span>TestableObject()</h2>
+<a id="acf53db7ed6ce4f127322860e1d68b6a5" name="acf53db7ed6ce4f127322860e1d68b6a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf53db7ed6ce4f127322860e1d68b6a5">&#9670;&#160;</a></span>TestableObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,12 +156,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
         <tr>
           <td class="memname">TestableObject::TestableObject </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -196,7 +196,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -230,7 +230,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

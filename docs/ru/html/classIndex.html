@@ -101,8 +101,8 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a45a83775032c0afb0ea457ced960f55b" id="r_a45a83775032c0afb0ea457ced960f55b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45a83775032c0afb0ea457ced960f55b">Index</a> (const fs::path &amp;vcs_root_path, const fs::path &amp;repo_root_path, <a class="el" href="classObjectStorage.html">ObjectStorage</a> &amp;storage)</td></tr>
-<tr class="memdesc:a45a83775032c0afb0ea457ced960f55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> manager, setting up paths and loading the index.  <br /></td></tr>
+<tr class="memitem:acd98d16f365494515679d1f643a2c8c7" id="r_acd98d16f365494515679d1f643a2c8c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd98d16f365494515679d1f643a2c8c7">Index</a> (const fs::path &amp;vcs_root_path, fs::path repo_root_path, <a class="el" href="classObjectStorage.html">ObjectStorage</a> &amp;storage)</td></tr>
+<tr class="memdesc:acd98d16f365494515679d1f643a2c8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> manager, setting up paths and loading the index.  <br /></td></tr>
 <tr class="memitem:a76b7ed4e9cb0b1540264567f84896032" id="r_a76b7ed4e9cb0b1540264567f84896032"><td class="memItemLeft" align="right" valign="top"><a id="a76b7ed4e9cb0b1540264567f84896032" name="a76b7ed4e9cb0b1540264567f84896032"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Index</b> ()</td></tr>
 <tr class="memdesc:a76b7ed4e9cb0b1540264567f84896032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
@@ -129,8 +129,8 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
 <li>The <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> class is responsible for reading and writing the list of staged files to the index file (.svcs/index), managing the 'svcs add' operation, and providing the necessary structure for commit creation. </li>
 </ul>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
-<a id="a45a83775032c0afb0ea457ced960f55b" name="a45a83775032c0afb0ea457ced960f55b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45a83775032c0afb0ea457ced960f55b">&#9670;&#160;</a></span>Index()</h2>
+<a id="acd98d16f365494515679d1f643a2c8c7" name="acd98d16f365494515679d1f643a2c8c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd98d16f365494515679d1f643a2c8c7">&#9670;&#160;</a></span>Index()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,7 +143,7 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const fs::path &amp;</td>          <td class="paramname"><span class="paramname"><em>repo_root_path</em></span>, </td>
+          <td class="paramtype">fs::path</td>          <td class="paramname"><span class="paramname"><em>repo_root_path</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -225,6 +225,9 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const <a class="el" href="structIndexEntry.html">IndexEntry</a> * Index::getEntry </td>
@@ -233,6 +236,11 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Retrieves an entry from the index by its relative file path. </p>
@@ -251,6 +259,9 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Index::isFileModified </td>
@@ -259,6 +270,11 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checks if a file in the working directory has been modified since it was last staged. </p>
@@ -358,6 +374,9 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Index::write </td>
@@ -366,6 +385,11 @@ $(function(){initNavTree('classIndex.html','','classIndex-members'); });
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Another saving function (like load) but returns bool. </p>

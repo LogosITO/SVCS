@@ -1,7 +1,7 @@
 var classClearCommandTest =
 [
-    [ "createTestDirectory", "classClearCommandTest.html#ac33891a7d4c4574bcd35413c70532548", null ],
-    [ "createTestFile", "classClearCommandTest.html#a909eec840641ec6d302bf97cf8f4961a", null ],
+    [ "createTestDirectory", "classClearCommandTest.html#a7c2a071223db041ffea0deb6ce274767", null ],
+    [ "createTestFile", "classClearCommandTest.html#a6f4274eb3f665355a79034b64f62dd80", null ],
     [ "repositoryExists", "classClearCommandTest.html#acfc70a9daa3a28208acea85449211517", null ],
     [ "SetUp", "classClearCommandTest.html#a445fb3d34f9eac29372bc2ab37f64ef9", null ],
     [ "simulateUserInput", "classClearCommandTest.html#a527589153d8f6a8bb263571b9aff360b", null ],

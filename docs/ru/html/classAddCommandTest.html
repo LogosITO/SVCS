@@ -111,10 +111,10 @@ $(function(){initNavTree('classAddCommandTest.html','','classAddCommandTest-memb
 <tr class="memdesc:a03edc7b6fa29ef9c99da73535ac498cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the test environment.  <br /></td></tr>
 <tr class="memitem:aa581ea4026ae9dda2351328dc17b9f03" id="r_aa581ea4026ae9dda2351328dc17b9f03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa581ea4026ae9dda2351328dc17b9f03">TearDown</a> () override</td></tr>
 <tr class="memdesc:aa581ea4026ae9dda2351328dc17b9f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tears down the test environment.  <br /></td></tr>
-<tr class="memitem:ac6b5b9dcc95890beb548607259f9da9f" id="r_ac6b5b9dcc95890beb548607259f9da9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6b5b9dcc95890beb548607259f9da9f">createTestFile</a> (const std::string &amp;filename, const std::string &amp;content=&quot;test content&quot;)</td></tr>
-<tr class="memdesc:ac6b5b9dcc95890beb548607259f9da9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test file inside the test directory.  <br /></td></tr>
-<tr class="memitem:a9a1ef607b1a678750a531c1b309cd9d1" id="r_a9a1ef607b1a678750a531c1b309cd9d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a1ef607b1a678750a531c1b309cd9d1">createTestDirectory</a> (const std::string &amp;dirname)</td></tr>
-<tr class="memdesc:a9a1ef607b1a678750a531c1b309cd9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory inside the test directory.  <br /></td></tr>
+<tr class="memitem:ab2c485012d37418a071bba6415c0c9ec" id="r_ab2c485012d37418a071bba6415c0c9ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2c485012d37418a071bba6415c0c9ec">createTestFile</a> (const std::string &amp;filename, const std::string &amp;content=&quot;test content&quot;) const</td></tr>
+<tr class="memdesc:ab2c485012d37418a071bba6415c0c9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test file inside the test directory.  <br /></td></tr>
+<tr class="memitem:a69d865915925db599252868cdf058520" id="r_a69d865915925db599252868cdf058520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69d865915925db599252868cdf058520">createTestDirectory</a> (const std::string &amp;dirname) const</td></tr>
+<tr class="memdesc:a69d865915925db599252868cdf058520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory inside the test directory.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Защищенные данные</h2></td></tr>
@@ -134,8 +134,8 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Test fixture for <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a> integration tests. Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create various file system structures for testing the staging logic of the <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a>. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
-<a id="a9a1ef607b1a678750a531c1b309cd9d1" name="a9a1ef607b1a678750a531c1b309cd9d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a1ef607b1a678750a531c1b309cd9d1">&#9670;&#160;</a></span>createTestDirectory()</h2>
+<a id="a69d865915925db599252868cdf058520" name="a69d865915925db599252868cdf058520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d865915925db599252868cdf058520">&#9670;&#160;</a></span>createTestDirectory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,7 +147,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
           <td class="memname">void AddCommandTest::createTestDirectory </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dirname</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -167,8 +167,8 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 
 </div>
 </div>
-<a id="ac6b5b9dcc95890beb548607259f9da9f" name="ac6b5b9dcc95890beb548607259f9da9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6b5b9dcc95890beb548607259f9da9f">&#9670;&#160;</a></span>createTestFile()</h2>
+<a id="ab2c485012d37418a071bba6415c0c9ec" name="ab2c485012d37418a071bba6415c0c9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c485012d37418a071bba6415c0c9ec">&#9670;&#160;</a></span>createTestFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +184,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;test&#160;content&quot;</span>&#160;)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;test&#160;content&quot;</span>&#160;) const</td>
         </tr>
       </table>
   </td>

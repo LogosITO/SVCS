@@ -110,10 +110,10 @@ Inheritance diagram for Repository:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a26ba073b495c4b231658713f1e3ffeae" id="r_a26ba073b495c4b231658713f1e3ffeae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26ba073b495c4b231658713f1e3ffeae">~Repository</a> ()</td></tr>
-<tr class="memdesc:a26ba073b495c4b231658713f1e3ffeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
-<tr class="memitem:a6630b76df7b7093650373d799367e28d" id="r_a6630b76df7b7093650373d799367e28d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6630b76df7b7093650373d799367e28d">Repository</a> (const std::filesystem::path &amp;rpath)</td></tr>
-<tr class="memdesc:a6630b76df7b7093650373d799367e28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the repository manager.  <br /></td></tr>
+<tr class="memitem:a64de863b90dcce47cad8389326d5d0f7" id="r_a64de863b90dcce47cad8389326d5d0f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64de863b90dcce47cad8389326d5d0f7">~Repository</a> () override</td></tr>
+<tr class="memdesc:a64de863b90dcce47cad8389326d5d0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+<tr class="memitem:a1df4810f68ebca61adfbbad3e079b2f1" id="r_a1df4810f68ebca61adfbbad3e079b2f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1df4810f68ebca61adfbbad3e079b2f1">Repository</a> (std::filesystem::path rpath)</td></tr>
+<tr class="memdesc:a1df4810f68ebca61adfbbad3e079b2f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the repository manager.  <br /></td></tr>
 <tr class="memitem:a58a23eff67b9a24c3a8916fd8dfacc9a" id="r_a58a23eff67b9a24c3a8916fd8dfacc9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58a23eff67b9a24c3a8916fd8dfacc9a">initializeDependencies</a> ()</td></tr>
 <tr class="memdesc:a58a23eff67b9a24c3a8916fd8dfacc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the repository's internal dependencies.  <br /></td></tr>
 <tr class="memitem:aff14558f8e382efc3e5e53263b85e312" id="r_aff14558f8e382efc3e5e53263b85e312"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff14558f8e382efc3e5e53263b85e312">init</a> ()</td></tr>
@@ -155,11 +155,14 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 <li>Implements <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> to serve as an event publisher for the core VCS operations. </li>
 </ul>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a26ba073b495c4b231658713f1e3ffeae" name="a26ba073b495c4b231658713f1e3ffeae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26ba073b495c4b231658713f1e3ffeae">&#9670;&#160;</a></span>~Repository()</h2>
+<a id="a64de863b90dcce47cad8389326d5d0f7" name="a64de863b90dcce47cad8389326d5d0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64de863b90dcce47cad8389326d5d0f7">&#9670;&#160;</a></span>~Repository()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Repository::~Repository </td>
@@ -168,6 +171,11 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Virtual destructor. </p>
@@ -177,19 +185,27 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 
 </div>
 </div>
-<a id="a6630b76df7b7093650373d799367e28d" name="a6630b76df7b7093650373d799367e28d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6630b76df7b7093650373d799367e28d">&#9670;&#160;</a></span>Repository()</h2>
+<a id="a1df4810f68ebca61adfbbad3e079b2f1" name="a1df4810f68ebca61adfbbad3e079b2f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df4810f68ebca61adfbbad3e079b2f1">&#9670;&#160;</a></span>Repository()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Repository::Repository </td>
           <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>rpath</em></span></td><td>)</td>
+          <td class="paramtype">std::filesystem::path</td>          <td class="paramname"><span class="paramname"><em>rpath</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Constructs the repository manager. </p>
@@ -325,7 +341,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -353,7 +369,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -410,6 +426,9 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Repository::is_initialized </td>
@@ -418,6 +437,11 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checks if the repository structure is fully initialized and valid. </p>

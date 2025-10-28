@@ -1,6 +1,6 @@
 var classMockHelpService =
 [
-    [ "MockHelpService", "classMockHelpService.html#acc513cbd116f6c131c06b4577dabec70", null ],
+    [ "MockHelpService", "classMockHelpService.html#ac1c8570640107c6dd75b357a5bde10d3", null ],
     [ "clear", "classMockHelpService.html#a1e5c10b1ef3a05be719dcaece9c8855e", null ],
     [ "getAvailableCommands", "classMockHelpService.html#a48d91142003d63d20ca19b3215e2a5d2", null ],
     [ "getCommandDescription", "classMockHelpService.html#acd98a15f199035212c810e95aa496a62", null ],

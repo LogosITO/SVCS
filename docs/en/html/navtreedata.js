@@ -59,6 +59,7 @@ var NAVTREE =
       [ "Our Process", "md_SECURITY.html#autotoc_md33", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
+    [ "Test List", "test.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -84,8 +85,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classHelpCommandTest.html",
-"classTree.html#a9b3870b1189b06efecd0a56aad4e467e"
+"classCommit.html#a8ef0c99b1167987343c99cc63dfef608",
+"classSaveCommandTest.html#aac4baff35723bce4d333802a72ca1e76"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

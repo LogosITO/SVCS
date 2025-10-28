@@ -7,5 +7,7 @@ var searchData=
   ['helpservice_2ehxx_4',['HelpService.hxx',['../HelpService_8hxx.html',1,'']]],
   ['historycommand_2ecxx_5',['HistoryCommand.cxx',['../HistoryCommand_8cxx.html',1,'']]],
   ['historycommand_2ehxx_6',['HistoryCommand.hxx',['../HistoryCommand_8hxx.html',1,'']]],
-  ['historycommandtest_2ecxx_7',['HistoryCommandTest.cxx',['../HistoryCommandTest_8cxx.html',1,'']]]
+  ['historycommandtest_2ecxx_7',['HistoryCommandTest.cxx',['../HistoryCommandTest_8cxx.html',1,'']]],
+  ['hubcommand_2ecxx_8',['HubCommand.cxx',['../HubCommand_8cxx.html',1,'']]],
+  ['hubcommand_2ehxx_9',['HubCommand.hxx',['../HubCommand_8hxx.html',1,'']]]
 ];

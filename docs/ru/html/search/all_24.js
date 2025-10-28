@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['💻_20available_20commands_0',['💻 Available Commands',['../md_README.html#autotoc_md5',1,'']]]
+  ['🏗️_20architectural_20excellence_0',['🏗️ Architectural Excellence',['../md_README.html#autotoc_md16',1,'']]]
 ];

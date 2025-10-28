@@ -112,9 +112,9 @@ $(function(){initNavTree('classLogger.html','','classLogger-members'); });
 Открытые члены</h2></td></tr>
 <tr class="memitem:a46f0bc190af0631a7cacfc63dc0e35fa" id="r_a46f0bc190af0631a7cacfc63dc0e35fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46f0bc190af0631a7cacfc63dc0e35fa">Logger</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a46f0bc190af0631a7cacfc63dc0e35fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="memitem:acb668a9e186a25fbaad2e4af6d1ed00a" id="r_acb668a9e186a25fbaad2e4af6d1ed00a"><td class="memItemLeft" align="right" valign="top"><a id="acb668a9e186a25fbaad2e4af6d1ed00a" name="acb668a9e186a25fbaad2e4af6d1ed00a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~Logger</b> ()</td></tr>
-<tr class="memdesc:acb668a9e186a25fbaad2e4af6d1ed00a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:afee741267f0de25da55208a6424eb84f" id="r_afee741267f0de25da55208a6424eb84f"><td class="memItemLeft" align="right" valign="top"><a id="afee741267f0de25da55208a6424eb84f" name="afee741267f0de25da55208a6424eb84f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Logger</b> () override</td></tr>
+<tr class="memdesc:afee741267f0de25da55208a6424eb84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="memitem:a2053c71402fe93a43ea3170ed67807d5" id="r_a2053c71402fe93a43ea3170ed67807d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2053c71402fe93a43ea3170ed67807d5">update</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) override</td></tr>
 <tr class="memdesc:a2053c71402fe93a43ea3170ed67807d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called by the Subject to notify the observer with an event.  <br /></td></tr>
 <tr class="memitem:a96a2b88ee6d81d3ecf0fed3a6291c9a2" id="r_a96a2b88ee6d81d3ecf0fed3a6291c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96a2b88ee6d81d3ecf0fed3a6291c9a2">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) override</td></tr>
@@ -337,6 +337,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>flush</b> ()</td></tr
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> Logger::getLevel </td>
@@ -345,6 +348,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>flush</b> ()</td></tr
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Retrieves the current minimum log level. </p>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📝_20license_20attribution_0',['📝 License &amp;amp; Attribution',['../md_README.html#autotoc_md26',1,'']]]
+  ['📚_20svcs_3a_20simple_20version_20control_20system_0',['📚 SVCS: Simple Version Control System',['../md_README.html',1,'']]]
 ];

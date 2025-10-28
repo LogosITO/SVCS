@@ -136,7 +136,7 @@ $(function(){initNavTree('EventBus_8hxx_source.html','',''); });
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">mutable</span> std::mutex observers_mutex_; <span class="comment">// Changed to mutable to allow locking inside const notify</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::string getEventColor(<a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a> type)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">static</span> std::string getEventColor(<a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a> type) {</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">switch</span> (type) {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">case</span> Event::REPOSITORY_INIT_SUCCESS:</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordflow">return</span> ConsoleColor::BRIGHT_GREEN;</div>
@@ -157,7 +157,7 @@ $(function(){initNavTree('EventBus_8hxx_source.html','',''); });
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    std::string getEventIcon(<a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a> type)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">static</span> std::string getEventIcon(<a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a> type) {</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">switch</span> (type) {</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">case</span> Event::REPOSITORY_INIT_SUCCESS:</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;✅&quot;</span>;</div>

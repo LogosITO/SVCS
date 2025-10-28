@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS: Класс RemoteProtocol</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Simple Version Control System</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classRemoteProtocol.html','','classRemoteProtocol-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс RemoteProtocol</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Handles the remote communication protocol for SVCS.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="RemoteProtocol_8hxx_source.html">RemoteProtocol.hxx</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ae13f8845715408297f5466fdcecce981" id="r_ae13f8845715408297f5466fdcecce981"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae13f8845715408297f5466fdcecce981">RemoteProtocol</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; event_bus, std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt; repository_manager)</td></tr>
+<tr class="memdesc:ae13f8845715408297f5466fdcecce981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classRemoteProtocol.html" title="Handles the remote communication protocol for SVCS.">RemoteProtocol</a> with necessary dependencies.  <br /></td></tr>
+<tr class="memitem:af00770931128eaaaf4b9bfc19ef73e69" id="r_af00770931128eaaaf4b9bfc19ef73e69"><td class="memItemLeft" align="right" valign="top"><a id="af00770931128eaaaf4b9bfc19ef73e69" name="af00770931128eaaaf4b9bfc19ef73e69"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~RemoteProtocol</b> ()=default</td></tr>
+<tr class="memdesc:af00770931128eaaaf4b9bfc19ef73e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
+<tr class="memitem:a54d6ce28df9c8a53e79908c038493372" id="r_a54d6ce28df9c8a53e79908c038493372"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54d6ce28df9c8a53e79908c038493372">handleReceivePack</a> ()</td></tr>
+<tr class="memdesc:a54d6ce28df9c8a53e79908c038493372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the 'receive-pack' protocol for <b>push</b> operations.  <br /></td></tr>
+<tr class="memitem:a67939ef40e01647387fc991cff543485" id="r_a67939ef40e01647387fc991cff543485"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67939ef40e01647387fc991cff543485">handleUploadPack</a> ()</td></tr>
+<tr class="memdesc:a67939ef40e01647387fc991cff543485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the 'upload-pack' protocol for <b>pull</b> operations.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Handles the remote communication protocol for SVCS. </p>
+<p>Manages the custom protocol for <b>push</b> and <b>pull</b> operations, including object negotiation, data transfer, and reference updates between client and server. The protocol is a simple text-based exchange over standard input/output. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ae13f8845715408297f5466fdcecce981" name="ae13f8845715408297f5466fdcecce981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13f8845715408297f5466fdcecce981">&#9670;&#160;</a></span>RemoteProtocol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RemoteProtocol::RemoteProtocol </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>event_bus</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>repository_manager</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classRemoteProtocol.html" title="Handles the remote communication protocol for SVCS.">RemoteProtocol</a> with necessary dependencies. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event_bus</td><td>The shared pointer to the event bus for the notification system (<a class="el" href="classISubject.html">ISubject</a>). </td></tr>
+    <tr><td class="paramname">repository_manager</td><td>The shared pointer to the repository manager for repository operations (<a class="el" href="classRepositoryManager.html">RepositoryManager</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a54d6ce28df9c8a53e79908c038493372" name="a54d6ce28df9c8a53e79908c038493372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d6ce28df9c8a53e79908c038493372">&#9670;&#160;</a></span>handleReceivePack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RemoteProtocol::handleReceivePack </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the 'receive-pack' protocol for <b>push</b> operations. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True if the protocol completed successfully (all objects received and references updated), false otherwise.</dd></dl>
+<p>This function processes client push requests. It manages the negotiation of objects, receives the missing object data from the client, and finally attempts to apply the requested reference updates (e.g., updating branches). </p>
+
+</div>
+</div>
+<a id="a67939ef40e01647387fc991cff543485" name="a67939ef40e01647387fc991cff543485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67939ef40e01647387fc991cff543485">&#9670;&#160;</a></span>handleUploadPack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RemoteProtocol::handleUploadPack </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the 'upload-pack' protocol for <b>pull</b> operations. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True if the protocol completed successfully (objects negotiated and sent), false otherwise.</dd></dl>
+<p>This function processes client pull requests. It performs object negotiation by determining which objects the client is missing based on its 'have' list, and then packages and sends the missing object data to the client. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>server/include/<a class="el" href="RemoteProtocol_8hxx_source.html">RemoteProtocol.hxx</a></li>
+<li>server/src/<a class="el" href="RemoteProtocol_8cxx.html">RemoteProtocol.cxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="classRemoteProtocol.html">RemoteProtocol</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

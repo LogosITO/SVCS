@@ -112,8 +112,8 @@ Inheritance diagram for BaseCommand:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6ada486a8ab81d0283181fd8cd5274e1" id="r_a6ada486a8ab81d0283181fd8cd5274e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ada486a8ab81d0283181fd8cd5274e1">BaseCommand</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; subject)</td></tr>
 <tr class="memdesc:a6ada486a8ab81d0283181fd8cd5274e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="memitem:a33d060c975bef295836c273a141a166a" id="r_a33d060c975bef295836c273a141a166a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33d060c975bef295836c273a141a166a">~BaseCommand</a> ()=default</td></tr>
-<tr class="memdesc:a33d060c975bef295836c273a141a166a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+<tr class="memitem:a4ea5517949503ae27c8eec05c3107995" id="r_a4ea5517949503ae27c8eec05c3107995"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ea5517949503ae27c8eec05c3107995">~BaseCommand</a> () override=default</td></tr>
+<tr class="memdesc:a4ea5517949503ae27c8eec05c3107995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 <tr class="memitem:a381d6ef985b2460dbbd831b3bbad56a4" id="r_a381d6ef985b2460dbbd831b3bbad56a4"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a381d6ef985b2460dbbd831b3bbad56a4">getName</a> () const override=0</td></tr>
 <tr class="memdesc:a381d6ef985b2460dbbd831b3bbad56a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command name (e.g., "init", "commit").  <br /></td></tr>
 <tr class="memitem:aa9c4557d17068a2f3abe2dee8c0c5198" id="r_aa9c4557d17068a2f3abe2dee8c0c5198"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9c4557d17068a2f3abe2dee8c0c5198">getDescription</a> () const override=0</td></tr>
@@ -138,12 +138,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a17e2218ad5fc50edbfa9b920cdf101c0 inherit pub_methods_classICommand" id="r_a17e2218ad5fc50edbfa9b920cdf101c0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0">execute</a> (const std::vector&lt; std::string &gt; &amp;args)=0</td></tr>
 <tr class="memdesc:a17e2218ad5fc50edbfa9b920cdf101c0 inherit pub_methods_classICommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the main logic of the command.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a757e9a5a0d6feb0b100536c7380bf088" id="r_a757e9a5a0d6feb0b100536c7380bf088"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classRepository.html">Repository</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a757e9a5a0d6feb0b100536c7380bf088">findRepository</a> () const</td></tr>
-<tr class="memdesc:a757e9a5a0d6feb0b100536c7380bf088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds an existing repository in the current or parent directories.  <br /></td></tr>
-<tr class="memitem:ab8985d7405710050555684f57d20a6d0" id="r_ab8985d7405710050555684f57d20a6d0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classRepository.html">Repository</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8985d7405710050555684f57d20a6d0">createRepository</a> (const std::string &amp;path=&quot;.&quot;) const</td></tr>
-<tr class="memdesc:ab8985d7405710050555684f57d20a6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new repository instance.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:aeda1ecf978bfb02f534a15f99520065a" id="r_aeda1ecf978bfb02f534a15f99520065a"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classRepository.html">Repository</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeda1ecf978bfb02f534a15f99520065a">findRepository</a> ()</td></tr>
+<tr class="memdesc:aeda1ecf978bfb02f534a15f99520065a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds an existing repository in the current or parent directories.  <br /></td></tr>
+<tr class="memitem:ab92d070ecff1669467aa64dffb9b616a" id="r_ab92d070ecff1669467aa64dffb9b616a"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classRepository.html">Repository</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab92d070ecff1669467aa64dffb9b616a">createRepository</a> (const std::string &amp;path=&quot;.&quot;)</td></tr>
+<tr class="memdesc:ab92d070ecff1669467aa64dffb9b616a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new repository instance.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -187,8 +187,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a33d060c975bef295836c273a141a166a" name="a33d060c975bef295836c273a141a166a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33d060c975bef295836c273a141a166a">&#9670;&#160;</a></span>~BaseCommand()</h2>
+<a id="a4ea5517949503ae27c8eec05c3107995" name="a4ea5517949503ae27c8eec05c3107995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea5517949503ae27c8eec05c3107995">&#9670;&#160;</a></span>~BaseCommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +197,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual BaseCommand::~BaseCommand </td>
+          <td class="memname">BaseCommand::~BaseCommand </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -205,7 +205,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -218,8 +218,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ab8985d7405710050555684f57d20a6d0" name="ab8985d7405710050555684f57d20a6d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8985d7405710050555684f57d20a6d0">&#9670;&#160;</a></span>createRepository()</h2>
+<a id="ab92d070ecff1669467aa64dffb9b616a" name="ab92d070ecff1669467aa64dffb9b616a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab92d070ecff1669467aa64dffb9b616a">&#9670;&#160;</a></span>createRepository()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,12 +231,12 @@ Protected Attributes</h2></td></tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="classRepository.html">Repository</a> &gt; BaseCommand::createRepository </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;.&quot;</span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -252,8 +252,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a757e9a5a0d6feb0b100536c7380bf088" name="a757e9a5a0d6feb0b100536c7380bf088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a757e9a5a0d6feb0b100536c7380bf088">&#9670;&#160;</a></span>findRepository()</h2>
+<a id="aeda1ecf978bfb02f534a15f99520065a" name="aeda1ecf978bfb02f534a15f99520065a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda1ecf978bfb02f534a15f99520065a">&#9670;&#160;</a></span>findRepository()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,12 +265,12 @@ Protected Attributes</h2></td></tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="classRepository.html">Repository</a> &gt; BaseCommand::findRepository </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

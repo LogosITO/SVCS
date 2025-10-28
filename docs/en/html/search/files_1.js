@@ -5,7 +5,8 @@ var searchData=
   ['blob_2ehxx_2',['Blob.hxx',['../Blob_8hxx.html',1,'']]],
   ['blobtest_2ecxx_3',['BlobTest.cxx',['../BlobTest_8cxx.html',1,'']]],
   ['branchcommand_2ecxx_4',['BranchCommand.cxx',['../BranchCommand_8cxx.html',1,'']]],
-  ['branchmanager_2ecxx_5',['BranchManager.cxx',['../BranchManager_8cxx.html',1,'']]],
-  ['branchmanager_2ehxx_6',['BranchManager.hxx',['../BranchManager_8hxx.html',1,'']]],
-  ['branchmanagertest_2ecxx_7',['BranchManagerTest.cxx',['../BranchManagerTest_8cxx.html',1,'']]]
+  ['branchcommand_2ehxx_5',['BranchCommand.hxx',['../BranchCommand_8hxx.html',1,'']]],
+  ['branchmanager_2ecxx_6',['BranchManager.cxx',['../BranchManager_8cxx.html',1,'']]],
+  ['branchmanager_2ehxx_7',['BranchManager.hxx',['../BranchManager_8hxx.html',1,'']]],
+  ['branchmanagertest_2ecxx_8',['BranchManagerTest.cxx',['../BranchManagerTest_8cxx.html',1,'']]]
 ];

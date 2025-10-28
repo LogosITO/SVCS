@@ -1,9 +1,7 @@
 var classBaseCommand =
 [
     [ "BaseCommand", "classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1", null ],
-    [ "~BaseCommand", "classBaseCommand.html#a33d060c975bef295836c273a141a166a", null ],
-    [ "createRepository", "classBaseCommand.html#ab8985d7405710050555684f57d20a6d0", null ],
-    [ "findRepository", "classBaseCommand.html#a757e9a5a0d6feb0b100536c7380bf088", null ],
+    [ "~BaseCommand", "classBaseCommand.html#a4ea5517949503ae27c8eec05c3107995", null ],
     [ "getDescription", "classBaseCommand.html#aa9c4557d17068a2f3abe2dee8c0c5198", null ],
     [ "getName", "classBaseCommand.html#a381d6ef985b2460dbbd831b3bbad56a4", null ],
     [ "getUsage", "classBaseCommand.html#aea8d2b5cbe3c773db9f2477f3d38aa8b", null ],

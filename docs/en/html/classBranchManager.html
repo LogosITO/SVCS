@@ -132,13 +132,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>updateBranchHead</b> 
 <tr class="memdesc:a6d9226441cbc178c6afe0b957b50d406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a branch with the given name exists.  <br /></td></tr>
 <tr class="memitem:acd0aa8b6f71b83cc190081c1845e3284" id="r_acd0aa8b6f71b83cc190081c1845e3284"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd0aa8b6f71b83cc190081c1845e3284">getBranchHead</a> (const std::string &amp;branch_name) const</td></tr>
 <tr class="memdesc:acd0aa8b6f71b83cc190081c1845e3284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the commit hash that a specific branch points to.  <br /></td></tr>
-<tr class="memitem:aa283114845b47d8be2c7aab97009afb3" id="r_aa283114845b47d8be2c7aab97009afb3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa283114845b47d8be2c7aab97009afb3">commitExists</a> (const std::string &amp;commit_hash) const</td></tr>
-<tr class="memdesc:aa283114845b47d8be2c7aab97009afb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a commit exists.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2bed7bba95e0d75b22b5264c9058b600" id="r_a2bed7bba95e0d75b22b5264c9058b600"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bed7bba95e0d75b22b5264c9058b600">isValidBranchName</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a2bed7bba95e0d75b22b5264c9058b600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string is a valid name for a new branch.  <br /></td></tr>
+<tr class="memitem:ad43258d9fbf5987e44f51515d39a1211" id="r_ad43258d9fbf5987e44f51515d39a1211"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad43258d9fbf5987e44f51515d39a1211">commitExists</a> (const std::string &amp;commit_hash)</td></tr>
+<tr class="memdesc:ad43258d9fbf5987e44f51515d39a1211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a commit exists.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Core service for managing version control branches (creation, deletion, switching). </p>
@@ -204,19 +204,27 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa283114845b47d8be2c7aab97009afb3" name="aa283114845b47d8be2c7aab97009afb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa283114845b47d8be2c7aab97009afb3">&#9670;&#160;</a></span>commitExists()</h2>
+<a id="ad43258d9fbf5987e44f51515d39a1211" name="ad43258d9fbf5987e44f51515d39a1211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad43258d9fbf5987e44f51515d39a1211">&#9670;&#160;</a></span>commitExists()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool BranchManager::commitExists </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checks if a commit exists. </p>

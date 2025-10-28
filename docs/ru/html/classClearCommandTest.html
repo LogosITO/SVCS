@@ -111,10 +111,10 @@ $(function(){initNavTree('classClearCommandTest.html','','classClearCommandTest-
 <tr class="memdesc:a445fb3d34f9eac29372bc2ab37f64ef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the test environment.  <br /></td></tr>
 <tr class="memitem:a974fec48c350cf3a165d645e2bb82fa4" id="r_a974fec48c350cf3a165d645e2bb82fa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a974fec48c350cf3a165d645e2bb82fa4">TearDown</a> () override</td></tr>
 <tr class="memdesc:a974fec48c350cf3a165d645e2bb82fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tears down the test environment.  <br /></td></tr>
-<tr class="memitem:a909eec840641ec6d302bf97cf8f4961a" id="r_a909eec840641ec6d302bf97cf8f4961a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a909eec840641ec6d302bf97cf8f4961a">createTestFile</a> (const std::string &amp;filename, const std::string &amp;content=&quot;test content&quot;)</td></tr>
-<tr class="memdesc:a909eec840641ec6d302bf97cf8f4961a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test file inside the test directory.  <br /></td></tr>
-<tr class="memitem:ac33891a7d4c4574bcd35413c70532548" id="r_ac33891a7d4c4574bcd35413c70532548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac33891a7d4c4574bcd35413c70532548">createTestDirectory</a> (const std::string &amp;dirname)</td></tr>
-<tr class="memdesc:ac33891a7d4c4574bcd35413c70532548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory inside the test directory.  <br /></td></tr>
+<tr class="memitem:a6f4274eb3f665355a79034b64f62dd80" id="r_a6f4274eb3f665355a79034b64f62dd80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f4274eb3f665355a79034b64f62dd80">createTestFile</a> (const std::string &amp;filename, const std::string &amp;content=&quot;test content&quot;) const</td></tr>
+<tr class="memdesc:a6f4274eb3f665355a79034b64f62dd80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test file inside the test directory.  <br /></td></tr>
+<tr class="memitem:a7c2a071223db041ffea0deb6ce274767" id="r_a7c2a071223db041ffea0deb6ce274767"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c2a071223db041ffea0deb6ce274767">createTestDirectory</a> (const std::string &amp;dirname) const</td></tr>
+<tr class="memdesc:a7c2a071223db041ffea0deb6ce274767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory inside the test directory.  <br /></td></tr>
 <tr class="memitem:a527589153d8f6a8bb263571b9aff360b" id="r_a527589153d8f6a8bb263571b9aff360b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a527589153d8f6a8bb263571b9aff360b">simulateUserInput</a> (const std::string &amp;input)</td></tr>
 <tr class="memdesc:a527589153d8f6a8bb263571b9aff360b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates user input by redirecting std::cin to a string stream.  <br /></td></tr>
 <tr class="memitem:acfc70a9daa3a28208acea85449211517" id="r_acfc70a9daa3a28208acea85449211517"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfc70a9daa3a28208acea85449211517">repositoryExists</a> () const</td></tr>
@@ -147,8 +147,8 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
 <li>Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create test files/directories and to simulate user input required for the 'clear' confirmation prompt. </li>
 </ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
-<a id="ac33891a7d4c4574bcd35413c70532548" name="ac33891a7d4c4574bcd35413c70532548"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac33891a7d4c4574bcd35413c70532548">&#9670;&#160;</a></span>createTestDirectory()</h2>
+<a id="a7c2a071223db041ffea0deb6ce274767" name="a7c2a071223db041ffea0deb6ce274767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c2a071223db041ffea0deb6ce274767">&#9670;&#160;</a></span>createTestDirectory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +160,7 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
           <td class="memname">void ClearCommandTest::createTestDirectory </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dirname</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -182,8 +182,8 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
 
 </div>
 </div>
-<a id="a909eec840641ec6d302bf97cf8f4961a" name="a909eec840641ec6d302bf97cf8f4961a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a909eec840641ec6d302bf97cf8f4961a">&#9670;&#160;</a></span>createTestFile()</h2>
+<a id="a6f4274eb3f665355a79034b64f62dd80" name="a6f4274eb3f665355a79034b64f62dd80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f4274eb3f665355a79034b64f62dd80">&#9670;&#160;</a></span>createTestFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +199,7 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;test&#160;content&quot;</span>&#160;)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;test&#160;content&quot;</span>&#160;) const</td>
         </tr>
       </table>
   </td>

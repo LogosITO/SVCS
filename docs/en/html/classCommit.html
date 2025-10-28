@@ -128,8 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a341a1826cec171e37a95f0317183ea5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the user-defined commit message.  <br /></td></tr>
 <tr class="memitem:ae75dbe7170f17040ae69f084a36fadf7" id="r_ae75dbe7170f17040ae69f084a36fadf7"><td class="memItemLeft" align="right" valign="top"><a id="ae75dbe7170f17040ae69f084a36fadf7" name="ae75dbe7170f17040ae69f084a36fadf7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setMessage</b> (const std::string &amp;msg)</td></tr>
-<tr class="memitem:add7481b71e932e4f79b9d77414bc909b" id="r_add7481b71e932e4f79b9d77414bc909b"><td class="memItemLeft" align="right" valign="top"><a id="add7481b71e932e4f79b9d77414bc909b" name="add7481b71e932e4f79b9d77414bc909b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimestamp</b> (const std::time_t tstamp)</td></tr>
+<tr class="memitem:a884794e13b9df7e9d6a416c0d69de0ff" id="r_a884794e13b9df7e9d6a416c0d69de0ff"><td class="memItemLeft" align="right" valign="top"><a id="a884794e13b9df7e9d6a416c0d69de0ff" name="a884794e13b9df7e9d6a416c0d69de0ff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimestamp</b> (std::time_t tstamp)</td></tr>
 <tr class="memitem:a9f8351b67005ad46e2bbd2671f5985f0" id="r_a9f8351b67005ad46e2bbd2671f5985f0"><td class="memItemLeft" align="right" valign="top"><a id="a9f8351b67005ad46e2bbd2671f5985f0" name="a9f8351b67005ad46e2bbd2671f5985f0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimestampNow</b> ()</td></tr>
 <tr class="memitem:a97cdf233fb1ad1fb766c016c1650c54c" id="r_a97cdf233fb1ad1fb766c016c1650c54c"><td class="memItemLeft" align="right" valign="top"><a id="a97cdf233fb1ad1fb766c016c1650c54c" name="a97cdf233fb1ad1fb766c016c1650c54c"></a>
@@ -258,6 +258,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const std::string &amp; Commit::getAuthor </td>
@@ -266,6 +269,11 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the author and email string for the commit. </p>
@@ -278,6 +286,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const std::string &amp; Commit::getMessage </td>
@@ -286,6 +297,11 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the user-defined commit message. </p>
@@ -298,6 +314,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const std::vector&lt; std::string &gt; &amp; Commit::getParentHashes </td>
@@ -306,6 +325,11 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the hash IDs of the parent commits. </p>
@@ -318,6 +342,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::time_t Commit::getTimestamp </td>
@@ -326,6 +353,11 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the UNIX timestamp of the commit creation. </p>
@@ -338,6 +370,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const std::string &amp; Commit::getTreeHash </td>
@@ -346,6 +381,11 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the hash ID of the associated root <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object. </p>
@@ -371,7 +411,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -405,7 +445,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

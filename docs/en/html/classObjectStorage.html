@@ -110,10 +110,10 @@ Inheritance diagram for ObjectStorage:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa511ec3636de4f1ad6f411e7a2aa2638" id="r_aa511ec3636de4f1ad6f411e7a2aa2638"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa511ec3636de4f1ad6f411e7a2aa2638">ObjectStorage</a> (const std::string &amp;root_path, std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; subject=nullptr)</td></tr>
-<tr class="memdesc:aa511ec3636de4f1ad6f411e7a2aa2638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  <br /></td></tr>
+<tr class="memitem:a97cd1089e57caec02d91e9d5177f2607" id="r_a97cd1089e57caec02d91e9d5177f2607"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97cd1089e57caec02d91e9d5177f2607">ObjectStorage</a> (const std::string &amp;root_path, const std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; &amp;subject=nullptr)</td></tr>
+<tr class="memdesc:a97cd1089e57caec02d91e9d5177f2607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  <br /></td></tr>
 <tr class="memitem:a84986af89788ac235900ee9278e681d1" id="r_a84986af89788ac235900ee9278e681d1"><td class="memItemLeft" align="right" valign="top"><a id="a84986af89788ac235900ee9278e681d1" name="a84986af89788ac235900ee9278e681d1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~ObjectStorage</b> ()</td></tr>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ObjectStorage</b> ()</td></tr>
 <tr class="memdesc:a84986af89788ac235900ee9278e681d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="memitem:a0dc7bb15cb48b9795149e3572c4c7c3c" id="r_a0dc7bb15cb48b9795149e3572c4c7c3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dc7bb15cb48b9795149e3572c4c7c3c">setSubject</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; subj)</td></tr>
 <tr class="memdesc:a0dc7bb15cb48b9795149e3572c4c7c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or replaces the event subject used by the <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>.  <br /></td></tr>
@@ -130,11 +130,14 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Manages the version control object database, including persistence and object restoration. </p>
 <p>Implements low-level file system operations (path generation, reading, writing), compression, decompression, and object deserialization. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa511ec3636de4f1ad6f411e7a2aa2638" name="aa511ec3636de4f1ad6f411e7a2aa2638"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa511ec3636de4f1ad6f411e7a2aa2638">&#9670;&#160;</a></span>ObjectStorage()</h2>
+<a id="a97cd1089e57caec02d91e9d5177f2607" name="a97cd1089e57caec02d91e9d5177f2607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97cd1089e57caec02d91e9d5177f2607">&#9670;&#160;</a></span>ObjectStorage()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">ObjectStorage::ObjectStorage </td>
@@ -144,9 +147,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>subject</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>subject</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Constructor for <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>. </p>
@@ -166,6 +174,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string ObjectStorage::getObjectPath </td>
@@ -174,6 +185,11 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Forms the full filesystem path for an object based on its hash. </p>
@@ -205,7 +221,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -234,6 +250,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool ObjectStorage::objectExists </td>
@@ -242,6 +261,11 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checks if an object with the given hash exists on disk. </p>
@@ -273,7 +297,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

@@ -119,13 +119,13 @@ $(function(){initNavTree('Tree_8hxx_source.html','',''); });
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::vector&lt;TreeEntry&gt; entries;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree</a>(std::vector&lt;TreeEntry&gt; entries);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree</a>(std::vector&lt;TreeEntry&gt; entries);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// VcsObject overrides</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    std::string <a class="code hl_function" href="classTree.html#a9b3870b1189b06efecd0a56aad4e467e">getType</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    [[nodiscard]] std::string <a class="code hl_function" href="classTree.html#a9b3870b1189b06efecd0a56aad4e467e">getType</a>() <span class="keyword">const override</span>;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    std::string <a class="code hl_function" href="classTree.html#aae4f965e5566b0addf5467ba5db10e3f">serialize</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    [[nodiscard]] std::string <a class="code hl_function" href="classTree.html#aae4f965e5566b0addf5467ba5db10e3f">serialize</a>() <span class="keyword">const override</span>;</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">static</span> <a class="code hl_function" href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree</a> <a class="code hl_function" href="classTree.html#a85166cfd9d904644216cdacb0b4b7d54">deserialize</a>(<span class="keyword">const</span> std::string&amp; raw_content);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
@@ -133,9 +133,9 @@ $(function(){initNavTree('Tree_8hxx_source.html','',''); });
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classTree.html#a85035a45ff8778df5bb8be32f57bf232">removeEntry</a>(<span class="keyword">const</span> std::string&amp; name);</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    std::optional&lt;TreeEntry&gt; <a class="code hl_function" href="classTree.html#a944fe0075293396036606f6a999643f4">findEntry</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    [[nodiscard]] std::optional&lt;TreeEntry&gt; <a class="code hl_function" href="classTree.html#a944fe0075293396036606f6a999643f4">findEntry</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">const</span> std::vector&lt;TreeEntry&gt;&amp; <a class="code hl_function" href="classTree.html#a57ecc3c34be17f9e349ef386223eead8">getEntries</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    [[nodiscard]] <span class="keyword">const</span> std::vector&lt;TreeEntry&gt;&amp; <a class="code hl_function" href="classTree.html#a57ecc3c34be17f9e349ef386223eead8">getEntries</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
 </div>
 <div class="ttc" id="aTree_8hxx_html_a15d13a6036a062282a24e34a2fe7751f"><div class="ttname"><a href="Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f">createEntry</a></div><div class="ttdeci">TreeEntry createEntry(std::string name, std::string hash_id)</div><div class="ttdoc">Creating tree entry.</div><div class="ttdef"><b>Определения</b> Tree.cxx:21</div></div>

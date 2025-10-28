@@ -1,7 +1,7 @@
 var classAddCommandTest =
 [
-    [ "createTestDirectory", "classAddCommandTest.html#a9a1ef607b1a678750a531c1b309cd9d1", null ],
-    [ "createTestFile", "classAddCommandTest.html#ac6b5b9dcc95890beb548607259f9da9f", null ],
+    [ "createTestDirectory", "classAddCommandTest.html#a69d865915925db599252868cdf058520", null ],
+    [ "createTestFile", "classAddCommandTest.html#ab2c485012d37418a071bba6415c0c9ec", null ],
     [ "SetUp", "classAddCommandTest.html#a03edc7b6fa29ef9c99da73535ac498cc", null ],
     [ "TearDown", "classAddCommandTest.html#aa581ea4026ae9dda2351328dc17b9f03", null ],
     [ "command", "classAddCommandTest.html#aad094493a7113576f3e89b236e08e0f1", null ],

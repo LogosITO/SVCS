@@ -93,7 +93,7 @@ $(function(){initNavTree('BranchCommand_8hxx_source.html','',''); });
   <div class="headertitle"><div class="title">BranchCommand.hxx</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<a href="BranchCommand_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="ICommand_8hxx.html">ICommand.hxx</a>&quot;</span></div>
@@ -104,7 +104,7 @@ $(function(){initNavTree('BranchCommand_8hxx_source.html','',''); });
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// include/commands/BranchCommand.hxx</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classBranchCommand.html">   33</a></span><span class="keyword">class </span>BranchCommand : <span class="keyword">public</span> <a class="code hl_class" href="classICommand.html">ICommand</a> {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
@@ -113,24 +113,24 @@ $(function(){initNavTree('BranchCommand_8hxx_source.html','',''); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    ~BranchCommand() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::string <a class="code hl_function" href="classBranchCommand.html#ac19f2028fc5d1d199cee69308850292d">getName</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::string <a class="code hl_function" href="classBranchCommand.html#aab365b92eb53db8e84d1016f3006a693">getDescription</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::string <a class="code hl_function" href="classBranchCommand.html#a9ee1ab8405a6a4e8359baa1f3860e45c">getUsage</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    [[nodiscard]] std::string <a class="code hl_function" href="classBranchCommand.html#ac19f2028fc5d1d199cee69308850292d">getName</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    [[nodiscard]] std::string <a class="code hl_function" href="classBranchCommand.html#aab365b92eb53db8e84d1016f3006a693">getDescription</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    [[nodiscard]] std::string <a class="code hl_function" href="classBranchCommand.html#a9ee1ab8405a6a4e8359baa1f3860e45c">getUsage</a>() <span class="keyword">const override</span>;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classBranchCommand.html#a6aa576bca717782d4e6900c12186565c">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBranchCommand.html#aeafc61159b00629309ff2cbac2089831">showHelp</a>() <span class="keyword">const override</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> listBranches();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> createBranch(<span class="keyword">const</span> std::string&amp; branch_name);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">bool</span> createBranchFromCommit(<span class="keyword">const</span> std::string&amp; branch_name, <span class="keyword">const</span> std::string&amp; commit_hash); <span class="comment">// ← ОСТАВЛЯЕМ только этот</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> deleteBranch(<span class="keyword">const</span> std::string&amp; branch_name, <span class="keywordtype">bool</span> force = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">bool</span> renameBranch(<span class="keyword">const</span> std::string&amp; old_name, <span class="keyword">const</span> std::string&amp; new_name);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">bool</span> showCurrentBranch();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">bool</span> switchBranch(<span class="keyword">const</span> std::string&amp; branch_name);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> listBranches() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> createBranch(<span class="keyword">const</span> std::string&amp; branch_name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">bool</span> createBranchFromCommit(<span class="keyword">const</span> std::string&amp; branch_name, <span class="keyword">const</span> std::string&amp; commit_hash) <span class="keyword">const</span>; <span class="comment">// ← ОСТАВЛЯЕМ только этот</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> deleteBranch(<span class="keyword">const</span> std::string&amp; branch_name, <span class="keywordtype">bool</span> force = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">bool</span> renameBranch(<span class="keyword">const</span> std::string&amp; old_name, <span class="keyword">const</span> std::string&amp; new_name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">bool</span> showCurrentBranch() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">bool</span> switchBranch(<span class="keyword">const</span> std::string&amp; branch_name) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">bool</span> isValidBranchName(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">bool</span> branchExists(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">bool</span> isValidCommitHash(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>; <span class="comment">// ← ДОБАВЛЯЕМ</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">bool</span> isValidBranchName(<span class="keyword">const</span> std::string&amp; name) ;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    [[nodiscard]] <span class="keywordtype">bool</span> branchExists(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">bool</span> isValidCommitHash(<span class="keyword">const</span> std::string&amp; hash) ; <span class="comment">// ← ДОБАВЛЯЕМ</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::shared_ptr&lt;ISubject&gt; event_bus_;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    std::shared_ptr&lt;BranchManager&gt; branch_manager_;</div>
@@ -139,11 +139,11 @@ $(function(){initNavTree('BranchCommand_8hxx_source.html','',''); });
 <div class="ttc" id="aBranchManager_8hxx_html"><div class="ttname"><a href="BranchManager_8hxx.html">BranchManager.hxx</a></div><div class="ttdoc">Declaration of the BranchManager class for handling version control branches.</div></div>
 <div class="ttc" id="aICommand_8hxx_html"><div class="ttname"><a href="ICommand_8hxx.html">ICommand.hxx</a></div><div class="ttdoc">Declaration of the ICommand interface for all executable CLI commands.</div></div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
-<div class="ttc" id="aclassBranchCommand_html_a6aa576bca717782d4e6900c12186565c"><div class="ttname"><a href="classBranchCommand.html#a6aa576bca717782d4e6900c12186565c">BranchCommand::execute</a></div><div class="ttdeci">bool execute(const std::vector&lt; std::string &gt; &amp;args) override</div><div class="ttdoc">Executes the main logic of the command.</div><div class="ttdef"><b>Definition</b> BranchCommand.cxx:88</div></div>
+<div class="ttc" id="aclassBranchCommand_html_a6aa576bca717782d4e6900c12186565c"><div class="ttname"><a href="classBranchCommand.html#a6aa576bca717782d4e6900c12186565c">BranchCommand::execute</a></div><div class="ttdeci">bool execute(const std::vector&lt; std::string &gt; &amp;args) override</div><div class="ttdoc">Executes the main logic of the command.</div><div class="ttdef"><b>Definition</b> BranchCommand.cxx:87</div></div>
 <div class="ttc" id="aclassBranchCommand_html_a9ee1ab8405a6a4e8359baa1f3860e45c"><div class="ttname"><a href="classBranchCommand.html#a9ee1ab8405a6a4e8359baa1f3860e45c">BranchCommand::getUsage</a></div><div class="ttdeci">std::string getUsage() const override</div><div class="ttdoc">Retrieves the command&#39;s usage syntax.</div><div class="ttdef"><b>Definition</b> BranchCommand.cxx:33</div></div>
 <div class="ttc" id="aclassBranchCommand_html_aab365b92eb53db8e84d1016f3006a693"><div class="ttname"><a href="classBranchCommand.html#aab365b92eb53db8e84d1016f3006a693">BranchCommand::getDescription</a></div><div class="ttdeci">std::string getDescription() const override</div><div class="ttdoc">Retrieves a brief description of what the command does.</div><div class="ttdef"><b>Definition</b> BranchCommand.cxx:29</div></div>
 <div class="ttc" id="aclassBranchCommand_html_ac19f2028fc5d1d199cee69308850292d"><div class="ttname"><a href="classBranchCommand.html#ac19f2028fc5d1d199cee69308850292d">BranchCommand::getName</a></div><div class="ttdeci">std::string getName() const override</div><div class="ttdoc">Retrieves the unique name of the command (e.g., &quot;init&quot;).</div><div class="ttdef"><b>Definition</b> BranchCommand.cxx:25</div></div>
-<div class="ttc" id="aclassBranchCommand_html_aeafc61159b00629309ff2cbac2089831"><div class="ttname"><a href="classBranchCommand.html#aeafc61159b00629309ff2cbac2089831">BranchCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Displays detailed help information about the command (Usage and Description).</div><div class="ttdef"><b>Definition</b> BranchCommand.cxx:190</div></div>
+<div class="ttc" id="aclassBranchCommand_html_aeafc61159b00629309ff2cbac2089831"><div class="ttname"><a href="classBranchCommand.html#aeafc61159b00629309ff2cbac2089831">BranchCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Displays detailed help information about the command (Usage and Description).</div><div class="ttdef"><b>Definition</b> BranchCommand.cxx:187</div></div>
 <div class="ttc" id="aclassICommand_html"><div class="ttname"><a href="classICommand.html">ICommand</a></div><div class="ttdoc">Interface (abstract base class) for all commands executed via the CLI.</div><div class="ttdef"><b>Definition</b> ICommand.hxx:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -151,7 +151,7 @@ $(function(){initNavTree('BranchCommand_8hxx_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_2990d7c532eb7441b74916b8f5365141.html">cli</a></li><li class="navelem"><a href="dir_cde9ee1e1149a294439eb6a6d22bd3a6.html">include</a></li><li class="navelem"><b>BranchCommand.hxx</b></li>
+    <li class="navelem"><a href="dir_2990d7c532eb7441b74916b8f5365141.html">cli</a></li><li class="navelem"><a href="dir_cde9ee1e1149a294439eb6a6d22bd3a6.html">include</a></li><li class="navelem"><a href="BranchCommand_8hxx.html">BranchCommand.hxx</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

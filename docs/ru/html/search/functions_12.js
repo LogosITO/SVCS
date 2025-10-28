@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['warn_0',['warn',['../classLogger.html#a24b519e0f53e73937f93edd2da37ea76',1,'Logger']]],
-  ['wascommandhelpcalled_1',['wasCommandHelpCalled',['../classMockHelpService.html#a75eea5375c564e93e597b8ccdb3181d8',1,'MockHelpService']]],
-  ['write_2',['write',['../classIndex.html#a5e6110ea25938b15f6cfa774c3096451',1,'Index']]]
+  ['vcsobject_0',['VcsObject',['../classVcsObject.html#a58691887a54d3d632038cacb36034075',1,'VcsObject::VcsObject()=default'],['../classVcsObject.html#af2840ade6006e4d64eb6bd9f15b37539',1,'VcsObject::VcsObject(const VcsObject &amp;other)=default']]],
+  ['versioncommand_1',['VersionCommand',['../classVersionCommand.html#a15785516f34561967419b9388fd557ad',1,'VersionCommand']]]
 ];

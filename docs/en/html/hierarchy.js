@@ -18,6 +18,7 @@ var hierarchy =
       [ "ClearCommand", "classClearCommand.html", null ],
       [ "HelpCommand", "classHelpCommand.html", null ],
       [ "HistoryCommand", "classHistoryCommand.html", null ],
+      [ "HubCommand", "classHubCommand.html", null ],
       [ "InitCommand", "classInitCommand.html", null ],
       [ "MergeCommand", "classMergeCommand.html", null ],
       [ "RemoveCommand", "classRemoveCommand.html", null ],
@@ -36,6 +37,7 @@ var hierarchy =
     ] ],
     [ "ISubject", "classISubject.html", [
       [ "EventBus", "classEventBus.html", null ],
+      [ "MockEventBus", "classMockEventBus.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
@@ -44,7 +46,10 @@ var hierarchy =
     [ "ObjectStorage", "classObjectStorage.html", [
       [ "MockObjectStorage", "classMockObjectStorage.html", null ]
     ] ],
-    [ "RepositoryManager", "classRepositoryManager.html", null ],
+    [ "RemoteProtocol", "classRemoteProtocol.html", null ],
+    [ "RepositoryManager", "classRepositoryManager.html", [
+      [ "MockRepositoryManager", "classMockRepositoryManager.html", null ]
+    ] ],
     [ "testing::Test", null, [
       [ "AddCommandTest", "classAddCommandTest.html", null ],
       [ "BranchManagerTest", "classBranchManagerTest.html", null ],
@@ -54,6 +59,8 @@ var hierarchy =
       [ "IndexTest", "classIndexTest.html", null ],
       [ "InitCommandIntegrationTest", "classInitCommandIntegrationTest.html", null ],
       [ "ObjectStorageTest", "classObjectStorageTest.html", null ],
+      [ "RemoteProtocolIntegrationTest", "classRemoteProtocolIntegrationTest.html", null ],
+      [ "RemoteProtocolTest", "classRemoteProtocolTest.html", null ],
       [ "RemoveCommandTest", "classRemoveCommandTest.html", null ],
       [ "RepositoryManagerTest", "classRepositoryManagerTest.html", null ],
       [ "RepositoryTest", "classRepositoryTest.html", null ],

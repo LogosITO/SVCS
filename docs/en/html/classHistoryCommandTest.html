@@ -111,18 +111,21 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:ae7cc70b3a65c5f492f481ae5025fd0db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the testing environment before each test.  <br /></td></tr>
 <tr class="memitem:a68b08b434d26d652810d2134fad13dda" id="r_a68b08b434d26d652810d2134fad13dda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68b08b434d26d652810d2134fad13dda">TearDown</a> () override</td></tr>
 <tr class="memdesc:a68b08b434d26d652810d2134fad13dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tears down the testing environment after each test.  <br /></td></tr>
-<tr class="memitem:a1f1a7ef0b1c680c004fa01807191e74e" id="r_a1f1a7ef0b1c680c004fa01807191e74e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f1a7ef0b1c680c004fa01807191e74e">createTestFile</a> (const std::string &amp;filename, const std::string &amp;content)</td></tr>
-<tr class="memdesc:a1f1a7ef0b1c680c004fa01807191e74e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test file with specified content in the temporary directory.  <br /></td></tr>
-<tr class="memitem:a96e4c593dd35234a30b9cb6c61fcc77b" id="r_a96e4c593dd35234a30b9cb6c61fcc77b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96e4c593dd35234a30b9cb6c61fcc77b">createTestDirectory</a> (const std::string &amp;dirname)</td></tr>
-<tr class="memdesc:a96e4c593dd35234a30b9cb6c61fcc77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory in the temporary location.  <br /></td></tr>
-<tr class="memitem:ad021ace606af692c7ab527962b9d768a" id="r_ad021ace606af692c7ab527962b9d768a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad021ace606af692c7ab527962b9d768a">stageFiles</a> (const std::vector&lt; std::string &gt; &amp;files)</td></tr>
-<tr class="memdesc:ad021ace606af692c7ab527962b9d768a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files using the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging logic.  <br /></td></tr>
+<tr class="memitem:aee81d82c5a6de6a481500176887a62c1" id="r_aee81d82c5a6de6a481500176887a62c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee81d82c5a6de6a481500176887a62c1">createTestFile</a> (const std::string &amp;filename, const std::string &amp;content) const</td></tr>
+<tr class="memdesc:aee81d82c5a6de6a481500176887a62c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test file with specified content in the temporary directory.  <br /></td></tr>
+<tr class="memitem:ac77c319893cf38e27e04c1f2a1b78ec4" id="r_ac77c319893cf38e27e04c1f2a1b78ec4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac77c319893cf38e27e04c1f2a1b78ec4">createTestDirectory</a> (const std::string &amp;dirname) const</td></tr>
+<tr class="memdesc:ac77c319893cf38e27e04c1f2a1b78ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory in the temporary location.  <br /></td></tr>
+<tr class="memitem:a25c60bf368d89fcbef0c2403f7df8cdf" id="r_a25c60bf368d89fcbef0c2403f7df8cdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25c60bf368d89fcbef0c2403f7df8cdf">stageFiles</a> (const std::vector&lt; std::string &gt; &amp;files) const</td></tr>
+<tr class="memdesc:a25c60bf368d89fcbef0c2403f7df8cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files using the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging logic.  <br /></td></tr>
 <tr class="memitem:a2dd0c94ab6f27bbc313407531e4a8524" id="r_a2dd0c94ab6f27bbc313407531e4a8524"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dd0c94ab6f27bbc313407531e4a8524">createTestCommit</a> (const std::string &amp;message)</td></tr>
 <tr class="memdesc:a2dd0c94ab6f27bbc313407531e4a8524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new commit (save) with a specified message.  <br /></td></tr>
-<tr class="memitem:a77e801070bf0f2f32aef24ec99967070" id="r_a77e801070bf0f2f32aef24ec99967070"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77e801070bf0f2f32aef24ec99967070">containsMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
-<tr class="memdesc:a77e801070bf0f2f32aef24ec99967070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific message (substring) exists in any event notification.  <br /></td></tr>
 <tr class="memitem:a8147f4e97007f6aaa9041b79b0529c9a" id="r_a8147f4e97007f6aaa9041b79b0529c9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8147f4e97007f6aaa9041b79b0529c9a">countMessages</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
 <tr class="memdesc:a8147f4e97007f6aaa9041b79b0529c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the occurrences of a specific message (substring) across all event notifications.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a77e801070bf0f2f32aef24ec99967070" id="r_a77e801070bf0f2f32aef24ec99967070"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77e801070bf0f2f32aef24ec99967070">containsMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memdesc:a77e801070bf0f2f32aef24ec99967070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific message (substring) exists in any event notification.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -169,7 +172,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -259,8 +262,8 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 
 </div>
 </div>
-<a id="a96e4c593dd35234a30b9cb6c61fcc77b" name="a96e4c593dd35234a30b9cb6c61fcc77b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96e4c593dd35234a30b9cb6c61fcc77b">&#9670;&#160;</a></span>createTestDirectory()</h2>
+<a id="ac77c319893cf38e27e04c1f2a1b78ec4" name="ac77c319893cf38e27e04c1f2a1b78ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac77c319893cf38e27e04c1f2a1b78ec4">&#9670;&#160;</a></span>createTestDirectory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,7 +275,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
           <td class="memname">void HistoryCommandTest::createTestDirectory </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dirname</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -292,8 +295,8 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 
 </div>
 </div>
-<a id="a1f1a7ef0b1c680c004fa01807191e74e" name="a1f1a7ef0b1c680c004fa01807191e74e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f1a7ef0b1c680c004fa01807191e74e">&#9670;&#160;</a></span>createTestFile()</h2>
+<a id="aee81d82c5a6de6a481500176887a62c1" name="aee81d82c5a6de6a481500176887a62c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee81d82c5a6de6a481500176887a62c1">&#9670;&#160;</a></span>createTestFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +312,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span>&#160;)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>
@@ -358,8 +361,8 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 
 </div>
 </div>
-<a id="ad021ace606af692c7ab527962b9d768a" name="ad021ace606af692c7ab527962b9d768a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad021ace606af692c7ab527962b9d768a">&#9670;&#160;</a></span>stageFiles()</h2>
+<a id="a25c60bf368d89fcbef0c2403f7df8cdf" name="a25c60bf368d89fcbef0c2403f7df8cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c60bf368d89fcbef0c2403f7df8cdf">&#9670;&#160;</a></span>stageFiles()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +374,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
           <td class="memname">void HistoryCommandTest::stageFiles </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>files</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>

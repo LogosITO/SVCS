@@ -1,7 +1,7 @@
 var classLogger =
 [
     [ "Logger", "classLogger.html#a46f0bc190af0631a7cacfc63dc0e35fa", null ],
-    [ "~Logger", "classLogger.html#acb668a9e186a25fbaad2e4af6d1ed00a", null ],
+    [ "~Logger", "classLogger.html#afee741267f0de25da55208a6424eb84f", null ],
     [ "debug", "classLogger.html#a38b544d566463a65d0dbf4ff7f867962", null ],
     [ "error", "classLogger.html#ab6042fdfcbb14026098e0df9d6b32f27", null ],
     [ "fatal", "classLogger.html#ab934865d3713793d0353271a475eaf4b", null ],

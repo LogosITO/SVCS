@@ -78,6 +78,22 @@ private:
                 return ConsoleColor::BRIGHT_BLUE;
             case Event::HELP_MESSAGE:
                 return ConsoleColor::GREEN;
+			case Event::PROTOCOL_START:
+            	return ConsoleColor::BRIGHT_MAGENTA;
+        	case Event::PROTOCOL_SUCCESS:
+            	return ConsoleColor::BRIGHT_GREEN;
+        	case Event::PROTOCOL_ERROR:
+            	return ConsoleColor::BRIGHT_RED;
+        	case Event::NETWORK_SEND:
+            	return ConsoleColor::BRIGHT_CYAN;
+        	case Event::NETWORK_RECEIVE:
+            	return ConsoleColor::BRIGHT_BLUE;
+        	case Event::OBJECT_TRANSFER:
+            	return ConsoleColor::BRIGHT_YELLOW;
+        	case Event::REFERENCE_UPDATE:
+            	return ConsoleColor::BRIGHT_GREEN;
+        	case Event::NEGOTIATION_PHASE:
+            	return ConsoleColor::BRIGHT_MAGENTA;
             default:
                 return ConsoleColor::WHITE;
         }
@@ -99,6 +115,22 @@ private:
                 return "🐛";
             case Event::HELP_MESSAGE:
                 return "💡";
+        	case Event::PROTOCOL_START:
+            	return "🚀";
+        	case Event::PROTOCOL_SUCCESS:
+            	return "✅";
+        	case Event::PROTOCOL_ERROR:
+            	return "💥";
+        	case Event::NETWORK_SEND:
+            	return "📤";
+        	case Event::NETWORK_RECEIVE:
+            	return "📥";
+        	case Event::OBJECT_TRANSFER:
+            	return "📦";
+        	case Event::REFERENCE_UPDATE:
+            	return "🔗";
+        	case Event::NEGOTIATION_PHASE:
+            	return "🤝";
             default:
                 return "";
         }

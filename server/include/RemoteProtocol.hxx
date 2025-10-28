@@ -245,6 +245,72 @@ private:
      * @param message The error message.
      */
     void notifyError(const std::string& message) const;
+
+    /**
+     * @brief Sends a notification indicating the start of a protocol operation (push/pull).
+     *
+     * @param message Details about the protocol start (e.g., "Starting receive-pack").
+     */
+    void notifyProtocolStart(const std::string& message) const;
+
+    /**
+     * @brief Sends a notification indicating the successful completion of a protocol.
+     *
+     * @param message Details about the success.
+     */
+    void notifyProtocolSuccess(const std::string& message) const;
+
+    /**
+     * @brief Sends a notification indicating a protocol failure.
+     *
+     * @param message Details about the error.
+     */
+    void notifyProtocolError(const std::string& message) const;
+
+    /**
+     * @brief Sends a notification related to network sending activities.
+     *
+     * @param message Details about the data sent over the network/stream.
+     */
+    void notifyNetworkSend(const std::string& message) const;
+
+    /**
+     * @brief Sends a notification related to network receiving activities.
+     *
+     * @param message Details about the data received over the network/stream.
+     */
+    void notifyNetworkReceive(const std::string& message) const;
+
+    /**
+     * @brief Sends a notification about an object being transferred.
+     *
+     * @param message Details about the object transfer (e.g., hash, size, direction).
+     */
+    void notifyObjectTransfer(const std::string& message) const;
+
+    /**
+     * @brief Sends a notification about a reference (branch/tag) being updated.
+     *
+     * @param message Details about the reference update (e.g., "master: old_hash -> new_hash").
+     */
+    void notifyReferenceUpdate(const std::string& message) const;
+
+    /**
+     * @brief Sends a notification related to the object negotiation phase.
+     *
+     * @param message Details about the negotiation process (e.g., "Client HAS X", "Server ACKs Y").
+     */
+    void notifyNegotiation(const std::string& message) const;
+
+    /**
+     * @brief Sends an error message to the client through the protocol channel and logs a protocol error.
+     *
+     * @param error The error message string to send to the client.
+     * @return bool True if the error message was sent successfully, false otherwise.
+     *
+     * @details This is a utility method that combines `sendError` (for client) and `notifyProtocolError` (for logging).
+     */
+    bool sendProtocolError(const std::string& error) const;
     /// @}
 
     /// @name Private Data Members

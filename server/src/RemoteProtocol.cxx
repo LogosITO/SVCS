@@ -1,6 +1,6 @@
 /**
  * @file RemoteProtocol.cxx
- * @brief Implementation of the RemoteProtocol class.
+ * @brief Implementation of the RemoteProtocol class for remote communication protocol.
  *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
@@ -9,7 +9,6 @@
 #include "../include/RemoteProtocol.hxx"
 #include "../../services/Event.hxx"
 
-#include <iostream>
 #include <sstream>
 #include <filesystem>
 #include <fstream>
@@ -25,38 +24,38 @@ RemoteProtocol::RemoteProtocol(std::shared_ptr<ISubject> event_bus,
 }
 
 bool RemoteProtocol::handleReceivePack() {
-    notifyInfo("Starting receive-pack protocol (PUSH)");
+    notifyProtocolStart("Starting receive-pack protocol (PUSH)");
 
     if (!processPushNegotiation()) {
-        notifyError("Push negotiation failed");
+        notifyProtocolError("Push negotiation failed");
         return false;
     }
 
-    notifyInfo("Receive-pack protocol completed successfully");
+    notifyProtocolSuccess("Receive-pack protocol completed successfully");
     return true;
 }
 
 bool RemoteProtocol::handleUploadPack() {
-    notifyInfo("Starting upload-pack protocol (PULL)");
+    notifyProtocolStart("Starting upload-pack protocol (PULL)");
 
     if (!processPullNegotiation()) {
-        notifyError("Pull negotiation failed");
+        notifyProtocolError("Pull negotiation failed");
         return false;
     }
 
-    notifyInfo("Upload-pack protocol completed successfully");
+    notifyProtocolSuccess("Upload-pack protocol completed successfully");
     return true;
 }
 
 bool RemoteProtocol::processPushNegotiation() {
-    notifyDebug("Starting push negotiation");
+    notifyNegotiation("Starting push negotiation");
 
     std::unordered_set<std::string> wanted_objects;
     std::vector<std::pair<std::string, std::string>> ref_updates;
     std::string line;
 
     while (readLine(line)) {
-        notifyDebug("Client: " + line);
+        notifyNetworkReceive("Client: " + line);
         if (line == "DONE") {
             break;
         }
@@ -104,13 +103,13 @@ bool RemoteProtocol::processPushNegotiation() {
 }
 
 bool RemoteProtocol::processPullNegotiation() {
-    notifyDebug("Starting pull negotiation");
+    notifyNegotiation("Starting pull negotiation");
 
     std::unordered_set<std::string> client_has;
     std::string line;
 
     while (readLine(line)) {
-        notifyDebug("Client: " + line);
+        notifyNetworkReceive("Client: " + line);
 
         if (line == "DONE_HAS") {
             break;
@@ -126,7 +125,7 @@ bool RemoteProtocol::processPullNegotiation() {
     }
 
     auto missing_objects = findMissingObjects(client_has);
-    notifyDebug("Sending " + std::to_string(missing_objects.size()) + " missing objects");
+    notifyObjectTransfer("Sending " + std::to_string(missing_objects.size()) + " missing objects");
 
     sendLine("OBJECTS_COUNT " + std::to_string(missing_objects.size()));
 
@@ -139,7 +138,7 @@ bool RemoteProtocol::processPullNegotiation() {
 }
 
 bool RemoteProtocol::receiveObjects(const std::unordered_set<std::string>& wanted_objects) {
-    notifyDebug("Receiving " + std::to_string(wanted_objects.size()) + " objects");
+    notifyObjectTransfer("Receiving " + std::to_string(wanted_objects.size()) + " objects");
 
     std::string line;
     size_t received_count = 0;
@@ -154,7 +153,7 @@ bool RemoteProtocol::receiveObjects(const std::unordered_set<std::string>& wante
 
             std::string object_data;
             if (!readLine(object_data)) {
-                sendError("Failed to read object data");
+                sendProtocolError("Failed to read object data");
                 return false;
             }
 
@@ -171,18 +170,18 @@ bool RemoteProtocol::receiveObjects(const std::unordered_set<std::string>& wante
         }
     }
 
-    notifyDebug("Successfully received " + std::to_string(received_count) + " objects");
+    notifyObjectTransfer("Successfully received " + std::to_string(received_count) + " objects");
     return true;
 }
 
 bool RemoteProtocol::updateReferences(const std::vector<std::pair<std::string, std::string>>& ref_updates) {
-    notifyDebug("Updating " + std::to_string(ref_updates.size()) + " references");
+    notifyReferenceUpdate("Updating " + std::to_string(ref_updates.size()) + " references");
 
     for (const auto& [ref_name, new_hash] : ref_updates) {
         if (updateReference(ref_name, new_hash)) {
-            notifyDebug("Updated reference " + ref_name + " -> " + new_hash);
+            notifyReferenceUpdate("Updated reference " + ref_name + " -> " + new_hash);
         } else {
-            notifyError("Failed to update reference: " + ref_name);
+            notifyProtocolError("Failed to update reference: " + ref_name);
             return false;
         }
     }
@@ -304,17 +303,20 @@ bool RemoteProtocol::readLine(std::string& line) const {
 }
 
 bool RemoteProtocol::sendLine(const std::string& line) const {
+    notifyNetworkSend("Sending: " + line);
     std::cout << line << std::endl;
     return !std::cout.fail();
 }
 
 bool RemoteProtocol::sendData(const std::string& data) const {
+    notifyNetworkSend("Sending data: " + std::to_string(data.size()) + " bytes");
     std::cout << data;
     std::cout.flush();
     return !std::cout.fail();
 }
 
 bool RemoteProtocol::sendError(const std::string& error) const {
+    notifyProtocolError("Protocol error: " + error);
     std::cerr << "ERROR: " << error << std::endl;
     return !std::cerr.fail();
 }
@@ -331,6 +333,60 @@ bool RemoteProtocol::isValidReference(const std::string& ref_name) const {
            ref_name.find("..") == std::string::npos &&
            ref_name.find('/') == std::string::npos &&
            ref_name.find('\\') == std::string::npos;
+}
+
+void RemoteProtocol::notifyProtocolStart(const std::string& message) const {
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::PROTOCOL_START, "[Protocol] " + message});
+    }
+}
+
+void RemoteProtocol::notifyProtocolSuccess(const std::string& message) const {
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::PROTOCOL_SUCCESS, "[Protocol] " + message});
+    }
+}
+
+void RemoteProtocol::notifyProtocolError(const std::string& message) const {
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::PROTOCOL_ERROR, "[Protocol] " + message});
+    }
+}
+
+void RemoteProtocol::notifyNetworkSend(const std::string& message) const {
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::NETWORK_SEND, "[Protocol] " + message});
+    }
+}
+
+void RemoteProtocol::notifyNetworkReceive(const std::string& message) const {
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::NETWORK_RECEIVE, "[Protocol] " + message});
+    }
+}
+
+void RemoteProtocol::notifyObjectTransfer(const std::string& message) const {
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::OBJECT_TRANSFER, "[Protocol] " + message});
+    }
+}
+
+void RemoteProtocol::notifyReferenceUpdate(const std::string& message) const {
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::REFERENCE_UPDATE, "[Protocol] " + message});
+    }
+}
+
+void RemoteProtocol::notifyNegotiation(const std::string& message) const {
+    if (event_bus_) {
+        event_bus_->notify({Event::Type::NEGOTIATION_PHASE, "[Protocol] " + message});
+    }
+}
+
+bool RemoteProtocol::sendProtocolError(const std::string& error) const {
+    notifyProtocolError(error);
+    std::cerr << "ERROR: " << error << std::endl;
+    return !std::cerr.fail();
 }
 
 void RemoteProtocol::notifyDebug(const std::string& message) const {

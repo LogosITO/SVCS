@@ -34,7 +34,16 @@ struct Event {
         HELP_MESSAGE,
         DEBUG_MESSAGE,          
         ERROR_MESSAGE,          
-        WARNING_MESSAGE
+        WARNING_MESSAGE,
+
+		PROTOCOL_START,
+		PROTOCOL_SUCCESS,
+		PROTOCOL_ERROR,
+		NETWORK_SEND,
+		NETWORK_RECEIVE,
+		OBJECT_TRANSFER,
+		REFERENCE_UPDATE,
+		NEGOTIATION_PHASE
     };
 
     Type type;                  ///< The type of event that occurred

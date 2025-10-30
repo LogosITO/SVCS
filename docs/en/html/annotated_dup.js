@@ -49,6 +49,7 @@ var annotated_dup =
     [ "RemoteProtocolTest", "classRemoteProtocolTest.html", null ],
     [ "RemoveCommand", "classRemoveCommand.html", "classRemoveCommand" ],
     [ "RemoveCommandTest", "classRemoveCommandTest.html", "classRemoveCommandTest" ],
+    [ "RepoCommand", "classRepoCommand.html", "classRepoCommand" ],
     [ "Repository", "classRepository.html", "classRepository" ],
     [ "RepositoryManager", "classRepositoryManager.html", "classRepositoryManager" ],
     [ "RepositoryManagerTest", "classRepositoryManagerTest.html", null ],

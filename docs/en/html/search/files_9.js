@@ -7,8 +7,10 @@ var searchData=
   ['remoteprotocoltest_2ecxx_4',['RemoteProtocolTest.cxx',['../RemoteProtocolTest_8cxx.html',1,'']]],
   ['removecommand_2ecxx_5',['RemoveCommand.cxx',['../RemoveCommand_8cxx.html',1,'']]],
   ['removecommand_2ehxx_6',['RemoveCommand.hxx',['../RemoveCommand_8hxx.html',1,'']]],
-  ['repository_2ecxx_7',['Repository.cxx',['../Repository_8cxx.html',1,'']]],
-  ['repository_2ehxx_8',['Repository.hxx',['../Repository_8hxx.html',1,'']]],
-  ['repositorymanager_2ecxx_9',['RepositoryManager.cxx',['../RepositoryManager_8cxx.html',1,'']]],
-  ['repositorymanager_2ehxx_10',['RepositoryManager.hxx',['../RepositoryManager_8hxx.html',1,'']]]
+  ['repocommand_2ecxx_7',['RepoCommand.cxx',['../RepoCommand_8cxx.html',1,'']]],
+  ['repocommand_2ehxx_8',['RepoCommand.hxx',['../RepoCommand_8hxx.html',1,'']]],
+  ['repository_2ecxx_9',['Repository.cxx',['../Repository_8cxx.html',1,'']]],
+  ['repository_2ehxx_10',['Repository.hxx',['../Repository_8hxx.html',1,'']]],
+  ['repositorymanager_2ecxx_11',['RepositoryManager.cxx',['../RepositoryManager_8cxx.html',1,'']]],
+  ['repositorymanager_2ehxx_12',['RepositoryManager.hxx',['../RepositoryManager_8hxx.html',1,'']]]
 ];

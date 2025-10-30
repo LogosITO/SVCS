@@ -8,8 +8,9 @@ var searchData=
   ['remoteprotocoltest_5',['RemoteProtocolTest',['../classRemoteProtocolTest.html',1,'']]],
   ['removecommand_6',['RemoveCommand',['../classRemoveCommand.html',1,'']]],
   ['removecommandtest_7',['RemoveCommandTest',['../classRemoveCommandTest.html',1,'']]],
-  ['repository_8',['Repository',['../classRepository.html',1,'']]],
-  ['repositorymanager_9',['RepositoryManager',['../classRepositoryManager.html',1,'']]],
-  ['repositorymanagertest_10',['RepositoryManagerTest',['../classRepositoryManagerTest.html',1,'']]],
-  ['repositorytest_11',['RepositoryTest',['../classRepositoryTest.html',1,'']]]
+  ['repocommand_8',['RepoCommand',['../classRepoCommand.html',1,'']]],
+  ['repository_9',['Repository',['../classRepository.html',1,'']]],
+  ['repositorymanager_10',['RepositoryManager',['../classRepositoryManager.html',1,'']]],
+  ['repositorymanagertest_11',['RepositoryManagerTest',['../classRepositoryManagerTest.html',1,'']]],
+  ['repositorytest_12',['RepositoryTest',['../classRepositoryTest.html',1,'']]]
 ];

@@ -22,6 +22,7 @@ var hierarchy =
       [ "InitCommand", "classInitCommand.html", null ],
       [ "MergeCommand", "classMergeCommand.html", null ],
       [ "RemoveCommand", "classRemoveCommand.html", null ],
+      [ "RepoCommand", "classRepoCommand.html", null ],
       [ "SaveCommand", "classSaveCommand.html", null ],
       [ "StatusCommand", "classStatusCommand.html", null ],
       [ "UndoCommand", "classUndoCommand.html", null ],

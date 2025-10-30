@@ -121,6 +121,9 @@ var NAVTREEINDEX0 =
 "RemoveCommand_8cxx.html":[4,0,0,1,10],
 "RemoveCommand_8hxx.html":[4,0,0,0,11],
 "RemoveCommand_8hxx_source.html":[4,0,0,0,11],
+"RepoCommand_8cxx.html":[4,0,2,1,3],
+"RepoCommand_8hxx.html":[4,0,2,0,3],
+"RepoCommand_8hxx_source.html":[4,0,2,0,3],
 "RepositoryManager_8cxx.html":[4,0,1,1,6],
 "RepositoryManager_8hxx.html":[4,0,1,0,6],
 "RepositoryManager_8hxx_source.html":[4,0,1,0,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "classCommit.html#a8ef0c99b1167987343c99cc63dfef608":[3,0,10,5],
 "classCommit.html#aa8cbe918dbe5f319752284ef39f3adb3":[3,0,10,0],
 "classCommit.html#ab683ee4f53ec36c871a77f6bea0015df":[3,0,10,3],
-"classEventBus.html":[3,0,13],
-"classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb":[3,0,13,1],
-"classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a":[3,0,13,2],
-"classEventBus.html#a581f243551365d2dc9599665540486dd":[3,0,13,3]
+"classEventBus.html":[3,0,13]
 };

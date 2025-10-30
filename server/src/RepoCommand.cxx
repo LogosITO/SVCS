@@ -1,3 +1,25 @@
+/**
+ * @file RepoCommand.cxx
+ * @brief Implementation of the RepoCommand class for managing remote configurations.
+ *
+ * @details This file implements the concrete logic for the "svcs repo" command.
+ * It primarily delegates its core functionality—adding, removing, renaming, and listing remotes—
+ * to the @ref RemoteManager class.
+ *
+ * The implementation includes:
+ * 1.  **Repository Context Check**: Ensures the command is run inside an initialized SVCS repository.
+ * 2.  **Subcommand Dispatch**: Parses the first argument to determine which handler (`handleAdd`, `handleRemove`, etc.) to call.
+ * 3.  **Argument Validation**: Performs specific argument count checks for each subcommand.
+ * 4.  **User Output**: Directly prints confirmation messages (`std::cout`) or uses the
+ * @ref ISubject event bus for errors and informational messages.
+ *
+ * @see RepoCommand.hxx
+ * @see RemoteManager.hxx
+ *
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
+ */
+
 #include "../include/RepoCommand.hxx"
 #include "../../services/Event.hxx"
 #include <iostream>

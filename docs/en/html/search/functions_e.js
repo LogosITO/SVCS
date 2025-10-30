@@ -10,9 +10,10 @@ var searchData=
   ['removeremote_7',['removeRemote',['../classRemoteManager.html#a02b9e3cb7442eb6a5508821f80b94427',1,'RemoteManager']]],
   ['removerepository_8',['removeRepository',['../classRepositoryManager.html#a411879a02a3df9de01aceb9d36ae30ff',1,'RepositoryManager']]],
   ['renamebranch_9',['renameBranch',['../classBranchManager.html#a32cb34d10f0c6075951fef6ae6e21dd9',1,'BranchManager']]],
-  ['repository_10',['Repository',['../classRepository.html#a1df4810f68ebca61adfbbad3e079b2f1',1,'Repository']]],
-  ['repositoryexists_11',['repositoryExists',['../classClearCommandTest.html#acfc70a9daa3a28208acea85449211517',1,'ClearCommandTest']]],
-  ['repositorymanager_12',['RepositoryManager',['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager']]],
-  ['restorefilesfromcommit_13',['restoreFilesFromCommit',['../classRepositoryManager.html#aefb1b537b9c90d9fd0eac7255d5580fd',1,'RepositoryManager']]],
-  ['revertcommit_14',['revertCommit',['../classRepositoryManager.html#abf991881ef84930dd6e81667360ebdef',1,'RepositoryManager']]]
+  ['repocommand_10',['RepoCommand',['../classRepoCommand.html#a4d548a346d0b59339661502c9df8b5bf',1,'RepoCommand']]],
+  ['repository_11',['Repository',['../classRepository.html#a1df4810f68ebca61adfbbad3e079b2f1',1,'Repository']]],
+  ['repositoryexists_12',['repositoryExists',['../classClearCommandTest.html#acfc70a9daa3a28208acea85449211517',1,'ClearCommandTest']]],
+  ['repositorymanager_13',['RepositoryManager',['../classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf',1,'RepositoryManager']]],
+  ['restorefilesfromcommit_14',['restoreFilesFromCommit',['../classRepositoryManager.html#aefb1b537b9c90d9fd0eac7255d5580fd',1,'RepositoryManager']]],
+  ['revertcommit_15',['revertCommit',['../classRepositoryManager.html#abf991881ef84930dd6e81667360ebdef',1,'RepositoryManager']]]
 ];

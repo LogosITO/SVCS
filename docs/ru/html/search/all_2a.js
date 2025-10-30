@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🔮_20coming_20soon_20expand_20your_20learning_0',['🔮 Coming Soon - Expand Your Learning',['../md_README.html#autotoc_md22',1,'']]]
+  ['🚀_20current_20project_20status_3a_20production_20ready_20cli_0',['🚀 Current Project Status: Production Ready CLI',['../md_README.html#autotoc_md2',1,'']]]
 ];

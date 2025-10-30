@@ -59,7 +59,6 @@ var NAVTREE =
       [ "Our Process", "md_SECURITY.html#autotoc_md33", null ]
     ] ],
     [ "Список устаревших определений и описаний", "deprecated.html", null ],
-    [ "Список тестов", "test.html", null ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
@@ -85,8 +84,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classCommit.html#a8ef0c99b1167987343c99cc63dfef608",
-"classSaveCommandTest.html#aac4baff35723bce4d333802a72ca1e76"
+"classHelpCommand.html#a682a95b46e84c2489771dabb7c5e240d",
+"classStatusCommand.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

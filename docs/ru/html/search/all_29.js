@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📝_20license_20attribution_0',['📝 License &amp;amp; Attribution',['../md_README.html#autotoc_md26',1,'']]]
+  ['🔮_20coming_20soon_20expand_20your_20learning_0',['🔮 Coming Soon - Expand Your Learning',['../md_README.html#autotoc_md22',1,'']]]
 ];

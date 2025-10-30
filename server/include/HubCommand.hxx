@@ -11,6 +11,7 @@
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**
  */
+
 #pragma once
 
 #include "../../cli/include/ICommand.hxx"

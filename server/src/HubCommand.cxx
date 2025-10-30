@@ -1,6 +1,23 @@
 /**
  * @file HubCommand.cxx
  * @brief Implementation of the HubCommand class for creating bare repositories.
+ *
+ * @details This file provides the concrete implementation for the @ref HubCommand class.
+ * The `execute` method handles the logic for:
+ * 1.  **Argument Validation**: Ensures exactly one valid path is provided.
+ * 2.  **Filesystem Checks**: Verifies that a repository doesn't already exist at the target location.
+ * 3.  **Directory Creation**: Creates the target directory and the full `.svcs` "bare" repository structure (objects, refs, hooks, etc.).
+ * 4.  **File Seeding**: Writes the initial `config`, `HEAD`, and `description` files.
+ * 5.  **Notifications**: Uses the @ref ISubject event bus to report success, info, or error messages.
+ *
+ * This command uses the `RepositoryManager` dependency indirectly, as the logic
+ * is simple enough to be self-contained filesystem operations, but it relies on
+ * the manager's path conventions.
+ *
+ * @see HubCommand.hxx
+ * @see RepositoryManager
+ * @copyright **Copyright (c) 2025 LogosITO**
+ * @license **MIT License**
  */
 
 #include "../include/HubCommand.hxx"

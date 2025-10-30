@@ -41,7 +41,8 @@ var hierarchy =
       [ "MockSubject", "classMockSubject.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
       [ "MockSubject", "classMockSubject.html", null ],
-      [ "Repository", "classRepository.html", null ]
+      [ "Repository", "classRepository.html", null ],
+      [ "SimpleEventBus", "classSimpleEventBus.html", null ]
     ] ],
     [ "ObjectStorage", "classObjectStorage.html", [
       [ "MockObjectStorage", "classMockObjectStorage.html", null ]
@@ -56,6 +57,7 @@ var hierarchy =
       [ "ClearCommandTest", "classClearCommandTest.html", null ],
       [ "HelpCommandTest", "classHelpCommandTest.html", null ],
       [ "HistoryCommandTest", "classHistoryCommandTest.html", null ],
+      [ "HubCommandTest", "classHubCommandTest.html", null ],
       [ "IndexTest", "classIndexTest.html", null ],
       [ "InitCommandIntegrationTest", "classInitCommandIntegrationTest.html", null ],
       [ "ObjectStorageTest", "classObjectStorageTest.html", null ],

@@ -103,6 +103,17 @@ $(function(){initNavTree('HubCommand_8cxx.html','',''); });
 <code>#include &lt;iostream&gt;</code><br />
 </div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Implementation of the <a class="el" href="classHubCommand.html" title="Command for creating central hub repositories for team collaboration.">HubCommand</a> class for creating bare repositories. </p>
+<p>This file provides the concrete implementation for the <a class="el" href="classHubCommand.html">HubCommand</a> class. The <span class="tt">execute</span> method handles the logic for:</p><ol type="1">
+<li><b>Argument Validation</b>: Ensures exactly one valid path is provided.</li>
+<li><b>Filesystem Checks</b>: Verifies that a repository doesn't already exist at the target location.</li>
+<li><b>Directory Creation</b>: Creates the target directory and the full <span class="tt">.svcs</span> "bare" repository structure (objects, refs, hooks, etc.).</li>
+<li><b>File Seeding</b>: Writes the initial <span class="tt">config</span>, <span class="tt">HEAD</span>, and <span class="tt">description</span> files.</li>
+<li><b>Notifications</b>: Uses the <a class="el" href="classISubject.html">ISubject</a> event bus to report success, info, or error messages.</li>
+</ol>
+<p>This command uses the <span class="tt"><a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a></span> dependency indirectly, as the logic is simple enough to be self-contained filesystem operations, but it relies on the manager's path conventions.</p>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="HubCommand_8hxx.html" title="Declaration of the HubCommand class for creating central bare repositories.">HubCommand.hxx</a> </dd>
+<dd>
+<a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> </dd></dl>
 <dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🎓_20educational_20architecture_20patterns_0',['🎓 Educational Architecture Patterns',['../md_README.html#autotoc_md18',1,'']]]
+  ['🎯_20master_20version_20control_20concepts_0',['🎯 Master Version Control Concepts',['../md_README.html#autotoc_md11',1,'']]]
 ];

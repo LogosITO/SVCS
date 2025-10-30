@@ -24,5 +24,6 @@ var searchData=
   ['how_20to_20report_20a_20vulnerability_21',['How to Report a Vulnerability',['../md_SECURITY.html#autotoc_md31',1,'']]],
   ['hubcommand_22',['HubCommand',['../classHubCommand.html',1,'HubCommand'],['../classHubCommand.html#a40546b1910267e729a3a82bd4d9e33e2',1,'HubCommand::HubCommand()']]],
   ['hubcommand_2ecxx_23',['HubCommand.cxx',['../HubCommand_8cxx.html',1,'']]],
-  ['hubcommand_2ehxx_24',['HubCommand.hxx',['../HubCommand_8hxx.html',1,'']]]
+  ['hubcommand_2ehxx_24',['HubCommand.hxx',['../HubCommand_8hxx.html',1,'']]],
+  ['hubcommandtest_25',['HubCommandTest',['../classHubCommandTest.html',1,'']]]
 ];

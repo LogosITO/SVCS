@@ -9,8 +9,9 @@ var searchData=
   ['removecommand_6',['RemoveCommand',['../classRemoveCommand.html',1,'']]],
   ['removecommandtest_7',['RemoveCommandTest',['../classRemoveCommandTest.html',1,'']]],
   ['repocommand_8',['RepoCommand',['../classRepoCommand.html',1,'']]],
-  ['repository_9',['Repository',['../classRepository.html',1,'']]],
-  ['repositorymanager_10',['RepositoryManager',['../classRepositoryManager.html',1,'']]],
-  ['repositorymanagertest_11',['RepositoryManagerTest',['../classRepositoryManagerTest.html',1,'']]],
-  ['repositorytest_12',['RepositoryTest',['../classRepositoryTest.html',1,'']]]
+  ['repocommandtest_9',['RepoCommandTest',['../classRepoCommandTest.html',1,'']]],
+  ['repository_10',['Repository',['../classRepository.html',1,'']]],
+  ['repositorymanager_11',['RepositoryManager',['../classRepositoryManager.html',1,'']]],
+  ['repositorymanagertest_12',['RepositoryManagerTest',['../classRepositoryManagerTest.html',1,'']]],
+  ['repositorytest_13',['RepositoryTest',['../classRepositoryTest.html',1,'']]]
 ];

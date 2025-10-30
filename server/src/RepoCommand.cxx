@@ -44,13 +44,11 @@ std::string RepoCommand::getUsage() const {
 }
 
 bool RepoCommand::execute(const std::vector<std::string>& args) {
-    // Проверяем, что мы в репозитории
     if (!repo_manager_->isRepositoryInitialized()) {
         event_bus_->notify({Event::Type::ERROR_MESSAGE, "Not in a SVCS repository"});
         return false;
     }
 
-    // Получаем путь к репозиторию и создаем RemoteManager напрямую
     fs::path repo_path = repo_manager_->getRepositoryPath();
     RemoteManager remote_manager(repo_path);
 
@@ -80,10 +78,15 @@ bool RepoCommand::handleAdd(RemoteManager& remote_manager, const std::vector<std
         return false;
     }
 
+    std::cout << "DEBUG: Adding remote '" << args[1] << "' with URL '" << args[2] << "'" << std::endl;
+
     if (remote_manager.addRemote(args[1], args[2])) {
+        std::cout << "DEBUG: Remote added successfully, calling save..." << std::endl;
+
         std::cout << "Remote repository '" << args[1] << "' added: " << args[2] << "\n";
         return true;
     } else {
+        std::cout << "DEBUG: Failed to add remote" << std::endl;
         event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to add remote repository"});
         return false;
     }

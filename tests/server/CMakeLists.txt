@@ -3,6 +3,7 @@ find_package(GTest REQUIRED)
 set(SERVER_TEST_SOURCES
     RemoteProtocolTest.cxx
     HubCommandTest.cxx
+    RepoCommandTest.cxx
     RemoteManagerTest.cxx
 )
 

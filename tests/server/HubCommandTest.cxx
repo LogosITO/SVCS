@@ -1,35 +1,35 @@
 /**
  * @file HubCommandTest.cpp
- * @brief Интеграционные тесты для класса HubCommand.
+ * @brief Integration tests for the HubCommand class.
  *
- * @details Этот файл содержит интеграционные тесты для класса @ref HubCommand,
- * используя фреймворк Google Test (gtest).
+ * @details This file contains integration tests for the @ref HubCommand class,
+ * utilizing the Google Test (gtest) framework.
  *
- * Эти тесты не являются чистыми юнит-тестами; они используют *реальный*
- * @ref RepositoryManager для выполнения фактических операций ввода-вывода
- * файловой системы во временном системном каталоге
- * (определяемом `fs::temp_directory_path()`).
+ * These tests are not pure unit tests; they use the *real*
+ * @ref RepositoryManager to perform actual filesystem I/O operations
+ * within a temporary system directory (defined by `fs::temp_directory_path()`).
  *
- * Используется простая реализация-заглушка @ref ISubject (`SimpleEventBus`),
- * поскольку тестирование уведомлений о событиях не является целью этих тестов.
+ * A simple stub implementation of @ref ISubject (`SimpleEventBus`) is used,
+ * as testing event notifications is not the goal of these tests.
  *
- * Тестовое окружение (fixture) `HubCommandTest` управляет созданием и
- * очисткой временного тестового каталога перед/после каждого теста.
+ * The test fixture `HubCommandTest` manages the creation and cleanup
+ * of the temporary test directory before and after each test.
  *
- * @b Область_тестирования:
- * - **Валидация аргументов**: Проверяет случаи с отсутствием аргументов,
- * слишком большим количеством аргументов и пустыми путями.
- * - **Создание файловой системы**: Убеждается, что репозиторий (`.svcs`)
- * создается корректно, включая создание родительских каталогов.
- * - **Обработка ошибок**: Гарантирует, что команда завершается неудачей,
- * если репозиторий в целевом каталоге уже существует.
- * - **Структура репозитория**: Подтверждает создание всех необходимых
- * подкаталогов (objects, refs, hooks, info и т.д.).
- * - **Содержимое файлов**: Проверяет корректность содержимого `config`
- * (наличие `bare = true`, `hub = true`) и `HEAD` (ссылка на `refs/heads/main`).
+ * @b Areas_of_Testing:
+ * - **Argument Validation**: Checks cases for missing arguments,
+ * too many arguments, and empty paths.
+ * - **Filesystem Creation**: Ensures the repository (`.svcs`)
+ * is created correctly, including the creation of parent directories.
+ * - **Error Handling**: Guarantees the command fails
+ * if the repository already exists at the target directory.
+ * - **Repository Structure**: Confirms the creation of all necessary
+ * subdirectories (objects, refs, hooks, info, etc.).
+ * - **File Content**: Verifies the correctness of the `config` file content
+ * (checking for `bare = true`, `hub = true`) and the `HEAD` file content
+ * (checking for the reference to `refs/heads/main`).
  *
- * @note Эти тесты выполняют реальные операции I/O и будут создавать/удалять
- * каталоги во временной папке системы.
+ * @note These tests perform real I/O operations and will create/delete
+ * directories in the system's temporary folder.
  *
  * @copyright **Copyright (c) 2025 LogosITO**
  * @license **MIT License**

@@ -55,44 +55,82 @@ TEST_F(HubCommandTest, FailsWithEmptyString) {
     EXPECT_FALSE(command->execute({""}));
 }
 
-TEST_F(HubCommandTest, CreatesRepositoryWithNonExistingPath) {
-    fs::path repo_path = temp_dir / "new_repository";
-    EXPECT_TRUE(command->execute({repo_path.string()}));
-    EXPECT_TRUE(fs::exists(repo_path));
-    EXPECT_TRUE(fs::exists(repo_path / ".svcs"));
+TEST_F(HubCommandTest, CreatesRepositoryInsideSpecifiedDirectory) {
+    fs::path target_dir = temp_dir / "my_project";
+    EXPECT_TRUE(command->execute({target_dir.string()}));
+
+    // Должен создаться каталог .svcs внутри указанной директории
+    EXPECT_TRUE(fs::exists(target_dir / ".svcs"));
+    EXPECT_TRUE(fs::exists(target_dir / ".svcs" / "config"));
 }
 
-TEST_F(HubCommandTest, FailsWhenPathAlreadyExists) {
-    fs::path existing_path = temp_dir / "existing_repo";
-    fs::create_directories(existing_path);
+TEST_F(HubCommandTest, CreatesRepositoryInExistingDirectory) {
+    fs::path existing_dir = temp_dir / "existing_dir";
+    fs::create_directories(existing_dir);
 
-    EXPECT_FALSE(command->execute({existing_path.string()}));
+    EXPECT_TRUE(command->execute({existing_dir.string()}));
+    EXPECT_TRUE(fs::exists(existing_dir / ".svcs"));
+}
+
+TEST_F(HubCommandTest, CreatesParentDirectoriesIfNeeded) {
+    fs::path nested_dir = temp_dir / "level1" / "level2" / "project";
+    EXPECT_TRUE(command->execute({nested_dir.string()}));
+
+    EXPECT_TRUE(fs::exists(nested_dir / ".svcs"));
+}
+
+TEST_F(HubCommandTest, FailsWhenRepositoryAlreadyExists) {
+    fs::path target_dir = temp_dir / "existing_repo";
+    fs::create_directories(target_dir / ".svcs");
+
+    EXPECT_FALSE(command->execute({target_dir.string()}));
 }
 
 TEST_F(HubCommandTest, CreatesRepositoryStructure) {
-    fs::path repo_path = temp_dir / "test_repo";
-    EXPECT_TRUE(command->execute({repo_path.string()}));
+    fs::path target_dir = temp_dir / "test_project";
+    EXPECT_TRUE(command->execute({target_dir.string()}));
 
-    EXPECT_TRUE(fs::exists(repo_path / ".svcs" / "objects"));
-    EXPECT_TRUE(fs::exists(repo_path / ".svcs" / "refs" / "heads"));
-    EXPECT_TRUE(fs::exists(repo_path / ".svcs" / "refs" / "tags"));
-    EXPECT_TRUE(fs::exists(repo_path / ".svcs" / "config"));
-    EXPECT_TRUE(fs::exists(repo_path / ".svcs" / "HEAD"));
+    fs::path repo_dir = target_dir / ".svcs";
+    EXPECT_TRUE(fs::exists(repo_dir / "objects"));
+    EXPECT_TRUE(fs::exists(repo_dir / "refs" / "heads"));
+    EXPECT_TRUE(fs::exists(repo_dir / "refs" / "tags"));
+    EXPECT_TRUE(fs::exists(repo_dir / "hooks"));
+    EXPECT_TRUE(fs::exists(repo_dir / "info"));
+    EXPECT_TRUE(fs::exists(repo_dir / "config"));
+    EXPECT_TRUE(fs::exists(repo_dir / "HEAD"));
+    EXPECT_TRUE(fs::exists(repo_dir / "description"));
 }
 
 TEST_F(HubCommandTest, CreatesMultipleRepositories) {
-    fs::path repo1 = temp_dir / "repo1";
-    fs::path repo2 = temp_dir / "repo2";
+    fs::path project1 = temp_dir / "project1";
+    fs::path project2 = temp_dir / "project2";
 
-    EXPECT_TRUE(command->execute({repo1.string()}));
-    EXPECT_TRUE(command->execute({repo2.string()}));
+    EXPECT_TRUE(command->execute({project1.string()}));
+    EXPECT_TRUE(command->execute({project2.string()}));
 
-    EXPECT_TRUE(fs::exists(repo1 / ".svcs"));
-    EXPECT_TRUE(fs::exists(repo2 / ".svcs"));
+    EXPECT_TRUE(fs::exists(project1 / ".svcs"));
+    EXPECT_TRUE(fs::exists(project2 / ".svcs"));
 }
 
-TEST_F(HubCommandTest, HandlesNestedPaths) {
-    fs::path nested_repo = temp_dir / "level1" / "level2" / "nested_repo";
-    EXPECT_TRUE(command->execute({nested_repo.string()}));
-    EXPECT_TRUE(fs::exists(nested_repo / ".svcs"));
+TEST_F(HubCommandTest, ConfigFileContent) {
+    fs::path target_dir = temp_dir / "config_test";
+    EXPECT_TRUE(command->execute({target_dir.string()}));
+
+    std::ifstream config_file(target_dir / ".svcs" / "config");
+    std::string content((std::istreambuf_iterator<char>(config_file)),
+                        std::istreambuf_iterator<char>());
+
+    EXPECT_TRUE(content.find("bare = true") != std::string::npos);
+    EXPECT_TRUE(content.find("hub = true") != std::string::npos);
+}
+
+TEST_F(HubCommandTest, HeadFileContent) {
+    fs::path target_dir = temp_dir / "head_test";
+    EXPECT_TRUE(command->execute({target_dir.string()}));
+
+    std::ifstream head_file(target_dir / ".svcs" / "HEAD");
+    std::string content((std::istreambuf_iterator<char>(head_file)),
+                        std::istreambuf_iterator<char>());
+
+    EXPECT_TRUE(content.find("ref: refs/heads/main") != std::string::npos);
 }

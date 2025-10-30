@@ -32,59 +32,69 @@ std::string HubCommand::getUsage() const {
 }
 
 bool HubCommand::execute(const std::vector<std::string>& args) {
-    // === Argument validation ===
     if (args.empty()) {
         notifyError("Repository path is required");
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Path argument required"});
         return false;
     }
 
     if (args.size() > 1) {
         notifyError("Too many arguments");
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Too many arguments provided"});
         return false;
     }
 
     fs::path repo_path(args[0]);
     if (repo_path.empty()) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Invalid repository path"});
-        return false;
-    }
-    if (fs::exists(repo_path)) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Repository already exists"});
+        notifyError("Invalid repository path");
         return false;
     }
 
-    notifyInfo("Creating hub repository at " + repo_path.string());
+    if (repo_path.is_relative()) {
+        repo_path = fs::absolute(repo_path);
+    }
+
+    fs::path repo_dir = repo_path / ".svcs";
+
+    if (fs::exists(repo_dir)) {
+        notifyError("Repository already exists at: " + repo_dir.string());
+        return false;
+    }
+
+    if (!fs::exists(repo_path)) {
+        fs::create_directories(repo_path);
+    }
+
+    notifyInfo("Creating hub repository at " + repo_dir.string());
 
     try {
-        fs::create_directories(repo_path / ".svcs" / "objects");
-        fs::create_directories(repo_path / ".svcs" / "refs" / "heads");
-        fs::create_directories(repo_path / ".svcs" / "refs" / "tags");
-        fs::create_directories(repo_path / ".svcs" / "hooks");
-        fs::create_directories(repo_path / ".svcs" / "info");
+        fs::create_directories(repo_dir / "objects");
+        fs::create_directories(repo_dir / "refs" / "heads");
+        fs::create_directories(repo_dir / "refs" / "tags");
+        fs::create_directories(repo_dir / "hooks");
+        fs::create_directories(repo_dir / "info");
 
-        // === Write config file ===
-        std::ofstream config(repo_path / ".svcs" / "config");
+        std::ofstream config(repo_dir / "config");
         config << "[core]\n"
                << "bare = true\n"
+               << "repositoryformatversion = 0\n"
                << "[svcs]\n"
                << "hub = true\n";
         config.close();
 
-        std::ofstream head(repo_path / ".svcs" / "HEAD");
+        std::ofstream head(repo_dir / "HEAD");
         head << "ref: refs/heads/main\n";
         head.close();
 
+        std::ofstream description(repo_dir / "description");
+        description << "Unnamed repository; edit this file to name the repository.\n";
+        description.close();
+
     } catch (const std::exception& e) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE,
-                            std::string("Initialization failed: ") + e.what()});
+        notifyError(std::string("Initialization failed: ") + e.what());
+        fs::remove_all(repo_dir);
         return false;
     }
 
-    event_bus_->notify({Event::Type::REPOSITORY_INIT_SUCCESS,
-                        "Hub repository successfully created"});
-
+    notifySuccess("Hub repository successfully created at " + repo_dir.string());
     return true;
 }
 

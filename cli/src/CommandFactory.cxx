@@ -23,6 +23,7 @@
 #include "../include/MergeCommand.hxx"
 
 #include "../../server/include/HubCommand.hxx"
+#include "../../server/include/RepoCommand.hxx"
 
 #include <iostream>
 #include <memory>
@@ -103,6 +104,12 @@ void CommandFactory::registerDefaultCommands() {
         printDebug("Creating HistoryCommand instance");
         return std::make_unique<HistoryCommand>(bus, repoManager);
     });
+
+	registerCommand("repo", [](const std::shared_ptr<ISubject>& bus,
+							const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
+		printDebug("Creating RepoCommand instance");
+		return std::make_unique<RepoCommand>(bus, repoManager);
+	});
 
     registerCommand("undo", [](const std::shared_ptr<ISubject>& bus,
                              const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {

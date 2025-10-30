@@ -1,0 +1,60 @@
+\doxysection{Merge\+Command.\+hxx}
+\hypertarget{MergeCommand_8hxx_source}{}\label{MergeCommand_8hxx_source}\index{cli/include/MergeCommand.hxx@{cli/include/MergeCommand.hxx}}
+\mbox{\hyperlink{MergeCommand_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{ICommand.hxx}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMergeCommand_a1cbd307cd8b8c5ece1ec1b77cc1b95f5}{MergeCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classMergeCommand_a1cbd307cd8b8c5ece1ec1b77cc1b95f5}{MergeCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classMergeCommand_aac6c86e15ae0c4f4e1dfa5d96c5fc917}{\string~MergeCommand}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ ICommand\ interface\ implementation}}
+\DoxyCodeLine{00067\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classMergeCommand_a313d88d4b49045b258b1507e164e9a6b}{getName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00078\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classMergeCommand_aca02f3a060a35a15ce9884a2e7b11bd6}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00089\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classMergeCommand_a08bd901e4acd9cb4db5d73c0977974c6}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMergeCommand_a22ad9119ad3e8e3c87bf69280781f483}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMergeCommand_a443682e3131981cfdb5025154e89232f}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ debugBranchHistory(\textcolor{keyword}{const}\ std::string\&\ branch\_name,\ \textcolor{keyword}{const}\ std::string\&\ head\_commit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{bool}\ mergeBranch(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ abortMerge()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00160\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isMergeInProgress()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00175\ \ \ \ \ std::string\ findCommonAncestor(\textcolor{keyword}{const}\ std::string\&\ commit1,\ \textcolor{keyword}{const}\ std::string\&\ commit2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{bool}\ performThreeWayMerge(\textcolor{keyword}{const}\ std::string\&\ ancestor,}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ current,}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ mergeFileContent(\textcolor{keyword}{const}\ std::string\&\ ancestor\_content,}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ current\_content,}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ other\_content,}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\&\ merged\_content);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00226\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus\_;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00235\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager\_;}
+\DoxyCodeLine{00236\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\doxysection{Version\+Command.\+hxx}
+\hypertarget{VersionCommand_8hxx_source}{}\label{VersionCommand_8hxx_source}\index{cli/include/VersionCommand.hxx@{cli/include/VersionCommand.hxx}}
+\mbox{\hyperlink{VersionCommand_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{ICommand.hxx}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVersionCommand_a15785516f34561967419b9388fd557ad}{VersionCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classVersionCommand_a15785516f34561967419b9388fd557ad}{VersionCommand}}(std::shared\_ptr<ISubject>\ subject);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classVersionCommand_a0f222db541460934284006830d4c6340}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00078\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classVersionCommand_a2caf6e6bce8782444a1a7383af55441e}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}version"{}};\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00089\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classVersionCommand_a390348862cf0abd962ec2d5a58890526}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00100\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classVersionCommand_ae44c74cb5a13afe68f33b6fc0970ea07}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVersionCommand_a937c22d552201effa893ab364a012096}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00121\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ getVersionString();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00132\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ getBuildInfo();}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00143\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ getCopyright();}
+\DoxyCodeLine{00144\ \};}
+
+\end{DoxyCode}

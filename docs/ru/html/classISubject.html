@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс ISubject</title>
+<title>SVCS - Русская документация: Класс ISubject</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classISubject.html','','classISubject-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>The Subject (Publisher) Interface (Abstract Base Class).  
+<p>Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ISubject_8hxx_source.html">ISubject.hxx</a>&gt;</code></p>
@@ -104,12 +102,12 @@ $(function(){initNavTree('classISubject.html','','classISubject-members'); });
  <div class="center">
   <img src="classISubject.png" usemap="#ISubject_map" alt=""/>
   <map id="ISubject_map" name="ISubject_map">
-<area href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution." alt="EventBus" shape="rect" coords="112,56,214,80"/>
+<area href="classEventBus.html" title="Потокобезопасная реализация ISubject для централизованного распределения событий." alt="EventBus" shape="rect" coords="112,56,214,80"/>
 <area href="classMockEventBus.html" alt="MockEventBus" shape="rect" coords="112,112,214,136"/>
-<area href="classMockSubject.html" title="Mock implementation of ISubject." alt="MockSubject" shape="rect" coords="112,168,214,192"/>
-<area href="classMockSubject.html" title="Mock implementation of ISubject." alt="MockSubject" shape="rect" coords="112,224,214,248"/>
-<area href="classMockSubject.html" title="Mock implementation of ISubject." alt="MockSubject" shape="rect" coords="112,280,214,304"/>
-<area href="classRepository.html" title="Manages the version control directory structure and core operations." alt="Repository" shape="rect" coords="112,336,214,360"/>
+<area href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus)." alt="MockSubject" shape="rect" coords="112,168,214,192"/>
+<area href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus)." alt="MockSubject" shape="rect" coords="112,224,214,248"/>
+<area href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus)." alt="MockSubject" shape="rect" coords="112,280,214,304"/>
+<area href="classRepository.html" title="Управляет структурой директорий системы контроля версий и основными операциями." alt="Repository" shape="rect" coords="112,336,214,360"/>
 <area href="classSimpleEventBus.html" alt="SimpleEventBus" shape="rect" coords="112,392,214,416"/>
 <area href="classSimpleEventBus.html" alt="SimpleEventBus" shape="rect" coords="112,448,214,472"/>
   </map>
@@ -118,24 +116,23 @@ $(function(){initNavTree('classISubject.html','','classISubject-members'); });
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:ae7264a3f132816d45581a1b31845ecac" id="r_ae7264a3f132816d45581a1b31845ecac"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7264a3f132816d45581a1b31845ecac">~ISubject</a> ()=default</td></tr>
-<tr class="memdesc:ae7264a3f132816d45581a1b31845ecac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+<tr class="memdesc:ae7264a3f132816d45581a1b31845ecac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор.  <br /></td></tr>
 <tr class="memitem:a4f6d20c5e92b9b0a020e8661becf9ace" id="r_a4f6d20c5e92b9b0a020e8661becf9ace"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f6d20c5e92b9b0a020e8661becf9ace">attach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer)=0</td></tr>
-<tr class="memdesc:a4f6d20c5e92b9b0a020e8661becf9ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to the subject.  <br /></td></tr>
+<tr class="memdesc:a4f6d20c5e92b9b0a020e8661becf9ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прикрепляет наблюдателя к субъекту.  <br /></td></tr>
 <tr class="memitem:aad2217012b14bdd6c91eb240689e5a74" id="r_aad2217012b14bdd6c91eb240689e5a74"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad2217012b14bdd6c91eb240689e5a74">detach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer)=0</td></tr>
-<tr class="memdesc:aad2217012b14bdd6c91eb240689e5a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches an observer from the subject.  <br /></td></tr>
+<tr class="memdesc:aad2217012b14bdd6c91eb240689e5a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Открепляет наблюдателя от субъекта.  <br /></td></tr>
 <tr class="memitem:aa2da71c9f12ce1097f83bc8887fa0474" id="r_aa2da71c9f12ce1097f83bc8887fa0474"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2da71c9f12ce1097f83bc8887fa0474">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) const =0</td></tr>
-<tr class="memdesc:aa2da71c9f12ce1097f83bc8887fa0474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers about an event.  <br /></td></tr>
+<tr class="memdesc:aa2da71c9f12ce1097f83bc8887fa0474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уведомляет всех прикрепленных наблюдателей о событии.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Защищенные данные</h2></td></tr>
 <tr class="memitem:a66f4ce666ed8b85d694a9b73d6bc16fb" id="r_a66f4ce666ed8b85d694a9b73d6bc16fb"><td class="memItemLeft" align="right" valign="top"><a id="a66f4ce666ed8b85d694a9b73d6bc16fb" name="a66f4ce666ed8b85d694a9b73d6bc16fb"></a>
 std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
+<tr class="memdesc:a66f4ce666ed8b85d694a9b73d6bc16fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Коллекция зарегистрированных наблюдателей. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>The Subject (Publisher) Interface (Abstract Base Class). </p>
-<ul>
-<li>Core classes (e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a>, <a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>) implement this interface to allow observers to subscribe to events. The contract requires all management functions (<span class="tt">attach</span>, <span class="tt">detach</span>) to handle <span class="tt">std::shared_ptr&lt;<a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a>&gt;</span>. </li>
-</ul>
+<div class="textblock"><p>Интерфейс Subject (Издатель) (Абстрактный Базовый Класс). </p>
+<p>Основные классы (например, <a class="el" href="classRepository.html" title="Управляет структурой директорий системы контроля версий и основными операциями.">Repository</a>, <a class="el" href="classEventBus.html" title="Потокобезопасная реализация ISubject для централизованного распределения событий.">EventBus</a>) реализуют этот интерфейс, чтобы позволить наблюдателям подписываться на события. Контракт требует, чтобы все функции управления (<span class="tt">attach</span>, <span class="tt">detach</span>) обрабатывали <span class="tt">std::shared_ptr&lt;<a class="el" href="classIObserver.html" title="Интерфейс Observer (Абстрактный Базовый Класс).">IObserver</a>&gt;</span>. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="ae7264a3f132816d45581a1b31845ecac" name="ae7264a3f132816d45581a1b31845ecac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7264a3f132816d45581a1b31845ecac">&#9670;&#160;</a></span>~ISubject()</h2>
@@ -160,10 +157,8 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Virtual destructor. </p>
-<ul>
-<li>Ensures correct cleanup of derived subject classes. </li>
-</ul>
+<p>Виртуальный деструктор. </p>
+<p>Обеспечивает корректную очистку производных классов субъектов. </p>
 
 </div>
 </div>
@@ -191,10 +186,10 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Attaches an observer to the subject. </p>
+<p>Прикрепляет наблюдателя к субъекту. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>A smart pointer to the observer object to attach. </td></tr>
+    <tr><td class="paramname">observer</td><td>Умный указатель на объект наблюдателя для прикрепления. </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,10 +221,10 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Detaches an observer from the subject. </p>
+<p>Открепляет наблюдателя от субъекта. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>A smart pointer to the observer object to detach. </td></tr>
+    <tr><td class="paramname">observer</td><td>Умный указатель на объект наблюдателя для открепления. </td></tr>
   </table>
   </dd>
 </dl>
@@ -261,10 +256,10 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Notifies all attached observers about an event. </p>
-<p>This method is made public so that component classes (like <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a>) can publish events through the injected <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> pointer. The method is declared as <span class="tt">const</span> because event notification is a logically non-mutating action on the Subject's state. </p><dl class="params"><dt>Аргументы</dt><dd>
+<p>Уведомляет всех прикрепленных наблюдателей о событии. </p>
+<p>Этот метод сделан публичным, чтобы классы компонентов (как <a class="el" href="classObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a>) могли публиковать события через внедренный указатель <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a>. Метод объявлен как <span class="tt">const</span>, потому что уведомление о событии является логически неизменяющим действием над состоянием Subject. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>The constant reference to the event structure to be sent. </td></tr>
+    <tr><td class="paramname">event</td><td>Константная ссылка на структуру события для отправки. </td></tr>
   </table>
   </dd>
 </dl>

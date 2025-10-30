@@ -1,0 +1,53 @@
+\doxysection{Remote\+Manager.\+hxx}
+\hypertarget{RemoteManager_8hxx_source}{}\label{RemoteManager_8hxx_source}\index{server/include/RemoteManager.hxx@{server/include/RemoteManager.hxx}}
+\mbox{\hyperlink{RemoteManager_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRemote_a58f44daf8c1656ea1f4d1e69b8dad50a}{Remote}}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ \mbox{\hyperlink{structRemote_a5a35fa45f21f0fd363517d0775e5c69f}{name}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ \mbox{\hyperlink{structRemote_a810f7afd25db68a519088944f1cc8945}{url}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::string\ \mbox{\hyperlink{structRemote_a058f6074cbceb347a7e687bac9899459}{fetch\_spec}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{structRemote_a58f44daf8c1656ea1f4d1e69b8dad50a}{Remote}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{structRemote_a5a35fa45f21f0fd363517d0775e5c69f}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{structRemote_a810f7afd25db68a519088944f1cc8945}{url}})\ :}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRemote_a5a35fa45f21f0fd363517d0775e5c69f}{name}}(\mbox{\hyperlink{structRemote_a5a35fa45f21f0fd363517d0775e5c69f}{name}}),\ \mbox{\hyperlink{structRemote_a810f7afd25db68a519088944f1cc8945}{url}}(\mbox{\hyperlink{structRemote_a810f7afd25db68a519088944f1cc8945}{url}}),\ \mbox{\hyperlink{structRemote_a058f6074cbceb347a7e687bac9899459}{fetch\_spec}}(\textcolor{stringliteral}{"{}+refs/heads/*:refs/remotes/"{}}\ +\ \mbox{\hyperlink{structRemote_a5a35fa45f21f0fd363517d0775e5c69f}{name}}\ +\ \textcolor{stringliteral}{"{}/*"{}})\ \{\}}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRemoteManager}{RemoteManager}}\ \{}
+\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ \ \ \ \ std::unordered\_map<std::string,\ Remote>\ remotes\_;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00120\ \ \ \ \ fs::path\ config\_path\_;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classRemoteManager_ac7e0edc18fd40367bf345b8d2f0798ef}{RemoteManager}}(\textcolor{keyword}{const}\ fs::path\&\ repo\_path);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRemoteManager_a96cef6829df97b157979bd0bf90eff56}{addRemote}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ url);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRemoteManager_a02b9e3cb7442eb6a5508821f80b94427}{removeRemote}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRemoteManager_aa848807cc2a76d663348558017ae21a3}{hasRemote}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00194\ \ \ \ \ std::string\ \mbox{\hyperlink{classRemoteManager_a4d6301332826949c4c3f5de3417c17e4}{getRemoteUrl}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00205\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classRemoteManager_a9ac7b16bd845713b0a71f3fd9401f849}{listRemotes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoteManager_afc039aa6f117ef6ae93b664c149b589a}{save}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoteManager_a0ad52688911f8dd6da0e6e08928ac218}{load}}();}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classRemoteManager_a59b7e43efe936e7a396936ea42691dcb}{count}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ remotes\_.size();\ \}}
+\DoxyCodeLine{00243\ \};}
+
+\end{DoxyCode}

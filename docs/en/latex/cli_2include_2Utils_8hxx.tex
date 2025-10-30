@@ -1,0 +1,42 @@
+\doxysection{cli/include/\+Utils.hxx File Reference}
+\hypertarget{cli_2include_2Utils_8hxx}{}\label{cli_2include_2Utils_8hxx}\index{cli/include/Utils.hxx@{cli/include/Utils.hxx}}
+
+
+Utility functions for conditional debugging output.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cli_2include_2Utils_8hxx_a4b171a7d705ca7ae2910200e76bd96e2}{print\+Debug}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Conditionally prints a debug message to standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility functions for conditional debugging output. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This header defines the {\ttfamily print\+Debug} function, which provides a simple mechanism for logging debug messages to standard output only when the {\ttfamily DEBUG\+\_\+\+MODE} preprocessor macro is defined. 
+
+\label{doc-func-members}
+\Hypertarget{cli_2include_2Utils_8hxx_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{cli_2include_2Utils_8hxx_a4b171a7d705ca7ae2910200e76bd96e2}\index{Utils.hxx@{Utils.hxx}!printDebug@{printDebug}}
+\index{printDebug@{printDebug}!Utils.hxx@{Utils.hxx}}
+\doxysubsubsection{\texorpdfstring{printDebug()}{printDebug()}}
+{\footnotesize\ttfamily \label{cli_2include_2Utils_8hxx_a4b171a7d705ca7ae2910200e76bd96e2} 
+void print\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Conditionally prints a debug message to standard output. 
+
+The message is only printed if the DEBUG\+\_\+\+MODE macro is defined at the time of compilation. The function is marked as {\ttfamily inline} to suggest inlining by the compiler, and is compiled to a no-\/op when DEBUG\+\_\+\+MODE is not defined, resulting in zero runtime overhead in release builds. 
+\begin{DoxyParams}{Parameters}
+{\em message} & The string message to output, prefixed with "{}\+DEBUG\+: "{}. \\
+\hline
+\end{DoxyParams}

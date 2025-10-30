@@ -1,0 +1,22 @@
+PROJECT_NAME           = "SVCS - English Documentation"
+OUTPUT_DIRECTORY       = docs/en
+INPUT                  = .
+RECURSIVE              = YES
+EXCLUDE                = build/ \
+                         third_party/ \
+                         CMakeFiles/
+EXCLUDE_PATTERNS       = *.o \
+                         *.a \
+                         *.so \
+                         *.exe \
+                         *.bin
+FILE_PATTERNS          = *.hxx \
+                         *.cxx \
+                         *.h \
+                         *.cpp \
+                         *.md
+INPUT_FILTER = "tools/filter_en.sh"
+ALIASES                =
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+SEARCHENGINE           = YES

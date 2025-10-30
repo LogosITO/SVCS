@@ -1,0 +1,40 @@
+\doxysection{Int\+Remove\+Command\+Test.\+hxx}
+\hypertarget{IntRemoveCommandTest_8hxx_source}{}\label{IntRemoveCommandTest_8hxx_source}\index{tests/cli/utils/IntRemoveCommandTest.hxx@{tests/cli/utils/IntRemoveCommandTest.hxx}}
+\mbox{\hyperlink{IntRemoveCommandTest_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RemoveCommand_8hxx}{../../../cli/include/RemoveCommand.hxx}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRemoveCommandTest}{RemoveCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoveCommandTest_a86bbe1b606a35a1a11d34724e0fc35b2}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoveCommandTest_a0f6569a8a10477a0f4c0cbd789638a2f}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoveCommandTest_a84749538ba2d893f044554a9c18b5ff1}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoveCommandTest_a90e4479ea9547df7885ea31f7ae08be5}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoveCommandTest_a2b86efc078f51d495d09353cb94251e5}{stageFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classRemoveCommandTest_aaa1ab8e6182258023a2d9162dc4c089f}{mockEventBus}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00141\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classRemoveCommandTest_a15568c85580d2f6515c679fdadef3df8}{repoManager}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00150\ \ \ \ \ std::unique\_ptr<RemoveCommand>\ \mbox{\hyperlink{classRemoveCommandTest_a3f82597bc8ae4cb6d8e96f9e097bb1df}{command}};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00159\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classRemoveCommandTest_afaa2df2092f0992a12d69cd988a38f9f}{testDir}};}
+\DoxyCodeLine{00160\ \};}
+
+\end{DoxyCode}

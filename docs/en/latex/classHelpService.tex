@@ -1,0 +1,158 @@
+\doxysection{Help\+Service Class Reference}
+\hypertarget{classHelpService}{}\label{classHelpService}\index{HelpService@{HelpService}}
+
+
+Service that provides help information for commands.  
+
+
+
+
+{\ttfamily \#include $<$Help\+Service.\+hxx$>$}
+
+Inheritance diagram for Help\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHelpService}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHelpService_ac380002930a510d355fe11cf11e946ce}{Help\+Service}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ bus, std\+::function$<$ std\+::vector$<$ std\+::string $>$()$>$ get\+Commands, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Description, std\+::function$<$ void(const std\+::string \&)$>$ show\+Help, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Usage=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classHelpService}{Help\+Service} by injecting necessary dependencies as callbacks. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classHelpService_a3e101dee42668c57dd56669a3939d335}{get\+Available\+Commands}} () const
+\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Commands\+Callback\+\_\+} to retrieve the list of all available command names. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHelpService_acc76b5372129d61b894efb2fa25349c2}{get\+Command\+Description}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Description\+Callback\+\_\+} to retrieve the brief description of a specific command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelpService_a1ea55dca8e2d594c97ce5dc3efca8053}{show\+Command\+Help}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily show\+Help\+Callback\+\_\+} to trigger the display of detailed help for a specific command. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHelpService_a71d1aba53c9ac3d40b16af8890bcac95}{command\+Exists}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Checks for the existence of a command by comparing against the list returned by {\ttfamily get\+Available\+Commands}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHelpService_a6e1869acb698c4c37d1b15d19b92ce9c}{get\+Command\+Usage}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Usage\+Callback\+\_\+} to retrieve the usage syntax of a specific command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service that provides help information for commands. 
+
+This service implements the application logic for displaying help. It uses a set of {\bfseries{callback functions}} ({\ttfamily std\+::function}) to retrieve command data (names, descriptions, usage) and display specific help. This design choice prevents a direct dependency on the \doxylink{classCommandFactory}{Command\+Factory}, thereby breaking a potential {\bfseries{circular dependency}}. 
+
+\label{doc-constructors}
+\Hypertarget{classHelpService_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHelpService_ac380002930a510d355fe11cf11e946ce}\index{HelpService@{HelpService}!HelpService@{HelpService}}
+\index{HelpService@{HelpService}!HelpService@{HelpService}}
+\doxysubsubsection{\texorpdfstring{HelpService()}{HelpService()}}
+{\footnotesize\ttfamily \label{classHelpService_ac380002930a510d355fe11cf11e946ce} 
+Help\+Service\+::\+Help\+Service (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{bus}{, }\item[{std\+::function$<$ std\+::vector$<$ std\+::string $>$()$>$}]{get\+Commands}{, }\item[{std\+::function$<$ std\+::string(const std\+::string \&)$>$}]{get\+Description}{, }\item[{std\+::function$<$ void(const std\+::string \&)$>$}]{show\+Help}{, }\item[{std\+::function$<$ std\+::string(const std\+::string \&)$>$}]{get\+Usage}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{classHelpService}{Help\+Service} by injecting necessary dependencies as callbacks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bus} & Shared pointer to the event bus for notifications. \\
+\hline
+{\em get\+Commands} & Function (callback) that returns a list of available command names. \\
+\hline
+{\em get\+Description} & Function (callback) that returns the brief description of a command. \\
+\hline
+{\em show\+Help} & Function (callback) that triggers the full help display for a command. \\
+\hline
+{\em get\+Usage} & Function (callback) that returns the usage syntax of a command (defaults to nullptr if not strictly needed). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classHelpService_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHelpService_a71d1aba53c9ac3d40b16af8890bcac95}\index{HelpService@{HelpService}!commandExists@{commandExists}}
+\index{commandExists@{commandExists}!HelpService@{HelpService}}
+\doxysubsubsection{\texorpdfstring{commandExists()}{commandExists()}}
+{\footnotesize\ttfamily \label{classHelpService_a71d1aba53c9ac3d40b16af8890bcac95} 
+bool Help\+Service\+::command\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Checks for the existence of a command by comparing against the list returned by {\ttfamily get\+Available\+Commands}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Name} & The name of the command to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the command is registered, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classHelpService_a3e101dee42668c57dd56669a3939d335}\index{HelpService@{HelpService}!getAvailableCommands@{getAvailableCommands}}
+\index{getAvailableCommands@{getAvailableCommands}!HelpService@{HelpService}}
+\doxysubsubsection{\texorpdfstring{getAvailableCommands()}{getAvailableCommands()}}
+{\footnotesize\ttfamily \label{classHelpService_a3e101dee42668c57dd56669a3939d335} 
+std\+::vector$<$ std\+::string $>$ Help\+Service\+::get\+Available\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Executes the {\ttfamily get\+Commands\+Callback\+\_\+} to retrieve the list of all available command names. 
+
+\begin{DoxyReturn}{Returns}
+Vector of strings containing the names of all registered commands. 
+\end{DoxyReturn}
+\Hypertarget{classHelpService_acc76b5372129d61b894efb2fa25349c2}\index{HelpService@{HelpService}!getCommandDescription@{getCommandDescription}}
+\index{getCommandDescription@{getCommandDescription}!HelpService@{HelpService}}
+\doxysubsubsection{\texorpdfstring{getCommandDescription()}{getCommandDescription()}}
+{\footnotesize\ttfamily \label{classHelpService_acc76b5372129d61b894efb2fa25349c2} 
+std\+::string Help\+Service\+::get\+Command\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Executes the {\ttfamily get\+Description\+Callback\+\_\+} to retrieve the brief description of a specific command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Name} & The name of the command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The command description, or "{}\+Unknown command"{} if the command name is not valid or the callback fails. 
+\end{DoxyReturn}
+\Hypertarget{classHelpService_a6e1869acb698c4c37d1b15d19b92ce9c}\index{HelpService@{HelpService}!getCommandUsage@{getCommandUsage}}
+\index{getCommandUsage@{getCommandUsage}!HelpService@{HelpService}}
+\doxysubsubsection{\texorpdfstring{getCommandUsage()}{getCommandUsage()}}
+{\footnotesize\ttfamily \label{classHelpService_a6e1869acb698c4c37d1b15d19b92ce9c} 
+std\+::string Help\+Service\+::get\+Command\+Usage (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Executes the {\ttfamily get\+Usage\+Callback\+\_\+} to retrieve the usage syntax of a specific command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Name} & The name of the command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The command usage string, or an empty string if the command is not found or the callback is not set. 
+\end{DoxyReturn}
+\Hypertarget{classHelpService_a1ea55dca8e2d594c97ce5dc3efca8053}\index{HelpService@{HelpService}!showCommandHelp@{showCommandHelp}}
+\index{showCommandHelp@{showCommandHelp}!HelpService@{HelpService}}
+\doxysubsubsection{\texorpdfstring{showCommandHelp()}{showCommandHelp()}}
+{\footnotesize\ttfamily \label{classHelpService_a1ea55dca8e2d594c97ce5dc3efca8053} 
+void Help\+Service\+::show\+Command\+Help (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const}
+
+
+
+Executes the {\ttfamily show\+Help\+Callback\+\_\+} to trigger the display of detailed help for a specific command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Name} & The name of the command to show help for. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{HelpService_8hxx}{Help\+Service.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{HelpService_8cxx}{Help\+Service.\+cxx}}\end{DoxyCompactItemize}

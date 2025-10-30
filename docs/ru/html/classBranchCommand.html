@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс BranchCommand</title>
+<title>SVCS - Русская документация: Класс BranchCommand</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classBranchCommand.html','','classBranchCommand-member
 </div><!--header-->
 <div class="contents">
 
-<p>Command for managing branches in the version control system.  
+<p>Команда для управления ветками в системе контроля версий.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="BranchCommand_8hxx_source.html">BranchCommand.hxx</a>&gt;</code></p>
@@ -104,32 +102,66 @@ $(function(){initNavTree('classBranchCommand.html','','classBranchCommand-member
  <div class="center">
   <img src="classBranchCommand.png" usemap="#BranchCommand_map" alt=""/>
   <map id="BranchCommand_map" name="BranchCommand_map">
-<area href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI." alt="ICommand" shape="rect" coords="0,0,108,24"/>
+<area href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI." alt="ICommand" shape="rect" coords="0,0,108,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a4eaa697694eb6ff5f25638bd57cad585" id="r_a4eaa697694eb6ff5f25638bd57cad585"><td class="memItemLeft" align="right" valign="top"><a id="a4eaa697694eb6ff5f25638bd57cad585" name="a4eaa697694eb6ff5f25638bd57cad585"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BranchCommand</b> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; event_bus, std::shared_ptr&lt; <a class="el" href="classBranchManager.html">BranchManager</a> &gt; branch_manager)</td></tr>
+<tr class="memitem:a4eaa697694eb6ff5f25638bd57cad585" id="r_a4eaa697694eb6ff5f25638bd57cad585"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4eaa697694eb6ff5f25638bd57cad585">BranchCommand</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; event_bus, std::shared_ptr&lt; <a class="el" href="classBranchManager.html">BranchManager</a> &gt; branch_manager)</td></tr>
+<tr class="memdesc:a4eaa697694eb6ff5f25638bd57cad585"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор для <a class="el" href="classBranchCommand.html" title="Команда для управления ветками в системе контроля версий.">BranchCommand</a>.  <br /></td></tr>
+<tr class="memitem:a37c58a79e576a68fb2d7390ef47deea0" id="r_a37c58a79e576a68fb2d7390ef47deea0"><td class="memItemLeft" align="right" valign="top"><a id="a37c58a79e576a68fb2d7390ef47deea0" name="a37c58a79e576a68fb2d7390ef47deea0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~BranchCommand</b> () override=default</td></tr>
+<tr class="memdesc:a37c58a79e576a68fb2d7390ef47deea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор. <br /></td></tr>
 <tr class="memitem:ac19f2028fc5d1d199cee69308850292d" id="r_ac19f2028fc5d1d199cee69308850292d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac19f2028fc5d1d199cee69308850292d">getName</a> () const override</td></tr>
-<tr class="memdesc:ac19f2028fc5d1d199cee69308850292d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the unique name of the command (e.g., "init").  <br /></td></tr>
+<tr class="memdesc:ac19f2028fc5d1d199cee69308850292d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает имя команды.  <br /></td></tr>
 <tr class="memitem:aab365b92eb53db8e84d1016f3006a693" id="r_aab365b92eb53db8e84d1016f3006a693"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab365b92eb53db8e84d1016f3006a693">getDescription</a> () const override</td></tr>
-<tr class="memdesc:aab365b92eb53db8e84d1016f3006a693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a brief description of what the command does.  <br /></td></tr>
+<tr class="memdesc:aab365b92eb53db8e84d1016f3006a693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает описание команды.  <br /></td></tr>
 <tr class="memitem:a9ee1ab8405a6a4e8359baa1f3860e45c" id="r_a9ee1ab8405a6a4e8359baa1f3860e45c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ee1ab8405a6a4e8359baa1f3860e45c">getUsage</a> () const override</td></tr>
-<tr class="memdesc:a9ee1ab8405a6a4e8359baa1f3860e45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the command's usage syntax.  <br /></td></tr>
+<tr class="memdesc:a9ee1ab8405a6a4e8359baa1f3860e45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает синтаксис использования команды.  <br /></td></tr>
 <tr class="memitem:a6aa576bca717782d4e6900c12186565c" id="r_a6aa576bca717782d4e6900c12186565c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aa576bca717782d4e6900c12186565c">execute</a> (const std::vector&lt; std::string &gt; &amp;args) override</td></tr>
-<tr class="memdesc:a6aa576bca717782d4e6900c12186565c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the main logic of the command.  <br /></td></tr>
+<tr class="memdesc:a6aa576bca717782d4e6900c12186565c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет команду branch с заданными аргументами.  <br /></td></tr>
 <tr class="memitem:aeafc61159b00629309ff2cbac2089831" id="r_aeafc61159b00629309ff2cbac2089831"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeafc61159b00629309ff2cbac2089831">showHelp</a> () const override</td></tr>
-<tr class="memdesc:aeafc61159b00629309ff2cbac2089831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays detailed help information about the command (Usage and Description).  <br /></td></tr>
+<tr class="memdesc:aeafc61159b00629309ff2cbac2089831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отображает справочную информацию для команды.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classICommand"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classICommand')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classICommand.html">ICommand</a></td></tr>
 <tr class="memitem:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand" id="r_aa8a6346c5a0dcfe7fd49413a69e854ef"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classICommand.html#aa8a6346c5a0dcfe7fd49413a69e854ef">~ICommand</a> ()=default</td></tr>
-<tr class="memdesc:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+<tr class="memdesc:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Command for managing branches in the version control system. </p>
-<p>Implements the 'svcs branch' functionality, providing an interface for the user to interact with the repository's branch structure. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<div class="textblock"><p>Команда для управления ветками в системе контроля версий. </p>
+<p>Реализует функциональность 'svcs branch', предоставляя интерфейс для взаимодействия пользователя со структурой веток репозитория. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a4eaa697694eb6ff5f25638bd57cad585" name="a4eaa697694eb6ff5f25638bd57cad585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eaa697694eb6ff5f25638bd57cad585">&#9670;&#160;</a></span>BranchCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BranchCommand::BranchCommand </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>event_bus</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classBranchManager.html">BranchManager</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>branch_manager</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор для <a class="el" href="classBranchCommand.html" title="Команда для управления ветками в системе контроля версий.">BranchCommand</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event_bus</td><td>Шина событий для общения с пользователем. </td></tr>
+    <tr><td class="paramname">branch_manager</td><td>Менеджер веток для основных операций. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
 <a id="a6aa576bca717782d4e6900c12186565c" name="a6aa576bca717782d4e6900c12186565c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6aa576bca717782d4e6900c12186565c">&#9670;&#160;</a></span>execute()</h2>
 
@@ -153,14 +185,14 @@ $(function(){initNavTree('classBranchCommand.html','','classBranchCommand-member
 </table>
 </div><div class="memdoc">
 
-<p>Executes the main logic of the command. </p>
+<p>Выполняет команду branch с заданными аргументами. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">args</td><td>A vector of string arguments passed to the command (excluding the command name itself). </td></tr>
+    <tr><td class="paramname">args</td><td>Аргументы командной строки. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>true if the command execution was successful; false on error. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если выполнение успешно, false в противном случае. </dd></dl>
 
 <p>Замещает <a class="el" href="classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0">ICommand</a>.</p>
 
@@ -189,8 +221,8 @@ $(function(){initNavTree('classBranchCommand.html','','classBranchCommand-member
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves a brief description of what the command does. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>The command's description. </dd></dl>
+<p>Получает описание команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Краткое описание команды. </dd></dl>
 
 <p>Замещает <a class="el" href="classICommand.html#a1018a1a6abaf28e40b27eca8344e78c6">ICommand</a>.</p>
 
@@ -219,8 +251,8 @@ $(function(){initNavTree('classBranchCommand.html','','classBranchCommand-member
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves the unique name of the command (e.g., "init"). </p>
-<dl class="section return"><dt>Возвращает</dt><dd>The command name as a string. </dd></dl>
+<p>Получает имя команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Имя команды "branch". </dd></dl>
 
 <p>Замещает <a class="el" href="classICommand.html#ac676ae6b9315436978fc62201e5b31dc">ICommand</a>.</p>
 
@@ -249,8 +281,8 @@ $(function(){initNavTree('classBranchCommand.html','','classBranchCommand-member
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves the command's usage syntax. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>A string with the syntax (e.g., "vcs commit &lt;message&gt;"). </dd></dl>
+<p>Получает синтаксис использования команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка синтаксиса использования. </dd></dl>
 
 <p>Замещает <a class="el" href="classICommand.html#a9e912ad55e38e0cf9ae2f6e558d6c401">ICommand</a>.</p>
 
@@ -279,7 +311,7 @@ $(function(){initNavTree('classBranchCommand.html','','classBranchCommand-member
 </table>
 </div><div class="memdoc">
 
-<p>Displays detailed help information about the command (Usage and Description). </p>
+<p>Отображает справочную информацию для команды. </p>
 
 <p>Замещает <a class="el" href="classICommand.html#a4e74912364d9172184235e5e5df55c7d">ICommand</a>.</p>
 

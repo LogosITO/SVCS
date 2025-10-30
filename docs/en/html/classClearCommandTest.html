@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: ClearCommandTest Class Reference</title>
+<title>SVCS - English Documentation: ClearCommandTest Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -143,9 +141,7 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Test fixture for <a class="el" href="classClearCommand.html" title="Command for removing SVCS repository structure.">ClearCommand</a> integration tests. </p>
-<ul>
-<li>Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create test files/directories and to simulate user input required for the 'clear' confirmation prompt. </li>
-</ul>
+<p>Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create test files/directories and to simulate user input required for the 'clear' confirmation prompt. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a7c2a071223db041ffea0deb6ce274767" name="a7c2a071223db041ffea0deb6ce274767"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c2a071223db041ffea0deb6ce274767">&#9670;&#160;</a></span>createTestDirectory()</h2>
@@ -171,11 +167,9 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
 </div><div class="memdoc">
 
 <p>Creates a test directory inside the test directory. </p>
-<p>Creates a test directory inside the test repository directory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dirname</td><td>The name of the directory to create.</td></tr>
-    <tr><td class="paramname">dirname</td><td>The name of the directory to create (relative to testDir). </td></tr>
+    <tr><td class="paramname">dirname</td><td>The name of the directory to create. </td></tr>
   </table>
   </dd>
 </dl>
@@ -210,19 +204,10 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
 </div><div class="memdoc">
 
 <p>Creates a test file inside the test directory. </p>
-<p>Creates a test file inside the test repository directory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>The name of the file to create. </td></tr>
-    <tr><td class="paramname">content</td><td>The content of the file (defaults to "test content").</td></tr>
-    <tr><td class="paramname">filename</td><td>The name of the file to create (relative to testDir). </td></tr>
-    <tr><td class="paramname">content</td><td>The content to write into the file. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if the file cannot be opened for writing. </td></tr>
+    <tr><td class="paramname">content</td><td>The content of the file (defaults to "test content"). </td></tr>
   </table>
   </dd>
 </dl>
@@ -253,10 +238,7 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
 </div><div class="memdoc">
 
 <p>Checks if the .svcs repository directory exists. </p>
-<p>Checks if the .svcs repository directory exists in the test directory.</p>
-<dl class="section return"><dt>Returns</dt><dd>true if the repository exists, false otherwise.</dd>
-<dd>
-true if the .svcs directory exists, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the repository exists, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -284,19 +266,7 @@ true if the .svcs directory exists, false otherwise. </dd></dl>
 </div><div class="memdoc">
 
 <p>Sets up the test environment. </p>
-<p>Sets up the test environment before each test case.</p>
-<ul>
-<li>Creates and initializes a new temporary SVCS repository and saves the original std::cin buffer.</li>
-<li>1. Initializes the <span class="tt"><a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a></span> and <span class="tt"><a class="el" href="classClearCommand.html" title="Command for removing SVCS repository structure.">ClearCommand</a></span> using the <span class="tt"><a class="el" href="classMockSubject.html" title="Mock implementation of ISubject.">MockSubject</a></span>.</li>
-<li>2. Creates a unique temporary directory, changes the current path to it, and initializes a new SVCS repository.</li>
-<li>3. Saves the original <span class="tt">std::cin</span> buffer for user input simulation and clears initial events. <dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if repository initialization fails. </td></tr>
-  </table>
-  </dd>
-</dl>
-</li>
-</ul>
+<p>Creates and initializes a new temporary SVCS repository and saves the original std::cin buffer. </p>
 
 </div>
 </div>
@@ -324,16 +294,9 @@ true if the .svcs directory exists, false otherwise. </dd></dl>
 </div><div class="memdoc">
 
 <p>Simulates user input by redirecting std::cin to a string stream. </p>
-<p>Simulates user input by redirecting std::cin to read from an internal string stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>The string that will be read as user input.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This is crucial for testing commands (like 'clear') that require confirmation. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">input</td><td>The string (e.g., "y\n" or "N\n") that will be read as user input. </td></tr>
+    <tr><td class="paramname">input</td><td>The string that will be read as user input. </td></tr>
   </table>
   </dd>
 </dl>
@@ -364,11 +327,7 @@ true if the .svcs directory exists, false otherwise. </dd></dl>
 </div><div class="memdoc">
 
 <p>Tears down the test environment. </p>
-<p>Tears down the test environment after each test case.</p>
-<ul>
-<li>Restores the original std::cin buffer and recursively removes the temporary directory.</li>
-<li>Restores the original <span class="tt">std::cin</span> buffer, reverts the current working directory, recursively deletes the test directory (<span class="tt">testDir</span>), and clears captured events. </li>
-</ul>
+<p>Restores the original std::cin buffer and recursively removes the temporary directory. </p>
 
 </div>
 </div>

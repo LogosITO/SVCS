@@ -1,0 +1,21 @@
+\doxysection{services/logging/\+Logger.cxx File Reference}
+\hypertarget{Logger_8cxx}{}\label{Logger_8cxx}\index{services/logging/Logger.cxx@{services/logging/Logger.cxx}}
+
+
+Implementation of the \doxylink{classLogger}{Logger} class for thread-\/safe logging system.  
+
+
+{\ttfamily \#include "{}Logger.\+hxx"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classLogger}{Logger} class for thread-\/safe logging system. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This file provides the concrete implementation for the \doxylink{classLogger}{Logger} class, including Singleton pattern management, log level filtering, message formatting, and event bus integration. The \doxylink{classLogger}{Logger} automatically processes system events from the \doxylink{structEvent}{Event} Bus and provides direct logging methods for manual use. 

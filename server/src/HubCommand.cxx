@@ -1,7 +1,11 @@
 /**
  * @file HubCommand.cxx
- * @brief Implementation of the HubCommand class for creating bare repositories.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
+ * @english
+ * @brief Implementation of the HubCommand class for creating bare repositories.
  * @details This file provides the concrete implementation for the @ref HubCommand class.
  * The `execute` method handles the logic for:
  * 1.  **Argument Validation**: Ensures exactly one valid path is provided.
@@ -9,15 +13,22 @@
  * 3.  **Directory Creation**: Creates the target directory and the full `.svcs` "bare" repository structure (objects, refs, hooks, etc.).
  * 4.  **File Seeding**: Writes the initial `config`, `HEAD`, and `description` files.
  * 5.  **Notifications**: Uses the @ref ISubject event bus to report success, info, or error messages.
- *
  * This command uses the `RepositoryManager` dependency indirectly, as the logic
  * is simple enough to be self-contained filesystem operations, but it relies on
  * the manager's path conventions.
  *
- * @see HubCommand.hxx
- * @see RepositoryManager
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса HubCommand для создания голых репозиториев.
+ * @details Этот файл предоставляет конкретную реализацию для класса @ref HubCommand.
+ * Метод `execute` обрабатывает логику для:
+ * 1.  **Проверки аргументов**: Обеспечивает предоставление ровно одного валидного пути.
+ * 2.  **Проверок файловой системы**: Проверяет, что репозиторий еще не существует в целевом местоположении.
+ * 3.  **Создания директорий**: Создает целевую директорию и полную структуру "голого" репозитория `.svcs` (objects, refs, hooks и т.д.).
+ * 4.  **Инициализации файлов**: Записывает начальные файлы `config`, `HEAD` и `description`.
+ * 5.  **Уведомлений**: Использует шину событий @ref ISubject для отчетов об успехе, информации или сообщениях об ошибках.
+ * Эта команда использует зависимость `RepositoryManager` косвенно, так как логика
+ * достаточно проста для самостоятельных операций файловой системы, но полагается на
+ * соглашения о путях менеджера.
  */
 
 #include "../include/HubCommand.hxx"

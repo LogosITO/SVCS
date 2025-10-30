@@ -1,0 +1,19 @@
+\doxysection{Utils.\+hxx}
+\hypertarget{cli_2include_2Utils_8hxx_source}{}\label{cli_2include_2Utils_8hxx_source}\index{cli/include/Utils.hxx@{cli/include/Utils.hxx}}
+\mbox{\hyperlink{cli_2include_2Utils_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\#define\ DEBUG\_MODE\ //\ Uncommenting\ this\ line\ enables\ debug\ logging}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cli_2include_2Utils_8hxx_a4b171a7d705ca7ae2910200e76bd96e2}{printDebug}}(\textcolor{keyword}{const}\ std::string\&\ message)\ \{}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ DEBUG\_MODE}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}DEBUG:\ "{}}\ <<\ message\ <<\ std::endl;}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00062\ \}}
+
+\end{DoxyCode}

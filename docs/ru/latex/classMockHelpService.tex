@@ -1,0 +1,189 @@
+\doxysection{Класс Mock\+Help\+Service}
+\hypertarget{classMockHelpService}{}\label{classMockHelpService}\index{MockHelpService@{MockHelpService}}
+
+
+Mock реализация \doxylink{classHelpService}{Help\+Service} для тестирования \doxylink{classHelpCommand}{Help\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Mock\+Help\+Service.\+hxx$>$}
+
+Граф наследования\+:Mock\+Help\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMockHelpService}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMockHelpService_ac1c8570640107c6dd75b357a5bde10d3}{Mock\+Help\+Service}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ \&mock\+Event\+Bus)
+\begin{DoxyCompactList}\small\item\em Конструктор для \doxylink{classMockHelpService}{Mock\+Help\+Service}. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classMockHelpService_a48d91142003d63d20ca19b3215e2a5d2}{get\+Available\+Commands}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает предварительно настроенный список доступных команд. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMockHelpService_acd98a15f199035212c810e95aa496a62}{get\+Command\+Description}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Возвращает предварительно настроенное описание для заданной команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMockHelpService_aa94f1b9dc36e19b7df936b93ff248a7d}{show\+Command\+Help}} (const std\+::string \&command\+Name)
+\begin{DoxyCompactList}\small\item\em Записывает, что справка была запрошена для заданной команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMockHelpService_a8b572032f59990e31da0835fbebda594}{set\+Available\+Commands}} (const std\+::vector$<$ std\+::string $>$ \&commands)
+\begin{DoxyCompactList}\small\item\em Устанавливает список имен команд, возвращаемых \doxylink{classMockHelpService_a48d91142003d63d20ca19b3215e2a5d2}{get\+Available\+Commands()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMockHelpService_ac0649bf36f4f4c90a5f59e6fa59d987b}{set\+Command\+Description}} (const std\+::string \&command\+Name, const std\+::string \&description)
+\begin{DoxyCompactList}\small\item\em Настраивает описание для конкретного имени команды. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMockHelpService_a75eea5375c564e93e597b8ccdb3181d8}{was\+Command\+Help\+Called}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Проверяет, был ли вызван \doxylink{classMockHelpService_aa94f1b9dc36e19b7df936b93ff248a7d}{show\+Command\+Help()} для конкретной команды. \end{DoxyCompactList}\item 
+\Hypertarget{classMockHelpService_a1e5c10b1ef3a05be719dcaece9c8855e}\label{classMockHelpService_a1e5c10b1ef3a05be719dcaece9c8855e} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Сбрасывает внутреннее состояние mock\textquotesingle{}а (вызванные команды, списки и описания). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classHelpService}{Help\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHelpService_ac380002930a510d355fe11cf11e946ce}{Help\+Service}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ bus, std\+::function$<$ std\+::vector$<$ std\+::string $>$()$>$ get\+Commands, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Description, std\+::function$<$ void(const std\+::string \&)$>$ show\+Help, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Usage=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classHelpService}{Help\+Service} путем внедрения необходимых зависимостей в виде обратных вызовов. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classHelpService_a3e101dee42668c57dd56669a3939d335}{get\+Available\+Commands}} () const
+\begin{DoxyCompactList}\small\item\em Выполняет {\ttfamily get\+Commands\+Callback\+\_\+} для получения списка всех доступных имен команд. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHelpService_acc76b5372129d61b894efb2fa25349c2}{get\+Command\+Description}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Выполняет {\ttfamily get\+Description\+Callback\+\_\+} для получения краткого описания конкретной команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelpService_a1ea55dca8e2d594c97ce5dc3efca8053}{show\+Command\+Help}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Выполняет {\ttfamily show\+Help\+Callback\+\_\+} для запуска отображения подробной справки для конкретной команды. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHelpService_a71d1aba53c9ac3d40b16af8890bcac95}{command\+Exists}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Проверяет существование команды путем сравнения со списком, возвращенным {\ttfamily get\+Available\+Commands}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHelpService_a6e1869acb698c4c37d1b15d19b92ce9c}{get\+Command\+Usage}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Выполняет {\ttfamily get\+Usage\+Callback\+\_\+} для получения синтаксиса использования конкретной команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Mock реализация \doxylink{classHelpService}{Help\+Service} для тестирования \doxylink{classHelpCommand}{Help\+Command}. 
+
+Этот mock позволяет тестовым случаям\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Настраивать}} список доступных команд.
+\item {\bfseries{Настраивать}} описания для конкретных команд.
+\item {\bfseries{Проверять}}, справка какой команды была запрошена {\ttfamily \doxylink{classHelpCommand}{Help\+Command}}.
+\item Использовать предоставленный \doxylink{classMockSubject}{Mock\+Subject} для вывода отладочной информации во время тестирования. 
+\end{DoxyEnumerate}
+
+\label{doc-constructors}
+\Hypertarget{classMockHelpService_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classMockHelpService_ac1c8570640107c6dd75b357a5bde10d3}\index{MockHelpService@{MockHelpService}!MockHelpService@{MockHelpService}}
+\index{MockHelpService@{MockHelpService}!MockHelpService@{MockHelpService}}
+\doxysubsubsection{\texorpdfstring{MockHelpService()}{MockHelpService()}}
+{\footnotesize\ttfamily \label{classMockHelpService_ac1c8570640107c6dd75b357a5bde10d3} 
+Mock\+Help\+Service\+::\+Mock\+Help\+Service (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ \&}]{mock\+Event\+Bus}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Конструктор для \doxylink{classMockHelpService}{Mock\+Help\+Service}. 
+
+Инициализирует базовый \doxylink{classHelpService}{Help\+Service} с лямбда-\/функциями, которые делегируют собственным методам управления mock\textquotesingle{}а, и сохраняет mock шину событий. 
+\begin{DoxyParams}{Аргументы}
+{\em mock\+Event\+Bus} & Общий указатель на \doxylink{classMockSubject}{Mock\+Subject}, используемый для уведомлений. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classMockHelpService_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classMockHelpService_a48d91142003d63d20ca19b3215e2a5d2}\index{MockHelpService@{MockHelpService}!getAvailableCommands@{getAvailableCommands}}
+\index{getAvailableCommands@{getAvailableCommands}!MockHelpService@{MockHelpService}}
+\doxysubsubsection{\texorpdfstring{getAvailableCommands()}{getAvailableCommands()}}
+{\footnotesize\ttfamily \label{classMockHelpService_a48d91142003d63d20ca19b3215e2a5d2} 
+std\+::vector$<$ std\+::string $>$ Mock\+Help\+Service\+::get\+Available\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Возвращает предварительно настроенный список доступных команд. 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор имен команд. 
+\end{DoxyReturn}
+\Hypertarget{classMockHelpService_acd98a15f199035212c810e95aa496a62}\index{MockHelpService@{MockHelpService}!getCommandDescription@{getCommandDescription}}
+\index{getCommandDescription@{getCommandDescription}!MockHelpService@{MockHelpService}}
+\doxysubsubsection{\texorpdfstring{getCommandDescription()}{getCommandDescription()}}
+{\footnotesize\ttfamily \label{classMockHelpService_acd98a15f199035212c810e95aa496a62} 
+std\+::string Mock\+Help\+Service\+::get\+Command\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Возвращает предварительно настроенное описание для заданной команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em command\+Name} & Имя команды. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Настроенное описание или "{}\+No description available"{}, если не установлено. 
+\end{DoxyReturn}
+\Hypertarget{classMockHelpService_a8b572032f59990e31da0835fbebda594}\index{MockHelpService@{MockHelpService}!setAvailableCommands@{setAvailableCommands}}
+\index{setAvailableCommands@{setAvailableCommands}!MockHelpService@{MockHelpService}}
+\doxysubsubsection{\texorpdfstring{setAvailableCommands()}{setAvailableCommands()}}
+{\footnotesize\ttfamily \label{classMockHelpService_a8b572032f59990e31da0835fbebda594} 
+void Mock\+Help\+Service\+::set\+Available\+Commands (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{commands}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Устанавливает список имен команд, возвращаемых \doxylink{classMockHelpService_a48d91142003d63d20ca19b3215e2a5d2}{get\+Available\+Commands()}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commands} & Вектор имен команд. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMockHelpService_ac0649bf36f4f4c90a5f59e6fa59d987b}\index{MockHelpService@{MockHelpService}!setCommandDescription@{setCommandDescription}}
+\index{setCommandDescription@{setCommandDescription}!MockHelpService@{MockHelpService}}
+\doxysubsubsection{\texorpdfstring{setCommandDescription()}{setCommandDescription()}}
+{\footnotesize\ttfamily \label{classMockHelpService_ac0649bf36f4f4c90a5f59e6fa59d987b} 
+void Mock\+Help\+Service\+::set\+Command\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{, }\item[{const std\+::string \&}]{description}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Настраивает описание для конкретного имени команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em command\+Name} & Имя команды. \\
+\hline
+{\em description} & Описание для возврата для этой команды. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMockHelpService_aa94f1b9dc36e19b7df936b93ff248a7d}\index{MockHelpService@{MockHelpService}!showCommandHelp@{showCommandHelp}}
+\index{showCommandHelp@{showCommandHelp}!MockHelpService@{MockHelpService}}
+\doxysubsubsection{\texorpdfstring{showCommandHelp()}{showCommandHelp()}}
+{\footnotesize\ttfamily \label{classMockHelpService_aa94f1b9dc36e19b7df936b93ff248a7d} 
+void Mock\+Help\+Service\+::show\+Command\+Help (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Записывает, что справка была запрошена для заданной команды. 
+
+Также отправляет отладочное сообщение в mock шину событий. 
+\begin{DoxyParams}{Аргументы}
+{\em command\+Name} & Имя команды, для которой запрашивается справка. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMockHelpService_a75eea5375c564e93e597b8ccdb3181d8}\index{MockHelpService@{MockHelpService}!wasCommandHelpCalled@{wasCommandHelpCalled}}
+\index{wasCommandHelpCalled@{wasCommandHelpCalled}!MockHelpService@{MockHelpService}}
+\doxysubsubsection{\texorpdfstring{wasCommandHelpCalled()}{wasCommandHelpCalled()}}
+{\footnotesize\ttfamily \label{classMockHelpService_a75eea5375c564e93e597b8ccdb3181d8} 
+bool Mock\+Help\+Service\+::was\+Command\+Help\+Called (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Проверяет, был ли вызван \doxylink{classMockHelpService_aa94f1b9dc36e19b7df936b93ff248a7d}{show\+Command\+Help()} для конкретной команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em command\+Name} & Имя команды для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если \doxylink{classMockHelpService_aa94f1b9dc36e19b7df936b93ff248a7d}{show\+Command\+Help()} был вызван с этим именем, false в противном случае. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/mocks/\mbox{\hyperlink{MockHelpService_8hxx}{Mock\+Help\+Service.\+hxx}}\end{DoxyCompactItemize}

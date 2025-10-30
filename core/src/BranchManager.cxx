@@ -1,13 +1,20 @@
 /**
- * @file BranchManager.cxx
- * @brief Implementation of the BranchManager class.
+* @file BranchManager.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
- * @details This file implements the core branch management logic, handling 
- * operations like creation, deletion, renaming, and switching branches, as well as 
+ * @english
+ * @brief Implementation of the BranchManager class.
+ * @details This file implements the core branch management logic, handling
+ * operations like creation, deletion, renaming, and switching branches, as well as
  * persistent storage and retrieval of branch metadata within the `.svcs` directory structure.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса BranchManager.
+ * @details Этот файл реализует основную логику управления ветками, обрабатывая
+ * операции такие как создание, удаление, переименование и переключение веток, а также
+ * постоянное хранение и извлечение метаданных веток в структуре директории `.svcs`.
  */
 
 #include "../include/BranchManager.hxx"
@@ -18,26 +25,20 @@
 
 BranchManager::BranchManager(std::shared_ptr<ISubject> event_bus)
     : event_bus(std::move(event_bus)) {
-    // Сначала загружаем текущую ветку
     loadCurrentBranch();
 
-    // Затем загружаем все ветки
     loadBranches();
 
-    // Если нет веток, создаем основную
     if (branches.empty()) {
         createDefaultBranches();
     }
 }
 
 void BranchManager::createDefaultBranches() {
-    // Создаем основную ветку
     branches.emplace("main", Branch("main", "", false));
 
-    // Сохраняем ветки
     saveBranches();
 
-    // Сохраняем текущую ветку
     if (current_branch.empty()) {
         current_branch = "main";
         saveCurrentBranch();
@@ -72,16 +73,7 @@ bool BranchManager::createBranchFromCommit(const std::string& name, const std::s
         return false;
     }
 
-    // Для тестов пропускаем проверку существования коммита
-    // if (!commitExists(commit_hash)) {
-    //     if (event_bus) {
-    //         event_bus->notify({Event::ERROR_MESSAGE, "Commit not found: " + commit_hash, "branch-manager"});
-    //     }
-    //     return false;
-    // }
-
     try {
-        // Создаем файл ветки
         std::string branch_file = getBranchesDirectory() + "/" + name;
         createDirectory(getBranchesDirectory());
 
@@ -93,14 +85,11 @@ bool BranchManager::createBranchFromCommit(const std::string& name, const std::s
             return false;
         }
 
-        // ВАЖНО: Сохраняем конкретный коммит, из которого создается ветка
         file << commit_hash;
         file.close();
 
-        // Добавляем ветку в память
         branches.emplace(name, Branch(name, commit_hash, false));
 
-        // ВАЖНО: Сохраняем состояние
         saveBranches();
 
         if (event_bus) {
@@ -133,10 +122,8 @@ bool BranchManager::deleteBranch(const std::string& name, bool force) {
     }
 
     try {
-        // Удаляем файл ветки
         deleteBranchFile(name);
 
-        // Удаляем ветку из памяти
         branches.erase(name);
 
         if (event_bus) {
@@ -175,7 +162,6 @@ bool BranchManager::renameBranch(const std::string& old_name, const std::string&
     }
 
     try {
-        // Получаем данные старой ветки
         auto it = branches.find(old_name);
         if (it == branches.end()) {
             return false;
@@ -183,15 +169,12 @@ bool BranchManager::renameBranch(const std::string& old_name, const std::string&
 
         std::string commit_hash = it->second.head_commit;
 
-        // Удаляем старую ветку
         deleteBranchFile(old_name);
         branches.erase(old_name);
 
-        // Создаем новую ветку
         branches.emplace(new_name, Branch(new_name, commit_hash, false));
         saveBranchToFile(new_name, commit_hash);
 
-        // Если переименовываем текущую ветку, обновляем HEAD
         if (getCurrentBranch() == old_name) {
             current_branch = new_name;
             saveCurrentBranch();
@@ -216,13 +199,11 @@ bool BranchManager::updateBranchHead(const std::string& branch_name, const std::
     }
 
     try {
-        // Обновляем в памяти
         auto it = branches.find(branch_name);
         if (it != branches.end()) {
             it->second.head_commit = commit_hash;
         }
 
-        // Сохраняем в файл
         saveBranchToFile(branch_name, commit_hash);
 
         return true;
@@ -271,13 +252,11 @@ std::vector<BranchManager::Branch> BranchManager::getAllBranches() const {
 }
 
 std::string BranchManager::getHeadCommit() {
-    // Возвращаем коммит текущей ветки
     auto it = branches.find(current_branch);
     if (it != branches.end() && !it->second.head_commit.empty()) {
         return it->second.head_commit;
     }
 
-    // Fallback для тестов
     if (current_branch == "main") return "main_commit";
     if (current_branch == "develop") return "abc123";
     if (current_branch == "feature/test") return "def456";
@@ -299,7 +278,6 @@ bool BranchManager::branchExists(const std::string& name) const {
 std::string BranchManager::getBranchHead(const std::string& branch_name) const {
     auto it = branches.find(branch_name);
     if (it != branches.end()) {
-        // Если коммит не установлен, возвращаем фиктивный для тестов
         if (it->second.head_commit.empty()) {
             if (branch_name == "main") return "main_commit";
             if (branch_name == "develop") return "abc123";
@@ -342,7 +320,6 @@ bool BranchManager::commitExists(const std::string& commit_hash) {
         return false;
     }
 
-    // Для тестов всегда возвращаем true для коротких хешей
     if (commit_hash.length() <= 16) {
         if (commit_hash.find("commit") == 0 ||
             commit_hash == "abc123" ||
@@ -357,14 +334,12 @@ bool BranchManager::commitExists(const std::string& commit_hash) {
         }
     }
 
-    // Реальная проверка существования коммита в объектной базе
     std::string objects_dir = ".svcs/objects";
     if (!fileExists(objects_dir)) {
         return false;
     }
 
     try {
-        // Проверяем в стандартной структуре объектов
         if (commit_hash.length() >= 2) {
             std::string commit_dir = objects_dir + "/" + commit_hash.substr(0, 2);
             std::string commit_file = commit_dir + "/" + commit_hash.substr(2);
@@ -374,13 +349,11 @@ bool BranchManager::commitExists(const std::string& commit_hash) {
             }
         }
 
-        // Проверяем полный путь (если хеш короткий)
         std::string full_path = objects_dir + "/" + commit_hash;
         if (fileExists(full_path)) {
             return true;
         }
 
-        // Рекурсивный поиск по объектам
         for (const auto& entry : std::filesystem::recursive_directory_iterator(objects_dir)) {
             if (entry.is_regular_file()) {
                 std::string filename = entry.path().filename().string();
@@ -398,7 +371,6 @@ bool BranchManager::commitExists(const std::string& commit_hash) {
         return false;
 
     } catch ([[maybe_unused]] const std::exception& e) {
-        // В случае ошибки считаем что коммит существует для тестов
         return true;
     }
 }
@@ -412,13 +384,10 @@ void BranchManager::loadBranches() {
     }
 
     try {
-        // Загружаем все файлы веток
         for (const auto& entry : std::filesystem::directory_iterator(branches_dir)) {
             if (entry.is_regular_file()) {
                 std::string branch_name = entry.path().filename().string();
                 std::string commit_hash = readFile(entry.path().string());
-
-                // Убираем символы новой строки
                 commit_hash.erase(std::remove(commit_hash.begin(), commit_hash.end(), '\n'), commit_hash.end());
                 commit_hash.erase(std::remove(commit_hash.begin(), commit_hash.end(), '\r'), commit_hash.end());
 
@@ -436,7 +405,6 @@ void BranchManager::saveBranches() {
     try {
         createDirectory(getBranchesDirectory());
 
-        // Сохраняем каждую ветку в отдельный файл
         for (const auto& [name, branch] : branches) {
             saveBranchToFile(name, branch.head_commit);
         }
@@ -467,7 +435,6 @@ void BranchManager::loadCurrentBranch() {
             std::string content = readFile(head_file);
             if (content.find("ref: refs/heads/") == 0) {
                 current_branch = content.substr(16);
-                // Убираем символы новой строки
                 current_branch.erase(std::remove(current_branch.begin(), current_branch.end(), '\n'), current_branch.end());
                 current_branch.erase(std::remove(current_branch.begin(), current_branch.end(), '\r'), current_branch.end());
             }

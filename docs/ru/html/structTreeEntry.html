@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Структура TreeEntry</title>
+<title>SVCS - Русская документация: Структура TreeEntry</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('structTreeEntry.html','','structTreeEntry-members'); }
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a single item (file or subdirectory) within a <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object.  
+<p>Представляет отдельный элемент (файл или поддиректорию) внутри объекта <a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a>.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Tree_8hxx_source.html">Tree.hxx</a>&gt;</code></p>
@@ -102,28 +100,26 @@ $(function(){initNavTree('structTreeEntry.html','','structTreeEntry-members'); }
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:ad89dfd85abbb8b8a1041fea93f50a940" id="r_ad89dfd85abbb8b8a1041fea93f50a940"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad89dfd85abbb8b8a1041fea93f50a940">operator&lt;</a> (const <a class="el" href="structTreeEntry.html">TreeEntry</a> &amp;other) const</td></tr>
-<tr class="memdesc:ad89dfd85abbb8b8a1041fea93f50a940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison operator required for sorting.  <br /></td></tr>
+<tr class="memdesc:ad89dfd85abbb8b8a1041fea93f50a940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения, необходимый для сортировки.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Открытые атрибуты</h2></td></tr>
 <tr class="memitem:a134f10cecd1f81227572389485e04ad4" id="r_a134f10cecd1f81227572389485e04ad4"><td class="memItemLeft" align="right" valign="top"><a id="a134f10cecd1f81227572389485e04ad4" name="a134f10cecd1f81227572389485e04ad4"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mode</b></td></tr>
-<tr class="memdesc:a134f10cecd1f81227572389485e04ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">File mode (permissions) and type identifier (e.g., "100644" for a blob, "040000" for a tree). <br /></td></tr>
+<tr class="memdesc:a134f10cecd1f81227572389485e04ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Режим файла (права доступа) и идентификатор типа (например, "100644" для blob, "040000" для tree). <br /></td></tr>
 <tr class="memitem:aa025cb0a365aac0c2942a3249a244b1f" id="r_aa025cb0a365aac0c2942a3249a244b1f"><td class="memItemLeft" align="right" valign="top"><a id="aa025cb0a365aac0c2942a3249a244b1f" name="aa025cb0a365aac0c2942a3249a244b1f"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
-<tr class="memdesc:aa025cb0a365aac0c2942a3249a244b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the file or subdirectory. <br /></td></tr>
+<tr class="memdesc:aa025cb0a365aac0c2942a3249a244b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Имя файла или поддиректории. <br /></td></tr>
 <tr class="memitem:a8236e8177bef9f2380f9893ee916cc77" id="r_a8236e8177bef9f2380f9893ee916cc77"><td class="memItemLeft" align="right" valign="top"><a id="a8236e8177bef9f2380f9893ee916cc77" name="a8236e8177bef9f2380f9893ee916cc77"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></td></tr>
-<tr class="memdesc:a8236e8177bef9f2380f9893ee916cc77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hash ID (SHA-256) of the referenced object (<a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> or <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>). <br /></td></tr>
+<tr class="memdesc:a8236e8177bef9f2380f9893ee916cc77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хеш-идентификатор (SHA-256) ссылаемого объекта (<a class="el" href="classBlob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a> или <a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a>). <br /></td></tr>
 <tr class="memitem:a499a6f99a9c45e62c78e6d61f6341e0c" id="r_a499a6f99a9c45e62c78e6d61f6341e0c"><td class="memItemLeft" align="right" valign="top"><a id="a499a6f99a9c45e62c78e6d61f6341e0c" name="a499a6f99a9c45e62c78e6d61f6341e0c"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
-<tr class="memdesc:a499a6f99a9c45e62c78e6d61f6341e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the referenced object ("blob" or "tree"). <br /></td></tr>
+<tr class="memdesc:a499a6f99a9c45e62c78e6d61f6341e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип ссылаемого объекта ("blob" или "tree"). <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Represents a single item (file or subdirectory) within a <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object. </p>
-<ul>
-<li>This structure links a name and file mode to the hash ID of another VCS object. </li>
-</ul>
+<div class="textblock"><p>Представляет отдельный элемент (файл или поддиректорию) внутри объекта <a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a>. </p>
+<p>Эта структура связывает имя и режим файла с хеш-идентификатором другого объекта СКВ. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
 <a id="ad89dfd85abbb8b8a1041fea93f50a940" name="ad89dfd85abbb8b8a1041fea93f50a940"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad89dfd85abbb8b8a1041fea93f50a940">&#9670;&#160;</a></span>operator&lt;()</h2>
@@ -140,14 +136,14 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td><
       </table>
 </div><div class="memdoc">
 
-<p>Comparison operator required for sorting. </p>
-<p>Entries must be sorted alphabetically by name before serialization to ensure a stable and consistent hash ID for the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> object. </p><dl class="params"><dt>Аргументы</dt><dd>
+<p>Оператор сравнения, необходимый для сортировки. </p>
+<p>Записи должны быть отсортированы по алфавиту по имени перед сериализацией для обеспечения стабильного и последовательного хеш-идентификатора объекта <a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a>. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="structTreeEntry.html" title="Represents a single item (file or subdirectory) within a Tree object.">TreeEntry</a> to compare against. </td></tr>
+    <tr><td class="paramname">other</td><td>Запись <a class="el" href="structTreeEntry.html" title="Представляет отдельный элемент (файл или поддиректорию) внутри объекта Tree.">TreeEntry</a> для сравнения. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>bool True if this entry should precede the 'other' entry in the sorted list. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True, если эта запись должна предшествовать записи 'other' в отсортированном списке. </dd></dl>
 
 </div>
 </div>

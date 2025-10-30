@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Файл services/EventBus.hxx</title>
+<title>SVCS - Русская документация: Файл services/EventBus.hxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('EventBus_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the central event bus (<a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>), acting as the <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a>.  
+<p>Реализация центральной шины событий (<a class="el" href="classEventBus.html" title="Потокобезопасная реализация ISubject для централизованного распределения событий.">EventBus</a>), действующей как <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a>.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Event_8hxx_source.html">Event.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="IObserver_8hxx_source.html">IObserver.hxx</a>&quot;</code><br />
@@ -109,7 +107,12 @@ $(function(){initNavTree('EventBus_8hxx.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
 <tr class="memitem:EventBus" id="r_EventBus"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventBus.html">EventBus</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A thread-safe implementation of <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> for centralized event distribution.  <a href="classEventBus.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Потокобезопасная реализация <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> для централизованного распределения событий.  <a href="classEventBus.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:ConsoleColor" id="r_ConsoleColor"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceConsoleColor.html">ConsoleColor</a></td></tr>
+<tr class="memdesc:namespaceConsoleColor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет ANSI коды цветов для форматирования вывода в консоль. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Переменные</h2></td></tr>
@@ -155,11 +158,9 @@ const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleC
 const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::UNDERLINE</b> = &quot;\033[4m&quot;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Implementation of the central event bus (<a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>), acting as the <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a>. </p>
-<p>This implementation provides a thread-safe Subject capable of managing observers using smart pointers to prevent circular dependencies.</p><ul>
-<li><dl class="section copyright"><dt>Авторство</dt><dd>2025 LogosITO Under the MIT-License </dd></dl>
-</li>
-</ul>
+<div class="textblock"><p>Реализация центральной шины событий (<a class="el" href="classEventBus.html" title="Потокобезопасная реализация ISubject для централизованного распределения событий.">EventBus</a>), действующей как <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a>. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
+<p>Эта реализация предоставляет потокобезопасный Subject, способный управлять наблюдателями с использованием умных указателей для предотвращения циклических зависимостей. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

@@ -1,8 +1,14 @@
 /**
  * @file BlobTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for the Blob class, verifying object construction, hash calculation, and data integrity.
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для класса Blob, проверяющие построение объектов, вычисление хэшей и целостность данных.
  */
 
 #include "../../core/include/Blob.hxx"

@@ -1,0 +1,28 @@
+\doxysection{Файл core/include/\+Repository.hxx}
+\hypertarget{Repository_8hxx}{}\label{Repository_8hxx}\index{core/include/Repository.hxx@{core/include/Repository.hxx}}
+
+
+Управляет всем репозиторием системы контроля версий, действует как Subject для логирования событий и контролирует все основные операции СКВ.  
+
+
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}Object\+Storage.\+hxx"{}}\newline
+{\ttfamily \#include "{}Index.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classRepository}{Repository}}
+\begin{DoxyCompactList}\small\item\em Управляет структурой директорий системы контроля версий и основными операциями. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет всем репозиторием системы контроля версий, действует как Subject для логирования событий и контролирует все основные операции СКВ. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот класс отвечает за инициализацию структуры репозитория, управление \doxylink{classObjectStorage}{Object\+Storage} и координацию всех взаимодействий с файловой системой и базой данных объектов. Он реализует интерфейс \doxylink{classISubject}{ISubject} для широковещательной передачи событий о своих операциях. 

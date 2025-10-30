@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс RepoCommand</title>
+<title>SVCS - Русская документация: Класс RepoCommand</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classRepoCommand.html','','classRepoCommand-members');
 </div><!--header-->
 <div class="contents">
 
-<p>Command handler for managing repository remotes and configurations.  
+<p>Обработчик команд для управления удаленными репозиториями и конфигурациями.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RepoCommand_8hxx_source.html">RepoCommand.hxx</a>&gt;</code></p>
@@ -104,31 +102,31 @@ $(function(){initNavTree('classRepoCommand.html','','classRepoCommand-members');
  <div class="center">
   <img src="classRepoCommand.png" usemap="#RepoCommand_map" alt=""/>
   <map id="RepoCommand_map" name="RepoCommand_map">
-<area href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI." alt="ICommand" shape="rect" coords="0,0,96,24"/>
+<area href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI." alt="ICommand" shape="rect" coords="0,0,96,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:a4d548a346d0b59339661502c9df8b5bf" id="r_a4d548a346d0b59339661502c9df8b5bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d548a346d0b59339661502c9df8b5bf">RepoCommand</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; event_bus, std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt; repo_manager)</td></tr>
-<tr class="memdesc:a4d548a346d0b59339661502c9df8b5bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a>.  <br /></td></tr>
+<tr class="memdesc:a4d548a346d0b59339661502c9df8b5bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует <a class="el" href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями.">RepoCommand</a>.  <br /></td></tr>
 <tr class="memitem:af6d30490f0692b302c71cc7f4526a91b" id="r_af6d30490f0692b302c71cc7f4526a91b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6d30490f0692b302c71cc7f4526a91b">getName</a> () const override</td></tr>
-<tr class="memdesc:af6d30490f0692b302c71cc7f4526a91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the unique name of the command (e.g., "init").  <br /></td></tr>
+<tr class="memdesc:af6d30490f0692b302c71cc7f4526a91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает имя команды.  <br /></td></tr>
 <tr class="memitem:a580fadfb3d9f278c300e047e2e5af999" id="r_a580fadfb3d9f278c300e047e2e5af999"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a580fadfb3d9f278c300e047e2e5af999">getDescription</a> () const override</td></tr>
-<tr class="memdesc:a580fadfb3d9f278c300e047e2e5af999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a brief description of what the command does.  <br /></td></tr>
+<tr class="memdesc:a580fadfb3d9f278c300e047e2e5af999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает краткое описание команды.  <br /></td></tr>
 <tr class="memitem:acb1b0c594bc5ff13da81126a1baddc73" id="r_acb1b0c594bc5ff13da81126a1baddc73"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb1b0c594bc5ff13da81126a1baddc73">getUsage</a> () const override</td></tr>
-<tr class="memdesc:acb1b0c594bc5ff13da81126a1baddc73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the command's usage syntax.  <br /></td></tr>
+<tr class="memdesc:acb1b0c594bc5ff13da81126a1baddc73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает синтаксис использования команды.  <br /></td></tr>
 <tr class="memitem:a8e4992a1384b8ffc8ed954060bf76e7b" id="r_a8e4992a1384b8ffc8ed954060bf76e7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4992a1384b8ffc8ed954060bf76e7b">execute</a> (const std::vector&lt; std::string &gt; &amp;args) override</td></tr>
-<tr class="memdesc:a8e4992a1384b8ffc8ed954060bf76e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> logic.  <br /></td></tr>
+<tr class="memdesc:a8e4992a1384b8ffc8ed954060bf76e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет логику <a class="el" href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями.">RepoCommand</a>.  <br /></td></tr>
 <tr class="memitem:a1d59c5c0f8a4f8a9297605a0001b1a8c" id="r_a1d59c5c0f8a4f8a9297605a0001b1a8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d59c5c0f8a4f8a9297605a0001b1a8c">showHelp</a> () const override</td></tr>
-<tr class="memdesc:a1d59c5c0f8a4f8a9297605a0001b1a8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays detailed help information about the command (Usage and Description).  <br /></td></tr>
+<tr class="memdesc:a1d59c5c0f8a4f8a9297605a0001b1a8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отображает справочную информацию для команды.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classICommand"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classICommand')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classICommand.html">ICommand</a></td></tr>
 <tr class="memitem:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand" id="r_aa8a6346c5a0dcfe7fd49413a69e854ef"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classICommand.html#aa8a6346c5a0dcfe7fd49413a69e854ef">~ICommand</a> ()=default</td></tr>
-<tr class="memdesc:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+<tr class="memdesc:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Command handler for managing repository remotes and configurations. </p>
-<p>Implements the "svcs repo" command, providing subcommands for managing the list of remote repositories associated with the current project. </p>
+<div class="textblock"><p>Обработчик команд для управления удаленными репозиториями и конфигурациями. </p>
+<p>Реализует команду "svcs repo", предоставляя подкоманды для управления списком удаленных репозиториев, связанных с текущим проектом. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="a4d548a346d0b59339661502c9df8b5bf" name="a4d548a346d0b59339661502c9df8b5bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d548a346d0b59339661502c9df8b5bf">&#9670;&#160;</a></span>RepoCommand()</h2>
@@ -149,11 +147,11 @@ $(function(){initNavTree('classRepoCommand.html','','classRepoCommand-members');
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a>. </p>
+<p>Конструирует <a class="el" href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями.">RepoCommand</a>. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event_bus</td><td>The application's event bus. </td></tr>
-    <tr><td class="paramname">repo_manager</td><td>The repository locator and manager. </td></tr>
+    <tr><td class="paramname">event_bus</td><td>Шина событий приложения. </td></tr>
+    <tr><td class="paramname">repo_manager</td><td>Локатор и менеджер репозитория. </td></tr>
   </table>
   </dd>
 </dl>
@@ -184,15 +182,15 @@ $(function(){initNavTree('classRepoCommand.html','','classRepoCommand-members');
 </table>
 </div><div class="memdoc">
 
-<p>Executes the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> logic. </p>
+<p>Выполняет логику <a class="el" href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями.">RepoCommand</a>. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">args</td><td>The list of arguments, where args[0] is expected to be a subcommand (e.g., "add", "remove"). </td></tr>
+    <tr><td class="paramname">args</td><td>Список аргументов, где args[0] ожидается как подкоманда (например, "add", "remove"). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>bool True if the command executes successfully, false otherwise.</dd></dl>
-<p>Finds the current repository and delegates the task based on the subcommand. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True если команда выполнена успешно, false в противном случае.</dd></dl>
+<p>Находит текущий репозиторий и делегирует задачу на основе подкоманды. </p>
 
 <p>Замещает <a class="el" href="classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0">ICommand</a>.</p>
 
@@ -221,8 +219,8 @@ $(function(){initNavTree('classRepoCommand.html','','classRepoCommand-members');
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves a brief description of what the command does. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>The command's description. </dd></dl>
+<p>Получает краткое описание команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Описание назначения команды. </dd></dl>
 
 <p>Замещает <a class="el" href="classICommand.html#a1018a1a6abaf28e40b27eca8344e78c6">ICommand</a>.</p>
 
@@ -251,8 +249,8 @@ $(function(){initNavTree('classRepoCommand.html','','classRepoCommand-members');
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves the unique name of the command (e.g., "init"). </p>
-<dl class="section return"><dt>Возвращает</dt><dd>The command name as a string. </dd></dl>
+<p>Получает имя команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Имя команды "repo". </dd></dl>
 
 <p>Замещает <a class="el" href="classICommand.html#ac676ae6b9315436978fc62201e5b31dc">ICommand</a>.</p>
 
@@ -281,8 +279,8 @@ $(function(){initNavTree('classRepoCommand.html','','classRepoCommand-members');
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves the command's usage syntax. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>A string with the syntax (e.g., "vcs commit &lt;message&gt;"). </dd></dl>
+<p>Получает синтаксис использования команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка синтаксиса использования. </dd></dl>
 
 <p>Замещает <a class="el" href="classICommand.html#a9e912ad55e38e0cf9ae2f6e558d6c401">ICommand</a>.</p>
 
@@ -311,7 +309,7 @@ $(function(){initNavTree('classRepoCommand.html','','classRepoCommand-members');
 </table>
 </div><div class="memdoc">
 
-<p>Displays detailed help information about the command (Usage and Description). </p>
+<p>Отображает справочную информацию для команды. </p>
 
 <p>Замещает <a class="el" href="classICommand.html#a4e74912364d9172184235e5e5df55c7d">ICommand</a>.</p>
 

@@ -1,0 +1,63 @@
+\doxysection{Структура Branch\+Manager\+::Branch}
+\hypertarget{structBranchManager_1_1Branch}{}\label{structBranchManager_1_1Branch}\index{BranchManager::Branch@{BranchManager::Branch}}
+
+
+Структура для хранения метаданных одной ветви.  
+
+
+
+
+{\ttfamily \#include $<$Branch\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structBranchManager_1_1Branch_a3fdd98d5cdfe9166c7a95e65e0771c50}\label{structBranchManager_1_1Branch_a3fdd98d5cdfe9166c7a95e65e0771c50} 
+{\bfseries Branch} ()
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBranchManager_1_1Branch_a6fd8961395157dd30c5d2ce2ab8da6bc}{Branch}} (std\+::string \mbox{\hyperlink{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}{name}}, std\+::string \mbox{\hyperlink{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}{head\+\_\+commit}}, bool \mbox{\hyperlink{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}{is\+\_\+current}}=false)
+\begin{DoxyCompactList}\small\item\em Конструктор для структуры \doxylink{structBranchManager_1_1Branch}{Branch}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}\label{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Уникальное имя ветви. \end{DoxyCompactList}\item 
+\Hypertarget{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}\label{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8} 
+std\+::string {\bfseries head\+\_\+commit}
+\begin{DoxyCompactList}\small\item\em Хеш последнего коммита в этой ветви. \end{DoxyCompactList}\item 
+\Hypertarget{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}\label{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2} 
+bool {\bfseries is\+\_\+current}
+\begin{DoxyCompactList}\small\item\em Флаг, указывающий, является ли это текущей активной ветвью. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура для хранения метаданных одной ветви. 
+
+\label{doc-constructors}
+\Hypertarget{structBranchManager_1_1Branch_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{structBranchManager_1_1Branch_a6fd8961395157dd30c5d2ce2ab8da6bc}\index{BranchManager::Branch@{BranchManager::Branch}!Branch@{Branch}}
+\index{Branch@{Branch}!BranchManager::Branch@{BranchManager::Branch}}
+\doxysubsubsection{\texorpdfstring{Branch()}{Branch()}}
+{\footnotesize\ttfamily \label{structBranchManager_1_1Branch_a6fd8961395157dd30c5d2ce2ab8da6bc} 
+Branch\+Manager\+::\+Branch\+::\+Branch (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{head\+\_\+commit}{, }\item[{bool}]{is\+\_\+current}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор для структуры \doxylink{structBranchManager_1_1Branch}{Branch}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя ветви. \\
+\hline
+{\em head\+\_\+commit} & Хеш коммита, на который указывает эта ветвь. \\
+\hline
+{\em is\+\_\+current} & Флаг, указывающий, активна ли ветвь. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{BranchManager_8hxx}{Branch\+Manager.\+hxx}}\end{DoxyCompactItemize}

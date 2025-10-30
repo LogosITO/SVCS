@@ -1,9 +1,14 @@
 /**
  * @file main.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Main entry point and command-line interface (CLI) driver for the SVCS application.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Основная точка входа и драйвер интерфейса командной строки (CLI) для приложения SVCS.
  */
 
 #include "../include/CommandFactory.hxx"

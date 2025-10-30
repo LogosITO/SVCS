@@ -1,0 +1,64 @@
+\doxysection{Класс Remote\+Protocol\+Integration\+Test}
+\hypertarget{classRemoteProtocolIntegrationTest}{}\label{classRemoteProtocolIntegrationTest}\index{RemoteProtocolIntegrationTest@{RemoteProtocolIntegrationTest}}
+Граф наследования\+:Remote\+Protocol\+Integration\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRemoteProtocolIntegrationTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a5272d95a3de60bda7302030b2ab8e3c0}\label{classRemoteProtocolIntegrationTest_a5272d95a3de60bda7302030b2ab8e3c0} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a73ed9e0a7e065bf091f501e6b0f9c039}\label{classRemoteProtocolIntegrationTest_a73ed9e0a7e065bf091f501e6b0f9c039} 
+void {\bfseries Tear\+Down} () override
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_af6c481aca2261d284f995d8d8ed498c2}\label{classRemoteProtocolIntegrationTest_af6c481aca2261d284f995d8d8ed498c2} 
+void {\bfseries provide\+Input} (const std\+::string \&input)
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a3dfaf47e70c4b4623ef7eea7432ab906}\label{classRemoteProtocolIntegrationTest_a3dfaf47e70c4b4623ef7eea7432ab906} 
+std\+::string {\bfseries get\+Output} ()
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a43fe61eea7b4e14803fb3b5b535f9ec1}\label{classRemoteProtocolIntegrationTest_a43fe61eea7b4e14803fb3b5b535f9ec1} 
+std\+::string {\bfseries get\+Error} ()
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_af1f418845768f6c0c462faa45c33aa9a}\label{classRemoteProtocolIntegrationTest_af1f418845768f6c0c462faa45c33aa9a} 
+void {\bfseries clear\+Streams} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a96435d21db5ec8a9861796eb5fcb8ec4}\label{classRemoteProtocolIntegrationTest_a96435d21db5ec8a9861796eb5fcb8ec4} 
+std\+::streambuf \texorpdfstring{$\ast$}{*} {\bfseries old\+\_\+cin}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a720f20e5c33ae6e2af6a7bcc85a4d7b3}\label{classRemoteProtocolIntegrationTest_a720f20e5c33ae6e2af6a7bcc85a4d7b3} 
+std\+::streambuf \texorpdfstring{$\ast$}{*} {\bfseries old\+\_\+cout}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_ac3a61c093fd7c6f007e9e3b409251adb}\label{classRemoteProtocolIntegrationTest_ac3a61c093fd7c6f007e9e3b409251adb} 
+std\+::streambuf \texorpdfstring{$\ast$}{*} {\bfseries old\+\_\+cerr}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_ad8355fa34ae4b30a34f7c4615d50aa4f}\label{classRemoteProtocolIntegrationTest_ad8355fa34ae4b30a34f7c4615d50aa4f} 
+std\+::stringstream {\bfseries test\+\_\+input}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_ab3bf9a4f690e6e8c91bc956fb7e2be60}\label{classRemoteProtocolIntegrationTest_ab3bf9a4f690e6e8c91bc956fb7e2be60} 
+std\+::stringstream {\bfseries test\+\_\+output}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a5da056e4a35bb5b69b4c788e24334a07}\label{classRemoteProtocolIntegrationTest_a5da056e4a35bb5b69b4c788e24334a07} 
+std\+::stringstream {\bfseries test\+\_\+error}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a3b02cb86a6727022d26bad350e157d1f}\label{classRemoteProtocolIntegrationTest_a3b02cb86a6727022d26bad350e157d1f} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockEventBus}{Mock\+Event\+Bus}} $>$ {\bfseries event\+\_\+bus}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a6fa3f595a630f6a47d313ae5c4f80ab7}\label{classRemoteProtocolIntegrationTest_a6fa3f595a630f6a47d313ae5c4f80ab7} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockRepositoryManager}{Mock\+Repository\+Manager}} $>$ {\bfseries repo\+\_\+manager}
+\item 
+\Hypertarget{classRemoteProtocolIntegrationTest_a70ad5771f1a9896ceb5f0f6a0e633756}\label{classRemoteProtocolIntegrationTest_a70ad5771f1a9896ceb5f0f6a0e633756} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRemoteProtocol}{Remote\+Protocol}} $>$ {\bfseries protocol}
+\end{DoxyCompactItemize}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/server/\mbox{\hyperlink{RemoteProtocolTest_8cxx}{Remote\+Protocol\+Test.\+cxx}}\end{DoxyCompactItemize}

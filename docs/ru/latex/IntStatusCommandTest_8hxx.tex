@@ -1,0 +1,28 @@
+\doxysection{Файл tests/cli/utils/\+Int\+Status\+Command\+Test.hxx}
+\hypertarget{IntStatusCommandTest_8hxx}{}\label{IntStatusCommandTest_8hxx}\index{tests/cli/utils/IntStatusCommandTest.hxx@{tests/cli/utils/IntStatusCommandTest.hxx}}
+
+
+Заголовок тестового фикстура для интеграционных тестов класса \doxylink{classStatusCommand}{Status\+Command}.  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include "{}../../../cli/include/\+Status\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../mocks/\+Mock\+Subject.\+hxx"{}}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classStatusCommandTest}{Status\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classStatusCommand}{Status\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Заголовок тестового фикстура для интеграционных тестов класса \doxylink{classStatusCommand}{Status\+Command}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Объявляет фикстур \doxylink{classStatusCommandTest}{Status\+Command\+Test}, который настраивает контролируемое окружение для тестирования команды \textquotesingle{}svcs status\textquotesingle{}. Это включает инициализацию mock и основных компонентов (\doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classRepositoryManager}{Repository\+Manager}) и предоставление вспомогательных функций для манипуляции файлами и проверки вывода команды. 

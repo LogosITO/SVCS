@@ -1,0 +1,64 @@
+\doxysection{Event.\+hxx}
+\hypertarget{Event_8hxx_source}{}\label{Event_8hxx_source}\index{services/Event.hxx@{services/Event.hxx}}
+\mbox{\hyperlink{Event_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEvent}{Event}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058}{Type}}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a}{FATAL\_ERROR}},}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c}{RUNTIME\_ERROR}},}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04}{REPOSITORY\_INIT\_SUCCESS}},}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aad0f3057bed3b9321d5e67cdc86dc51e}{STAGE\_SUCCESS}},}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686}{SAVE\_SUCCESS}},}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70}{OBJECT\_WRITE\_SUCCESS}},}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092}{OBJECT\_READ\_SUCCESS}},}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775}{INDEX\_UPDATE}},}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c}{COMMIT\_CREATED}},}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7}{GENERAL\_INFO}},}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b}{HELP\_MESSAGE}},}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5}{DEBUG\_MESSAGE}},}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61}{ERROR\_MESSAGE}},}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4}{WARNING\_MESSAGE}},}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d}{PROTOCOL\_START}},}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7}{PROTOCOL\_SUCCESS}},}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89}{PROTOCOL\_ERROR}},}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be}{NETWORK\_SEND}},}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad}{NETWORK\_RECEIVE}},}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec}{OBJECT\_TRANSFER}},}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5}{REFERENCE\_UPDATE}},}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e}{NEGOTIATION\_PHASE}}}
+\DoxyCodeLine{00234\ \ \ \ \ \};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058}{Type}}\ \mbox{\hyperlink{structEvent_acb1e67cf0d5f22ac9360447b6f0fb5d3}{type}};}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00252\ \ \ \ \ std::string\ \mbox{\hyperlink{structEvent_afedba76038909cf242d7642da3b7bfd9}{details}};}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00263\ \ \ \ \ std::string\ \mbox{\hyperlink{structEvent_af3aea97224cf810339754ab8bd53e893}{source\_name}};}
+\DoxyCodeLine{00264\ \};}
+
+\end{DoxyCode}

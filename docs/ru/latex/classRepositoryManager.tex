@@ -1,0 +1,582 @@
+\doxysection{Класс Repository\+Manager}
+\hypertarget{classRepositoryManager}{}\label{classRepositoryManager}\index{RepositoryManager@{RepositoryManager}}
+
+
+Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS.  
+
+
+
+
+{\ttfamily \#include $<$Repository\+Manager.\+hxx$>$}
+
+Граф наследования\+:Repository\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRepositoryManager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRepositoryManager_a458ddacf912fdc1774ab351f736a19cf}{Repository\+Manager}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ bus)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classRepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRepositoryManager_a65eba6d28cbf99fd3fbad48845a2cd34}{update\+Head}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет ссылку HEAD. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_a1ddddb02e8b5f59b06b8a40465716103}{initialize\+Repository}} (const std\+::string \&path, bool force=false)
+\begin{DoxyCompactList}\small\item\em Инициализирует новый репозиторий SVCS по указанному пути. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_ae03ccf6c40689d204f8579b6ac860674}{is\+Repository\+Initialized}} (const std\+::string \&path="{}."{})
+\begin{DoxyCompactList}\small\item\em Проверяет, инициализирован ли репозиторий SVCS по заданному пути или его родителям. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRepositoryManager_a887e56ac86447c2735597e2ea88c33bb}{update\+Branch\+Reference}} (const std\+::string \&branch\+Name, const std\+::string \&commit\+Hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет файл ссылки ветви хешем коммита. \end{DoxyCompactList}\item 
+std\+::filesystem\+::path \mbox{\hyperlink{classRepositoryManager_a9e2cecca02ba6ac2638d31ec11d4bc62}{get\+Repository\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает определенный корневой путь текущего активного репозитория. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_aa4a9d5d690cc49d33ad5372fed9b6a54}{add\+File\+To\+Staging}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Пытается добавить файл в область подготовки (индекс). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRepositoryManager_a063b8ddcbc8a9ffc840df4de77fd9bac}{get\+Head\+Commit}} () const
+\begin{DoxyCompactList}\small\item\em Извлекает хеш текущего коммита HEAD в репозитории. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRepositoryManager_a8e4a9346964bfdff6d44304bca90e2d3}{create\+Commit}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Создает коммит из текущих подготовленных файлов. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRepositoryManager_a7b5d52f3d9d35ee3b19e3de95381b97f}{update\+Commit\+References}} (const std\+::string \&removed\+Commit\+Hash, const std\+::string \&new\+Parent\+Hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет ссылки коммитов при удалении коммита. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_abf991881ef84930dd6e81667360ebdef}{revert\+Commit}} (const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Откатывает состояние репозитория к предыдущему коммиту. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{structCommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classRepositoryManager_ab6f60e5f4072590eebf0ea6e9de6dcbe}{get\+Commit\+By\+Hash}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Извлекает структуру \doxylink{structCommitInfo}{Commit\+Info} для заданного хеша коммита. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRepositoryManager_a68c480cfc28657b5027566f3500b6e23}{get\+Parent\+Commit\+Hash}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Извлекает хеш родительского коммита для заданного коммита. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_aefb1b537b9c90d9fd0eac7255d5580fd}{restore\+Files\+From\+Commit}} (const \mbox{\hyperlink{structCommitInfo}{Commit\+Info}} \&commit) const
+\begin{DoxyCompactList}\small\item\em Восстанавливает файлы рабочей директории до состояния, записанного в конкретном коммите. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_a1af28901603c2e70dce49af751105bef}{clear\+Staging\+Area}} ()
+\begin{DoxyCompactList}\small\item\em Очищает содержимое области подготовки (индекса). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_a647383203955484c1b57222ce5e5faf8}{save\+Staged\+Changes}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Создает коммит из подготовленных изменений. (Удобный метод, часто используемый \doxylink{classSaveCommand}{Save\+Command}). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classRepositoryManager_a5e0b90c8ec4bb9890ccd1672b99b0712}{get\+Staged\+Files}} ()
+\begin{DoxyCompactList}\small\item\em Извлекает список всех файлов, в настоящее время помеченных как подготовленные (индексированные). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structCommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classRepositoryManager_a3e1c8b2b9f7686ec651c4f205c576cc5}{get\+Commit\+History}} () const
+\begin{DoxyCompactList}\small\item\em Извлекает полную историю коммитов для текущей ветви. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structCommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classRepositoryManager_a88ca62ed585f39a3690447d1c6f029de}{get\+Branch\+History}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Извлекает историю коммитов для конкретной ветви. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRepositoryManager_a349a454c83ccbd63eb9b5a7c12b6a2ef}{get\+Current\+Branch}} () const
+\begin{DoxyCompactList}\small\item\em Получает имя текущей ветви. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_a411879a02a3df9de01aceb9d36ae30ff}{remove\+Repository}} (const std\+::filesystem\+::path \&path) const
+\begin{DoxyCompactList}\small\item\em Пытается рекурсивно удалить всю структуру репозитория SVCS (например, директорию .svcs) и ее содержимое. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_ad3b43df94ac6ede014b7e9874cc78b0b}{branch\+Exists}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли ветвь. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRepositoryManager_a2b1e565145033e923fd3881734939b0a}{get\+Branch\+Head}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Получает головной коммит ветви. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRepositoryManager_a06c251dbfab7dd09ebe42dcd2585416d}{get\+File\+Content\+At\+Commit}} (const std\+::string \&commit\+\_\+hash, const std\+::string \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Получает содержимое файла в конкретном коммите. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classRepositoryManager_a8c70604640f7649809496ff5f3140678}{get\+Commit\+Files}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Получает все файлы, измененные в коммите. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRepositoryManager_ae1acfdc55c7763a4bb763239dafe510e}{set\+Merge\+State}} (const std\+::string \&branch\+\_\+name, const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Устанавливает состояние слияния (для разрешения конфликтов). \end{DoxyCompactList}\item 
+\Hypertarget{classRepositoryManager_a4aec01d8ae4d1e92557d59d82edf37c8}\label{classRepositoryManager_a4aec01d8ae4d1e92557d59d82edf37c8} 
+void {\bfseries clear\+Merge\+State} () const
+\begin{DoxyCompactList}\small\item\em Очищает состояние слияния (после завершения/прерывания слияния). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepositoryManager_abde5809b74cc06049e784ca08c293c01}{is\+Merge\+In\+Progress}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, выполняется ли слияние. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRepositoryManager_a597e22a9a35f0f8175a12b5e0bb651da}{get\+Merge\+Branch}} () const
+\begin{DoxyCompactList}\small\item\em Получает ветвь, которая сливается. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classRepositoryManager_aa8cc4f01a4d6167153c9974360053bdb}{generate\+Commit\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Генерирует хеш коммита из содержимого. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS. 
+
+\doxylink{classRepositoryManager}{Repository\+Manager} -\/ это основной уровень, отвечающий за прямое взаимодействие с файловой системой для таких задач, как инициализация, управление путями, подготовка, коммиты и логирование. 
+
+\label{doc-constructors}
+\Hypertarget{classRepositoryManager_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classRepositoryManager_a458ddacf912fdc1774ab351f736a19cf}\index{RepositoryManager@{RepositoryManager}!RepositoryManager@{RepositoryManager}}
+\index{RepositoryManager@{RepositoryManager}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{RepositoryManager()}{RepositoryManager()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a458ddacf912fdc1774ab351f736a19cf} 
+Repository\+Manager\+::\+Repository\+Manager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{bus}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструирует \doxylink{classRepositoryManager}{Repository\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bus} & Общий указатель на шину событий (\doxylink{classISubject}{ISubject}) для связи. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classRepositoryManager_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classRepositoryManager_aa4a9d5d690cc49d33ad5372fed9b6a54}\index{RepositoryManager@{RepositoryManager}!addFileToStaging@{addFileToStaging}}
+\index{addFileToStaging@{addFileToStaging}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{addFileToStaging()}{addFileToStaging()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_aa4a9d5d690cc49d33ad5372fed9b6a54} 
+bool Repository\+Manager\+::add\+File\+To\+Staging (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Пытается добавить файл в область подготовки (индекс). 
+
+Обычно это включает чтение файла и обновление состояния индекса. 
+\begin{DoxyParams}{Аргументы}
+{\em file\+Path} & Путь к файлу для подготовки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если файл успешно добавлен, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_ad3b43df94ac6ede014b7e9874cc78b0b}\index{RepositoryManager@{RepositoryManager}!branchExists@{branchExists}}
+\index{branchExists@{branchExists}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{branchExists()}{branchExists()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_ad3b43df94ac6ede014b7e9874cc78b0b} 
+bool Repository\+Manager\+::branch\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, существует ли ветвь. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Имя ветви для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если ветвь существует, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a1af28901603c2e70dce49af751105bef}\index{RepositoryManager@{RepositoryManager}!clearStagingArea@{clearStagingArea}}
+\index{clearStagingArea@{clearStagingArea}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{clearStagingArea()}{clearStagingArea()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a1af28901603c2e70dce49af751105bef} 
+bool Repository\+Manager\+::clear\+Staging\+Area (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Очищает содержимое области подготовки (индекса). 
+
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если область подготовки успешно очищена, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a8e4a9346964bfdff6d44304bca90e2d3}\index{RepositoryManager@{RepositoryManager}!createCommit@{createCommit}}
+\index{createCommit@{createCommit}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{createCommit()}{createCommit()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a8e4a9346964bfdff6d44304bca90e2d3} 
+std\+::string Repository\+Manager\+::create\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Создает коммит из текущих подготовленных файлов. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение коммита, предоставленное пользователем. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хеш вновь созданного коммита при успехе, пустая строка в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_aa8cc4f01a4d6167153c9974360053bdb}\index{RepositoryManager@{RepositoryManager}!generateCommitHash@{generateCommitHash}}
+\index{generateCommitHash@{generateCommitHash}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{generateCommitHash()}{generateCommitHash()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_aa8cc4f01a4d6167153c9974360053bdb} 
+std\+::string Repository\+Manager\+::generate\+Commit\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Генерирует хеш коммита из содержимого. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em content} & Содержимое для хеширования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Сгенерированный хеш коммита. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a2b1e565145033e923fd3881734939b0a}\index{RepositoryManager@{RepositoryManager}!getBranchHead@{getBranchHead}}
+\index{getBranchHead@{getBranchHead}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getBranchHead()}{getBranchHead()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a2b1e565145033e923fd3881734939b0a} 
+std\+::string Repository\+Manager\+::get\+Branch\+Head (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает головной коммит ветви. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Имя ветви. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хеш коммита головы ветви. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a88ca62ed585f39a3690447d1c6f029de}\index{RepositoryManager@{RepositoryManager}!getBranchHistory@{getBranchHistory}}
+\index{getBranchHistory@{getBranchHistory}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getBranchHistory()}{getBranchHistory()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a88ca62ed585f39a3690447d1c6f029de} 
+std\+::vector$<$ \mbox{\hyperlink{structCommitInfo}{Commit\+Info}} $>$ Repository\+Manager\+::get\+Branch\+History (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает историю коммитов для конкретной ветви. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Имя ветви. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Вектор объектов \doxylink{structCommitInfo}{Commit\+Info} для ветви. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_ab6f60e5f4072590eebf0ea6e9de6dcbe}\index{RepositoryManager@{RepositoryManager}!getCommitByHash@{getCommitByHash}}
+\index{getCommitByHash@{getCommitByHash}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getCommitByHash()}{getCommitByHash()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_ab6f60e5f4072590eebf0ea6e9de6dcbe} 
+std\+::optional$<$ \mbox{\hyperlink{structCommitInfo}{Commit\+Info}} $>$ Repository\+Manager\+::get\+Commit\+By\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает структуру \doxylink{structCommitInfo}{Commit\+Info} для заданного хеша коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита для извлечения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Опциональный объект, содержащий \doxylink{structCommitInfo}{Commit\+Info}, если найден, или std\+::nullopt в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a8c70604640f7649809496ff5f3140678}\index{RepositoryManager@{RepositoryManager}!getCommitFiles@{getCommitFiles}}
+\index{getCommitFiles@{getCommitFiles}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getCommitFiles()}{getCommitFiles()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a8c70604640f7649809496ff5f3140678} 
+std\+::vector$<$ std\+::string $>$ Repository\+Manager\+::get\+Commit\+Files (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает все файлы, измененные в коммите. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Вектор путей к файлам. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a3e1c8b2b9f7686ec651c4f205c576cc5}\index{RepositoryManager@{RepositoryManager}!getCommitHistory@{getCommitHistory}}
+\index{getCommitHistory@{getCommitHistory}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getCommitHistory()}{getCommitHistory()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a3e1c8b2b9f7686ec651c4f205c576cc5} 
+std\+::vector$<$ \mbox{\hyperlink{structCommitInfo}{Commit\+Info}} $>$ Repository\+Manager\+::get\+Commit\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает полную историю коммитов для текущей ветви. 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор объектов \doxylink{structCommitInfo}{Commit\+Info}, представляющих историю коммитов, обычно от самых новых к старым. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a349a454c83ccbd63eb9b5a7c12b6a2ef}\index{RepositoryManager@{RepositoryManager}!getCurrentBranch@{getCurrentBranch}}
+\index{getCurrentBranch@{getCurrentBranch}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentBranch()}{getCurrentBranch()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a349a454c83ccbd63eb9b5a7c12b6a2ef} 
+std\+::string Repository\+Manager\+::get\+Current\+Branch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает имя текущей ветви. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя текущей ветви. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a06c251dbfab7dd09ebe42dcd2585416d}\index{RepositoryManager@{RepositoryManager}!getFileContentAtCommit@{getFileContentAtCommit}}
+\index{getFileContentAtCommit@{getFileContentAtCommit}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getFileContentAtCommit()}{getFileContentAtCommit()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a06c251dbfab7dd09ebe42dcd2585416d} 
+std\+::string Repository\+Manager\+::get\+File\+Content\+At\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{, }\item[{const std\+::string \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает содержимое файла в конкретном коммите. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита. \\
+\hline
+{\em file\+\_\+path} & Путь к файлу. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Содержимое файла. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a063b8ddcbc8a9ffc840df4de77fd9bac}\index{RepositoryManager@{RepositoryManager}!getHeadCommit@{getHeadCommit}}
+\index{getHeadCommit@{getHeadCommit}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getHeadCommit()}{getHeadCommit()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a063b8ddcbc8a9ffc840df4de77fd9bac} 
+std\+::string Repository\+Manager\+::get\+Head\+Commit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает хеш текущего коммита HEAD в репозитории. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка хеша коммита. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a597e22a9a35f0f8175a12b5e0bb651da}\index{RepositoryManager@{RepositoryManager}!getMergeBranch@{getMergeBranch}}
+\index{getMergeBranch@{getMergeBranch}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getMergeBranch()}{getMergeBranch()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a597e22a9a35f0f8175a12b5e0bb651da} 
+std\+::string Repository\+Manager\+::get\+Merge\+Branch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает ветвь, которая сливается. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя ветви, если слияние выполняется, пустая строка в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a68c480cfc28657b5027566f3500b6e23}\index{RepositoryManager@{RepositoryManager}!getParentCommitHash@{getParentCommitHash}}
+\index{getParentCommitHash@{getParentCommitHash}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getParentCommitHash()}{getParentCommitHash()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a68c480cfc28657b5027566f3500b6e23} 
+std\+::string Repository\+Manager\+::get\+Parent\+Commit\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает хеш родительского коммита для заданного коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш дочернего коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка хеша родительского коммита (пустая, если это начальный коммит). 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a9e2cecca02ba6ac2638d31ec11d4bc62}\index{RepositoryManager@{RepositoryManager}!getRepositoryPath@{getRepositoryPath}}
+\index{getRepositoryPath@{getRepositoryPath}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getRepositoryPath()}{getRepositoryPath()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a9e2cecca02ba6ac2638d31ec11d4bc62} 
+std\+::filesystem\+::path Repository\+Manager\+::get\+Repository\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Возвращает определенный корневой путь текущего активного репозитория. 
+
+\begin{DoxyReturn}{Возвращает}
+Строковый путь к корню репозитория. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a5e0b90c8ec4bb9890ccd1672b99b0712}\index{RepositoryManager@{RepositoryManager}!getStagedFiles@{getStagedFiles}}
+\index{getStagedFiles@{getStagedFiles}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getStagedFiles()}{getStagedFiles()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a5e0b90c8ec4bb9890ccd1672b99b0712} 
+std\+::vector$<$ std\+::string $>$ Repository\+Manager\+::get\+Staged\+Files (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Извлекает список всех файлов, в настоящее время помеченных как подготовленные (индексированные). 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор строк, содержащий пути к файлам в области подготовки. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a1ddddb02e8b5f59b06b8a40465716103}\index{RepositoryManager@{RepositoryManager}!initializeRepository@{initializeRepository}}
+\index{initializeRepository@{initializeRepository}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{initializeRepository()}{initializeRepository()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a1ddddb02e8b5f59b06b8a40465716103} 
+bool Repository\+Manager\+::initialize\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{, }\item[{bool}]{force}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Инициализирует новый репозиторий SVCS по указанному пути. 
+
+Создает необходимые внутренние директории и файлы (например, .svcs/). 
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь директории, где должен быть создан репозиторий. \\
+\hline
+{\em force} & Если true, принудительно инициализирует, даже если директория существует (зависит от реализации). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если инициализация прошла успешно, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_abde5809b74cc06049e784ca08c293c01}\index{RepositoryManager@{RepositoryManager}!isMergeInProgress@{isMergeInProgress}}
+\index{isMergeInProgress@{isMergeInProgress}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{isMergeInProgress()}{isMergeInProgress()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_abde5809b74cc06049e784ca08c293c01} 
+bool Repository\+Manager\+::is\+Merge\+In\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, выполняется ли слияние. 
+
+\begin{DoxyReturn}{Возвращает}
+true, если слияние выполняется, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_ae03ccf6c40689d204f8579b6ac860674}\index{RepositoryManager@{RepositoryManager}!isRepositoryInitialized@{isRepositoryInitialized}}
+\index{isRepositoryInitialized@{isRepositoryInitialized}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{isRepositoryInitialized()}{isRepositoryInitialized()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_ae03ccf6c40689d204f8579b6ac860674} 
+bool Repository\+Manager\+::is\+Repository\+Initialized (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})}
+
+
+
+Проверяет, инициализирован ли репозиторий SVCS по заданному пути или его родителям. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь, с которого начинать поиск (по умолчанию текущая директория "{}."{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если найдена структура репозитория, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a411879a02a3df9de01aceb9d36ae30ff}\index{RepositoryManager@{RepositoryManager}!removeRepository@{removeRepository}}
+\index{removeRepository@{removeRepository}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{removeRepository()}{removeRepository()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a411879a02a3df9de01aceb9d36ae30ff} 
+bool Repository\+Manager\+::remove\+Repository (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Пытается рекурсивно удалить всю структуру репозитория SVCS (например, директорию .svcs) и ее содержимое. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Корневой путь удаляемого репозитория. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если удаление прошло успешно, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_aefb1b537b9c90d9fd0eac7255d5580fd}\index{RepositoryManager@{RepositoryManager}!restoreFilesFromCommit@{restoreFilesFromCommit}}
+\index{restoreFilesFromCommit@{restoreFilesFromCommit}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{restoreFilesFromCommit()}{restoreFilesFromCommit()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_aefb1b537b9c90d9fd0eac7255d5580fd} 
+bool Repository\+Manager\+::restore\+Files\+From\+Commit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommitInfo}{Commit\+Info}} \&}]{commit}{}\end{DoxyParamCaption}) const}
+
+
+
+Восстанавливает файлы рабочей директории до состояния, записанного в конкретном коммите. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit} & Структура \doxylink{structCommitInfo}{Commit\+Info}, представляющая целевое состояние. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если файлы успешно восстановлены, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_abf991881ef84930dd6e81667360ebdef}\index{RepositoryManager@{RepositoryManager}!revertCommit@{revertCommit}}
+\index{revertCommit@{revertCommit}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{revertCommit()}{revertCommit()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_abf991881ef84930dd6e81667360ebdef} 
+bool Repository\+Manager\+::revert\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption})}
+
+
+
+Откатывает состояние репозитория к предыдущему коммиту. 
+
+Обычно используется для отмены эффектов предыдущего \textquotesingle{}save\textquotesingle{} (коммита). 
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита, к которому нужно откатиться (или коммита перед тем, который нужно отменить). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если откат прошел успешно, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_a647383203955484c1b57222ce5e5faf8}\index{RepositoryManager@{RepositoryManager}!saveStagedChanges@{saveStagedChanges}}
+\index{saveStagedChanges@{saveStagedChanges}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{saveStagedChanges()}{saveStagedChanges()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a647383203955484c1b57222ce5e5faf8} 
+bool Repository\+Manager\+::save\+Staged\+Changes (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Создает коммит из подготовленных изменений. (Удобный метод, часто используемый \doxylink{classSaveCommand}{Save\+Command}). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если сохранение (коммит) прошло успешно, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepositoryManager_ae1acfdc55c7763a4bb763239dafe510e}\index{RepositoryManager@{RepositoryManager}!setMergeState@{setMergeState}}
+\index{setMergeState@{setMergeState}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{setMergeState()}{setMergeState()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_ae1acfdc55c7763a4bb763239dafe510e} 
+void Repository\+Manager\+::set\+Merge\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{, }\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Устанавливает состояние слияния (для разрешения конфликтов). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Ветвь, которая сливается. \\
+\hline
+{\em commit\+\_\+hash} & Коммит, который сливается. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRepositoryManager_a887e56ac86447c2735597e2ea88c33bb}\index{RepositoryManager@{RepositoryManager}!updateBranchReference@{updateBranchReference}}
+\index{updateBranchReference@{updateBranchReference}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{updateBranchReference()}{updateBranchReference()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a887e56ac86447c2735597e2ea88c33bb} 
+void Repository\+Manager\+::update\+Branch\+Reference (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+Name}{, }\item[{const std\+::string \&}]{commit\+Hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Обновляет файл ссылки ветви хешем коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+Name} & Имя ветви для обновления. \\
+\hline
+{\em commit\+Hash} & Хеш коммита для установки в качестве головы ветви. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRepositoryManager_a7b5d52f3d9d35ee3b19e3de95381b97f}\index{RepositoryManager@{RepositoryManager}!updateCommitReferences@{updateCommitReferences}}
+\index{updateCommitReferences@{updateCommitReferences}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{updateCommitReferences()}{updateCommitReferences()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a7b5d52f3d9d35ee3b19e3de95381b97f} 
+void Repository\+Manager\+::update\+Commit\+References (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{removed\+Commit\+Hash}{, }\item[{const std\+::string \&}]{new\+Parent\+Hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Обновляет ссылки коммитов при удалении коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em removed\+Commit\+Hash} & Хеш удаляемого коммита. \\
+\hline
+{\em new\+Parent\+Hash} & Новый хеш родителя для зависимых коммитов. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRepositoryManager_a65eba6d28cbf99fd3fbad48845a2cd34}\index{RepositoryManager@{RepositoryManager}!updateHead@{updateHead}}
+\index{updateHead@{updateHead}!RepositoryManager@{RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{updateHead()}{updateHead()}}
+{\footnotesize\ttfamily \label{classRepositoryManager_a65eba6d28cbf99fd3fbad48845a2cd34} 
+void Repository\+Manager\+::update\+Head (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Обновляет ссылку HEAD. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита для установки в качестве HEAD. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{RepositoryManager_8hxx}{Repository\+Manager.\+hxx}}\item 
+core/src/\mbox{\hyperlink{RepositoryManager_8cxx}{Repository\+Manager.\+cxx}}\end{DoxyCompactItemize}

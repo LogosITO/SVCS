@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс IObserver</title>
+<title>SVCS - Русская документация: Класс IObserver</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classIObserver.html','','classIObserver-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>The Observer Interface (Abstract Base Class).  
+<p>Интерфейс Observer (Абстрактный Базовый Класс).  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IObserver_8hxx_source.html">IObserver.hxx</a>&gt;</code></p>
@@ -104,7 +102,7 @@ $(function(){initNavTree('classIObserver.html','','classIObserver-members'); });
  <div class="center">
   <img src="classIObserver.png" usemap="#IObserver_map" alt=""/>
   <map id="IObserver_map" name="IObserver_map">
-<area href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events." alt="Logger" shape="rect" coords="0,56,139,80"/>
+<area href="classLogger.html" title="Потокобезопасный Singleton класс, отвечающий за логирование системных событий." alt="Logger" shape="rect" coords="0,56,139,80"/>
 <area href="classManualMockObserver.html" title="Manual mock implementation of the IObserver interface." alt="ManualMockObserver" shape="rect" coords="149,56,288,80"/>
 <area href="classMockObserver.html" title="Mock observer for testing event notifications." alt="MockObserver" shape="rect" coords="298,56,437,80"/>
 <area href="classNullObserver.html" title="Null implementation of IObserver." alt="NullObserver" shape="rect" coords="447,56,586,80"/>
@@ -114,17 +112,15 @@ $(function(){initNavTree('classIObserver.html','','classIObserver-members'); });
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:a1306da2dbaf55620130af5586e3a0373" id="r_a1306da2dbaf55620130af5586e3a0373"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1306da2dbaf55620130af5586e3a0373">~IObserver</a> ()=default</td></tr>
-<tr class="memdesc:a1306da2dbaf55620130af5586e3a0373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default virtual destructor.  <br /></td></tr>
+<tr class="memdesc:a1306da2dbaf55620130af5586e3a0373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор по умолчанию.  <br /></td></tr>
 <tr class="memitem:a325451b0d0100feaad6f683850a616dc" id="r_a325451b0d0100feaad6f683850a616dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a325451b0d0100feaad6f683850a616dc">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event)=0</td></tr>
-<tr class="memdesc:a325451b0d0100feaad6f683850a616dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called by the Subject to notify the observer.  <br /></td></tr>
+<tr class="memdesc:a325451b0d0100feaad6f683850a616dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод, вызываемый Subject для уведомления наблюдателя.  <br /></td></tr>
 <tr class="memitem:af15fbd52637f4bf0225fde86051d8354" id="r_af15fbd52637f4bf0225fde86051d8354"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af15fbd52637f4bf0225fde86051d8354">update</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event)=0</td></tr>
-<tr class="memdesc:af15fbd52637f4bf0225fde86051d8354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called by the Subject to update the observer.  <br /></td></tr>
+<tr class="memdesc:af15fbd52637f4bf0225fde86051d8354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод, вызываемый Subject для обновления наблюдателя.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>The Observer Interface (Abstract Base Class). </p>
-<ul>
-<li>Any class that wants to receive notifications from the system core (e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a>, Command) must implement this interface to be registered with a Subject. </li>
-</ul>
+<div class="textblock"><p>Интерфейс Observer (Абстрактный Базовый Класс). </p>
+<p>Любой класс, который хочет получать уведомления от ядра системы (например, <a class="el" href="classRepository.html" title="Управляет структурой директорий системы контроля версий и основными операциями.">Repository</a>, Command), должен реализовать этот интерфейс для регистрации в Subject. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="a1306da2dbaf55620130af5586e3a0373" name="a1306da2dbaf55620130af5586e3a0373"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1306da2dbaf55620130af5586e3a0373">&#9670;&#160;</a></span>~IObserver()</h2>
@@ -149,10 +145,8 @@ $(function(){initNavTree('classIObserver.html','','classIObserver-members'); });
 </table>
 </div><div class="memdoc">
 
-<p>Default virtual destructor. </p>
-<ul>
-<li>Ensures correct cleanup of derived observer classes via a base class pointer. </li>
-</ul>
+<p>Виртуальный деструктор по умолчанию. </p>
+<p>Обеспечивает корректную очистку производных классов наблюдателей через указатель на базовый класс. </p>
 
 </div>
 </div>
@@ -180,14 +174,14 @@ $(function(){initNavTree('classIObserver.html','','classIObserver-members'); });
 </table>
 </div><div class="memdoc">
 
-<p>Method called by the Subject to notify the observer. </p>
+<p>Метод, вызываемый Subject для уведомления наблюдателя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>The <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> structure containing information about the occurrence. </td></tr>
+    <tr><td class="paramname">event</td><td>Структура <a class="el" href="structEvent.html" title="Структура, описывающая событие, опубликованное ядром VCS.">Event</a>, содержащая информацию о произошедшем. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Уст.</a></b></dt><dd>Note: This method appears redundant with <a class="el" href="#af15fbd52637f4bf0225fde86051d8354" title="Method called by the Subject to update the observer.">update(const Event&amp; event)</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Уст.</a></b></dt><dd>Примечание: Этот метод кажется избыточным с <a class="el" href="#af15fbd52637f4bf0225fde86051d8354" title="Метод, вызываемый Subject для обновления наблюдателя.">update(const Event&amp; event)</a>. </dd></dl>
 
 <p>Замещается в <a class="el" href="classLogger.html#a96a2b88ee6d81d3ecf0fed3a6291c9a2">Logger</a>, <a class="el" href="classManualMockObserver.html#a2d0cef17d9225d64ce23dbf3451bb610">ManualMockObserver</a>, <a class="el" href="classMockObserver.html#a8fd6d2d376fb45dfee6968489b2057bb">MockObserver</a> и <a class="el" href="classNullObserver.html#aeb635126b1e4270cb50229b157525270">NullObserver</a>.</p>
 
@@ -216,10 +210,10 @@ $(function(){initNavTree('classIObserver.html','','classIObserver-members'); });
 </table>
 </div><div class="memdoc">
 
-<p>Method called by the Subject to update the observer. </p>
+<p>Метод, вызываемый Subject для обновления наблюдателя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>The <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> structure containing information about the occurrence. </td></tr>
+    <tr><td class="paramname">event</td><td>Структура <a class="el" href="structEvent.html" title="Структура, описывающая событие, опубликованное ядром VCS.">Event</a>, содержащая информацию о произошедшем. </td></tr>
   </table>
   </dd>
 </dl>

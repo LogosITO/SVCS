@@ -1,0 +1,209 @@
+\doxysection{Класс Index}
+\hypertarget{classIndex}{}\label{classIndex}\index{Index@{Index}}
+
+
+Управляет областью подготовки (\doxylink{classIndex}{Index}) репозитория СКВ.  
+
+
+
+
+{\ttfamily \#include $<$Index.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndex_acd98d16f365494515679d1f643a2c8c7}{Index}} (const fs\+::path \&vcs\+\_\+root\+\_\+path, fs\+::path repo\+\_\+root\+\_\+path, \mbox{\hyperlink{classObjectStorage}{Object\+Storage}} \&storage)
+\begin{DoxyCompactList}\small\item\em Конструирует менеджер \doxylink{classIndex}{Index}, настраивая пути и загружая индекс. \end{DoxyCompactList}\item 
+\Hypertarget{classIndex_a76b7ed4e9cb0b1540264567f84896032}\label{classIndex_a76b7ed4e9cb0b1540264567f84896032} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Index} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndex_aad567874a307f72668d79ffe867c4de2}{add\+Entry}} (const \mbox{\hyperlink{structIndexEntry}{Index\+Entry}} \&entry)
+\begin{DoxyCompactList}\small\item\em Добавляет или обновляет запись в области подготовки. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structIndexEntry}{Index\+Entry}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classIndex_acb9b498b11708bbf4394dbf485bcc6b4}{get\+Entry}} (const fs\+::path \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Извлекает запись из индекса по относительному пути файла. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndex_a78085a2aae66dd69d50ded6d856462c6}{load}} ()
+\begin{DoxyCompactList}\small\item\em Загружает записи индекса из файла индекса на диске (временный текстовый формат). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndex_a4c99f86d04fd91dc90727b9a17e60a21}{save}} () const
+\begin{DoxyCompactList}\small\item\em Сохраняет текущее состояние записей индекса в файл индекса (временный текстовый формат). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndex_a5e6110ea25938b15f6cfa774c3096451}{write}} () const
+\begin{DoxyCompactList}\small\item\em Еще одна функция сохранения (как load), но возвращает bool. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndex_ae12163a4349daa632044ff28c2818125}{is\+File\+Modified}} (const fs\+::path \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Проверяет, был ли файл в рабочей директории изменен с момента последней подготовки. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndex_a37a1115070ac00586a9b69cf9c26b115}{stage\+\_\+file}} (const fs\+::path \&relative\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Подготавливает файл, создавая объект \doxylink{classBlob}{Blob}, сохраняя его в хранилище и обновляя запись \doxylink{classIndex}{Index} (Основная логика \textquotesingle{}svcs add\textquotesingle{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classIndex_ad10592c0ea7291c0a8b2d8b593b21a85}{create\+Tree\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Создает иерархическую структуру \doxylink{classTree}{Tree} на основе текущих подготовленных записей и сохраняет объекты \doxylink{classTree}{Tree} в \doxylink{classObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет областью подготовки (\doxylink{classIndex}{Index}) репозитория СКВ. 
+
+Класс \doxylink{classIndex}{Index} отвечает за чтение и запись списка подготовленных файлов в файл индекса (.svcs/index), управление операцией \textquotesingle{}svcs add\textquotesingle{} и предоставление необходимой структуры для создания коммитов. 
+
+\label{doc-constructors}
+\Hypertarget{classIndex_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classIndex_acd98d16f365494515679d1f643a2c8c7}\index{Index@{Index}!Index@{Index}}
+\index{Index@{Index}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily \label{classIndex_acd98d16f365494515679d1f643a2c8c7} 
+Index\+::\+Index (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{vcs\+\_\+root\+\_\+path}{, }\item[{fs\+::path}]{repo\+\_\+root\+\_\+path}{, }\item[{\mbox{\hyperlink{classObjectStorage}{Object\+Storage}} \&}]{storage}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует менеджер \doxylink{classIndex}{Index}, настраивая пути и загружая индекс. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em vcs\+\_\+root\+\_\+path} & Путь к управляющей директории СКВ (например, .svcs). \\
+\hline
+{\em repo\+\_\+root\+\_\+path} & Путь к корню рабочей директории репозитория. \\
+\hline
+{\em storage} & Ссылка на экземпляр \doxylink{classObjectStorage}{Object\+Storage}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classIndex_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classIndex_aad567874a307f72668d79ffe867c4de2}\index{Index@{Index}!addEntry@{addEntry}}
+\index{addEntry@{addEntry}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{addEntry()}{addEntry()}}
+{\footnotesize\ttfamily \label{classIndex_aad567874a307f72668d79ffe867c4de2} 
+void Index\+::add\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structIndexEntry}{Index\+Entry}} \&}]{entry}{}\end{DoxyParamCaption})}
+
+
+
+Добавляет или обновляет запись в области подготовки. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em entry} & Объект \doxylink{structIndexEntry}{Index\+Entry} для добавления или обновления. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classIndex_ad10592c0ea7291c0a8b2d8b593b21a85}\index{Index@{Index}!createTreeObject@{createTreeObject}}
+\index{createTreeObject@{createTreeObject}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{createTreeObject()}{createTreeObject()}}
+{\footnotesize\ttfamily \label{classIndex_ad10592c0ea7291c0a8b2d8b593b21a85} 
+std\+::string Index\+::create\+Tree\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Создает иерархическую структуру \doxylink{classTree}{Tree} на основе текущих подготовленных записей и сохраняет объекты \doxylink{classTree}{Tree} в \doxylink{classObjectStorage}{Object\+Storage}. 
+
+\begin{DoxyReturn}{Возвращает}
+Хеш SHA-\/1 (ID) конечного корневого объекта \doxylink{classTree}{Tree}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если индекс пуст или создание дерева завершается неудачно. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classIndex_acb9b498b11708bbf4394dbf485bcc6b4}\index{Index@{Index}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{getEntry()}{getEntry()}}
+{\footnotesize\ttfamily \label{classIndex_acb9b498b11708bbf4394dbf485bcc6b4} 
+const \mbox{\hyperlink{structIndexEntry}{Index\+Entry}} \texorpdfstring{$\ast$}{*} Index\+::get\+Entry (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Извлекает запись из индекса по относительному пути файла. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+path} & Относительный путь файла. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на константный \doxylink{structIndexEntry}{Index\+Entry} или nullptr, если не найден. 
+\end{DoxyReturn}
+\Hypertarget{classIndex_ae12163a4349daa632044ff28c2818125}\index{Index@{Index}!isFileModified@{isFileModified}}
+\index{isFileModified@{isFileModified}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{isFileModified()}{isFileModified()}}
+{\footnotesize\ttfamily \label{classIndex_ae12163a4349daa632044ff28c2818125} 
+bool Index\+::is\+File\+Modified (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Проверяет, был ли файл в рабочей директории изменен с момента последней подготовки. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+path} & Относительный путь проверяемого файла. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true Если файл изменен, удален или не отслеживается; false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classIndex_a78085a2aae66dd69d50ded6d856462c6}\index{Index@{Index}!load@{load}}
+\index{load@{load}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{classIndex_a78085a2aae66dd69d50ded6d856462c6} 
+void Index\+::load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Загружает записи индекса из файла индекса на диске (временный текстовый формат). 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если файл индекса не может быть прочитан. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classIndex_a4c99f86d04fd91dc90727b9a17e60a21}\index{Index@{Index}!save@{save}}
+\index{save@{save}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{classIndex_a4c99f86d04fd91dc90727b9a17e60a21} 
+void Index\+::save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Сохраняет текущее состояние записей индекса в файл индекса (временный текстовый формат). 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если файл индекса не может быть записан. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classIndex_a37a1115070ac00586a9b69cf9c26b115}\index{Index@{Index}!stage\_file@{stage\_file}}
+\index{stage\_file@{stage\_file}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{stage\_file()}{stage\_file()}}
+{\footnotesize\ttfamily \label{classIndex_a37a1115070ac00586a9b69cf9c26b115} 
+void Index\+::stage\+\_\+file (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{relative\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Подготавливает файл, создавая объект \doxylink{classBlob}{Blob}, сохраняя его в хранилище и обновляя запись \doxylink{classIndex}{Index} (Основная логика \textquotesingle{}svcs add\textquotesingle{}). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em relative\+\_\+path} & Путь к файлу относительно корневой директории репозитория. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если путь недействителен или операции чтения/записи завершаются неудачно. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classIndex_a5e6110ea25938b15f6cfa774c3096451}\index{Index@{Index}!write@{write}}
+\index{write@{write}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{classIndex_a5e6110ea25938b15f6cfa774c3096451} 
+bool Index\+::write (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Еще одна функция сохранения (как load), но возвращает bool. 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если файл индекса не может быть записан. \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Index_8hxx}{Index.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Index_8cxx}{Index.\+cxx}}\end{DoxyCompactItemize}

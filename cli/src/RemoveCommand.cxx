@@ -1,11 +1,15 @@
 /**
  * @file RemoveCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the RemoveCommand class for removing files from staging area.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса RemoveCommand для удаления файлов из области подготовки.
  */
-
 #include "../include/RemoveCommand.hxx"
 #include <algorithm>
 #include <fstream>

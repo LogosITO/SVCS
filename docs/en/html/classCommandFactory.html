@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: CommandFactory Class Reference</title>
+<title>SVCS - English Documentation: CommandFactory Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -179,16 +177,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates and returns a command object by its name. </p>
-<ul>
-<li>Transfers ownership (via unique_ptr) of the created object to the caller. <dl class="params"><dt>Parameters</dt><dd>
+<p>Transfers ownership (via unique_ptr) of the created object to the caller. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the command (the key in the creators map). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;ICommand&gt; holding a new command object, or nullptr if the command is not registered. </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -208,16 +203,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves the brief description for a registered command. </p>
-<ul>
-<li>To do this, it must create a temporary instance of the command. <dl class="params"><dt>Parameters</dt><dd>
+<p>To do this, it must create a temporary instance of the command. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the command. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The command's description string, or an error message if the command is not registered. </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -287,15 +279,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Displays the detailed help and usage for a registered command. </p>
-<ul>
-<li>This is accomplished by creating a temporary command instance and calling its showHelp method. <dl class="params"><dt>Parameters</dt><dd>
+<p>This is accomplished by creating a temporary command instance and calling its showHelp method. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the command. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 </div>
 </div>

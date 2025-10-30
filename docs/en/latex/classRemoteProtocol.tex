@@ -1,0 +1,87 @@
+\doxysection{Remote\+Protocol Class Reference}
+\hypertarget{classRemoteProtocol}{}\label{classRemoteProtocol}\index{RemoteProtocol@{RemoteProtocol}}
+
+
+Handles the remote communication protocol for SVCS.  
+
+
+
+
+{\ttfamily \#include $<$Remote\+Protocol.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRemoteProtocol_ae13f8845715408297f5466fdcecce981}{Remote\+Protocol}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repository\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classRemoteProtocol}{Remote\+Protocol} with necessary dependencies. \end{DoxyCompactList}\item 
+\Hypertarget{classRemoteProtocol_af00770931128eaaaf4b9bfc19ef73e69}\label{classRemoteProtocol_af00770931128eaaaf4b9bfc19ef73e69} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Remote\+Protocol} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoteProtocol_a54d6ce28df9c8a53e79908c038493372}{handle\+Receive\+Pack}} ()
+\begin{DoxyCompactList}\small\item\em Handles the \textquotesingle{}receive-\/pack\textquotesingle{} protocol for {\bfseries{push}} operations. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoteProtocol_a67939ef40e01647387fc991cff543485}{handle\+Upload\+Pack}} ()
+\begin{DoxyCompactList}\small\item\em Handles the \textquotesingle{}upload-\/pack\textquotesingle{} protocol for {\bfseries{pull}} operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the remote communication protocol for SVCS. 
+
+Manages the custom protocol for {\bfseries{push}} and {\bfseries{pull}} operations, including object negotiation, data transfer, and reference updates between client and server. The protocol is a simple text-\/based exchange over standard input/output. 
+
+\label{doc-constructors}
+\Hypertarget{classRemoteProtocol_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRemoteProtocol_ae13f8845715408297f5466fdcecce981}\index{RemoteProtocol@{RemoteProtocol}!RemoteProtocol@{RemoteProtocol}}
+\index{RemoteProtocol@{RemoteProtocol}!RemoteProtocol@{RemoteProtocol}}
+\doxysubsubsection{\texorpdfstring{RemoteProtocol()}{RemoteProtocol()}}
+{\footnotesize\ttfamily \label{classRemoteProtocol_ae13f8845715408297f5466fdcecce981} 
+Remote\+Protocol\+::\+Remote\+Protocol (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repository\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classRemoteProtocol}{Remote\+Protocol} with necessary dependencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+\_\+bus} & The shared pointer to the event bus for the notification system (\doxylink{classISubject}{ISubject}). \\
+\hline
+{\em repository\+\_\+manager} & The shared pointer to the repository manager for repository operations (\doxylink{classRepositoryManager}{Repository\+Manager}). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classRemoteProtocol_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRemoteProtocol_a54d6ce28df9c8a53e79908c038493372}\index{RemoteProtocol@{RemoteProtocol}!handleReceivePack@{handleReceivePack}}
+\index{handleReceivePack@{handleReceivePack}!RemoteProtocol@{RemoteProtocol}}
+\doxysubsubsection{\texorpdfstring{handleReceivePack()}{handleReceivePack()}}
+{\footnotesize\ttfamily \label{classRemoteProtocol_a54d6ce28df9c8a53e79908c038493372} 
+bool Remote\+Protocol\+::handle\+Receive\+Pack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles the \textquotesingle{}receive-\/pack\textquotesingle{} protocol for {\bfseries{push}} operations. 
+
+\begin{DoxyReturn}{Returns}
+bool True if the protocol completed successfully (all objects received and references updated), false otherwise.
+\end{DoxyReturn}
+This function processes client push requests. It manages the negotiation of objects, receives the missing object data from the client, and finally attempts to apply the requested reference updates (e.\+g., updating branches). \Hypertarget{classRemoteProtocol_a67939ef40e01647387fc991cff543485}\index{RemoteProtocol@{RemoteProtocol}!handleUploadPack@{handleUploadPack}}
+\index{handleUploadPack@{handleUploadPack}!RemoteProtocol@{RemoteProtocol}}
+\doxysubsubsection{\texorpdfstring{handleUploadPack()}{handleUploadPack()}}
+{\footnotesize\ttfamily \label{classRemoteProtocol_a67939ef40e01647387fc991cff543485} 
+bool Remote\+Protocol\+::handle\+Upload\+Pack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles the \textquotesingle{}upload-\/pack\textquotesingle{} protocol for {\bfseries{pull}} operations. 
+
+\begin{DoxyReturn}{Returns}
+bool True if the protocol completed successfully (objects negotiated and sent), false otherwise.
+\end{DoxyReturn}
+This function processes client pull requests. It performs object negotiation by determining which objects the client is missing based on its \textquotesingle{}have\textquotesingle{} list, and then packages and sends the missing object data to the client. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{RemoteProtocol_8hxx}{Remote\+Protocol.\+hxx}}\item 
+server/src/\mbox{\hyperlink{RemoteProtocol_8cxx}{Remote\+Protocol.\+cxx}}\end{DoxyCompactItemize}

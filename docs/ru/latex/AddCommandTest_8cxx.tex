@@ -1,0 +1,76 @@
+\doxysection{Файл tests/cli/\+Add\+Command\+Test.cxx}
+\hypertarget{AddCommandTest_8cxx}{}\label{AddCommandTest_8cxx}\index{tests/cli/AddCommandTest.cxx@{tests/cli/AddCommandTest.cxx}}
+
+
+Тесты для команды \textquotesingle{}add\textquotesingle{} (\doxylink{classAddCommand}{Add\+Command}) с использованием Google Test.  
+
+
+{\ttfamily \#include "{}mocks/\+Mock\+Subject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../cli/include/\+Add\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}utils/\+Int\+Add\+Command\+Test.\+hxx"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{AddCommandTest_8cxx_a2b1d60248b0a0f797d21d7488af70cea}\label{AddCommandTest_8cxx_a2b1d60248b0a0f797d21d7488af70cea} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Failure\+\_\+\+No\+Repository)
+\item 
+\Hypertarget{AddCommandTest_8cxx_a42342116cb932b566a5c42f141185931}\label{AddCommandTest_8cxx_a42342116cb932b566a5c42f141185931} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Add\+Single\+File)
+\item 
+\Hypertarget{AddCommandTest_8cxx_abbec780da296af84dee550796d1ac3f6}\label{AddCommandTest_8cxx_abbec780da296af84dee550796d1ac3f6} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Add\+Multiple\+Files)
+\item 
+\Hypertarget{AddCommandTest_8cxx_a134eb879694c35919797af8dd526dd91}\label{AddCommandTest_8cxx_a134eb879694c35919797af8dd526dd91} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Add\+All\+Files\+With\+Dot)
+\item 
+\Hypertarget{AddCommandTest_8cxx_ac5db93f508fbeac33ae0f2da14294a10}\label{AddCommandTest_8cxx_ac5db93f508fbeac33ae0f2da14294a10} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Add\+Directory)
+\item 
+\Hypertarget{AddCommandTest_8cxx_aa877e451b90964b4334318c5ed4f2185}\label{AddCommandTest_8cxx_aa877e451b90964b4334318c5ed4f2185} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Debug\+\_\+\+File\+Not\+Found\+But\+Continue)
+\item 
+\Hypertarget{AddCommandTest_8cxx_a407be0270fcc1885d8d4f5de37e33cf6}\label{AddCommandTest_8cxx_a407be0270fcc1885d8d4f5de37e33cf6} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Warning\+\_\+\+File\+Not\+Found\+But\+Continue)
+\item 
+\Hypertarget{AddCommandTest_8cxx_a009c6c2e57f15c91f9ee8b8c3c892401}\label{AddCommandTest_8cxx_a009c6c2e57f15c91f9ee8b8c3c892401} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+No\+Valid\+Files\+To\+Add)
+\item 
+\Hypertarget{AddCommandTest_8cxx_af5ef35dca0fae700ff1c100258818051}\label{AddCommandTest_8cxx_af5ef35dca0fae700ff1c100258818051} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+All\+Files\+Not\+Found\+But\+No\+Error)
+\item 
+\Hypertarget{AddCommandTest_8cxx_a05952e8e4725b573577c16f7c1e6a5cd}\label{AddCommandTest_8cxx_a05952e8e4725b573577c16f7c1e6a5cd} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Dry\+Run\+Mode)
+\item 
+\Hypertarget{AddCommandTest_8cxx_af432e15bc225d8e82f9c67d0b7838e6f}\label{AddCommandTest_8cxx_af432e15bc225d8e82f9c67d0b7838e6f} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Help\+Flag)
+\item 
+\Hypertarget{AddCommandTest_8cxx_a706861736b855902d74154658f977ad9}\label{AddCommandTest_8cxx_a706861736b855902d74154658f977ad9} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Failure\+\_\+\+No\+Files\+Specified)
+\item 
+\Hypertarget{AddCommandTest_8cxx_a1f3a6e5fde03d4b9b10a70c07450c52f}\label{AddCommandTest_8cxx_a1f3a6e5fde03d4b9b10a70c07450c52f} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Interactive\+Mode\+Basic)
+\item 
+\Hypertarget{AddCommandTest_8cxx_aefb3231998d4be57e6182ba7a945c53c}\label{AddCommandTest_8cxx_aefb3231998d4be57e6182ba7a945c53c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Warning\+\_\+\+Unknown\+Option)
+\item 
+\Hypertarget{AddCommandTest_8cxx_abc18dd0c50d9894724d36e17492b2b28}\label{AddCommandTest_8cxx_abc18dd0c50d9894724d36e17492b2b28} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Exclude\+Pattern)
+\item 
+\Hypertarget{AddCommandTest_8cxx_aa1ad0683708caa990370dd2d8ca4e267}\label{AddCommandTest_8cxx_aa1ad0683708caa990370dd2d8ca4e267} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Ignore\+Svcs\+Directory)
+\item 
+\Hypertarget{AddCommandTest_8cxx_a7541ccb7dbc7d8ccb7317aad6fd38743}\label{AddCommandTest_8cxx_a7541ccb7dbc7d8ccb7317aad6fd38743} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classAddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Update\+And\+Force\+Flags)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Тесты для команды \textquotesingle{}add\textquotesingle{} (\doxylink{classAddCommand}{Add\+Command}) с использованием Google Test. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License 
+\end{DoxyCopyright}

@@ -1,0 +1,47 @@
+\doxysection{tests/core/\+Repository\+Test.cxx File Reference}
+\hypertarget{RepositoryTest_8cxx}{}\label{RepositoryTest_8cxx}\index{tests/core/RepositoryTest.cxx@{tests/core/RepositoryTest.cxx}}
+
+
+Unit tests for the \doxylink{classRepository}{Repository} class, covering initialization, filesystem structure creation, and Subject/\+Observer pattern implementation.  
+
+
+{\ttfamily \#include "{}../../core/include/\+Repository.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+IObserver.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classManualMockObserver}{Manual\+Mock\+Observer}}
+\begin{DoxyCompactList}\small\item\em Manual mock implementation of the \doxylink{classIObserver}{IObserver} interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRepositoryTest}{Repository\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classRepository}{Repository} class unit tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{RepositoryTest_8cxx_a75081489bd8558c70c1d7423ea09cc08}\label{RepositoryTest_8cxx_a75081489bd8558c70c1d7423ea09cc08} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryTest}{Repository\+Test}}, Init\+Creates\+Necessary\+Directories)
+\item 
+\Hypertarget{RepositoryTest_8cxx_a2be4f62bd5ef285e4df6621eb78c96f7}\label{RepositoryTest_8cxx_a2be4f62bd5ef285e4df6621eb78c96f7} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryTest}{Repository\+Test}}, Init\+Returns\+True\+If\+Directories\+Already\+Exist)
+\item 
+\Hypertarget{RepositoryTest_8cxx_a6e1eff7dc9515405c7f2eab4e8de88d7}\label{RepositoryTest_8cxx_a6e1eff7dc9515405c7f2eab4e8de88d7} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryTest}{Repository\+Test}}, Attach\+And\+Init\+Notify\+Observer\+Correctly)
+\item 
+\Hypertarget{RepositoryTest_8cxx_a5b8e25e49677e9129a6091e5e2b1020e}\label{RepositoryTest_8cxx_a5b8e25e49677e9129a6091e5e2b1020e} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryTest}{Repository\+Test}}, Detach\+Removes\+Observer)
+\item 
+\Hypertarget{RepositoryTest_8cxx_ad3ed3de2f32297925d14c4f72951f8c4}\label{RepositoryTest_8cxx_ad3ed3de2f32297925d14c4f72951f8c4} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryTest}{Repository\+Test}}, Notify\+Sends\+Event\+To\+All\+Observers)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit tests for the \doxylink{classRepository}{Repository} class, covering initialization, filesystem structure creation, and Subject/\+Observer pattern implementation. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}

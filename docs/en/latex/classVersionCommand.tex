@@ -1,0 +1,160 @@
+\doxysection{Version\+Command Class Reference}
+\hypertarget{classVersionCommand}{}\label{classVersionCommand}\index{VersionCommand@{VersionCommand}}
+
+
+Command for displaying version information about SVCS.  
+
+
+
+
+{\ttfamily \#include $<$Version\+Command.\+hxx$>$}
+
+Inheritance diagram for Version\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVersionCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVersionCommand_a15785516f34561967419b9388fd557ad}{Version\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classVersionCommand}{Version\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVersionCommand_a0f222db541460934284006830d4c6340}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the version command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVersionCommand_a2caf6e6bce8782444a1a7383af55441e}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVersionCommand_a390348862cf0abd962ec2d5a58890526}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVersionCommand_ae44c74cb5a13afe68f33b6fc0970ea07}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the usage syntax of the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVersionCommand_a937c22d552201effa893ab364a012096}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Shows detailed help information for this command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command for displaying version information about SVCS. 
+
+The \doxylink{classVersionCommand}{Version\+Command} shows the current version, build information, and copyright details. 
+
+\label{doc-constructors}
+\Hypertarget{classVersionCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVersionCommand_a15785516f34561967419b9388fd557ad}\index{VersionCommand@{VersionCommand}!VersionCommand@{VersionCommand}}
+\index{VersionCommand@{VersionCommand}!VersionCommand@{VersionCommand}}
+\doxysubsubsection{\texorpdfstring{VersionCommand()}{VersionCommand()}}
+{\footnotesize\ttfamily \label{classVersionCommand_a15785516f34561967419b9388fd557ad} 
+Version\+Command\+::\+Version\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs the \doxylink{classVersionCommand}{Version\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & Shared pointer to the event bus for notifications. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classVersionCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVersionCommand_a0f222db541460934284006830d4c6340}\index{VersionCommand@{VersionCommand}!execute@{execute}}
+\index{execute@{execute}!VersionCommand@{VersionCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classVersionCommand_a0f222db541460934284006830d4c6340} 
+bool Version\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the version command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Command arguments (ignored for version command). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true always, as version command cannot fail. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classVersionCommand_a390348862cf0abd962ec2d5a58890526}\index{VersionCommand@{VersionCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!VersionCommand@{VersionCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classVersionCommand_a390348862cf0abd962ec2d5a58890526} 
+std\+::string Version\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the description of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Show version information"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classVersionCommand_a2caf6e6bce8782444a1a7383af55441e}\index{VersionCommand@{VersionCommand}!getName@{getName}}
+\index{getName@{getName}!VersionCommand@{VersionCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classVersionCommand_a2caf6e6bce8782444a1a7383af55441e} 
+std\+::string Version\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}version"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classVersionCommand_ae44c74cb5a13afe68f33b6fc0970ea07}\index{VersionCommand@{VersionCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!VersionCommand@{VersionCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classVersionCommand_ae44c74cb5a13afe68f33b6fc0970ea07} 
+std\+::string Version\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the usage syntax of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}svcs version"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classVersionCommand_a937c22d552201effa893ab364a012096}\index{VersionCommand@{VersionCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!VersionCommand@{VersionCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classVersionCommand_a937c22d552201effa893ab364a012096} 
+void Version\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Shows detailed help information for this command. 
+
+
+
+Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{VersionCommand_8hxx}{Version\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{VersionCommand_8cxx}{Version\+Command.\+cxx}}\end{DoxyCompactItemize}

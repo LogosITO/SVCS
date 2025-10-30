@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Файл tests/cli/mocks/MockSubject.hxx</title>
+<title>SVCS - Русская документация: Файл tests/cli/mocks/MockSubject.hxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,21 +92,24 @@ $(function(){initNavTree('MockSubject_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of the <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject.">MockSubject</a> class for testing components that depend on <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> (<a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus).  
+<p>Mock реализация интерфейса <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> для целей модульного тестирования.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ISubject_8hxx_source.html">../../../services/ISubject.hxx</a>&quot;</code><br />
 <code>#include &lt;gmock/gmock.h&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div>
 <p><a href="MockSubject_8hxx_source.html">См. исходные тексты.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
 <tr class="memitem:MockSubject" id="r_MockSubject"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockSubject.html">MockSubject</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock implementation of <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a>.  <a href="classMockSubject.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock implementation of <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> (<a class="el" href="structEvent.html" title="Структура, описывающая событие, опубликованное ядром VCS.">Event</a> Bus).  <a href="classMockSubject.html#details">Подробнее...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Declaration of the <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject.">MockSubject</a> class for testing components that depend on <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> (<a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> Bus). </p>
-<dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
+<div class="textblock"><p>Mock реализация интерфейса <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> для целей модульного тестирования. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
+<p>Этот класс захватывает все события, публикуемые ядром системы, без необходимости полной реализации системы Observer. Он предоставляет вспомогательные методы для удобства проверки утверждений в модульных тестах. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

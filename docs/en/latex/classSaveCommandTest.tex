@@ -1,0 +1,155 @@
+\doxysection{Save\+Command\+Test Class Reference}
+\hypertarget{classSaveCommandTest}{}\label{classSaveCommandTest}\index{SaveCommandTest@{SaveCommandTest}}
+
+
+Google Test fixture for running integration tests against the \doxylink{classSaveCommand}{Save\+Command} (commit).  
+
+
+
+
+{\ttfamily \#include $<$Int\+Save\+Command\+Test.\+hxx$>$}
+
+Inheritance diagram for Save\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSaveCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSaveCommandTest_a18b39c15087110afbe4f669ce36efc0e}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the testing environment before each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommandTest_accf541fe18a23379bb833eaaa6750d45}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Tears down the testing environment after each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommandTest_af4c62b884cd988e8f1ff6b9970e03bf4}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Creates a test file with specified content in the temporary directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommandTest_abbb2a3e30fad0a9626d224b2c890abc2}{create\+Test\+Directory}} (const std\+::string \&dirname)
+\begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommandTest_a82fc477fb849e9ea7335ae225e35e7b6}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSaveCommandTest_a2024312f64f0b9e394110506c0cf26b0}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSaveCommandTest_aa37b2eb8820070c5079889220fd8ef57}\label{classSaveCommandTest_aa37b2eb8820070c5079889220fd8ef57} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer). \end{DoxyCompactList}\item 
+\Hypertarget{classSaveCommandTest_a14fdcfd46ec656cd52e1a6241320d49a}\label{classSaveCommandTest_a14fdcfd46ec656cd52e1a6241320d49a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
+\Hypertarget{classSaveCommandTest_aac4baff35723bce4d333802a72ca1e76}\label{classSaveCommandTest_aac4baff35723bce4d333802a72ca1e76} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classSaveCommand}{Save\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
+\Hypertarget{classSaveCommandTest_af74e76c9d6f76befea2da0c84ef6631c}\label{classSaveCommandTest_af74e76c9d6f76befea2da0c84ef6631c} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Path to the temporary test repository directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Google Test fixture for running integration tests against the \doxylink{classSaveCommand}{Save\+Command} (commit). 
+
+This fixture provides the necessary infrastructure for testing the save command\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Manage a temporary SVCS repository directory.
+\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for event bus) and \doxylink{classRepositoryManager}{Repository\+Manager} (for core logic).
+\item {\bfseries{Helper Methods\+:}} Simplify file creation, directory setup, staging, and verification of notifications. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classSaveCommandTest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSaveCommandTest_a2024312f64f0b9e394110506c0cf26b0}\index{SaveCommandTest@{SaveCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_a2024312f64f0b9e394110506c0cf26b0} 
+bool Save\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Checks if a specific message (substring) exists in any event notification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the message is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classSaveCommandTest_abbb2a3e30fad0a9626d224b2c890abc2}\index{SaveCommandTest@{SaveCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_abbb2a3e30fad0a9626d224b2c890abc2} 
+void Save\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test directory in the temporary location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & The relative path/name of the directory. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSaveCommandTest_af4c62b884cd988e8f1ff6b9970e03bf4}\index{SaveCommandTest@{SaveCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_af4c62b884cd988e8f1ff6b9970e03bf4} 
+void Save\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test file with specified content in the temporary directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The relative path/name of the file. \\
+\hline
+{\em content} & The content to write to the file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSaveCommandTest_a18b39c15087110afbe4f669ce36efc0e}\index{SaveCommandTest@{SaveCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_a18b39c15087110afbe4f669ce36efc0e} 
+void Save\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Sets up the testing environment before each test. 
+
+Initializes components, creates the temporary directory, and initializes the repository. \Hypertarget{classSaveCommandTest_a82fc477fb849e9ea7335ae225e35e7b6}\index{SaveCommandTest@{SaveCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_a82fc477fb849e9ea7335ae225e35e7b6} 
+void Save\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & A vector of file names to stage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSaveCommandTest_accf541fe18a23379bb833eaaa6750d45}\index{SaveCommandTest@{SaveCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_accf541fe18a23379bb833eaaa6750d45} 
+void Save\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Tears down the testing environment after each test. 
+
+Cleans up the temporary directory and restores the working path. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntSaveCommandTest_8hxx}{Int\+Save\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntSaveCommandTest_8cxx}{Int\+Save\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\doxysection{core/src/\+Object\+Storage.cxx File Reference}
+\hypertarget{ObjectStorage_8cxx}{}\label{ObjectStorage_8cxx}\index{core/src/ObjectStorage.cxx@{core/src/ObjectStorage.cxx}}
+
+
+Implementation of the \doxylink{classObjectStorage}{Object\+Storage} class, managing the storage and retrieval of compressed \doxylink{classVcsObject}{Vcs\+Object} objects.  
+
+
+{\ttfamily \#include "{}../include/\+Object\+Storage.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Blob.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Tree.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Commit.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Vcs\+Object.\+hxx"{}}\newline
+{\ttfamily \#include $<$zconf.\+h$>$}\newline
+{\ttfamily \#include $<$zlib.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ObjectStorage_8cxx_a26f4fae398cad9ed2315fca1afe50a27}\label{ObjectStorage_8cxx_a26f4fae398cad9ed2315fca1afe50a27} 
+const size\+\_\+t {\bfseries CHUNK\+\_\+\+SIZE} = 16384
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classObjectStorage}{Object\+Storage} class, managing the storage and retrieval of compressed \doxylink{classVcsObject}{Vcs\+Object} objects. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}

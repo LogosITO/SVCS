@@ -1,9 +1,14 @@
 /**
- * @file VersionCommand.cxx
+* @file VersionCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the VersionCommand class.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса VersionCommand.
  */
 
 #include <utility>

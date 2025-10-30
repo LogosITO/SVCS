@@ -1,0 +1,292 @@
+\doxysection{Base\+Command Class Reference}
+\hypertarget{classBaseCommand}{}\label{classBaseCommand}\index{BaseCommand@{BaseCommand}}
+
+
+Base class for all CLI commands.  
+
+
+
+
+{\ttfamily \#include $<$Base\+Command.\+hxx$>$}
+
+Inheritance diagram for Base\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBaseCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBaseCommand_a6ada486a8ab81d0283181fd8cd5274e1}{Base\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBaseCommand_a4ea5517949503ae27c8eec05c3107995}{\texorpdfstring{$\sim$}{\string~}\+Base\+Command}} () override=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4}{get\+Name}} () const override=0
+\begin{DoxyCompactList}\small\item\em Gets the command name (e.\+g., "{}init"{}, "{}commit"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classBaseCommand_aa9c4557d17068a2f3abe2dee8c0c5198}{get\+Description}} () const override=0
+\begin{DoxyCompactList}\small\item\em Gets a brief description of the command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classBaseCommand_aea8d2b5cbe3c773db9f2477f3d38aa8b}{get\+Usage}} () const override=0
+\begin{DoxyCompactList}\small\item\em Gets the command\textquotesingle{}s usage syntax. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseCommand_a98e0e914f24383408fc7e8fc977baccb}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the command\textquotesingle{}s help (Usage and Description). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseCommand_af8ad2f422a83cffbb07da49675443c43}{log\+Debug}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a debug information event (DEBUG\+\_\+\+MESSAGE). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseCommand_aca2b7d7a6526b60b5ee16a0e25541b62}{log\+Info}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a general informational event (GENERAL\+\_\+\+INFO). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseCommand_aa5b4cd9ea94779c697ffb03e5671e3e3}{log\+Error}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a runtime error event (RUNTIME\+\_\+\+ERROR). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseCommand_a6ffa98742c320a9e9d709d4b6a3b98af}{log\+Success}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a successful execution event (GENERAL\+\_\+\+INFO with SUCCESS prefix). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseCommand_a6437203ec5207483f41e89a4cad4f7fb}{log\+Warning}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a warning event (RUNTIME\+\_\+\+ERROR with WARNING prefix). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args)=0
+\begin{DoxyCompactList}\small\item\em Executes the main logic of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepository}{Repository}} $>$ \mbox{\hyperlink{classBaseCommand_aeda1ecf978bfb02f534a15f99520065a}{find\+Repository}} ()
+\begin{DoxyCompactList}\small\item\em Finds an existing repository in the current or parent directories. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepository}{Repository}} $>$ \mbox{\hyperlink{classBaseCommand_ab92d070ecff1669467aa64dffb9b616a}{create\+Repository}} (const std\+::string \&path="{}."{})
+\begin{DoxyCompactList}\small\item\em Creates a new repository instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ \mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{event\+Subject\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{structEvent}{Event} Subject (\doxylink{structEvent}{Event} Bus) instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all CLI commands. 
+
+Provides a common infrastructure for interacting with the \doxylink{structEvent}{Event} Bus system (\doxylink{classISubject}{ISubject}) and utility methods for working with the repository. It is responsible for logging via the \doxylink{structEvent}{Event} Bus. 
+
+\label{doc-constructors}
+\Hypertarget{classBaseCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBaseCommand_a6ada486a8ab81d0283181fd8cd5274e1}\index{BaseCommand@{BaseCommand}!BaseCommand@{BaseCommand}}
+\index{BaseCommand@{BaseCommand}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{BaseCommand()}{BaseCommand()}}
+{\footnotesize\ttfamily \label{classBaseCommand_a6ada486a8ab81d0283181fd8cd5274e1} 
+Base\+Command\+::\+Base\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & The \doxylink{classISubject}{ISubject} (\doxylink{structEvent}{Event} Bus) instance that will be used for generating events and logs. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBaseCommand_a4ea5517949503ae27c8eec05c3107995}\index{BaseCommand@{BaseCommand}!````~BaseCommand@{\texorpdfstring{$\sim$}{\string~}BaseCommand}}
+\index{````~BaseCommand@{\texorpdfstring{$\sim$}{\string~}BaseCommand}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BaseCommand()}{\string~BaseCommand()}}
+{\footnotesize\ttfamily \label{classBaseCommand_a4ea5517949503ae27c8eec05c3107995} 
+Base\+Command\+::\texorpdfstring{$\sim$}{\string~}\+Base\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Ensures correct cleanup of derived classes. 
+
+\label{doc-func-members}
+\Hypertarget{classBaseCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBaseCommand_ab92d070ecff1669467aa64dffb9b616a}\index{BaseCommand@{BaseCommand}!createRepository@{createRepository}}
+\index{createRepository@{createRepository}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{createRepository()}{createRepository()}}
+{\footnotesize\ttfamily \label{classBaseCommand_ab92d070ecff1669467aa64dffb9b616a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepository}{Repository}} $>$ Base\+Command\+::create\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Creates a new repository instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path where the repository should be created (defaults to \textquotesingle{}.\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A smart pointer to the new \doxylink{classRepository}{Repository}. 
+\end{DoxyReturn}
+\Hypertarget{classBaseCommand_aeda1ecf978bfb02f534a15f99520065a}\index{BaseCommand@{BaseCommand}!findRepository@{findRepository}}
+\index{findRepository@{findRepository}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{findRepository()}{findRepository()}}
+{\footnotesize\ttfamily \label{classBaseCommand_aeda1ecf978bfb02f534a15f99520065a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepository}{Repository}} $>$ Base\+Command\+::find\+Repository (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Finds an existing repository in the current or parent directories. 
+
+\begin{DoxyReturn}{Returns}
+A smart pointer to the found \doxylink{classRepository}{Repository} or nullptr if no repository is found. 
+\end{DoxyReturn}
+\Hypertarget{classBaseCommand_aa9c4557d17068a2f3abe2dee8c0c5198}\index{BaseCommand@{BaseCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classBaseCommand_aa9c4557d17068a2f3abe2dee8c0c5198} 
+virtual std\+::string Base\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets a brief description of the command. 
+
+\begin{DoxyReturn}{Returns}
+The command\textquotesingle{}s description. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4}\index{BaseCommand@{BaseCommand}!getName@{getName}}
+\index{getName@{getName}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4} 
+virtual std\+::string Base\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets the command name (e.\+g., "{}init"{}, "{}commit"{}). 
+
+\begin{DoxyReturn}{Returns}
+The command name as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classBaseCommand_aea8d2b5cbe3c773db9f2477f3d38aa8b}\index{BaseCommand@{BaseCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classBaseCommand_aea8d2b5cbe3c773db9f2477f3d38aa8b} 
+virtual std\+::string Base\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets the command\textquotesingle{}s usage syntax. 
+
+\begin{DoxyReturn}{Returns}
+A string with the syntax (e.\+g., "{}vcs init $<$path$>$"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classBaseCommand_af8ad2f422a83cffbb07da49675443c43}\index{BaseCommand@{BaseCommand}!logDebug@{logDebug}}
+\index{logDebug@{logDebug}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logDebug()}{logDebug()}}
+{\footnotesize\ttfamily \label{classBaseCommand_af8ad2f422a83cffbb07da49675443c43} 
+void Base\+Command\+::log\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a debug information event (DEBUG\+\_\+\+MESSAGE). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the debug message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBaseCommand_aa5b4cd9ea94779c697ffb03e5671e3e3}\index{BaseCommand@{BaseCommand}!logError@{logError}}
+\index{logError@{logError}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}}
+{\footnotesize\ttfamily \label{classBaseCommand_aa5b4cd9ea94779c697ffb03e5671e3e3} 
+void Base\+Command\+::log\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a runtime error event (RUNTIME\+\_\+\+ERROR). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the error message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBaseCommand_aca2b7d7a6526b60b5ee16a0e25541b62}\index{BaseCommand@{BaseCommand}!logInfo@{logInfo}}
+\index{logInfo@{logInfo}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logInfo()}{logInfo()}}
+{\footnotesize\ttfamily \label{classBaseCommand_aca2b7d7a6526b60b5ee16a0e25541b62} 
+void Base\+Command\+::log\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a general informational event (GENERAL\+\_\+\+INFO). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the informational message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBaseCommand_a6ffa98742c320a9e9d709d4b6a3b98af}\index{BaseCommand@{BaseCommand}!logSuccess@{logSuccess}}
+\index{logSuccess@{logSuccess}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logSuccess()}{logSuccess()}}
+{\footnotesize\ttfamily \label{classBaseCommand_a6ffa98742c320a9e9d709d4b6a3b98af} 
+void Base\+Command\+::log\+Success (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a successful execution event (GENERAL\+\_\+\+INFO with SUCCESS prefix). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the successful execution message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBaseCommand_a6437203ec5207483f41e89a4cad4f7fb}\index{BaseCommand@{BaseCommand}!logWarning@{logWarning}}
+\index{logWarning@{logWarning}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logWarning()}{logWarning()}}
+{\footnotesize\ttfamily \label{classBaseCommand_a6437203ec5207483f41e89a4cad4f7fb} 
+void Base\+Command\+::log\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a warning event (RUNTIME\+\_\+\+ERROR with WARNING prefix). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the warning message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBaseCommand_a98e0e914f24383408fc7e8fc977baccb}\index{BaseCommand@{BaseCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classBaseCommand_a98e0e914f24383408fc7e8fc977baccb} 
+void Base\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the command\textquotesingle{}s help (Usage and Description). 
+
+This method outputs information directly to the standard output stream (stdout). 
+
+Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classBaseCommand_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}\index{BaseCommand@{BaseCommand}!eventSubject\_@{eventSubject\_}}
+\index{eventSubject\_@{eventSubject\_}!BaseCommand@{BaseCommand}}
+\doxysubsubsection{\texorpdfstring{eventSubject\_}{eventSubject\_}}
+{\footnotesize\ttfamily \label{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8} 
+std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classISubject}{ISubject}}$>$ Base\+Command\+::event\+Subject\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \doxylink{structEvent}{Event} Subject (\doxylink{structEvent}{Event} Bus) instance. 
+
+Used to generate events (logs) that will be received by observers, such as the \doxylink{classLogger}{Logger}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{BaseCommand_8hxx}{Base\+Command.\+hxx}}\end{DoxyCompactItemize}

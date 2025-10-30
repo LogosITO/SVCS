@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: core/include/Commit.hxx Source File</title>
+<title>SVCS - English Documentation: core/include/Commit.hxx Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,76 +92,92 @@ $(function(){initNavTree('Commit_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="Commit_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="VcsObject_8hxx.html">VcsObject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classCommit.html">   23</a></span><span class="keyword">class </span>Commit : <span class="keyword">public</span> <a class="code hl_function" href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    std::string tree_hash;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::vector&lt;std::string&gt; parent_hashes;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::string author;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::time_t timestamp;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::string message;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    Commit() : tree_hash(<span class="stringliteral">&quot;&quot;</span>), parent_hashes({}), author(<span class="stringliteral">&quot;&quot;</span>), timestamp(time_t()), message(<span class="stringliteral">&quot;&quot;</span>) {};</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    Commit(</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        std::string thash,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        std::vector&lt;std::string&gt; phashes,</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        std::string auth,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        std::string msg,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        std::time_t tstamp = std::time(<span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    );</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// VcsObject overrides</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    [[nodiscard]] std::string <a class="code hl_function" href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">getType</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    [[nodiscard]] std::string <a class="code hl_function" href="classCommit.html#a53f442e035ddbdb18d0635bbac2709b5">serialize</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">static</span> Commit <a class="code hl_function" href="classCommit.html#a0f37624e98ed1dc6404795756127be52">deserialize</a>(<span class="keyword">const</span> std::string&amp; raw_content);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// Getters</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    [[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classCommit.html#a8ef0c99b1167987343c99cc63dfef608">getTreeHash</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    [[nodiscard]] <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; <a class="code hl_function" href="classCommit.html#ab683ee4f53ec36c871a77f6bea0015df">getParentHashes</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    [[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classCommit.html#a5228b234ccb27af846012c26ccb26912">getAuthor</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    [[nodiscard]] std::time_t <a class="code hl_function" href="classCommit.html#a68c3572fa2fdb3a182da27acae0adc69">getTimestamp</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    [[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classCommit.html#a341a1826cec171e37a95f0317183ea5d">getMessage</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> setMessage(<span class="keyword">const</span> std::string&amp; msg);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">void</span> setTimestamp(std::time_t tstamp);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="VcsObject_8hxx.html">VcsObject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classCommit.html">   26</a></span><span class="comment"> * @english</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * @class Commit</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * @brief Represents a single, immutable historical point (snapshot) in the repository&#39;s history.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * @details This object binds the content structure (Tree hash) with the metadata (author, message, parent history).</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * @russian</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * @class Commit</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * @brief Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * @details Этот объект связывает структуру содержимого (хеш Tree) с метаданными (автор, сообщение, история родителей).</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">class </span><a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a> : <span class="keyword">public</span> <a class="code hl_function" href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::string tree_hash;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    std::vector&lt;std::string&gt; parent_hashes;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">   63</a></span>    std::string author;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::time_t timestamp;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    std::string message;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a>() : tree_hash(<span class="stringliteral">&quot;&quot;</span>), parent_hashes({}), author(<span class="stringliteral">&quot;&quot;</span>), timestamp(time_t()), message(<span class="stringliteral">&quot;&quot;</span>) {};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a>(</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        std::string thash,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        std::vector&lt;std::string&gt; phashes,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        std::string auth,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        std::string msg,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        std::time_t tstamp = std::time(<span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    );</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">void</span> setTimestampNow();</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">void</span> setParent(<span class="keyword">const</span> std::string&amp; parent);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="comment">// VcsObject overrides</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    [[nodiscard]] std::string <a class="code hl_function" href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">getType</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    [[nodiscard]] std::string <a class="code hl_function" href="classCommit.html#a53f442e035ddbdb18d0635bbac2709b5">serialize</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keyword">static</span> <a class="code hl_function" href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit</a> <a class="code hl_function" href="classCommit.html#a0f37624e98ed1dc6404795756127be52">deserialize</a>(<span class="keyword">const</span> std::string&amp; raw_content);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="comment">// Getters</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    [[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classCommit.html#a8ef0c99b1167987343c99cc63dfef608">getTreeHash</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
 </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    [[nodiscard]] <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; <a class="code hl_function" href="classCommit.html#ab683ee4f53ec36c871a77f6bea0015df">getParentHashes</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    [[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classCommit.html#a5228b234ccb27af846012c26ccb26912">getAuthor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    [[nodiscard]] std::time_t <a class="code hl_function" href="classCommit.html#a68c3572fa2fdb3a182da27acae0adc69">getTimestamp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    [[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classCommit.html#a341a1826cec171e37a95f0317183ea5d">getMessage</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCommit.html#ae75dbe7170f17040ae69f084a36fadf7">setMessage</a>(<span class="keyword">const</span> std::string&amp; msg);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCommit.html#a884794e13b9df7e9d6a416c0d69de0ff">setTimestamp</a>(std::time_t tstamp);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCommit.html#a9f8351b67005ad46e2bbd2671f5985f0">setTimestampNow</a>();</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCommit.html#a97cdf233fb1ad1fb766c016c1650c54c">setParent</a>(<span class="keyword">const</span> std::string&amp; parent);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>};</div>
 <div class="ttc" id="aVcsObject_8hxx_html"><div class="ttname"><a href="VcsObject_8hxx.html">VcsObject.hxx</a></div><div class="ttdoc">Definition of the abstract base class for all Version Control System objects.</div></div>
-<div class="ttc" id="aclassCommit_html_a0f37624e98ed1dc6404795756127be52"><div class="ttname"><a href="classCommit.html#a0f37624e98ed1dc6404795756127be52">Commit::deserialize</a></div><div class="ttdeci">static Commit deserialize(const std::string &amp;raw_content)</div><div class="ttdoc">Creates a Commit object from a serialized string read from the object database.</div><div class="ttdef"><b>Definition</b> Commit.cxx:60</div></div>
-<div class="ttc" id="aclassCommit_html_a213b92691c2dae9e7ae7862eb9c369df"><div class="ttname"><a href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">Commit::getType</a></div><div class="ttdeci">std::string getType() const override</div><div class="ttdoc">Returns the type of the VCS object.</div><div class="ttdef"><b>Definition</b> Commit.cxx:39</div></div>
-<div class="ttc" id="aclassCommit_html_a341a1826cec171e37a95f0317183ea5d"><div class="ttname"><a href="classCommit.html#a341a1826cec171e37a95f0317183ea5d">Commit::getMessage</a></div><div class="ttdeci">const std::string &amp; getMessage() const</div><div class="ttdoc">Returns the user-defined commit message.</div><div class="ttdef"><b>Definition</b> Commit.cxx:173</div></div>
-<div class="ttc" id="aclassCommit_html_a5228b234ccb27af846012c26ccb26912"><div class="ttname"><a href="classCommit.html#a5228b234ccb27af846012c26ccb26912">Commit::getAuthor</a></div><div class="ttdeci">const std::string &amp; getAuthor() const</div><div class="ttdoc">Returns the author and email string for the commit.</div><div class="ttdef"><b>Definition</b> Commit.cxx:165</div></div>
-<div class="ttc" id="aclassCommit_html_a53f442e035ddbdb18d0635bbac2709b5"><div class="ttname"><a href="classCommit.html#a53f442e035ddbdb18d0635bbac2709b5">Commit::serialize</a></div><div class="ttdeci">std::string serialize() const override</div><div class="ttdoc">Serializes the Commit metadata into a standardized, canonical format for hashing and storage.</div><div class="ttdef"><b>Definition</b> Commit.cxx:43</div></div>
-<div class="ttc" id="aclassCommit_html_a68c3572fa2fdb3a182da27acae0adc69"><div class="ttname"><a href="classCommit.html#a68c3572fa2fdb3a182da27acae0adc69">Commit::getTimestamp</a></div><div class="ttdeci">std::time_t getTimestamp() const</div><div class="ttdoc">Returns the UNIX timestamp of the commit creation.</div><div class="ttdef"><b>Definition</b> Commit.cxx:169</div></div>
-<div class="ttc" id="aclassCommit_html_a8ef0c99b1167987343c99cc63dfef608"><div class="ttname"><a href="classCommit.html#a8ef0c99b1167987343c99cc63dfef608">Commit::getTreeHash</a></div><div class="ttdeci">const std::string &amp; getTreeHash() const</div><div class="ttdoc">Returns the hash ID of the associated root Tree object.</div><div class="ttdef"><b>Definition</b> Commit.cxx:157</div></div>
-<div class="ttc" id="aclassCommit_html_ab683ee4f53ec36c871a77f6bea0015df"><div class="ttname"><a href="classCommit.html#ab683ee4f53ec36c871a77f6bea0015df">Commit::getParentHashes</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getParentHashes() const</div><div class="ttdoc">Returns the hash IDs of the parent commits.</div><div class="ttdef"><b>Definition</b> Commit.cxx:161</div></div>
+<div class="ttc" id="aclassCommit_html_a0f37624e98ed1dc6404795756127be52"><div class="ttname"><a href="classCommit.html#a0f37624e98ed1dc6404795756127be52">Commit::deserialize</a></div><div class="ttdeci">static Commit deserialize(const std::string &amp;raw_content)</div><div class="ttdoc">Creates a Commit object from a serialized string read from the object database.</div><div class="ttdef"><b>Definition</b> Commit.cxx:62</div></div>
+<div class="ttc" id="aclassCommit_html_a201c5f3c2f29a4db8e40e69d55b2fa1f"><div class="ttname"><a href="classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f">Commit::Commit</a></div><div class="ttdeci">Commit()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition</b> Commit.hxx:63</div></div>
+<div class="ttc" id="aclassCommit_html_a213b92691c2dae9e7ae7862eb9c369df"><div class="ttname"><a href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">Commit::getType</a></div><div class="ttdeci">std::string getType() const override</div><div class="ttdoc">Returns the type of the VCS object.</div><div class="ttdef"><b>Definition</b> Commit.cxx:41</div></div>
+<div class="ttc" id="aclassCommit_html_a341a1826cec171e37a95f0317183ea5d"><div class="ttname"><a href="classCommit.html#a341a1826cec171e37a95f0317183ea5d">Commit::getMessage</a></div><div class="ttdeci">const std::string &amp; getMessage() const</div><div class="ttdoc">Returns the user-defined commit message.</div><div class="ttdef"><b>Definition</b> Commit.cxx:175</div></div>
+<div class="ttc" id="aclassCommit_html_a5228b234ccb27af846012c26ccb26912"><div class="ttname"><a href="classCommit.html#a5228b234ccb27af846012c26ccb26912">Commit::getAuthor</a></div><div class="ttdeci">const std::string &amp; getAuthor() const</div><div class="ttdoc">Returns the author and email string for the commit.</div><div class="ttdef"><b>Definition</b> Commit.cxx:167</div></div>
+<div class="ttc" id="aclassCommit_html_a53f442e035ddbdb18d0635bbac2709b5"><div class="ttname"><a href="classCommit.html#a53f442e035ddbdb18d0635bbac2709b5">Commit::serialize</a></div><div class="ttdeci">std::string serialize() const override</div><div class="ttdoc">Serializes the Commit metadata into a standardized, canonical format for hashing and storage.</div><div class="ttdef"><b>Definition</b> Commit.cxx:45</div></div>
+<div class="ttc" id="aclassCommit_html_a68c3572fa2fdb3a182da27acae0adc69"><div class="ttname"><a href="classCommit.html#a68c3572fa2fdb3a182da27acae0adc69">Commit::getTimestamp</a></div><div class="ttdeci">std::time_t getTimestamp() const</div><div class="ttdoc">Returns the UNIX timestamp of the commit creation.</div><div class="ttdef"><b>Definition</b> Commit.cxx:171</div></div>
+<div class="ttc" id="aclassCommit_html_a884794e13b9df7e9d6a416c0d69de0ff"><div class="ttname"><a href="classCommit.html#a884794e13b9df7e9d6a416c0d69de0ff">Commit::setTimestamp</a></div><div class="ttdeci">void setTimestamp(std::time_t tstamp)</div><div class="ttdoc">Sets the commit timestamp.</div><div class="ttdef"><b>Definition</b> Commit.cxx:186</div></div>
+<div class="ttc" id="aclassCommit_html_a8ef0c99b1167987343c99cc63dfef608"><div class="ttname"><a href="classCommit.html#a8ef0c99b1167987343c99cc63dfef608">Commit::getTreeHash</a></div><div class="ttdeci">const std::string &amp; getTreeHash() const</div><div class="ttdoc">Returns the hash ID of the associated root Tree object.</div><div class="ttdef"><b>Definition</b> Commit.cxx:159</div></div>
+<div class="ttc" id="aclassCommit_html_a97cdf233fb1ad1fb766c016c1650c54c"><div class="ttname"><a href="classCommit.html#a97cdf233fb1ad1fb766c016c1650c54c">Commit::setParent</a></div><div class="ttdeci">void setParent(const std::string &amp;parent)</div><div class="ttdoc">Sets a parent commit hash.</div><div class="ttdef"><b>Definition</b> Commit.cxx:194</div></div>
+<div class="ttc" id="aclassCommit_html_a9f8351b67005ad46e2bbd2671f5985f0"><div class="ttname"><a href="classCommit.html#a9f8351b67005ad46e2bbd2671f5985f0">Commit::setTimestampNow</a></div><div class="ttdeci">void setTimestampNow()</div><div class="ttdoc">Sets the commit timestamp to the current time.</div><div class="ttdef"><b>Definition</b> Commit.cxx:190</div></div>
+<div class="ttc" id="aclassCommit_html_ab683ee4f53ec36c871a77f6bea0015df"><div class="ttname"><a href="classCommit.html#ab683ee4f53ec36c871a77f6bea0015df">Commit::getParentHashes</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getParentHashes() const</div><div class="ttdoc">Returns the hash IDs of the parent commits.</div><div class="ttdef"><b>Definition</b> Commit.cxx:163</div></div>
+<div class="ttc" id="aclassCommit_html_ae75dbe7170f17040ae69f084a36fadf7"><div class="ttname"><a href="classCommit.html#ae75dbe7170f17040ae69f084a36fadf7">Commit::setMessage</a></div><div class="ttdeci">void setMessage(const std::string &amp;msg)</div><div class="ttdoc">Sets the commit message.</div><div class="ttdef"><b>Definition</b> Commit.cxx:179</div></div>
 <div class="ttc" id="aclassVcsObject_html_a58691887a54d3d632038cacb36034075"><div class="ttname"><a href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject::VcsObject</a></div><div class="ttdeci">VcsObject()=default</div><div class="ttdoc">Default constructor. Required for derived classes.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

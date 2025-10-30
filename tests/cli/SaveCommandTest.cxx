@@ -1,15 +1,14 @@
 /**
  * @file SaveCommandTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Integration tests for the SaveCommand (commit) class.
  *
- * @details This file implements the test cases for the SaveCommandTest fixture. 
- * It rigorously tests the command's ability to save staged changes, verifying 
- * success messages, checking the required command-line arguments (-m/--message), 
- * and confirming that the staging area is cleared after a successful save. 
- * It also includes tests for all expected error conditions (e.g., no repository, 
- * no staged files, invalid/missing commit messages).
- * * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Интеграционные тесты для класса SaveCommand (коммит).
  */
 
 #include "utils/IntSaveCommandTest.hxx"

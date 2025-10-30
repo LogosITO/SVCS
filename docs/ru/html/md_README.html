@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: 📚 SVCS: Simple Version Control System</title>
+<title>SVCS - Русская документация: 📚 SVCS: Simple Version Control System</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +97,7 @@ $(function(){initNavTree('md_README.html','',''); });
 <p><b>SVCS (Simple Version Control System)</b> is an educational and research project aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.</p>
 <p>The main goal of the project is to gain a deep understanding of core concepts:</p>
 <ul>
-<li><b>Immutable Objects:</b> Creating and handling objects (<span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>, <span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>) based on a single abstract <span class="tt"><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a></span> class. <br  />
+<li><b>Immutable Objects:</b> Creating and handling objects (<span class="tt"><a class="el" href="classCommit.html" title="Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория.">Commit</a></span>, <span class="tt"><a class="el" href="classBlob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a></span>) based on a single abstract <span class="tt"><a class="el" href="classVcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a></span> class. <br  />
 </li>
 <li><b>Data Integrity:</b> Applying cryptographic hashing (<b>SHA-256</b>) for data identification and verification. <br  />
 </li>
@@ -114,9 +112,9 @@ $(function(){initNavTree('md_README.html','',''); });
 Major Achievements</h2>
 <ul>
 <li>✅ <b>Complete Command Suite:</b> Full set of essential VCS commands</li>
-<li>✅ <b>Robust Object Model:</b> <span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>, and <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span> fully implemented</li>
+<li>✅ <b>Robust Object Model:</b> <span class="tt"><a class="el" href="classBlob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a></span>, and <span class="tt"><a class="el" href="classCommit.html" title="Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория.">Commit</a></span> fully implemented</li>
 <li>✅ <b>Advanced CLI:</b> Intuitive command-line interface with help system</li>
-<li>✅ <b>Event-Driven Architecture:</b> Flexible logging with <a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a> pattern</li>
+<li>✅ <b>Event-Driven Architecture:</b> Flexible logging with <a class="el" href="classEventBus.html" title="Потокобезопасная реализация ISubject для централизованного распределения событий.">EventBus</a> pattern</li>
 <li>✅ <b>Memory Safety:</b> Zero memory errors (Valgrind verified)</li>
 <li>✅ <b>Data Integrity:</b> SHA-256 hashing for all repository objects</li>
 <li>✅ <b>Factory Pattern:</b> Extensible command system</li>
@@ -197,11 +195,11 @@ Core Workflow Commands</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Command  </th><th class="markdownTableHeadNone">Example  </th><th class="markdownTableHeadNone">What You'll Learn  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">init</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs init</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> initialization and structure  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">init</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs init</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classRepository.html" title="Управляет структурой директорий системы контроля версий и основными операциями.">Repository</a> initialization and structure  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">add</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs add *.cpp</span>  </td><td class="markdownTableBodyNone">Staging area mechanics and file tracking  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">save</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs save -m "feat: add auth"</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> objects and message formatting  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">save</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs save -m "feat: add auth"</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classCommit.html" title="Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория.">Commit</a> objects and message formatting  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">status</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs status file.txt</span>  </td><td class="markdownTableBodyNone">Working tree state management  </td></tr>
 </table>
@@ -215,7 +213,7 @@ Advanced Operations</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">remove --all</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs remove --all</span>  </td><td class="markdownTableBodyNone">Bulk operations with safety  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">clear</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs clear --force</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> lifecycle management  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">clear</span>  </td><td class="markdownTableBodyNone"><span class="tt">svcs clear --force</span>  </td><td class="markdownTableBodyNone"><a class="el" href="classRepository.html" title="Управляет структурой директорий системы контроля версий и основными операциями.">Repository</a> lifecycle management  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 Information &amp; Discovery</h2>
@@ -236,13 +234,13 @@ Core Components</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Layer  </th><th class="markdownTableHeadNone">Components  </th><th class="markdownTableHeadNone">Learning Value  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Storage</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a></span>, <span class="tt"><a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a></span>, <span class="tt"><a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a></span>  </td><td class="markdownTableBodyNone">Data persistence patterns  </td></tr>
+<td class="markdownTableBodyNone"><b>Storage</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classRepository.html" title="Управляет структурой директорий системы контроля версий и основными операциями.">Repository</a></span>, <span class="tt"><a class="el" href="classObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a></span>, <span class="tt"><a class="el" href="classIndex.html" title="Управляет областью подготовки (Index) репозитория СКВ.">Index</a></span>  </td><td class="markdownTableBodyNone">Data persistence patterns  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Objects</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a></span>, <span class="tt"><a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a></span>  </td><td class="markdownTableBodyNone">Polymorphism and inheritance  </td></tr>
+<td class="markdownTableBodyNone"><b>Objects</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classBlob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a></span>, <span class="tt"><a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a></span>, <span class="tt"><a class="el" href="classCommit.html" title="Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория.">Commit</a></span>  </td><td class="markdownTableBodyNone">Polymorphism and inheritance  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>CLI</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classCommandFactory.html" title="Factory for creating ICommand objects by their string name.">CommandFactory</a></span>, <span class="tt"><a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a></span>  </td><td class="markdownTableBodyNone">Factory and strategy patterns  </td></tr>
+<td class="markdownTableBodyNone"><b>CLI</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classCommandFactory.html" title="Фабрика для создания объектов ICommand по их строковому имени.">CommandFactory</a></span>, <span class="tt"><a class="el" href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.">ICommand</a></span>  </td><td class="markdownTableBodyNone">Factory and strategy patterns  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Infra</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a></span>, <span class="tt"><a class="el" href="classLogger.html" title="A thread-safe Singleton class responsible for logging system events.">Logger</a></span>  </td><td class="markdownTableBodyNone">Observer pattern and event handling  </td></tr>
+<td class="markdownTableBodyNone"><b>Infra</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classEventBus.html" title="Потокобезопасная реализация ISubject для централизованного распределения событий.">EventBus</a></span>, <span class="tt"><a class="el" href="classLogger.html" title="Потокобезопасный Singleton класс, отвечающий за логирование системных событий.">Logger</a></span>  </td><td class="markdownTableBodyNone">Observer pattern and event handling  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 🎓 Educational Architecture Patterns</h2>
@@ -272,7 +270,7 @@ Core Components</h2>
 <ul>
 <li>⏳ Branching and merging mechanics</li>
 <li>⏳ Difference analysis with <span class="tt">diff</span></li>
-<li>⏳ <a class="el" href="structRemote.html" title="Represents a single remote repository configuration.">Remote</a> repository operations</li>
+<li>⏳ <a class="el" href="structRemote.html" title="Представляет конфигурацию одного удаленного репозитория.">Remote</a> repository operations</li>
 <li>⏳ Configuration management systems</li>
 </ul>
 <hr  />

@@ -1,9 +1,14 @@
 /**
  * @file HistoryCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the HistoryCommand class.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса HistoryCommand.
  */
 
 #include "../include/HistoryCommand.hxx"

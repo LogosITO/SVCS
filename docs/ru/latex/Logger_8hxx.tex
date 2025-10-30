@@ -1,0 +1,75 @@
+\doxysection{Файл services/logging/\+Logger.hxx}
+\hypertarget{Logger_8hxx}{}\label{Logger_8hxx}\index{services/logging/Logger.hxx@{services/logging/Logger.hxx}}
+
+
+Определяет класс \doxylink{classLogger}{Logger}, потокобезопасный Singleton, который действует как \doxylink{classIObserver}{IObserver}.  
+
+
+{\ttfamily \#include "{}../\+IObserver.\+hxx"{}}\newline
+{\ttfamily \#include "{}../\+Event.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLogger}{Logger}}
+\begin{DoxyCompactList}\small\item\em Потокобезопасный Singleton класс, отвечающий за логирование системных событий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \{ \newline
+\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15}{DEBUG}} = 0
+, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3}{INFO}} = 1
+, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277}{WARN}} = 2
+, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}} = 3
+, \newline
+\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc}{FATAL}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Определяет уровни серьезности для лог-\/сообщений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Определяет класс \doxylink{classLogger}{Logger}, потокобезопасный Singleton, который действует как \doxylink{classIObserver}{IObserver}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+\doxylink{classLogger}{Logger} централизует системное логирование, обрабатывает фильтрацию уровней логов и подписывается на шину событий для автоматической обработки системных событий. 
+
+\label{doc-enum-members}
+\Hypertarget{Logger_8hxx_doc-enum-members}
+\doxysubsection{Перечисления}
+\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}\index{Logger.hxx@{Logger.hxx}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!Logger.hxx@{Logger.hxx}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily \label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9} 
+enum class \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Определяет уровни серьезности для лог-\/сообщений. 
+
+Используется для фильтрации вывода на основе настроенного уровня. \begin{DoxyEnumFields}[2]{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG@{DEBUG}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!DEBUG@{DEBUG}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15} 
+DEBUG&Подробная информация для отладки. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!INFO@{INFO}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3} 
+INFO&Общая информация о потоке выполнения. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARN@{WARN}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!WARN@{WARN}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277} 
+WARN&Потенциально проблемные ситуации. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!ERROR@{ERROR}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5} 
+ERROR&События ошибок, которые могут позволить приложению продолжить работу. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FATAL@{FATAL}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!FATAL@{FATAL}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc} 
+FATAL&Очень серьезные события ошибок, которые, вероятно, приведут к прерыванию работы приложения. \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,29 @@
+\doxysection{Файл tests/cli/mocks/\+Mock\+Help\+Service.hxx}
+\hypertarget{MockHelpService_8hxx}{}\label{MockHelpService_8hxx}\index{tests/cli/mocks/MockHelpService.hxx@{tests/cli/mocks/MockHelpService.hxx}}
+
+
+Mock реализация интерфейса \doxylink{classHelpService}{Help\+Service} для целей модульного тестирования.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}../../../cli/include/\+Help\+Service.\+hxx"{}}\newline
+{\ttfamily \#include "{}Mock\+Subject.\+hxx"{}}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMockHelpService}{Mock\+Help\+Service}}
+\begin{DoxyCompactList}\small\item\em Mock реализация \doxylink{classHelpService}{Help\+Service} для тестирования \doxylink{classHelpCommand}{Help\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Mock реализация интерфейса \doxylink{classHelpService}{Help\+Service} для целей модульного тестирования. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот класс наследуется от \doxylink{classHelpService}{Help\+Service} и переопределяет его абстрактные методы ({\ttfamily get\+Available\+Commands}, {\ttfamily get\+Command\+Description}, {\ttfamily show\+Command\+Help}) контролируемыми реализациями. Он включает служебные методы ({\ttfamily set\+Available\+Commands}, {\ttfamily was\+Command\+Help\+Called} и т.\+д.) чтобы позволить тестам настраивать поведение mock\textquotesingle{}а и проверять его взаимодействия. Этот mock необходим для модульного тестирования {\bfseries{\doxylink{classHelpCommand}{Help\+Command}}} без зависимости от фактической реализации системы регистрации CLI команд. 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс HelpService</title>
+<title>SVCS - Русская документация: Класс HelpService</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classHelpService.html','','classHelpService-members');
 </div><!--header-->
 <div class="contents">
 
-<p>Service that provides help information for commands.  
+<p>Сервис, предоставляющий справочную информацию для команд.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="HelpService_8hxx_source.html">HelpService.hxx</a>&gt;</code></p>
@@ -104,28 +102,28 @@ $(function(){initNavTree('classHelpService.html','','classHelpService-members');
  <div class="center">
   <img src="classHelpService.png" usemap="#HelpService_map" alt=""/>
   <map id="HelpService_map" name="HelpService_map">
-<area href="classMockHelpService.html" title="A mock implementation of the HelpService for testing the HelpCommand." alt="MockHelpService" shape="rect" coords="0,56,113,80"/>
+<area href="classMockHelpService.html" title="Mock реализация HelpService для тестирования HelpCommand." alt="MockHelpService" shape="rect" coords="0,56,113,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:ac380002930a510d355fe11cf11e946ce" id="r_ac380002930a510d355fe11cf11e946ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac380002930a510d355fe11cf11e946ce">HelpService</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; bus, std::function&lt; std::vector&lt; std::string &gt;()&gt; getCommands, std::function&lt; std::string(const std::string &amp;)&gt; getDescription, std::function&lt; void(const std::string &amp;)&gt; showHelp, std::function&lt; std::string(const std::string &amp;)&gt; getUsage=nullptr)</td></tr>
-<tr class="memdesc:ac380002930a510d355fe11cf11e946ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> by injecting necessary dependencies as callbacks.  <br /></td></tr>
+<tr class="memdesc:ac380002930a510d355fe11cf11e946ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует <a class="el" href="classHelpService.html" title="Сервис, предоставляющий справочную информацию для команд.">HelpService</a> путем внедрения необходимых зависимостей в виде обратных вызовов.  <br /></td></tr>
 <tr class="memitem:a3e101dee42668c57dd56669a3939d335" id="r_a3e101dee42668c57dd56669a3939d335"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e101dee42668c57dd56669a3939d335">getAvailableCommands</a> () const</td></tr>
-<tr class="memdesc:a3e101dee42668c57dd56669a3939d335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getCommandsCallback_</span> to retrieve the list of all available command names.  <br /></td></tr>
+<tr class="memdesc:a3e101dee42668c57dd56669a3939d335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет <span class="tt">getCommandsCallback_</span> для получения списка всех доступных имен команд.  <br /></td></tr>
 <tr class="memitem:acc76b5372129d61b894efb2fa25349c2" id="r_acc76b5372129d61b894efb2fa25349c2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc76b5372129d61b894efb2fa25349c2">getCommandDescription</a> (const std::string &amp;commandName) const</td></tr>
-<tr class="memdesc:acc76b5372129d61b894efb2fa25349c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getDescriptionCallback_</span> to retrieve the brief description of a specific command.  <br /></td></tr>
+<tr class="memdesc:acc76b5372129d61b894efb2fa25349c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет <span class="tt">getDescriptionCallback_</span> для получения краткого описания конкретной команды.  <br /></td></tr>
 <tr class="memitem:a1ea55dca8e2d594c97ce5dc3efca8053" id="r_a1ea55dca8e2d594c97ce5dc3efca8053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea55dca8e2d594c97ce5dc3efca8053">showCommandHelp</a> (const std::string &amp;commandName) const</td></tr>
-<tr class="memdesc:a1ea55dca8e2d594c97ce5dc3efca8053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">showHelpCallback_</span> to trigger the display of detailed help for a specific command.  <br /></td></tr>
+<tr class="memdesc:a1ea55dca8e2d594c97ce5dc3efca8053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет <span class="tt">showHelpCallback_</span> для запуска отображения подробной справки для конкретной команды.  <br /></td></tr>
 <tr class="memitem:a71d1aba53c9ac3d40b16af8890bcac95" id="r_a71d1aba53c9ac3d40b16af8890bcac95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71d1aba53c9ac3d40b16af8890bcac95">commandExists</a> (const std::string &amp;commandName) const</td></tr>
-<tr class="memdesc:a71d1aba53c9ac3d40b16af8890bcac95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for the existence of a command by comparing against the list returned by <span class="tt">getAvailableCommands</span>.  <br /></td></tr>
+<tr class="memdesc:a71d1aba53c9ac3d40b16af8890bcac95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет существование команды путем сравнения со списком, возвращенным <span class="tt">getAvailableCommands</span>.  <br /></td></tr>
 <tr class="memitem:a6e1869acb698c4c37d1b15d19b92ce9c" id="r_a6e1869acb698c4c37d1b15d19b92ce9c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e1869acb698c4c37d1b15d19b92ce9c">getCommandUsage</a> (const std::string &amp;commandName) const</td></tr>
-<tr class="memdesc:a6e1869acb698c4c37d1b15d19b92ce9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getUsageCallback_</span> to retrieve the usage syntax of a specific command.  <br /></td></tr>
+<tr class="memdesc:a6e1869acb698c4c37d1b15d19b92ce9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет <span class="tt">getUsageCallback_</span> для получения синтаксиса использования конкретной команды.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Service that provides help information for commands. </p>
-<p>This service implements the application logic for displaying help. It uses a set of <b>callback functions</b> (<span class="tt">std::function</span>) to retrieve command data (names, descriptions, usage) and display specific help. This design choice prevents a direct dependency on the <a class="el" href="classCommandFactory.html" title="Factory for creating ICommand objects by their string name.">CommandFactory</a>, thereby breaking a potential <b>circular dependency</b>. </p>
+<div class="textblock"><p>Сервис, предоставляющий справочную информацию для команд. </p>
+<p>Этот сервис реализует логику приложения для отображения справки. Он использует набор <b>функций обратного вызова</b> (<span class="tt">std::function</span>) для получения данных команд (имена, описания, использование) и отображения конкретной справки. Этот выбор дизайна предотвращает прямую зависимость от <a class="el" href="classCommandFactory.html" title="Фабрика для создания объектов ICommand по их строковому имени.">CommandFactory</a>, тем самым разрывая потенциальную <b>циклическую зависимость</b>. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="ac380002930a510d355fe11cf11e946ce" name="ac380002930a510d355fe11cf11e946ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac380002930a510d355fe11cf11e946ce">&#9670;&#160;</a></span>HelpService()</h2>
@@ -161,14 +159,14 @@ $(function(){initNavTree('classHelpService.html','','classHelpService-members');
       </table>
 </div><div class="memdoc">
 
-<p>Constructs the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> by injecting necessary dependencies as callbacks. </p>
+<p>Конструирует <a class="el" href="classHelpService.html" title="Сервис, предоставляющий справочную информацию для команд.">HelpService</a> путем внедрения необходимых зависимостей в виде обратных вызовов. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bus</td><td>Shared pointer to the event bus for notifications. </td></tr>
-    <tr><td class="paramname">getCommands</td><td>Function (callback) that returns a list of available command names. </td></tr>
-    <tr><td class="paramname">getDescription</td><td>Function (callback) that returns the brief description of a command. </td></tr>
-    <tr><td class="paramname">showHelp</td><td>Function (callback) that triggers the full help display for a command. </td></tr>
-    <tr><td class="paramname">getUsage</td><td>Function (callback) that returns the usage syntax of a command (defaults to nullptr if not strictly needed). </td></tr>
+    <tr><td class="paramname">bus</td><td>Общий указатель на шину событий для уведомлений. </td></tr>
+    <tr><td class="paramname">getCommands</td><td>Функция (обратный вызов), которая возвращает список доступных имен команд. </td></tr>
+    <tr><td class="paramname">getDescription</td><td>Функция (обратный вызов), которая возвращает краткое описание команды. </td></tr>
+    <tr><td class="paramname">showHelp</td><td>Функция (обратный вызов), которая запускает полное отображение справки для команды. </td></tr>
+    <tr><td class="paramname">getUsage</td><td>Функция (обратный вызов), которая возвращает синтаксис использования команды (по умолчанию nullptr, если не требуется строго). </td></tr>
   </table>
   </dd>
 </dl>
@@ -199,14 +197,14 @@ $(function(){initNavTree('classHelpService.html','','classHelpService-members');
 </table>
 </div><div class="memdoc">
 
-<p>Checks for the existence of a command by comparing against the list returned by <span class="tt">getAvailableCommands</span>. </p>
+<p>Проверяет существование команды путем сравнения со списком, возвращенным <span class="tt">getAvailableCommands</span>. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">commandName</td><td>The name of the command to check. </td></tr>
+    <tr><td class="paramname">commandName</td><td>Имя команды для проверки. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> if the command is registered, <code>false</code> otherwise. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> если команда зарегистрирована, <code>false</code> в противном случае. </dd></dl>
 
 </div>
 </div>
@@ -233,8 +231,8 @@ $(function(){initNavTree('classHelpService.html','','classHelpService-members');
 </table>
 </div><div class="memdoc">
 
-<p>Executes the <span class="tt">getCommandsCallback_</span> to retrieve the list of all available command names. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>Vector of strings containing the names of all registered commands. </dd></dl>
+<p>Выполняет <span class="tt">getCommandsCallback_</span> для получения списка всех доступных имен команд. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Вектор строк, содержащий имена всех зарегистрированных команд. </dd></dl>
 
 </div>
 </div>
@@ -261,14 +259,14 @@ $(function(){initNavTree('classHelpService.html','','classHelpService-members');
 </table>
 </div><div class="memdoc">
 
-<p>Executes the <span class="tt">getDescriptionCallback_</span> to retrieve the brief description of a specific command. </p>
+<p>Выполняет <span class="tt">getDescriptionCallback_</span> для получения краткого описания конкретной команды. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">commandName</td><td>The name of the command. </td></tr>
+    <tr><td class="paramname">commandName</td><td>Имя команды. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>The command description, or "Unknown command" if the command name is not valid or the callback fails. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Описание команды или "Неизвестная команда", если имя команды недействительно или обратный вызов не сработал. </dd></dl>
 
 </div>
 </div>
@@ -295,14 +293,14 @@ $(function(){initNavTree('classHelpService.html','','classHelpService-members');
 </table>
 </div><div class="memdoc">
 
-<p>Executes the <span class="tt">getUsageCallback_</span> to retrieve the usage syntax of a specific command. </p>
+<p>Выполняет <span class="tt">getUsageCallback_</span> для получения синтаксиса использования конкретной команды. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">commandName</td><td>The name of the command. </td></tr>
+    <tr><td class="paramname">commandName</td><td>Имя команды. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>The command usage string, or an empty string if the command is not found or the callback is not set. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка использования команды или пустая строка, если команда не найдена или обратный вызов не установлен. </dd></dl>
 
 </div>
 </div>
@@ -321,10 +319,10 @@ $(function(){initNavTree('classHelpService.html','','classHelpService-members');
       </table>
 </div><div class="memdoc">
 
-<p>Executes the <span class="tt">showHelpCallback_</span> to trigger the display of detailed help for a specific command. </p>
+<p>Выполняет <span class="tt">showHelpCallback_</span> для запуска отображения подробной справки для конкретной команды. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">commandName</td><td>The name of the command to show help for. </td></tr>
+    <tr><td class="paramname">commandName</td><td>Имя команды, для которой показывается справка. </td></tr>
   </table>
   </dd>
 </dl>

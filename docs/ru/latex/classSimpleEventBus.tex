@@ -1,0 +1,159 @@
+\doxysection{Класс Simple\+Event\+Bus}
+\hypertarget{classSimpleEventBus}{}\label{classSimpleEventBus}\index{SimpleEventBus@{SimpleEventBus}}
+Граф наследования\+:Simple\+Event\+Bus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSimpleEventBus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$) override
+\begin{DoxyCompactList}\small\item\em Прикрепляет наблюдателя к субъекту. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimpleEventBus_a9b9a471480117937401986e38c059b66}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$) override
+\begin{DoxyCompactList}\small\item\em Открепляет наблюдателя от субъекта. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&) const override
+\begin{DoxyCompactList}\small\item\em Уведомляет всех прикрепленных наблюдателей о событии. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$) override
+\begin{DoxyCompactList}\small\item\em Прикрепляет наблюдателя к субъекту. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimpleEventBus_a9b9a471480117937401986e38c059b66}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$) override
+\begin{DoxyCompactList}\small\item\em Открепляет наблюдателя от субъекта. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&) const override
+\begin{DoxyCompactList}\small\item\em Уведомляет всех прикрепленных наблюдателей о событии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classISubject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classISubject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{classISubject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classIObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Коллекция зарегистрированных наблюдателей. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classSimpleEventBus_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}\index{SimpleEventBus@{SimpleEventBus}!attach@{attach}}
+\index{attach@{attach}!SimpleEventBus@{SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798} 
+void Simple\+Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Прикрепляет наблюдателя к субъекту. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Умный указатель на объект наблюдателя для прикрепления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{ISubject}}.
+
+\Hypertarget{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}\index{SimpleEventBus@{SimpleEventBus}!attach@{attach}}
+\index{attach@{attach}!SimpleEventBus@{SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798} 
+void Simple\+Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Прикрепляет наблюдателя к субъекту. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Умный указатель на объект наблюдателя для прикрепления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{ISubject}}.
+
+\Hypertarget{classSimpleEventBus_a9b9a471480117937401986e38c059b66}\index{SimpleEventBus@{SimpleEventBus}!detach@{detach}}
+\index{detach@{detach}!SimpleEventBus@{SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSimpleEventBus_a9b9a471480117937401986e38c059b66} 
+void Simple\+Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Открепляет наблюдателя от субъекта. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Умный указатель на объект наблюдателя для открепления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{ISubject}}.
+
+\Hypertarget{classSimpleEventBus_a9b9a471480117937401986e38c059b66}\index{SimpleEventBus@{SimpleEventBus}!detach@{detach}}
+\index{detach@{detach}!SimpleEventBus@{SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSimpleEventBus_a9b9a471480117937401986e38c059b66} 
+void Simple\+Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Открепляет наблюдателя от субъекта. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Умный указатель на объект наблюдателя для открепления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{ISubject}}.
+
+\Hypertarget{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}\index{SimpleEventBus@{SimpleEventBus}!notify@{notify}}
+\index{notify@{notify}!SimpleEventBus@{SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45} 
+void Simple\+Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Уведомляет всех прикрепленных наблюдателей о событии. 
+
+Этот метод сделан публичным, чтобы классы компонентов (как \doxylink{classObjectStorage}{Object\+Storage}) могли публиковать события через внедренный указатель \doxylink{classISubject}{ISubject}. Метод объявлен как {\ttfamily const}, потому что уведомление о событии является логически неизменяющим действием над состоянием Subject. 
+\begin{DoxyParams}{Аргументы}
+{\em event} & Константная ссылка на структуру события для отправки. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{ISubject}}.
+
+\Hypertarget{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}\index{SimpleEventBus@{SimpleEventBus}!notify@{notify}}
+\index{notify@{notify}!SimpleEventBus@{SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45} 
+void Simple\+Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Уведомляет всех прикрепленных наблюдателей о событии. 
+
+Этот метод сделан публичным, чтобы классы компонентов (как \doxylink{classObjectStorage}{Object\+Storage}) могли публиковать события через внедренный указатель \doxylink{classISubject}{ISubject}. Метод объявлен как {\ttfamily const}, потому что уведомление о событии является логически неизменяющим действием над состоянием Subject. 
+\begin{DoxyParams}{Аргументы}
+{\em event} & Константная ссылка на структуру события для отправки. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{ISubject}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/server/Hub\+Command\+Test.\+cxx\item 
+tests/server/Repo\+Command\+Test.\+cxx\end{DoxyCompactItemize}

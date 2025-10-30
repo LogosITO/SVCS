@@ -1,9 +1,14 @@
 /**
  * @file RemoteProtocol.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the RemoteProtocol class for remote communication protocol.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса RemoteProtocol для протокола удаленной связи.
  */
 
 #include "../include/RemoteProtocol.hxx"

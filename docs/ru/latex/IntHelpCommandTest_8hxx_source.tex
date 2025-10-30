@@ -1,0 +1,38 @@
+\doxysection{Int\+Help\+Command\+Test.\+hxx}
+\hypertarget{IntHelpCommandTest_8hxx_source}{}\label{IntHelpCommandTest_8hxx_source}\index{tests/cli/utils/IntHelpCommandTest.hxx@{tests/cli/utils/IntHelpCommandTest.hxx}}
+\mbox{\hyperlink{IntHelpCommandTest_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{HelpCommand_8hxx}{../../../cli/include/HelpCommand.hxx}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockHelpService_8hxx}{../mocks/MockHelpService.hxx}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ Forward\ declaration\ for\ the\ Event\ structure\ used\ in\ helpers}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEvent}{Event}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHelpCommandTest}{HelpCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00052\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHelpCommandTest_aaacf9ab18d10a23809bb743993ed1960}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHelpCommandTest_ae9ba25cb1f7ac4cab80820ae167dd582}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHelpCommandTest_a1030123741ad553f0114c700cf6db1e7}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHelpCommandTest_a1ad9fd0189edb0eac480032be0c842ed}{countMessages}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00112\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classHelpCommandTest_a0aa84578503c1750bcb64267718c01e6}{mockEventBus}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00121\ \ \ \ \ std::shared\_ptr<MockHelpService>\ \mbox{\hyperlink{classHelpCommandTest_a3dcdc65f33f359240348f5990f6f635b}{mockHelpService}};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00130\ \ \ \ \ std::unique\_ptr<HelpCommand>\ \mbox{\hyperlink{classHelpCommandTest_a9105686746356bf0e8e1f2331089abde}{command}};}
+\DoxyCodeLine{00131\ \};}
+
+\end{DoxyCode}

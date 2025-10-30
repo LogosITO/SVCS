@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс VcsObject</title>
+<title>SVCS - Русская документация: Класс VcsObject</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classVcsObject.html','','classVcsObject-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base class representing any storable, addressable object within the VCS.  
+<p>Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="VcsObject_8hxx_source.html">VcsObject.hxx</a>&gt;</code></p>
@@ -104,10 +102,10 @@ $(function(){initNavTree('classVcsObject.html','','classVcsObject-members'); });
  <div class="center">
   <img src="classVcsObject.png" usemap="#VcsObject_map" alt=""/>
   <map id="VcsObject_map" name="VcsObject_map">
-<area href="classBlob.html" title="Represents the content of a file (Binary Large Object)." alt="Blob" shape="rect" coords="0,56,96,80"/>
-<area href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history." alt="Commit" shape="rect" coords="106,56,202,80"/>
-<area href="classTestableObject.html" title="Helper class for testing the non-abstract methods of VcsObject." alt="TestableObject" shape="rect" coords="212,56,308,80"/>
-<area href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract." alt="Tree" shape="rect" coords="318,56,414,80"/>
+<area href="classBlob.html" title="Представляет содержимое файла (Binary Large Object)." alt="Blob" shape="rect" coords="0,56,96,80"/>
+<area href="classCommit.html" title="Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория." alt="Commit" shape="rect" coords="106,56,202,80"/>
+<area href="classTestableObject.html" title="Вспомогательный класс для тестирования неабстрактных методов VcsObject." alt="TestableObject" shape="rect" coords="212,56,308,80"/>
+<area href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject." alt="Tree" shape="rect" coords="318,56,414,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -115,40 +113,36 @@ $(function(){initNavTree('classVcsObject.html','','classVcsObject-members'); });
 Открытые члены</h2></td></tr>
 <tr class="memitem:a58691887a54d3d632038cacb36034075" id="r_a58691887a54d3d632038cacb36034075"><td class="memItemLeft" align="right" valign="top"><a id="a58691887a54d3d632038cacb36034075" name="a58691887a54d3d632038cacb36034075"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>VcsObject</b> ()=default</td></tr>
-<tr class="memdesc:a58691887a54d3d632038cacb36034075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Required for derived classes. <br /></td></tr>
+<tr class="memdesc:a58691887a54d3d632038cacb36034075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию. Требуется для производных классов. <br /></td></tr>
 <tr class="memitem:af2840ade6006e4d64eb6bd9f15b37539" id="r_af2840ade6006e4d64eb6bd9f15b37539"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2840ade6006e4d64eb6bd9f15b37539">VcsObject</a> (const <a class="el" href="classVcsObject.html">VcsObject</a> &amp;other)=default</td></tr>
-<tr class="memdesc:af2840ade6006e4d64eb6bd9f15b37539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. Required for derived classes to correctly copy the hash_id.  <br /></td></tr>
-<tr class="memitem:a866849775b4541573b40b2b85be20df5" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top"><a id="a866849775b4541573b40b2b85be20df5" name="a866849775b4541573b40b2b85be20df5"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=default</td></tr>
-<tr class="memdesc:a866849775b4541573b40b2b85be20df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. Ensures proper cleanup when deleting derived objects via a base class pointer. <br /></td></tr>
+<tr class="memdesc:af2840ade6006e4d64eb6bd9f15b37539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор копирования. Требуется для производных классов для корректного копирования hash_id.  <br /></td></tr>
+<tr class="memitem:a866849775b4541573b40b2b85be20df5" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a866849775b4541573b40b2b85be20df5">~VcsObject</a> ()=default</td></tr>
+<tr class="memdesc:a866849775b4541573b40b2b85be20df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор.  <br /></td></tr>
 <tr class="memitem:a987c76bf8ad51d267297cc6ba7da1eb7" id="r_a987c76bf8ad51d267297cc6ba7da1eb7"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a987c76bf8ad51d267297cc6ba7da1eb7">serialize</a> () const =0</td></tr>
-<tr class="memdesc:a987c76bf8ad51d267297cc6ba7da1eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to serialize the object's core data.  <br /></td></tr>
+<tr class="memdesc:a987c76bf8ad51d267297cc6ba7da1eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальный метод для сериализации основных данных объекта.  <br /></td></tr>
 <tr class="memitem:a6997c320772a504fc61a986f6e8f9ff7" id="r_a6997c320772a504fc61a986f6e8f9ff7"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6997c320772a504fc61a986f6e8f9ff7">getType</a> () const =0</td></tr>
-<tr class="memdesc:a6997c320772a504fc61a986f6e8f9ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to get the type of the VCS object.  <br /></td></tr>
+<tr class="memdesc:a6997c320772a504fc61a986f6e8f9ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальный метод для получения типа объекта СКВ.  <br /></td></tr>
 <tr class="memitem:a0e8cd703d917813ca43d4b0622c70bdd" id="r_a0e8cd703d917813ca43d4b0622c70bdd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e8cd703d917813ca43d4b0622c70bdd">getHashId</a> () const</td></tr>
-<tr class="memdesc:a0e8cd703d917813ca43d4b0622c70bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique hash identifier of the object.  <br /></td></tr>
+<tr class="memdesc:a0e8cd703d917813ca43d4b0622c70bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает уникальный хеш-идентификатор объекта.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Открытые статические члены</h2></td></tr>
 <tr class="memitem:a73ec7fbaac32df9c4570de02b8bda56f" id="r_a73ec7fbaac32df9c4570de02b8bda56f"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73ec7fbaac32df9c4570de02b8bda56f">calculateHash</a> (const std::string &amp;content)</td></tr>
-<tr class="memdesc:a73ec7fbaac32df9c4570de02b8bda56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет SHA-1 хеш для заданного канонического содержимого.  <br /></td></tr>
+<tr class="memdesc:a73ec7fbaac32df9c4570de02b8bda56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет SHA-256 хеш для заданного канонического содержимого.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Защищенные члены</h2></td></tr>
 <tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
-<tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
+<tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет криптографический хеш-идентификатор для содержимого объекта.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Защищенные данные</h2></td></tr>
-<tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top"><a id="a6c9fd4ab39bb9781c5399da07305d28d" name="a6c9fd4ab39bb9781c5399da07305d28d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></td></tr>
-<tr class="memdesc:a6c9fd4ab39bb9781c5399da07305d28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique cryptographic hash identifier (e.g., SHA-256) for this object. Protected to allow internal setting via <a class="el" href="#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">computeHash()</a> but prevent external modification. <br /></td></tr>
+<tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c9fd4ab39bb9781c5399da07305d28d">hash_id</a></td></tr>
+<tr class="memdesc:a6c9fd4ab39bb9781c5399da07305d28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уникальный криптографический хеш-идентификатор (например, SHA-256) для этого объекта.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Abstract base class representing any storable, addressable object within the VCS. </p>
-<ul>
-<li><a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> enforces the mandatory presence of a hash ID, serialization logic, and type identification for all derived classes. It serves as the core domain entity for the object database. </li>
-</ul>
+<div class="textblock"><p>Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ. </p>
+<p><a class="el" href="classVcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a> обеспечивает обязательное наличие хеш-идентификатора, логики сериализации и идентификации типа для всех производных классов. Он служит основной доменной сущностью для базы данных объектов. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="af2840ade6006e4d64eb6bd9f15b37539" name="af2840ade6006e4d64eb6bd9f15b37539"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2840ade6006e4d64eb6bd9f15b37539">&#9670;&#160;</a></span>VcsObject()</h2>
@@ -173,13 +167,41 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 </table>
 </div><div class="memdoc">
 
-<p>Copy constructor. Required for derived classes to correctly copy the hash_id. </p>
+<p>Конструктор копирования. Требуется для производных классов для корректного копирования hash_id. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> to copy from. </td></tr>
+    <tr><td class="paramname">other</td><td>Объект <a class="el" href="classVcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a> для копирования. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a866849775b4541573b40b2b85be20df5" name="a866849775b4541573b40b2b85be20df5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a866849775b4541573b40b2b85be20df5">&#9670;&#160;</a></span>~VcsObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual VcsObject::~VcsObject </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Виртуальный деструктор. </p>
+<p>Обеспечивает правильную очистку при удалении производных объектов через указатель на базовый класс. </p>
 
 </div>
 </div>
@@ -207,14 +229,14 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 </table>
 </div><div class="memdoc">
 
-<p>Вычисляет SHA-1 хеш для заданного канонического содержимого. </p>
+<p>Вычисляет SHA-256 хеш для заданного канонического содержимого. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">content</td><td>Содержимое объекта Git-формата (header + raw_data). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>std::string Вычисленный 40-символьный хеш. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::string Вычисленный 64-символьный хеш. </dd></dl>
 
 </div>
 </div>
@@ -241,16 +263,13 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 </table>
 </div><div class="memdoc">
 
-<p>Computes the cryptographic hash ID for the object's content. </p>
-<ul>
-<li>This method should prepend the object's type and content length (Git-style) before hashing the full content and setting the internal hash_id. <dl class="params"><dt>Аргументы</dt><dd>
+<p>Вычисляет криптографический хеш-идентификатор для содержимого объекта. </p>
+<p>Этот метод должен добавлять тип объекта и длину содержимого (в стиле Git) перед хешированием полного содержимого и установкой внутреннего hash_id. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">content</td><td>The serialized string data of the object (usually returned by <a class="el" href="#a987c76bf8ad51d267297cc6ba7da1eb7" title="Pure virtual method to serialize the object&#39;s core data.">serialize()</a>). </td></tr>
+    <tr><td class="paramname">content</td><td>Сериализованные строковые данные объекта (обычно возвращаемые <a class="el" href="#a987c76bf8ad51d267297cc6ba7da1eb7" title="Чисто виртуальный метод для сериализации основных данных объекта.">serialize()</a>). </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -277,8 +296,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 </table>
 </div><div class="memdoc">
 
-<p>Returns the unique hash identifier of the object. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>std::string The cryptographic hash ID. </dd></dl>
+<p>Возвращает уникальный хеш-идентификатор объекта. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>std::string Криптографический хеш-идентификатор. </dd></dl>
 
 </div>
 </div>
@@ -305,11 +324,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 </table>
 </div><div class="memdoc">
 
-<p>Pure virtual method to get the type of the VCS object. </p>
-<ul>
-<li>This is crucial for object storage and reconstruction (e.g., "commit", "blob", "tree"). <dl class="section return"><dt>Возвращает</dt><dd>std::string The type identifier of the object. </dd></dl>
-</li>
-</ul>
+<p>Чисто виртуальный метод для получения типа объекта СКВ. </p>
+<p>Это критически важно для хранения объектов и их восстановления (например, "commit", "blob", "tree"). </p><dl class="section return"><dt>Возвращает</dt><dd>std::string Идентификатор типа объекта. </dd></dl>
 
 <p>Замещается в <a class="el" href="classBlob.html#ac493b1634f088e53d436ba808ba02e86">Blob</a>, <a class="el" href="classCommit.html#a213b92691c2dae9e7ae7862eb9c369df">Commit</a>, <a class="el" href="classTestableObject.html#a89133227b30cea6642769a8cad7c1375">TestableObject</a> и <a class="el" href="classTree.html#a9b3870b1189b06efecd0a56aad4e467e">Tree</a>.</p>
 
@@ -338,13 +354,36 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 </table>
 </div><div class="memdoc">
 
-<p>Pure virtual method to serialize the object's core data. </p>
-<ul>
-<li>The returned string content is what will be hashed and stored in the database. <dl class="section return"><dt>Возвращает</dt><dd>std::string The standardized, serialized data of the object. </dd></dl>
-</li>
-</ul>
+<p>Чисто виртуальный метод для сериализации основных данных объекта. </p>
+<p>Возвращаемое строковое содержимое будет хешировано и сохранено в базе данных. </p><dl class="section return"><dt>Возвращает</dt><dd>std::string Стандартизированные, сериализованные данные объекта. </dd></dl>
 
 <p>Замещается в <a class="el" href="classBlob.html#acab4226b36adcfa257c94b96b40c3510">Blob</a>, <a class="el" href="classCommit.html#a53f442e035ddbdb18d0635bbac2709b5">Commit</a>, <a class="el" href="classTestableObject.html#ae79c1d60869dedd6c298a56e8e9f2309">TestableObject</a> и <a class="el" href="classTree.html#aae4f965e5566b0addf5467ba5db10e3f">Tree</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a6c9fd4ab39bb9781c5399da07305d28d" name="a6c9fd4ab39bb9781c5399da07305d28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9fd4ab39bb9781c5399da07305d28d">&#9670;&#160;</a></span>hash_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string VcsObject::hash_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Уникальный криптографический хеш-идентификатор (например, SHA-256) для этого объекта. </p>
+<p>Защищенный, чтобы разрешить внутреннюю установку через <a class="el" href="#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Вычисляет криптографический хеш-идентификатор для содержимого объекта.">computeHash()</a>, но предотвратить внешнее изменение. </p>
 
 </div>
 </div>

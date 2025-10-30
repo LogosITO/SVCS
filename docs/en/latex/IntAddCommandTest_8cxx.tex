@@ -1,0 +1,26 @@
+\doxysection{tests/cli/utils/\+Int\+Add\+Command\+Test.cxx File Reference}
+\hypertarget{IntAddCommandTest_8cxx}{}\label{IntAddCommandTest_8cxx}\index{tests/cli/utils/IntAddCommandTest.cxx@{tests/cli/utils/IntAddCommandTest.cxx}}
+
+
+Implementation of the \doxylink{classAddCommandTest}{Add\+Command\+Test} integration test fixture.  
+
+
+{\ttfamily \#include "{}Int\+Add\+Command\+Test.\+hxx"{}}\newline
+{\ttfamily \#include "{}../mocks/\+Mock\+Subject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classAddCommandTest}{Add\+Command\+Test} integration test fixture. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This file defines the {\ttfamily Set\+Up} and {\ttfamily Tear\+Down} routines, along with helper methods essential for testing the {\ttfamily \doxylink{classAddCommand}{Add\+Command}}. The setup includes\+:
+\begin{DoxyEnumerate}
+\item Initializing mock components (\doxylink{classMockSubject}{Mock\+Subject}).
+\item Initializing core components (\doxylink{classRepositoryManager}{Repository\+Manager}, \doxylink{classAddCommand}{Add\+Command}).
+\item Managing a temporary, isolated SVCS repository directory. 
+\end{DoxyEnumerate}

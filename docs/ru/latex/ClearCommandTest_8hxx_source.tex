@@ -1,0 +1,42 @@
+\doxysection{Clear\+Command\+Test.\+hxx}
+\hypertarget{ClearCommandTest_8hxx_source}{}\label{ClearCommandTest_8hxx_source}\index{tests/cli/utils/ClearCommandTest.hxx@{tests/cli/utils/ClearCommandTest.hxx}}
+\mbox{\hyperlink{ClearCommandTest_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ClearCommand_8hxx}{../../../cli/include/ClearCommand.hxx}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classClearCommandTest}{ClearCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00054\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classClearCommandTest_a1007b3a2a9211c18adf155701184ffb4}{mockEventBus}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classClearCommandTest_ae57088deacd4e80287b7d8045d4b9f6a}{repoManager}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ std::unique\_ptr<ClearCommand>\ \mbox{\hyperlink{classClearCommandTest_a5359c486c4aa7316d2d083b921b7d5f1}{command}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classClearCommandTest_a3aa96cd2c00623edcd42ccc1f76f4943}{testDir}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \ \ \ \ std::stringstream\ \mbox{\hyperlink{classClearCommandTest_a757e2312c69a688c18b27cafbf299c98}{inputStream}};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00099\ \ \ \ \ std::streambuf*\ \mbox{\hyperlink{classClearCommandTest_a849c79d660b8123e65698847fa4612da}{originalCin}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClearCommandTest_a445fb3d34f9eac29372bc2ab37f64ef9}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClearCommandTest_a974fec48c350cf3a165d645e2bb82fa4}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClearCommandTest_a6f4274eb3f665355a79034b64f62dd80}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content\ =\ \textcolor{stringliteral}{"{}test\ content"{}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClearCommandTest_a7c2a071223db041ffea0deb6ce274767}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClearCommandTest_a527589153d8f6a8bb263571b9aff360b}{simulateUserInput}}(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classClearCommandTest_acfc70a9daa3a28208acea85449211517}{repositoryExists}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00168\ \};}
+
+\end{DoxyCode}

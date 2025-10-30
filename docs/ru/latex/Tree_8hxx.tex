@@ -1,0 +1,56 @@
+\doxysection{Файл core/include/\+Tree.hxx}
+\hypertarget{Tree_8hxx}{}\label{Tree_8hxx}\index{core/include/Tree.hxx@{core/include/Tree.hxx}}
+
+
+Определяет класс \doxylink{classTree}{Tree}, представляющий иерархическую структуру (состояние директории) репозитория СКВ.  
+
+
+{\ttfamily \#include "{}Vcs\+Object.\+hxx"{}}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}}
+\begin{DoxyCompactList}\small\item\em Представляет отдельный элемент (файл или поддиректорию) внутри объекта \doxylink{classTree}{Tree}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTree}{Tree}}
+\begin{DoxyCompactList}\small\item\em Представляет состояние директории в СКВ, реализуя контракт \doxylink{classVcsObject}{Vcs\+Object}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \mbox{\hyperlink{Tree_8hxx_a15d13a6036a062282a24e34a2fe7751f}{create\+Entry}} (std\+::string name, std\+::string hash\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Создание записи дерева. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Определяет класс \doxylink{classTree}{Tree}, представляющий иерархическую структуру (состояние директории) репозитория СКВ. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Объект \doxylink{classTree}{Tree} хранит список структур \doxylink{structTreeEntry}{Tree\+Entry}, связывающих имена файлов и режимы с хеш-\/идентификаторами объектов \doxylink{classBlob}{Blob} или других \doxylink{classTree}{Tree} объектов. Его хеш критически зависит от отсортированного содержимого этих записей. 
+
+\label{doc-func-members}
+\Hypertarget{Tree_8hxx_doc-func-members}
+\doxysubsection{Функции}
+\Hypertarget{Tree_8hxx_a15d13a6036a062282a24e34a2fe7751f}\index{Tree.hxx@{Tree.hxx}!createEntry@{createEntry}}
+\index{createEntry@{createEntry}!Tree.hxx@{Tree.hxx}}
+\doxysubsubsection{\texorpdfstring{createEntry()}{createEntry()}}
+{\footnotesize\ttfamily \label{Tree_8hxx_a15d13a6036a062282a24e34a2fe7751f} 
+\mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} create\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{hash\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Создание записи дерева. 
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает готовую запись \doxylink{structTreeEntry}{Tree\+Entry}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя файла или поддиректории. \\
+\hline
+{\em hash\+\_\+id} & Хеш-\/идентификатор (SHA-\/256). \\
+\hline
+\end{DoxyParams}

@@ -1,14 +1,24 @@
 /**
- * @file IntStatusCommandTest.cxx
- * @brief Implementation of the integration tests for the StatusCommand class.
+* @file IntStatusCommandTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
- * @details This file provides the concrete implementation for the StatusCommandTest fixture. 
- * It sets up a temporary SVCS repository with initial untracked files and includes 
- * helper functions for creating files, directories, and staging changes. The fixture 
- * is designed to test the `svcs status` command's ability to report the working 
+ * @english
+ * @brief Implementation of the integration tests for the StatusCommand class.
+ * @details This file provides the concrete implementation for the StatusCommandTest fixture.
+ * It sets up a temporary SVCS repository with initial untracked files and includes
+ * helper functions for creating files, directories, and staging changes. The fixture
+ * is designed to test the `svcs status` command's ability to report the working
  * tree's state accurately.
- * * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Реализация интеграционных тестов для класса StatusCommand.
+ * @details Этот файл предоставляет конкретную реализацию для фикстура StatusCommandTest.
+ * Он настраивает временный репозиторий SVCS с начальными неотслеживаемыми файлами и включает
+ * вспомогательные функции для создания файлов, директорий и индексации изменений. Фикстур
+ * предназначен для тестирования способности команды `svcs status` точно отчитываться о состоянии
+ * рабочего дерева.
  */
 
 #include "IntStatusCommandTest.hxx"

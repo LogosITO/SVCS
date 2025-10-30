@@ -1,13 +1,23 @@
 /**
  * @file HelpCommandTest.cxx
- * @brief Unit tests for the HelpCommand class.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
- * @details This file implements test cases for the HelpCommandTest fixture, 
- * focusing on ensuring the command correctly interacts with the mock help service 
- * to provide general help, specific command help, and handles various edge cases 
+ * @english
+ * @brief Unit tests for the HelpCommand class.
+ * @details This file implements test cases for the HelpCommandTest fixture,
+ * focusing on ensuring the command correctly interacts with the mock help service
+ * to provide general help, specific command help, and handles various edge cases
  * like multiple arguments, missing help service dependency, and non-existent commands.
- * * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для класса HelpCommand.
+ * @details Этот файл реализует тестовые случаи для фикстура HelpCommandTest,
+ * фокусируясь на обеспечении корректного взаимодействия команды с mock сервисом справки
+ * для предоставления общей справки, справки по конкретным командам и обработки различных
+ * граничных случаев, таких как множественные аргументы, отсутствие зависимости от сервиса
+ * справки и несуществующие команды.
  */
 
  #include "utils/IntHelpCommandTest.hxx"

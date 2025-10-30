@@ -1,0 +1,47 @@
+\doxysection{Object\+Storage\+Test Class Reference}
+\hypertarget{classObjectStorageTest}{}\label{classObjectStorageTest}\index{ObjectStorageTest@{ObjectStorageTest}}
+
+
+Test fixture for the \doxylink{classObjectStorage}{Object\+Storage} class.  
+
+
+Inheritance diagram for Object\+Storage\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classObjectStorageTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classObjectStorageTest_a73a96a367936509e55dbad761eaa1528}\label{classObjectStorageTest_a73a96a367936509e55dbad761eaa1528} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classObjectStorageTest_a0a6d39fdbfe08b8afe156a03267ed2d2}\label{classObjectStorageTest_a0a6d39fdbfe08b8afe156a03267ed2d2} 
+void {\bfseries Tear\+Down} () override
+\item 
+\Hypertarget{classObjectStorageTest_a1413c333ffb7c3da2542526249265f6e}\label{classObjectStorageTest_a1413c333ffb7c3da2542526249265f6e} 
+bool {\bfseries file\+Exists\+On\+Disk} (const std\+::string \&hash) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classObjectStorageTest_a3298e4648e44f984f58ea3ebafc33f34}\label{classObjectStorageTest_a3298e4648e44f984f58ea3ebafc33f34} 
+\mbox{\hyperlink{classObjectStorage}{Object\+Storage}} \texorpdfstring{$\ast$}{*} {\bfseries storage} \{\}
+\item 
+\Hypertarget{classObjectStorageTest_a066937ca628d75692ea9067364172765}\label{classObjectStorageTest_a066937ca628d75692ea9067364172765} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+\_\+subject}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test fixture for the \doxylink{classObjectStorage}{Object\+Storage} class. 
+
+
+\begin{DoxyItemize}
+\item Manages the setup and teardown of the necessary filesystem structure (the temporary object storage directory) for isolated testing. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{StorageTest_8cxx}{Storage\+Test.\+cxx}}\end{DoxyCompactItemize}

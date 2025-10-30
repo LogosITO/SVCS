@@ -1,0 +1,27 @@
+\doxysection{Файл cli/include/\+Undo\+Command.hxx}
+\hypertarget{UndoCommand_8hxx}{}\label{UndoCommand_8hxx}\index{cli/include/UndoCommand.hxx@{cli/include/UndoCommand.hxx}}
+
+
+Объявление класса \doxylink{classUndoCommand}{Undo\+Command} для отмены изменений.  
+
+
+{\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUndoCommand}{Undo\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для возврата состояния репозитория к предыдущему коммиту. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Объявление класса \doxylink{classUndoCommand}{Undo\+Command} для отмены изменений. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+\doxylink{classUndoCommand}{Undo\+Command} отвечает за возврат рабочей директории репозитория и истории к состоянию предыдущего коммита. Он поддерживает отмену последнего коммита или конкретного коммита, идентифицированного по его хешу. Эта операция обычно включает подтверждение действия перед выполнением, если не используется флаг force. 

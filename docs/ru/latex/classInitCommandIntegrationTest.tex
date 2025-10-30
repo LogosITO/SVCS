@@ -1,0 +1,75 @@
+\doxysection{Класс Init\+Command\+Integration\+Test}
+\hypertarget{classInitCommandIntegrationTest}{}\label{classInitCommandIntegrationTest}\index{InitCommandIntegrationTest@{InitCommandIntegrationTest}}
+
+
+Тестовый фикстур для интеграционных тестов \doxylink{classInitCommand}{Init\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Init\+Command\+Integration\+Test.\+hxx$>$}
+
+Граф наследования\+:Init\+Command\+Integration\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classInitCommandIntegrationTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classInitCommandIntegrationTest_a45e0506b7ee57d813c135ca4474e867f}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInitCommandIntegrationTest_a1ab9e90df92fc32862f6321b36040df6}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classInitCommandIntegrationTest_a1c769369a95eff5e36169a8e7e68c148}\label{classInitCommandIntegrationTest_a1c769369a95eff5e36169a8e7e68c148} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Mock шина событий для захвата системных уведомлений. \end{DoxyCompactList}\item 
+\Hypertarget{classInitCommandIntegrationTest_a8ceca12279b153978cc6bdb61ba6685d}\label{classInitCommandIntegrationTest_a8ceca12279b153978cc6bdb61ba6685d} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Реальный экземпляр \doxylink{classRepositoryManager}{Repository\+Manager} под тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classInitCommandIntegrationTest_ab72da75169a3bdfeb154a50dd7bd79f5}\label{classInitCommandIntegrationTest_ab72da75169a3bdfeb154a50dd7bd79f5} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classInitCommand}{Init\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Экземпляр \doxylink{classInitCommand}{Init\+Command} под тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classInitCommandIntegrationTest_ab37e8a5c4872e694ee852f880c2fbf39}\label{classInitCommandIntegrationTest_ab37e8a5c4872e694ee852f880c2fbf39} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной директории, созданной для теста. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Тестовый фикстур для интеграционных тестов \doxylink{classInitCommand}{Init\+Command}. 
+
+Управляет настройкой и очисткой временной изолированной директории в файловой системе для каждого тестового случая. Использует реальный \doxylink{classRepositoryManager}{Repository\+Manager} для тестирования фактической логики создания репозитория и \doxylink{classMockSubject}{Mock\+Subject} для проверки публикации событий. 
+
+\label{doc-func-members}
+\Hypertarget{classInitCommandIntegrationTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classInitCommandIntegrationTest_a45e0506b7ee57d813c135ca4474e867f}\index{InitCommandIntegrationTest@{InitCommandIntegrationTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!InitCommandIntegrationTest@{InitCommandIntegrationTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classInitCommandIntegrationTest_a45e0506b7ee57d813c135ca4474e867f} 
+void Init\+Command\+Integration\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение. 
+
+Создает уникальную временную директорию, изменяет текущий путь на нее и инициализирует \doxylink{classRepositoryManager}{Repository\+Manager} и \doxylink{classInitCommand}{Init\+Command}. \Hypertarget{classInitCommandIntegrationTest_a1ab9e90df92fc32862f6321b36040df6}\index{InitCommandIntegrationTest@{InitCommandIntegrationTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!InitCommandIntegrationTest@{InitCommandIntegrationTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classInitCommandIntegrationTest_a1ab9e90df92fc32862f6321b36040df6} 
+void Init\+Command\+Integration\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение. 
+
+Восстанавливает оригинальный текущий путь и рекурсивно удаляет временную директорию. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{InitCommandIntegrationTest_8hxx}{Init\+Command\+Integration\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{InitCommandIntegrationTest_8cxx}{Init\+Command\+Integration\+Test.\+cxx}}\end{DoxyCompactItemize}

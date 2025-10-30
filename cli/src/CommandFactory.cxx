@@ -1,9 +1,14 @@
 /**
  * @file CommandFactory.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the CommandFactory class, which is responsible for dynamically creating ICommand objects and managing their lifecycle and dependencies.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса CommandFactory, который отвечает за динамическое создание объектов ICommand и управление их жизненным циклом и зависимостями.
  */
 
 #include "../include/Utils.hxx"

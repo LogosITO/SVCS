@@ -1,0 +1,162 @@
+\doxysection{Remove\+Command Class Reference}
+\hypertarget{classRemoveCommand}{}\label{classRemoveCommand}\index{RemoveCommand@{RemoveCommand}}
+
+
+Command for removing files from the staging area.  
+
+
+
+
+{\ttfamily \#include $<$Remove\+Command.\+hxx$>$}
+
+Inheritance diagram for Remove\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRemoveCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRemoveCommand_a740894bbd2e7bad0711ffd1191d4691c}{Remove\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classRemoveCommand}{Remove\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoveCommand_a46919288c69d6c00c77e3ac9ebdf0278}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the remove command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRemoveCommand_a26241aa87a8de9457f5a94406520d3d7}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRemoveCommand_ac40db3e0127048f9b084e84b6a206a3f}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRemoveCommand_aaa2c2457393ab1ee5d48954f5ef17f8f}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the usage syntax of the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommand_a0bc7a6be4c9c02abe353ec9f8357e80d}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Shows detailed help information for this command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command for removing files from the staging area. 
+
+The \doxylink{classRemoveCommand}{Remove\+Command} removes files from the staging area (index), effectively unstaging them while keeping the actual files intact. 
+
+\label{doc-constructors}
+\Hypertarget{classRemoveCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRemoveCommand_a740894bbd2e7bad0711ffd1191d4691c}\index{RemoveCommand@{RemoveCommand}!RemoveCommand@{RemoveCommand}}
+\index{RemoveCommand@{RemoveCommand}!RemoveCommand@{RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{RemoveCommand()}{RemoveCommand()}}
+{\footnotesize\ttfamily \label{classRemoveCommand_a740894bbd2e7bad0711ffd1191d4691c} 
+Remove\+Command\+::\+Remove\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{classRemoveCommand}{Remove\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & Shared pointer to the event bus for notifications. \\
+\hline
+{\em repo\+Manager} & Shared pointer to the repository manager. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classRemoveCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRemoveCommand_a46919288c69d6c00c77e3ac9ebdf0278}\index{RemoveCommand@{RemoveCommand}!execute@{execute}}
+\index{execute@{execute}!RemoveCommand@{RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classRemoveCommand_a46919288c69d6c00c77e3ac9ebdf0278} 
+bool Remove\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the remove command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Command arguments -\/ file paths to remove from staging. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if remove succeeded, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classRemoveCommand_ac40db3e0127048f9b084e84b6a206a3f}\index{RemoveCommand@{RemoveCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!RemoveCommand@{RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classRemoveCommand_ac40db3e0127048f9b084e84b6a206a3f} 
+std\+::string Remove\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the description of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Remove files from staging area"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classRemoveCommand_a26241aa87a8de9457f5a94406520d3d7}\index{RemoveCommand@{RemoveCommand}!getName@{getName}}
+\index{getName@{getName}!RemoveCommand@{RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classRemoveCommand_a26241aa87a8de9457f5a94406520d3d7} 
+std\+::string Remove\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}remove"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classRemoveCommand_aaa2c2457393ab1ee5d48954f5ef17f8f}\index{RemoveCommand@{RemoveCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!RemoveCommand@{RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classRemoveCommand_aaa2c2457393ab1ee5d48954f5ef17f8f} 
+std\+::string Remove\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the usage syntax of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}svcs remove $<$file$>$ \mbox{[}file2 ...\mbox{]}"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classRemoveCommand_a0bc7a6be4c9c02abe353ec9f8357e80d}\index{RemoveCommand@{RemoveCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!RemoveCommand@{RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classRemoveCommand_a0bc7a6be4c9c02abe353ec9f8357e80d} 
+void Remove\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Shows detailed help information for this command. 
+
+
+
+Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{RemoveCommand_8hxx}{Remove\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{RemoveCommand_8cxx}{Remove\+Command.\+cxx}}\end{DoxyCompactItemize}

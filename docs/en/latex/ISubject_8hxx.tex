@@ -1,0 +1,24 @@
+\doxysection{services/\+ISubject.hxx File Reference}
+\hypertarget{ISubject_8hxx}{}\label{ISubject_8hxx}\index{services/ISubject.hxx@{services/ISubject.hxx}}
+
+
+Defines the interface for the Subject (Publisher) component of the Observer pattern.  
+
+
+{\ttfamily \#include "{}IObserver.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classISubject}{ISubject}}
+\begin{DoxyCompactList}\small\item\em The Subject (Publisher) Interface (Abstract Base Class). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the interface for the Subject (Publisher) component of the Observer pattern. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This interface establishes the contract for any class that wishes to act as an event publisher, allowing Observers to register for notifications. It mandates the use of smart pointers for managing observer lifetimes. 

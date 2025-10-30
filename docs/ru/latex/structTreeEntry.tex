@@ -1,0 +1,65 @@
+\doxysection{Структура Tree\+Entry}
+\hypertarget{structTreeEntry}{}\label{structTreeEntry}\index{TreeEntry@{TreeEntry}}
+
+
+Представляет отдельный элемент (файл или поддиректорию) внутри объекта \doxylink{classTree}{Tree}.  
+
+
+
+
+{\ttfamily \#include $<$Tree.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structTreeEntry_ad89dfd85abbb8b8a1041fea93f50a940}{operator$<$}} (const \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \&other) const
+\begin{DoxyCompactList}\small\item\em Оператор сравнения, необходимый для сортировки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structTreeEntry_a134f10cecd1f81227572389485e04ad4}\label{structTreeEntry_a134f10cecd1f81227572389485e04ad4} 
+std\+::string {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em Режим файла (права доступа) и идентификатор типа (например, "{}100644"{} для blob, "{}040000"{} для tree). \end{DoxyCompactList}\item 
+\Hypertarget{structTreeEntry_aa025cb0a365aac0c2942a3249a244b1f}\label{structTreeEntry_aa025cb0a365aac0c2942a3249a244b1f} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Имя файла или поддиректории. \end{DoxyCompactList}\item 
+\Hypertarget{structTreeEntry_a8236e8177bef9f2380f9893ee916cc77}\label{structTreeEntry_a8236e8177bef9f2380f9893ee916cc77} 
+std\+::string {\bfseries hash\+\_\+id}
+\begin{DoxyCompactList}\small\item\em Хеш-\/идентификатор (SHA-\/256) ссылаемого объекта (\doxylink{classBlob}{Blob} или \doxylink{classTree}{Tree}). \end{DoxyCompactList}\item 
+\Hypertarget{structTreeEntry_a499a6f99a9c45e62c78e6d61f6341e0c}\label{structTreeEntry_a499a6f99a9c45e62c78e6d61f6341e0c} 
+std\+::string {\bfseries type}
+\begin{DoxyCompactList}\small\item\em Тип ссылаемого объекта ("{}blob"{} или "{}tree"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Представляет отдельный элемент (файл или поддиректорию) внутри объекта \doxylink{classTree}{Tree}. 
+
+Эта структура связывает имя и режим файла с хеш-\/идентификатором другого объекта СКВ. 
+
+\label{doc-func-members}
+\Hypertarget{structTreeEntry_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{structTreeEntry_ad89dfd85abbb8b8a1041fea93f50a940}\index{TreeEntry@{TreeEntry}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!TreeEntry@{TreeEntry}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{structTreeEntry_ad89dfd85abbb8b8a1041fea93f50a940} 
+bool Tree\+Entry\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Оператор сравнения, необходимый для сортировки. 
+
+Записи должны быть отсортированы по алфавиту по имени перед сериализацией для обеспечения стабильного и последовательного хеш-\/идентификатора объекта \doxylink{classTree}{Tree}. 
+\begin{DoxyParams}{Аргументы}
+{\em other} & Запись \doxylink{structTreeEntry}{Tree\+Entry} для сравнения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True, если эта запись должна предшествовать записи \textquotesingle{}other\textquotesingle{} в отсортированном списке. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов структур находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Tree_8hxx}{Tree.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Tree_8cxx}{Tree.\+cxx}}\end{DoxyCompactItemize}

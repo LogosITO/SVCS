@@ -1,0 +1,26 @@
+\doxysection{Файл tests/cli/utils/\+Int\+Add\+Command\+Test.cxx}
+\hypertarget{IntAddCommandTest_8cxx}{}\label{IntAddCommandTest_8cxx}\index{tests/cli/utils/IntAddCommandTest.cxx@{tests/cli/utils/IntAddCommandTest.cxx}}
+
+
+Реализация интеграционного тестового фикстура \doxylink{classAddCommandTest}{Add\+Command\+Test}.  
+
+
+{\ttfamily \#include "{}Int\+Add\+Command\+Test.\+hxx"{}}\newline
+{\ttfamily \#include "{}../mocks/\+Mock\+Subject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+
+
+\doxysubsection{Подробное описание}
+Реализация интеграционного тестового фикстура \doxylink{classAddCommandTest}{Add\+Command\+Test}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот файл определяет процедуры {\ttfamily Set\+Up} и {\ttfamily Tear\+Down}, а также вспомогательные методы, необходимые для тестирования {\ttfamily \doxylink{classAddCommand}{Add\+Command}}. Настройка включает\+:
+\begin{DoxyEnumerate}
+\item Инициализацию mock-\/компонентов (\doxylink{classMockSubject}{Mock\+Subject}).
+\item Инициализацию основных компонентов (\doxylink{classRepositoryManager}{Repository\+Manager}, \doxylink{classAddCommand}{Add\+Command}).
+\item Управление временной изолированной директорией репозитория SVCS. 
+\end{DoxyEnumerate}

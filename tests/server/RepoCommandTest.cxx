@@ -1,7 +1,31 @@
 /**
-* @file RepoCommandTest.cpp
- * @brief Интеграционные тесты для класса RepoCommand.
+ * @file RepoCommandTest.cpp
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
+ * @english
+ * @brief Integration tests for the RepoCommand class.
+ * @details This file contains tests for the @ref RepoCommand class, which
+ * manages remote repositories using @ref RemoteManager. The tests
+ * use the Google Test (gtest) framework.
+ *
+ * @b Testing_Scope:
+ * - **Repository Context**: Verifies that the command fails
+ * if not inside an initialized SVCS repository.
+ * - **Subcommands**: Tests the full lifecycle of remote repositories
+ * (`add`, `remove`, `rename`, `list`).
+ * - **Input/Output**: Verifies that console output (`std::cout`) matches
+ * expected success messages and that errors are handled correctly.
+ * - **Filesystem**: Indirectly tests persistence, since
+ * @ref RemoteManager saves changes to the 'remotes' file.
+ *
+ * The test environment (`RepoCommandTest`) creates and cleans up a temporary
+ * repository for each test. Tests temporarily change the current working
+ * directory (`fs::current_path`) to simulate running the command from the repository root.
+ *
+ * @russian
+ * @brief Интеграционные тесты для класса RepoCommand.
  * @details Этот файл содержит тесты для класса @ref RepoCommand, который
  * управляет удаленными репозиториями с помощью @ref RemoteManager. Тесты
  * используют фреймворк Google Test (gtest).
@@ -13,15 +37,12 @@
  * (`add`, `remove`, `rename`, `list`).
  * - **Ввод/вывод**: Проверяет, что вывод на консоль (`std::cout`) соответствует
  * ожидаемым сообщениям об успехе и что ошибки корректно обрабатываются.
- * - **Файловая система**: Косвенно проверяет персистентность, так как
+ * - **Файловая система**: Косвенно проверяет сохранение состояния, так как
  * @ref RemoteManager сохраняет изменения в файл 'remotes'.
  *
  * Тестовое окружение (`RepoCommandTest`) создает и очищает временный
  * репозиторий для каждого теста. Тесты временно изменяют текущий рабочий
  * каталог (`fs::current_path`) для имитации запуска команды из корня репозитория.
- *
- * @copyright **Copyright (c) 2025 LogosITO** (Предполагается)
- * @license **MIT License** (Предполагается)
  */
 
 #include <gtest/gtest.h>

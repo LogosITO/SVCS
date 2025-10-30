@@ -1,0 +1,150 @@
+\doxysection{Класс Remove\+Command\+Test}
+\hypertarget{classRemoveCommandTest}{}\label{classRemoveCommandTest}\index{RemoveCommandTest@{RemoveCommandTest}}
+
+
+Google Test фикстур для запуска интеграционных тестов \doxylink{classRemoveCommand}{Remove\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Remove\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:Remove\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRemoveCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a86bbe1b606a35a1a11d34724e0fc35b2}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a0f6569a8a10477a0f4c0cbd789638a2f}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a84749538ba2d893f044554a9c18b5ff1}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл с указанным содержимым во временной директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a90e4479ea9547df7885ea31f7ae08be5}{create\+Test\+Directory}} (const std\+::string \&dirname)
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию во временном расположении. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a2b86efc078f51d495d09353cb94251e5}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Индексирует список файлов (используя логику команды add для удобства) в области индексации \doxylink{classRepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRemoveCommandTest_aaa1ab8e6182258023a2d9162dc4c089f}\label{classRemoveCommandTest_aaa1ab8e6182258023a2d9162dc4c089f} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий (наблюдатель). \end{DoxyCompactList}\item 
+\Hypertarget{classRemoveCommandTest_a15568c85580d2f6515c679fdadef3df8}\label{classRemoveCommandTest_a15568c85580d2f6515c679fdadef3df8} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Общий указатель на компонент основной логики репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{classRemoveCommandTest_a3f82597bc8ae4cb6d8e96f9e097bb1df}\label{classRemoveCommandTest_a3f82597bc8ae4cb6d8e96f9e097bb1df} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRemoveCommand}{Remove\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\item 
+\Hypertarget{classRemoveCommandTest_afaa2df2092f0992a12d69cd988a38f9f}\label{classRemoveCommandTest_afaa2df2092f0992a12d69cd988a38f9f} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной тестовой директории репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска интеграционных тестов \doxylink{classRemoveCommand}{Remove\+Command}. 
+
+Этот фикстур предоставляет необходимую инфраструктуру для тестирования команды удаления файлов, обеспечивая корректную индексацию файлов для удаления из репозитория, обработку ошибок и соблюдение параметров командной строки. 
+
+\label{doc-func-members}
+\Hypertarget{classRemoveCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51}\index{RemoveCommandTest@{RemoveCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51} 
+bool Remove\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRemoveCommandTest_a90e4479ea9547df7885ea31f7ae08be5}\index{RemoveCommandTest@{RemoveCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a90e4479ea9547df7885ea31f7ae08be5} 
+void Remove\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию во временном расположении. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Относительный путь/имя директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRemoveCommandTest_a84749538ba2d893f044554a9c18b5ff1}\index{RemoveCommandTest@{RemoveCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a84749538ba2d893f044554a9c18b5ff1} 
+void Remove\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл с указанным содержимым во временной директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Относительный путь/имя файла. \\
+\hline
+{\em content} & Содержимое для записи в файл. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRemoveCommandTest_a86bbe1b606a35a1a11d34724e0fc35b2}\index{RemoveCommandTest@{RemoveCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a86bbe1b606a35a1a11d34724e0fc35b2} 
+void Remove\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение перед каждым тестом. 
+
+Инициализирует компоненты, создает временную директорию и инициализирует репозиторий. \Hypertarget{classRemoveCommandTest_a2b86efc078f51d495d09353cb94251e5}\index{RemoveCommandTest@{RemoveCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a2b86efc078f51d495d09353cb94251e5} 
+void Remove\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Индексирует список файлов (используя логику команды add для удобства) в области индексации \doxylink{classRepositoryManager}{Repository\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em files} & Вектор имен файлов для индексации. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRemoveCommandTest_a0f6569a8a10477a0f4c0cbd789638a2f}\index{RemoveCommandTest@{RemoveCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a0f6569a8a10477a0f4c0cbd789638a2f} 
+void Remove\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение после каждого теста. 
+
+Очищает временную директорию и восстанавливает рабочий путь. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntRemoveCommandTest_8hxx}{Int\+Remove\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntRemoveCommandTest_8cxx}{Int\+Remove\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

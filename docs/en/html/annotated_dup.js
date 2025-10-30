@@ -67,5 +67,5 @@ var annotated_dup =
     [ "UndoCommandTest", "classUndoCommandTest.html", "classUndoCommandTest" ],
     [ "VcsObject", "classVcsObject.html", "classVcsObject" ],
     [ "VersionCommand", "classVersionCommand.html", "classVersionCommand" ],
-    [ "VersionCommandTest", "classVersionCommandTest.html", null ]
+    [ "VersionCommandTest", "classVersionCommandTest.html", "classVersionCommandTest" ]
 ];

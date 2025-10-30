@@ -1,0 +1,150 @@
+\doxysection{Remove\+Command\+Test Class Reference}
+\hypertarget{classRemoveCommandTest}{}\label{classRemoveCommandTest}\index{RemoveCommandTest@{RemoveCommandTest}}
+
+
+Google Test fixture for running integration tests against the \doxylink{classRemoveCommand}{Remove\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Remove\+Command\+Test.\+hxx$>$}
+
+Inheritance diagram for Remove\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRemoveCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a86bbe1b606a35a1a11d34724e0fc35b2}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the testing environment before each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a0f6569a8a10477a0f4c0cbd789638a2f}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Tears down the testing environment after each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a84749538ba2d893f044554a9c18b5ff1}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Creates a test file with specified content in the temporary directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a90e4479ea9547df7885ea31f7ae08be5}{create\+Test\+Directory}} (const std\+::string \&dirname)
+\begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveCommandTest_a2b86efc078f51d495d09353cb94251e5}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Stages a list of files (using the add command logic for convenience) in the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRemoveCommandTest_aaa1ab8e6182258023a2d9162dc4c089f}\label{classRemoveCommandTest_aaa1ab8e6182258023a2d9162dc4c089f} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer). \end{DoxyCompactList}\item 
+\Hypertarget{classRemoveCommandTest_a15568c85580d2f6515c679fdadef3df8}\label{classRemoveCommandTest_a15568c85580d2f6515c679fdadef3df8} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
+\Hypertarget{classRemoveCommandTest_a3f82597bc8ae4cb6d8e96f9e097bb1df}\label{classRemoveCommandTest_a3f82597bc8ae4cb6d8e96f9e097bb1df} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRemoveCommand}{Remove\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
+\Hypertarget{classRemoveCommandTest_afaa2df2092f0992a12d69cd988a38f9f}\label{classRemoveCommandTest_afaa2df2092f0992a12d69cd988a38f9f} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Path to the temporary test repository directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Google Test fixture for running integration tests against the \doxylink{classRemoveCommand}{Remove\+Command}. 
+
+This fixture provides the necessary infrastructure for testing the file removal command, ensuring it correctly stages files for removal from the repository, handles errors, and respects command line options. 
+
+\label{doc-func-members}
+\Hypertarget{classRemoveCommandTest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51}\index{RemoveCommandTest@{RemoveCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51} 
+bool Remove\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Checks if a specific message (substring) exists in any event notification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the message is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classRemoveCommandTest_a90e4479ea9547df7885ea31f7ae08be5}\index{RemoveCommandTest@{RemoveCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a90e4479ea9547df7885ea31f7ae08be5} 
+void Remove\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test directory in the temporary location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & The relative path/name of the directory. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRemoveCommandTest_a84749538ba2d893f044554a9c18b5ff1}\index{RemoveCommandTest@{RemoveCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a84749538ba2d893f044554a9c18b5ff1} 
+void Remove\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test file with specified content in the temporary directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The relative path/name of the file. \\
+\hline
+{\em content} & The content to write to the file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRemoveCommandTest_a86bbe1b606a35a1a11d34724e0fc35b2}\index{RemoveCommandTest@{RemoveCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a86bbe1b606a35a1a11d34724e0fc35b2} 
+void Remove\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Sets up the testing environment before each test. 
+
+Initializes components, creates the temporary directory, and initializes the repository. \Hypertarget{classRemoveCommandTest_a2b86efc078f51d495d09353cb94251e5}\index{RemoveCommandTest@{RemoveCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a2b86efc078f51d495d09353cb94251e5} 
+void Remove\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stages a list of files (using the add command logic for convenience) in the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & A vector of file names to stage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRemoveCommandTest_a0f6569a8a10477a0f4c0cbd789638a2f}\index{RemoveCommandTest@{RemoveCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!RemoveCommandTest@{RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classRemoveCommandTest_a0f6569a8a10477a0f4c0cbd789638a2f} 
+void Remove\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Tears down the testing environment after each test. 
+
+Cleans up the temporary directory and restores the working path. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntRemoveCommandTest_8hxx}{Int\+Remove\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntRemoveCommandTest_8cxx}{Int\+Remove\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

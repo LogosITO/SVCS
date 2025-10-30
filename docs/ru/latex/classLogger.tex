@@ -1,0 +1,282 @@
+\doxysection{Класс Logger}
+\hypertarget{classLogger}{}\label{classLogger}\index{Logger@{Logger}}
+
+
+Потокобезопасный Singleton класс, отвечающий за логирование системных событий.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+hxx$>$}
+
+Граф наследования\+:Logger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLogger}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLogger_a46f0bc190af0631a7cacfc63dc0e35fa}{Logger}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\Hypertarget{classLogger_afee741267f0de25da55208a6424eb84f}\label{classLogger_afee741267f0de25da55208a6424eb84f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Logger} () override
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a2053c71402fe93a43ea3170ed67807d5}{update}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Метод, вызываемый Subject для уведомления наблюдателя событием. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a96a2b88ee6d81d3ecf0fed3a6291c9a2}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Метод, вызываемый subject для уведомления наблюдателя. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a38b544d566463a65d0dbf4ff7f867962}{debug}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне DEBUG. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_ab4c4d86279176eb0ede726bc5b4d5ddb}{info}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне INFO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a24b519e0f53e73937f93edd2da37ea76}{warn}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне WARN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_ab6042fdfcbb14026098e0df9d6b32f27}{error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне ERROR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_ab934865d3713793d0353271a475eaf4b}{fatal}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне FATAL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_ab8a7575ce3865917922563c88ab4f876}{set\+Level}} (\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em Устанавливает минимальный уровень логов для этого экземпляра. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \mbox{\hyperlink{classLogger_af4490985642cdb388e65741ca5815851}{get\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Получает текущий минимальный уровень логов. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a8925c4a17c3ec533a548ea01b3608d01}{set\+Pattern}} (const std\+::string \&pattern)
+\begin{DoxyCompactList}\small\item\em Устанавливает шаблон форматирования вывода для сообщений. \end{DoxyCompactList}\item 
+\Hypertarget{classLogger_a5cc08473729523bb4bde48459f2ac468}\label{classLogger_a5cc08473729523bb4bde48459f2ac468} 
+void {\bfseries flush} ()
+\begin{DoxyCompactList}\small\item\em Принудительно записывает весь буферизованный вывод логов немедленно (например, на диск). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classIObserver}{IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObserver_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор по умолчанию. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLogger}{Logger}} $>$ \mbox{\hyperlink{classLogger_ae89f7f2e31ba586b76734c1e23581504}{get\+Instance}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Получает Singleton экземпляр \doxylink{classLogger}{Logger} для заданного имени. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classLogger_af473e558d8af4804863bfec0426433d0}{clear\+Instances}} ()
+\begin{DoxyCompactList}\small\item\em Очищает все зарегистрированные Singleton экземпляры. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Потокобезопасный Singleton класс, отвечающий за логирование системных событий. 
+
+Реализует интерфейс \doxylink{classIObserver}{IObserver} для автоматического получения и обработки событий, сгенерированных командами и основными компонентами. 
+
+\label{doc-constructors}
+\Hypertarget{classLogger_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classLogger_a46f0bc190af0631a7cacfc63dc0e35fa}\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily \label{classLogger_a46f0bc190af0631a7cacfc63dc0e35fa} 
+Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Приватный/защищенный доступ обычно обеспечивается в файле реализации Singleton. 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Уникальное имя для этого экземпляра логгера. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classLogger_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classLogger_af473e558d8af4804863bfec0426433d0}\index{Logger@{Logger}!clearInstances@{clearInstances}}
+\index{clearInstances@{clearInstances}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{clearInstances()}{clearInstances()}}
+{\footnotesize\ttfamily \label{classLogger_af473e558d8af4804863bfec0426433d0} 
+void Logger\+::clear\+Instances (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Очищает все зарегистрированные Singleton экземпляры. 
+
+Используется в основном для очистки в тестовых средах. \Hypertarget{classLogger_a38b544d566463a65d0dbf4ff7f867962}\index{Logger@{Logger}!debug@{debug}}
+\index{debug@{debug}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily \label{classLogger_a38b544d566463a65d0dbf4ff7f867962} 
+void Logger\+::debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне DEBUG. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_ab6042fdfcbb14026098e0df9d6b32f27}\index{Logger@{Logger}!error@{error}}
+\index{error@{error}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \label{classLogger_ab6042fdfcbb14026098e0df9d6b32f27} 
+void Logger\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне ERROR. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_ab934865d3713793d0353271a475eaf4b}\index{Logger@{Logger}!fatal@{fatal}}
+\index{fatal@{fatal}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{fatal()}{fatal()}}
+{\footnotesize\ttfamily \label{classLogger_ab934865d3713793d0353271a475eaf4b} 
+void Logger\+::fatal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне FATAL. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_ae89f7f2e31ba586b76734c1e23581504}\index{Logger@{Logger}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{classLogger_ae89f7f2e31ba586b76734c1e23581504} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLogger}{Logger}} $>$ Logger\+::get\+Instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Получает Singleton экземпляр \doxylink{classLogger}{Logger} для заданного имени. 
+
+Создает и регистрирует новый экземпляр, если он еще не существует. 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя желаемого экземпляра логгера. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Общий указатель на экземпляр \doxylink{classLogger}{Logger}. 
+\end{DoxyReturn}
+\Hypertarget{classLogger_af4490985642cdb388e65741ca5815851}\index{Logger@{Logger}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily \label{classLogger_af4490985642cdb388e65741ca5815851} 
+\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} Logger\+::get\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Получает текущий минимальный уровень логов. 
+
+\begin{DoxyReturn}{Возвращает}
+Текущий \doxylink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}. 
+\end{DoxyReturn}
+\Hypertarget{classLogger_ab4c4d86279176eb0ede726bc5b4d5ddb}\index{Logger@{Logger}!info@{info}}
+\index{info@{info}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily \label{classLogger_ab4c4d86279176eb0ede726bc5b4d5ddb} 
+void Logger\+::info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне INFO. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_a96a2b88ee6d81d3ecf0fed3a6291c9a2}\index{Logger@{Logger}!notify@{notify}}
+\index{notify@{notify}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classLogger_a96a2b88ee6d81d3ecf0fed3a6291c9a2} 
+void Logger\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Метод, вызываемый subject для уведомления наблюдателя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event} & Структура \doxylink{structEvent}{Event}, содержащая данные уведомления. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Уст.}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Уст.}}]Примечание\+: Этот метод, вероятно, избыточен с \doxylink{classLogger_a2053c71402fe93a43ea3170ed67807d5}{update(const Event\& event)} на основе определения \doxylink{classIObserver}{IObserver}. В идеале он должен соответствовать той же логике, что и {\ttfamily update}. \end{DoxyRefDesc}
+
+
+Замещает \mbox{\hyperlink{classIObserver_a325451b0d0100feaad6f683850a616dc}{IObserver}}.
+
+\Hypertarget{classLogger_ab8a7575ce3865917922563c88ab4f876}\index{Logger@{Logger}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setLevel()}{setLevel()}}
+{\footnotesize\ttfamily \label{classLogger_ab8a7575ce3865917922563c88ab4f876} 
+void Logger\+::set\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}}]{level}{}\end{DoxyParamCaption})}
+
+
+
+Устанавливает минимальный уровень логов для этого экземпляра. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em level} & Новый \doxylink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_a8925c4a17c3ec533a548ea01b3608d01}\index{Logger@{Logger}!setPattern@{setPattern}}
+\index{setPattern@{setPattern}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setPattern()}{setPattern()}}
+{\footnotesize\ttfamily \label{classLogger_a8925c4a17c3ec533a548ea01b3608d01} 
+void Logger\+::set\+Pattern (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pattern}{}\end{DoxyParamCaption})}
+
+
+
+Устанавливает шаблон форматирования вывода для сообщений. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em pattern} & Новая строка формата (детали реализации зависят от синтаксиса шаблона). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_a2053c71402fe93a43ea3170ed67807d5}\index{Logger@{Logger}!update@{update}}
+\index{update@{update}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classLogger_a2053c71402fe93a43ea3170ed67807d5} 
+void Logger\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Метод, вызываемый Subject для уведомления наблюдателя событием. 
+
+Сопоставляет \doxylink{structEvent_a2abf13b5be49315e9e362af02029f058}{Event\+::\+Type} с \doxylink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level} и обрабатывает сообщение. 
+\begin{DoxyParams}{Аргументы}
+{\em event} & Структура \doxylink{structEvent}{Event}, содержащая данные уведомления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classIObserver_af15fbd52637f4bf0225fde86051d8354}{IObserver}}.
+
+\Hypertarget{classLogger_a24b519e0f53e73937f93edd2da37ea76}\index{Logger@{Logger}!warn@{warn}}
+\index{warn@{warn}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{warn()}{warn()}}
+{\footnotesize\ttfamily \label{classLogger_a24b519e0f53e73937f93edd2da37ea76} 
+void Logger\+::warn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне WARN. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+services/logging/\mbox{\hyperlink{Logger_8hxx}{Logger.\+hxx}}\item 
+services/logging/\mbox{\hyperlink{Logger_8cxx}{Logger.\+cxx}}\end{DoxyCompactItemize}

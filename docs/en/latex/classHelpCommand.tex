@@ -1,0 +1,162 @@
+\doxysection{Help\+Command Class Reference}
+\hypertarget{classHelpCommand}{}\label{classHelpCommand}\index{HelpCommand@{HelpCommand}}
+
+
+Command for displaying help information about other commands.  
+
+
+
+
+{\ttfamily \#include $<$Help\+Command.\+hxx$>$}
+
+Inheritance diagram for Help\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHelpCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHelpCommand_a7dad941d44085add252579daf3faf8c0}{Help\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classHelpService}{Help\+Service}} $>$ help\+Service)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classHelpCommand}{Help\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHelpCommand_aacde352bc8bc40668b09415c07857ac7}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the help command logic. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHelpCommand_ad7b1ec70f8f31646035b4bbb4ef94899}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHelpCommand_a236f111255786e8949a0bea269c48677}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the brief description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHelpCommand_a682a95b46e84c2489771dabb7c5e240d}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the usage syntax of the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelpCommand_afacdd5404027b7bd4dc7a6958b2e8c3a}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Shows detailed help information for this specific command via the event bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command for displaying help information about other commands. 
+
+The {\bfseries{\doxylink{classHelpCommand}{Help\+Command}}} is the application\textquotesingle{}s built-\/in help utility. It can show a general list of all available commands or display detailed usage and descriptions for a specific command provided as an argument. It delegates the retrieval of command information to the {\bfseries{\doxylink{classHelpService}{Help\+Service}}} to maintain a clean separation of concerns. 
+
+\label{doc-constructors}
+\Hypertarget{classHelpCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHelpCommand_a7dad941d44085add252579daf3faf8c0}\index{HelpCommand@{HelpCommand}!HelpCommand@{HelpCommand}}
+\index{HelpCommand@{HelpCommand}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{HelpCommand()}{HelpCommand()}}
+{\footnotesize\ttfamily \label{classHelpCommand_a7dad941d44085add252579daf3faf8c0} 
+Help\+Command\+::\+Help\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classHelpService}{Help\+Service}} $>$}]{help\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{classHelpCommand}{Help\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & Shared pointer to the event bus for logging and output notifications. \\
+\hline
+{\em help\+Service} & Shared pointer to the help service dependency. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classHelpCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHelpCommand_aacde352bc8bc40668b09415c07857ac7}\index{HelpCommand@{HelpCommand}!execute@{execute}}
+\index{execute@{execute}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classHelpCommand_aacde352bc8bc40668b09415c07857ac7} 
+bool Help\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the help command logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Command arguments. If the vector is empty, general help is shown. If it contains one command name, detailed help for that command is shown. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} always, as the help command is not expected to encounter a runtime failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classHelpCommand_a236f111255786e8949a0bea269c48677}\index{HelpCommand@{HelpCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classHelpCommand_a236f111255786e8949a0bea269c48677} 
+std\+::string Help\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the brief description of the command. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}\+Show help information for commands"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classHelpCommand_ad7b1ec70f8f31646035b4bbb4ef94899}\index{HelpCommand@{HelpCommand}!getName@{getName}}
+\index{getName@{getName}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classHelpCommand_ad7b1ec70f8f31646035b4bbb4ef94899} 
+std\+::string Help\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}help"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classHelpCommand_a682a95b46e84c2489771dabb7c5e240d}\index{HelpCommand@{HelpCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classHelpCommand_a682a95b46e84c2489771dabb7c5e240d} 
+std\+::string Help\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the usage syntax of the command. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}svcs help \mbox{[}command\mbox{]}"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classHelpCommand_afacdd5404027b7bd4dc7a6958b2e8c3a}\index{HelpCommand@{HelpCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classHelpCommand_afacdd5404027b7bd4dc7a6958b2e8c3a} 
+void Help\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Shows detailed help information for this specific command via the event bus. 
+
+
+
+Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{HelpCommand_8hxx}{Help\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{HelpCommand_8cxx}{Help\+Command.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,28 @@
+\doxysection{server/include/\+Repo\+Command.hxx File Reference}
+\hypertarget{RepoCommand_8hxx}{}\label{RepoCommand_8hxx}\index{server/include/RepoCommand.hxx@{server/include/RepoCommand.hxx}}
+
+
+Declaration of the \doxylink{classRepoCommand}{Repo\+Command} class.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}Remote\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classRepoCommand}{Repo\+Command}}
+\begin{DoxyCompactList}\small\item\em Command handler for managing repository remotes and configurations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classRepoCommand}{Repo\+Command} class. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+\doxylink{classRepoCommand}{Repo\+Command} implements the \doxylink{classICommand}{ICommand} interface to manage repository-\/level configurations, primarily focusing on managing {\bfseries{remotes}}. This command acts as a facade, delegating the actual management of remotes to the \doxylink{classRemoteManager}{Remote\+Manager} class after ensuring the command is executed within a valid repository context (implicitly handled by \doxylink{classRepositoryManager}{Repository\+Manager}). The command supports subcommands like {\ttfamily add}, {\ttfamily remove}, {\ttfamily list}, and {\ttfamily rename}. 

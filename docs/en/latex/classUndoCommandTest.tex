@@ -1,0 +1,217 @@
+\doxysection{Undo\+Command\+Test Class Reference}
+\hypertarget{classUndoCommandTest}{}\label{classUndoCommandTest}\index{UndoCommandTest@{UndoCommandTest}}
+
+
+Google Test fixture for running integration tests against the \doxylink{classUndoCommand}{Undo\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Undo\+Command\+Test.\+hxx$>$}
+
+Inheritance diagram for Undo\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUndoCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUndoCommandTest_a16b24e7d93c0534f3901f4cd5cd8b3a8}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the testing environment before each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUndoCommandTest_a2a082617dae3a8ac27fdeab0de4e5b3c}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Tears down the testing environment after each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUndoCommandTest_a8713ecffcd85c2e00b86cf599ad2986e}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content) const
+\begin{DoxyCompactList}\small\item\em Creates a test file with specified content in the temporary directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUndoCommandTest_a84b1211ba7256902f112b9f6f7726b65}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUndoCommandTest_a0040c7c506fa9026c0b9c1bdbd7dfa54}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUndoCommandTest_a1106d4d824964caf50800ca487355328}{create\+Test\+Commit}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Creates a new commit (save) with a specified message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classUndoCommandTest_a274ab1a49b83056b359ae465a27cdddc}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classUndoCommandTest_a19ae731837894936b259f6c12e948f0d}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Counts the occurrences of a specific message (substring) across all event notifications. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUndoCommandTest_ab2616fda4df38dac96a12716f353595f}{simulate\+User\+Input}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Simulates user input by pushing the string into the mock event bus\textquotesingle{}s input queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUndoCommandTest_aaab6fd7b2ac1845cea035509a4b27fd8}\label{classUndoCommandTest_aaab6fd7b2ac1845cea035509a4b27fd8} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer/input simulator). \end{DoxyCompactList}\item 
+\Hypertarget{classUndoCommandTest_a953ba8563850b1f59d347f0394db5a4f}\label{classUndoCommandTest_a953ba8563850b1f59d347f0394db5a4f} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
+\Hypertarget{classUndoCommandTest_ae35ccb30eb05bba1da30fcdf7278478a}\label{classUndoCommandTest_ae35ccb30eb05bba1da30fcdf7278478a} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classUndoCommand}{Undo\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
+\Hypertarget{classUndoCommandTest_a6ada7d6a933f4e447ad01bb6ae17bb27}\label{classUndoCommandTest_a6ada7d6a933f4e447ad01bb6ae17bb27} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Path to the temporary test repository directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Google Test fixture for running integration tests against the \doxylink{classUndoCommand}{Undo\+Command}. 
+
+This fixture provides the necessary infrastructure for testing the undo command\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Manage a temporary SVCS repository directory.
+\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for event bus/output/input simulation) and \doxylink{classRepositoryManager}{Repository\+Manager} (for core logic).
+\item {\bfseries{Helper Methods\+:}} Simplify file manipulation, staging, committing, and verification of notifications. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classUndoCommandTest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUndoCommandTest_a274ab1a49b83056b359ae465a27cdddc}\index{UndoCommandTest@{UndoCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_a274ab1a49b83056b359ae465a27cdddc} 
+bool Undo\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Checks if a specific message (substring) exists in any event notification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the message is found in any notification, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classUndoCommandTest_a19ae731837894936b259f6c12e948f0d}\index{UndoCommandTest@{UndoCommandTest}!countMessages@{countMessages}}
+\index{countMessages@{countMessages}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_a19ae731837894936b259f6c12e948f0d} 
+int Undo\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Counts the occurrences of a specific message (substring) across all event notifications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to count. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of events containing the substring. 
+\end{DoxyReturn}
+\Hypertarget{classUndoCommandTest_a1106d4d824964caf50800ca487355328}\index{UndoCommandTest@{UndoCommandTest}!createTestCommit@{createTestCommit}}
+\index{createTestCommit@{createTestCommit}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestCommit()}{createTestCommit()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_a1106d4d824964caf50800ca487355328} 
+bool Undo\+Command\+Test\+::create\+Test\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a new commit (save) with a specified message. 
+
+Internally stages files (if needed) and calls the repository manager\textquotesingle{}s commit logic. 
+\begin{DoxyParams}{Parameters}
+{\em message} & The commit message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the commit was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classUndoCommandTest_a84b1211ba7256902f112b9f6f7726b65}\index{UndoCommandTest@{UndoCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_a84b1211ba7256902f112b9f6f7726b65} 
+void Undo\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test directory in the temporary location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & The relative path/name of the directory. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUndoCommandTest_a8713ecffcd85c2e00b86cf599ad2986e}\index{UndoCommandTest@{UndoCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_a8713ecffcd85c2e00b86cf599ad2986e} 
+void Undo\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test file with specified content in the temporary directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The relative path/name of the file. \\
+\hline
+{\em content} & The content to write to the file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUndoCommandTest_a16b24e7d93c0534f3901f4cd5cd8b3a8}\index{UndoCommandTest@{UndoCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_a16b24e7d93c0534f3901f4cd5cd8b3a8} 
+void Undo\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Sets up the testing environment before each test. 
+
+Initializes components, creates the temporary directory, and initializes the repository. \Hypertarget{classUndoCommandTest_ab2616fda4df38dac96a12716f353595f}\index{UndoCommandTest@{UndoCommandTest}!simulateUserInput@{simulateUserInput}}
+\index{simulateUserInput@{simulateUserInput}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{simulateUserInput()}{simulateUserInput()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_ab2616fda4df38dac96a12716f353595f} 
+void Undo\+Command\+Test\+::simulate\+User\+Input (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Simulates user input by pushing the string into the mock event bus\textquotesingle{}s input queue. 
+
+This is crucial for testing the confirmation prompt in the \doxylink{classUndoCommand}{Undo\+Command}. 
+\begin{DoxyParams}{Parameters}
+{\em input} & The string to simulate as user input (e.\+g., "{}y\textbackslash{}n"{} or "{}n\textbackslash{}n"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUndoCommandTest_a0040c7c506fa9026c0b9c1bdbd7dfa54}\index{UndoCommandTest@{UndoCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_a0040c7c506fa9026c0b9c1bdbd7dfa54} 
+void Undo\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & A vector of file names to stage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUndoCommandTest_a2a082617dae3a8ac27fdeab0de4e5b3c}\index{UndoCommandTest@{UndoCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!UndoCommandTest@{UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classUndoCommandTest_a2a082617dae3a8ac27fdeab0de4e5b3c} 
+void Undo\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Tears down the testing environment after each test. 
+
+Cleans up the temporary directory and restores the working path. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntUndoCommandTest_8hxx}{Int\+Undo\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntUndoCommandTest_8cxx}{Int\+Undo\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

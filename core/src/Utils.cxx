@@ -1,9 +1,14 @@
 /**
- * @file Utils.cxx
+* @file Utils.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of general utility functions for file I/O and hash format conversion.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация общих служебных функций для файлового ввода/вывода и преобразования форматов хешей.
  */
 
 #include "../include/Utils.hxx"

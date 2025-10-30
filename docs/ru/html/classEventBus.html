@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс EventBus</title>
+<title>SVCS - Русская документация: Класс EventBus</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classEventBus.html','','classEventBus-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>A thread-safe implementation of <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> for centralized event distribution.  
+<p>Потокобезопасная реализация <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> для централизованного распределения событий.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="EventBus_8hxx_source.html">EventBus.hxx</a>&gt;</code></p>
@@ -104,7 +102,7 @@ $(function(){initNavTree('classEventBus.html','','classEventBus-members'); });
  <div class="center">
   <img src="classEventBus.png" usemap="#EventBus_map" alt=""/>
   <map id="EventBus_map" name="EventBus_map">
-<area href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class)." alt="ISubject" shape="rect" coords="0,0,253,24"/>
+<area href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс)." alt="ISubject" shape="rect" coords="0,0,253,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -112,29 +110,27 @@ $(function(){initNavTree('classEventBus.html','','classEventBus-members'); });
 Открытые члены</h2></td></tr>
 <tr class="memitem:af9f702d10d6340e1f3da65e487fd73be" id="r_af9f702d10d6340e1f3da65e487fd73be"><td class="memItemLeft" align="right" valign="top"><a id="af9f702d10d6340e1f3da65e487fd73be" name="af9f702d10d6340e1f3da65e487fd73be"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~EventBus</b> () override=default</td></tr>
-<tr class="memdesc:af9f702d10d6340e1f3da65e487fd73be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default virtual destructor. <br /></td></tr>
+<tr class="memdesc:af9f702d10d6340e1f3da65e487fd73be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор по умолчанию. <br /></td></tr>
 <tr class="memitem:a131f28abdfe25a80f94a202aff5e6edb" id="r_a131f28abdfe25a80f94a202aff5e6edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a131f28abdfe25a80f94a202aff5e6edb">attach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer) override</td></tr>
-<tr class="memdesc:a131f28abdfe25a80f94a202aff5e6edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a new Observer.  <br /></td></tr>
+<tr class="memdesc:a131f28abdfe25a80f94a202aff5e6edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Регистрирует нового Observer.  <br /></td></tr>
 <tr class="memitem:a42559fdfdd62a10ae1494f123a06e96a" id="r_a42559fdfdd62a10ae1494f123a06e96a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42559fdfdd62a10ae1494f123a06e96a">detach</a> (std::shared_ptr&lt; <a class="el" href="classIObserver.html">IObserver</a> &gt; observer_to_remove) override</td></tr>
-<tr class="memdesc:a42559fdfdd62a10ae1494f123a06e96a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deregisters a specific Observer.  <br /></td></tr>
+<tr class="memdesc:a42559fdfdd62a10ae1494f123a06e96a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отменяет регистрацию конкретного Observer.  <br /></td></tr>
 <tr class="memitem:a581f243551365d2dc9599665540486dd" id="r_a581f243551365d2dc9599665540486dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a581f243551365d2dc9599665540486dd">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) const override</td></tr>
-<tr class="memdesc:a581f243551365d2dc9599665540486dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an event to all active Observers.  <br /></td></tr>
+<tr class="memdesc:a581f243551365d2dc9599665540486dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет событие всем активным Observers.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classISubject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classISubject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classISubject.html">ISubject</a></td></tr>
 <tr class="memitem:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_classISubject" id="r_ae7264a3f132816d45581a1b31845ecac"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISubject.html#ae7264a3f132816d45581a1b31845ecac">~ISubject</a> ()=default</td></tr>
-<tr class="memdesc:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_classISubject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+<tr class="memdesc:ae7264a3f132816d45581a1b31845ecac inherit pub_methods_classISubject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Дополнительные унаследованные члены</h2></td></tr>
 <tr class="inherit_header pro_attribs_classISubject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classISubject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные данные унаследованные от <a class="el" href="classISubject.html">ISubject</a></td></tr>
 <tr class="memitem:a66f4ce666ed8b85d694a9b73d6bc16fb inherit pro_attribs_classISubject" id="r_a66f4ce666ed8b85d694a9b73d6bc16fb"><td class="memItemLeft" align="right" valign="top">
 std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
+<tr class="memdesc:a66f4ce666ed8b85d694a9b73d6bc16fb inherit pro_attribs_classISubject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Коллекция зарегистрированных наблюдателей. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>A thread-safe implementation of <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> for centralized event distribution. </p>
-<ul>
-<li></li>
-</ul>
-<p>This class uses std::weak_ptr to store observers, preventing circular dependencies and ensuring automatic cleanup of destroyed observers. It inherits from std::enable_shared_from_this to ensure that valid shared pointers to the bus can be created even inside its member functions. </p>
+<div class="textblock"><p>Потокобезопасная реализация <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> для централизованного распределения событий. </p>
+<p>Этот класс использует std::weak_ptr для хранения наблюдателей, предотвращая циклические зависимости и обеспечивая автоматическую очистку уничтоженных наблюдателей. Он наследуется от std::enable_shared_from_this, чтобы гарантировать, что валидные общие указатели на шину могут быть созданы даже внутри его функций-членов. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
 <a id="a131f28abdfe25a80f94a202aff5e6edb" name="a131f28abdfe25a80f94a202aff5e6edb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a131f28abdfe25a80f94a202aff5e6edb">&#9670;&#160;</a></span>attach()</h2>
@@ -159,16 +155,13 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Registers a new Observer. </p>
-<ul>
-<li>The observer's shared pointer is stored as a weak pointer internally. <dl class="params"><dt>Аргументы</dt><dd>
+<p>Регистрирует нового Observer. </p>
+<p>Общий указатель наблюдателя хранится как слабый указатель внутри. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer</td><td>The smart pointer to the Observer to be registered. </td></tr>
+    <tr><td class="paramname">observer</td><td>Умный указатель на Observer для регистрации. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 <p>Замещает <a class="el" href="classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace">ISubject</a>.</p>
 
@@ -197,16 +190,13 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Deregisters a specific Observer. </p>
-<ul>
-<li>Compares the provided shared_ptr against all stored weak_ptr objects. <dl class="params"><dt>Аргументы</dt><dd>
+<p>Отменяет регистрацию конкретного Observer. </p>
+<p>Сравнивает предоставленный shared_ptr со всеми хранимыми объектами weak_ptr. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer_to_remove</td><td>The smart pointer to the Observer to be removed. </td></tr>
+    <tr><td class="paramname">observer_to_remove</td><td>Умный указатель на Observer для удаления. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 <p>Замещает <a class="el" href="classISubject.html#aad2217012b14bdd6c91eb240689e5a74">ISubject</a>.</p>
 
@@ -235,17 +225,13 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </table>
 </div><div class="memdoc">
 
-<p>Sends an event to all active Observers. </p>
-<ul>
-<li>Iterates over the list, safely locking each weak pointer before calling update(). Invalid (expired) weak pointers are effectively ignored. <dl class="section note"><dt>Заметки</dt><dd>Your implementation of <span class="tt">notify</span> uses <span class="tt">const_cast&lt;std::mutex&amp;&gt;(observers_mutex_)</span> because <span class="tt">notify</span> is <span class="tt">const</span>. A better practice is to declare <span class="tt">observers_mutex_</span> as <b><span class="tt">mutable</span></b>. </dd></dl>
-<dl class="params"><dt>Аргументы</dt><dd>
+<p>Отправляет событие всем активным Observers. </p>
+<p>Перебирает список, безопасно блокируя каждый слабый указатель перед вызовом update(). Невалидные (истекшие) слабые указатели эффективно игнорируются. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>The constant reference to the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> to be published. </td></tr>
+    <tr><td class="paramname">event</td><td>Константная ссылка на событие для публикации. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 <p>Замещает <a class="el" href="classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474">ISubject</a>.</p>
 

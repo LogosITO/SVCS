@@ -1,15 +1,15 @@
 /**
  * @file VersionCommandTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for the VersionCommand class.
  *
- * @details This file implements test cases to verify the correct behavior of the 
- * `svcs version` command. The tests ensure that the command displays the correct 
- * version string, build information, copyright details, and handles unexpected 
- * arguments gracefully.
- * * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Модульные тесты для класса VersionCommand.
  */
-
 
 #include "utils/IntVersionCommandTest.hxx"
 

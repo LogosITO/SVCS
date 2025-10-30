@@ -1,0 +1,27 @@
+\doxysection{Файл cli/include/\+Branch\+Command.hxx}
+\hypertarget{BranchCommand_8hxx}{}\label{BranchCommand_8hxx}\index{cli/include/BranchCommand.hxx@{cli/include/BranchCommand.hxx}}
+
+
+Объявление класса \doxylink{classBranchCommand}{Branch\+Command} для управления ветками.  
+
+
+{\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Branch\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBranchCommand}{Branch\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для управления ветками в системе контроля версий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Объявление класса \doxylink{classBranchCommand}{Branch\+Command} для управления ветками. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+\doxylink{classBranchCommand}{Branch\+Command} является интерфейсом для команды \textquotesingle{}svcs branch\textquotesingle{}. Он поддерживает различные операции с ветками, включая список существующих веток, создание, удаление, переименование и переключение веток. Он полагается на \doxylink{classBranchManager}{Branch\+Manager} для основной логики и шину событий \doxylink{classISubject}{ISubject} для общения с пользователем. 

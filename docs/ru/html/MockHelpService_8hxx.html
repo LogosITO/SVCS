@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Файл tests/cli/mocks/MockHelpService.hxx</title>
+<title>SVCS - Русская документация: Файл tests/cli/mocks/MockHelpService.hxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('MockHelpService_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Mock implementation of the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> interface for unit testing purposes.  
+<p>Mock реализация интерфейса <a class="el" href="classHelpService.html" title="Сервис, предоставляющий справочную информацию для команд.">HelpService</a> для целей модульного тестирования.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -110,14 +108,12 @@ $(function(){initNavTree('MockHelpService_8hxx.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
 <tr class="memitem:MockHelpService" id="r_MockHelpService"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockHelpService.html">MockHelpService</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mock implementation of the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> for testing the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a>.  <a href="classMockHelpService.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock реализация <a class="el" href="classHelpService.html" title="Сервис, предоставляющий справочную информацию для команд.">HelpService</a> для тестирования <a class="el" href="classHelpCommand.html" title="Команда для отображения справочной информации о других командах.">HelpCommand</a>.  <a href="classMockHelpService.html#details">Подробнее...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Mock implementation of the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> interface for unit testing purposes. </p>
-<p>This class inherits from <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> and overrides its abstract methods (<span class="tt">getAvailableCommands</span>, <span class="tt">getCommandDescription</span>, <span class="tt">showCommandHelp</span>) with controlled implementations. It includes utility methods (<span class="tt">setAvailableCommands</span>, <span class="tt">wasCommandHelpCalled</span>, etc.) to allow tests to configure the mock's behavior and inspect its interactions. This mock is essential for unit testing the <b><a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a></b> without depending on the actual implementation of the CLI command registration system.</p><ul>
-<li><dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
-</li>
-</ul>
+<div class="textblock"><p>Mock реализация интерфейса <a class="el" href="classHelpService.html" title="Сервис, предоставляющий справочную информацию для команд.">HelpService</a> для целей модульного тестирования. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
+<p>Этот класс наследуется от <a class="el" href="classHelpService.html" title="Сервис, предоставляющий справочную информацию для команд.">HelpService</a> и переопределяет его абстрактные методы (<span class="tt">getAvailableCommands</span>, <span class="tt">getCommandDescription</span>, <span class="tt">showCommandHelp</span>) контролируемыми реализациями. Он включает служебные методы (<span class="tt">setAvailableCommands</span>, <span class="tt">wasCommandHelpCalled</span> и т.д.) чтобы позволить тестам настраивать поведение mock'а и проверять его взаимодействия. Этот mock необходим для модульного тестирования <b><a class="el" href="classHelpCommand.html" title="Команда для отображения справочной информации о других командах.">HelpCommand</a></b> без зависимости от фактической реализации системы регистрации CLI команд. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

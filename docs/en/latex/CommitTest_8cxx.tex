@@ -1,0 +1,56 @@
+\doxysection{tests/core/\+Commit\+Test.cxx File Reference}
+\hypertarget{CommitTest_8cxx}{}\label{CommitTest_8cxx}\index{tests/core/CommitTest.cxx@{tests/core/CommitTest.cxx}}
+
+
+Unit tests for the \doxylink{classCommit}{Commit} class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity.  
+
+
+{\ttfamily \#include "{}../../core/include/\+Commit.\+hxx"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{CommitTest_8cxx_ae7a926bf7d7dcc3902b15b1de2fe0e6d}\label{CommitTest_8cxx_ae7a926bf7d7dcc3902b15b1de2fe0e6d} 
+\mbox{\hyperlink{classCommit}{Commit}} {\bfseries create\+Test\+Commit} (const std\+::string \&tree\+\_\+hash, const std\+::vector$<$ std\+::string $>$ \&parents, const std\+::string \&message, std\+::time\+\_\+t timestamp=1600000000)
+\item 
+\Hypertarget{CommitTest_8cxx_a30dc08fac2c0325d5c0b57840807276f}\label{CommitTest_8cxx_a30dc08fac2c0325d5c0b57840807276f} 
+{\bfseries TEST} (Commit\+Test, Basic\+Initial\+Commit)
+\item 
+\Hypertarget{CommitTest_8cxx_a56628a9c956d11551faa222eca76cda4}\label{CommitTest_8cxx_a56628a9c956d11551faa222eca76cda4} 
+{\bfseries TEST} (Commit\+Test, Hash\+Is\+Stable\+Regardless\+Of\+Parent\+Order)
+\item 
+\Hypertarget{CommitTest_8cxx_a799c1e48f2313e727eea83677d8d359d}\label{CommitTest_8cxx_a799c1e48f2313e727eea83677d8d359d} 
+{\bfseries TEST} (Commit\+Test, Hash\+Changes\+With\+Different\+Message)
+\item 
+\Hypertarget{CommitTest_8cxx_a73659178faf1e76365387127541b98e4}\label{CommitTest_8cxx_a73659178faf1e76365387127541b98e4} 
+{\bfseries TEST} (Commit\+Test, Serialization\+Deserialization\+Round\+Trip)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{CommitTest_8cxx_ad57cdec7a6e84fefe8d5fe2c2e6cbb90}\label{CommitTest_8cxx_ad57cdec7a6e84fefe8d5fe2c2e6cbb90} 
+const std\+::string {\bfseries HASH\+\_\+\+TREE\+\_\+\+EMPTY} = "{}4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a"{}
+\item 
+\Hypertarget{CommitTest_8cxx_af33b3d23844c6ebeafa6e65a17476208}\label{CommitTest_8cxx_af33b3d23844c6ebeafa6e65a17476208} 
+const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+A} = "{}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"{}
+\item 
+\Hypertarget{CommitTest_8cxx_adfe7dbab581c64e6c87819aa6380a190}\label{CommitTest_8cxx_adfe7dbab581c64e6c87819aa6380a190} 
+const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+B} = "{}bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"{}
+\item 
+\Hypertarget{CommitTest_8cxx_a1127791517517f0b0fa8b95bc4342e31}\label{CommitTest_8cxx_a1127791517517f0b0fa8b95bc4342e31} 
+const std\+::string {\bfseries HASH\+\_\+\+TREE\+\_\+\+NEW} = "{}c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1"{}
+\item 
+\Hypertarget{CommitTest_8cxx_afbd82a565f16d182383e44439950669e}\label{CommitTest_8cxx_afbd82a565f16d182383e44439950669e} 
+const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+\+P1} = "{}d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2"{}
+\item 
+\Hypertarget{CommitTest_8cxx_a4a3217c574a21f7414c660f7811af020}\label{CommitTest_8cxx_a4a3217c574a21f7414c660f7811af020} 
+const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+\+P2} = "{}e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit tests for the \doxylink{classCommit}{Commit} class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}

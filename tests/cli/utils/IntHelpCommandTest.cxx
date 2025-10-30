@@ -1,13 +1,21 @@
 /**
- * @file IntHelpCommandTest.cxx
- * @brief Implementation of integration tests for the HelpCommand class.
+* @file IntHelpCommandTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
- * @details This file provides the concrete implementation for the HelpCommandTest fixture. 
- * It sets up the necessary dependencies: the MockSubject (event bus) for capturing output 
- * and the MockHelpService for controlling the command's information and verifying 
+ * @english
+ * @brief Implementation of integration tests for the HelpCommand class.
+ * @details This file provides the concrete implementation for the HelpCommandTest fixture.
+ * It sets up the necessary dependencies: the MockSubject (event bus) for capturing output
+ * and the MockHelpService for controlling the command's information and verifying
  * delegation calls.
- * * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Реализация интеграционных тестов для класса HelpCommand.
+ * @details Этот файл предоставляет конкретную реализацию для фикстура HelpCommandTest.
+ * Он настраивает необходимые зависимости: MockSubject (шину событий) для захвата вывода
+ * и MockHelpService для управления информацией команды и проверки вызовов делегирования.
  */
  
 #include "IntHelpCommandTest.hxx"

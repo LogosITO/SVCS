@@ -1,9 +1,14 @@
 /**
  * @file AddCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the AddCommand class, responsible for processing the 'svcs add' command and staging files for the next commit.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса AddCommand, отвечающего за обработку команды 'svcs add' и подготовку файлов для следующего коммита.
  */
 
 #include <utility>

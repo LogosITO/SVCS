@@ -1,0 +1,27 @@
+\doxysection{Файл core/include/\+Object\+Storage.hxx}
+\hypertarget{ObjectStorage_8hxx}{}\label{ObjectStorage_8hxx}\index{core/include/ObjectStorage.hxx@{core/include/ObjectStorage.hxx}}
+
+
+Управляет чтением, записью и жизненным циклом объектов СКВ на диске с использованием формата Git.  
+
+
+{\ttfamily \#include "{}Vcs\+Object.\+hxx"{}}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classObjectStorage}{Object\+Storage}}
+\begin{DoxyCompactList}\small\item\em Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет чтением, записью и жизненным циклом объектов СКВ на диске с использованием формата Git. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот класс обрабатывает построение путей к файлам, сериализацию, сжатие/распаковку Zlib и действует как фабрика для восстановления конкретных типов \doxylink{classVcsObject}{Vcs\+Object} (\doxylink{classBlob}{Blob}, \doxylink{classTree}{Tree}, \doxylink{classCommit}{Commit}). Использует внедренный \doxylink{classISubject}{ISubject} для внутреннего логирования событий. 

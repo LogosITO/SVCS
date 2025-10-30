@@ -1,0 +1,25 @@
+\doxysection{core/include/\+Commit.hxx File Reference}
+\hypertarget{Commit_8hxx}{}\label{Commit_8hxx}\index{core/include/Commit.hxx@{core/include/Commit.hxx}}
+
+
+Defines the \doxylink{classCommit}{Commit} class, representing a permanent snapshot in the VCS history.  
+
+
+{\ttfamily \#include "{}Vcs\+Object.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCommit}{Commit}}
+\begin{DoxyCompactList}\small\item\em Represents a single, immutable historical point (snapshot) in the repository\textquotesingle{}s history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{classCommit}{Commit} class, representing a permanent snapshot in the VCS history. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+A \doxylink{classCommit}{Commit} object links a \doxylink{classTree}{Tree} object (the repository state) with parent commits and essential metadata like author, timestamp, and the commit message, forming the basis of the project\textquotesingle{}s history. 

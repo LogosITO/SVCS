@@ -1,0 +1,51 @@
+\doxysection{Tree.\+hxx}
+\hypertarget{Tree_8hxx_source}{}\label{Tree_8hxx_source}\index{core/include/Tree.hxx@{core/include/Tree.hxx}}
+\mbox{\hyperlink{Tree_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VcsObject_8hxx}{VcsObject.hxx}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTreeEntry}{TreeEntry}}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ \mbox{\hyperlink{structTreeEntry_a134f10cecd1f81227572389485e04ad4}{mode}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ \mbox{\hyperlink{structTreeEntry_aa025cb0a365aac0c2942a3249a244b1f}{name}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ \mbox{\hyperlink{structTreeEntry_a8236e8177bef9f2380f9893ee916cc77}{hash\_id}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::string\ \mbox{\hyperlink{structTreeEntry_a499a6f99a9c45e62c78e6d61f6341e0c}{type}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structTreeEntry_ad89dfd85abbb8b8a1041fea93f50a940}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTreeEntry}{TreeEntry}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00101\ \mbox{\hyperlink{structTreeEntry}{TreeEntry}}\ \mbox{\hyperlink{Tree_8hxx_a15d13a6036a062282a24e34a2fe7751f}{createEntry}}(std::string\ name,\ std::string\ hash\_id);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTree}{Tree}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classVcsObject}{VcsObject}}\ \{}
+\DoxyCodeLine{00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00123\ \ \ \ \ std::vector<TreeEntry>\ entries;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classTree_af660984821d0ae2f73725ee33c73ad20}{Tree}}(std::vector<TreeEntry>\ entries);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//\ VcsObject\ overrides}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00151\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classTree_a9b3870b1189b06efecd0a56aad4e467e}{getType}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00165\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classTree_aae4f965e5566b0addf5467ba5db10e3f}{serialize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classTree}{Tree}}\ \mbox{\hyperlink{classTree_a85166cfd9d904644216cdacb0b4b7d54}{deserialize}}(\textcolor{keyword}{const}\ std::string\&\ raw\_content);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTree_a772b4bcfb5e44dda6a9ede2470d23250}{addEntry}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTreeEntry}{TreeEntry}}\&\ entry);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTree_a85035a45ff8778df5bb8be32f57bf232}{removeEntry}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00217\ \ \ \ \ [[nodiscard]]\ std::optional<TreeEntry>\ \mbox{\hyperlink{classTree_a944fe0075293396036606f6a999643f4}{findEntry}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00228\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::vector<TreeEntry>\&\ \mbox{\hyperlink{classTree_a57ecc3c34be17f9e349ef386223eead8}{getEntries}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00229\ \};}
+
+\end{DoxyCode}

@@ -6,7 +6,7 @@ var dir_10f909bea03e4b54473bf8b174380ada =
     [ "ClearCommandTest.cxx", "ClearCommandTest_8cxx.html", null ],
     [ "HelpCommandTest.cxx", "HelpCommandTest_8cxx.html", null ],
     [ "HistoryCommandTest.cxx", "HistoryCommandTest_8cxx.html", null ],
-    [ "InitCommandTest.cxx", "InitCommandTest_8cxx.html", "InitCommandTest_8cxx" ],
+    [ "InitCommandTest.cxx", "InitCommandTest_8cxx.html", null ],
     [ "SaveCommandTest.cxx", "SaveCommandTest_8cxx.html", null ],
     [ "StatusCommandTest.cxx", "StatusCommandTest_8cxx.html", null ],
     [ "VersionCommandTest.cxx", "VersionCommandTest_8cxx.html", null ]

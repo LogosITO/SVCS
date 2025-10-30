@@ -1,0 +1,40 @@
+\doxysection{Структура Commit\+Info}
+\hypertarget{structCommitInfo}{}\label{structCommitInfo}\index{CommitInfo@{CommitInfo}}
+
+
+Структура, содержащая основные метаданные для одного коммита.  
+
+
+
+
+{\ttfamily \#include $<$Repository\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structCommitInfo_a17b73098845c08e071b05234db336fcd}\label{structCommitInfo_a17b73098845c08e071b05234db336fcd} 
+std\+::string {\bfseries hash}
+\begin{DoxyCompactList}\small\item\em Уникальный идентификатор (хеш) коммита. \end{DoxyCompactList}\item 
+\Hypertarget{structCommitInfo_aa9dce2c2bf3c1622d77ef5bbbb63113e}\label{structCommitInfo_aa9dce2c2bf3c1622d77ef5bbbb63113e} 
+std\+::string {\bfseries message}
+\begin{DoxyCompactList}\small\item\em Сообщение, предоставленное пользователем при создании коммита. \end{DoxyCompactList}\item 
+\Hypertarget{structCommitInfo_a5d011d8d9edd88ef6953f8bc146681b2}\label{structCommitInfo_a5d011d8d9edd88ef6953f8bc146681b2} 
+int {\bfseries files\+\_\+count} = 0
+\begin{DoxyCompactList}\small\item\em Количество файлов, включенных в этот коммит. \end{DoxyCompactList}\item 
+\Hypertarget{structCommitInfo_ade2668c2ddc4785889792a443f88cc4a}\label{structCommitInfo_ade2668c2ddc4785889792a443f88cc4a} 
+std\+::string {\bfseries author}
+\begin{DoxyCompactList}\small\item\em Автор или пользователь, создавший коммит. \end{DoxyCompactList}\item 
+\Hypertarget{structCommitInfo_a058d42cb536a2d4d2ae5fc49fecf9ad7}\label{structCommitInfo_a058d42cb536a2d4d2ae5fc49fecf9ad7} 
+std\+::string {\bfseries timestamp}
+\begin{DoxyCompactList}\small\item\em Временная метка создания коммита. \end{DoxyCompactList}\item 
+\Hypertarget{structCommitInfo_a7859b0ad6d68755896ee2d831480622a}\label{structCommitInfo_a7859b0ad6d68755896ee2d831480622a} 
+std\+::string {\bfseries branch}
+\begin{DoxyCompactList}\small\item\em Ветвь, к которой принадлежит этот коммит. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура, содержащая основные метаданные для одного коммита. 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{RepositoryManager_8hxx}{Repository\+Manager.\+hxx}}\end{DoxyCompactItemize}

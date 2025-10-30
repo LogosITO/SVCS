@@ -1,0 +1,42 @@
+\doxysection{Файл cli/include/\+Utils.hxx}
+\hypertarget{cli_2include_2Utils_8hxx}{}\label{cli_2include_2Utils_8hxx}\index{cli/include/Utils.hxx@{cli/include/Utils.hxx}}
+
+
+Служебные функции для условного вывода отладки.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cli_2include_2Utils_8hxx_a4b171a7d705ca7ae2910200e76bd96e2}{print\+Debug}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Условно выводит отладочное сообщение в стандартный вывод. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Служебные функции для условного вывода отладки. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот заголовок определяет функцию {\ttfamily print\+Debug}, которая предоставляет простой механизм для логирования отладочных сообщений в стандартный вывод только тогда, когда определен макрос препроцессора {\ttfamily DEBUG\+\_\+\+MODE}. 
+
+\label{doc-func-members}
+\Hypertarget{cli_2include_2Utils_8hxx_doc-func-members}
+\doxysubsection{Функции}
+\Hypertarget{cli_2include_2Utils_8hxx_a4b171a7d705ca7ae2910200e76bd96e2}\index{Utils.hxx@{Utils.hxx}!printDebug@{printDebug}}
+\index{printDebug@{printDebug}!Utils.hxx@{Utils.hxx}}
+\doxysubsubsection{\texorpdfstring{printDebug()}{printDebug()}}
+{\footnotesize\ttfamily \label{cli_2include_2Utils_8hxx_a4b171a7d705ca7ae2910200e76bd96e2} 
+void print\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Условно выводит отладочное сообщение в стандартный вывод. 
+
+Сообщение выводится только если макрос DEBUG\+\_\+\+MODE определен во время компиляции. Функция помечена как {\ttfamily inline}, чтобы предложить встраивание компилятором, и компилируется в пустую операцию, когда DEBUG\+\_\+\+MODE не определен, что приводит к нулевым накладным расходам во время выполнения в релизных сборках. 
+\begin{DoxyParams}{Аргументы}
+{\em message} & Строковое сообщение для вывода, с префиксом "{}\+DEBUG\+: "{}. \\
+\hline
+\end{DoxyParams}

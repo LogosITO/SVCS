@@ -1,0 +1,36 @@
+\doxysection{Структура Index\+Entry}
+\hypertarget{structIndexEntry}{}\label{structIndexEntry}\index{IndexEntry@{IndexEntry}}
+
+
+Представляет одну запись файла в области подготовки (\doxylink{classIndex}{Index}).  
+
+
+
+
+{\ttfamily \#include $<$Index.\+hxx$>$}
+
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structIndexEntry_af0add5ce12c5dfa70a32542fd4417f12}\label{structIndexEntry_af0add5ce12c5dfa70a32542fd4417f12} 
+std\+::string {\bfseries blob\+\_\+hash}
+\begin{DoxyCompactList}\small\item\em Хеш SHA-\/256 содержимого файла (ID объекта \doxylink{classBlob}{Blob}). \end{DoxyCompactList}\item 
+\Hypertarget{structIndexEntry_ac34233bc45be2fc4cc4c4d6f3ef86173}\label{structIndexEntry_ac34233bc45be2fc4cc4c4d6f3ef86173} 
+fs\+::path {\bfseries file\+\_\+path}
+\begin{DoxyCompactList}\small\item\em Путь к файлу относительно корневой директории репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{structIndexEntry_a07371b90dba7b3e77073e25b8974bf69}\label{structIndexEntry_a07371b90dba7b3e77073e25b8974bf69} 
+fs\+::file\+\_\+time\+\_\+type {\bfseries last\+\_\+modified}
+\begin{DoxyCompactList}\small\item\em Время последнего изменения файла, используется для обнаружения изменений. \end{DoxyCompactList}\item 
+\Hypertarget{structIndexEntry_a10582a2e090f7c30885f54b42da08048}\label{structIndexEntry_a10582a2e090f7c30885f54b42da08048} 
+long long {\bfseries file\+\_\+size} = 0
+\begin{DoxyCompactList}\small\item\em Размер файла в байтах. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Представляет одну запись файла в области подготовки (\doxylink{classIndex}{Index}). 
+
+\doxylink{structIndexEntry}{Index\+Entry} хранит информацию о файле, который подготовлен для следующего коммита, включая его ID объекта (хеш) и метаданные файла, используемые для обнаружения изменений. 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Index_8hxx}{Index.\+hxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,138 @@
+\doxysection{Класс Blob}
+\hypertarget{classBlob}{}\label{classBlob}\index{Blob@{Blob}}
+
+
+Представляет содержимое файла (Binary Large Object).  
+
+
+
+
+{\ttfamily \#include $<$Blob.\+hxx$>$}
+
+Граф наследования\+:Blob\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBlob}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBlob_ae99377ce893ac26195a4c4578167f976}{Blob}} (std\+::string raw\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Конструктор для объекта \doxylink{classBlob}{Blob}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBlob_ac493b1634f088e53d436ba808ba02e86}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Возвращает тип объекта СКВ. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBlob_acab4226b36adcfa257c94b96b40c3510}{serialize}} () const override
+\begin{DoxyCompactList}\small\item\em Сериализует основные данные объекта для хеширования и хранения. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classBlob_aef90cffb1d8d5492b73ac330ac933006}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает необработанное содержимое данных, хранящееся в \doxylink{classBlob}{Blob}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию. Требуется для производных классов. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVcsObject_af2840ade6006e4d64eb6bd9f15b37539}{Vcs\+Object}} (const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Конструктор копирования. Требуется для производных классов для корректного копирования hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVcsObject_a866849775b4541573b40b2b85be20df5}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a0e8cd703d917813ca43d4b0622c70bdd}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает уникальный хеш-\/идентификатор объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Открытые статические члены унаследованные от \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classVcsObject_a73ec7fbaac32df9c4570de02b8bda56f}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Вычисляет SHA-\/256 хеш для заданного канонического содержимого. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные члены унаследованные от \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Вычисляет криптографический хеш-\/идентификатор для содержимого объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a6c9fd4ab39bb9781c5399da07305d28d}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Уникальный криптографический хеш-\/идентификатор (например, SHA-\/256) для этого объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Представляет содержимое файла (Binary Large Object). 
+
+Это объект самого низкого уровня в СКВ, хранящий только необработанные байты файла. Объект \doxylink{classBlob}{Blob} является неизменяемым; его хеш зависит исключительно от его содержимого. 
+
+\label{doc-constructors}
+\Hypertarget{classBlob_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classBlob_ae99377ce893ac26195a4c4578167f976}\index{Blob@{Blob}!Blob@{Blob}}
+\index{Blob@{Blob}!Blob@{Blob}}
+\doxysubsubsection{\texorpdfstring{Blob()}{Blob()}}
+{\footnotesize\ttfamily \label{classBlob_ae99377ce893ac26195a4c4578167f976} 
+Blob\+::\+Blob (\begin{DoxyParamCaption}\item[{std\+::string}]{raw\+\_\+data}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор для объекта \doxylink{classBlob}{Blob}. 
+
+Инициализирует объект и немедленно вычисляет его хеш ID на основе raw\+\_\+data. 
+\begin{DoxyParams}{Аргументы}
+{\em raw\+\_\+data} & Необработанное содержимое файла, которое будет сохранено и хешировано. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classBlob_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classBlob_aef90cffb1d8d5492b73ac330ac933006}\index{Blob@{Blob}!getData@{getData}}
+\index{getData@{getData}!Blob@{Blob}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{classBlob_aef90cffb1d8d5492b73ac330ac933006} 
+const std\+::string \& Blob\+::get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Возвращает необработанное содержимое данных, хранящееся в \doxylink{classBlob}{Blob}. 
+
+\begin{DoxyReturn}{Возвращает}
+const std\+::string\& Константная ссылка на содержимое файла. 
+\end{DoxyReturn}
+\Hypertarget{classBlob_ac493b1634f088e53d436ba808ba02e86}\index{Blob@{Blob}!getType@{getType}}
+\index{getType@{getType}!Blob@{Blob}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classBlob_ac493b1634f088e53d436ba808ba02e86} 
+std\+::string Blob\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Возвращает тип объекта СКВ. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Всегда возвращает "{}blob"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classVcsObject_a6997c320772a504fc61a986f6e8f9ff7}{Vcs\+Object}}.
+
+\Hypertarget{classBlob_acab4226b36adcfa257c94b96b40c3510}\index{Blob@{Blob}!serialize@{serialize}}
+\index{serialize@{serialize}!Blob@{Blob}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classBlob_acab4226b36adcfa257c94b96b40c3510} 
+std\+::string Blob\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Сериализует основные данные объекта для хеширования и хранения. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Возвращает само необработанное содержимое файла (data). 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7}{Vcs\+Object}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Blob_8hxx}{Blob.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Blob_8cxx}{Blob.\+cxx}}\end{DoxyCompactItemize}

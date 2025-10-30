@@ -1,11 +1,15 @@
 /**
  * @file UndoCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the UndoCommand class.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса UndoCommand.
  */
-
 #include "../include/UndoCommand.hxx"
 
 #include <algorithm>

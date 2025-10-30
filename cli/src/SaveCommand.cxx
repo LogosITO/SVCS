@@ -1,9 +1,14 @@
 /**
  * @file SaveCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the SaveCommand class.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса SaveCommand.
  */
 
 #include <utility>

@@ -1,11 +1,16 @@
 /**
  * @file MergeCommand.cxx
- * @brief Implementation of the MergeCommand for merging branches.
- *
- * @copyright 
+ * @copyright
  * Copyright 2025 LogosITO
  * Licensed under MIT-License
+ *
+ * @english
+ * @brief Implementation of the MergeCommand for merging branches.
+ *
+ * @russian
+ * @brief Реализация MergeCommand для слияния веток.
  */
+
 #include "../include/MergeCommand.hxx"
 
 #include <fstream>

@@ -1,0 +1,27 @@
+\doxysection{core/include/\+Object\+Storage.hxx File Reference}
+\hypertarget{ObjectStorage_8hxx}{}\label{ObjectStorage_8hxx}\index{core/include/ObjectStorage.hxx@{core/include/ObjectStorage.hxx}}
+
+
+Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format.  
+
+
+{\ttfamily \#include "{}Vcs\+Object.\+hxx"{}}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classObjectStorage}{Object\+Storage}}
+\begin{DoxyCompactList}\small\item\em Manages the version control object database, including persistence and object restoration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This class handles file path construction, serialization, Zlib compression/decompression, and acts as a factory for restoring concrete \doxylink{classVcsObject}{Vcs\+Object} types (\doxylink{classBlob}{Blob}, \doxylink{classTree}{Tree}, \doxylink{classCommit}{Commit}). It uses an injected \doxylink{classISubject}{ISubject} for internal event logging. 

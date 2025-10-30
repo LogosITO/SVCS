@@ -1,0 +1,85 @@
+\doxysection{Mock\+Help\+Service.\+hxx}
+\hypertarget{MockHelpService_8hxx_source}{}\label{MockHelpService_8hxx_source}\index{tests/cli/mocks/MockHelpService.hxx@{tests/cli/mocks/MockHelpService.hxx}}
+\mbox{\hyperlink{MockHelpService_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{HelpService_8hxx}{../../../cli/include/HelpService.hxx}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Forward\ declaration\ if\ necessary,\ but\ included\ headers\ should\ suffice}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ struct\ Event;}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMockHelpService_ac1c8570640107c6dd75b357a5bde10d3}{MockHelpService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classHelpService_ac380002930a510d355fe11cf11e946ce}{HelpService}}\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ std::vector<std::string>\ availableCommands\_;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::map<std::string,\ std::string>\ commandDescriptions\_;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00085\ \ \ \ \ std::set<std::string>\ calledCommandHelp\_;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00094\ \ \ \ \ std::shared\_ptr<MockSubject>\ mockEventBus\_;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMockHelpService_ac1c8570640107c6dd75b357a5bde10d3}{MockHelpService}}(\textcolor{keyword}{const}\ std::shared\_ptr<MockSubject>\&\ mockEventBus)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classHelpService_ac380002930a510d355fe11cf11e946ce}{HelpService}}(}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ mockEventBus,\ \textcolor{comment}{//\ bus}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ [this]()\ \{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classMockHelpService_a48d91142003d63d20ca19b3215e2a5d2}{getAvailableCommands}}();\ \},\ \textcolor{comment}{//\ commandsFunc}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ std::string\&\ cmd)\ \{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classMockHelpService_acd98a15f199035212c810e95aa496a62}{getCommandDescription}}(cmd);\ \},\ \textcolor{comment}{//\ descriptionFunc}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ std::string\&\ cmd)\ \{\ this-\/>\mbox{\hyperlink{classMockHelpService_aa94f1b9dc36e19b7df936b93ff248a7d}{showCommandHelp}}(cmd);\ \},\ \textcolor{comment}{//\ helpFunc}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ std::string\&\ cmd)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Usage\ for\ "{}}\ +\ cmd;\ \}\ \textcolor{comment}{//\ usageFunc\ -\/\ simplified\ usage\ for\ mock}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ mockEventBus\_(mockEventBus)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Implementations\ of\ HelpService\ Abstract\ Methods\ -\/-\/-\/}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00132\ \ \ \ \ [[nodiscard]]\ std::vector<std::string>\ \mbox{\hyperlink{classMockHelpService_a48d91142003d63d20ca19b3215e2a5d2}{getAvailableCommands}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ availableCommands\_;}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00147\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classMockHelpService_acd98a15f199035212c810e95aa496a62}{getCommandDescription}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ commandDescriptions\_.find(commandName);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ commandDescriptions\_.end())\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}No\ description\ available"{}};}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockHelpService_aa94f1b9dc36e19b7df936b93ff248a7d}{showCommandHelp}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ calledCommandHelp\_.insert(commandName);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mockEventBus\_)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ mockEventBus\_-\/>notify(\{\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5}{Event::DEBUG\_MESSAGE}},}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MockHelpService:\ Showing\ help\ for\ "{}}\ +\ commandName,\ \textcolor{stringliteral}{"{}help"{}}\});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Test\ Control\ Methods\ -\/-\/-\/}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockHelpService_a8b572032f59990e31da0835fbebda594}{setAvailableCommands}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ commands)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ availableCommands\_\ =\ commands;}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockHelpService_ac0649bf36f4f4c90a5f59e6fa59d987b}{setCommandDescription}}(\textcolor{keyword}{const}\ std::string\&\ commandName,\ \textcolor{keyword}{const}\ std::string\&\ description)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ commandDescriptions\_[commandName]\ =\ description;}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00215\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMockHelpService_a75eea5375c564e93e597b8ccdb3181d8}{wasCommandHelpCalled}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ calledCommandHelp\_.find(commandName)\ !=\ calledCommandHelp\_.end();}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockHelpService_a1e5c10b1ef3a05be719dcaece9c8855e}{clear}}()\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ calledCommandHelp\_.clear();}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ availableCommands\_.clear();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ commandDescriptions\_.clear();}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \};}
+
+\end{DoxyCode}

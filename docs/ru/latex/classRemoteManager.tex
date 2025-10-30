@@ -1,0 +1,188 @@
+\doxysection{Класс Remote\+Manager}
+\hypertarget{classRemoteManager}{}\label{classRemoteManager}\index{RemoteManager@{RemoteManager}}
+
+
+Управляет конфигурациями удаленных репозиториев.  
+
+
+
+
+{\ttfamily \#include $<$Remote\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRemoteManager_ac7e0edc18fd40367bf345b8d2f0798ef}{Remote\+Manager}} (const fs\+::path \&repo\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classRemoteManager}{Remote\+Manager} и загружает существующие удаленные репозитории. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoteManager_a96cef6829df97b157979bd0bf90eff56}{add\+Remote}} (const std\+::string \&name, const std\+::string \&url)
+\begin{DoxyCompactList}\small\item\em Добавляет новую конфигурацию удаленного репозитория. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoteManager_a02b9e3cb7442eb6a5508821f80b94427}{remove\+Remote}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Удаляет конфигурацию удаленного репозитория по имени. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoteManager_aa848807cc2a76d663348558017ae21a3}{has\+Remote}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли удаленный репозиторий с заданным именем. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRemoteManager_a4d6301332826949c4c3f5de3417c17e4}{get\+Remote\+Url}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Получает URL настроенного удаленного репозитория. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classRemoteManager_a9ac7b16bd845713b0a71f3fd9401f849}{list\+Remotes}} () const
+\begin{DoxyCompactList}\small\item\em Перечисляет имена всех настроенных удаленных репозиториев. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoteManager_afc039aa6f117ef6ae93b664c149b589a}{save}} () const
+\begin{DoxyCompactList}\small\item\em Сохраняет текущие конфигурации удаленных репозиториев обратно в файл конфигурации. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoteManager_a0ad52688911f8dd6da0e6e08928ac218}{load}} ()
+\begin{DoxyCompactList}\small\item\em Загружает (или перезагружает) конфигурации удаленных репозиториев из файла конфигурации. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classRemoteManager_a59b7e43efe936e7a396936ea42691dcb}{count}} () const
+\begin{DoxyCompactList}\small\item\em Получает количество настроенных удаленных репозиториев. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет конфигурациями удаленных репозиториев. 
+
+Этот класс предоставляет интерфейс для управления удаленными репозиториями. Он обрабатывает добавление, удаление и перечисление удаленных репозиториев, а также сохранение этих конфигураций в файл {\ttfamily .svcs/config} репозитория и загрузку из него. 
+
+\label{doc-constructors}
+\Hypertarget{classRemoteManager_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classRemoteManager_ac7e0edc18fd40367bf345b8d2f0798ef}\index{RemoteManager@{RemoteManager}!RemoteManager@{RemoteManager}}
+\index{RemoteManager@{RemoteManager}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{RemoteManager()}{RemoteManager()}}
+{\footnotesize\ttfamily \label{classRemoteManager_ac7e0edc18fd40367bf345b8d2f0798ef} 
+Remote\+Manager\+::\+Remote\+Manager (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{repo\+\_\+path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструирует \doxylink{classRemoteManager}{Remote\+Manager} и загружает существующие удаленные репозитории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em repo\+\_\+path} & Корневой путь репозитория (например, "{}/path/to/my-\/project"{}), {\itshape не} директория .svcs.\\
+\hline
+\end{DoxyParams}
+Конструктор устанавливает путь к файлу конфигурации (repo\+\_\+path / "{}.\+svcs"{} / "{}config"{}) и автоматически вызывает {\ttfamily \doxylink{classRemoteManager_a0ad52688911f8dd6da0e6e08928ac218}{load()}} для заполнения списка удаленных репозиториев. 
+
+\label{doc-func-members}
+\Hypertarget{classRemoteManager_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classRemoteManager_a96cef6829df97b157979bd0bf90eff56}\index{RemoteManager@{RemoteManager}!addRemote@{addRemote}}
+\index{addRemote@{addRemote}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{addRemote()}{addRemote()}}
+{\footnotesize\ttfamily \label{classRemoteManager_a96cef6829df97b157979bd0bf90eff56} 
+bool Remote\+Manager\+::add\+Remote (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Добавляет новую конфигурацию удаленного репозитория. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Короткое имя для нового удаленного репозитория (например, "{}origin"{}). \\
+\hline
+{\em url} & URL для нового удаленного репозитория. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True если удаленный репозиторий был успешно добавлен, false если удаленный репозиторий с таким именем уже существует. 
+\end{DoxyReturn}
+\Hypertarget{classRemoteManager_a59b7e43efe936e7a396936ea42691dcb}\index{RemoteManager@{RemoteManager}!count@{count}}
+\index{count@{count}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily \label{classRemoteManager_a59b7e43efe936e7a396936ea42691dcb} 
+size\+\_\+t Remote\+Manager\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Получает количество настроенных удаленных репозиториев. 
+
+\begin{DoxyReturn}{Возвращает}
+size\+\_\+t Количество удаленных репозиториев. 
+\end{DoxyReturn}
+\Hypertarget{classRemoteManager_a4d6301332826949c4c3f5de3417c17e4}\index{RemoteManager@{RemoteManager}!getRemoteUrl@{getRemoteUrl}}
+\index{getRemoteUrl@{getRemoteUrl}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{getRemoteUrl()}{getRemoteUrl()}}
+{\footnotesize\ttfamily \label{classRemoteManager_a4d6301332826949c4c3f5de3417c17e4} 
+std\+::string Remote\+Manager\+::get\+Remote\+Url (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает URL настроенного удаленного репозитория. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя удаленного репозитория. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::string URL если удаленный репозиторий найден, иначе пустая строка. 
+\end{DoxyReturn}
+\Hypertarget{classRemoteManager_aa848807cc2a76d663348558017ae21a3}\index{RemoteManager@{RemoteManager}!hasRemote@{hasRemote}}
+\index{hasRemote@{hasRemote}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{hasRemote()}{hasRemote()}}
+{\footnotesize\ttfamily \label{classRemoteManager_aa848807cc2a76d663348558017ae21a3} 
+bool Remote\+Manager\+::has\+Remote (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, существует ли удаленный репозиторий с заданным именем. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя удаленного репозитория для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True если удаленный репозиторий существует, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRemoteManager_a9ac7b16bd845713b0a71f3fd9401f849}\index{RemoteManager@{RemoteManager}!listRemotes@{listRemotes}}
+\index{listRemotes@{listRemotes}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{listRemotes()}{listRemotes()}}
+{\footnotesize\ttfamily \label{classRemoteManager_a9ac7b16bd845713b0a71f3fd9401f849} 
+std\+::vector$<$ std\+::string $>$ Remote\+Manager\+::list\+Remotes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Перечисляет имена всех настроенных удаленных репозиториев. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::vector$<$std\+::string$>$ Вектор, содержащий имена всех удаленных репозиториев. 
+\end{DoxyReturn}
+\Hypertarget{classRemoteManager_a0ad52688911f8dd6da0e6e08928ac218}\index{RemoteManager@{RemoteManager}!load@{load}}
+\index{load@{load}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{classRemoteManager_a0ad52688911f8dd6da0e6e08928ac218} 
+void Remote\+Manager\+::load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Загружает (или перезагружает) конфигурации удаленных репозиториев из файла конфигурации. 
+
+Этот метод очищает текущий кэш в памяти и анализирует файл конфигурации для его заполнения. \Hypertarget{classRemoteManager_a02b9e3cb7442eb6a5508821f80b94427}\index{RemoteManager@{RemoteManager}!removeRemote@{removeRemote}}
+\index{removeRemote@{removeRemote}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{removeRemote()}{removeRemote()}}
+{\footnotesize\ttfamily \label{classRemoteManager_a02b9e3cb7442eb6a5508821f80b94427} 
+bool Remote\+Manager\+::remove\+Remote (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Удаляет конфигурацию удаленного репозитория по имени. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Короткое имя удаленного репозитория для удаления. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True если удаленный репозиторий был найден и удален, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRemoteManager_afc039aa6f117ef6ae93b664c149b589a}\index{RemoteManager@{RemoteManager}!save@{save}}
+\index{save@{save}!RemoteManager@{RemoteManager}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{classRemoteManager_afc039aa6f117ef6ae93b664c149b589a} 
+void Remote\+Manager\+::save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Сохраняет текущие конфигурации удаленных репозиториев обратно в файл конфигурации. 
+
+Этот метод перезаписывает разделы удаленных репозиториев в файле конфигурации текущим состоянием в памяти. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{RemoteManager_8hxx}{Remote\+Manager.\+hxx}}\item 
+server/src/\mbox{\hyperlink{RemoteManager_8cxx}{Remote\+Manager.\+cxx}}\end{DoxyCompactItemize}

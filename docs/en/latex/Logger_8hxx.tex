@@ -1,0 +1,75 @@
+\doxysection{services/logging/\+Logger.hxx File Reference}
+\hypertarget{Logger_8hxx}{}\label{Logger_8hxx}\index{services/logging/Logger.hxx@{services/logging/Logger.hxx}}
+
+
+Defines the \doxylink{classLogger}{Logger} class, a thread-\/safe Singleton that acts as an \doxylink{classIObserver}{IObserver}.  
+
+
+{\ttfamily \#include "{}../\+IObserver.\+hxx"{}}\newline
+{\ttfamily \#include "{}../\+Event.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLogger}{Logger}}
+\begin{DoxyCompactList}\small\item\em A thread-\/safe Singleton class responsible for logging system events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \{ \newline
+\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15}{DEBUG}} = 0
+, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3}{INFO}} = 1
+, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277}{WARN}} = 2
+, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}} = 3
+, \newline
+\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc}{FATAL}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the severity levels for log messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{classLogger}{Logger} class, a thread-\/safe Singleton that acts as an \doxylink{classIObserver}{IObserver}. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+The \doxylink{classLogger}{Logger} centralizes system logging, handles log level filtering, and subscribes to the \doxylink{structEvent}{Event} Bus to automatically process system events. 
+
+\label{doc-enum-members}
+\Hypertarget{Logger_8hxx_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}\index{Logger.hxx@{Logger.hxx}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!Logger.hxx@{Logger.hxx}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily \label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9} 
+enum class \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines the severity levels for log messages. 
+
+Used for filtering output based on the configured level. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG@{DEBUG}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!DEBUG@{DEBUG}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15} 
+DEBUG&Detailed information for debugging. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!INFO@{INFO}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3} 
+INFO&General flow information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARN@{WARN}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!WARN@{WARN}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277} 
+WARN&Potentially harmful situations. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!ERROR@{ERROR}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5} 
+ERROR&Error events that might still allow the application to continue. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FATAL@{FATAL}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!FATAL@{FATAL}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc} 
+FATAL&Very severe error events that will likely cause the application to abort. \\
+\hline
+
+\end{DoxyEnumFields}

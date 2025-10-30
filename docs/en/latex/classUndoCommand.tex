@@ -1,0 +1,162 @@
+\doxysection{Undo\+Command Class Reference}
+\hypertarget{classUndoCommand}{}\label{classUndoCommand}\index{UndoCommand@{UndoCommand}}
+
+
+Command to revert the repository state to a previous commit.  
+
+
+
+
+{\ttfamily \#include $<$Undo\+Command.\+hxx$>$}
+
+Inheritance diagram for Undo\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUndoCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUndoCommand_ad5190e679bde05b7a487a54acc55c022}{Undo\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classUndoCommand}{Undo\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUndoCommand_a945fa7af63c789577f519ef82ede51c0}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the undo command based on the provided arguments. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUndoCommand_a6ac6d4c9edc94deaea7d263e7c4a56a6}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the command\textquotesingle{}s primary name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUndoCommand_a1b591699bd7b74af5e0089bfa2e1e1d7}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the short description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUndoCommand_a4ef7ac648c143ef826ab93f6a474cd84}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the usage syntax of the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUndoCommand_af1a406317a7c2aee4770d76894d26d60}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Displays detailed help information for the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command to revert the repository state to a previous commit. 
+
+Implements the \textquotesingle{}svcs undo\textquotesingle{} functionality. It uses the \doxylink{classRepositoryManager}{Repository\+Manager} to perform the actual history and working directory manipulation. It utilizes the \doxylink{classISubject}{ISubject} (event bus) for user output and confirmation prompts. 
+
+\label{doc-constructors}
+\Hypertarget{classUndoCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUndoCommand_ad5190e679bde05b7a487a54acc55c022}\index{UndoCommand@{UndoCommand}!UndoCommand@{UndoCommand}}
+\index{UndoCommand@{UndoCommand}!UndoCommand@{UndoCommand}}
+\doxysubsubsection{\texorpdfstring{UndoCommand()}{UndoCommand()}}
+{\footnotesize\ttfamily \label{classUndoCommand_ad5190e679bde05b7a487a54acc55c022} 
+Undo\+Command\+::\+Undo\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classUndoCommand}{Undo\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & Shared pointer to the event bus for communication (output, prompts). \\
+\hline
+{\em repo\+Manager} & Shared pointer to the \doxylink{classRepositoryManager}{Repository\+Manager} for core repository operations. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classUndoCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUndoCommand_a945fa7af63c789577f519ef82ede51c0}\index{UndoCommand@{UndoCommand}!execute@{execute}}
+\index{execute@{execute}!UndoCommand@{UndoCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classUndoCommand_a945fa7af63c789577f519ef82ede51c0} 
+bool Undo\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the undo command based on the provided arguments. 
+
+Parses arguments for a specific commit hash or the {\ttfamily -\/-\/force} flag. If no hash is provided, it attempts to undo the last commit. 
+\begin{DoxyParams}{Parameters}
+{\em args} & The command-\/line arguments (e.\+g., commit hash, --force). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on successful execution (or if help is shown), false on error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classUndoCommand_a1b591699bd7b74af5e0089bfa2e1e1d7}\index{UndoCommand@{UndoCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!UndoCommand@{UndoCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classUndoCommand_a1b591699bd7b74af5e0089bfa2e1e1d7} 
+std\+::string Undo\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the short description of the command. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the command\textquotesingle{}s function. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classUndoCommand_a6ac6d4c9edc94deaea7d263e7c4a56a6}\index{UndoCommand@{UndoCommand}!getName@{getName}}
+\index{getName@{getName}!UndoCommand@{UndoCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classUndoCommand_a6ac6d4c9edc94deaea7d263e7c4a56a6} 
+std\+::string Undo\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the command\textquotesingle{}s primary name. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}undo"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classUndoCommand_a4ef7ac648c143ef826ab93f6a474cd84}\index{UndoCommand@{UndoCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!UndoCommand@{UndoCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classUndoCommand_a4ef7ac648c143ef826ab93f6a474cd84} 
+std\+::string Undo\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the usage syntax of the command. 
+
+\begin{DoxyReturn}{Returns}
+A string detailing how the command is used. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classUndoCommand_af1a406317a7c2aee4770d76894d26d60}\index{UndoCommand@{UndoCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!UndoCommand@{UndoCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classUndoCommand_af1a406317a7c2aee4770d76894d26d60} 
+void Undo\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays detailed help information for the command. 
+
+
+
+Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{UndoCommand_8hxx}{Undo\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{UndoCommand_8cxx}{Undo\+Command.\+cxx}}\end{DoxyCompactItemize}

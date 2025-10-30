@@ -1,0 +1,151 @@
+\doxysection{Класс Command\+Factory}
+\hypertarget{classCommandFactory}{}\label{classCommandFactory}\index{CommandFactory@{CommandFactory}}
+
+
+Фабрика для создания объектов \doxylink{classICommand}{ICommand} по их строковому имени.  
+
+
+
+
+{\ttfamily \#include $<$Command\+Factory.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3}{Command\+Factory}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classCommandFactory}{Command\+Factory}. \end{DoxyCompactList}\item 
+\Hypertarget{classCommandFactory_ac31cdcf058989c9f45fb228908530d46}\label{classCommandFactory_ac31cdcf058989c9f45fb228908530d46} 
+{\bfseries Command\+Factory} (const \mbox{\hyperlink{classCommandFactory}{Command\+Factory}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Удаляет конструктор копирования. Фабрика не должна копироваться. \end{DoxyCompactList}\item 
+\Hypertarget{classCommandFactory_aa7fb0a11d596213f1b2f62ecea795ae7}\label{classCommandFactory_aa7fb0a11d596213f1b2f62ecea795ae7} 
+\mbox{\hyperlink{classCommandFactory}{Command\+Factory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classCommandFactory}{Command\+Factory}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Удаляет оператор присваивания. Фабрика не должна присваиваться. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommandFactory_a917e8d9dc3309ac17ddf923943ad873b}{register\+Command}} (const std\+::string \&name, std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$)$>$ creator)
+\begin{DoxyCompactList}\small\item\em Регистрирует функцию-\/создатель для новой команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCommandFactory_ae02afa8bcfb45a9e847afc4341a6478c}{get\+Command\+Description}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Получает краткое описание для зарегистрированной команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommandFactory_a5cf9650357540bf23af2136d08385f64}{show\+Command\+Help}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Отображает подробную справку и использование для зарегистрированной команды. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$ \mbox{\hyperlink{classCommandFactory_ab8448b0292b6f5f9cfdafb4fb33102dc}{create\+Command}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Создает и возвращает объект команды по его имени. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classCommandFactory_ae390c14a70557144e76f3b114036078e}{get\+Registered\+Commands}} () const
+\begin{DoxyCompactList}\small\item\em Получает список имен всех текущих зарегистрированных команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Фабрика для создания объектов \doxylink{classICommand}{ICommand} по их строковому имени. 
+
+\doxylink{classCommandFactory}{Command\+Factory} управляет жизненным циклом команд, создавая их динамически с использованием функций-\/создателей, зарегистрированных под уникальными именами. Команды конструируются с общим владением шиной событий (\doxylink{classISubject}{ISubject}) и менеджером репозитория (\doxylink{classRepositoryManager}{Repository\+Manager}). 
+
+\label{doc-constructors}
+\Hypertarget{classCommandFactory_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3}\index{CommandFactory@{CommandFactory}!CommandFactory@{CommandFactory}}
+\index{CommandFactory@{CommandFactory}!CommandFactory@{CommandFactory}}
+\doxysubsubsection{\texorpdfstring{CommandFactory()}{CommandFactory()}}
+{\footnotesize\ttfamily \label{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3} 
+Command\+Factory\+::\+Command\+Factory (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструирует \doxylink{classCommandFactory}{Command\+Factory}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bus} & Общий указатель на шину событий. \\
+\hline
+{\em repo\+Manager} & Общий указатель на менеджер репозитория. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classCommandFactory_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classCommandFactory_ab8448b0292b6f5f9cfdafb4fb33102dc}\index{CommandFactory@{CommandFactory}!createCommand@{createCommand}}
+\index{createCommand@{createCommand}!CommandFactory@{CommandFactory}}
+\doxysubsubsection{\texorpdfstring{createCommand()}{createCommand()}}
+{\footnotesize\ttfamily \label{classCommandFactory_ab8448b0292b6f5f9cfdafb4fb33102dc} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$ Command\+Factory\+::create\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Создает и возвращает объект команды по его имени. 
+
+Передает владение (через unique\+\_\+ptr) созданного объекта вызывающей стороне. 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя команды (ключ в карте creators). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::unique\+\_\+ptr$<$\+ICommand$>$, содержащий новый объект команды, или nullptr если команда не зарегистрирована. 
+\end{DoxyReturn}
+\Hypertarget{classCommandFactory_ae02afa8bcfb45a9e847afc4341a6478c}\index{CommandFactory@{CommandFactory}!getCommandDescription@{getCommandDescription}}
+\index{getCommandDescription@{getCommandDescription}!CommandFactory@{CommandFactory}}
+\doxysubsubsection{\texorpdfstring{getCommandDescription()}{getCommandDescription()}}
+{\footnotesize\ttfamily \label{classCommandFactory_ae02afa8bcfb45a9e847afc4341a6478c} 
+std\+::string Command\+Factory\+::get\+Command\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает краткое описание для зарегистрированной команды. 
+
+Для этого необходимо создать временный экземпляр команды. 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя команды. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка описания команды или сообщение об ошибке, если команда не зарегистрирована. 
+\end{DoxyReturn}
+\Hypertarget{classCommandFactory_ae390c14a70557144e76f3b114036078e}\index{CommandFactory@{CommandFactory}!getRegisteredCommands@{getRegisteredCommands}}
+\index{getRegisteredCommands@{getRegisteredCommands}!CommandFactory@{CommandFactory}}
+\doxysubsubsection{\texorpdfstring{getRegisteredCommands()}{getRegisteredCommands()}}
+{\footnotesize\ttfamily \label{classCommandFactory_ae390c14a70557144e76f3b114036078e} 
+std\+::vector$<$ std\+::string $>$ Command\+Factory\+::get\+Registered\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает список имен всех текущих зарегистрированных команд. 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор строк, содержащий имена всех зарегистрированных команд. 
+\end{DoxyReturn}
+\Hypertarget{classCommandFactory_a917e8d9dc3309ac17ddf923943ad873b}\index{CommandFactory@{CommandFactory}!registerCommand@{registerCommand}}
+\index{registerCommand@{registerCommand}!CommandFactory@{CommandFactory}}
+\doxysubsubsection{\texorpdfstring{registerCommand()}{registerCommand()}}
+{\footnotesize\ttfamily \label{classCommandFactory_a917e8d9dc3309ac17ddf923943ad873b} 
+void Command\+Factory\+::register\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$)$>$}]{creator}{}\end{DoxyParamCaption})}
+
+
+
+Регистрирует функцию-\/создатель для новой команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Строковое имя, под которым команда будет вызываться. \\
+\hline
+{\em creator} & Функция, которая создает и возвращает новый объект \doxylink{classICommand}{ICommand}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCommandFactory_a5cf9650357540bf23af2136d08385f64}\index{CommandFactory@{CommandFactory}!showCommandHelp@{showCommandHelp}}
+\index{showCommandHelp@{showCommandHelp}!CommandFactory@{CommandFactory}}
+\doxysubsubsection{\texorpdfstring{showCommandHelp()}{showCommandHelp()}}
+{\footnotesize\ttfamily \label{classCommandFactory_a5cf9650357540bf23af2136d08385f64} 
+void Command\+Factory\+::show\+Command\+Help (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Отображает подробную справку и использование для зарегистрированной команды. 
+
+Это достигается созданием временного экземпляра команды и вызовом его метода show\+Help. 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя команды. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{CommandFactory_8hxx}{Command\+Factory.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{CommandFactory_8cxx}{Command\+Factory.\+cxx}}\end{DoxyCompactItemize}

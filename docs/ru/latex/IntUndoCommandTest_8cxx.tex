@@ -1,0 +1,25 @@
+\doxysection{Файл tests/cli/utils/\+Int\+Undo\+Command\+Test.cxx}
+\hypertarget{IntUndoCommandTest_8cxx}{}\label{IntUndoCommandTest_8cxx}\index{tests/cli/utils/IntUndoCommandTest.cxx@{tests/cli/utils/IntUndoCommandTest.cxx}}
+
+
+Реализация интеграционных тестов для класса \doxylink{classUndoCommand}{Undo\+Command}, сфокусированная на принудительных операциях.  
+
+
+{\ttfamily \#include "{}Int\+Undo\+Command\+Test.\+hxx"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+
+
+\doxysubsection{Подробное описание}
+Реализация интеграционных тестов для класса \doxylink{classUndoCommand}{Undo\+Command}, сфокусированная на принудительных операциях. 
+
+Реализация фикстура \doxylink{classUndoCommandTest}{Undo\+Command\+Test}.
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот файл определяет процедуры настройки и очистки для интеграционного тестового фикстура \doxylink{classUndoCommand}{Undo\+Command}, вместе со вспомогательными методами для упрощения создания тестовых случаев путем автоматизации создания файлов и директорий, индексации, коммитов и проверки вывода. \begin{DoxyNote}{Заметки}
+Метод {\ttfamily simulate\+User\+Input} в настоящее время содержит комментарий-\/заполнитель, так как мокирование {\ttfamily std\+::cin} требует более сложной настройки, которая опущена здесь. Для полного интерактивного тестирования команда/шина событий должна поддерживать внедряемые потоки ввода. 
+\end{DoxyNote}

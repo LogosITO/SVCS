@@ -1,0 +1,25 @@
+\doxysection{Файл tests/cli/mocks/\+Mock\+Subject.hxx}
+\hypertarget{MockSubject_8hxx}{}\label{MockSubject_8hxx}\index{tests/cli/mocks/MockSubject.hxx@{tests/cli/mocks/MockSubject.hxx}}
+
+
+Mock реализация интерфейса \doxylink{classISubject}{ISubject} для целей модульного тестирования.  
+
+
+{\ttfamily \#include "{}../../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include $<$gmock/gmock.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMockSubject}{Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classISubject}{ISubject} (\doxylink{structEvent}{Event} Bus). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Mock реализация интерфейса \doxylink{classISubject}{ISubject} для целей модульного тестирования. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот класс захватывает все события, публикуемые ядром системы, без необходимости полной реализации системы Observer. Он предоставляет вспомогательные методы для удобства проверки утверждений в модульных тестах. 

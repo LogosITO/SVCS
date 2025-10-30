@@ -1,0 +1,28 @@
+\doxysection{tests/cli/utils/\+Int\+Undo\+Command\+Test.hxx File Reference}
+\hypertarget{IntUndoCommandTest_8hxx}{}\label{IntUndoCommandTest_8hxx}\index{tests/cli/utils/IntUndoCommandTest.hxx@{tests/cli/utils/IntUndoCommandTest.hxx}}
+
+
+Test fixture header for integration tests of the \doxylink{classUndoCommand}{Undo\+Command} class.  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include "{}../../../cli/include/\+Undo\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../mocks/\+Mock\+Subject.\+hxx"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUndoCommandTest}{Undo\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classUndoCommand}{Undo\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test fixture header for integration tests of the \doxylink{classUndoCommand}{Undo\+Command} class. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Declares the \doxylink{classUndoCommandTest}{Undo\+Command\+Test} fixture, which sets up a controlled environment for testing the \textquotesingle{}svcs undo\textquotesingle{} command. This includes initializing mock and core components (\doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classRepositoryManager}{Repository\+Manager}) and providing helper functions for file manipulation, staging, committing, and simulating user input for confirmation prompts. 

@@ -1,0 +1,172 @@
+\doxysection{Hub\+Command Class Reference}
+\hypertarget{classHubCommand}{}\label{classHubCommand}\index{HubCommand@{HubCommand}}
+
+
+Command for creating central hub repositories for team collaboration.  
+
+
+
+
+{\ttfamily \#include $<$Hub\+Command.\+hxx$>$}
+
+Inheritance diagram for Hub\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHubCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHubCommand_a40546b1910267e729a3a82bd4d9e33e2}{Hub\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repository\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classHubCommand}{Hub\+Command} with necessary dependencies. \end{DoxyCompactList}\item 
+\Hypertarget{classHubCommand_a863f57c733961ddd5a89da1e510fcd81}\label{classHubCommand_a863f57c733961ddd5a89da1e510fcd81} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Hub\+Command} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHubCommand_a701eb297ef49001ddd918608275de0e1}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHubCommand_a1dba268b5ef60af5ddc4115da540b560}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets a brief description of the command\textquotesingle{}s purpose. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHubCommand_a6236c37f7e57f1267eeea4f6335ff31d}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the usage syntax for the command. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHubCommand_a326681c2b0577b7871c6a5a2f5be16a5}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the hub command with provided arguments. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHubCommand_a2a331abe87c7c5b028ce276557cf5177}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Displays help information for the hub command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command for creating central hub repositories for team collaboration. 
+
+Implements the \textquotesingle{}svcs hub\textquotesingle{} functionality to initialize bare repositories that act as central points for pushing, pulling and collaborating on code. This command is essential for setting up remote collaboration infrastructure. 
+
+\label{doc-constructors}
+\Hypertarget{classHubCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHubCommand_a40546b1910267e729a3a82bd4d9e33e2}\index{HubCommand@{HubCommand}!HubCommand@{HubCommand}}
+\index{HubCommand@{HubCommand}!HubCommand@{HubCommand}}
+\doxysubsubsection{\texorpdfstring{HubCommand()}{HubCommand()}}
+{\footnotesize\ttfamily \label{classHubCommand_a40546b1910267e729a3a82bd4d9e33e2} 
+Hub\+Command\+::\+Hub\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repository\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classHubCommand}{Hub\+Command} with necessary dependencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+\_\+bus} & The event bus for notification system, used for user feedback. \\
+\hline
+{\em repository\+\_\+manager} & The repository manager for core repository operations. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classHubCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHubCommand_a326681c2b0577b7871c6a5a2f5be16a5}\index{HubCommand@{HubCommand}!execute@{execute}}
+\index{execute@{execute}!HubCommand@{HubCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classHubCommand_a326681c2b0577b7871c6a5a2f5be16a5} 
+bool Hub\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the hub command with provided arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Command line arguments passed to the hub command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if command executed successfully, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::filesystem\+\_\+error} & If filesystem operations fail. \\
+\hline
+{\em std\+::runtime\+\_\+error} & If repository initialization fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classHubCommand_a1dba268b5ef60af5ddc4115da540b560}\index{HubCommand@{HubCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!HubCommand@{HubCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classHubCommand_a1dba268b5ef60af5ddc4115da540b560} 
+std\+::string Hub\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a brief description of the command\textquotesingle{}s purpose. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Description of the hub command functionality. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classHubCommand_a701eb297ef49001ddd918608275de0e1}\index{HubCommand@{HubCommand}!getName@{getName}}
+\index{getName@{getName}!HubCommand@{HubCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classHubCommand_a701eb297ef49001ddd918608275de0e1} 
+std\+::string Hub\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The command name "{}hub"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classHubCommand_a6236c37f7e57f1267eeea4f6335ff31d}\index{HubCommand@{HubCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!HubCommand@{HubCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classHubCommand_a6236c37f7e57f1267eeea4f6335ff31d} 
+std\+::string Hub\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the usage syntax for the command. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The usage pattern for the hub command. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classHubCommand_a2a331abe87c7c5b028ce276557cf5177}\index{HubCommand@{HubCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!HubCommand@{HubCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classHubCommand_a2a331abe87c7c5b028ce276557cf5177} 
+void Hub\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays help information for the hub command. 
+
+Shows usage examples, argument descriptions, and command purpose to assist users in proper command usage. 
+
+Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{HubCommand_8hxx}{Hub\+Command.\+hxx}}\item 
+server/src/\mbox{\hyperlink{HubCommand_8cxx}{Hub\+Command.\+cxx}}\end{DoxyCompactItemize}

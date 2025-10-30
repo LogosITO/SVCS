@@ -1,0 +1,24 @@
+\doxysection{Файл services/\+ISubject.hxx}
+\hypertarget{ISubject_8hxx}{}\label{ISubject_8hxx}\index{services/ISubject.hxx@{services/ISubject.hxx}}
+
+
+Определяет интерфейс для компонента Subject (Издатель) шаблона Observer.  
+
+
+{\ttfamily \#include "{}IObserver.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classISubject}{ISubject}}
+\begin{DoxyCompactList}\small\item\em Интерфейс Subject (Издатель) (Абстрактный Базовый Класс). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Определяет интерфейс для компонента Subject (Издатель) шаблона Observer. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот интерфейс устанавливает контракт для любого класса, который желает действовать как издатель событий, позволяя Observers регистрироваться для уведомлений. Он требует использования умных указателей для управления временем жизни наблюдателей. 

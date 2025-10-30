@@ -1,0 +1,121 @@
+\doxysection{ISubject Class Reference}
+\hypertarget{classISubject}{}\label{classISubject}\index{ISubject@{ISubject}}
+
+
+The Subject (Publisher) Interface (Abstract Base Class).  
+
+
+
+
+{\ttfamily \#include $<$ISubject.\+hxx$>$}
+
+Inheritance diagram for ISubject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classISubject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classISubject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$ observer)=0
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the subject. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$ observer)=0
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the subject. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) const =0
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers about an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classISubject_a66f4ce666ed8b85d694a9b73d6bc16fb}\label{classISubject_a66f4ce666ed8b85d694a9b73d6bc16fb} 
+std\+::vector$<$ \mbox{\hyperlink{classIObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Collection of registered observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Subject (Publisher) Interface (Abstract Base Class). 
+
+Core classes (e.\+g., \doxylink{classRepository}{Repository}, \doxylink{classEventBus}{Event\+Bus}) implement this interface to allow observers to subscribe to events. The contract requires all management functions ({\ttfamily attach}, {\ttfamily detach}) to handle {\ttfamily std\+::shared\+\_\+ptr\texorpdfstring{$<$}{<}\doxylink{classIObserver}{IObserver}\texorpdfstring{$>$}{>}}. 
+
+\label{doc-constructors}
+\Hypertarget{classISubject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classISubject_ae7264a3f132816d45581a1b31845ecac}\index{ISubject@{ISubject}!````~ISubject@{\texorpdfstring{$\sim$}{\string~}ISubject}}
+\index{````~ISubject@{\texorpdfstring{$\sim$}{\string~}ISubject}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ISubject()}{\string~ISubject()}}
+{\footnotesize\ttfamily \label{classISubject_ae7264a3f132816d45581a1b31845ecac} 
+virtual ISubject\+::\texorpdfstring{$\sim$}{\string~}\+ISubject (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Ensures correct cleanup of derived subject classes. 
+
+\label{doc-func-members}
+\Hypertarget{classISubject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}\index{ISubject@{ISubject}!attach@{attach}}
+\index{attach@{attach}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace} 
+virtual void ISubject\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attaches an observer to the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A smart pointer to the observer object to attach. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classEventBus_a131f28abdfe25a80f94a202aff5e6edb}{Event\+Bus}}, \mbox{\hyperlink{classMockEventBus_a2fd34d7ace57cdc7ceb4a62bd4de4151}{Mock\+Event\+Bus}}, \mbox{\hyperlink{classMockSubject_a1cbe4aefca976d0a2f7c5077e9998604}{Mock\+Subject}}, \mbox{\hyperlink{classMockSubject_a1cbe4aefca976d0a2f7c5077e9998604}{Mock\+Subject}}, \mbox{\hyperlink{classMockSubject_a1cbe4aefca976d0a2f7c5077e9998604}{Mock\+Subject}}, \mbox{\hyperlink{classRepository_a250a9e24514ca3a4f8c6d954ad4dcefc}{Repository}}, \mbox{\hyperlink{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}{Simple\+Event\+Bus}}, and \mbox{\hyperlink{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}{Simple\+Event\+Bus}}.
+
+\Hypertarget{classISubject_aad2217012b14bdd6c91eb240689e5a74}\index{ISubject@{ISubject}!detach@{detach}}
+\index{detach@{detach}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classISubject_aad2217012b14bdd6c91eb240689e5a74} 
+virtual void ISubject\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Detaches an observer from the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A smart pointer to the observer object to detach. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classEventBus_a42559fdfdd62a10ae1494f123a06e96a}{Event\+Bus}}, \mbox{\hyperlink{classMockEventBus_adf07e12c7520f8e8eb15283d7688c8a3}{Mock\+Event\+Bus}}, \mbox{\hyperlink{classMockSubject_a7a19cfe5e16907e32c0ace1ff7d6992e}{Mock\+Subject}}, \mbox{\hyperlink{classMockSubject_a7a19cfe5e16907e32c0ace1ff7d6992e}{Mock\+Subject}}, \mbox{\hyperlink{classMockSubject_a7a19cfe5e16907e32c0ace1ff7d6992e}{Mock\+Subject}}, \mbox{\hyperlink{classRepository_a1e421ee99132cf3dcaac6fc54ba0ab7d}{Repository}}, \mbox{\hyperlink{classSimpleEventBus_a9b9a471480117937401986e38c059b66}{Simple\+Event\+Bus}}, and \mbox{\hyperlink{classSimpleEventBus_a9b9a471480117937401986e38c059b66}{Simple\+Event\+Bus}}.
+
+\Hypertarget{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}\index{ISubject@{ISubject}!notify@{notify}}
+\index{notify@{notify}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classISubject_aa2da71c9f12ce1097f83bc8887fa0474} 
+virtual void ISubject\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies all attached observers about an event. 
+
+This method is made public so that component classes (like \doxylink{classObjectStorage}{Object\+Storage}) can publish events through the injected \doxylink{classISubject}{ISubject} pointer. The method is declared as {\ttfamily const} because event notification is a logically non-\/mutating action on the Subject\textquotesingle{}s state. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The constant reference to the event structure to be sent. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classEventBus_a581f243551365d2dc9599665540486dd}{Event\+Bus}}, \mbox{\hyperlink{classMockEventBus_ac75aa0c20bffc70dfb1b9e382a3844b0}{Mock\+Event\+Bus}}, \mbox{\hyperlink{classMockSubject_a9aaffe9cd012979c90c186ea3ec86fc0}{Mock\+Subject}}, \mbox{\hyperlink{classMockSubject_a9aaffe9cd012979c90c186ea3ec86fc0}{Mock\+Subject}}, \mbox{\hyperlink{classMockSubject_a9aaffe9cd012979c90c186ea3ec86fc0}{Mock\+Subject}}, \mbox{\hyperlink{classRepository_a7ce8792d0a1493d98986fb2732b95c4c}{Repository}}, \mbox{\hyperlink{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}{Simple\+Event\+Bus}}, and \mbox{\hyperlink{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}{Simple\+Event\+Bus}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{ISubject_8hxx}{ISubject.\+hxx}}\end{DoxyCompactItemize}

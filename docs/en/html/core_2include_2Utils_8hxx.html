@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: core/include/Utils.hxx File Reference</title>
+<title>SVCS - English Documentation: core/include/Utils.hxx File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -109,10 +107,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3c03f3592ffa57a1f2ad8be7ddab13f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a binary buffer (e.g., a raw SHA-1 hash) into its hexadecimal string representation.  <br /></td></tr>
 <tr class="memitem:a7fc89ff4883c714ee7a53698eb485ec3" id="r_a7fc89ff4883c714ee7a53698eb485ec3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fc89ff4883c714ee7a53698eb485ec3">hex_to_binary_string</a> (const std::string &amp;hex_string)</td></tr>
 <tr class="memdesc:a7fc89ff4883c714ee7a53698eb485ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a hexadecimal string (e.g., 40 chars) into its raw binary byte representation (e.g., 20 bytes).  <br /></td></tr>
+<tr class="memitem:a98673c362b0d36f58739502e3a21e96f" id="r_a98673c362b0d36f58739502e3a21e96f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98673c362b0d36f58739502e3a21e96f">compute_sha256</a> (const std::string &amp;input)</td></tr>
+<tr class="memdesc:a98673c362b0d36f58739502e3a21e96f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the SHA-256 hash of the given input data.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines utility functions for core of SVCS. </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a3c03f3592ffa57a1f2ad8be7ddab13f4" name="a3c03f3592ffa57a1f2ad8be7ddab13f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c03f3592ffa57a1f2ad8be7ddab13f4">&#9670;&#160;</a></span>binary_to_hex_string()</h2>
@@ -142,6 +142,32 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A std::string containing the hexadecimal representation (e.g., 40 characters for SHA-1). </dd></dl>
+
+</div>
+</div>
+<a id="a98673c362b0d36f58739502e3a21e96f" name="a98673c362b0d36f58739502e3a21e96f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98673c362b0d36f58739502e3a21e96f">&#9670;&#160;</a></span>compute_sha256()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string compute_sha256 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the SHA-256 hash of the given input data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input data to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string The SHA-256 hash as a hexadecimal string. </dd></dl>
 
 </div>
 </div>
@@ -193,8 +219,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reads the entire content of a file into a single std::string. </p>
-<ul>
-<li>This utility function is designed for reading small to medium-sized files and is crucial for creating <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> contents (e.g., Blobs). It opens the file in binary mode to ensure all characters are read correctly across platforms. <dl class="params"><dt>Parameters</dt><dd>
+<p>This utility function is designed for reading small to medium-sized files and is crucial for creating <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> contents (e.g., Blobs). It opens the file in binary mode to ensure all characters are read correctly across platforms. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">full_path</td><td>The full, absolute path to the file on disk. </td></tr>
   </table>
@@ -207,8 +232,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 </div>
 </div>

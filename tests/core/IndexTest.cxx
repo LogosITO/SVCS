@@ -1,8 +1,14 @@
 /**
  * @file IndexTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for the Index class, verifying staging area management, file modification tracking, and index persistence.
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для класса Index, проверяющие управление областью индексации, отслеживание изменений файлов и сохранение индекса.
  */
 
 #include "../../core/include/Index.hxx"

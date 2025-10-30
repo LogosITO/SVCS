@@ -1,0 +1,96 @@
+\doxysection{IObserver Class Reference}
+\hypertarget{classIObserver}{}\label{classIObserver}\index{IObserver@{IObserver}}
+
+
+The Observer Interface (Abstract Base Class).  
+
+
+
+
+{\ttfamily \#include $<$IObserver.\+hxx$>$}
+
+Inheritance diagram for IObserver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.904762cm]{classIObserver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObserver_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIObserver_a325451b0d0100feaad6f683850a616dc}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event)=0
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to notify the observer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIObserver_af15fbd52637f4bf0225fde86051d8354}{update}} (const \mbox{\hyperlink{structEvent}{Event}} \&event)=0
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to update the observer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Observer Interface (Abstract Base Class). 
+
+Any class that wants to receive notifications from the system core (e.\+g., \doxylink{classRepository}{Repository}, Command) must implement this interface to be registered with a Subject. 
+
+\label{doc-constructors}
+\Hypertarget{classIObserver_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classIObserver_a1306da2dbaf55620130af5586e3a0373}\index{IObserver@{IObserver}!````~IObserver@{\texorpdfstring{$\sim$}{\string~}IObserver}}
+\index{````~IObserver@{\texorpdfstring{$\sim$}{\string~}IObserver}!IObserver@{IObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IObserver()}{\string~IObserver()}}
+{\footnotesize\ttfamily \label{classIObserver_a1306da2dbaf55620130af5586e3a0373} 
+virtual IObserver\+::\texorpdfstring{$\sim$}{\string~}\+IObserver (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default virtual destructor. 
+
+Ensures correct cleanup of derived observer classes via a base class pointer. 
+
+\label{doc-func-members}
+\Hypertarget{classIObserver_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIObserver_a325451b0d0100feaad6f683850a616dc}\index{IObserver@{IObserver}!notify@{notify}}
+\index{notify@{notify}!IObserver@{IObserver}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classIObserver_a325451b0d0100feaad6f683850a616dc} 
+virtual void IObserver\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Method called by the Subject to notify the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structEvent}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Note\+: This method appears redundant with \doxylink{classIObserver_af15fbd52637f4bf0225fde86051d8354}{update(const Event\& event)}.\end{DoxyRefDesc}
+
+
+Implemented in \mbox{\hyperlink{classLogger_a96a2b88ee6d81d3ecf0fed3a6291c9a2}{Logger}}, \mbox{\hyperlink{classManualMockObserver_a2d0cef17d9225d64ce23dbf3451bb610}{Manual\+Mock\+Observer}}, \mbox{\hyperlink{classMockObserver_a8fd6d2d376fb45dfee6968489b2057bb}{Mock\+Observer}}, and \mbox{\hyperlink{classNullObserver_aeb635126b1e4270cb50229b157525270}{Null\+Observer}}.
+
+\Hypertarget{classIObserver_af15fbd52637f4bf0225fde86051d8354}\index{IObserver@{IObserver}!update@{update}}
+\index{update@{update}!IObserver@{IObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classIObserver_af15fbd52637f4bf0225fde86051d8354} 
+virtual void IObserver\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Method called by the Subject to update the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structEvent}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classLogger_a2053c71402fe93a43ea3170ed67807d5}{Logger}}, \mbox{\hyperlink{classManualMockObserver_a69920f02d27bbea5a79566d616d844fd}{Manual\+Mock\+Observer}}, \mbox{\hyperlink{classMockObserver_ab453d08d096802df88465bebe3af0615}{Mock\+Observer}}, and \mbox{\hyperlink{classNullObserver_a8866a842843f40e6a1a92b27e7148ef7}{Null\+Observer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{IObserver_8hxx}{IObserver.\+hxx}}\end{DoxyCompactItemize}

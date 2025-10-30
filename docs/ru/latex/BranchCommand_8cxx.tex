@@ -1,0 +1,19 @@
+\doxysection{Файл cli/src/\+Branch\+Command.cxx}
+\hypertarget{BranchCommand_8cxx}{}\label{BranchCommand_8cxx}\index{cli/src/BranchCommand.cxx@{cli/src/BranchCommand.cxx}}
+
+
+Реализация \doxylink{classBranchCommand}{Branch\+Command} для управления ветками.  
+
+
+{\ttfamily \#include "{}../include/\+Branch\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+
+
+\doxysubsection{Подробное описание}
+Реализация \doxylink{classBranchCommand}{Branch\+Command} для управления ветками. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Эта команда действует как интерфейс командной строки для операций с ветками. Она разбирает аргументы командной строки для определения требуемого действия (список, создание, удаление, переименование, переключение или показ текущей) и вызывает соответствующий метод в основном \doxylink{classBranchManager}{Branch\+Manager}. 

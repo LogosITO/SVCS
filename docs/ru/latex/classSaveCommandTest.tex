@@ -1,0 +1,155 @@
+\doxysection{Класс Save\+Command\+Test}
+\hypertarget{classSaveCommandTest}{}\label{classSaveCommandTest}\index{SaveCommandTest@{SaveCommandTest}}
+
+
+Google Test фикстур для запуска интеграционных тестов \doxylink{classSaveCommand}{Save\+Command} (коммит).  
+
+
+
+
+{\ttfamily \#include $<$Int\+Save\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:Save\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSaveCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSaveCommandTest_a18b39c15087110afbe4f669ce36efc0e}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommandTest_accf541fe18a23379bb833eaaa6750d45}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommandTest_af4c62b884cd988e8f1ff6b9970e03bf4}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл с указанным содержимым во временной директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommandTest_abbb2a3e30fad0a9626d224b2c890abc2}{create\+Test\+Directory}} (const std\+::string \&dirname)
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию во временном расположении. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommandTest_a82fc477fb849e9ea7335ae225e35e7b6}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Индексирует список файлов с использованием логики индексации \doxylink{classRepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSaveCommandTest_a2024312f64f0b9e394110506c0cf26b0}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSaveCommandTest_aa37b2eb8820070c5079889220fd8ef57}\label{classSaveCommandTest_aa37b2eb8820070c5079889220fd8ef57} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий (наблюдатель). \end{DoxyCompactList}\item 
+\Hypertarget{classSaveCommandTest_a14fdcfd46ec656cd52e1a6241320d49a}\label{classSaveCommandTest_a14fdcfd46ec656cd52e1a6241320d49a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Общий указатель на компонент основной логики репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{classSaveCommandTest_aac4baff35723bce4d333802a72ca1e76}\label{classSaveCommandTest_aac4baff35723bce4d333802a72ca1e76} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classSaveCommand}{Save\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\item 
+\Hypertarget{classSaveCommandTest_af74e76c9d6f76befea2da0c84ef6631c}\label{classSaveCommandTest_af74e76c9d6f76befea2da0c84ef6631c} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной тестовой директории репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска интеграционных тестов \doxylink{classSaveCommand}{Save\+Command} (коммит). 
+
+Этот фикстур предоставляет необходимую инфраструктуру для тестирования команды save\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Управление временной директорией репозитория SVCS.
+\item {\bfseries{Основные компоненты\+:}} Экземпляры \doxylink{classMockSubject}{Mock\+Subject} (для шины событий) и \doxylink{classRepositoryManager}{Repository\+Manager} (для основной логики).
+\item {\bfseries{Вспомогательные методы\+:}} Упрощают создание файлов, настройку директорий, индексацию и проверку уведомлений. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classSaveCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classSaveCommandTest_a2024312f64f0b9e394110506c0cf26b0}\index{SaveCommandTest@{SaveCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_a2024312f64f0b9e394110506c0cf26b0} 
+bool Save\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classSaveCommandTest_abbb2a3e30fad0a9626d224b2c890abc2}\index{SaveCommandTest@{SaveCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_abbb2a3e30fad0a9626d224b2c890abc2} 
+void Save\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию во временном расположении. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Относительный путь/имя директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSaveCommandTest_af4c62b884cd988e8f1ff6b9970e03bf4}\index{SaveCommandTest@{SaveCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_af4c62b884cd988e8f1ff6b9970e03bf4} 
+void Save\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл с указанным содержимым во временной директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Относительный путь/имя файла. \\
+\hline
+{\em content} & Содержимое для записи в файл. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSaveCommandTest_a18b39c15087110afbe4f669ce36efc0e}\index{SaveCommandTest@{SaveCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_a18b39c15087110afbe4f669ce36efc0e} 
+void Save\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение перед каждым тестом. 
+
+Инициализирует компоненты, создает временную директорию и инициализирует репозиторий. \Hypertarget{classSaveCommandTest_a82fc477fb849e9ea7335ae225e35e7b6}\index{SaveCommandTest@{SaveCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_a82fc477fb849e9ea7335ae225e35e7b6} 
+void Save\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Индексирует список файлов с использованием логики индексации \doxylink{classRepositoryManager}{Repository\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em files} & Вектор имен файлов для индексации. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSaveCommandTest_accf541fe18a23379bb833eaaa6750d45}\index{SaveCommandTest@{SaveCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!SaveCommandTest@{SaveCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classSaveCommandTest_accf541fe18a23379bb833eaaa6750d45} 
+void Save\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение после каждого теста. 
+
+Очищает временную директорию и восстанавливает рабочий путь. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntSaveCommandTest_8hxx}{Int\+Save\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntSaveCommandTest_8cxx}{Int\+Save\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\doxysection{Класс Add\+Command\+Test}
+\hypertarget{classAddCommandTest}{}\label{classAddCommandTest}\index{AddCommandTest@{AddCommandTest}}
+
+
+Тестовый фикстур для интеграционных тестов \doxylink{classAddCommand}{Add\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Add\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:Add\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAddCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAddCommandTest_a03edc7b6fa29ef9c99da73535ac498cc}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddCommandTest_aa581ea4026ae9dda2351328dc17b9f03}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddCommandTest_ab2c485012d37418a071bba6415c0c9ec}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content="{}test content"{}) const
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл внутри тестовой директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddCommandTest_a69d865915925db599252868cdf058520}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию внутри тестовой директории. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAddCommandTest_a30d7485f01aa42c0a731b8d828be1713}\label{classAddCommandTest_a30d7485f01aa42c0a731b8d828be1713} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Mock шина событий для захвата системных уведомлений. \end{DoxyCompactList}\item 
+\Hypertarget{classAddCommandTest_ac4684173d257891fa27639bf52fec49b}\label{classAddCommandTest_ac4684173d257891fa27639bf52fec49b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Реальный экземпляр \doxylink{classRepositoryManager}{Repository\+Manager} под тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classAddCommandTest_aad094493a7113576f3e89b236e08e0f1}\label{classAddCommandTest_aad094493a7113576f3e89b236e08e0f1} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAddCommand}{Add\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Экземпляр \doxylink{classAddCommand}{Add\+Command} под тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classAddCommandTest_acb1249def667faea85d6c64a1a3b3c72}\label{classAddCommandTest_acb1249def667faea85d6c64a1a3b3c72} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной директории, используемой как корень репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Тестовый фикстур для интеграционных тестов \doxylink{classAddCommand}{Add\+Command}. 
+
+Управляет настройкой и очисткой временного инициализированного репозитория SVCS. Предоставляет служебные методы для создания различных структур файловой системы для тестирования логики добавления в индекс команды \doxylink{classAddCommand}{Add\+Command}. 
+
+\label{doc-func-members}
+\Hypertarget{classAddCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classAddCommandTest_a69d865915925db599252868cdf058520}\index{AddCommandTest@{AddCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!AddCommandTest@{AddCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classAddCommandTest_a69d865915925db599252868cdf058520} 
+void Add\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию внутри тестовой директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Имя создаваемой директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAddCommandTest_ab2c485012d37418a071bba6415c0c9ec}\index{AddCommandTest@{AddCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!AddCommandTest@{AddCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classAddCommandTest_ab2c485012d37418a071bba6415c0c9ec} 
+void Add\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{ = {\ttfamily "{}test~content"{}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл внутри тестовой директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Имя создаваемого файла. \\
+\hline
+{\em content} & Содержимое файла (по умолчанию "{}test content"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAddCommandTest_a03edc7b6fa29ef9c99da73535ac498cc}\index{AddCommandTest@{AddCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!AddCommandTest@{AddCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classAddCommandTest_a03edc7b6fa29ef9c99da73535ac498cc} 
+void Add\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение. 
+
+Создает уникальную временную директорию, изменяет текущий путь на нее, инициализирует репозиторий и очищает начальные события. \Hypertarget{classAddCommandTest_aa581ea4026ae9dda2351328dc17b9f03}\index{AddCommandTest@{AddCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!AddCommandTest@{AddCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classAddCommandTest_aa581ea4026ae9dda2351328dc17b9f03} 
+void Add\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение. 
+
+Восстанавливает оригинальный текущий путь и рекурсивно удаляет временную директорию. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/Int\+Add\+Command\+Test.\+hxx\item 
+tests/cli/utils/\mbox{\hyperlink{IntAddCommandTest_8cxx}{Int\+Add\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

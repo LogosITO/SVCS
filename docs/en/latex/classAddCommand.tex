@@ -1,0 +1,182 @@
+\doxysection{Add\+Command Class Reference}
+\hypertarget{classAddCommand}{}\label{classAddCommand}\index{AddCommand@{AddCommand}}
+
+
+Implements the "{}add"{} command for the Simple Version Control System (SVCS).  
+
+
+
+
+{\ttfamily \#include $<$Add\+Command.\+hxx$>$}
+
+Inheritance diagram for Add\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAddCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAddCommand_abf4de44d0417fb1b10a4c1d624c149ad}{Add\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classAddCommand}{Add\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddCommand_acb3d216e7788b6fa20c8fdc88686ffb3}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the "{}add"{} command with the given arguments. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classAddCommand_ab8dae07ff8a1cc76baab967e509d0cfc}{get\+All\+Files\+In\+Directory}} (const std\+::string \&directory) const
+\begin{DoxyCompactList}\small\item\em Retrieves all file paths within a given directory, recursively. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAddCommand_a630e9b965886f1d17ab3b62873896b61}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAddCommand_a345dbb78e01de3deab55e1ca2bac6374}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets a brief description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAddCommand_a600ccdcfb9bda487506cb826ac86b729}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the command\textquotesingle{}s usage syntax. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddCommand_a43d794841014e2fb5065d3d42a9f4606}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the detailed help information for the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the "{}add"{} command for the Simple Version Control System (SVCS). 
+
+This command is responsible for adding (staging) the specified files to the staging area of the repository for a subsequent commit. The class inherits from \doxylink{classICommand}{ICommand} and uses the Command pattern to execute its operations. It depends on \doxylink{classISubject}{ISubject} (event bus) for user notifications and \doxylink{classRepositoryManager}{Repository\+Manager} for repository operations. 
+
+\label{doc-constructors}
+\Hypertarget{classAddCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAddCommand_abf4de44d0417fb1b10a4c1d624c149ad}\index{AddCommand@{AddCommand}!AddCommand@{AddCommand}}
+\index{AddCommand@{AddCommand}!AddCommand@{AddCommand}}
+\doxysubsubsection{\texorpdfstring{AddCommand()}{AddCommand()}}
+{\footnotesize\ttfamily \label{classAddCommand_abf4de44d0417fb1b10a4c1d624c149ad} 
+Add\+Command\+::\+Add\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classAddCommand}{Add\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & A shared pointer to the \doxylink{classISubject}{ISubject} (event bus). \\
+\hline
+{\em repo\+Manager} & A shared pointer to the \doxylink{classRepositoryManager}{Repository\+Manager}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classAddCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAddCommand_acb3d216e7788b6fa20c8fdc88686ffb3}\index{AddCommand@{AddCommand}!execute@{execute}}
+\index{execute@{execute}!AddCommand@{AddCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classAddCommand_acb3d216e7788b6fa20c8fdc88686ffb3} 
+bool Add\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the "{}add"{} command with the given arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The vector of string arguments for the command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the command executed successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classAddCommand_ab8dae07ff8a1cc76baab967e509d0cfc}\index{AddCommand@{AddCommand}!getAllFilesInDirectory@{getAllFilesInDirectory}}
+\index{getAllFilesInDirectory@{getAllFilesInDirectory}!AddCommand@{AddCommand}}
+\doxysubsubsection{\texorpdfstring{getAllFilesInDirectory()}{getAllFilesInDirectory()}}
+{\footnotesize\ttfamily \label{classAddCommand_ab8dae07ff8a1cc76baab967e509d0cfc} 
+std\+::vector$<$ std\+::string $>$ Add\+Command\+::get\+All\+Files\+In\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Retrieves all file paths within a given directory, recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The path to the directory. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings containing all file paths. 
+\end{DoxyReturn}
+\Hypertarget{classAddCommand_a345dbb78e01de3deab55e1ca2bac6374}\index{AddCommand@{AddCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!AddCommand@{AddCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classAddCommand_a345dbb78e01de3deab55e1ca2bac6374} 
+std\+::string Add\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a brief description of the command. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the command\textquotesingle{}s purpose. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classAddCommand_a630e9b965886f1d17ab3b62873896b61}\index{AddCommand@{AddCommand}!getName@{getName}}
+\index{getName@{getName}!AddCommand@{AddCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classAddCommand_a630e9b965886f1d17ab3b62873896b61} 
+std\+::string Add\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+The command name, "{}add"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classAddCommand_a600ccdcfb9bda487506cb826ac86b729}\index{AddCommand@{AddCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!AddCommand@{AddCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classAddCommand_a600ccdcfb9bda487506cb826ac86b729} 
+std\+::string Add\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the command\textquotesingle{}s usage syntax. 
+
+\begin{DoxyReturn}{Returns}
+A string showing how to use the command. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classAddCommand_a43d794841014e2fb5065d3d42a9f4606}\index{AddCommand@{AddCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!AddCommand@{AddCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classAddCommand_a43d794841014e2fb5065d3d42a9f4606} 
+void Add\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the detailed help information for the command. 
+
+
+
+Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{AddCommand_8hxx}{Add\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{AddCommand_8cxx}{Add\+Command.\+cxx}}\end{DoxyCompactItemize}

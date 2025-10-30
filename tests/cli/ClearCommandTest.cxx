@@ -1,10 +1,14 @@
 /**
  * @file ClearCommandTest.cxx
- * @brief Tests for the 'clear' command (ClearCommand) using Google Test.
- *
- * @copyright 
+ * @copyright
  * Copyright 2025 LogosITO
  * Licensed under MIT-License
+ *
+ * @english
+ * @brief Tests for the 'clear' command (ClearCommand) using Google Test.
+ *
+ * @russian
+ * @brief Тесты для команды 'clear' (ClearCommand) с использованием Google Test.
  */
 
 #include "utils/ClearCommandTest.hxx"

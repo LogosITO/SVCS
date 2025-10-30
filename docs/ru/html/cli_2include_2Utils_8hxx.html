@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Файл cli/include/Utils.hxx</title>
+<title>SVCS - Русская документация: Файл cli/include/Utils.hxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('cli_2include_2Utils_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Utility functions for conditional debugging output.  
+<p>Служебные функции для условного вывода отладки.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -104,14 +102,12 @@ $(function(){initNavTree('cli_2include_2Utils_8hxx.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Функции</h2></td></tr>
 <tr class="memitem:a4b171a7d705ca7ae2910200e76bd96e2" id="r_a4b171a7d705ca7ae2910200e76bd96e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b171a7d705ca7ae2910200e76bd96e2">printDebug</a> (const std::string &amp;message)</td></tr>
-<tr class="memdesc:a4b171a7d705ca7ae2910200e76bd96e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally prints a debug message to standard output.  <br /></td></tr>
+<tr class="memdesc:a4b171a7d705ca7ae2910200e76bd96e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Условно выводит отладочное сообщение в стандартный вывод.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Utility functions for conditional debugging output. </p>
-<p>This header defines the <span class="tt">printDebug</span> function, which provides a simple mechanism for logging debug messages to standard output only when the <span class="tt">DEBUG_MODE</span> preprocessor macro is defined.</p><ul>
-<li><dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
-</li>
-</ul>
+<div class="textblock"><p>Служебные функции для условного вывода отладки. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
+<p>Этот заголовок определяет функцию <span class="tt">printDebug</span>, которая предоставляет простой механизм для логирования отладочных сообщений в стандартный вывод только тогда, когда определен макрос препроцессора <span class="tt">DEBUG_MODE</span>. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
 <a id="a4b171a7d705ca7ae2910200e76bd96e2" name="a4b171a7d705ca7ae2910200e76bd96e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b171a7d705ca7ae2910200e76bd96e2">&#9670;&#160;</a></span>printDebug()</h2>
@@ -136,11 +132,10 @@ $(function(){initNavTree('cli_2include_2Utils_8hxx.html','',''); });
 </table>
 </div><div class="memdoc">
 
-<p>Conditionally prints a debug message to standard output. </p>
-<p>The message is only printed if the DEBUG_MODE macro is defined at the time of compilation. The function is marked as <span class="tt">inline</span> to suggest inlining by the compiler, and is compiled to a no-op when DEBUG_MODE is not defined, resulting in zero runtime overhead in release builds.</p>
-<dl class="params"><dt>Аргументы</dt><dd>
+<p>Условно выводит отладочное сообщение в стандартный вывод. </p>
+<p>Сообщение выводится только если макрос DEBUG_MODE определен во время компиляции. Функция помечена как <span class="tt">inline</span>, чтобы предложить встраивание компилятором, и компилируется в пустую операцию, когда DEBUG_MODE не определен, что приводит к нулевым накладным расходам во время выполнения в релизных сборках. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>The string message to output, prefixed with "DEBUG: ". </td></tr>
+    <tr><td class="paramname">message</td><td>Строковое сообщение для вывода, с префиксом "DEBUG: ". </td></tr>
   </table>
   </dd>
 </dl>

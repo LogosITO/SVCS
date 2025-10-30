@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: AddCommandTest Class Reference</title>
+<title>SVCS - English Documentation: AddCommandTest Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classAddCommandTest.html','','classAddCommandTest-memb
 </div><!--header-->
 <div class="contents">
 
-<p>Test fixture for <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a> integration tests. Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create various file system structures for testing the staging logic of the <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a>.  
+<p>Test fixture for <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a> integration tests.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IntAddCommandTest_8hxx_source.html">IntAddCommandTest.hxx</a>&gt;</code></p>
@@ -132,7 +130,8 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 <tr class="memdesc:acb1249def667faea85d6c64a1a3b3c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the temporary directory used as the repository root. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Test fixture for <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a> integration tests. Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create various file system structures for testing the staging logic of the <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a>. </p>
+<div class="textblock"><p>Test fixture for <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a> integration tests. </p>
+<p>Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create various file system structures for testing the staging logic of the <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a>. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a69d865915925db599252868cdf058520" name="a69d865915925db599252868cdf058520"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69d865915925db599252868cdf058520">&#9670;&#160;</a></span>createTestDirectory()</h2>
@@ -229,9 +228,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 </div><div class="memdoc">
 
 <p>Sets up the test environment. </p>
-<ul>
-<li>Creates a unique temporary directory, changes the current path to it, initializes a repository, and clears initial events. </li>
-</ul>
+<p>Creates a unique temporary directory, changes the current path to it, initializes a repository, and clears initial events. </p>
 
 </div>
 </div>
@@ -259,9 +256,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 </div><div class="memdoc">
 
 <p>Tears down the test environment. </p>
-<ul>
-<li>Restores the original current path and recursively removes the temporary directory. </li>
-</ul>
+<p>Restores the original current path and recursively removes the temporary directory. </p>
 
 </div>
 </div>

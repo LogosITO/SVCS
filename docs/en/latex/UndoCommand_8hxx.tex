@@ -1,0 +1,27 @@
+\doxysection{cli/include/\+Undo\+Command.hxx File Reference}
+\hypertarget{UndoCommand_8hxx}{}\label{UndoCommand_8hxx}\index{cli/include/UndoCommand.hxx@{cli/include/UndoCommand.hxx}}
+
+
+Declaration of the \doxylink{classUndoCommand}{Undo\+Command} class for reverting changes.  
+
+
+{\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUndoCommand}{Undo\+Command}}
+\begin{DoxyCompactList}\small\item\em Command to revert the repository state to a previous commit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classUndoCommand}{Undo\+Command} class for reverting changes. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+The \doxylink{classUndoCommand}{Undo\+Command} is responsible for reverting the repository\textquotesingle{}s working directory and history to the state of a previous commit. It supports reverting the last commit or a specific commit identified by its hash. This operation typically involves confirming the action before execution, unless a force flag is used. 

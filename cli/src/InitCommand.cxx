@@ -1,9 +1,14 @@
 /**
  * @file InitCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the InitCommand class, responsible for processing the 'svcs init' command and initializing a new SVCS repository.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса InitCommand, отвечающего за обработку команды 'svcs init' и инициализацию нового репозитория SVCS.
  */
 
 #include <utility>

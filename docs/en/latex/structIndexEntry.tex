@@ -1,0 +1,36 @@
+\doxysection{Index\+Entry Struct Reference}
+\hypertarget{structIndexEntry}{}\label{structIndexEntry}\index{IndexEntry@{IndexEntry}}
+
+
+Represents a single file entry in the staging area (\doxylink{classIndex}{Index}).  
+
+
+
+
+{\ttfamily \#include $<$Index.\+hxx$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structIndexEntry_af0add5ce12c5dfa70a32542fd4417f12}\label{structIndexEntry_af0add5ce12c5dfa70a32542fd4417f12} 
+std\+::string {\bfseries blob\+\_\+hash}
+\begin{DoxyCompactList}\small\item\em The SHA-\/256 hash of the file\textquotesingle{}s content (the \doxylink{classBlob}{Blob} object ID). \end{DoxyCompactList}\item 
+\Hypertarget{structIndexEntry_ac34233bc45be2fc4cc4c4d6f3ef86173}\label{structIndexEntry_ac34233bc45be2fc4cc4c4d6f3ef86173} 
+fs\+::path {\bfseries file\+\_\+path}
+\begin{DoxyCompactList}\small\item\em The file\textquotesingle{}s path, relative to the repository\textquotesingle{}s root directory. \end{DoxyCompactList}\item 
+\Hypertarget{structIndexEntry_a07371b90dba7b3e77073e25b8974bf69}\label{structIndexEntry_a07371b90dba7b3e77073e25b8974bf69} 
+fs\+::file\+\_\+time\+\_\+type {\bfseries last\+\_\+modified}
+\begin{DoxyCompactList}\small\item\em The time of the file\textquotesingle{}s last modification, used to detect changes. \end{DoxyCompactList}\item 
+\Hypertarget{structIndexEntry_a10582a2e090f7c30885f54b42da08048}\label{structIndexEntry_a10582a2e090f7c30885f54b42da08048} 
+long long {\bfseries file\+\_\+size} = 0
+\begin{DoxyCompactList}\small\item\em The size of the file in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single file entry in the staging area (\doxylink{classIndex}{Index}). 
+
+An \doxylink{structIndexEntry}{Index\+Entry} stores information about a file that is staged for the next commit, including its object ID (hash) and file metadata used to detect modifications. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Index_8hxx}{Index.\+hxx}}\end{DoxyCompactItemize}

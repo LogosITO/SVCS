@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['modified_0',['MODIFIED',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40ca40e3819215b52841e19a7cac06b5f065',1,'AddCommand.hxx']]]
+  ['general_5finfo_0',['GENERAL_INFO',['../structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7',1,'Event']]]
 ];

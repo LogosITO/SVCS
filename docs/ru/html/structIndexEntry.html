@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Структура IndexEntry</title>
+<title>SVCS - Русская документация: Структура IndexEntry</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('structIndexEntry.html','','structIndexEntry-members');
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a single file entry in the staging area (<a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a>).  
+<p>Представляет одну запись файла в области подготовки (<a class="el" href="classIndex.html" title="Управляет областью подготовки (Index) репозитория СКВ.">Index</a>).  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Index_8hxx_source.html">Index.hxx</a>&gt;</code></p>
@@ -103,22 +101,20 @@ $(function(){initNavTree('structIndexEntry.html','','structIndexEntry-members');
 Открытые атрибуты</h2></td></tr>
 <tr class="memitem:af0add5ce12c5dfa70a32542fd4417f12" id="r_af0add5ce12c5dfa70a32542fd4417f12"><td class="memItemLeft" align="right" valign="top"><a id="af0add5ce12c5dfa70a32542fd4417f12" name="af0add5ce12c5dfa70a32542fd4417f12"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>blob_hash</b></td></tr>
-<tr class="memdesc:af0add5ce12c5dfa70a32542fd4417f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA-256 hash of the file's content (the <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> object ID). <br /></td></tr>
+<tr class="memdesc:af0add5ce12c5dfa70a32542fd4417f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хеш SHA-256 содержимого файла (ID объекта <a class="el" href="classBlob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a>). <br /></td></tr>
 <tr class="memitem:ac34233bc45be2fc4cc4c4d6f3ef86173" id="r_ac34233bc45be2fc4cc4c4d6f3ef86173"><td class="memItemLeft" align="right" valign="top"><a id="ac34233bc45be2fc4cc4c4d6f3ef86173" name="ac34233bc45be2fc4cc4c4d6f3ef86173"></a>
 fs::path&#160;</td><td class="memItemRight" valign="bottom"><b>file_path</b></td></tr>
-<tr class="memdesc:ac34233bc45be2fc4cc4c4d6f3ef86173"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file's path, relative to the repository's root directory. <br /></td></tr>
+<tr class="memdesc:ac34233bc45be2fc4cc4c4d6f3ef86173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Путь к файлу относительно корневой директории репозитория. <br /></td></tr>
 <tr class="memitem:a07371b90dba7b3e77073e25b8974bf69" id="r_a07371b90dba7b3e77073e25b8974bf69"><td class="memItemLeft" align="right" valign="top"><a id="a07371b90dba7b3e77073e25b8974bf69" name="a07371b90dba7b3e77073e25b8974bf69"></a>
 fs::file_time_type&#160;</td><td class="memItemRight" valign="bottom"><b>last_modified</b></td></tr>
-<tr class="memdesc:a07371b90dba7b3e77073e25b8974bf69"><td class="mdescLeft">&#160;</td><td class="mdescRight">The time of the file's last modification, used to detect changes. <br /></td></tr>
+<tr class="memdesc:a07371b90dba7b3e77073e25b8974bf69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время последнего изменения файла, используется для обнаружения изменений. <br /></td></tr>
 <tr class="memitem:a10582a2e090f7c30885f54b42da08048" id="r_a10582a2e090f7c30885f54b42da08048"><td class="memItemLeft" align="right" valign="top"><a id="a10582a2e090f7c30885f54b42da08048" name="a10582a2e090f7c30885f54b42da08048"></a>
 long long&#160;</td><td class="memItemRight" valign="bottom"><b>file_size</b> = 0</td></tr>
-<tr class="memdesc:a10582a2e090f7c30885f54b42da08048"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the file in bytes. <br /></td></tr>
+<tr class="memdesc:a10582a2e090f7c30885f54b42da08048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер файла в байтах. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Represents a single file entry in the staging area (<a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a>). </p>
-<ul>
-<li>An <a class="el" href="structIndexEntry.html" title="Represents a single file entry in the staging area (Index).">IndexEntry</a> stores information about a file that is staged for the next commit, including its object ID (hash) and file metadata used to detect modifications. </li>
-</ul>
+<div class="textblock"><p>Представляет одну запись файла в области подготовки (<a class="el" href="classIndex.html" title="Управляет областью подготовки (Index) репозитория СКВ.">Index</a>). </p>
+<p><a class="el" href="structIndexEntry.html" title="Представляет одну запись файла в области подготовки (Index).">IndexEntry</a> хранит информацию о файле, который подготовлен для следующего коммита, включая его ID объекта (хеш) и метаданные файла, используемые для обнаружения изменений. </p>
 </div><hr/>Объявления и описания членов структуры находятся в файле:<ul>
 <li>core/include/<a class="el" href="Index_8hxx_source.html">Index.hxx</a></li>
 </ul>

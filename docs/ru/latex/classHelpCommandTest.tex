@@ -1,0 +1,119 @@
+\doxysection{Класс Help\+Command\+Test}
+\hypertarget{classHelpCommandTest}{}\label{classHelpCommandTest}\index{HelpCommandTest@{HelpCommandTest}}
+
+
+Google Test фикстур для запуска модульных/интеграционных тестов \doxylink{classHelpCommand}{Help\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Help\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:Help\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHelpCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHelpCommandTest_aaacf9ab18d10a23809bb743993ed1960}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelpCommandTest_ae9ba25cb1f7ac4cab80820ae167dd582}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHelpCommandTest_a1ad9fd0189edb0eac480032be0c842ed}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Подсчитывает количество вхождений конкретного сообщения (подстроки) во всех уведомлениях о событиях. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classHelpCommandTest_a1030123741ad553f0114c700cf6db1e7}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classHelpCommandTest_a0aa84578503c1750bcb64267718c01e6}\label{classHelpCommandTest_a0aa84578503c1750bcb64267718c01e6} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий (наблюдатель), используемую для захвата вывода команды. \end{DoxyCompactList}\item 
+\Hypertarget{classHelpCommandTest_a3dcdc65f33f359240348f5990f6f635b}\label{classHelpCommandTest_a3dcdc65f33f359240348f5990f6f635b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockHelpService}{Mock\+Help\+Service}} $>$ {\bfseries mock\+Help\+Service}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock сервис справки, используемый для управления данными справки и проверки вызовов. \end{DoxyCompactList}\item 
+\Hypertarget{classHelpCommandTest_a9105686746356bf0e8e1f2331089abde}\label{classHelpCommandTest_a9105686746356bf0e8e1f2331089abde} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHelpCommand}{Help\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска модульных/интеграционных тестов \doxylink{classHelpCommand}{Help\+Command}. 
+
+Этот фикстур критически важен для изоляции логики \doxylink{classHelpCommand}{Help\+Command}, обеспечивая правильное делегирование запросов справки в {\bfseries{\doxylink{classMockHelpService}{Mock\+Help\+Service}}} и отчетность о результатах через {\bfseries{\doxylink{classMockSubject}{Mock\+Subject}}} (шину событий). 
+
+\label{doc-func-members}
+\Hypertarget{classHelpCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classHelpCommandTest_a1030123741ad553f0114c700cf6db1e7}\index{HelpCommandTest@{HelpCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!HelpCommandTest@{HelpCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classHelpCommandTest_a1030123741ad553f0114c700cf6db1e7} 
+bool Help\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classHelpCommandTest_a1ad9fd0189edb0eac480032be0c842ed}\index{HelpCommandTest@{HelpCommandTest}!countMessages@{countMessages}}
+\index{countMessages@{countMessages}!HelpCommandTest@{HelpCommandTest}}
+\doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
+{\footnotesize\ttfamily \label{classHelpCommandTest_a1ad9fd0189edb0eac480032be0c842ed} 
+int Help\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Подсчитывает количество вхождений конкретного сообщения (подстроки) во всех уведомлениях о событиях. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для подсчета. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество событий, содержащих подстроку. 
+\end{DoxyReturn}
+\Hypertarget{classHelpCommandTest_aaacf9ab18d10a23809bb743993ed1960}\index{HelpCommandTest@{HelpCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!HelpCommandTest@{HelpCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classHelpCommandTest_aaacf9ab18d10a23809bb743993ed1960} 
+void Help\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение перед каждым тестом. 
+
+Инициализирует \doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classMockHelpService}{Mock\+Help\+Service} и экземпляр \doxylink{classHelpCommand}{Help\+Command}. \Hypertarget{classHelpCommandTest_ae9ba25cb1f7ac4cab80820ae167dd582}\index{HelpCommandTest@{HelpCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!HelpCommandTest@{HelpCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classHelpCommandTest_ae9ba25cb1f7ac4cab80820ae167dd582} 
+void Help\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение после каждого теста. 
+
+Очищает шину событий и внутреннее состояние mock сервиса справки. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntHelpCommandTest_8hxx}{Int\+Help\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntHelpCommandTest_8cxx}{Int\+Help\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

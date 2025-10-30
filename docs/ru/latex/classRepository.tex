@@ -1,0 +1,284 @@
+\doxysection{Класс Repository}
+\hypertarget{classRepository}{}\label{classRepository}\index{Repository@{Repository}}
+
+
+Управляет структурой директорий системы контроля версий и основными операциями.  
+
+
+
+
+{\ttfamily \#include $<$Repository.\+hxx$>$}
+
+Граф наследования\+:Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRepository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRepository_a64de863b90dcce47cad8389326d5d0f7}{\texorpdfstring{$\sim$}{\string~}\+Repository}} () override
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRepository_a1df4810f68ebca61adfbbad3e079b2f1}{Repository}} (std\+::filesystem\+::path rpath)
+\begin{DoxyCompactList}\small\item\em Конструирует менеджер репозитория. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRepository_a58a23eff67b9a24c3a8916fd8dfacc9a}{initialize\+Dependencies}} ()
+\begin{DoxyCompactList}\small\item\em Инициализирует внутренние зависимости репозитория. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepository_aff14558f8e382efc3e5e53263b85e312}{init}} ()
+\begin{DoxyCompactList}\small\item\em Инициализирует базовую структуру репозитория (.svcs, objects, refs) на диске. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepository_ae29372147e4b9dbb7ad3efdd32c1c42e}{is\+\_\+initialized}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, полностью ли инициализирована и действительна структура репозитория. \end{DoxyCompactList}\item 
+const std\+::filesystem\+::path \& \mbox{\hyperlink{classRepository_a74b5a052c07a886d428e42aaaeebeeb5}{get\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Получает корневой путь репозитория. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObjectStorage}{Object\+Storage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRepository_a9c1153091e3ffa2d5aaf65e900a41c40}{get\+Object\+Storage}} () const
+\begin{DoxyCompactList}\small\item\em Получает сырой указатель на управляемый экземпляр \doxylink{classObjectStorage}{Object\+Storage} для взаимодействия с базой данных. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRepository_a250a9e24514ca3a4f8c6d954ad4dcefc}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Прикрепляет наблюдателя для получения событий. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRepository_a1e421ee99132cf3dcaac6fc54ba0ab7d}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Отсоединяет зарегистрированного наблюдателя. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRepository_a7ce8792d0a1493d98986fb2732b95c4c}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) const override
+\begin{DoxyCompactList}\small\item\em Уведомляет всех прикрепленных наблюдателей о событии. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRepository_ae75a20286b79919005724ab4dfa80717}{stage\+File}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Подготавливает файл, хешируя его содержимое, сохраняя его в базе данных объектов и обновляя индекс подготовки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classISubject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classISubject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepository}{Repository}} $>$ \mbox{\hyperlink{classRepository_acffdc3fb1a22f69018a4037e9b4feabb}{find\+Repository}} (const std\+::string \&start\+\_\+path="{}."{})
+\begin{DoxyCompactList}\small\item\em Статически ищет существующий репозиторий, начиная с заданного пути и поднимаясь вверх. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classRepository_aed550b2bede1ebe31d4dc4ac42026ba6}{is\+Repository}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Статически проверяет, является ли заданный путь корнем репозитория SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{classISubject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classIObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Коллекция зарегистрированных наблюдателей. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет структурой директорий системы контроля версий и основными операциями. 
+
+Реализует \doxylink{classISubject}{ISubject} для работы в качестве издателя событий для основных операций СКВ. 
+
+\label{doc-constructors}
+\Hypertarget{classRepository_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classRepository_a64de863b90dcce47cad8389326d5d0f7}\index{Repository@{Repository}!````~Repository@{\texorpdfstring{$\sim$}{\string~}Repository}}
+\index{````~Repository@{\texorpdfstring{$\sim$}{\string~}Repository}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Repository()}{\string~Repository()}}
+{\footnotesize\ttfamily \label{classRepository_a64de863b90dcce47cad8389326d5d0f7} 
+Repository\+::\texorpdfstring{$\sim$}{\string~}\+Repository (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Виртуальный деструктор. 
+
+Обеспечивает корректную очистку управляемых ресурсов (\doxylink{classObjectStorage}{Object\+Storage}). \Hypertarget{classRepository_a1df4810f68ebca61adfbbad3e079b2f1}\index{Repository@{Repository}!Repository@{Repository}}
+\index{Repository@{Repository}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{Repository()}{Repository()}}
+{\footnotesize\ttfamily \label{classRepository_a1df4810f68ebca61adfbbad3e079b2f1} 
+Repository\+::\+Repository (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{rpath}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструирует менеджер репозитория. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em rpath} & Корневая директория репозитория. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classRepository_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classRepository_a250a9e24514ca3a4f8c6d954ad4dcefc}\index{Repository@{Repository}!attach@{attach}}
+\index{attach@{attach}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{classRepository_a250a9e24514ca3a4f8c6d954ad4dcefc} 
+void Repository\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Прикрепляет наблюдателя для получения событий. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Общий указатель на экземпляр наблюдателя. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{ISubject}}.
+
+\Hypertarget{classRepository_a1e421ee99132cf3dcaac6fc54ba0ab7d}\index{Repository@{Repository}!detach@{detach}}
+\index{detach@{detach}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classRepository_a1e421ee99132cf3dcaac6fc54ba0ab7d} 
+void Repository\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отсоединяет зарегистрированного наблюдателя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Общий указатель на экземпляр наблюдателя для отсоединения. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{ISubject}}.
+
+\Hypertarget{classRepository_acffdc3fb1a22f69018a4037e9b4feabb}\index{Repository@{Repository}!findRepository@{findRepository}}
+\index{findRepository@{findRepository}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{findRepository()}{findRepository()}}
+{\footnotesize\ttfamily \label{classRepository_acffdc3fb1a22f69018a4037e9b4feabb} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepository}{Repository}} $>$ Repository\+::find\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{start\+\_\+path}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Статически ищет существующий репозиторий, начиная с заданного пути и поднимаясь вверх. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em start\+\_\+path} & Путь директории, с которого начинать поиск (по умолчанию "{}."{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Общий указатель на найденный экземпляр \doxylink{classRepository}{Repository} или nullptr, если ничего не найдено. 
+\end{DoxyReturn}
+\Hypertarget{classRepository_a9c1153091e3ffa2d5aaf65e900a41c40}\index{Repository@{Repository}!getObjectStorage@{getObjectStorage}}
+\index{getObjectStorage@{getObjectStorage}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{getObjectStorage()}{getObjectStorage()}}
+{\footnotesize\ttfamily \label{classRepository_a9c1153091e3ffa2d5aaf65e900a41c40} 
+\mbox{\hyperlink{classObjectStorage}{Object\+Storage}} \texorpdfstring{$\ast$}{*} Repository\+::get\+Object\+Storage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Получает сырой указатель на управляемый экземпляр \doxylink{classObjectStorage}{Object\+Storage} для взаимодействия с базой данных. 
+
+\begin{DoxyReturn}{Возвращает}
+Object\+Storage\texorpdfstring{$\ast$}{*} Указатель на управляемый экземпляр \doxylink{classObjectStorage}{Object\+Storage}. 
+\end{DoxyReturn}
+\Hypertarget{classRepository_a74b5a052c07a886d428e42aaaeebeeb5}\index{Repository@{Repository}!getPath@{getPath}}
+\index{getPath@{getPath}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \label{classRepository_a74b5a052c07a886d428e42aaaeebeeb5} 
+const std\+::filesystem\+::path \& Repository\+::get\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Получает корневой путь репозитория. 
+
+\begin{DoxyReturn}{Возвращает}
+const std\+::filesystem\+::path\& Корневой путь репозитория. 
+\end{DoxyReturn}
+\Hypertarget{classRepository_aff14558f8e382efc3e5e53263b85e312}\index{Repository@{Repository}!init@{init}}
+\index{init@{init}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classRepository_aff14558f8e382efc3e5e53263b85e312} 
+bool Repository\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Инициализирует базовую структуру репозитория (.svcs, objects, refs) на диске. 
+
+\begin{DoxyReturn}{Возвращает}
+bool True, если инициализация прошла успешно, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classRepository_a58a23eff67b9a24c3a8916fd8dfacc9a}\index{Repository@{Repository}!initializeDependencies@{initializeDependencies}}
+\index{initializeDependencies@{initializeDependencies}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{initializeDependencies()}{initializeDependencies()}}
+{\footnotesize\ttfamily \label{classRepository_a58a23eff67b9a24c3a8916fd8dfacc9a} 
+void Repository\+::initialize\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Инициализирует внутренние зависимости репозитория. 
+
+Обычно это включает создание и настройку внутренних компонентов, таких как \doxylink{classObjectStorage}{Object\+Storage}. \Hypertarget{classRepository_ae29372147e4b9dbb7ad3efdd32c1c42e}\index{Repository@{Repository}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}}
+{\footnotesize\ttfamily \label{classRepository_ae29372147e4b9dbb7ad3efdd32c1c42e} 
+bool Repository\+::is\+\_\+initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Проверяет, полностью ли инициализирована и действительна структура репозитория. 
+
+\begin{DoxyReturn}{Возвращает}
+true, если все необходимые директории и файлы существуют. 
+\end{DoxyReturn}
+\Hypertarget{classRepository_aed550b2bede1ebe31d4dc4ac42026ba6}\index{Repository@{Repository}!isRepository@{isRepository}}
+\index{isRepository@{isRepository}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{isRepository()}{isRepository()}}
+{\footnotesize\ttfamily \label{classRepository_aed550b2bede1ebe31d4dc4ac42026ba6} 
+bool Repository\+::is\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Статически проверяет, является ли заданный путь корнем репозитория SVCS. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если путь содержит необходимые маркерные файлы/директории репозитория. 
+\end{DoxyReturn}
+\Hypertarget{classRepository_a7ce8792d0a1493d98986fb2732b95c4c}\index{Repository@{Repository}!notify@{notify}}
+\index{notify@{notify}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classRepository_a7ce8792d0a1493d98986fb2732b95c4c} 
+void Repository\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Уведомляет всех прикрепленных наблюдателей о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event} & Константная ссылка на структуру данных события. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{ISubject}}.
+
+\Hypertarget{classRepository_ae75a20286b79919005724ab4dfa80717}\index{Repository@{Repository}!stageFile@{stageFile}}
+\index{stageFile@{stageFile}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{stageFile()}{stageFile()}}
+{\footnotesize\ttfamily \label{classRepository_ae75a20286b79919005724ab4dfa80717} 
+bool Repository\+::stage\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Подготавливает файл, хешируя его содержимое, сохраняя его в базе данных объектов и обновляя индекс подготовки. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь к файлу для подготовки (относительно корня репозитория). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True, если файл успешно подготовлен, false в противном случае (например, файл проигнорирован, ошибка прав доступа). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & если операции файловой системы или хранилища объектов завершаются неудачно. \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Repository_8hxx}{Repository.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Repository_8cxx}{Repository.\+cxx}}\end{DoxyCompactItemize}

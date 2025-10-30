@@ -1,0 +1,144 @@
+\doxysection{Blob Class Reference}
+\hypertarget{classBlob}{}\label{classBlob}\index{Blob@{Blob}}
+
+
+Represents the content of a file (Binary Large Object).  
+
+
+
+
+{\ttfamily \#include $<$Blob.\+hxx$>$}
+
+Inheritance diagram for Blob\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBlob}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBlob_ae99377ce893ac26195a4c4578167f976}{Blob}} (std\+::string raw\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classBlob}{Blob} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBlob_ac493b1634f088e53d436ba808ba02e86}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the VCS object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBlob_acab4226b36adcfa257c94b96b40c3510}{serialize}} () const override
+\begin{DoxyCompactList}\small\item\em Serializes the object\textquotesingle{}s core data for hashing and storage. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classBlob_aef90cffb1d8d5492b73ac330ac933006}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Returns the raw data content stored in the \doxylink{classBlob}{Blob}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. Required for derived classes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVcsObject_af2840ade6006e4d64eb6bd9f15b37539}{Vcs\+Object}} (const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. Required for derived classes to correctly copy the hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVcsObject_a866849775b4541573b40b2b85be20df5}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a0e8cd703d917813ca43d4b0622c70bdd}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Returns the unique hash identifier of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classVcsObject_a73ec7fbaac32df9c4570de02b8bda56f}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Calculates SHA-\/256 hash for given canonical content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Computes the cryptographic hash ID for the object\textquotesingle{}s content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a6c9fd4ab39bb9781c5399da07305d28d}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em The unique cryptographic hash identifier (e.\+g., SHA-\/256) for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the content of a file (Binary Large Object). 
+
+This is the lowest-\/level object in the VCS, storing only raw file bytes. The \doxylink{classBlob}{Blob} object is immutable; its hash is solely dependent on its content. 
+
+\label{doc-constructors}
+\Hypertarget{classBlob_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBlob_ae99377ce893ac26195a4c4578167f976}\index{Blob@{Blob}!Blob@{Blob}}
+\index{Blob@{Blob}!Blob@{Blob}}
+\doxysubsubsection{\texorpdfstring{Blob()}{Blob()}}
+{\footnotesize\ttfamily \label{classBlob_ae99377ce893ac26195a4c4578167f976} 
+Blob\+::\+Blob (\begin{DoxyParamCaption}\item[{std\+::string}]{raw\+\_\+data}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classBlob}{Blob} object. 
+
+Initializes the object and immediately computes its hash ID based on the raw\+\_\+data. 
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+data} & The raw file content to be stored and hashed. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classBlob_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBlob_aef90cffb1d8d5492b73ac330ac933006}\index{Blob@{Blob}!getData@{getData}}
+\index{getData@{getData}!Blob@{Blob}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{classBlob_aef90cffb1d8d5492b73ac330ac933006} 
+const std\+::string \& Blob\+::get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the raw data content stored in the \doxylink{classBlob}{Blob}. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::string\& A constant reference to the file content. 
+\end{DoxyReturn}
+\Hypertarget{classBlob_ac493b1634f088e53d436ba808ba02e86}\index{Blob@{Blob}!getType@{getType}}
+\index{getType@{getType}!Blob@{Blob}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classBlob_ac493b1634f088e53d436ba808ba02e86} 
+std\+::string Blob\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the VCS object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Always returns "{}blob"{}.   Pure virtual method to get the type of the VCS object.   
+\end{DoxyReturn}
+This is crucial for object storage and reconstruction (e.\+g., "{}commit"{}, "{}blob"{}, "{}tree"{}). \begin{DoxyReturn}{Returns}
+std\+::string The type identifier of the object.    
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classVcsObject_a6997c320772a504fc61a986f6e8f9ff7}{Vcs\+Object}}.
+
+\Hypertarget{classBlob_acab4226b36adcfa257c94b96b40c3510}\index{Blob@{Blob}!serialize@{serialize}}
+\index{serialize@{serialize}!Blob@{Blob}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classBlob_acab4226b36adcfa257c94b96b40c3510} 
+std\+::string Blob\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serializes the object\textquotesingle{}s core data for hashing and storage. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Returns the raw file content (data) itself.   Pure virtual method to serialize the object\textquotesingle{}s core data.   
+\end{DoxyReturn}
+The returned string content is what will be hashed and stored in the database. \begin{DoxyReturn}{Returns}
+std\+::string The standardized, serialized data of the object.    
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7}{Vcs\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Blob_8hxx}{Blob.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Blob_8cxx}{Blob.\+cxx}}\end{DoxyCompactItemize}

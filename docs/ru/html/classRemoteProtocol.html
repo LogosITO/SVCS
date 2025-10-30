@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс RemoteProtocol</title>
+<title>SVCS - Русская документация: Класс RemoteProtocol</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classRemoteProtocol.html','','classRemoteProtocol-memb
 </div><!--header-->
 <div class="contents">
 
-<p>Handles the remote communication protocol for SVCS.  
+<p>Обрабатывает протокол удаленной связи для SVCS.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RemoteProtocol_8hxx_source.html">RemoteProtocol.hxx</a>&gt;</code></p>
@@ -102,18 +100,18 @@ $(function(){initNavTree('classRemoteProtocol.html','','classRemoteProtocol-memb
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:ae13f8845715408297f5466fdcecce981" id="r_ae13f8845715408297f5466fdcecce981"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae13f8845715408297f5466fdcecce981">RemoteProtocol</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; event_bus, std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt; repository_manager)</td></tr>
-<tr class="memdesc:ae13f8845715408297f5466fdcecce981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classRemoteProtocol.html" title="Handles the remote communication protocol for SVCS.">RemoteProtocol</a> with necessary dependencies.  <br /></td></tr>
+<tr class="memdesc:ae13f8845715408297f5466fdcecce981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует <a class="el" href="classRemoteProtocol.html" title="Обрабатывает протокол удаленной связи для SVCS.">RemoteProtocol</a> с необходимыми зависимостями.  <br /></td></tr>
 <tr class="memitem:af00770931128eaaaf4b9bfc19ef73e69" id="r_af00770931128eaaaf4b9bfc19ef73e69"><td class="memItemLeft" align="right" valign="top"><a id="af00770931128eaaaf4b9bfc19ef73e69" name="af00770931128eaaaf4b9bfc19ef73e69"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~RemoteProtocol</b> ()=default</td></tr>
-<tr class="memdesc:af00770931128eaaaf4b9bfc19ef73e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
+<tr class="memdesc:af00770931128eaaaf4b9bfc19ef73e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор по умолчанию. <br /></td></tr>
 <tr class="memitem:a54d6ce28df9c8a53e79908c038493372" id="r_a54d6ce28df9c8a53e79908c038493372"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54d6ce28df9c8a53e79908c038493372">handleReceivePack</a> ()</td></tr>
-<tr class="memdesc:a54d6ce28df9c8a53e79908c038493372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the 'receive-pack' protocol for <b>push</b> operations.  <br /></td></tr>
+<tr class="memdesc:a54d6ce28df9c8a53e79908c038493372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает протокол 'receive-pack' для операций <b>push</b>.  <br /></td></tr>
 <tr class="memitem:a67939ef40e01647387fc991cff543485" id="r_a67939ef40e01647387fc991cff543485"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67939ef40e01647387fc991cff543485">handleUploadPack</a> ()</td></tr>
-<tr class="memdesc:a67939ef40e01647387fc991cff543485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the 'upload-pack' protocol for <b>pull</b> operations.  <br /></td></tr>
+<tr class="memdesc:a67939ef40e01647387fc991cff543485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает протокол 'upload-pack' для операций <b>pull</b>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Handles the remote communication protocol for SVCS. </p>
-<p>Manages the custom protocol for <b>push</b> and <b>pull</b> operations, including object negotiation, data transfer, and reference updates between client and server. The protocol is a simple text-based exchange over standard input/output. </p>
+<div class="textblock"><p>Обрабатывает протокол удаленной связи для SVCS. </p>
+<p>Управляет пользовательским протоколом для операций <b>push</b> и <b>pull</b>, включая согласование объектов, передачу данных и обновления ссылок между клиентом и сервером. Протокол представляет собой простой текстовый обмен через стандартный ввод/вывод. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="ae13f8845715408297f5466fdcecce981" name="ae13f8845715408297f5466fdcecce981"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae13f8845715408297f5466fdcecce981">&#9670;&#160;</a></span>RemoteProtocol()</h2>
@@ -134,11 +132,11 @@ $(function(){initNavTree('classRemoteProtocol.html','','classRemoteProtocol-memb
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="classRemoteProtocol.html" title="Handles the remote communication protocol for SVCS.">RemoteProtocol</a> with necessary dependencies. </p>
+<p>Конструирует <a class="el" href="classRemoteProtocol.html" title="Обрабатывает протокол удаленной связи для SVCS.">RemoteProtocol</a> с необходимыми зависимостями. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event_bus</td><td>The shared pointer to the event bus for the notification system (<a class="el" href="classISubject.html">ISubject</a>). </td></tr>
-    <tr><td class="paramname">repository_manager</td><td>The shared pointer to the repository manager for repository operations (<a class="el" href="classRepositoryManager.html">RepositoryManager</a>). </td></tr>
+    <tr><td class="paramname">event_bus</td><td>Общий указатель на шину событий для системы уведомлений (<a class="el" href="classISubject.html">ISubject</a>). </td></tr>
+    <tr><td class="paramname">repository_manager</td><td>Общий указатель на менеджер репозитория для операций с репозиторием (<a class="el" href="classRepositoryManager.html">RepositoryManager</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -161,9 +159,9 @@ $(function(){initNavTree('classRemoteProtocol.html','','classRemoteProtocol-memb
       </table>
 </div><div class="memdoc">
 
-<p>Handles the 'receive-pack' protocol for <b>push</b> operations. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>bool True if the protocol completed successfully (all objects received and references updated), false otherwise.</dd></dl>
-<p>This function processes client push requests. It manages the negotiation of objects, receives the missing object data from the client, and finally attempts to apply the requested reference updates (e.g., updating branches). </p>
+<p>Обрабатывает протокол 'receive-pack' для операций <b>push</b>. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True если протокол завершен успешно (все объекты получены и ссылки обновлены), false в противном случае.</dd></dl>
+<p>Эта функция обрабатывает запросы push от клиента. Она управляет согласованием объектов, получает недостающие данные объектов от клиента и, наконец, пытается применить запрошенные обновления ссылок (например, обновление веток). </p>
 
 </div>
 </div>
@@ -182,9 +180,9 @@ $(function(){initNavTree('classRemoteProtocol.html','','classRemoteProtocol-memb
       </table>
 </div><div class="memdoc">
 
-<p>Handles the 'upload-pack' protocol for <b>pull</b> operations. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>bool True if the protocol completed successfully (objects negotiated and sent), false otherwise.</dd></dl>
-<p>This function processes client pull requests. It performs object negotiation by determining which objects the client is missing based on its 'have' list, and then packages and sends the missing object data to the client. </p>
+<p>Обрабатывает протокол 'upload-pack' для операций <b>pull</b>. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True если протокол завершен успешно (объекты согласованы и отправлены), false в противном случае.</dd></dl>
+<p>Эта функция обрабатывает запросы pull от клиента. Она выполняет согласование объектов путем определения, каких объектов не хватает клиенту на основе его списка 'have', а затем упаковывает и отправляет недостающие данные объектов клиенту. </p>
 
 </div>
 </div>

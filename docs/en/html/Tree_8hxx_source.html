@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: core/include/Tree.hxx Source File</title>
+<title>SVCS - English Documentation: core/include/Tree.hxx Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,67 +92,94 @@ $(function(){initNavTree('Tree_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="Tree_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="VcsObject_8hxx.html">VcsObject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structTreeEntry.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTreeEntry.html">TreeEntry</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structTreeEntry.html#a134f10cecd1f81227572389485e04ad4">   24</a></span>    std::string <a class="code hl_variable" href="structTreeEntry.html#a134f10cecd1f81227572389485e04ad4">mode</a>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f">   26</a></span>    std::string <a class="code hl_variable" href="structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f">name</a>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77">   28</a></span>    std::string <a class="code hl_variable" href="structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77">hash_id</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structTreeEntry.html#a499a6f99a9c45e62c78e6d61f6341e0c">   30</a></span>    std::string <a class="code hl_variable" href="structTreeEntry.html#a499a6f99a9c45e62c78e6d61f6341e0c">type</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structTreeEntry.html">TreeEntry</a>&amp; other) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="VcsObject_8hxx.html">VcsObject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structTreeEntry.html">   25</a></span><span class="comment"> * @english</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * @struct TreeEntry</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * @brief Represents a single item (file or subdirectory) within a Tree object.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * @details This structure links a name and file mode to the hash ID of another VCS object.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structTreeEntry.html#a134f10cecd1f81227572389485e04ad4">   30</a></span><span class="comment"> * @russian</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * @struct TreeEntry</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * @brief Представляет отдельный элемент (файл или поддиректорию) внутри объекта Tree.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * @details Эта структура связывает имя и режим файла с хеш-идентификатором другого объекта СКВ.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">struct </span><a class="code hl_struct" href="structTreeEntry.html">TreeEntry</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::string <a class="code hl_variable" href="structTreeEntry.html#a134f10cecd1f81227572389485e04ad4">mode</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::string <a class="code hl_variable" href="structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f">name</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><a class="code hl_struct" href="structTreeEntry.html">TreeEntry</a> <a class="code hl_function" href="Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f">createEntry</a>(std::string name, std::string hash_id);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classTree.html">   54</a></span><span class="keyword">class </span><a class="code hl_function" href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree</a> : <span class="keyword">public</span> <a class="code hl_function" href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject</a> {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::vector&lt;TreeEntry&gt; entries;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree</a>(std::vector&lt;TreeEntry&gt; entries);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// VcsObject overrides</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    [[nodiscard]] std::string <a class="code hl_function" href="classTree.html#a9b3870b1189b06efecd0a56aad4e467e">getType</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    [[nodiscard]] std::string <a class="code hl_function" href="classTree.html#aae4f965e5566b0addf5467ba5db10e3f">serialize</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">static</span> <a class="code hl_function" href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree</a> <a class="code hl_function" href="classTree.html#a85166cfd9d904644216cdacb0b4b7d54">deserialize</a>(<span class="keyword">const</span> std::string&amp; raw_content);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTree.html#a772b4bcfb5e44dda6a9ede2470d23250">addEntry</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structTreeEntry.html">TreeEntry</a>&amp; entry);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classTree.html#a85035a45ff8778df5bb8be32f57bf232">removeEntry</a>(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    [[nodiscard]] std::optional&lt;TreeEntry&gt; <a class="code hl_function" href="classTree.html#a944fe0075293396036606f6a999643f4">findEntry</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    [[nodiscard]] <span class="keyword">const</span> std::vector&lt;TreeEntry&gt;&amp; <a class="code hl_function" href="classTree.html#a57ecc3c34be17f9e349ef386223eead8">getEntries</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::string <a class="code hl_variable" href="structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77">hash_id</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    std::string <a class="code hl_variable" href="structTreeEntry.html#a499a6f99a9c45e62c78e6d61f6341e0c">type</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classTree.html">   75</a></span><span class="comment">     * @details Entries must be sorted alphabetically by name before serialization to ensure a stable and consistent hash ID for the Tree object.</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">     * @param other The TreeEntry to compare against.</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">     * @return bool True if this entry should precede the &#39;other&#39; entry in the sorted list.</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">     *</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">     * @russian</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">     * @brief Оператор сравнения, необходимый для сортировки.</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">     * @details Записи должны быть отсортированы по алфавиту по имени перед сериализацией для обеспечения стабильного и последовательного хеш-идентификатора объекта Tree.</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">     * @param other Запись TreeEntry для сравнения.</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">     * @return bool True, если эта запись должна предшествовать записи &#39;other&#39; в отсортированном списке.</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structTreeEntry.html">TreeEntry</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><a class="code hl_struct" href="structTreeEntry.html">TreeEntry</a> <a class="code hl_function" href="Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f">createEntry</a>(std::string name, std::string hash_id);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">class </span><a class="code hl_class" href="classTree.html">Tree</a> : <span class="keyword">public</span> <a class="code hl_class" href="classVcsObject.html">VcsObject</a> {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    std::vector&lt;TreeEntry&gt; entries;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree</a>(std::vector&lt;TreeEntry&gt; entries);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="comment">// VcsObject overrides</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
 </div>
-<div class="ttc" id="aTree_8hxx_html_a15d13a6036a062282a24e34a2fe7751f"><div class="ttname"><a href="Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f">createEntry</a></div><div class="ttdeci">TreeEntry createEntry(std::string name, std::string hash_id)</div><div class="ttdoc">Creating tree entry.</div><div class="ttdef"><b>Definition</b> Tree.cxx:21</div></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    [[nodiscard]] std::string <a class="code hl_function" href="classTree.html#a9b3870b1189b06efecd0a56aad4e467e">getType</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    [[nodiscard]] std::string <a class="code hl_function" href="classTree.html#aae4f965e5566b0addf5467ba5db10e3f">serialize</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keyword">static</span> <a class="code hl_class" href="classTree.html">Tree</a> <a class="code hl_function" href="classTree.html#a85166cfd9d904644216cdacb0b4b7d54">deserialize</a>(<span class="keyword">const</span> std::string&amp; raw_content);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTree.html#a772b4bcfb5e44dda6a9ede2470d23250">addEntry</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structTreeEntry.html">TreeEntry</a>&amp; entry);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classTree.html#a85035a45ff8778df5bb8be32f57bf232">removeEntry</a>(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    [[nodiscard]] std::optional&lt;TreeEntry&gt; <a class="code hl_function" href="classTree.html#a944fe0075293396036606f6a999643f4">findEntry</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    [[nodiscard]] <span class="keyword">const</span> std::vector&lt;TreeEntry&gt;&amp; <a class="code hl_function" href="classTree.html#a57ecc3c34be17f9e349ef386223eead8">getEntries</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>};</div>
+<div class="ttc" id="aTree_8hxx_html_a15d13a6036a062282a24e34a2fe7751f"><div class="ttname"><a href="Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f">createEntry</a></div><div class="ttdeci">TreeEntry createEntry(std::string name, std::string hash_id)</div><div class="ttdoc">Creating tree entry.</div><div class="ttdef"><b>Definition</b> Tree.cxx:23</div></div>
 <div class="ttc" id="aVcsObject_8hxx_html"><div class="ttname"><a href="VcsObject_8hxx.html">VcsObject.hxx</a></div><div class="ttdoc">Definition of the abstract base class for all Version Control System objects.</div></div>
-<div class="ttc" id="aclassTree_html_a57ecc3c34be17f9e349ef386223eead8"><div class="ttname"><a href="classTree.html#a57ecc3c34be17f9e349ef386223eead8">Tree::getEntries</a></div><div class="ttdeci">const std::vector&lt; TreeEntry &gt; &amp; getEntries() const</div><div class="ttdoc">Returns the list of entries stored in the Tree.</div><div class="ttdef"><b>Definition</b> Tree.cxx:142</div></div>
-<div class="ttc" id="aclassTree_html_a772b4bcfb5e44dda6a9ede2470d23250"><div class="ttname"><a href="classTree.html#a772b4bcfb5e44dda6a9ede2470d23250">Tree::addEntry</a></div><div class="ttdeci">void addEntry(const TreeEntry &amp;entry)</div><div class="ttdoc">Adds a new entry to the Tree or updates an existing entry if the name matches.</div><div class="ttdef"><b>Definition</b> Tree.cxx:103</div></div>
-<div class="ttc" id="aclassTree_html_a85035a45ff8778df5bb8be32f57bf232"><div class="ttname"><a href="classTree.html#a85035a45ff8778df5bb8be32f57bf232">Tree::removeEntry</a></div><div class="ttdeci">bool removeEntry(const std::string &amp;name)</div><div class="ttdoc">Removes an entry (file or subdirectory) from the Tree by name.</div><div class="ttdef"><b>Definition</b> Tree.cxx:115</div></div>
-<div class="ttc" id="aclassTree_html_a85166cfd9d904644216cdacb0b4b7d54"><div class="ttname"><a href="classTree.html#a85166cfd9d904644216cdacb0b4b7d54">Tree::deserialize</a></div><div class="ttdeci">static Tree deserialize(const std::string &amp;raw_content)</div><div class="ttdoc">Creates a Tree object from a serialized string read from the object database.</div><div class="ttdef"><b>Definition</b> Tree.cxx:57</div></div>
-<div class="ttc" id="aclassTree_html_a944fe0075293396036606f6a999643f4"><div class="ttname"><a href="classTree.html#a944fe0075293396036606f6a999643f4">Tree::findEntry</a></div><div class="ttdeci">std::optional&lt; TreeEntry &gt; findEntry(const std::string &amp;name) const</div><div class="ttdoc">Searches for a specific entry within the Tree by name.</div><div class="ttdef"><b>Definition</b> Tree.cxx:130</div></div>
-<div class="ttc" id="aclassTree_html_a9b3870b1189b06efecd0a56aad4e467e"><div class="ttname"><a href="classTree.html#a9b3870b1189b06efecd0a56aad4e467e">Tree::getType</a></div><div class="ttdeci">std::string getType() const override</div><div class="ttdoc">Returns the type of the VCS object.</div><div class="ttdef"><b>Definition</b> Tree.cxx:126</div></div>
-<div class="ttc" id="aclassTree_html_aae4f965e5566b0addf5467ba5db10e3f"><div class="ttname"><a href="classTree.html#aae4f965e5566b0addf5467ba5db10e3f">Tree::serialize</a></div><div class="ttdeci">std::string serialize() const override</div><div class="ttdoc">Serializes the Tree content into a standardized string format for hashing and storage.</div><div class="ttdef"><b>Definition</b> Tree.cxx:41</div></div>
-<div class="ttc" id="aclassTree_html_af660984821d0ae2f73725ee33c73ad20"><div class="ttname"><a href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree::Tree</a></div><div class="ttdeci">Tree(std::vector&lt; TreeEntry &gt; entries)</div><div class="ttdoc">Constructor for the Tree object.</div><div class="ttdef"><b>Definition</b> Tree.cxx:25</div></div>
-<div class="ttc" id="aclassVcsObject_html_a58691887a54d3d632038cacb36034075"><div class="ttname"><a href="classVcsObject.html#a58691887a54d3d632038cacb36034075">VcsObject::VcsObject</a></div><div class="ttdeci">VcsObject()=default</div><div class="ttdoc">Default constructor. Required for derived classes.</div></div>
-<div class="ttc" id="astructTreeEntry_html"><div class="ttname"><a href="structTreeEntry.html">TreeEntry</a></div><div class="ttdoc">Represents a single item (file or subdirectory) within a Tree object.</div><div class="ttdef"><b>Definition</b> Tree.hxx:22</div></div>
-<div class="ttc" id="astructTreeEntry_html_a134f10cecd1f81227572389485e04ad4"><div class="ttname"><a href="structTreeEntry.html#a134f10cecd1f81227572389485e04ad4">TreeEntry::mode</a></div><div class="ttdeci">std::string mode</div><div class="ttdoc">File mode (permissions) and type identifier (e.g., &quot;100644&quot; for a blob, &quot;040000&quot; for a tree).</div><div class="ttdef"><b>Definition</b> Tree.hxx:24</div></div>
-<div class="ttc" id="astructTreeEntry_html_a499a6f99a9c45e62c78e6d61f6341e0c"><div class="ttname"><a href="structTreeEntry.html#a499a6f99a9c45e62c78e6d61f6341e0c">TreeEntry::type</a></div><div class="ttdeci">std::string type</div><div class="ttdoc">The type of the referenced object (&quot;blob&quot; or &quot;tree&quot;).</div><div class="ttdef"><b>Definition</b> Tree.hxx:30</div></div>
-<div class="ttc" id="astructTreeEntry_html_a8236e8177bef9f2380f9893ee916cc77"><div class="ttname"><a href="structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77">TreeEntry::hash_id</a></div><div class="ttdeci">std::string hash_id</div><div class="ttdoc">The hash ID (SHA-256) of the referenced object (Blob or Tree).</div><div class="ttdef"><b>Definition</b> Tree.hxx:28</div></div>
-<div class="ttc" id="astructTreeEntry_html_aa025cb0a365aac0c2942a3249a244b1f"><div class="ttname"><a href="structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f">TreeEntry::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">The name of the file or subdirectory.</div><div class="ttdef"><b>Definition</b> Tree.hxx:26</div></div>
-<div class="ttc" id="astructTreeEntry_html_ad89dfd85abbb8b8a1041fea93f50a940"><div class="ttname"><a href="structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940">TreeEntry::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const TreeEntry &amp;other) const</div><div class="ttdoc">Comparison operator required for sorting.</div><div class="ttdef"><b>Definition</b> Tree.cxx:17</div></div>
+<div class="ttc" id="aclassTree_html"><div class="ttname"><a href="classTree.html">Tree</a></div><div class="ttdoc">Represents the state of a directory in the VCS, implementing the VcsObject contract.</div><div class="ttdef"><b>Definition</b> Tree.hxx:75</div></div>
+<div class="ttc" id="aclassTree_html_a57ecc3c34be17f9e349ef386223eead8"><div class="ttname"><a href="classTree.html#a57ecc3c34be17f9e349ef386223eead8">Tree::getEntries</a></div><div class="ttdeci">const std::vector&lt; TreeEntry &gt; &amp; getEntries() const</div><div class="ttdoc">Returns the list of entries stored in the Tree.</div><div class="ttdef"><b>Definition</b> Tree.cxx:144</div></div>
+<div class="ttc" id="aclassTree_html_a772b4bcfb5e44dda6a9ede2470d23250"><div class="ttname"><a href="classTree.html#a772b4bcfb5e44dda6a9ede2470d23250">Tree::addEntry</a></div><div class="ttdeci">void addEntry(const TreeEntry &amp;entry)</div><div class="ttdoc">Adds a new entry to the Tree or updates an existing entry if the name matches.</div><div class="ttdef"><b>Definition</b> Tree.cxx:105</div></div>
+<div class="ttc" id="aclassTree_html_a85035a45ff8778df5bb8be32f57bf232"><div class="ttname"><a href="classTree.html#a85035a45ff8778df5bb8be32f57bf232">Tree::removeEntry</a></div><div class="ttdeci">bool removeEntry(const std::string &amp;name)</div><div class="ttdoc">Removes an entry (file or subdirectory) from the Tree by name.</div><div class="ttdef"><b>Definition</b> Tree.cxx:117</div></div>
+<div class="ttc" id="aclassTree_html_a85166cfd9d904644216cdacb0b4b7d54"><div class="ttname"><a href="classTree.html#a85166cfd9d904644216cdacb0b4b7d54">Tree::deserialize</a></div><div class="ttdeci">static Tree deserialize(const std::string &amp;raw_content)</div><div class="ttdoc">Creates a Tree object from a serialized string read from the object database.</div><div class="ttdef"><b>Definition</b> Tree.cxx:59</div></div>
+<div class="ttc" id="aclassTree_html_a944fe0075293396036606f6a999643f4"><div class="ttname"><a href="classTree.html#a944fe0075293396036606f6a999643f4">Tree::findEntry</a></div><div class="ttdeci">std::optional&lt; TreeEntry &gt; findEntry(const std::string &amp;name) const</div><div class="ttdoc">Searches for a specific entry within the Tree by name.</div><div class="ttdef"><b>Definition</b> Tree.cxx:132</div></div>
+<div class="ttc" id="aclassTree_html_a9b3870b1189b06efecd0a56aad4e467e"><div class="ttname"><a href="classTree.html#a9b3870b1189b06efecd0a56aad4e467e">Tree::getType</a></div><div class="ttdeci">std::string getType() const override</div><div class="ttdoc">Returns the type of the VCS object.</div><div class="ttdef"><b>Definition</b> Tree.cxx:128</div></div>
+<div class="ttc" id="aclassTree_html_aae4f965e5566b0addf5467ba5db10e3f"><div class="ttname"><a href="classTree.html#aae4f965e5566b0addf5467ba5db10e3f">Tree::serialize</a></div><div class="ttdeci">std::string serialize() const override</div><div class="ttdoc">Serializes the Tree content into a standardized string format for hashing and storage.</div><div class="ttdef"><b>Definition</b> Tree.cxx:43</div></div>
+<div class="ttc" id="aclassTree_html_af660984821d0ae2f73725ee33c73ad20"><div class="ttname"><a href="classTree.html#af660984821d0ae2f73725ee33c73ad20">Tree::Tree</a></div><div class="ttdeci">Tree(std::vector&lt; TreeEntry &gt; entries)</div><div class="ttdoc">Constructor for the Tree object.</div><div class="ttdef"><b>Definition</b> Tree.cxx:27</div></div>
+<div class="ttc" id="aclassVcsObject_html"><div class="ttname"><a href="classVcsObject.html">VcsObject</a></div><div class="ttdoc">Abstract base class representing any storable, addressable object within the VCS.</div><div class="ttdef"><b>Definition</b> VcsObject.hxx:24</div></div>
+<div class="ttc" id="astructTreeEntry_html"><div class="ttname"><a href="structTreeEntry.html">TreeEntry</a></div><div class="ttdoc">Represents a single item (file or subdirectory) within a Tree object.</div><div class="ttdef"><b>Definition</b> Tree.hxx:25</div></div>
+<div class="ttc" id="astructTreeEntry_html_a134f10cecd1f81227572389485e04ad4"><div class="ttname"><a href="structTreeEntry.html#a134f10cecd1f81227572389485e04ad4">TreeEntry::mode</a></div><div class="ttdeci">std::string mode</div><div class="ttdoc">File mode (permissions) and type identifier (e.g., &quot;100644&quot; for a blob, &quot;040000&quot; for a tree).</div><div class="ttdef"><b>Definition</b> Tree.hxx:30</div></div>
+<div class="ttc" id="astructTreeEntry_html_a499a6f99a9c45e62c78e6d61f6341e0c"><div class="ttname"><a href="structTreeEntry.html#a499a6f99a9c45e62c78e6d61f6341e0c">TreeEntry::type</a></div><div class="ttdeci">std::string type</div><div class="ttdoc">The type of the referenced object (&quot;blob&quot; or &quot;tree&quot;).</div><div class="ttdef"><b>Definition</b> Tree.hxx:48</div></div>
+<div class="ttc" id="astructTreeEntry_html_a8236e8177bef9f2380f9893ee916cc77"><div class="ttname"><a href="structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77">TreeEntry::hash_id</a></div><div class="ttdeci">std::string hash_id</div><div class="ttdoc">The hash ID (SHA-256) of the referenced object (Blob or Tree).</div><div class="ttdef"><b>Definition</b> Tree.hxx:42</div></div>
+<div class="ttc" id="astructTreeEntry_html_aa025cb0a365aac0c2942a3249a244b1f"><div class="ttname"><a href="structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f">TreeEntry::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">The name of the file or subdirectory.</div><div class="ttdef"><b>Definition</b> Tree.hxx:36</div></div>
+<div class="ttc" id="astructTreeEntry_html_ad89dfd85abbb8b8a1041fea93f50a940"><div class="ttname"><a href="structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940">TreeEntry::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const TreeEntry &amp;other) const</div><div class="ttdoc">Comparison operator required for sorting.</div><div class="ttdef"><b>Definition</b> Tree.cxx:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

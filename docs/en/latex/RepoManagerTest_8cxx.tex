@@ -1,0 +1,55 @@
+\doxysection{tests/core/\+Repo\+Manager\+Test.cxx File Reference}
+\hypertarget{RepoManagerTest_8cxx}{}\label{RepoManagerTest_8cxx}\index{tests/core/RepoManagerTest.cxx@{tests/core/RepoManagerTest.cxx}}
+
+
+Unit tests for \doxylink{classRepositoryManager}{Repository\+Manager} class.  
+
+
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event\+Bus.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/logging/\+Logger.\+hxx"{}}\newline
+{\ttfamily \#include "{}gtest/gtest.\+h"{}}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMockObserver}{Mock\+Observer}}
+\begin{DoxyCompactList}\small\item\em Mock observer for testing event notifications. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRepositoryManagerTest}{Repository\+Manager\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classRepositoryManager}{Repository\+Manager} tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{RepoManagerTest_8cxx_aa3cded8ba505691d579d24320ae451de}\label{RepoManagerTest_8cxx_aa3cded8ba505691d579d24320ae451de} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryManagerTest}{Repository\+Manager\+Test}}, Initialize\+Repository\+Creates\+Structure)
+\item 
+\Hypertarget{RepoManagerTest_8cxx_af874bef8d63f135c8d2d739eb21aec9a}\label{RepoManagerTest_8cxx_af874bef8d63f135c8d2d739eb21aec9a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryManagerTest}{Repository\+Manager\+Test}}, Add\+File\+To\+Staging\+Adds\+To\+Index)
+\item 
+\Hypertarget{RepoManagerTest_8cxx_a277ab9ad1cb64269acd1390e4369fac5}\label{RepoManagerTest_8cxx_a277ab9ad1cb64269acd1390e4369fac5} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryManagerTest}{Repository\+Manager\+Test}}, Stage\+Multiple\+Files)
+\item 
+\Hypertarget{RepoManagerTest_8cxx_a71e7bff40de34c4b6ccc435b5d01874d}\label{RepoManagerTest_8cxx_a71e7bff40de34c4b6ccc435b5d01874d} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryManagerTest}{Repository\+Manager\+Test}}, Repository\+State\+Persists\+Between\+Instances)
+\item 
+\Hypertarget{RepoManagerTest_8cxx_abfea3ddada05fb22e55b4b92ff67d1ff}\label{RepoManagerTest_8cxx_abfea3ddada05fb22e55b4b92ff67d1ff} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryManagerTest}{Repository\+Manager\+Test}}, Add\+File\+With\+Relative\+Path)
+\item 
+\Hypertarget{RepoManagerTest_8cxx_ad2155abfb8914dc940bca3b574adc3ad}\label{RepoManagerTest_8cxx_ad2155abfb8914dc940bca3b574adc3ad} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryManagerTest}{Repository\+Manager\+Test}}, Add\+Duplicate\+File)
+\item 
+\Hypertarget{RepoManagerTest_8cxx_a483ac6e308ed4e07477156389190d12a}\label{RepoManagerTest_8cxx_a483ac6e308ed4e07477156389190d12a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRepositoryManagerTest}{Repository\+Manager\+Test}}, Basic\+Repository\+Operations)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit tests for \doxylink{classRepositoryManager}{Repository\+Manager} class. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}

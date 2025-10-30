@@ -1,0 +1,185 @@
+\doxysection{Event Struct Reference}
+\hypertarget{structEvent}{}\label{structEvent}\index{Event@{Event}}
+
+
+Structure describing an event published by the VCS core.  
+
+
+
+
+{\ttfamily \#include $<$Event.\+hxx$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058}{Type}} \{ \newline
+\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a}{FATAL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c}{RUNTIME\+\_\+\+ERROR}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04}{REPOSITORY\+\_\+\+INIT\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aad0f3057bed3b9321d5e67cdc86dc51e}{STAGE\+\_\+\+SUCCESS}}
+, \newline
+\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686}{SAVE\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70}{OBJECT\+\_\+\+WRITE\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092}{OBJECT\+\_\+\+READ\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775}{INDEX\+\_\+\+UPDATE}}
+, \newline
+\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c}{COMMIT\+\_\+\+CREATED}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7}{GENERAL\+\_\+\+INFO}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b}{HELP\+\_\+\+MESSAGE}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5}{DEBUG\+\_\+\+MESSAGE}}
+, \newline
+\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61}{ERROR\+\_\+\+MESSAGE}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4}{WARNING\+\_\+\+MESSAGE}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d}{PROTOCOL\+\_\+\+START}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7}{PROTOCOL\+\_\+\+SUCCESS}}
+, \newline
+\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89}{PROTOCOL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be}{NETWORK\+\_\+\+SEND}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad}{NETWORK\+\_\+\+RECEIVE}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec}{OBJECT\+\_\+\+TRANSFER}}
+, \newline
+\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5}{REFERENCE\+\_\+\+UPDATE}}
+, \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e}{NEGOTIATION\+\_\+\+PHASE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of events that can be published. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEvent_acb1e67cf0d5f22ac9360447b6f0fb5d3}\label{structEvent_acb1e67cf0d5f22ac9360447b6f0fb5d3} 
+\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058}{Type}} {\bfseries type}
+\begin{DoxyCompactList}\small\item\em The type of event that occurred. \end{DoxyCompactList}\item 
+\Hypertarget{structEvent_afedba76038909cf242d7642da3b7bfd9}\label{structEvent_afedba76038909cf242d7642da3b7bfd9} 
+std\+::string {\bfseries details}
+\begin{DoxyCompactList}\small\item\em Detailed description or payload (e.\+g., object hash). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structEvent_af3aea97224cf810339754ab8bd53e893}{source\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Source of the event (e.\+g., "{}main"{}, "{}\+Init\+Command"{}, "{}\+Repository"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure describing an event published by the VCS core. 
+
+This is the "{}message"{} that the Subject (Publisher, e.\+g., \doxylink{classRepository}{Repository}) sends to all its Observers. 
+
+\label{doc-enum-members}
+\Hypertarget{structEvent_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058}\index{Event@{Event}!Type@{Type}}
+\index{Type@{Type}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{structEvent_a2abf13b5be49315e9e362af02029f058} 
+enum \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058}{Event\+::\+Type}}}
+
+
+
+Types of events that can be published. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FATAL\_ERROR@{FATAL\_ERROR}!Event@{Event}}\index{Event@{Event}!FATAL\_ERROR@{FATAL\_ERROR}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a}\label{structEvent_a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a} 
+FATAL\+\_\+\+ERROR&Fatal error that causes application termination. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUNTIME\_ERROR@{RUNTIME\_ERROR}!Event@{Event}}\index{Event@{Event}!RUNTIME\_ERROR@{RUNTIME\_ERROR}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c}\label{structEvent_a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c} 
+RUNTIME\+\_\+\+ERROR&Runtime error that may allow continued execution. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REPOSITORY\_INIT\_SUCCESS@{REPOSITORY\_INIT\_SUCCESS}!Event@{Event}}\index{Event@{Event}!REPOSITORY\_INIT\_SUCCESS@{REPOSITORY\_INIT\_SUCCESS}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04}\label{structEvent_a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04} 
+REPOSITORY\+\_\+\+INIT\+\_\+\+SUCCESS&\doxylink{classRepository}{Repository} initialization completed successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAGE\_SUCCESS@{STAGE\_SUCCESS}!Event@{Event}}\index{Event@{Event}!STAGE\_SUCCESS@{STAGE\_SUCCESS}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058aad0f3057bed3b9321d5e67cdc86dc51e}\label{structEvent_a2abf13b5be49315e9e362af02029f058aad0f3057bed3b9321d5e67cdc86dc51e} 
+STAGE\+\_\+\+SUCCESS&File staging operation completed successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAVE\_SUCCESS@{SAVE\_SUCCESS}!Event@{Event}}\index{Event@{Event}!SAVE\_SUCCESS@{SAVE\_SUCCESS}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686}\label{structEvent_a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686} 
+SAVE\+\_\+\+SUCCESS&Save (commit) operation completed successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBJECT\_WRITE\_SUCCESS@{OBJECT\_WRITE\_SUCCESS}!Event@{Event}}\index{Event@{Event}!OBJECT\_WRITE\_SUCCESS@{OBJECT\_WRITE\_SUCCESS}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70}\label{structEvent_a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70} 
+OBJECT\+\_\+\+WRITE\+\_\+\+SUCCESS&Object write operation completed successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBJECT\_READ\_SUCCESS@{OBJECT\_READ\_SUCCESS}!Event@{Event}}\index{Event@{Event}!OBJECT\_READ\_SUCCESS@{OBJECT\_READ\_SUCCESS}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092}\label{structEvent_a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092} 
+OBJECT\+\_\+\+READ\+\_\+\+SUCCESS&Object read operation completed successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INDEX\_UPDATE@{INDEX\_UPDATE}!Event@{Event}}\index{Event@{Event}!INDEX\_UPDATE@{INDEX\_UPDATE}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775}\label{structEvent_a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775} 
+INDEX\+\_\+\+UPDATE&\doxylink{classIndex}{Index} has been updated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMMIT\_CREATED@{COMMIT\_CREATED}!Event@{Event}}\index{Event@{Event}!COMMIT\_CREATED@{COMMIT\_CREATED}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c}\label{structEvent_a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c} 
+COMMIT\+\_\+\+CREATED&New commit has been created. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GENERAL\_INFO@{GENERAL\_INFO}!Event@{Event}}\index{Event@{Event}!GENERAL\_INFO@{GENERAL\_INFO}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7}\label{structEvent_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7} 
+GENERAL\+\_\+\+INFO&General informational message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HELP\_MESSAGE@{HELP\_MESSAGE}!Event@{Event}}\index{Event@{Event}!HELP\_MESSAGE@{HELP\_MESSAGE}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b}\label{structEvent_a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b} 
+HELP\+\_\+\+MESSAGE&Help message for user assistance. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG\_MESSAGE@{DEBUG\_MESSAGE}!Event@{Event}}\index{Event@{Event}!DEBUG\_MESSAGE@{DEBUG\_MESSAGE}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5}\label{structEvent_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5} 
+DEBUG\+\_\+\+MESSAGE&Debug message for development purposes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR\_MESSAGE@{ERROR\_MESSAGE}!Event@{Event}}\index{Event@{Event}!ERROR\_MESSAGE@{ERROR\_MESSAGE}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61}\label{structEvent_a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61} 
+ERROR\+\_\+\+MESSAGE&Error message for user notification. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARNING\_MESSAGE@{WARNING\_MESSAGE}!Event@{Event}}\index{Event@{Event}!WARNING\_MESSAGE@{WARNING\_MESSAGE}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4}\label{structEvent_a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4} 
+WARNING\+\_\+\+MESSAGE&Warning message for potential issues. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROTOCOL\_START@{PROTOCOL\_START}!Event@{Event}}\index{Event@{Event}!PROTOCOL\_START@{PROTOCOL\_START}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d}\label{structEvent_a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d} 
+PROTOCOL\+\_\+\+START&Protocol operation has started. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROTOCOL\_SUCCESS@{PROTOCOL\_SUCCESS}!Event@{Event}}\index{Event@{Event}!PROTOCOL\_SUCCESS@{PROTOCOL\_SUCCESS}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7}\label{structEvent_a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7} 
+PROTOCOL\+\_\+\+SUCCESS&Protocol operation completed successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROTOCOL\_ERROR@{PROTOCOL\_ERROR}!Event@{Event}}\index{Event@{Event}!PROTOCOL\_ERROR@{PROTOCOL\_ERROR}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89}\label{structEvent_a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89} 
+PROTOCOL\+\_\+\+ERROR&Protocol operation encountered an error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NETWORK\_SEND@{NETWORK\_SEND}!Event@{Event}}\index{Event@{Event}!NETWORK\_SEND@{NETWORK\_SEND}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be}\label{structEvent_a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be} 
+NETWORK\+\_\+\+SEND&Data has been sent over network. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NETWORK\_RECEIVE@{NETWORK\_RECEIVE}!Event@{Event}}\index{Event@{Event}!NETWORK\_RECEIVE@{NETWORK\_RECEIVE}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad}\label{structEvent_a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad} 
+NETWORK\+\_\+\+RECEIVE&Data has been received over network. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBJECT\_TRANSFER@{OBJECT\_TRANSFER}!Event@{Event}}\index{Event@{Event}!OBJECT\_TRANSFER@{OBJECT\_TRANSFER}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec}\label{structEvent_a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec} 
+OBJECT\+\_\+\+TRANSFER&Object transfer in progress. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFERENCE\_UPDATE@{REFERENCE\_UPDATE}!Event@{Event}}\index{Event@{Event}!REFERENCE\_UPDATE@{REFERENCE\_UPDATE}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5}\label{structEvent_a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5} 
+REFERENCE\+\_\+\+UPDATE&Reference (branch/tag) has been updated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGOTIATION\_PHASE@{NEGOTIATION\_PHASE}!Event@{Event}}\index{Event@{Event}!NEGOTIATION\_PHASE@{NEGOTIATION\_PHASE}}}\Hypertarget{structEvent_a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e}\label{structEvent_a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e} 
+NEGOTIATION\+\_\+\+PHASE&Protocol negotiation phase in progress. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-variable-members}
+\Hypertarget{structEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structEvent_af3aea97224cf810339754ab8bd53e893}\index{Event@{Event}!source\_name@{source\_name}}
+\index{source\_name@{source\_name}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{source\_name}{source\_name}}
+{\footnotesize\ttfamily \label{structEvent_af3aea97224cf810339754ab8bd53e893} 
+std\+::string Event\+::source\+\_\+name}
+
+
+
+Source of the event (e.\+g., "{}main"{}, "{}\+Init\+Command"{}, "{}\+Repository"{}). 
+
+Added to support three-\/argument aggregate initialization in notify() calls. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{Event_8hxx}{Event.\+hxx}}\end{DoxyCompactItemize}

@@ -1,9 +1,14 @@
 /**
- * @file Blob.cxx
+* @file Blob.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the Blob class, a core SVCS object for file content storage.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса Blob, основного объекта SVCS для хранения содержимого файлов.
  */
 
 #include <utility>

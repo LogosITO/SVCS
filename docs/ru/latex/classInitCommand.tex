@@ -1,0 +1,162 @@
+\doxysection{Класс Init\+Command}
+\hypertarget{classInitCommand}{}\label{classInitCommand}\index{InitCommand@{InitCommand}}
+
+
+Реализует команду "{}init"{} для системы контроля версий (VCS).  
+
+
+
+
+{\ttfamily \#include $<$Init\+Command.\+hxx$>$}
+
+Граф наследования\+:Init\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classInitCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInitCommand_a484eda89d41a65ec3a9849b381577dfc}{Init\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classInitCommand}{Init\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInitCommand_a208ebec427828e140dd44c105416423f}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет логику инициализации репозитория. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInitCommand_a06925047a45d9ad66cf429613809bade}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Возвращает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInitCommand_a20154938353ae33f1dbd753df40cf273}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Возвращает краткое описание назначения команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInitCommand_a158528947482d476f4e687740296b0a5}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Возвращает синтаксис использования для команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInitCommand_a73f3ea39174694f150375f01cbff53eb}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает подробную справочную информацию о команде через шину событий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Реализует команду "{}init"{} для системы контроля версий (VCS). 
+
+Эта команда отвечает за инициализацию нового репозитория SVCS в текущей директории или указанном местоположении, настраивая необходимую внутреннюю структуру (например, скрытую директорию .svcs). Класс наследуется от \doxylink{classICommand}{ICommand}, обеспечивая соответствие интерфейсу шаблона Command. Он требует шину событий для связи и менеджер репозитория для выполнения фактической логики инициализации. 
+
+\label{doc-constructors}
+\Hypertarget{classInitCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classInitCommand_a484eda89d41a65ec3a9849b381577dfc}\index{InitCommand@{InitCommand}!InitCommand@{InitCommand}}
+\index{InitCommand@{InitCommand}!InitCommand@{InitCommand}}
+\doxysubsubsection{\texorpdfstring{InitCommand()}{InitCommand()}}
+{\footnotesize\ttfamily \label{classInitCommand_a484eda89d41a65ec3a9849b381577dfc} 
+Init\+Command\+::\+Init\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classInitCommand}{Init\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Общий указатель на шину событий (\doxylink{classISubject}{ISubject}). \\
+\hline
+{\em repo\+Manager} & Общий указатель на \doxylink{classRepositoryManager}{Repository\+Manager}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classInitCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classInitCommand_a208ebec427828e140dd44c105416423f}\index{InitCommand@{InitCommand}!execute@{execute}}
+\index{execute@{execute}!InitCommand@{InitCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classInitCommand_a208ebec427828e140dd44c105416423f} 
+bool Init\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет логику инициализации репозитория. 
+
+Этот метод пытается создать структуру репозитория. 
+\begin{DoxyParams}{Аргументы}
+{\em args} & Вектор строк, содержащих аргументы командной строки (обычно пустые для \textquotesingle{}init\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true} если репозиторий был успешно инициализирован или если он уже существует, {\ttfamily false} если инициализация не удалась. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classInitCommand_a20154938353ae33f1dbd753df40cf273}\index{InitCommand@{InitCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!InitCommand@{InitCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classInitCommand_a20154938353ae33f1dbd753df40cf273} 
+std\+::string Init\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Возвращает краткое описание назначения команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, содержащая описание. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classInitCommand_a06925047a45d9ad66cf429613809bade}\index{InitCommand@{InitCommand}!getName@{getName}}
+\index{getName@{getName}!InitCommand@{InitCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classInitCommand_a06925047a45d9ad66cf429613809bade} 
+std\+::string Init\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Возвращает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка "{}init"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classInitCommand_a158528947482d476f4e687740296b0a5}\index{InitCommand@{InitCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!InitCommand@{InitCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classInitCommand_a158528947482d476f4e687740296b0a5} 
+std\+::string Init\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Возвращает синтаксис использования для команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, содержащая использование\+: "{}svcs init"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classInitCommand_a73f3ea39174694f150375f01cbff53eb}\index{InitCommand@{InitCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!InitCommand@{InitCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classInitCommand_a73f3ea39174694f150375f01cbff53eb} 
+void Init\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает подробную справочную информацию о команде через шину событий. 
+
+
+
+Замещает \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{InitCommand_8hxx}{Init\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{InitCommand_8cxx}{Init\+Command.\+cxx}}\end{DoxyCompactItemize}

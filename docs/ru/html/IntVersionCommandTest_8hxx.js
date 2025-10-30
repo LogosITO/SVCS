@@ -1,4 +1,4 @@
 var IntVersionCommandTest_8hxx =
 [
-    [ "VersionCommandTest", "classVersionCommandTest.html", null ]
+    [ "VersionCommandTest", "classVersionCommandTest.html", "classVersionCommandTest" ]
 ];

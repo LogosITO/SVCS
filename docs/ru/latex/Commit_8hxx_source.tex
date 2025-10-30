@@ -1,0 +1,66 @@
+\doxysection{Commit.\+hxx}
+\hypertarget{Commit_8hxx_source}{}\label{Commit_8hxx_source}\index{core/include/Commit.hxx@{core/include/Commit.hxx}}
+\mbox{\hyperlink{Commit_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VcsObject_8hxx}{VcsObject.hxx}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCommit_a201c5f3c2f29a4db8e40e69d55b2fa1f}{Commit}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classVcsObject_a58691887a54d3d632038cacb36034075}{VcsObject}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ tree\_hash;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<std::string>\ parent\_hashes;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ std::string\ author;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ std::time\_t\ timestamp;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ std::string\ message;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classCommit_a201c5f3c2f29a4db8e40e69d55b2fa1f}{Commit}}()\ :\ tree\_hash(\textcolor{stringliteral}{"{}"{}}),\ parent\_hashes(\{\}),\ author(\textcolor{stringliteral}{"{}"{}}),\ timestamp(time\_t()),\ message(\textcolor{stringliteral}{"{}"{}})\ \{\};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classCommit_a201c5f3c2f29a4db8e40e69d55b2fa1f}{Commit}}(}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ std::string\ thash,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ std::vector<std::string>\ phashes,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ std::string\ auth,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ std::string\ msg,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ std::time\_t\ tstamp\ =\ std::time(\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00118\ \ \ \ \ );}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//\ VcsObject\ overrides}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00132\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classCommit_a213b92691c2dae9e7ae7862eb9c369df}{getType}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00146\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classCommit_a53f442e035ddbdb18d0635bbac2709b5}{serialize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classCommit_a201c5f3c2f29a4db8e40e69d55b2fa1f}{Commit}}\ \mbox{\hyperlink{classCommit_a0f37624e98ed1dc6404795756127be52}{deserialize}}(\textcolor{keyword}{const}\ std::string\&\ raw\_content);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00172\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCommit_a8ef0c99b1167987343c99cc63dfef608}{getTreeHash}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00183\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ \mbox{\hyperlink{classCommit_ab683ee4f53ec36c871a77f6bea0015df}{getParentHashes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00194\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCommit_a5228b234ccb27af846012c26ccb26912}{getAuthor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00205\ \ \ \ \ [[nodiscard]]\ std::time\_t\ \mbox{\hyperlink{classCommit_a68c3572fa2fdb3a182da27acae0adc69}{getTimestamp}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00216\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCommit_a341a1826cec171e37a95f0317183ea5d}{getMessage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCommit_ae75dbe7170f17040ae69f084a36fadf7}{setMessage}}(\textcolor{keyword}{const}\ std::string\&\ msg);}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCommit_a884794e13b9df7e9d6a416c0d69de0ff}{setTimestamp}}(std::time\_t\ tstamp);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCommit_a9f8351b67005ad46e2bbd2671f5985f0}{setTimestampNow}}();}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCommit_a97cdf233fb1ad1fb766c016c1650c54c}{setParent}}(\textcolor{keyword}{const}\ std::string\&\ parent);}
+\DoxyCodeLine{00259\ \};}
+
+\end{DoxyCode}

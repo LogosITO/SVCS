@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: EventBus Class Reference</title>
+<title>SVCS - English Documentation: EventBus Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -128,12 +126,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classISubject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classISubject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classISubject.html">ISubject</a></td></tr>
 <tr class="memitem:a66f4ce666ed8b85d694a9b73d6bc16fb inherit pro_attribs_classISubject" id="r_a66f4ce666ed8b85d694a9b73d6bc16fb"><td class="memItemLeft" align="right" valign="top">
 std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
+<tr class="memdesc:a66f4ce666ed8b85d694a9b73d6bc16fb inherit pro_attribs_classISubject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of registered observers. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A thread-safe implementation of <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> for centralized event distribution. </p>
-<ul>
-<li></li>
-</ul>
 <p>This class uses std::weak_ptr to store observers, preventing circular dependencies and ensuring automatic cleanup of destroyed observers. It inherits from std::enable_shared_from_this to ensure that valid shared pointers to the bus can be created even inside its member functions. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a131f28abdfe25a80f94a202aff5e6edb" name="a131f28abdfe25a80f94a202aff5e6edb"></a>
@@ -160,15 +156,12 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </div><div class="memdoc">
 
 <p>Registers a new Observer. </p>
-<ul>
-<li>The observer's shared pointer is stored as a weak pointer internally. <dl class="params"><dt>Parameters</dt><dd>
+<p>The observer's shared pointer is stored as a weak pointer internally. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">observer</td><td>The smart pointer to the Observer to be registered. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 <p>Implements <a class="el" href="classISubject.html#a4f6d20c5e92b9b0a020e8661becf9ace">ISubject</a>.</p>
 
@@ -198,15 +191,12 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </div><div class="memdoc">
 
 <p>Deregisters a specific Observer. </p>
-<ul>
-<li>Compares the provided shared_ptr against all stored weak_ptr objects. <dl class="params"><dt>Parameters</dt><dd>
+<p>Compares the provided shared_ptr against all stored weak_ptr objects. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">observer_to_remove</td><td>The smart pointer to the Observer to be removed. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 <p>Implements <a class="el" href="classISubject.html#aad2217012b14bdd6c91eb240689e5a74">ISubject</a>.</p>
 
@@ -236,16 +226,12 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </div><div class="memdoc">
 
 <p>Sends an event to all active Observers. </p>
-<ul>
-<li>Iterates over the list, safely locking each weak pointer before calling update(). Invalid (expired) weak pointers are effectively ignored. <dl class="section note"><dt>Note</dt><dd>Your implementation of <span class="tt">notify</span> uses <span class="tt">const_cast&lt;std::mutex&amp;&gt;(observers_mutex_)</span> because <span class="tt">notify</span> is <span class="tt">const</span>. A better practice is to declare <span class="tt">observers_mutex_</span> as <b><span class="tt">mutable</span></b>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Iterates over the list, safely locking each weak pointer before calling update(). Invalid (expired) weak pointers are effectively ignored. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>The constant reference to the <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> to be published. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 <p>Implements <a class="el" href="classISubject.html#aa2da71c9f12ce1097f83bc8887fa0474">ISubject</a>.</p>
 

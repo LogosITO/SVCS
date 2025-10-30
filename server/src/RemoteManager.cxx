@@ -1,21 +1,28 @@
 /**
-* @file RemoteManager.cxx
- * @brief Implementation of the RemoteManager class.
+ * @file RemoteManager.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
+ * @english
+ * @brief Implementation of the RemoteManager class.
  * @details This file implements the methods for the RemoteManager class.
  * It handles the loading, saving, and in-memory management of remote
  * repository configurations.
- *
  * Persistence is handled by reading from and writing to a dedicated 'remotes'
  * file (e.g., /path/to/repo/remotes) in a Git-config-like format.
- *
  * @note This implementation assumes the configuration is in a separate 'remotes'
  * file at the root of the repository, *not* inside `.svcs/config`.
  *
- * @see RemoteManager.hxx
- *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса RemoteManager.
+ * @details Этот файл реализует методы для класса RemoteManager.
+ * Он обрабатывает загрузку, сохранение и управление в памяти конфигураций
+ * удаленных репозиториев.
+ * Сохранение обрабатывается чтением и записью в выделенный файл 'remotes'
+ * (например, /path/to/repo/remotes) в формате, подобном Git-config.
+ * @note Эта реализация предполагает, что конфигурация находится в отдельном файле 'remotes'
+ * в корне репозитория, *а не* внутри `.svcs/config`.
  */
 
 #include "../include/RemoteManager.hxx"

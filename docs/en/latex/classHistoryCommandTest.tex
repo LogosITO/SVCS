@@ -1,0 +1,200 @@
+\doxysection{History\+Command\+Test Class Reference}
+\hypertarget{classHistoryCommandTest}{}\label{classHistoryCommandTest}\index{HistoryCommandTest@{HistoryCommandTest}}
+
+
+Google Test fixture for running integration tests against the \doxylink{classHistoryCommand}{History\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+History\+Command\+Test.\+hxx$>$}
+
+Inheritance diagram for History\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHistoryCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHistoryCommandTest_ae7cc70b3a65c5f492f481ae5025fd0db}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the testing environment before each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryCommandTest_a68b08b434d26d652810d2134fad13dda}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Tears down the testing environment after each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryCommandTest_aee81d82c5a6de6a481500176887a62c1}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content) const
+\begin{DoxyCompactList}\small\item\em Creates a test file with specified content in the temporary directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryCommandTest_ac77c319893cf38e27e04c1f2a1b78ec4}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryCommandTest_a25c60bf368d89fcbef0c2403f7df8cdf}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files) const
+\begin{DoxyCompactList}\small\item\em Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHistoryCommandTest_a2dd0c94ab6f27bbc313407531e4a8524}{create\+Test\+Commit}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Creates a new commit (save) with a specified message. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHistoryCommandTest_a8147f4e97007f6aaa9041b79b0529c9a}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Counts the occurrences of a specific message (substring) across all event notifications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classHistoryCommandTest_a77e801070bf0f2f32aef24ec99967070}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classHistoryCommandTest_ac9e0d365b69a714c99241c990d8c9ab7}\label{classHistoryCommandTest_ac9e0d365b69a714c99241c990d8c9ab7} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer). \end{DoxyCompactList}\item 
+\Hypertarget{classHistoryCommandTest_a5c6bffbcccef609a56591bec4809fe3e}\label{classHistoryCommandTest_a5c6bffbcccef609a56591bec4809fe3e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
+\Hypertarget{classHistoryCommandTest_a7fcbb04d7737880377af966ea51aef41}\label{classHistoryCommandTest_a7fcbb04d7737880377af966ea51aef41} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHistoryCommand}{History\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
+\Hypertarget{classHistoryCommandTest_af0ebb15be2d12ffe092e5cc160067e87}\label{classHistoryCommandTest_af0ebb15be2d12ffe092e5cc160067e87} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Path to the temporary test repository directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Google Test fixture for running integration tests against the \doxylink{classHistoryCommand}{History\+Command}. 
+
+This fixture provides the necessary infrastructure for integration tests of the history command\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Manage a temporary SVCS repository directory.
+\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for event bus) and \doxylink{classRepositoryManager}{Repository\+Manager} (for core logic).
+\item {\bfseries{Helper Methods\+:}} Simplify file creation, staging, and crucially, creating mock commits to populate the history for testing various output formats and limits. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classHistoryCommandTest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHistoryCommandTest_a77e801070bf0f2f32aef24ec99967070}\index{HistoryCommandTest@{HistoryCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!HistoryCommandTest@{HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classHistoryCommandTest_a77e801070bf0f2f32aef24ec99967070} 
+bool History\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Checks if a specific message (substring) exists in any event notification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the message is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classHistoryCommandTest_a8147f4e97007f6aaa9041b79b0529c9a}\index{HistoryCommandTest@{HistoryCommandTest}!countMessages@{countMessages}}
+\index{countMessages@{countMessages}!HistoryCommandTest@{HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
+{\footnotesize\ttfamily \label{classHistoryCommandTest_a8147f4e97007f6aaa9041b79b0529c9a} 
+int History\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counts the occurrences of a specific message (substring) across all event notifications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to count. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of events containing the substring. 
+\end{DoxyReturn}
+\Hypertarget{classHistoryCommandTest_a2dd0c94ab6f27bbc313407531e4a8524}\index{HistoryCommandTest@{HistoryCommandTest}!createTestCommit@{createTestCommit}}
+\index{createTestCommit@{createTestCommit}!HistoryCommandTest@{HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestCommit()}{createTestCommit()}}
+{\footnotesize\ttfamily \label{classHistoryCommandTest_a2dd0c94ab6f27bbc313407531e4a8524} 
+bool History\+Command\+Test\+::create\+Test\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a new commit (save) with a specified message. 
+
+Internally stages files (if needed) and calls the repository manager\textquotesingle{}s commit logic. 
+\begin{DoxyParams}{Parameters}
+{\em message} & The commit message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the commit was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classHistoryCommandTest_ac77c319893cf38e27e04c1f2a1b78ec4}\index{HistoryCommandTest@{HistoryCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!HistoryCommandTest@{HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classHistoryCommandTest_ac77c319893cf38e27e04c1f2a1b78ec4} 
+void History\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test directory in the temporary location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & The relative path/name of the directory. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHistoryCommandTest_aee81d82c5a6de6a481500176887a62c1}\index{HistoryCommandTest@{HistoryCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!HistoryCommandTest@{HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classHistoryCommandTest_aee81d82c5a6de6a481500176887a62c1} 
+void History\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test file with specified content in the temporary directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The relative path/name of the file. \\
+\hline
+{\em content} & The content to write to the file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHistoryCommandTest_ae7cc70b3a65c5f492f481ae5025fd0db}\index{HistoryCommandTest@{HistoryCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!HistoryCommandTest@{HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classHistoryCommandTest_ae7cc70b3a65c5f492f481ae5025fd0db} 
+void History\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Sets up the testing environment before each test. 
+
+Initializes components, creates the temporary directory, and initializes the repository. \Hypertarget{classHistoryCommandTest_a25c60bf368d89fcbef0c2403f7df8cdf}\index{HistoryCommandTest@{HistoryCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!HistoryCommandTest@{HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classHistoryCommandTest_a25c60bf368d89fcbef0c2403f7df8cdf} 
+void History\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & A vector of file names to stage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHistoryCommandTest_a68b08b434d26d652810d2134fad13dda}\index{HistoryCommandTest@{HistoryCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!HistoryCommandTest@{HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classHistoryCommandTest_a68b08b434d26d652810d2134fad13dda} 
+void History\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Tears down the testing environment after each test. 
+
+Cleans up the temporary directory and restores the working path. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntHistoryCommandTest_8hxx}{Int\+History\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntHistoryCommandTest_8cxx}{Int\+History\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

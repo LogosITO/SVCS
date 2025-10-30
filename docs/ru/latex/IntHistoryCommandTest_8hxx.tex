@@ -1,0 +1,28 @@
+\doxysection{Файл tests/cli/utils/\+Int\+History\+Command\+Test.hxx}
+\hypertarget{IntHistoryCommandTest_8hxx}{}\label{IntHistoryCommandTest_8hxx}\index{tests/cli/utils/IntHistoryCommandTest.hxx@{tests/cli/utils/IntHistoryCommandTest.hxx}}
+
+
+Заголовок тестового фикстура для интеграционных тестов класса \doxylink{classHistoryCommand}{History\+Command}.  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include "{}../../../cli/include/\+History\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../mocks/\+Mock\+Subject.\+hxx"{}}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classHistoryCommand}{History\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Заголовок тестового фикстура для интеграционных тестов класса \doxylink{classHistoryCommand}{History\+Command}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Объявляет фикстур \doxylink{classHistoryCommandTest}{History\+Command\+Test}, который настраивает контролируемое окружение для тестирования команды \textquotesingle{}svcs history\textquotesingle{}. Это включает инициализацию mock и основных компонентов (\doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classRepositoryManager}{Repository\+Manager}) и предоставление вспомогательных функций для создания файлов, индексации изменений и создания mock коммитов. 

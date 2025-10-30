@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "SVCS", "index.html", [
+  [ "SVCS - Русская документация", "index.html", [
     [ "📚 SVCS: Simple Version Control System", "md_README.html", [
       [ "🚀 Current Project Status: Production Ready CLI", "md_README.html#autotoc_md2", [
         [ "Major Achievements", "md_README.html#autotoc_md3", null ]
@@ -59,6 +59,9 @@ var NAVTREE =
       [ "Our Process", "md_SECURITY.html#autotoc_md33", null ]
     ] ],
     [ "Список устаревших определений и описаний", "deprecated.html", null ],
+    [ "Пространства имен", "namespaces.html", [
+      [ "Пространства имен", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
@@ -67,7 +70,8 @@ var NAVTREE =
         [ "Указатель", "functions.html", "functions_dup" ],
         [ "Функции", "functions_func.html", "functions_func" ],
         [ "Переменные", "functions_vars.html", null ],
-        [ "Перечисления", "functions_enum.html", null ]
+        [ "Перечисления", "functions_enum.html", null ],
+        [ "Элементы перечислений", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Файлы", "files.html", [
@@ -84,9 +88,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb",
-"classRepositoryManager.html#aefb1b537b9c90d9fd0eac7255d5580fd",
-"structTreeEntry.html#a499a6f99a9c45e62c78e6d61f6341e0c"
+"classCommit.html",
+"classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf",
+"structEvent.html#a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

@@ -1,11 +1,14 @@
 /**
  * @file RepoCommand.cxx
- * @brief Implementation of the RepoCommand class for managing remote configurations.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
+ * @english
+ * @brief Implementation of the RepoCommand class for managing remote configurations.
  * @details This file implements the concrete logic for the "svcs repo" command.
  * It primarily delegates its core functionality—adding, removing, renaming, and listing remotes—
  * to the @ref RemoteManager class.
- *
  * The implementation includes:
  * 1.  **Repository Context Check**: Ensures the command is run inside an initialized SVCS repository.
  * 2.  **Subcommand Dispatch**: Parses the first argument to determine which handler (`handleAdd`, `handleRemove`, etc.) to call.
@@ -13,11 +16,17 @@
  * 4.  **User Output**: Directly prints confirmation messages (`std::cout`) or uses the
  * @ref ISubject event bus for errors and informational messages.
  *
- * @see RepoCommand.hxx
- * @see RemoteManager.hxx
- *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса RepoCommand для управления конфигурациями удаленных репозиториев.
+ * @details Этот файл реализует конкретную логику для команды "svcs repo".
+ * Он в основном делегирует свою основную функциональность—добавление, удаление, переименование и перечисление удаленных репозиториев—
+ * классу @ref RemoteManager.
+ * Реализация включает:
+ * 1.  **Проверку контекста репозитория**: Обеспечивает выполнение команды внутри инициализированного репозитория SVCS.
+ * 2.  **Диспетчеризацию подкоманд**: Разбирает первый аргумент для определения, какой обработчик (`handleAdd`, `handleRemove` и т.д.) вызвать.
+ * 3.  **Проверку аргументов**: Выполняет проверки количества аргументов для каждой подкоманды.
+ * 4.  **Вывод пользователю**: Напрямую выводит сообщения подтверждения (`std::cout`) или использует
+ * шину событий @ref ISubject для ошибок и информационных сообщений.
  */
 
 #include "../include/RepoCommand.hxx"

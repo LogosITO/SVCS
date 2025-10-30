@@ -1,0 +1,99 @@
+\doxysection{Remote\+Protocol.\+hxx}
+\hypertarget{RemoteProtocol_8hxx_source}{}\label{RemoteProtocol_8hxx_source}\index{server/include/RemoteProtocol.hxx@{server/include/RemoteProtocol.hxx}}
+\mbox{\hyperlink{RemoteProtocol_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRemoteProtocol_ae13f8845715408297f5466fdcecce981}{RemoteProtocol}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classRemoteProtocol_ae13f8845715408297f5466fdcecce981}{RemoteProtocol}}(std::shared\_ptr<ISubject>\ event\_bus,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repository\_manager);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classRemoteProtocol_af00770931128eaaaf4b9bfc19ef73e69}{\string~RemoteProtocol}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRemoteProtocol_a54d6ce28df9c8a53e79908c038493372}{handleReceivePack}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRemoteProtocol_a67939ef40e01647387fc991cff543485}{handleUploadPack}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Receive-\/pack\ (Push)\ Protocol\ Methods}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{bool}\ processPushNegotiation();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ receiveObjects(\textcolor{keyword}{const}\ std::unordered\_set<std::string>\&\ wanted\_objects);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ updateReferences(\textcolor{keyword}{const}\ std::vector<std::pair<std::string,\ std::string>>\&\ ref\_updates);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//\ Upload-\/pack\ (Pull)\ Protocol\ Methods}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ processPullNegotiation();}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00166\ \ \ \ \ std::unordered\_set<std::string>\ findMissingObjects(\textcolor{keyword}{const}\ std::unordered\_set<std::string>\&\ client\_has);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ sendObjects(\textcolor{keyword}{const}\ std::unordered\_set<std::string>\&\ objects\_to\_send);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ Object\ and\ Reference\ Management\ Methods}}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{bool}\ objectExists(\textcolor{keyword}{const}\ std::string\&\ object\_hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00206\ \ \ \ \ std::string\ readObject(\textcolor{keyword}{const}\ std::string\&\ object\_hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{bool}\ writeObject(\textcolor{keyword}{const}\ std::string\&\ object\_hash,\ \textcolor{keyword}{const}\ std::string\&\ object\_data);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00232\ \ \ \ \ std::unordered\_set<std::string>\ getAllReferences()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{bool}\ updateReference(\textcolor{keyword}{const}\ std::string\&\ ref\_name,\ \textcolor{keyword}{const}\ std::string\&\ new\_hash);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{comment}{//\ Protocol\ Communication\ Methods}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{bool}\ readLine(std::string\&\ line)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{bool}\ sendLine(\textcolor{keyword}{const}\ std::string\&\ line)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{bool}\ sendData(\textcolor{keyword}{const}\ std::string\&\ data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{bool}\ sendError(\textcolor{keyword}{const}\ std::string\&\ error)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{comment}{//\ Validation\ Methods}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValidObjectHash(\textcolor{keyword}{const}\ std::string\&\ hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValidReference(\textcolor{keyword}{const}\ std::string\&\ ref\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{comment}{//\ Notification\ Methods}}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyDebug(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyInfo(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyError(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyProtocolStart(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyProtocolSuccess(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyProtocolError(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyNetworkSend(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyNetworkReceive(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyObjectTransfer(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyReferenceUpdate(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyNegotiation(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00468\ \ \ \ \ \textcolor{keywordtype}{bool}\ sendProtocolError(\textcolor{keyword}{const}\ std::string\&\ error)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00478\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus\_;}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00487\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repository\_manager\_;}
+\DoxyCodeLine{00488\ \};}
+
+\end{DoxyCode}

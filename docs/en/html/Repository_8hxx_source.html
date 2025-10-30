@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: core/include/Repository.hxx Source File</title>
+<title>SVCS - English Documentation: core/include/Repository.hxx Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,74 +92,75 @@ $(function(){initNavTree('Repository_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="Repository_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../services/ISubject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="ObjectStorage_8hxx.html">ObjectStorage.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="Index_8hxx.html">Index.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classRepository.html">   29</a></span><span class="keyword">class </span><a class="code hl_function" href="classRepository.html#a1df4810f68ebca61adfbbad3e079b2f1">Repository</a> : <span class="keyword">public</span> <a class="code hl_class" href="classISubject.html">ISubject</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> std::filesystem::path root_path;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::unique_ptr&lt;ObjectStorage&gt; objects;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::vector&lt;std::weak_ptr&lt;IObserver&gt;&gt; observers;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::unique_ptr&lt;Index&gt; index; </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="classRepository.html#a64de863b90dcce47cad8389326d5d0f7">~Repository</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classRepository.html#a1df4810f68ebca61adfbbad3e079b2f1">Repository</a>(std::filesystem::path  rpath);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRepository.html#a58a23eff67b9a24c3a8916fd8dfacc9a">initializeDependencies</a>();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepository.html#aff14558f8e382efc3e5e53263b85e312">init</a>();</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepository.html#ae29372147e4b9dbb7ad3efdd32c1c42e">is_initialized</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classRepository.html#a74b5a052c07a886d428e42aaaeebeeb5">   83</a></span>    [[nodiscard]] <span class="keyword">const</span> std::filesystem::path&amp; <a class="code hl_function" href="classRepository.html#a74b5a052c07a886d428e42aaaeebeeb5">getPath</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> root_path; }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classRepository.html#a9c1153091e3ffa2d5aaf65e900a41c40">   89</a></span>    [[nodiscard]] <a class="code hl_class" href="classObjectStorage.html">ObjectStorage</a>* <a class="code hl_function" href="classRepository.html#a9c1153091e3ffa2d5aaf65e900a41c40">getObjectStorage</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> objects.get(); }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRepository.html#a250a9e24514ca3a4f8c6d954ad4dcefc">attach</a>(std::shared_ptr&lt;IObserver&gt; observer) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRepository.html#a1e421ee99132cf3dcaac6fc54ba0ab7d">detach</a>(std::shared_ptr&lt;IObserver&gt; observer) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRepository.html#a7ce8792d0a1493d98986fb2732b95c4c">notify</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structEvent.html">Event</a>&amp; event) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">static</span> std::shared_ptr&lt;Repository&gt; <a class="code hl_function" href="classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb">findRepository</a>(<span class="keyword">const</span> std::string&amp; start_path = <span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepository.html#aed550b2bede1ebe31d4dc4ac42026ba6">isRepository</a>(<span class="keyword">const</span> std::string&amp; path);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepository.html#ae75a20286b79919005724ab4dfa80717">stageFile</a>(<span class="keyword">const</span> std::string&amp; path); </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../services/ISubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="ObjectStorage_8hxx.html">ObjectStorage.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="Index_8hxx.html">Index.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classRepository.html">   31</a></span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">class </span><a class="code hl_function" href="classRepository.html#a1df4810f68ebca61adfbbad3e079b2f1">Repository</a> : <span class="keyword">public</span> <a class="code hl_class" href="classISubject.html">ISubject</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">const</span> std::filesystem::path root_path;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::unique_ptr&lt;ObjectStorage&gt; objects;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::vector&lt;std::weak_ptr&lt;IObserver&gt;&gt; observers;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    std::unique_ptr&lt;Index&gt; index;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_function" href="classRepository.html#a64de863b90dcce47cad8389326d5d0f7">~Repository</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classRepository.html#a1df4810f68ebca61adfbbad3e079b2f1">Repository</a>(std::filesystem::path  rpath);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRepository.html#a58a23eff67b9a24c3a8916fd8dfacc9a">initializeDependencies</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepository.html#aff14558f8e382efc3e5e53263b85e312">init</a>();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepository.html#ae29372147e4b9dbb7ad3efdd32c1c42e">is_initialized</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    [[nodiscard]] <span class="keyword">const</span> std::filesystem::path&amp; <a class="code hl_function" href="classRepository.html#a74b5a052c07a886d428e42aaaeebeeb5">getPath</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> root_path; }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
 </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    [[nodiscard]] <a class="code hl_class" href="classObjectStorage.html">ObjectStorage</a>* <a class="code hl_function" href="classRepository.html#a9c1153091e3ffa2d5aaf65e900a41c40">getObjectStorage</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> objects.get(); }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRepository.html#a250a9e24514ca3a4f8c6d954ad4dcefc">attach</a>(std::shared_ptr&lt;IObserver&gt; observer) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRepository.html#a1e421ee99132cf3dcaac6fc54ba0ab7d">detach</a>(std::shared_ptr&lt;IObserver&gt; observer) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRepository.html#a7ce8792d0a1493d98986fb2732b95c4c">notify</a>(<span class="keyword">const</span> Event&amp; event) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keyword">static</span> std::shared_ptr&lt;Repository&gt; <a class="code hl_function" href="classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb">findRepository</a>(<span class="keyword">const</span> std::string&amp; start_path = <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepository.html#aed550b2bede1ebe31d4dc4ac42026ba6">isRepository</a>(<span class="keyword">const</span> std::string&amp; path);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRepository.html#ae75a20286b79919005724ab4dfa80717">stageFile</a>(<span class="keyword">const</span> std::string&amp; path); </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>};</div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
 <div class="ttc" id="aIndex_8hxx_html"><div class="ttname"><a href="Index_8hxx.html">Index.hxx</a></div><div class="ttdoc">Definition of IndexEntry data structure and Index struct.</div></div>
 <div class="ttc" id="aObjectStorage_8hxx_html"><div class="ttname"><a href="ObjectStorage_8hxx.html">ObjectStorage.hxx</a></div><div class="ttdoc">Manages the reading, writing, and lifecycle of VCS objects on the disk using the Git format.</div></div>
-<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">The Subject (Publisher) Interface (Abstract Base Class).</div><div class="ttdef"><b>Definition</b> ISubject.hxx:26</div></div>
+<div class="ttc" id="aclassISubject_html"><div class="ttname"><a href="classISubject.html">ISubject</a></div><div class="ttdoc">The Subject (Publisher) Interface (Abstract Base Class).</div><div class="ttdef"><b>Definition</b> ISubject.hxx:27</div></div>
 <div class="ttc" id="aclassObjectStorage_html"><div class="ttname"><a href="classObjectStorage.html">ObjectStorage</a></div><div class="ttdoc">Manages the version control object database, including persistence and object restoration.</div><div class="ttdef"><b>Definition</b> ObjectStorage.hxx:29</div></div>
-<div class="ttc" id="aclassRepository_html_a1df4810f68ebca61adfbbad3e079b2f1"><div class="ttname"><a href="classRepository.html#a1df4810f68ebca61adfbbad3e079b2f1">Repository::Repository</a></div><div class="ttdeci">Repository(std::filesystem::path rpath)</div><div class="ttdoc">Constructs the repository manager.</div><div class="ttdef"><b>Definition</b> Repository.cxx:27</div></div>
-<div class="ttc" id="aclassRepository_html_a1e421ee99132cf3dcaac6fc54ba0ab7d"><div class="ttname"><a href="classRepository.html#a1e421ee99132cf3dcaac6fc54ba0ab7d">Repository::detach</a></div><div class="ttdeci">void detach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Detaches a registered observer.</div><div class="ttdef"><b>Definition</b> Repository.cxx:136</div></div>
-<div class="ttc" id="aclassRepository_html_a250a9e24514ca3a4f8c6d954ad4dcefc"><div class="ttname"><a href="classRepository.html#a250a9e24514ca3a4f8c6d954ad4dcefc">Repository::attach</a></div><div class="ttdeci">void attach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Attaches an observer to receive events.</div><div class="ttdef"><b>Definition</b> Repository.cxx:125</div></div>
-<div class="ttc" id="aclassRepository_html_a58a23eff67b9a24c3a8916fd8dfacc9a"><div class="ttname"><a href="classRepository.html#a58a23eff67b9a24c3a8916fd8dfacc9a">Repository::initializeDependencies</a></div><div class="ttdeci">void initializeDependencies()</div><div class="ttdoc">Initializes the repository&#39;s internal dependencies.</div><div class="ttdef"><b>Definition</b> Repository.cxx:34</div></div>
-<div class="ttc" id="aclassRepository_html_a64de863b90dcce47cad8389326d5d0f7"><div class="ttname"><a href="classRepository.html#a64de863b90dcce47cad8389326d5d0f7">Repository::~Repository</a></div><div class="ttdeci">~Repository() override</div><div class="ttdoc">Virtual destructor.</div><div class="ttdef"><b>Definition</b> Repository.cxx:22</div></div>
-<div class="ttc" id="aclassRepository_html_a74b5a052c07a886d428e42aaaeebeeb5"><div class="ttname"><a href="classRepository.html#a74b5a052c07a886d428e42aaaeebeeb5">Repository::getPath</a></div><div class="ttdeci">const std::filesystem::path &amp; getPath() const</div><div class="ttdoc">Gets the root path of the repository.</div><div class="ttdef"><b>Definition</b> Repository.hxx:83</div></div>
-<div class="ttc" id="aclassRepository_html_a7ce8792d0a1493d98986fb2732b95c4c"><div class="ttname"><a href="classRepository.html#a7ce8792d0a1493d98986fb2732b95c4c">Repository::notify</a></div><div class="ttdeci">void notify(const Event &amp;event) const override</div><div class="ttdoc">Notifies all attached observers about an event.</div><div class="ttdef"><b>Definition</b> Repository.cxx:148</div></div>
-<div class="ttc" id="aclassRepository_html_a9c1153091e3ffa2d5aaf65e900a41c40"><div class="ttname"><a href="classRepository.html#a9c1153091e3ffa2d5aaf65e900a41c40">Repository::getObjectStorage</a></div><div class="ttdeci">ObjectStorage * getObjectStorage() const</div><div class="ttdoc">Gets the raw pointer to the managed ObjectStorage instance for database interaction.</div><div class="ttdef"><b>Definition</b> Repository.hxx:89</div></div>
-<div class="ttc" id="aclassRepository_html_acffdc3fb1a22f69018a4037e9b4feabb"><div class="ttname"><a href="classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb">Repository::findRepository</a></div><div class="ttdeci">static std::shared_ptr&lt; Repository &gt; findRepository(const std::string &amp;start_path=&quot;.&quot;)</div><div class="ttdoc">Statically searches for an existing repository starting from a given path and moving up.</div><div class="ttdef"><b>Definition</b> Repository.cxx:161</div></div>
-<div class="ttc" id="aclassRepository_html_ae29372147e4b9dbb7ad3efdd32c1c42e"><div class="ttname"><a href="classRepository.html#ae29372147e4b9dbb7ad3efdd32c1c42e">Repository::is_initialized</a></div><div class="ttdeci">bool is_initialized() const</div><div class="ttdoc">Checks if the repository structure is fully initialized and valid.</div><div class="ttdef"><b>Definition</b> Repository.cxx:111</div></div>
-<div class="ttc" id="aclassRepository_html_ae75a20286b79919005724ab4dfa80717"><div class="ttname"><a href="classRepository.html#ae75a20286b79919005724ab4dfa80717">Repository::stageFile</a></div><div class="ttdeci">bool stageFile(const std::string &amp;path)</div><div class="ttdoc">Stages a file by hashing its content, storing it in the object database, and updating the staging ind...</div><div class="ttdef"><b>Definition</b> Repository.cxx:204</div></div>
-<div class="ttc" id="aclassRepository_html_aed550b2bede1ebe31d4dc4ac42026ba6"><div class="ttname"><a href="classRepository.html#aed550b2bede1ebe31d4dc4ac42026ba6">Repository::isRepository</a></div><div class="ttdeci">static bool isRepository(const std::string &amp;path)</div><div class="ttdoc">Statically checks if a given path is the root of an SVCS repository.</div><div class="ttdef"><b>Definition</b> Repository.cxx:189</div></div>
-<div class="ttc" id="aclassRepository_html_aff14558f8e382efc3e5e53263b85e312"><div class="ttname"><a href="classRepository.html#aff14558f8e382efc3e5e53263b85e312">Repository::init</a></div><div class="ttdeci">bool init()</div><div class="ttdoc">Initializes the basic repository structure (.svcs, objects, refs) on the disk.</div><div class="ttdef"><b>Definition</b> Repository.cxx:40</div></div>
-<div class="ttc" id="astructEvent_html"><div class="ttname"><a href="structEvent.html">Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:17</div></div>
+<div class="ttc" id="aclassRepository_html_a1df4810f68ebca61adfbbad3e079b2f1"><div class="ttname"><a href="classRepository.html#a1df4810f68ebca61adfbbad3e079b2f1">Repository::Repository</a></div><div class="ttdeci">Repository(std::filesystem::path rpath)</div><div class="ttdoc">Constructs the repository manager.</div><div class="ttdef"><b>Definition</b> Repository.cxx:29</div></div>
+<div class="ttc" id="aclassRepository_html_a1e421ee99132cf3dcaac6fc54ba0ab7d"><div class="ttname"><a href="classRepository.html#a1e421ee99132cf3dcaac6fc54ba0ab7d">Repository::detach</a></div><div class="ttdeci">void detach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Detaches a registered observer.</div><div class="ttdef"><b>Definition</b> Repository.cxx:138</div></div>
+<div class="ttc" id="aclassRepository_html_a250a9e24514ca3a4f8c6d954ad4dcefc"><div class="ttname"><a href="classRepository.html#a250a9e24514ca3a4f8c6d954ad4dcefc">Repository::attach</a></div><div class="ttdeci">void attach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Attaches an observer to receive events.</div><div class="ttdef"><b>Definition</b> Repository.cxx:127</div></div>
+<div class="ttc" id="aclassRepository_html_a58a23eff67b9a24c3a8916fd8dfacc9a"><div class="ttname"><a href="classRepository.html#a58a23eff67b9a24c3a8916fd8dfacc9a">Repository::initializeDependencies</a></div><div class="ttdeci">void initializeDependencies()</div><div class="ttdoc">Initializes the repository&#39;s internal dependencies.</div><div class="ttdef"><b>Definition</b> Repository.cxx:36</div></div>
+<div class="ttc" id="aclassRepository_html_a64de863b90dcce47cad8389326d5d0f7"><div class="ttname"><a href="classRepository.html#a64de863b90dcce47cad8389326d5d0f7">Repository::~Repository</a></div><div class="ttdeci">~Repository() override</div><div class="ttdoc">Virtual destructor.</div><div class="ttdef"><b>Definition</b> Repository.cxx:24</div></div>
+<div class="ttc" id="aclassRepository_html_a74b5a052c07a886d428e42aaaeebeeb5"><div class="ttname"><a href="classRepository.html#a74b5a052c07a886d428e42aaaeebeeb5">Repository::getPath</a></div><div class="ttdeci">const std::filesystem::path &amp; getPath() const</div><div class="ttdoc">Gets the root path of the repository.</div><div class="ttdef"><b>Definition</b> Repository.hxx:99</div></div>
+<div class="ttc" id="aclassRepository_html_a7ce8792d0a1493d98986fb2732b95c4c"><div class="ttname"><a href="classRepository.html#a7ce8792d0a1493d98986fb2732b95c4c">Repository::notify</a></div><div class="ttdeci">void notify(const Event &amp;event) const override</div><div class="ttdoc">Notifies all attached observers about an event.</div><div class="ttdef"><b>Definition</b> Repository.cxx:150</div></div>
+<div class="ttc" id="aclassRepository_html_a9c1153091e3ffa2d5aaf65e900a41c40"><div class="ttname"><a href="classRepository.html#a9c1153091e3ffa2d5aaf65e900a41c40">Repository::getObjectStorage</a></div><div class="ttdeci">ObjectStorage * getObjectStorage() const</div><div class="ttdoc">Gets the raw pointer to the managed ObjectStorage instance for database interaction.</div><div class="ttdef"><b>Definition</b> Repository.hxx:106</div></div>
+<div class="ttc" id="aclassRepository_html_acffdc3fb1a22f69018a4037e9b4feabb"><div class="ttname"><a href="classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb">Repository::findRepository</a></div><div class="ttdeci">static std::shared_ptr&lt; Repository &gt; findRepository(const std::string &amp;start_path=&quot;.&quot;)</div><div class="ttdoc">Statically searches for an existing repository starting from a given path and moving up.</div><div class="ttdef"><b>Definition</b> Repository.cxx:163</div></div>
+<div class="ttc" id="aclassRepository_html_ae29372147e4b9dbb7ad3efdd32c1c42e"><div class="ttname"><a href="classRepository.html#ae29372147e4b9dbb7ad3efdd32c1c42e">Repository::is_initialized</a></div><div class="ttdeci">bool is_initialized() const</div><div class="ttdoc">Checks if the repository structure is fully initialized and valid.</div><div class="ttdef"><b>Definition</b> Repository.cxx:113</div></div>
+<div class="ttc" id="aclassRepository_html_ae75a20286b79919005724ab4dfa80717"><div class="ttname"><a href="classRepository.html#ae75a20286b79919005724ab4dfa80717">Repository::stageFile</a></div><div class="ttdeci">bool stageFile(const std::string &amp;path)</div><div class="ttdoc">Stages a file by hashing its content, storing it in the object database, and updating the staging ind...</div><div class="ttdef"><b>Definition</b> Repository.cxx:206</div></div>
+<div class="ttc" id="aclassRepository_html_aed550b2bede1ebe31d4dc4ac42026ba6"><div class="ttname"><a href="classRepository.html#aed550b2bede1ebe31d4dc4ac42026ba6">Repository::isRepository</a></div><div class="ttdeci">static bool isRepository(const std::string &amp;path)</div><div class="ttdoc">Statically checks if a given path is the root of an SVCS repository.</div><div class="ttdef"><b>Definition</b> Repository.cxx:191</div></div>
+<div class="ttc" id="aclassRepository_html_aff14558f8e382efc3e5e53263b85e312"><div class="ttname"><a href="classRepository.html#aff14558f8e382efc3e5e53263b85e312">Repository::init</a></div><div class="ttdeci">bool init()</div><div class="ttdoc">Initializes the basic repository structure (.svcs, objects, refs) on the disk.</div><div class="ttdef"><b>Definition</b> Repository.cxx:42</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

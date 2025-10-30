@@ -1,0 +1,51 @@
+\doxysection{Int\+Undo\+Command\+Test.\+hxx}
+\hypertarget{IntUndoCommandTest_8hxx_source}{}\label{IntUndoCommandTest_8hxx_source}\index{tests/cli/utils/IntUndoCommandTest.hxx@{tests/cli/utils/IntUndoCommandTest.hxx}}
+\mbox{\hyperlink{IntUndoCommandTest_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{UndoCommand_8hxx}{../../../cli/include/UndoCommand.hxx}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ Forward\ declarations\ for\ core\ components\ used\ in\ fixture}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRepositoryManager}{RepositoryManager}};}
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEvent}{Event}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUndoCommandTest}{UndoCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUndoCommandTest_a16b24e7d93c0534f3901f4cd5cd8b3a8}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUndoCommandTest_a2a082617dae3a8ac27fdeab0de4e5b3c}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUndoCommandTest_a8713ecffcd85c2e00b86cf599ad2986e}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUndoCommandTest_a84b1211ba7256902f112b9f6f7726b65}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUndoCommandTest_a0040c7c506fa9026c0b9c1bdbd7dfa54}{stageFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUndoCommandTest_a1106d4d824964caf50800ca487355328}{createTestCommit}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUndoCommandTest_a274ab1a49b83056b359ae465a27cdddc}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classUndoCommandTest_a19ae731837894936b259f6c12e948f0d}{countMessages}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUndoCommandTest_ab2616fda4df38dac96a12716f353595f}{simulateUserInput}}(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00182\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classUndoCommandTest_aaab6fd7b2ac1845cea035509a4b27fd8}{mockEventBus}};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00191\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classUndoCommandTest_a953ba8563850b1f59d347f0394db5a4f}{repoManager}};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00200\ \ \ \ \ std::unique\_ptr<UndoCommand>\ \mbox{\hyperlink{classUndoCommandTest_ae35ccb30eb05bba1da30fcdf7278478a}{command}};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00209\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classUndoCommandTest_a6ada7d6a933f4e447ad01bb6ae17bb27}{testDir}};}
+\DoxyCodeLine{00210\ \};}
+
+\end{DoxyCode}

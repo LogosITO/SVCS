@@ -1,0 +1,52 @@
+\doxysection{Класс Branch\+Manager\+Test}
+\hypertarget{classBranchManagerTest}{}\label{classBranchManagerTest}\index{BranchManagerTest@{BranchManagerTest}}
+Граф наследования\+:Branch\+Manager\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBranchManagerTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classBranchManagerTest_a074b73d1634691c5c67e2891fa2b8274}\label{classBranchManagerTest_a074b73d1634691c5c67e2891fa2b8274} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classBranchManagerTest_a92fce5461df330ec17c77fc18d04b94a}\label{classBranchManagerTest_a92fce5461df330ec17c77fc18d04b94a} 
+void {\bfseries Tear\+Down} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные статические члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classBranchManagerTest_a1b940eb586f7258272a09c9f02639063}\label{classBranchManagerTest_a1b940eb586f7258272a09c9f02639063} 
+static void {\bfseries create\+Test\+Head\+File} (const std\+::string \&branch\+\_\+name)
+\item 
+\Hypertarget{classBranchManagerTest_a630bb5b304fc1cebc26e70fa68fdf476}\label{classBranchManagerTest_a630bb5b304fc1cebc26e70fa68fdf476} 
+static void {\bfseries create\+Test\+Branch\+File} (const std\+::string \&branch\+\_\+name, const std\+::string \&commit\+\_\+hash)
+\item 
+\Hypertarget{classBranchManagerTest_a905f24dbce78acbce11d18022dd20e6b}\label{classBranchManagerTest_a905f24dbce78acbce11d18022dd20e6b} 
+static void {\bfseries create\+Test\+Branches\+File} (const std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ \&branches)
+\item 
+\Hypertarget{classBranchManagerTest_a8a1cc6b4aee64b10bb8b92962cf653c7}\label{classBranchManagerTest_a8a1cc6b4aee64b10bb8b92962cf653c7} 
+static std\+::string {\bfseries read\+Head\+File} ()
+\item 
+\Hypertarget{classBranchManagerTest_a1e669b1b8ed3c8c1972f4b8e1f564f49}\label{classBranchManagerTest_a1e669b1b8ed3c8c1972f4b8e1f564f49} 
+static std\+::string {\bfseries read\+Branch\+File} (const std\+::string \&branch\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classBranchManagerTest_a7a308f7e8aff5972cba50bcfc5db3056}\label{classBranchManagerTest_a7a308f7e8aff5972cba50bcfc5db3056} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\item 
+\Hypertarget{classBranchManagerTest_a3e8fd35db1ad6ab823617af47d34150c}\label{classBranchManagerTest_a3e8fd35db1ad6ab823617af47d34150c} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\item 
+\Hypertarget{classBranchManagerTest_a110f5c00a9afc77a974073aadbeeda05}\label{classBranchManagerTest_a110f5c00a9afc77a974073aadbeeda05} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classBranchManager}{Branch\+Manager}} $>$ {\bfseries branch\+Manager}
+\end{DoxyCompactItemize}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{BranchManagerTest_8cxx}{Branch\+Manager\+Test.\+cxx}}\end{DoxyCompactItemize}

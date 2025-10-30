@@ -1,0 +1,35 @@
+\doxysection{cli/src/\+Command\+Factory.cxx File Reference}
+\hypertarget{CommandFactory_8cxx}{}\label{CommandFactory_8cxx}\index{cli/src/CommandFactory.cxx@{cli/src/CommandFactory.cxx}}
+
+
+Implementation of the \doxylink{classCommandFactory}{Command\+Factory} class, which is responsible for dynamically creating \doxylink{classICommand}{ICommand} objects and managing their lifecycle and dependencies.  
+
+
+{\ttfamily \#include "{}../include/\+Utils.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Command\+Factory.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Init\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Clear\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Add\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Remove\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Help\+Service.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Help\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Version\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Save\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Status\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+History\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Undo\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Branch\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../include/\+Merge\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../server/include/\+Hub\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../server/include/\+Repo\+Command.\+hxx"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classCommandFactory}{Command\+Factory} class, which is responsible for dynamically creating \doxylink{classICommand}{ICommand} objects and managing their lifecycle and dependencies. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}

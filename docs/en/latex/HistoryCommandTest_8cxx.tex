@@ -1,0 +1,71 @@
+\doxysection{tests/cli/\+History\+Command\+Test.cxx File Reference}
+\hypertarget{HistoryCommandTest_8cxx}{}\label{HistoryCommandTest_8cxx}\index{tests/cli/HistoryCommandTest.cxx@{tests/cli/HistoryCommandTest.cxx}}
+
+
+Integration tests for the \doxylink{classHistoryCommand}{History\+Command} class, covering core functionality, format options, limit handling, and argument validation.  
+
+
+{\ttfamily \#include "{}utils/\+Int\+History\+Command\+Test.\+hxx"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_ae016d068b13e43383cc1dceabd5b8dea}\label{HistoryCommandTest_8cxx_ae016d068b13e43383cc1dceabd5b8dea} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Debug\+Commit\+History)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_ad08849bbc1510600fd6bce3077a044dc}\label{HistoryCommandTest_8cxx_ad08849bbc1510600fd6bce3077a044dc} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, History\+No\+Commits)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_aa8c014f535a8189b11159ec27d3bd51d}\label{HistoryCommandTest_8cxx_aa8c014f535a8189b11159ec27d3bd51d} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, History\+With\+Commits)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_a7cc2fb502987e173a91a59bd6569f99a}\label{HistoryCommandTest_8cxx_a7cc2fb502987e173a91a59bd6569f99a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, History\+Oneline\+Format)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_ace9b312aa404f28d82e67765beaeffc6}\label{HistoryCommandTest_8cxx_ace9b312aa404f28d82e67765beaeffc6} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Debug\+Last\+NCommits\+Detailed)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_a8fc9d79222925fc8c0f076f7fdf4934f}\label{HistoryCommandTest_8cxx_a8fc9d79222925fc8c0f076f7fdf4934f} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, History\+Last\+NWith\+Oneline)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_afdc44f8c4ae481b918a1a322da47cb87}\label{HistoryCommandTest_8cxx_afdc44f8c4ae481b918a1a322da47cb87} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Error\+When\+No\+Repository)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_a8359966d60931f1d6e702df6148ec9da}\label{HistoryCommandTest_8cxx_a8359966d60931f1d6e702df6148ec9da} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Show\+Help)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_acae3eb413aae9e9296e67231d0f5e2bb}\label{HistoryCommandTest_8cxx_acae3eb413aae9e9296e67231d0f5e2bb} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Error\+Missing\+Limit\+Value)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_af447292b757fb35b3408024c28120814}\label{HistoryCommandTest_8cxx_af447292b757fb35b3408024c28120814} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Error\+Invalid\+Limit\+Value)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_af72abe0c5c34a1ebede329ba58cd70d9}\label{HistoryCommandTest_8cxx_af72abe0c5c34a1ebede329ba58cd70d9} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Error\+Negative\+Limit)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_a40800a10621b8cb0b80977f37a87a525}\label{HistoryCommandTest_8cxx_a40800a10621b8cb0b80977f37a87a525} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Error\+Zero\+Limit)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_a2073587b2b9e602c7112858f584496c5}\label{HistoryCommandTest_8cxx_a2073587b2b9e602c7112858f584496c5} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Error\+Unknown\+Option)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_a7f7689024c4f1ccd206363c18cbc87ee}\label{HistoryCommandTest_8cxx_a7f7689024c4f1ccd206363c18cbc87ee} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, Error\+Mutually\+Exclusive\+Options)
+\item 
+\Hypertarget{HistoryCommandTest_8cxx_a2e3594552e4a2fa135956ebc19dbbc44}\label{HistoryCommandTest_8cxx_a2e3594552e4a2fa135956ebc19dbbc44} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}, History\+Full\+Details)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Integration tests for the \doxylink{classHistoryCommand}{History\+Command} class, covering core functionality, format options, limit handling, and argument validation. 
+
+Integration tests for the \doxylink{classHistoryCommand}{History\+Command} class, covering history display, options (--oneline, --last N, --full), and argument validation.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This file implements the test cases for the \doxylink{classHistoryCommandTest}{History\+Command\+Test} fixture. It verifies the command\textquotesingle{}s behavior in various repository states and rigorously checks argument parsing and error reporting for all supported flags. Two tests include verbose debugging output to {\ttfamily std\+::cout} to assist in tracing the internal state of the repository manager and the event notifications.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}

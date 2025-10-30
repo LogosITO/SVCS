@@ -1,8 +1,14 @@
 /**
- * @file repomanager_test.cxx
+ * @file RepoManagerTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for RepositoryManager class
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для класса RepositoryManager
  */
 
 #include "../../core/include/RepositoryManager.hxx"

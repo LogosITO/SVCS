@@ -1,0 +1,223 @@
+\chapter{📚 SVCS\+: Simple Version Control System }
+\hypertarget{md_README}{}\label{md_README}\index{📚 SVCS: Simple Version Control System@{📚 SVCS: Simple Version Control System}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+
+
+\href{https://github.com/LogosITO/SVCS/actions}{\texttt{}} \href{https://isocpp.org/}{\texttt{}} \href{https://github.com/LogosITO/SVCS}{\texttt{}} \mbox{[}\mbox{]}(LICENSE) \href{https://logosito.github.io/SVCS/en/}{\texttt{}} ~\newline
+
+
+{\bfseries{SVCS (Simple Version Control System)}} is an educational and research project aimed at implementing the fundamental principles of a distributed version control system (similar to Git) from scratch using C++.
+
+The main goal of the project is to gain a deep understanding of core concepts\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Immutable Objects\+:}} Creating and handling objects ({\ttfamily \doxylink{classCommit}{Commit}}, {\ttfamily \doxylink{classBlob}{Blob}}, {\ttfamily \doxylink{classTree}{Tree}}) based on a single abstract {\ttfamily \doxylink{classVcsObject}{Vcs\+Object}} class. ~\newline
+
+\item {\bfseries{Data Integrity\+:}} Applying cryptographic hashing ({\bfseries{SHA-\/256}}) for data identification and verification. ~\newline
+
+\item {\bfseries{Clean Architecture\+:}} Implementing OOP principles, inheritance, polymorphism, and separation of concerns. ~\newline
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md2}{}\doxysection{\texorpdfstring{🚀 Current Project Status\+: Production Ready CLI}{🚀 Current Project Status\+: Production Ready CLI}}\label{md_README_autotoc_md2}
+SVCS now provides a complete, production-\/ready command-\/line interface for version control. The system supports all essential VCS operations with a clean, intuitive API.\hypertarget{md_README_autotoc_md3}{}\doxysubsection{\texorpdfstring{Major Achievements}{Major Achievements}}\label{md_README_autotoc_md3}
+
+\begin{DoxyItemize}
+\item ✅ {\bfseries{Complete Command Suite\+:}} Full set of essential VCS commands
+\item ✅ {\bfseries{Robust Object Model\+:}} {\ttfamily \doxylink{classBlob}{Blob}}, {\ttfamily \doxylink{classTree}{Tree}}, and {\ttfamily \doxylink{classCommit}{Commit}} fully implemented
+\item ✅ {\bfseries{Advanced CLI\+:}} Intuitive command-\/line interface with help system
+\item ✅ {\bfseries{Event-\/\+Driven Architecture\+:}} Flexible logging with \doxylink{classEventBus}{Event\+Bus} pattern
+\item ✅ {\bfseries{Memory Safety\+:}} Zero memory errors (Valgrind verified)
+\item ✅ {\bfseries{Data Integrity\+:}} SHA-\/256 hashing for all repository objects
+\item ✅ {\bfseries{Factory Pattern\+:}} Extensible command system
+\item ✅ {\bfseries{Comprehensive Testing\+:}} Unit tests for core components
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_README_autotoc_md5}{}\doxysection{\texorpdfstring{💻 Available Commands}{💻 Available Commands}}\label{md_README_autotoc_md5}
+\hypertarget{md_README_autotoc_md6}{}\doxysubsection{\texorpdfstring{Core Version Control}{Core Version Control}}\label{md_README_autotoc_md6}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endhead
+{\ttfamily init}  &{\ttfamily svcs init \mbox{[}path\mbox{]} \mbox{[}-\/-\/force\mbox{]}}  &Initialize new repository  \\\cline{1-3}
+{\ttfamily add}  &{\ttfamily svcs add \texorpdfstring{$<$}{<}file...\texorpdfstring{$>$}{>}}  &Add files to staging area  \\\cline{1-3}
+{\ttfamily save}  &{\ttfamily svcs save -\/m "{}message"{}}  &Save staged changes to repository  \\\cline{1-3}
+{\ttfamily status}  &{\ttfamily svcs status \mbox{[}file...\mbox{]}}  &Show working tree status  \\\cline{1-3}
+{\ttfamily remove}  &{\ttfamily svcs remove \texorpdfstring{$<$}{<}file...\texorpdfstring{$>$}{>} \mbox{[}-\/-\/all\mbox{]}}  &Remove files from staging area  \\\cline{1-3}
+{\ttfamily clear}  &{\ttfamily svcs clear \mbox{[}-\/-\/force\mbox{]}}  &Remove SVCS repository  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md7}{}\doxysubsection{\texorpdfstring{Information \& History}{Information \& History}}\label{md_README_autotoc_md7}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endhead
+{\ttfamily history}  &{\ttfamily svcs history}  &Show commit history  \\\cline{1-3}
+{\ttfamily version}  &{\ttfamily svcs version}  &Show version information  \\\cline{1-3}
+{\ttfamily help}  &{\ttfamily svcs help \mbox{[}command\mbox{]}}  &Show help for commands  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md8}{}\doxysubsection{\texorpdfstring{Command Options}{Command Options}}\label{md_README_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\ttfamily svcs -\/-\/version}, {\ttfamily svcs -\/v} → version information
+\item {\ttfamily svcs -\/-\/help}, {\ttfamily svcs -\/h} → general help
+\item {\ttfamily svcs help \texorpdfstring{$<$}{<}command\texorpdfstring{$>$}{>}} → specific command help
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_README_autotoc_md10}{}\doxysection{\texorpdfstring{🛠️ Quick Start Guide}{🛠️ Quick Start Guide}}\label{md_README_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ 1.\ Initialize\ repository}
+\DoxyCodeLine{svcs\ init\ my-\/project}
+\DoxyCodeLine{cd\ my-\/project}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ 2.\ Create\ and\ track\ files}
+\DoxyCodeLine{echo\ "{}Hello\ SVCS"{}\ >\ README.md}
+\DoxyCodeLine{svcs\ add\ README.md}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ 3.\ Check\ status}
+\DoxyCodeLine{svcs\ status}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ 4.\ Save\ changes}
+\DoxyCodeLine{svcs\ save\ -\/m\ "{}Initial\ commit"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ 5.\ Continue\ development}
+\DoxyCodeLine{echo\ "{}New\ feature"{}\ >>\ README.md}
+\DoxyCodeLine{svcs\ add\ README.md}
+\DoxyCodeLine{svcs\ save\ -\/m\ "{}Add\ new\ feature"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ 6.\ View\ history}
+\DoxyCodeLine{svcs\ history}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ 7.\ Get\ help}
+\DoxyCodeLine{svcs\ help\ status}
+
+\end{DoxyCode}
+ \hypertarget{md_README_autotoc_md11}{}\doxysection{\texorpdfstring{🎯 Master Version Control Concepts}{🎯 Master Version Control Concepts}}\label{md_README_autotoc_md11}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsection{\texorpdfstring{Core Workflow Commands}{Core Workflow Commands}}\label{md_README_autotoc_md12}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ What You\textquotesingle{}ll Learn  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ What You\textquotesingle{}ll Learn  }\\\cline{1-3}
+\endhead
+{\ttfamily init}  &{\ttfamily svcs init}  &\doxylink{classRepository}{Repository} initialization and structure  \\\cline{1-3}
+{\ttfamily add}  &{\ttfamily svcs add \texorpdfstring{$\ast$}{*}.cpp}  &Staging area mechanics and file tracking  \\\cline{1-3}
+{\ttfamily save}  &{\ttfamily svcs save -\/m "{}feat\+: add auth"{}}  &\doxylink{classCommit}{Commit} objects and message formatting  \\\cline{1-3}
+{\ttfamily status}  &{\ttfamily svcs status file.\+txt}  &Working tree state management  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md13}{}\doxysubsection{\texorpdfstring{Advanced Operations}{Advanced Operations}}\label{md_README_autotoc_md13}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Concept Demonstrated  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Concept Demonstrated  }\\\cline{1-3}
+\endhead
+{\ttfamily remove}  &{\ttfamily svcs remove temp.\+txt}  &Staging area manipulation  \\\cline{1-3}
+{\ttfamily remove -\/-\/all}  &{\ttfamily svcs remove -\/-\/all}  &Bulk operations with safety  \\\cline{1-3}
+{\ttfamily clear}  &{\ttfamily svcs clear -\/-\/force}  &\doxylink{classRepository}{Repository} lifecycle management  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md14}{}\doxysubsection{\texorpdfstring{Information \& Discovery}{Information \& Discovery}}\label{md_README_autotoc_md14}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Purpose  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Purpose  }\\\cline{1-3}
+\endhead
+{\ttfamily version}  &{\ttfamily svcs version}  &System information  \\\cline{1-3}
+{\ttfamily help}  &{\ttfamily svcs help status}  &Built-\/in documentation  \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md16}{}\doxysection{\texorpdfstring{🏗️ Architectural Excellence}{🏗️ Architectural Excellence}}\label{md_README_autotoc_md16}
+\hypertarget{md_README_autotoc_md17}{}\doxysubsection{\texorpdfstring{Core Components}{Core Components}}\label{md_README_autotoc_md17}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Layer  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Components  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Learning Value  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Layer  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Components  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Learning Value  }\\\cline{1-3}
+\endhead
+{\bfseries{Storage}}  &{\ttfamily \doxylink{classRepository}{Repository}}, {\ttfamily \doxylink{classObjectStorage}{Object\+Storage}}, {\ttfamily \doxylink{classIndex}{Index}}  &Data persistence patterns  \\\cline{1-3}
+{\bfseries{Objects}}  &{\ttfamily \doxylink{classBlob}{Blob}}, {\ttfamily \doxylink{classTree}{Tree}}, {\ttfamily \doxylink{classCommit}{Commit}}  &Polymorphism and inheritance  \\\cline{1-3}
+{\bfseries{CLI}}  &{\ttfamily \doxylink{classCommandFactory}{Command\+Factory}}, {\ttfamily \doxylink{classICommand}{ICommand}}  &Factory and strategy patterns  \\\cline{1-3}
+{\bfseries{Infra}}  &{\ttfamily \doxylink{classEventBus}{Event\+Bus}}, {\ttfamily \doxylink{classLogger}{Logger}}  &Observer pattern and event handling  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md18}{}\doxysubsection{\texorpdfstring{🎓 Educational Architecture Patterns}{🎓 Educational Architecture Patterns}}\label{md_README_autotoc_md18}
+
+\begin{DoxyItemize}
+\item {\bfseries{Command Pattern}} for extensible operations
+\item {\bfseries{Observer Pattern}} for decoupled communication ~\newline
+
+\item {\bfseries{Factory Pattern}} for object creation
+\item {\bfseries{Strategy Pattern}} for algorithm variation
+\item {\bfseries{Immutable Objects}} for data integrity
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md20}{}\doxysection{\texorpdfstring{📈 Project Evolution}{📈 Project Evolution}}\label{md_README_autotoc_md20}
+\hypertarget{md_README_autotoc_md21}{}\doxysubsection{\texorpdfstring{✅ Production Ready \& Stable}{✅ Production Ready \& Stable}}\label{md_README_autotoc_md21}
+
+\begin{DoxyItemize}
+\item ✅ Complete Git-\/like command suite
+\item ✅ Robust object model with cryptographic integrity
+\item ✅ Professional CLI with help system
+\item ✅ Event-\/driven architecture
+\item ✅ Comprehensive testing suite
+\item ✅ Cross-\/platform compatibility
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md22}{}\doxysubsection{\texorpdfstring{🔮 Coming Soon -\/ Expand Your Learning}{🔮 Coming Soon -\/ Expand Your Learning}}\label{md_README_autotoc_md22}
+
+\begin{DoxyItemize}
+\item ⏳ Branching and merging mechanics
+\item ⏳ Difference analysis with {\ttfamily diff}
+\item ⏳ \doxylink{structRemote}{Remote} repository operations
+\item ⏳ Configuration management systems
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_README_autotoc_md24}{}\doxysection{\texorpdfstring{📖 Deep Dive Documentation}{📖 Deep Dive Documentation}}\label{md_README_autotoc_md24}
+Explore the complete technical documentation\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{\href{https://logosito.github.io/SVCS/en/}{\texttt{English Documentation}}}} -\/ Full API reference and architecture guide 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md25}{}\doxysection{\texorpdfstring{-\/ {\bfseries{\href{https://logosito.github.io/SVCS/ru/}{\texttt{Russian Documentation}}}} -\/ Документация на русском языке}{-\/ {\bfseries{\href{https://logosito.github.io/SVCS/ru/}{\texttt{Russian Documentation}}}} -\/ Документация на русском языке}}\label{md_README_autotoc_md25}
+\hypertarget{md_README_autotoc_md26}{}\doxysection{\texorpdfstring{📝 License \& Attribution}{📝 License \& Attribution}}\label{md_README_autotoc_md26}
+{\bfseries{SVCS}} © 2025 Logos\+ITO. ~\newline
+ Released under the {\bfseries{\mbox{[}MIT License\mbox{]}(LICENSE)}} -\/ free for learning, sharing, and building upon.
+
+\DoxyHorRuler{0}
+ \hypertarget{md_README_autotoc_md28}{}\doxysubsection{\texorpdfstring{⭐ {\bfseries{Star this repo if SVCS helped you understand version control better!}}}{⭐ {\bfseries{Star this repo if SVCS helped you understand version control better!}}}}\label{md_README_autotoc_md28}
+{\itshape "{}\+The best way to understand a tool is to build it yourself"{}} 

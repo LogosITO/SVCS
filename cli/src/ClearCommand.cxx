@@ -1,9 +1,14 @@
 /**
- * @file ClearCommand.cxx
+* @file ClearCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the ClearCommand class for removing SVCS repository.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса ClearCommand для удаления репозитория SVCS.
  */
 
 #include "../include/ClearCommand.hxx"

@@ -1,0 +1,160 @@
+\doxysection{Event\+Bus.\+hxx}
+\hypertarget{EventBus_8hxx_source}{}\label{EventBus_8hxx_source}\index{services/EventBus.hxx@{services/EventBus.hxx}}
+\mbox{\hyperlink{EventBus_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Event_8hxx}{Event.hxx}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IObserver_8hxx}{IObserver.hxx}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{ISubject.hxx}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceConsoleColor}{ConsoleColor}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ RESET\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BLACK\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[30m"{}};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ RED\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[31m"{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ GREEN\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[32m"{}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ YELLOW\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[33m"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BLUE\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[34m"{}};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ MAGENTA\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[35m"{}};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ CYAN\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[36m"{}};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ WHITE\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[37m"{}};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BRIGHT\_RED\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[91m"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BRIGHT\_GREEN\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[92m"{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BRIGHT\_YELLOW\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[93m"{}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BRIGHT\_BLUE\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[94m"{}};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BRIGHT\_MAGENTA\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[95m"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BRIGHT\_CYAN\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[96m"{}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BRIGHT\_WHITE\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[97m"{}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ BOLD\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[1m"{}};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ DIM\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[2m"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ ITALIC\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[3m"{}};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ UNDERLINE\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[4m"{}};}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEventBus}{EventBus}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classISubject}{ISubject}},\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<EventBus>\ \{}
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ std::vector<std::weak\_ptr<IObserver>>\ observers\_;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ observers\_mutex\_;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ getEventColor(\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058}{Event::Type}}\ type)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04}{Event::REPOSITORY\_INIT\_SUCCESS}}:}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_GREEN;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686}{Event::SAVE\_SUCCESS}}:}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_GREEN;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61}{Event::ERROR\_MESSAGE}}:}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_RED;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4}{Event::WARNING\_MESSAGE}}:}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_YELLOW;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7}{Event::GENERAL\_INFO}}:}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_CYAN;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5}{Event::DEBUG\_MESSAGE}}:}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_BLUE;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b}{Event::HELP\_MESSAGE}}:}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::GREEN;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d}{Event::PROTOCOL\_START}}:}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_MAGENTA;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7}{Event::PROTOCOL\_SUCCESS}}:}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_GREEN;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89}{Event::PROTOCOL\_ERROR}}:}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_RED;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be}{Event::NETWORK\_SEND}}:}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_CYAN;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad}{Event::NETWORK\_RECEIVE}}:}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_BLUE;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec}{Event::OBJECT\_TRANSFER}}:}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_YELLOW;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5}{Event::REFERENCE\_UPDATE}}:}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_GREEN;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e}{Event::NEGOTIATION\_PHASE}}:}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::BRIGHT\_MAGENTA;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConsoleColor::WHITE;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ getEventIcon(\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058}{Event::Type}}\ type)\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04}{Event::REPOSITORY\_INIT\_SUCCESS}}:}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}✅"{}};}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686}{Event::SAVE\_SUCCESS}}:}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}💾"{}};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61}{Event::ERROR\_MESSAGE}}:}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}❌"{}};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4}{Event::WARNING\_MESSAGE}}:}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}⚠️\ "{}};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7}{Event::GENERAL\_INFO}}:}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ℹ️\ "{}};}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5}{Event::DEBUG\_MESSAGE}}:}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}🐛"{}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b}{Event::HELP\_MESSAGE}}:}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}💡"{}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d}{Event::PROTOCOL\_START}}:}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}🚀"{}};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7}{Event::PROTOCOL\_SUCCESS}}:}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}✅"{}};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89}{Event::PROTOCOL\_ERROR}}:}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}💥"{}};}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be}{Event::NETWORK\_SEND}}:}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}📤"{}};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad}{Event::NETWORK\_RECEIVE}}:}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}📥"{}};}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec}{Event::OBJECT\_TRANSFER}}:}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}📦"{}};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5}{Event::REFERENCE\_UPDATE}}:}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}🔗"{}};}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e}{Event::NEGOTIATION\_PHASE}}:}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}🤝"{}};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{classEventBus_af9f702d10d6340e1f3da65e487fd73be}{\string~EventBus}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventBus_a131f28abdfe25a80f94a202aff5e6edb}{attach}}(std::shared\_ptr<IObserver>\ observer)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(observers\_mutex\_);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ observers\_.push\_back(observer);}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventBus_a42559fdfdd62a10ae1494f123a06e96a}{detach}}(std::shared\_ptr<IObserver>\ observer\_to\_remove)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(observers\_mutex\_);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::remove\_if(observers\_.begin(),\ observers\_.end(),}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ std::weak\_ptr<IObserver>\&\ weak\_obs)\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ shared\_obs\ =\ weak\_obs.lock();}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ shared\_obs\ \&\&\ (shared\_obs\ ==\ observer\_to\_remove);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ observers\_.erase(it,\ observers\_.end());}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventBus_a581f243551365d2dc9599665540486dd}{notify}}(\textcolor{keyword}{const}\ Event\&\ event)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ std::string\ color\ =\ getEventColor(event.\mbox{\hyperlink{structEvent_acb1e67cf0d5f22ac9360447b6f0fb5d3}{type}});}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ std::string\ icon\ =\ getEventIcon(event.\mbox{\hyperlink{structEvent_acb1e67cf0d5f22ac9360447b6f0fb5d3}{type}});}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ std::string\ sourceColor\ =\ ConsoleColor::DIM\ +\ ConsoleColor::BLACK;}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Format\ message\ with\ colors}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ std::string\ formattedMessage\ =\ color\ +\ icon\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ \textcolor{keyword}{event}.details\ +}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sourceColor\ +\ \textcolor{stringliteral}{"{}\ ["{}}\ +\ \textcolor{keyword}{event}.source\_name\ +\ \textcolor{stringliteral}{"{}]"{}}\ +}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ConsoleColor::RESET;}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ event\ copy\ with\ formatted\ message}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ Event\ coloredEvent\ =\ event;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ coloredEvent.\mbox{\hyperlink{structEvent_afedba76038909cf242d7642da3b7bfd9}{details}}\ =\ formattedMessage;}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ observer\ :\ observers\_)\ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ observer.lock()-\/>update(coloredEvent);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \};}
+
+\end{DoxyCode}

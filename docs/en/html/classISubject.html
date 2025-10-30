@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: ISubject Class Reference</title>
+<title>SVCS - English Documentation: ISubject Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -106,9 +104,9 @@ Inheritance diagram for ISubject:</div>
   <map id="ISubject_map" name="ISubject_map">
 <area href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution." alt="EventBus" shape="rect" coords="112,56,214,80"/>
 <area href="classMockEventBus.html" alt="MockEventBus" shape="rect" coords="112,112,214,136"/>
-<area href="classMockSubject.html" title="Mock implementation of ISubject." alt="MockSubject" shape="rect" coords="112,168,214,192"/>
-<area href="classMockSubject.html" title="Mock implementation of ISubject." alt="MockSubject" shape="rect" coords="112,224,214,248"/>
-<area href="classMockSubject.html" title="Mock implementation of ISubject." alt="MockSubject" shape="rect" coords="112,280,214,304"/>
+<area href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus)." alt="MockSubject" shape="rect" coords="112,168,214,192"/>
+<area href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus)." alt="MockSubject" shape="rect" coords="112,224,214,248"/>
+<area href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus)." alt="MockSubject" shape="rect" coords="112,280,214,304"/>
 <area href="classRepository.html" title="Manages the version control directory structure and core operations." alt="Repository" shape="rect" coords="112,336,214,360"/>
 <area href="classSimpleEventBus.html" alt="SimpleEventBus" shape="rect" coords="112,392,214,416"/>
 <area href="classSimpleEventBus.html" alt="SimpleEventBus" shape="rect" coords="112,448,214,472"/>
@@ -130,12 +128,11 @@ Public Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a66f4ce666ed8b85d694a9b73d6bc16fb" id="r_a66f4ce666ed8b85d694a9b73d6bc16fb"><td class="memItemLeft" align="right" valign="top"><a id="a66f4ce666ed8b85d694a9b73d6bc16fb" name="a66f4ce666ed8b85d694a9b73d6bc16fb"></a>
 std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
+<tr class="memdesc:a66f4ce666ed8b85d694a9b73d6bc16fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of registered observers. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The Subject (Publisher) Interface (Abstract Base Class). </p>
-<ul>
-<li>Core classes (e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a>, <a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>) implement this interface to allow observers to subscribe to events. The contract requires all management functions (<span class="tt">attach</span>, <span class="tt">detach</span>) to handle <span class="tt">std::shared_ptr&lt;<a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a>&gt;</span>. </li>
-</ul>
+<p>Core classes (e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a>, <a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>) implement this interface to allow observers to subscribe to events. The contract requires all management functions (<span class="tt">attach</span>, <span class="tt">detach</span>) to handle <span class="tt">std::shared_ptr&lt;<a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a>&gt;</span>. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae7264a3f132816d45581a1b31845ecac" name="ae7264a3f132816d45581a1b31845ecac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7264a3f132816d45581a1b31845ecac">&#9670;&#160;</a></span>~ISubject()</h2>
@@ -161,9 +158,7 @@ std::vector&lt; <a class="el" href="classIObserver.html">IObserver</a> * &gt;&#1
 </div><div class="memdoc">
 
 <p>Virtual destructor. </p>
-<ul>
-<li>Ensures correct cleanup of derived subject classes. </li>
-</ul>
+<p>Ensures correct cleanup of derived subject classes. </p>
 
 </div>
 </div>

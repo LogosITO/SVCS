@@ -1,0 +1,59 @@
+\doxysection{Hub\+Command.\+hxx}
+\hypertarget{HubCommand_8hxx_source}{}\label{HubCommand_8hxx_source}\index{server/include/HubCommand.hxx@{server/include/HubCommand.hxx}}
+\mbox{\hyperlink{HubCommand_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{../../cli/include/ICommand.hxx}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHubCommand_a40546b1910267e729a3a82bd4d9e33e2}{HubCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classHubCommand_a40546b1910267e729a3a82bd4d9e33e2}{HubCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repository\_manager);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classHubCommand_a863f57c733961ddd5a89da1e510fcd81}{\string~HubCommand}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00083\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHubCommand_a701eb297ef49001ddd918608275de0e1}{getName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00094\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHubCommand_a1dba268b5ef60af5ddc4115da540b560}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00105\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHubCommand_a6236c37f7e57f1267eeea4f6335ff31d}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHubCommand_a326681c2b0577b7871c6a5a2f5be16a5}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHubCommand_a2a331abe87c7c5b028ce276557cf5177}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ initializeHubRepository(\textcolor{keyword}{const}\ std::filesystem::path\&\ repo\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubDirectoryStructure(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubConfigFile(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubHEADFile(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00215\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isValidHubPath(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00230\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isPathAvailable(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyInfo(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyError(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{void}\ notifySuccess(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00273\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus\_;}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00282\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repository\_manager\_;}
+\DoxyCodeLine{00283\ \};}
+
+\end{DoxyCode}

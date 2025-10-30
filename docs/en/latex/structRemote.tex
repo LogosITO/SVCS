@@ -1,0 +1,60 @@
+\doxysection{Remote Struct Reference}
+\hypertarget{structRemote}{}\label{structRemote}\index{Remote@{Remote}}
+
+
+Represents a single remote repository configuration.  
+
+
+
+
+{\ttfamily \#include $<$Remote\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structRemote_a58f44daf8c1656ea1f4d1e69b8dad50a}{Remote}} (const std\+::string \&\mbox{\hyperlink{structRemote_a5a35fa45f21f0fd363517d0775e5c69f}{name}}, const std\+::string \&\mbox{\hyperlink{structRemote_a810f7afd25db68a519088944f1cc8945}{url}})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{structRemote}{Remote} struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structRemote_a5a35fa45f21f0fd363517d0775e5c69f}\label{structRemote_a5a35fa45f21f0fd363517d0775e5c69f} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em The shortname of the remote (e.\+g., "{}origin"{}). \end{DoxyCompactList}\item 
+\Hypertarget{structRemote_a810f7afd25db68a519088944f1cc8945}\label{structRemote_a810f7afd25db68a519088944f1cc8945} 
+std\+::string {\bfseries url}
+\begin{DoxyCompactList}\small\item\em The URL (path or network address) of the remote. \end{DoxyCompactList}\item 
+\Hypertarget{structRemote_a058f6074cbceb347a7e687bac9899459}\label{structRemote_a058f6074cbceb347a7e687bac9899459} 
+std\+::string {\bfseries fetch\+\_\+spec}
+\begin{DoxyCompactList}\small\item\em The refspec defining what to fetch (e.\+g., "{}+refs/heads/\texorpdfstring{$\ast$}{*}\+:refs/remotes/origin/\texorpdfstring{$\ast$}{*}"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single remote repository configuration. 
+
+Stores the name, URL, and fetch specification (refspec) for a configured remote. The fetch spec is automatically generated upon construction. 
+
+\label{doc-constructors}
+\Hypertarget{structRemote_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structRemote_a58f44daf8c1656ea1f4d1e69b8dad50a}\index{Remote@{Remote}!Remote@{Remote}}
+\index{Remote@{Remote}!Remote@{Remote}}
+\doxysubsubsection{\texorpdfstring{Remote()}{Remote()}}
+{\footnotesize\ttfamily \label{structRemote_a58f44daf8c1656ea1f4d1e69b8dad50a} 
+Remote\+::\+Remote (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{structRemote}{Remote} struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The shortname for the remote. \\
+\hline
+{\em url} & The URL for the remote. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{RemoteManager_8hxx}{Remote\+Manager.\+hxx}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: RepositoryManager Class Reference</title>
+<title>SVCS - English Documentation: RepositoryManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -172,8 +170,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clearMergeState</b> (
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa8cc4f01a4d6167153c9974360053bdb" id="r_aa8cc4f01a4d6167153c9974360053bdb"><td class="memItemLeft" align="right" valign="top"><a id="aa8cc4f01a4d6167153c9974360053bdb" name="aa8cc4f01a4d6167153c9974360053bdb"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>generateCommitHash</b> (const std::string &amp;content)</td></tr>
+<tr class="memitem:aa8cc4f01a4d6167153c9974360053bdb" id="r_aa8cc4f01a4d6167153c9974360053bdb"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8cc4f01a4d6167153c9974360053bdb">generateCommitHash</a> (const std::string &amp;content)</td></tr>
+<tr class="memdesc:aa8cc4f01a4d6167153c9974360053bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a commit hash from content.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages all physical file and directory operations within the SVCS repository. </p>
@@ -308,6 +306,40 @@ static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>generat
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The newly created commit hash if successful, empty string otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="aa8cc4f01a4d6167153c9974360053bdb" name="aa8cc4f01a4d6167153c9974360053bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cc4f01a4d6167153c9974360053bdb">&#9670;&#160;</a></span>generateCommitHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RepositoryManager::generateCommitHash </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a commit hash from content. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td>The content to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The generated commit hash. </dd></dl>
 
 </div>
 </div>

@@ -1,9 +1,14 @@
 /**
  * @file StatusCommand.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the StatusCommand class.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса StatusCommand.
  */
 
 #include "../include/StatusCommand.hxx"

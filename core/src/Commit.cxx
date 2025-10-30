@@ -1,9 +1,14 @@
 /**
- * @file Commit.cxx
+* @file Commit.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the Commit class, representing a history snapshot in the SVCS.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса Commit, представляющего снимок истории в SVCS.
  */
  
 #include "../include/Commit.hxx"

@@ -1,0 +1,149 @@
+\doxysection{Класс Clear\+Command\+Test}
+\hypertarget{classClearCommandTest}{}\label{classClearCommandTest}\index{ClearCommandTest@{ClearCommandTest}}
+
+
+Тестовый фикстур для интеграционных тестов \doxylink{classClearCommand}{Clear\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Clear\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:Clear\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classClearCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classClearCommandTest_a445fb3d34f9eac29372bc2ab37f64ef9}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClearCommandTest_a974fec48c350cf3a165d645e2bb82fa4}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClearCommandTest_a6f4274eb3f665355a79034b64f62dd80}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content="{}test content"{}) const
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл внутри тестовой директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClearCommandTest_a7c2a071223db041ffea0deb6ce274767}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию внутри тестовой директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClearCommandTest_a527589153d8f6a8bb263571b9aff360b}{simulate\+User\+Input}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Имитирует пользовательский ввод путем перенаправления std\+::cin в строковый поток. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classClearCommandTest_acfc70a9daa3a28208acea85449211517}{repository\+Exists}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли директория репозитория .svcs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classClearCommandTest_a1007b3a2a9211c18adf155701184ffb4}\label{classClearCommandTest_a1007b3a2a9211c18adf155701184ffb4} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Mock шина событий для захвата системных уведомлений. \end{DoxyCompactList}\item 
+\Hypertarget{classClearCommandTest_ae57088deacd4e80287b7d8045d4b9f6a}\label{classClearCommandTest_ae57088deacd4e80287b7d8045d4b9f6a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Реальный экземпляр \doxylink{classRepositoryManager}{Repository\+Manager} под тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classClearCommandTest_a5359c486c4aa7316d2d083b921b7d5f1}\label{classClearCommandTest_a5359c486c4aa7316d2d083b921b7d5f1} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classClearCommand}{Clear\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Экземпляр \doxylink{classClearCommand}{Clear\+Command} под тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classClearCommandTest_a3aa96cd2c00623edcd42ccc1f76f4943}\label{classClearCommandTest_a3aa96cd2c00623edcd42ccc1f76f4943} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной директории, используемой как корень репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{classClearCommandTest_a757e2312c69a688c18b27cafbf299c98}\label{classClearCommandTest_a757e2312c69a688c18b27cafbf299c98} 
+std\+::stringstream {\bfseries input\+Stream}
+\begin{DoxyCompactList}\small\item\em Строковый поток, используемый для подачи имитированного ввода в std\+::cin. \end{DoxyCompactList}\item 
+\Hypertarget{classClearCommandTest_a849c79d660b8123e65698847fa4612da}\label{classClearCommandTest_a849c79d660b8123e65698847fa4612da} 
+std\+::streambuf \texorpdfstring{$\ast$}{*} {\bfseries original\+Cin}
+\begin{DoxyCompactList}\small\item\em Указатель на оригинальный буфер std\+::cin, сохраненный для восстановления. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Тестовый фикстур для интеграционных тестов \doxylink{classClearCommand}{Clear\+Command}. 
+
+Управляет настройкой и очисткой временного инициализированного репозитория SVCS. Предоставляет служебные методы для создания тестовых файлов/директорий и для имитации пользовательского ввода, необходимого для подтверждения очистки репозитория. 
+
+\label{doc-func-members}
+\Hypertarget{classClearCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classClearCommandTest_a7c2a071223db041ffea0deb6ce274767}\index{ClearCommandTest@{ClearCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!ClearCommandTest@{ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classClearCommandTest_a7c2a071223db041ffea0deb6ce274767} 
+void Clear\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию внутри тестовой директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Имя создаваемой директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classClearCommandTest_a6f4274eb3f665355a79034b64f62dd80}\index{ClearCommandTest@{ClearCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!ClearCommandTest@{ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classClearCommandTest_a6f4274eb3f665355a79034b64f62dd80} 
+void Clear\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{ = {\ttfamily "{}test~content"{}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл внутри тестовой директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Имя создаваемого файла. \\
+\hline
+{\em content} & Содержимое файла (по умолчанию "{}test content"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classClearCommandTest_acfc70a9daa3a28208acea85449211517}\index{ClearCommandTest@{ClearCommandTest}!repositoryExists@{repositoryExists}}
+\index{repositoryExists@{repositoryExists}!ClearCommandTest@{ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{repositoryExists()}{repositoryExists()}}
+{\footnotesize\ttfamily \label{classClearCommandTest_acfc70a9daa3a28208acea85449211517} 
+bool Clear\+Command\+Test\+::repository\+Exists (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли директория репозитория .svcs. 
+
+\begin{DoxyReturn}{Возвращает}
+true если репозиторий существует, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classClearCommandTest_a445fb3d34f9eac29372bc2ab37f64ef9}\index{ClearCommandTest@{ClearCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!ClearCommandTest@{ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classClearCommandTest_a445fb3d34f9eac29372bc2ab37f64ef9} 
+void Clear\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение. 
+
+Создает и инициализирует новый временный репозиторий SVCS и сохраняет оригинальный буфер std\+::cin. \Hypertarget{classClearCommandTest_a527589153d8f6a8bb263571b9aff360b}\index{ClearCommandTest@{ClearCommandTest}!simulateUserInput@{simulateUserInput}}
+\index{simulateUserInput@{simulateUserInput}!ClearCommandTest@{ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{simulateUserInput()}{simulateUserInput()}}
+{\footnotesize\ttfamily \label{classClearCommandTest_a527589153d8f6a8bb263571b9aff360b} 
+void Clear\+Command\+Test\+::simulate\+User\+Input (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Имитирует пользовательский ввод путем перенаправления std\+::cin в строковый поток. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em input} & Строка, которая будет прочитана как пользовательский ввод. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classClearCommandTest_a974fec48c350cf3a165d645e2bb82fa4}\index{ClearCommandTest@{ClearCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!ClearCommandTest@{ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classClearCommandTest_a974fec48c350cf3a165d645e2bb82fa4} 
+void Clear\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение. 
+
+Восстанавливает оригинальный буфер std\+::cin и рекурсивно удаляет временную директорию. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{ClearCommandTest_8hxx}{Clear\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{utils_2ClearCommandTest_8cxx}{Clear\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

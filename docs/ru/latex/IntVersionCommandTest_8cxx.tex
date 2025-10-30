@@ -1,0 +1,18 @@
+\doxysection{Файл tests/cli/utils/\+Int\+Version\+Command\+Test.cxx}
+\hypertarget{IntVersionCommandTest_8cxx}{}\label{IntVersionCommandTest_8cxx}\index{tests/cli/utils/IntVersionCommandTest.cxx@{tests/cli/utils/IntVersionCommandTest.cxx}}
+
+
+Реализация интеграционных тестов для класса \doxylink{classVersionCommand}{Version\+Command}.  
+
+
+{\ttfamily \#include "{}Int\+Version\+Command\+Test.\+hxx"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+
+
+\doxysubsection{Подробное описание}
+Реализация интеграционных тестов для класса \doxylink{classVersionCommand}{Version\+Command}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот файл предоставляет конкретную реализацию для фикстура \doxylink{classVersionCommandTest}{Version\+Command\+Test}. Поскольку команда {\ttfamily svcs version} не имеет состояния и не взаимодействует с репозиторием, настройка сосредоточена на инициализации \doxylink{classMockSubject}{Mock\+Subject} (шины событий) для захвата вывода и самого экземпляра команды. Предоставлены вспомогательные методы для проверки точного содержимого уведомлений команды. 

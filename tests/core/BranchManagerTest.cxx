@@ -1,14 +1,14 @@
 /**
  * @file BranchManagerTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of unit tests for the BranchManager class.
  *
- * @details This file implements the Google Test fixture and individual test cases 
- * to verify the functionality of the BranchManager, including branch creation, 
- * deletion, renaming, switching, persistence (loading/saving state to the file 
- * system), and input validation.
- *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация модульных тестов для класса BranchManager.
  */
 
 #include "../../core/include/BranchManager.hxx"

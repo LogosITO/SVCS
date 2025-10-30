@@ -1,0 +1,24 @@
+\doxysection{core/include/\+Vcs\+Object.hxx File Reference}
+\hypertarget{VcsObject_8hxx}{}\label{VcsObject_8hxx}\index{core/include/VcsObject.hxx@{core/include/VcsObject.hxx}}
+
+
+Definition of the abstract base class for all Version Control System objects.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}
+\begin{DoxyCompactList}\small\item\em Abstract base class representing any storable, addressable object within the VCS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTestableObject}{Testable\+Object}}
+\begin{DoxyCompactList}\small\item\em Helper class for testing the non-\/abstract methods of \doxylink{classVcsObject}{Vcs\+Object}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of the abstract base class for all Version Control System objects. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This class establishes the contract and core properties (like the hash ID) required for any object stored in the SVCS object database (e.\+g., \doxylink{classCommit}{Commit}, \doxylink{classBlob}{Blob}, \doxylink{classTree}{Tree}). 

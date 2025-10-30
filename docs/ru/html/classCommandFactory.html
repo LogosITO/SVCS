@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс CommandFactory</title>
+<title>SVCS - Русская документация: Класс CommandFactory</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classCommandFactory.html','','classCommandFactory-memb
 </div><!--header-->
 <div class="contents">
 
-<p>Factory for creating <a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a> objects by their string name.  
+<p>Фабрика для создания объектов <a class="el" href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.">ICommand</a> по их строковому имени.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="CommandFactory_8hxx_source.html">CommandFactory.hxx</a>&gt;</code></p>
@@ -102,27 +100,27 @@ $(function(){initNavTree('classCommandFactory.html','','classCommandFactory-memb
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:a76d2671de0dbcbeb5840775a10ea10a3" id="r_a76d2671de0dbcbeb5840775a10ea10a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76d2671de0dbcbeb5840775a10ea10a3">CommandFactory</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; bus, std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt; repoManager)</td></tr>
-<tr class="memdesc:a76d2671de0dbcbeb5840775a10ea10a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classCommandFactory.html" title="Factory for creating ICommand objects by their string name.">CommandFactory</a>.  <br /></td></tr>
+<tr class="memdesc:a76d2671de0dbcbeb5840775a10ea10a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует <a class="el" href="classCommandFactory.html" title="Фабрика для создания объектов ICommand по их строковому имени.">CommandFactory</a>.  <br /></td></tr>
 <tr class="memitem:ac31cdcf058989c9f45fb228908530d46" id="r_ac31cdcf058989c9f45fb228908530d46"><td class="memItemLeft" align="right" valign="top"><a id="ac31cdcf058989c9f45fb228908530d46" name="ac31cdcf058989c9f45fb228908530d46"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>CommandFactory</b> (const <a class="el" href="classCommandFactory.html">CommandFactory</a> &amp;)=delete</td></tr>
-<tr class="memdesc:ac31cdcf058989c9f45fb228908530d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the copy constructor. The Factory should not be copied. <br /></td></tr>
+<tr class="memdesc:ac31cdcf058989c9f45fb228908530d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет конструктор копирования. Фабрика не должна копироваться. <br /></td></tr>
 <tr class="memitem:aa7fb0a11d596213f1b2f62ecea795ae7" id="r_aa7fb0a11d596213f1b2f62ecea795ae7"><td class="memItemLeft" align="right" valign="top"><a id="aa7fb0a11d596213f1b2f62ecea795ae7" name="aa7fb0a11d596213f1b2f62ecea795ae7"></a>
 <a class="el" href="classCommandFactory.html">CommandFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classCommandFactory.html">CommandFactory</a> &amp;)=delete</td></tr>
-<tr class="memdesc:aa7fb0a11d596213f1b2f62ecea795ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the assignment operator. The Factory should not be assigned. <br /></td></tr>
+<tr class="memdesc:aa7fb0a11d596213f1b2f62ecea795ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет оператор присваивания. Фабрика не должна присваиваться. <br /></td></tr>
 <tr class="memitem:a917e8d9dc3309ac17ddf923943ad873b" id="r_a917e8d9dc3309ac17ddf923943ad873b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a917e8d9dc3309ac17ddf923943ad873b">registerCommand</a> (const std::string &amp;name, std::function&lt; std::unique_ptr&lt; <a class="el" href="classICommand.html">ICommand</a> &gt;(std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;, std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;)&gt; creator)</td></tr>
-<tr class="memdesc:a917e8d9dc3309ac17ddf923943ad873b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a creator function for a new command.  <br /></td></tr>
+<tr class="memdesc:a917e8d9dc3309ac17ddf923943ad873b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Регистрирует функцию-создатель для новой команды.  <br /></td></tr>
 <tr class="memitem:ae02afa8bcfb45a9e847afc4341a6478c" id="r_ae02afa8bcfb45a9e847afc4341a6478c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae02afa8bcfb45a9e847afc4341a6478c">getCommandDescription</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:ae02afa8bcfb45a9e847afc4341a6478c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the brief description for a registered command.  <br /></td></tr>
+<tr class="memdesc:ae02afa8bcfb45a9e847afc4341a6478c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает краткое описание для зарегистрированной команды.  <br /></td></tr>
 <tr class="memitem:a5cf9650357540bf23af2136d08385f64" id="r_a5cf9650357540bf23af2136d08385f64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cf9650357540bf23af2136d08385f64">showCommandHelp</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:a5cf9650357540bf23af2136d08385f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the detailed help and usage for a registered command.  <br /></td></tr>
+<tr class="memdesc:a5cf9650357540bf23af2136d08385f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отображает подробную справку и использование для зарегистрированной команды.  <br /></td></tr>
 <tr class="memitem:ab8448b0292b6f5f9cfdafb4fb33102dc" id="r_ab8448b0292b6f5f9cfdafb4fb33102dc"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classICommand.html">ICommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8448b0292b6f5f9cfdafb4fb33102dc">createCommand</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:ab8448b0292b6f5f9cfdafb4fb33102dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a command object by its name.  <br /></td></tr>
+<tr class="memdesc:ab8448b0292b6f5f9cfdafb4fb33102dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает и возвращает объект команды по его имени.  <br /></td></tr>
 <tr class="memitem:ae390c14a70557144e76f3b114036078e" id="r_ae390c14a70557144e76f3b114036078e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae390c14a70557144e76f3b114036078e">getRegisteredCommands</a> () const</td></tr>
-<tr class="memdesc:ae390c14a70557144e76f3b114036078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a list of names for all currently registered commands.  <br /></td></tr>
+<tr class="memdesc:ae390c14a70557144e76f3b114036078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает список имен всех текущих зарегистрированных команд.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Factory for creating <a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a> objects by their string name. </p>
-<p>The <a class="el" href="classCommandFactory.html" title="Factory for creating ICommand objects by their string name.">CommandFactory</a> manages the lifecycle of commands, creating them dynamically using creator functions registered under unique names. Commands are constructed with shared ownership of an event bus (<a class="el" href="classISubject.html">ISubject</a>) and a repository manager (<a class="el" href="classRepositoryManager.html">RepositoryManager</a>). </p>
+<div class="textblock"><p>Фабрика для создания объектов <a class="el" href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.">ICommand</a> по их строковому имени. </p>
+<p><a class="el" href="classCommandFactory.html" title="Фабрика для создания объектов ICommand по их строковому имени.">CommandFactory</a> управляет жизненным циклом команд, создавая их динамически с использованием функций-создателей, зарегистрированных под уникальными именами. Команды конструируются с общим владением шиной событий (<a class="el" href="classISubject.html">ISubject</a>) и менеджером репозитория (<a class="el" href="classRepositoryManager.html">RepositoryManager</a>). </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="a76d2671de0dbcbeb5840775a10ea10a3" name="a76d2671de0dbcbeb5840775a10ea10a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76d2671de0dbcbeb5840775a10ea10a3">&#9670;&#160;</a></span>CommandFactory()</h2>
@@ -151,11 +149,11 @@ $(function(){initNavTree('classCommandFactory.html','','classCommandFactory-memb
 </table>
 </div><div class="memdoc">
 
-<p>Constructs the <a class="el" href="classCommandFactory.html" title="Factory for creating ICommand objects by their string name.">CommandFactory</a>. </p>
+<p>Конструирует <a class="el" href="classCommandFactory.html" title="Фабрика для создания объектов ICommand по их строковому имени.">CommandFactory</a>. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bus</td><td>A shared pointer to the event bus. </td></tr>
-    <tr><td class="paramname">repoManager</td><td>A shared pointer to the repository manager. </td></tr>
+    <tr><td class="paramname">bus</td><td>Общий указатель на шину событий. </td></tr>
+    <tr><td class="paramname">repoManager</td><td>Общий указатель на менеджер репозитория. </td></tr>
   </table>
   </dd>
 </dl>
@@ -178,17 +176,14 @@ $(function(){initNavTree('classCommandFactory.html','','classCommandFactory-memb
       </table>
 </div><div class="memdoc">
 
-<p>Creates and returns a command object by its name. </p>
-<ul>
-<li>Transfers ownership (via unique_ptr) of the created object to the caller. <dl class="params"><dt>Аргументы</dt><dd>
+<p>Создает и возвращает объект команды по его имени. </p>
+<p>Передает владение (через unique_ptr) созданного объекта вызывающей стороне. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the command (the key in the creators map). </td></tr>
+    <tr><td class="paramname">name</td><td>Имя команды (ключ в карте creators). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>std::unique_ptr&lt;ICommand&gt; holding a new command object, or nullptr if the command is not registered. </dd></dl>
-</li>
-</ul>
+<dl class="section return"><dt>Возвращает</dt><dd>std::unique_ptr&lt;ICommand&gt;, содержащий новый объект команды, или nullptr если команда не зарегистрирована. </dd></dl>
 
 </div>
 </div>
@@ -207,17 +202,14 @@ $(function(){initNavTree('classCommandFactory.html','','classCommandFactory-memb
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the brief description for a registered command. </p>
-<ul>
-<li>To do this, it must create a temporary instance of the command. <dl class="params"><dt>Аргументы</dt><dd>
+<p>Получает краткое описание для зарегистрированной команды. </p>
+<p>Для этого необходимо создать временный экземпляр команды. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the command. </td></tr>
+    <tr><td class="paramname">name</td><td>Имя команды. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>The command's description string, or an error message if the command is not registered. </dd></dl>
-</li>
-</ul>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка описания команды или сообщение об ошибке, если команда не зарегистрирована. </dd></dl>
 
 </div>
 </div>
@@ -236,8 +228,8 @@ $(function(){initNavTree('classCommandFactory.html','','classCommandFactory-memb
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves a list of names for all currently registered commands. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>A vector of strings containing the names of all registered commands. </dd></dl>
+<p>Получает список имен всех текущих зарегистрированных команд. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Вектор строк, содержащий имена всех зарегистрированных команд. </dd></dl>
 
 </div>
 </div>
@@ -260,11 +252,11 @@ $(function(){initNavTree('classCommandFactory.html','','classCommandFactory-memb
       </table>
 </div><div class="memdoc">
 
-<p>Registers a creator function for a new command. </p>
+<p>Регистрирует функцию-создатель для новой команды. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The string name under which the command will be callable. </td></tr>
-    <tr><td class="paramname">creator</td><td>The function that creates and returns a new <a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a> object. </td></tr>
+    <tr><td class="paramname">name</td><td>Строковое имя, под которым команда будет вызываться. </td></tr>
+    <tr><td class="paramname">creator</td><td>Функция, которая создает и возвращает новый объект <a class="el" href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.">ICommand</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -286,16 +278,13 @@ $(function(){initNavTree('classCommandFactory.html','','classCommandFactory-memb
       </table>
 </div><div class="memdoc">
 
-<p>Displays the detailed help and usage for a registered command. </p>
-<ul>
-<li>This is accomplished by creating a temporary command instance and calling its showHelp method. <dl class="params"><dt>Аргументы</dt><dd>
+<p>Отображает подробную справку и использование для зарегистрированной команды. </p>
+<p>Это достигается созданием временного экземпляра команды и вызовом его метода showHelp. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the command. </td></tr>
+    <tr><td class="paramname">name</td><td>Имя команды. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 </div>
 </div>

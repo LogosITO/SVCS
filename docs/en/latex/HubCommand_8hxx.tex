@@ -1,0 +1,29 @@
+\doxysection{server/include/\+Hub\+Command.hxx File Reference}
+\hypertarget{HubCommand_8hxx}{}\label{HubCommand_8hxx}\index{server/include/HubCommand.hxx@{server/include/HubCommand.hxx}}
+
+
+Declaration of the \doxylink{classHubCommand}{Hub\+Command} class for creating central bare repositories.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHubCommand}{Hub\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for creating central hub repositories for team collaboration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classHubCommand}{Hub\+Command} class for creating central bare repositories. 
+
+~\newline
+ \begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+The \doxylink{classHubCommand}{Hub\+Command} implements the \textquotesingle{}svcs hub\textquotesingle{} command for creating central bare repositories that serve as collaboration hubs for development teams. These repositories lack working directories and are optimized for remote access. The command creates the necessary directory structure and configuration files required for a functional central repository. 

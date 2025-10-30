@@ -1,14 +1,24 @@
 /**
  * @file IntVersionCommandTest.cxx
- * @brief Implementation of integration tests for the VersionCommand class.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
- * @details This file provides the concrete implementation for the VersionCommandTest fixture. 
- * Since the `svcs version` command is stateless and does not interact with a repository, 
- * the setup focuses on initializing the MockSubject (event bus) to capture the output 
- * and the command instance itself. Helper methods are provided for verifying the exact 
+ * @english
+ * @brief Implementation of integration tests for the VersionCommand class.
+ * @details This file provides the concrete implementation for the VersionCommandTest fixture.
+ * Since the `svcs version` command is stateless and does not interact with a repository,
+ * the setup focuses on initializing the MockSubject (event bus) to capture the output
+ * and the command instance itself. Helper methods are provided for verifying the exact
  * content of the command's notifications.
- * * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Реализация интеграционных тестов для класса VersionCommand.
+ * @details Этот файл предоставляет конкретную реализацию для фикстура VersionCommandTest.
+ * Поскольку команда `svcs version` не имеет состояния и не взаимодействует с репозиторием,
+ * настройка сосредоточена на инициализации MockSubject (шины событий) для захвата вывода
+ * и самого экземпляра команды. Предоставлены вспомогательные методы для проверки точного
+ * содержимого уведомлений команды.
  */
 
 #include "IntVersionCommandTest.hxx"

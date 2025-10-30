@@ -1,0 +1,100 @@
+\doxysection{Класс Version\+Command\+Test}
+\hypertarget{classVersionCommandTest}{}\label{classVersionCommandTest}\index{VersionCommandTest@{VersionCommandTest}}
+
+
+Google Test фикстур для запуска модульных/интеграционных тестов \doxylink{classVersionCommand}{Version\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Version\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:Version\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVersionCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVersionCommandTest_aa1c45b84502742e866d49c66a626809c}\label{classVersionCommandTest_aa1c45b84502742e866d49c66a626809c} 
+void {\bfseries Set\+Up} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classVersionCommandTest_ad7127cf990e521a44f3ce2830538ceba}\label{classVersionCommandTest_ad7127cf990e521a44f3ce2830538ceba} 
+void {\bfseries Tear\+Down} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVersionCommandTest_a738595ee329e516a065707b410b2d966}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVersionCommandTest_a039d68276bd7252137dbfbeb8bb800e6}{contains\+Exact\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, содержит ли какое-\/либо уведомление о событии точно указанное сообщение. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVersionCommandTest_a068600dc371791315262b93226ccbb14}\label{classVersionCommandTest_a068600dc371791315262b93226ccbb14} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий для захвата вывода команды. \end{DoxyCompactList}\item 
+\Hypertarget{classVersionCommandTest_ac151e54debae29644927cbc3573d0fc7}\label{classVersionCommandTest_ac151e54debae29644927cbc3573d0fc7} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classVersionCommand}{Version\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска модульных/интеграционных тестов \doxylink{classVersionCommand}{Version\+Command}. 
+
+Этот фикстур предоставляет необходимую инфраструктуру для тестирования \doxylink{classVersionCommand}{Version\+Command}\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Инициализация и очистка mock шины событий и объекта команды.
+\item {\bfseries{Основные компоненты\+:}} Экземпляры \doxylink{classMockSubject}{Mock\+Subject} (для захвата вывода) и самого \doxylink{classVersionCommand}{Version\+Command}.
+\item {\bfseries{Вспомогательные методы\+:}} Упрощают проверку захваченных уведомлений о событиях на наличие конкретного содержимого. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classVersionCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classVersionCommandTest_a039d68276bd7252137dbfbeb8bb800e6}\index{VersionCommandTest@{VersionCommandTest}!containsExactMessage@{containsExactMessage}}
+\index{containsExactMessage@{containsExactMessage}!VersionCommandTest@{VersionCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsExactMessage()}{containsExactMessage()}}
+{\footnotesize\ttfamily \label{classVersionCommandTest_a039d68276bd7252137dbfbeb8bb800e6} 
+bool Version\+Command\+Test\+::contains\+Exact\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, содержит ли какое-\/либо уведомление о событии точно указанное сообщение. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Точное сообщение для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если найдено точное совпадение, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classVersionCommandTest_a738595ee329e516a065707b410b2d966}\index{VersionCommandTest@{VersionCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!VersionCommandTest@{VersionCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classVersionCommandTest_a738595ee329e516a065707b410b2d966} 
+bool Version\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено, false в противном случае. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntVersionCommandTest_8hxx}{Int\+Version\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntVersionCommandTest_8cxx}{Int\+Version\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

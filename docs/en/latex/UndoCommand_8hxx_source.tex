@@ -1,0 +1,46 @@
+\doxysection{Undo\+Command.\+hxx}
+\hypertarget{UndoCommand_8hxx_source}{}\label{UndoCommand_8hxx_source}\index{cli/include/UndoCommand.hxx@{cli/include/UndoCommand.hxx}}
+\mbox{\hyperlink{UndoCommand_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{ICommand.hxx}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUndoCommand_ad5190e679bde05b7a487a54acc55c022}{UndoCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classUndoCommand_ad5190e679bde05b7a487a54acc55c022}{UndoCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUndoCommand_a945fa7af63c789577f519ef82ede51c0}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00089\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classUndoCommand_a6ac6d4c9edc94deaea7d263e7c4a56a6}{getName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00100\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classUndoCommand_a1b591699bd7b74af5e0089bfa2e1e1d7}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00111\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classUndoCommand_a4ef7ac648c143ef826ab93f6a474cd84}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUndoCommand_af1a406317a7c2aee4770d76894d26d60}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ undoLastCommit(\textcolor{keywordtype}{bool}\ force)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ undoSpecificCommit(\textcolor{keyword}{const}\ std::string\&\ commitHash,\ \textcolor{keywordtype}{bool}\ force)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ confirmUndo(\textcolor{keyword}{const}\ std::string\&\ commitMessage,\ \textcolor{keyword}{const}\ std::string\&\ commitHash,\ \textcolor{keywordtype}{bool}\ force);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ forceResetRepository()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00189\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00198\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager;}
+\DoxyCodeLine{00199\ \};}
+
+\end{DoxyCode}

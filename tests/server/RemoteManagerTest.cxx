@@ -1,7 +1,11 @@
 /**
  * @file RemoteManagerTest.cpp
- * @brief Unit and integration tests for the RemoteManager class.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
+ * @english
+ * @brief Unit and integration tests for the RemoteManager class.
  * @details This file contains tests for the @ref RemoteManager class,
  * utilizing the Google Test (gtest) framework.
  *
@@ -18,8 +22,23 @@
  *
  * @note These tests perform real I/O operations with the filesystem.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Модульные и интеграционные тесты для класса RemoteManager.
+ * @details Этот файл содержит тесты для класса @ref RemoteManager,
+ * использующие фреймворк Google Test (gtest).
+ *
+ * Тесты охватывают весь публичный API:
+ * - `addRemote` (успешное добавление, обработка дубликатов)
+ * - `removeRemote` (успешное удаление, удаление несуществующего удаленного репозитория)
+ * - `getRemoteUrl` (успешное получение, получение несуществующего удаленного репозитория)
+ * - `listRemotes` (проверка списка)
+ * - `save`/`load` (тестирование сохранения состояния)
+ *
+ * Тестовый фикстур `RemoteManagerTest` создает временную
+ * директорию (`fs::temp_directory_path() / "remote_manager_test"`)
+ * для проверки операций ввода-вывода файлов (сохранение и загрузка файла 'remotes').
+ *
+ * @note Эти тесты выполняют реальные операции ввода-вывода с файловой системой.
  */
 
 #include <gtest/gtest.h>

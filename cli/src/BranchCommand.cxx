@@ -1,15 +1,22 @@
 /**
  * @file BranchCommand.cxx
- * @brief Implementation of the BranchCommand for managing branches.
- *
- * @details This command acts as the command-line interface for branch operations. 
- * It parses command-line arguments to determine the required action (list, create, 
- * delete, rename, switch, or show current) and calls the appropriate method 
- * on the core BranchManager.
- *
- * @copyright 
+ * @copyright
  * Copyright 2025 LogosITO
  * Licensed under MIT-License
+ *
+ * @english
+ * @brief Implementation of the BranchCommand for managing branches.
+ * @details This command acts as the command-line interface for branch operations.
+ * It parses command-line arguments to determine the required action (list, create,
+ * delete, rename, switch, or show current) and calls the appropriate method
+ * on the core BranchManager.
+ *
+ * @russian
+ * @brief Реализация BranchCommand для управления ветками.
+ * @details Эта команда действует как интерфейс командной строки для операций с ветками.
+ * Она разбирает аргументы командной строки для определения требуемого действия (список, создание,
+ * удаление, переименование, переключение или показ текущей) и вызывает соответствующий метод
+ * в основном BranchManager.
  */
 
 #include "../include/BranchCommand.hxx"

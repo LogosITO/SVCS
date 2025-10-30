@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: BranchManager Class Reference</title>
+<title>SVCS - English Documentation: BranchManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -110,8 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4f034befce006a84693d8ce6673805dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classBranchManager.html" title="Core service for managing version control branches (creation, deletion, switching).">BranchManager</a>.  <br /></td></tr>
 <tr class="memitem:a486a8fc23c1b1880fb12d864d5c7db0b" id="r_a486a8fc23c1b1880fb12d864d5c7db0b"><td class="memItemLeft" align="right" valign="top"><a id="a486a8fc23c1b1880fb12d864d5c7db0b" name="a486a8fc23c1b1880fb12d864d5c7db0b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>createDefaultBranches</b> ()</td></tr>
+<tr class="memdesc:a486a8fc23c1b1880fb12d864d5c7db0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the initial set of default branches (e.g., 'main'). <br /></td></tr>
 <tr class="memitem:af601359cfb82389fb273c74af7820b2a" id="r_af601359cfb82389fb273c74af7820b2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af601359cfb82389fb273c74af7820b2a">createBranch</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:af601359cfb82389fb273c74af7820b2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new branch pointing to a specific commit.  <br /></td></tr>
+<tr class="memdesc:af601359cfb82389fb273c74af7820b2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new branch pointing to a specific commit (usually HEAD).  <br /></td></tr>
 <tr class="memitem:ab0982ccff90a6853cde203afd456320d" id="r_ab0982ccff90a6853cde203afd456320d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0982ccff90a6853cde203afd456320d">createBranchFromCommit</a> (const std::string &amp;name, const std::string &amp;commit_hash)</td></tr>
 <tr class="memdesc:ab0982ccff90a6853cde203afd456320d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new branch from a specific commit.  <br /></td></tr>
 <tr class="memitem:af64f1afc8d0c6b4c4567c64254cfa91d" id="r_af64f1afc8d0c6b4c4567c64254cfa91d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af64f1afc8d0c6b4c4567c64254cfa91d">getHeadCommit</a> ()</td></tr>
@@ -126,8 +125,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>createDefaultBranches
 <tr class="memdesc:a846faa415db0516c4eccda9f7ef3c316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a list of all known branches, including their state.  <br /></td></tr>
 <tr class="memitem:ad9f599e0b37e4319fef083063bc47883" id="r_ad9f599e0b37e4319fef083063bc47883"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9f599e0b37e4319fef083063bc47883">getCurrentBranch</a> () const</td></tr>
 <tr class="memdesc:ad9f599e0b37e4319fef083063bc47883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the name of the currently active branch.  <br /></td></tr>
-<tr class="memitem:a0cdd864c1c3ed12af16e77bf932e63ce" id="r_a0cdd864c1c3ed12af16e77bf932e63ce"><td class="memItemLeft" align="right" valign="top"><a id="a0cdd864c1c3ed12af16e77bf932e63ce" name="a0cdd864c1c3ed12af16e77bf932e63ce"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>updateBranchHead</b> (const std::string &amp;branch_name, const std::string &amp;commit_hash)</td></tr>
+<tr class="memitem:a0cdd864c1c3ed12af16e77bf932e63ce" id="r_a0cdd864c1c3ed12af16e77bf932e63ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cdd864c1c3ed12af16e77bf932e63ce">updateBranchHead</a> (const std::string &amp;branch_name, const std::string &amp;commit_hash)</td></tr>
+<tr class="memdesc:a0cdd864c1c3ed12af16e77bf932e63ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the commit hash that a specific branch points to.  <br /></td></tr>
 <tr class="memitem:a6d9226441cbc178c6afe0b957b50d406" id="r_a6d9226441cbc178c6afe0b957b50d406"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d9226441cbc178c6afe0b957b50d406">branchExists</a> (const std::string &amp;name) const</td></tr>
 <tr class="memdesc:a6d9226441cbc178c6afe0b957b50d406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a branch with the given name exists.  <br /></td></tr>
 <tr class="memitem:acd0aa8b6f71b83cc190081c1845e3284" id="r_acd0aa8b6f71b83cc190081c1845e3284"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd0aa8b6f71b83cc190081c1845e3284">getBranchHead</a> (const std::string &amp;branch_name) const</td></tr>
@@ -138,7 +137,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2bed7bba95e0d75b22b5264c9058b600" id="r_a2bed7bba95e0d75b22b5264c9058b600"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bed7bba95e0d75b22b5264c9058b600">isValidBranchName</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a2bed7bba95e0d75b22b5264c9058b600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given string is a valid name for a new branch.  <br /></td></tr>
 <tr class="memitem:ad43258d9fbf5987e44f51515d39a1211" id="r_ad43258d9fbf5987e44f51515d39a1211"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad43258d9fbf5987e44f51515d39a1211">commitExists</a> (const std::string &amp;commit_hash)</td></tr>
-<tr class="memdesc:ad43258d9fbf5987e44f51515d39a1211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a commit exists.  <br /></td></tr>
+<tr class="memdesc:ad43258d9fbf5987e44f51515d39a1211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a commit exists (implementation assumed to check the object store).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Core service for managing version control branches (creation, deletion, switching). </p>
@@ -227,14 +226,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Checks if a commit exists. </p>
+<p>Checks if a commit exists (implementation assumed to check the object store). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">commit_hash</td><td>Hash to check </td></tr>
+    <tr><td class="paramname">commit_hash</td><td>Hash to check. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if commit exists, false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if commit exists, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -253,7 +252,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a new branch pointing to a specific commit. </p>
+<p>Creates a new branch pointing to a specific commit (usually HEAD). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the new branch. </td></tr>
@@ -286,12 +285,12 @@ Static Public Member Functions</h2></td></tr>
 <p>Creates a new branch from a specific commit. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td><a class="el" href="structBranchManager_1_1Branch.html" title="Structure to hold the metadata for a single branch.">Branch</a> name </td></tr>
-    <tr><td class="paramname">commit_hash</td><td>Hash of the commit to branch from </td></tr>
+    <tr><td class="paramname">name</td><td><a class="el" href="structBranchManager_1_1Branch.html" title="Structure to hold the metadata for a single branch.">Branch</a> name. </td></tr>
+    <tr><td class="paramname">commit_hash</td><td>Hash of the commit to branch from. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -408,7 +407,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current HEAD commit hash. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string The commit hash of current HEAD, or empty string if not found </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string The commit hash of current HEAD, or empty string if not found. </dd></dl>
 
 </div>
 </div>
@@ -500,6 +499,37 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the switch was successful, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a0cdd864c1c3ed12af16e77bf932e63ce" name="a0cdd864c1c3ed12af16e77bf932e63ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cdd864c1c3ed12af16e77bf932e63ce">&#9670;&#160;</a></span>updateBranchHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BranchManager::updateBranchHead </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branch_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the commit hash that a specific branch points to. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branch_name</td><td>The name of the branch to update. </td></tr>
+    <tr><td class="paramname">commit_hash</td><td>The new commit hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the update was successful, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>

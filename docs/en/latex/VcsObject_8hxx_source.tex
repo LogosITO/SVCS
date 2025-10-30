@@ -1,0 +1,47 @@
+\doxysection{Vcs\+Object.\+hxx}
+\hypertarget{VcsObject_8hxx_source}{}\label{VcsObject_8hxx_source}\index{core/include/VcsObject.hxx@{core/include/VcsObject.hxx}}
+\mbox{\hyperlink{VcsObject_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVcsObject_a58691887a54d3d632038cacb36034075}{VcsObject}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classVcsObject_a6c9fd4ab39bb9781c5399da07305d28d}{hash\_id}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{computeHash}}(\textcolor{keyword}{const}\ std::string\&\ content);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classVcsObject_a58691887a54d3d632038cacb36034075}{VcsObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classVcsObject_a58691887a54d3d632038cacb36034075}{VcsObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVcsObject_a58691887a54d3d632038cacb36034075}{VcsObject}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classVcsObject_a866849775b4541573b40b2b85be20df5}{\string~VcsObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00107\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7}{serialize}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00120\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classVcsObject_a6997c320772a504fc61a986f6e8f9ff7}{getType}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classVcsObject_a73ec7fbaac32df9c4570de02b8bda56f}{calculateHash}}(\textcolor{keyword}{const}\ std::string\&\ content);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00144\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classVcsObject_a0e8cd703d917813ca43d4b0622c70bdd}{getHashId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTestableObject}{TestableObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classVcsObject}{VcsObject}}\ \{}
+\DoxyCodeLine{00164\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00172\ \ \ \ \ std::string\ type\_name;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00181\ \ \ \ \ std::string\ content\_data;}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{classTestableObject_acf53db7ed6ce4f127322860e1d68b6a5}{TestableObject}}(std::string\ \ type,\ std::string\ \ data);}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00205\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classTestableObject_ae79c1d60869dedd6c298a56e8e9f2309}{serialize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00215\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classTestableObject_a89133227b30cea6642769a8cad7c1375}{getType}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00216\ \};}
+
+\end{DoxyCode}

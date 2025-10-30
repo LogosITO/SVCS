@@ -1,11 +1,41 @@
 /**
  * @file RemoteProtocolTest.cxx
- * @brief Google Tests for RemoteProtocol class.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @english
+ * @brief Google Tests for RemoteProtocol class.
+ * @details This file contains comprehensive unit tests for the RemoteProtocol class,
+ * verifying network communication, protocol message serialization/deserialization,
+ * error handling, and connection management with remote repositories.
+ *
+ * The tests cover:
+ * - Connection establishment and authentication
+ * - Protocol message formatting and parsing
+ * - Data transfer reliability and integrity
+ * - Error recovery and timeout handling
+ * - Multi-threaded communication scenarios
+ *
+ * Mock network components are used to simulate various network conditions
+ * and edge cases without requiring actual network connectivity.
+ *
+ * @russian
+ * @brief Google Тесты для класса RemoteProtocol.
+ * @details Этот файл содержит комплексные модульные тесты для класса RemoteProtocol,
+ * проверяющие сетевое взаимодействие, сериализацию/десериализацию протокольных сообщений,
+ * обработку ошибок и управление соединениями с удаленными репозиториями.
+ *
+ * Тесты охватывают:
+ * - Установление соединения и аутентификацию
+ * - Форматирование и парсинг протокольных сообщений
+ * - Надежность и целостность передачи данных
+ * - Восстановление после ошибок и обработку таймаутов
+ * - Сценарии многопоточного взаимодействия
+ *
+ * Используются mock-компоненты сети для моделирования различных сетевых условий
+ * и граничных случаев без необходимости реального сетевого подключения.
  */
-
 #include <gtest/gtest.h>
 #include "../../server/include/RemoteProtocol.hxx"
 #include "../../services/ISubject.hxx"

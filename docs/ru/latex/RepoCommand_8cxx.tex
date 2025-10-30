@@ -1,0 +1,25 @@
+\doxysection{Файл server/src/\+Repo\+Command.cxx}
+\hypertarget{RepoCommand_8cxx}{}\label{RepoCommand_8cxx}\index{server/src/RepoCommand.cxx@{server/src/RepoCommand.cxx}}
+
+
+Реализация класса \doxylink{classRepoCommand}{Repo\+Command} для управления конфигурациями удаленных репозиториев.  
+
+
+{\ttfamily \#include "{}../include/\+Repo\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+
+
+\doxysubsection{Подробное описание}
+Реализация класса \doxylink{classRepoCommand}{Repo\+Command} для управления конфигурациями удаленных репозиториев. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот файл реализует конкретную логику для команды "{}svcs repo"{}. Он в основном делегирует свою основную функциональность—добавление, удаление, переименование и перечисление удаленных репозиториев— классу \doxylink{classRemoteManager}{Remote\+Manager}. Реализация включает\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Проверку контекста репозитория}}\+: Обеспечивает выполнение команды внутри инициализированного репозитория SVCS.
+\item {\bfseries{Диспетчеризацию подкоманд}}\+: Разбирает первый аргумент для определения, какой обработчик ({\ttfamily handle\+Add}, {\ttfamily handle\+Remove} и т.\+д.) вызвать.
+\item {\bfseries{Проверку аргументов}}\+: Выполняет проверки количества аргументов для каждой подкоманды.
+\item {\bfseries{Вывод пользователю}}\+: Напрямую выводит сообщения подтверждения ({\ttfamily std\+::cout}) или использует шину событий \doxylink{classISubject}{ISubject} для ошибок и информационных сообщений. 
+\end{DoxyEnumerate}

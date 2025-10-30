@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: TestableObject Class Reference</title>
+<title>SVCS - English Documentation: TestableObject Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -122,9 +120,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a58691887a54d3d632038cacb36034075 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Required for derived classes. <br /></td></tr>
 <tr class="memitem:af2840ade6006e4d64eb6bd9f15b37539 inherit pub_methods_classVcsObject" id="r_af2840ade6006e4d64eb6bd9f15b37539"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#af2840ade6006e4d64eb6bd9f15b37539">VcsObject</a> (const <a class="el" href="classVcsObject.html">VcsObject</a> &amp;other)=default</td></tr>
 <tr class="memdesc:af2840ade6006e4d64eb6bd9f15b37539 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. Required for derived classes to correctly copy the hash_id.  <br /></td></tr>
-<tr class="memitem:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top">
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=default</td></tr>
-<tr class="memdesc:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. Ensures proper cleanup when deleting derived objects via a base class pointer. <br /></td></tr>
+<tr class="memitem:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a866849775b4541573b40b2b85be20df5">~VcsObject</a> ()=default</td></tr>
+<tr class="memdesc:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 <tr class="memitem:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject" id="r_a0e8cd703d917813ca43d4b0622c70bdd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a0e8cd703d917813ca43d4b0622c70bdd">getHashId</a> () const</td></tr>
 <tr class="memdesc:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique hash identifier of the object.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -132,20 +129,17 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
 <tr class="memitem:a73ec7fbaac32df9c4570de02b8bda56f inherit pub_static_methods_classVcsObject" id="r_a73ec7fbaac32df9c4570de02b8bda56f"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a73ec7fbaac32df9c4570de02b8bda56f">calculateHash</a> (const std::string &amp;content)</td></tr>
-<tr class="memdesc:a73ec7fbaac32df9c4570de02b8bda56f inherit pub_static_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет SHA-1 хеш для заданного канонического содержимого.  <br /></td></tr>
+<tr class="memdesc:a73ec7fbaac32df9c4570de02b8bda56f inherit pub_static_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates SHA-256 hash for given canonical content.  <br /></td></tr>
 <tr class="inherit_header pro_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
 <tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pro_methods_classVcsObject" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
 <tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pro_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
-<tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top">
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></td></tr>
-<tr class="memdesc:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique cryptographic hash identifier (e.g., SHA-256) for this object. Protected to allow internal setting via <a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">computeHash()</a> but prevent external modification. <br /></td></tr>
+<tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a6c9fd4ab39bb9781c5399da07305d28d">hash_id</a></td></tr>
+<tr class="memdesc:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique cryptographic hash identifier (e.g., SHA-256) for this object.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper class for testing the non-abstract methods of <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a>. </p>
-<ul>
-<li>This class implements all pure virtual methods of <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> with simple stubs, allowing its instances to be created for unit testing the hashing logic in <a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">VcsObject::computeHash</a>. </li>
-</ul>
+<p>This class implements all pure virtual methods of <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> with simple stubs, allowing its instances to be created for unit testing the hashing logic in <a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">VcsObject::computeHash</a>. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acf53db7ed6ce4f127322860e1d68b6a5" name="acf53db7ed6ce4f127322860e1d68b6a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf53db7ed6ce4f127322860e1d68b6a5">&#9670;&#160;</a></span>TestableObject()</h2>
@@ -203,10 +197,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <p>Implementation of the pure virtual method. Returns the stored type name. </p>
 <p>Pure virtual method to get the type of the VCS object.   </p>
-<ul>
-<li>This is crucial for object storage and reconstruction (e.g., "commit", "blob", "tree"). <dl class="section return"><dt>Returns</dt><dd>std::string The type identifier of the object.    </dd></dl>
-</li>
-</ul>
+<p>This is crucial for object storage and reconstruction (e.g., "commit", "blob", "tree"). </p><dl class="section return"><dt>Returns</dt><dd>std::string The type identifier of the object.    </dd></dl>
 
 <p>Implements <a class="el" href="classVcsObject.html#a6997c320772a504fc61a986f6e8f9ff7">VcsObject</a>.</p>
 
@@ -237,10 +228,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <p>Implementation of the pure virtual method. Returns the stored content. </p>
 <p>Pure virtual method to serialize the object's core data.   </p>
-<ul>
-<li>The returned string content is what will be hashed and stored in the database. <dl class="section return"><dt>Returns</dt><dd>std::string The standardized, serialized data of the object.    </dd></dl>
-</li>
-</ul>
+<p>The returned string content is what will be hashed and stored in the database. </p><dl class="section return"><dt>Returns</dt><dd>std::string The standardized, serialized data of the object.    </dd></dl>
 
 <p>Implements <a class="el" href="classVcsObject.html#a987c76bf8ad51d267297cc6ba7da1eb7">VcsObject</a>.</p>
 

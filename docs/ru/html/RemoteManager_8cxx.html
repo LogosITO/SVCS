@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Файл server/src/RemoteManager.cxx</title>
+<title>SVCS - Русская документация: Файл server/src/RemoteManager.cxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,19 +92,16 @@ $(function(){initNavTree('RemoteManager_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the <a class="el" href="classRemoteManager.html" title="Manages the repository&#39;s remote configurations.">RemoteManager</a> class.  
+<p>Реализация класса <a class="el" href="classRemoteManager.html" title="Управляет конфигурациями удаленных репозиториев.">RemoteManager</a>.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="RemoteManager_8hxx_source.html">../include/RemoteManager.hxx</a>&quot;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Implementation of the <a class="el" href="classRemoteManager.html" title="Manages the repository&#39;s remote configurations.">RemoteManager</a> class. </p>
-<p>This file implements the methods for the <a class="el" href="classRemoteManager.html" title="Manages the repository&#39;s remote configurations.">RemoteManager</a> class. It handles the loading, saving, and in-memory management of remote repository configurations.</p>
-<p>Persistence is handled by reading from and writing to a dedicated 'remotes' file (e.g., /path/to/repo/remotes) in a Git-config-like format.</p>
-<dl class="section note"><dt>Заметки</dt><dd>This implementation assumes the configuration is in a separate 'remotes' file at the root of the repository, <em>not</em> inside <span class="tt">.svcs/config</span>.</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="RemoteManager_8hxx.html" title="Declaration of the RemoteManager class and Remote struct.">RemoteManager.hxx</a></dd></dl>
-<dl class="section copyright"><dt>Авторство</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
+<div class="textblock"><p>Реализация класса <a class="el" href="classRemoteManager.html" title="Управляет конфигурациями удаленных репозиториев.">RemoteManager</a>. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
+<p>Этот файл реализует методы для класса <a class="el" href="classRemoteManager.html" title="Управляет конфигурациями удаленных репозиториев.">RemoteManager</a>. Он обрабатывает загрузку, сохранение и управление в памяти конфигураций удаленных репозиториев. Сохранение обрабатывается чтением и записью в выделенный файл 'remotes' (например, /path/to/repo/remotes) в формате, подобном Git-config. </p><dl class="section note"><dt>Заметки</dt><dd>Эта реализация предполагает, что конфигурация находится в отдельном файле 'remotes' в корне репозитория, <em>а не</em> внутри <span class="tt">.svcs/config</span>. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс RemoteManager</title>
+<title>SVCS - Русская документация: Класс RemoteManager</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
 </div><!--header-->
 <div class="contents">
 
-<p>Manages the repository's remote configurations.  
+<p>Управляет конфигурациями удаленных репозиториев.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RemoteManager_8hxx_source.html">RemoteManager.hxx</a>&gt;</code></p>
@@ -102,27 +100,27 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:ac7e0edc18fd40367bf345b8d2f0798ef" id="r_ac7e0edc18fd40367bf345b8d2f0798ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7e0edc18fd40367bf345b8d2f0798ef">RemoteManager</a> (const fs::path &amp;repo_path)</td></tr>
-<tr class="memdesc:ac7e0edc18fd40367bf345b8d2f0798ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classRemoteManager.html" title="Manages the repository&#39;s remote configurations.">RemoteManager</a> and loads existing remotes.  <br /></td></tr>
+<tr class="memdesc:ac7e0edc18fd40367bf345b8d2f0798ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует <a class="el" href="classRemoteManager.html" title="Управляет конфигурациями удаленных репозиториев.">RemoteManager</a> и загружает существующие удаленные репозитории.  <br /></td></tr>
 <tr class="memitem:a96cef6829df97b157979bd0bf90eff56" id="r_a96cef6829df97b157979bd0bf90eff56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96cef6829df97b157979bd0bf90eff56">addRemote</a> (const std::string &amp;name, const std::string &amp;url)</td></tr>
-<tr class="memdesc:a96cef6829df97b157979bd0bf90eff56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new remote configuration.  <br /></td></tr>
+<tr class="memdesc:a96cef6829df97b157979bd0bf90eff56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет новую конфигурацию удаленного репозитория.  <br /></td></tr>
 <tr class="memitem:a02b9e3cb7442eb6a5508821f80b94427" id="r_a02b9e3cb7442eb6a5508821f80b94427"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02b9e3cb7442eb6a5508821f80b94427">removeRemote</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a02b9e3cb7442eb6a5508821f80b94427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a remote configuration by name.  <br /></td></tr>
+<tr class="memdesc:a02b9e3cb7442eb6a5508821f80b94427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет конфигурацию удаленного репозитория по имени.  <br /></td></tr>
 <tr class="memitem:aa848807cc2a76d663348558017ae21a3" id="r_aa848807cc2a76d663348558017ae21a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa848807cc2a76d663348558017ae21a3">hasRemote</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:aa848807cc2a76d663348558017ae21a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a remote with the given name exists.  <br /></td></tr>
+<tr class="memdesc:aa848807cc2a76d663348558017ae21a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, существует ли удаленный репозиторий с заданным именем.  <br /></td></tr>
 <tr class="memitem:a4d6301332826949c4c3f5de3417c17e4" id="r_a4d6301332826949c4c3f5de3417c17e4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d6301332826949c4c3f5de3417c17e4">getRemoteUrl</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:a4d6301332826949c4c3f5de3417c17e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the URL of a configured remote.  <br /></td></tr>
+<tr class="memdesc:a4d6301332826949c4c3f5de3417c17e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает URL настроенного удаленного репозитория.  <br /></td></tr>
 <tr class="memitem:a9ac7b16bd845713b0a71f3fd9401f849" id="r_a9ac7b16bd845713b0a71f3fd9401f849"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac7b16bd845713b0a71f3fd9401f849">listRemotes</a> () const</td></tr>
-<tr class="memdesc:a9ac7b16bd845713b0a71f3fd9401f849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists the names of all configured remotes.  <br /></td></tr>
+<tr class="memdesc:a9ac7b16bd845713b0a71f3fd9401f849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перечисляет имена всех настроенных удаленных репозиториев.  <br /></td></tr>
 <tr class="memitem:afc039aa6f117ef6ae93b664c149b589a" id="r_afc039aa6f117ef6ae93b664c149b589a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc039aa6f117ef6ae93b664c149b589a">save</a> () const</td></tr>
-<tr class="memdesc:afc039aa6f117ef6ae93b664c149b589a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the current remote configurations back to the config file.  <br /></td></tr>
+<tr class="memdesc:afc039aa6f117ef6ae93b664c149b589a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет текущие конфигурации удаленных репозиториев обратно в файл конфигурации.  <br /></td></tr>
 <tr class="memitem:a0ad52688911f8dd6da0e6e08928ac218" id="r_a0ad52688911f8dd6da0e6e08928ac218"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ad52688911f8dd6da0e6e08928ac218">load</a> ()</td></tr>
-<tr class="memdesc:a0ad52688911f8dd6da0e6e08928ac218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads (or reloads) the remote configurations from the config file.  <br /></td></tr>
+<tr class="memdesc:a0ad52688911f8dd6da0e6e08928ac218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает (или перезагружает) конфигурации удаленных репозиториев из файла конфигурации.  <br /></td></tr>
 <tr class="memitem:a59b7e43efe936e7a396936ea42691dcb" id="r_a59b7e43efe936e7a396936ea42691dcb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59b7e43efe936e7a396936ea42691dcb">count</a> () const</td></tr>
-<tr class="memdesc:a59b7e43efe936e7a396936ea42691dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of configured remotes.  <br /></td></tr>
+<tr class="memdesc:a59b7e43efe936e7a396936ea42691dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает количество настроенных удаленных репозиториев.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Manages the repository's remote configurations. </p>
-<p>This class provides an interface to manage remote repositories. It handles adding, removing, and listing remotes, as well as persisting these configurations to and from the repository's <span class="tt">.svcs/config</span> file. </p>
+<div class="textblock"><p>Управляет конфигурациями удаленных репозиториев. </p>
+<p>Этот класс предоставляет интерфейс для управления удаленными репозиториями. Он обрабатывает добавление, удаление и перечисление удаленных репозиториев, а также сохранение этих конфигураций в файл <span class="tt">.svcs/config</span> репозитория и загрузку из него. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="ac7e0edc18fd40367bf345b8d2f0798ef" name="ac7e0edc18fd40367bf345b8d2f0798ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7e0edc18fd40367bf345b8d2f0798ef">&#9670;&#160;</a></span>RemoteManager()</h2>
@@ -147,14 +145,14 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="classRemoteManager.html" title="Manages the repository&#39;s remote configurations.">RemoteManager</a> and loads existing remotes. </p>
+<p>Конструирует <a class="el" href="classRemoteManager.html" title="Управляет конфигурациями удаленных репозиториев.">RemoteManager</a> и загружает существующие удаленные репозитории. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">repo_path</td><td>The root path of the repository (e.g., "/path/to/my-project"), <em>not</em> the .svcs directory.</td></tr>
+    <tr><td class="paramname">repo_path</td><td>Корневой путь репозитория (например, "/path/to/my-project"), <em>не</em> директория .svcs.</td></tr>
   </table>
   </dd>
 </dl>
-<p>The constructor sets the path to the config file (repo_path / ".svcs" / "config") and automatically calls <span class="tt"><a class="el" href="#a0ad52688911f8dd6da0e6e08928ac218" title="Loads (or reloads) the remote configurations from the config file.">load()</a></span> to populate the remotes list. </p>
+<p>Конструктор устанавливает путь к файлу конфигурации (repo_path / ".svcs" / "config") и автоматически вызывает <span class="tt"><a class="el" href="#a0ad52688911f8dd6da0e6e08928ac218" title="Загружает (или перезагружает) конфигурации удаленных репозиториев из файла конфигурации.">load()</a></span> для заполнения списка удаленных репозиториев. </p>
 
 </div>
 </div>
@@ -178,15 +176,15 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
       </table>
 </div><div class="memdoc">
 
-<p>Adds a new remote configuration. </p>
+<p>Добавляет новую конфигурацию удаленного репозитория. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The shortname for the new remote (e.g., "origin"). </td></tr>
-    <tr><td class="paramname">url</td><td>The URL for the new remote. </td></tr>
+    <tr><td class="paramname">name</td><td>Короткое имя для нового удаленного репозитория (например, "origin"). </td></tr>
+    <tr><td class="paramname">url</td><td>URL для нового удаленного репозитория. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>bool True if the remote was added successfully, false if a remote with that name already exists. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True если удаленный репозиторий был успешно добавлен, false если удаленный репозиторий с таким именем уже существует. </dd></dl>
 
 </div>
 </div>
@@ -213,8 +211,8 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
 </table>
 </div><div class="memdoc">
 
-<p>Gets the number of configured remotes. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>size_t The count of remotes. </dd></dl>
+<p>Получает количество настроенных удаленных репозиториев. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>size_t Количество удаленных репозиториев. </dd></dl>
 
 </div>
 </div>
@@ -233,14 +231,14 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
       </table>
 </div><div class="memdoc">
 
-<p>Gets the URL of a configured remote. </p>
+<p>Получает URL настроенного удаленного репозитория. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the remote. </td></tr>
+    <tr><td class="paramname">name</td><td>Имя удаленного репозитория. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>std::string The URL if the remote is found, otherwise an empty string. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::string URL если удаленный репозиторий найден, иначе пустая строка. </dd></dl>
 
 </div>
 </div>
@@ -259,14 +257,14 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
       </table>
 </div><div class="memdoc">
 
-<p>Checks if a remote with the given name exists. </p>
+<p>Проверяет, существует ли удаленный репозиторий с заданным именем. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the remote to check. </td></tr>
+    <tr><td class="paramname">name</td><td>Имя удаленного репозитория для проверки. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>bool True if the remote exists, false otherwise. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True если удаленный репозиторий существует, false в противном случае. </dd></dl>
 
 </div>
 </div>
@@ -285,8 +283,8 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
       </table>
 </div><div class="memdoc">
 
-<p>Lists the names of all configured remotes. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>std::vector&lt;std::string&gt; A vector containing the names of all remotes. </dd></dl>
+<p>Перечисляет имена всех настроенных удаленных репозиториев. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>std::vector&lt;std::string&gt; Вектор, содержащий имена всех удаленных репозиториев. </dd></dl>
 
 </div>
 </div>
@@ -305,8 +303,8 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
       </table>
 </div><div class="memdoc">
 
-<p>Loads (or reloads) the remote configurations from the config file. </p>
-<p>This method clears the current in-memory cache and parses the config file to populate it. </p>
+<p>Загружает (или перезагружает) конфигурации удаленных репозиториев из файла конфигурации. </p>
+<p>Этот метод очищает текущий кэш в памяти и анализирует файл конфигурации для его заполнения. </p>
 
 </div>
 </div>
@@ -325,14 +323,14 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
       </table>
 </div><div class="memdoc">
 
-<p>Removes a remote configuration by name. </p>
+<p>Удаляет конфигурацию удаленного репозитория по имени. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The shortname of the remote to remove. </td></tr>
+    <tr><td class="paramname">name</td><td>Короткое имя удаленного репозитория для удаления. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>bool True if the remote was found and removed, false otherwise. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True если удаленный репозиторий был найден и удален, false в противном случае. </dd></dl>
 
 </div>
 </div>
@@ -351,8 +349,8 @@ $(function(){initNavTree('classRemoteManager.html','','classRemoteManager-member
       </table>
 </div><div class="memdoc">
 
-<p>Saves the current remote configurations back to the config file. </p>
-<p>This method overwrites the remote sections of the config file with the current in-memory state. </p>
+<p>Сохраняет текущие конфигурации удаленных репозиториев обратно в файл конфигурации. </p>
+<p>Этот метод перезаписывает разделы удаленных репозиториев в файле конфигурации текущим состоянием в памяти. </p>
 
 </div>
 </div>

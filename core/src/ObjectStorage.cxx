@@ -1,9 +1,14 @@
 /**
- * @file ObjectStorage.cxx
+* @file ObjectStorage.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the ObjectStorage class, managing the storage and retrieval of compressed VcsObject objects.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса ObjectStorage, управляющего хранением и извлечением сжатых объектов VcsObject.
  */
 
 #include "../include/ObjectStorage.hxx"

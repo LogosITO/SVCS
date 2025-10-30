@@ -1,0 +1,165 @@
+\doxysection{Класс Branch\+Command}
+\hypertarget{classBranchCommand}{}\label{classBranchCommand}\index{BranchCommand@{BranchCommand}}
+
+
+Команда для управления ветками в системе контроля версий.  
+
+
+
+
+{\ttfamily \#include $<$Branch\+Command.\+hxx$>$}
+
+Граф наследования\+:Branch\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBranchCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBranchCommand_a4eaa697694eb6ff5f25638bd57cad585}{Branch\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBranchManager}{Branch\+Manager}} $>$ branch\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Конструктор для \doxylink{classBranchCommand}{Branch\+Command}. \end{DoxyCompactList}\item 
+\Hypertarget{classBranchCommand_a37c58a79e576a68fb2d7390ef47deea0}\label{classBranchCommand_a37c58a79e576a68fb2d7390ef47deea0} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Branch\+Command} () override=default
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchCommand_ac19f2028fc5d1d199cee69308850292d}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchCommand_aab365b92eb53db8e84d1016f3006a693}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchCommand_a9ee1ab8405a6a4e8359baa1f3860e45c}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchCommand_a6aa576bca717782d4e6900c12186565c}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду branch с заданными аргументами. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBranchCommand_aeafc61159b00629309ff2cbac2089831}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает справочную информацию для команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для управления ветками в системе контроля версий. 
+
+Реализует функциональность \textquotesingle{}svcs branch\textquotesingle{}, предоставляя интерфейс для взаимодействия пользователя со структурой веток репозитория. 
+
+\label{doc-constructors}
+\Hypertarget{classBranchCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classBranchCommand_a4eaa697694eb6ff5f25638bd57cad585}\index{BranchCommand@{BranchCommand}!BranchCommand@{BranchCommand}}
+\index{BranchCommand@{BranchCommand}!BranchCommand@{BranchCommand}}
+\doxysubsubsection{\texorpdfstring{BranchCommand()}{BranchCommand()}}
+{\footnotesize\ttfamily \label{classBranchCommand_a4eaa697694eb6ff5f25638bd57cad585} 
+Branch\+Command\+::\+Branch\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBranchManager}{Branch\+Manager}} $>$}]{branch\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор для \doxylink{classBranchCommand}{Branch\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\+\_\+bus} & Шина событий для общения с пользователем. \\
+\hline
+{\em branch\+\_\+manager} & Менеджер веток для основных операций. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classBranchCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classBranchCommand_a6aa576bca717782d4e6900c12186565c}\index{BranchCommand@{BranchCommand}!execute@{execute}}
+\index{execute@{execute}!BranchCommand@{BranchCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classBranchCommand_a6aa576bca717782d4e6900c12186565c} 
+bool Branch\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду branch с заданными аргументами. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы командной строки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если выполнение успешно, false в противном случае. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classBranchCommand_aab365b92eb53db8e84d1016f3006a693}\index{BranchCommand@{BranchCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!BranchCommand@{BranchCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classBranchCommand_aab365b92eb53db8e84d1016f3006a693} 
+std\+::string Branch\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Краткое описание команды. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classBranchCommand_ac19f2028fc5d1d199cee69308850292d}\index{BranchCommand@{BranchCommand}!getName@{getName}}
+\index{getName@{getName}!BranchCommand@{BranchCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classBranchCommand_ac19f2028fc5d1d199cee69308850292d} 
+std\+::string Branch\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя команды "{}branch"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classBranchCommand_a9ee1ab8405a6a4e8359baa1f3860e45c}\index{BranchCommand@{BranchCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!BranchCommand@{BranchCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classBranchCommand_a9ee1ab8405a6a4e8359baa1f3860e45c} 
+std\+::string Branch\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка синтаксиса использования. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classBranchCommand_aeafc61159b00629309ff2cbac2089831}\index{BranchCommand@{BranchCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!BranchCommand@{BranchCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classBranchCommand_aeafc61159b00629309ff2cbac2089831} 
+void Branch\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает справочную информацию для команды. 
+
+
+
+Замещает \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{BranchCommand_8hxx}{Branch\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{BranchCommand_8cxx}{Branch\+Command.\+cxx}}\end{DoxyCompactItemize}

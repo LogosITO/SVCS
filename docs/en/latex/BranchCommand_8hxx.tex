@@ -1,0 +1,27 @@
+\doxysection{cli/include/\+Branch\+Command.hxx File Reference}
+\hypertarget{BranchCommand_8hxx}{}\label{BranchCommand_8hxx}\index{cli/include/BranchCommand.hxx@{cli/include/BranchCommand.hxx}}
+
+
+Declaration of the \doxylink{classBranchCommand}{Branch\+Command} class for managing branches.  
+
+
+{\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Branch\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBranchCommand}{Branch\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for managing branches in the version control system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classBranchCommand}{Branch\+Command} class for managing branches. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+The \doxylink{classBranchCommand}{Branch\+Command} is the interface for the \textquotesingle{}svcs branch\textquotesingle{} command. It supports various branch operations, including listing existing branches, creating, deleting, renaming, and switching branches. It relies on the \doxylink{classBranchManager}{Branch\+Manager} for core logic and the \doxylink{classISubject}{ISubject} event bus for user communication. 

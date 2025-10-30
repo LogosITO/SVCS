@@ -1,0 +1,162 @@
+\doxysection{Класс Save\+Command}
+\hypertarget{classSaveCommand}{}\label{classSaveCommand}\index{SaveCommand@{SaveCommand}}
+
+
+Команда для сохранения (коммита) подготовленных изменений в репозиторий.  
+
+
+
+
+{\ttfamily \#include $<$Save\+Command.\+hxx$>$}
+
+Граф наследования\+:Save\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSaveCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSaveCommand_a6a33ae3a66e6de40b4d58b13223460a2}{Save\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classSaveCommand}{Save\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSaveCommand_a813b7d30d64cd3c3c09822ba4ff9ab18}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду save. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSaveCommand_a321fd9d2886313df9539b483c5441e1a}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSaveCommand_a03f7a93a180bbf0deb017d13127168ea}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSaveCommand_a0c5f57f088edabb3ba4e15e6b12fcc7d}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSaveCommand_ac05d0595300a110c9dcc0e24638c33c1}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Показывает подробную справочную информацию для этой команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для сохранения (коммита) подготовленных изменений в репозиторий. 
+
+\doxylink{classSaveCommand}{Save\+Command} создает постоянный снимок всех подготовленных изменений с описательным сообщением. 
+
+\label{doc-constructors}
+\Hypertarget{classSaveCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classSaveCommand_a6a33ae3a66e6de40b4d58b13223460a2}\index{SaveCommand@{SaveCommand}!SaveCommand@{SaveCommand}}
+\index{SaveCommand@{SaveCommand}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{SaveCommand()}{SaveCommand()}}
+{\footnotesize\ttfamily \label{classSaveCommand_a6a33ae3a66e6de40b4d58b13223460a2} 
+Save\+Command\+::\+Save\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classSaveCommand}{Save\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Общий указатель на шину событий для уведомлений. \\
+\hline
+{\em repo\+Manager} & Общий указатель на менеджер репозитория. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classSaveCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classSaveCommand_a813b7d30d64cd3c3c09822ba4ff9ab18}\index{SaveCommand@{SaveCommand}!execute@{execute}}
+\index{execute@{execute}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classSaveCommand_a813b7d30d64cd3c3c09822ba4ff9ab18} 
+bool Save\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду save. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы команды. Ожидаемый формат\+: \mbox{[}"{}-\/m"{}, "{}message"{}\mbox{]} или \mbox{[}"{}-\/-\/message"{}, "{}message"{}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сохранение успешно, false в противном случае. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classSaveCommand_a03f7a93a180bbf0deb017d13127168ea}\index{SaveCommand@{SaveCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classSaveCommand_a03f7a93a180bbf0deb017d13127168ea} 
+std\+::string Save\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}Сохранить подготовленные изменения в репозиторий"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classSaveCommand_a321fd9d2886313df9539b483c5441e1a}\index{SaveCommand@{SaveCommand}!getName@{getName}}
+\index{getName@{getName}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classSaveCommand_a321fd9d2886313df9539b483c5441e1a} 
+std\+::string Save\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}save"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classSaveCommand_a0c5f57f088edabb3ba4e15e6b12fcc7d}\index{SaveCommand@{SaveCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classSaveCommand_a0c5f57f088edabb3ba4e15e6b12fcc7d} 
+std\+::string Save\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}svcs save -\/m \textbackslash{}"{}message\textbackslash{}"{}"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classSaveCommand_ac05d0595300a110c9dcc0e24638c33c1}\index{SaveCommand@{SaveCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classSaveCommand_ac05d0595300a110c9dcc0e24638c33c1} 
+void Save\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Показывает подробную справочную информацию для этой команды. 
+
+
+
+Замещает \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{SaveCommand_8hxx}{Save\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{SaveCommand_8cxx}{Save\+Command.\+cxx}}\end{DoxyCompactItemize}

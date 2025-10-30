@@ -1,0 +1,26 @@
+\doxysection{ISubject.\+hxx}
+\hypertarget{ISubject_8hxx_source}{}\label{ISubject_8hxx_source}\index{services/ISubject.hxx@{services/ISubject.hxx}}
+\mbox{\hyperlink{ISubject_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IObserver_8hxx}{IObserver.hxx}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classISubject}{ISubject}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<IObserver*>\ \mbox{\hyperlink{classISubject_a66f4ce666ed8b85d694a9b73d6bc16fb}{observers}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classISubject_ae7264a3f132816d45581a1b31845ecac}{\string~ISubject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{attach}}(std::shared\_ptr<IObserver>\ observer)\ =\ 0;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{detach}}(std::shared\_ptr<IObserver>\ observer)\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{notify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structEvent}{Event}}\&\ event)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00101\ \};}
+
+\end{DoxyCode}

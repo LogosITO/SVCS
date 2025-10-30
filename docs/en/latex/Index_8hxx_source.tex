@@ -1,0 +1,61 @@
+\doxysection{Index.\+hxx}
+\hypertarget{Index_8hxx_source}{}\label{Index_8hxx_source}\index{core/include/Index.hxx@{core/include/Index.hxx}}
+\mbox{\hyperlink{Index_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ObjectStorage_8hxx}{../include/ObjectStorage.hxx}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structIndexEntry}{IndexEntry}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{structIndexEntry_af0add5ce12c5dfa70a32542fd4417f12}{blob\_hash}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \ \ \ \ fs::path\ \mbox{\hyperlink{structIndexEntry_ac34233bc45be2fc4cc4c4d6f3ef86173}{file\_path}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \ \ \ \ fs::file\_time\_type\ \mbox{\hyperlink{structIndexEntry_a07371b90dba7b3e77073e25b8974bf69}{last\_modified}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structIndexEntry_a10582a2e090f7c30885f54b42da08048}{file\_size}}\ =\ 0;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIndex}{Index}}\ \{}
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ \ \ std::map<fs::path,\ IndexEntry>\ entries;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00103\ \ \ \ \ fs::path\ index\_file\_path;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00112\ \ \ \ \ fs::path\ repo\_root\_path;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classObjectStorage}{ObjectStorage}}\&\ storage\_;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ getFileMetaData(\textcolor{keyword}{const}\ fs::path\&\ full\_path,}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\&\ size,\ fs::file\_time\_type\&\ mtime);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classIndex_acd98d16f365494515679d1f643a2c8c7}{Index}}(\textcolor{keyword}{const}\ fs::path\&\ vcs\_root\_path,\ fs::path\ \ repo\_root\_path,\ \mbox{\hyperlink{classObjectStorage}{ObjectStorage}}\&\ storage);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{classIndex_a76b7ed4e9cb0b1540264567f84896032}{\string~Index}}();}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndex_aad567874a307f72668d79ffe867c4de2}{addEntry}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structIndexEntry}{IndexEntry}}\&\ entry);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00186\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structIndexEntry}{IndexEntry}}*\ \mbox{\hyperlink{classIndex_acb9b498b11708bbf4394dbf485bcc6b4}{getEntry}}(\textcolor{keyword}{const}\ fs::path\&\ file\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndex_a78085a2aae66dd69d50ded6d856462c6}{load}}();}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndex_a4c99f86d04fd91dc90727b9a17e60a21}{save}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00219\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIndex_a5e6110ea25938b15f6cfa774c3096451}{write}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00232\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIndex_ae12163a4349daa632044ff28c2818125}{isFileModified}}(\textcolor{keyword}{const}\ fs::path\&\ file\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndex_a37a1115070ac00586a9b69cf9c26b115}{stage\_file}}(\textcolor{keyword}{const}\ fs::path\&\ relative\_path);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00262\ \ \ \ \ std::string\ \mbox{\hyperlink{classIndex_ad10592c0ea7291c0a8b2d8b593b21a85}{createTreeObject}}();}
+\DoxyCodeLine{00263\ \};}
+
+\end{DoxyCode}

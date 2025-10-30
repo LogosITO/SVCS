@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Исходный файл cli/include/Utils.hxx</title>
+<title>SVCS - Русская документация: Исходный файл cli/include/Utils.hxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,22 +92,26 @@ $(function(){initNavTree('cli_2include_2Utils_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="cli_2include_2Utils_8hxx.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//#define DEBUG_MODE // Uncommenting this line enables debug logging</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="cli_2include_2Utils_8hxx.html#a4b171a7d705ca7ae2910200e76bd96e2">   37</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="cli_2include_2Utils_8hxx.html#a4b171a7d705ca7ae2910200e76bd96e2">printDebug</a>(<span class="keyword">const</span> std::string&amp; message) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    #ifdef DEBUG_MODE</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;DEBUG: &quot;</span> &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    #endif</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="cli_2include_2Utils_8hxx.html#a4b171a7d705ca7ae2910200e76bd96e2">   34</a></span><span class="comment"> * @brief Макрос препроцессора для включения или отключения отладочного логирования.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * @details Если этот макрос определен (например, через флаг компилятора `-DDEBUG_MODE` или</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * раскомментировав определение в этом файле), функция printDebug() будет</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * выводить свои сообщения. В противном случае она компилируется в пустую операцию.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> */</span></div>
 </div>
-<div class="ttc" id="acli_2include_2Utils_8hxx_html_a4b171a7d705ca7ae2910200e76bd96e2"><div class="ttname"><a href="cli_2include_2Utils_8hxx.html#a4b171a7d705ca7ae2910200e76bd96e2">printDebug</a></div><div class="ttdeci">void printDebug(const std::string &amp;message)</div><div class="ttdoc">Conditionally prints a debug message to standard output.</div><div class="ttdef"><b>Определения</b> Utils.hxx:37</div></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//#define DEBUG_MODE // Uncommenting this line enables debug logging</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="cli_2include_2Utils_8hxx.html#a4b171a7d705ca7ae2910200e76bd96e2">printDebug</a>(<span class="keyword">const</span> std::string&amp; message) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">    #ifdef DEBUG_MODE</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;DEBUG: &quot;</span> &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="ttc" id="acli_2include_2Utils_8hxx_html_a4b171a7d705ca7ae2910200e76bd96e2"><div class="ttname"><a href="cli_2include_2Utils_8hxx.html#a4b171a7d705ca7ae2910200e76bd96e2">printDebug</a></div><div class="ttdeci">void printDebug(const std::string &amp;message)</div><div class="ttdoc">Условно выводит отладочное сообщение в стандартный вывод.</div><div class="ttdef"><b>Определения</b> Utils.hxx:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

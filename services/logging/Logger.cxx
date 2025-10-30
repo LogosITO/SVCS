@@ -1,3 +1,24 @@
+/**
+ * @file Logger.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
+ * @brief Implementation of the Logger class for thread-safe logging system.
+ * @details This file provides the concrete implementation for the @ref Logger class,
+ * including Singleton pattern management, log level filtering, message formatting,
+ * and event bus integration. The Logger automatically processes system events
+ * from the Event Bus and provides direct logging methods for manual use.
+ *
+ * @russian
+ * @brief Реализация класса Logger для потокобезопасной системы логирования.
+ * @details Этот файл предоставляет конкретную реализацию для класса @ref Logger,
+ * включая управление шаблоном Singleton, фильтрацию уровней логов, форматирование сообщений
+ * и интеграцию с шиной событий. Logger автоматически обрабатывает системные события
+ * из шины событий и предоставляет прямые методы логирования для ручного использования.
+ */
+
 #include "Logger.hxx"
 #include <iostream>
 #include <iomanip>

@@ -7,5 +7,6 @@ var searchData=
   ['commandfactory_2ecxx_4',['CommandFactory.cxx',['../CommandFactory_8cxx.html',1,'']]],
   ['commandfactory_2ehxx_5',['CommandFactory.hxx',['../CommandFactory_8hxx.html',1,'']]],
   ['commit_2ecxx_6',['Commit.cxx',['../Commit_8cxx.html',1,'']]],
-  ['commit_2ehxx_7',['Commit.hxx',['../Commit_8hxx.html',1,'']]]
+  ['commit_2ehxx_7',['Commit.hxx',['../Commit_8hxx.html',1,'']]],
+  ['committest_2ecxx_8',['CommitTest.cxx',['../CommitTest_8cxx.html',1,'']]]
 ];

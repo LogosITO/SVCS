@@ -1,12 +1,19 @@
 /**
  * @file EventBus.hxx
- * @brief Implementation of the central event bus (EventBus), acting as the ISubject.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
- * This implementation provides a thread-safe Subject capable of managing observers
+ * @english
+ * @brief Implementation of the central event bus (EventBus), acting as the ISubject.
+ * @details This implementation provides a thread-safe Subject capable of managing observers
  * using smart pointers to prevent circular dependencies.
- * * @copyright 2025 LogosITO Under the MIT-License
+ *
+ * @russian
+ * @brief Реализация центральной шины событий (EventBus), действующей как ISubject.
+ * @details Эта реализация предоставляет потокобезопасный Subject, способный управлять наблюдателями
+ * с использованием умных указателей для предотвращения циклических зависимостей.
  */
-
 #pragma once
 
 #include "Event.hxx"
@@ -17,6 +24,15 @@
 #include <memory>
 #include <mutex>
 
+/**
+ * @english
+ * @namespace ConsoleColor
+ * @brief Defines ANSI color codes for console output formatting.
+ *
+ * @russian
+ * @namespace ConsoleColor
+ * @brief Определяет ANSI коды цветов для форматирования вывода в консоль.
+ */
 namespace ConsoleColor {
     const std::string RESET = "\033[0m";
     const std::string BLACK = "\033[30m";
@@ -34,7 +50,7 @@ namespace ConsoleColor {
     const std::string BRIGHT_MAGENTA = "\033[95m";
     const std::string BRIGHT_CYAN = "\033[96m";
     const std::string BRIGHT_WHITE = "\033[97m";
-    
+
     const std::string BOLD = "\033[1m";
     const std::string DIM = "\033[2m";
     const std::string ITALIC = "\033[3m";
@@ -42,26 +58,55 @@ namespace ConsoleColor {
 }
 
 /**
+ * @english
  * @class EventBus
  * @brief A thread-safe implementation of ISubject for centralized event distribution.
- * * @details This class uses std::weak_ptr to store observers, preventing circular dependencies
- * and ensuring automatic cleanup of destroyed observers. It inherits from 
- * std::enable_shared_from_this to ensure that valid shared pointers to the bus 
+ * @details This class uses std::weak_ptr to store observers, preventing circular dependencies
+ * and ensuring automatic cleanup of destroyed observers. It inherits from
+ * std::enable_shared_from_this to ensure that valid shared pointers to the bus
  * can be created even inside its member functions.
+ *
+ * @russian
+ * @class EventBus
+ * @brief Потокобезопасная реализация ISubject для централизованного распределения событий.
+ * @details Этот класс использует std::weak_ptr для хранения наблюдателей, предотвращая циклические зависимости
+ * и обеспечивая автоматическую очистку уничтоженных наблюдателей. Он наследуется от
+ * std::enable_shared_from_this, чтобы гарантировать, что валидные общие указатели на шину
+ * могут быть созданы даже внутри его функций-членов.
  */
 class EventBus : public ISubject, public std::enable_shared_from_this<EventBus> {
 private:
     /**
-     * @brief Collection of registered observers. 
-     * * Stored as weak pointers to prevent the EventBus from keeping observers alive indefinitely.
+     * @english
+     * @brief Collection of registered observers.
+     * @details Stored as weak pointers to prevent the EventBus from keeping observers alive indefinitely.
+     *
+     * @russian
+     * @brief Коллекция зарегистрированных наблюдателей.
+     * @details Хранится как слабые указатели, чтобы предотвратить бесконечное поддержание наблюдателей шиной событий.
      */
     std::vector<std::weak_ptr<IObserver>> observers_;
-    
-    /**
-     * @brief Mutex to ensure thread-safe access to the observers_ vector.
-     */
-    mutable std::mutex observers_mutex_; // Changed to mutable to allow locking inside const notify
 
+    /**
+     * @english
+     * @brief Mutex to ensure thread-safe access to the observers_ vector.
+     *
+     * @russian
+     * @brief Мьютекс для обеспечения потокобезопасного доступа к вектору observers_.
+     */
+    mutable std::mutex observers_mutex_;
+
+    /**
+     * @english
+     * @brief Gets the console color for a specific event type.
+     * @param type The event type.
+     * @return ANSI color code string.
+     *
+     * @russian
+     * @brief Получает цвет консоли для конкретного типа события.
+     * @param type Тип события.
+     * @return Строка с ANSI кодом цвета.
+     */
     static std::string getEventColor(Event::Type type) {
         switch (type) {
             case Event::REPOSITORY_INIT_SUCCESS:
@@ -78,27 +123,38 @@ private:
                 return ConsoleColor::BRIGHT_BLUE;
             case Event::HELP_MESSAGE:
                 return ConsoleColor::GREEN;
-			case Event::PROTOCOL_START:
-            	return ConsoleColor::BRIGHT_MAGENTA;
-        	case Event::PROTOCOL_SUCCESS:
-            	return ConsoleColor::BRIGHT_GREEN;
-        	case Event::PROTOCOL_ERROR:
-            	return ConsoleColor::BRIGHT_RED;
-        	case Event::NETWORK_SEND:
-            	return ConsoleColor::BRIGHT_CYAN;
-        	case Event::NETWORK_RECEIVE:
-            	return ConsoleColor::BRIGHT_BLUE;
-        	case Event::OBJECT_TRANSFER:
-            	return ConsoleColor::BRIGHT_YELLOW;
-        	case Event::REFERENCE_UPDATE:
-            	return ConsoleColor::BRIGHT_GREEN;
-        	case Event::NEGOTIATION_PHASE:
-            	return ConsoleColor::BRIGHT_MAGENTA;
+            case Event::PROTOCOL_START:
+                return ConsoleColor::BRIGHT_MAGENTA;
+            case Event::PROTOCOL_SUCCESS:
+                return ConsoleColor::BRIGHT_GREEN;
+            case Event::PROTOCOL_ERROR:
+                return ConsoleColor::BRIGHT_RED;
+            case Event::NETWORK_SEND:
+                return ConsoleColor::BRIGHT_CYAN;
+            case Event::NETWORK_RECEIVE:
+                return ConsoleColor::BRIGHT_BLUE;
+            case Event::OBJECT_TRANSFER:
+                return ConsoleColor::BRIGHT_YELLOW;
+            case Event::REFERENCE_UPDATE:
+                return ConsoleColor::BRIGHT_GREEN;
+            case Event::NEGOTIATION_PHASE:
+                return ConsoleColor::BRIGHT_MAGENTA;
             default:
                 return ConsoleColor::WHITE;
         }
     }
 
+    /**
+     * @english
+     * @brief Gets the icon for a specific event type.
+     * @param type The event type.
+     * @return Icon string (emoji).
+     *
+     * @russian
+     * @brief Получает иконку для конкретного типа события.
+     * @param type Тип события.
+     * @return Строка с иконкой (эмодзи).
+     */
     static std::string getEventIcon(Event::Type type) {
         switch (type) {
             case Event::REPOSITORY_INIT_SUCCESS:
@@ -115,37 +171,47 @@ private:
                 return "🐛";
             case Event::HELP_MESSAGE:
                 return "💡";
-        	case Event::PROTOCOL_START:
-            	return "🚀";
-        	case Event::PROTOCOL_SUCCESS:
-            	return "✅";
-        	case Event::PROTOCOL_ERROR:
-            	return "💥";
-        	case Event::NETWORK_SEND:
-            	return "📤";
-        	case Event::NETWORK_RECEIVE:
-            	return "📥";
-        	case Event::OBJECT_TRANSFER:
-            	return "📦";
-        	case Event::REFERENCE_UPDATE:
-            	return "🔗";
-        	case Event::NEGOTIATION_PHASE:
-            	return "🤝";
+            case Event::PROTOCOL_START:
+                return "🚀";
+            case Event::PROTOCOL_SUCCESS:
+                return "✅";
+            case Event::PROTOCOL_ERROR:
+                return "💥";
+            case Event::NETWORK_SEND:
+                return "📤";
+            case Event::NETWORK_RECEIVE:
+                return "📥";
+            case Event::OBJECT_TRANSFER:
+                return "📦";
+            case Event::REFERENCE_UPDATE:
+                return "🔗";
+            case Event::NEGOTIATION_PHASE:
+                return "🤝";
             default:
                 return "";
         }
-    };
+    }
 
 public:
     /**
+     * @english
      * @brief Default virtual destructor.
+     *
+     * @russian
+     * @brief Виртуальный деструктор по умолчанию.
      */
     ~EventBus() override = default;
 
     /**
+     * @english
      * @brief Registers a new Observer.
-     * * The observer's shared pointer is stored as a weak pointer internally.
+     * @details The observer's shared pointer is stored as a weak pointer internally.
      * @param observer The smart pointer to the Observer to be registered.
+     *
+     * @russian
+     * @brief Регистрирует нового Observer.
+     * @details Общий указатель наблюдателя хранится как слабый указатель внутри.
+     * @param observer Умный указатель на Observer для регистрации.
      */
     void attach(std::shared_ptr<IObserver> observer) override {
         std::lock_guard<std::mutex> lock(observers_mutex_);
@@ -153,9 +219,15 @@ public:
     }
 
     /**
+     * @english
      * @brief Deregisters a specific Observer.
-     * * Compares the provided shared_ptr against all stored weak_ptr objects.
+     * @details Compares the provided shared_ptr against all stored weak_ptr objects.
      * @param observer_to_remove The smart pointer to the Observer to be removed.
+     *
+     * @russian
+     * @brief Отменяет регистрацию конкретного Observer.
+     * @details Сравнивает предоставленный shared_ptr со всеми хранимыми объектами weak_ptr.
+     * @param observer_to_remove Умный указатель на Observer для удаления.
      */
     void detach(std::shared_ptr<IObserver> observer_to_remove) override {
         std::lock_guard<std::mutex> lock(observers_mutex_);
@@ -170,30 +242,34 @@ public:
     }
 
     /**
+     * @english
      * @brief Sends an event to all active Observers.
-     * * Iterates over the list, safely locking each weak pointer before calling update(). 
+     * @details Iterates over the list, safely locking each weak pointer before calling update().
      * Invalid (expired) weak pointers are effectively ignored.
-     * @note Your implementation of `notify` uses `const_cast<std::mutex&>(observers_mutex_)` 
-     * because `notify` is `const`. A better practice is to declare `observers_mutex_` as **`mutable`**.
      * @param event The constant reference to the Event to be published.
+     *
+     * @russian
+     * @brief Отправляет событие всем активным Observers.
+     * @details Перебирает список, безопасно блокируя каждый слабый указатель перед вызовом update().
+     * Невалидные (истекшие) слабые указатели эффективно игнорируются.
+     * @param event Константная ссылка на событие для публикации.
      */
-    void notify(const Event& event) const override{
+    void notify(const Event& event) const override {
         std::string color = getEventColor(event.type);
         std::string icon = getEventIcon(event.type);
         std::string sourceColor = ConsoleColor::DIM + ConsoleColor::BLACK;
-        
-        // Форматируем сообщение с цветами
-        std::string formattedMessage = color + icon + " " + event.details + 
-                                      sourceColor + " [" + event.source_name + "]" + 
+
+        // Format message with colors
+        std::string formattedMessage = color + icon + " " + event.details +
+                                      sourceColor + " [" + event.source_name + "]" +
                                       ConsoleColor::RESET;
-        
-        // Создаем копию события с отформатированным сообщением
+
+        // Create event copy with formatted message
         Event coloredEvent = event;
         coloredEvent.details = formattedMessage;
-        
+
         for (auto& observer : observers_) {
             observer.lock()->update(coloredEvent);
         }
     }
-
 };

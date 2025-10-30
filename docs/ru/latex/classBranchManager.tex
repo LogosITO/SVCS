@@ -1,0 +1,316 @@
+\doxysection{Класс Branch\+Manager}
+\hypertarget{classBranchManager}{}\label{classBranchManager}\index{BranchManager@{BranchManager}}
+
+
+Основной сервис для управления ветвями системы контроля версий (создание, удаление, переключение).  
+
+
+
+
+{\ttfamily \#include $<$Branch\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch}}
+\begin{DoxyCompactList}\small\item\em Структура для хранения метаданных одной ветви. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBranchManager_a4f034befce006a84693d8ce6673805dc}{Branch\+Manager}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classBranchManager}{Branch\+Manager}. \end{DoxyCompactList}\item 
+\Hypertarget{classBranchManager_a486a8fc23c1b1880fb12d864d5c7db0b}\label{classBranchManager_a486a8fc23c1b1880fb12d864d5c7db0b} 
+void {\bfseries create\+Default\+Branches} ()
+\begin{DoxyCompactList}\small\item\em Создает начальный набор ветвей по умолчанию (например, \textquotesingle{}main\textquotesingle{}). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_af601359cfb82389fb273c74af7820b2a}{create\+Branch}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Создает новую ветвь, указывающую на определенный коммит (обычно HEAD). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_ab0982ccff90a6853cde203afd456320d}{create\+Branch\+From\+Commit}} (const std\+::string \&name, const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Создает новую ветвь из определенного коммита. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchManager_af64f1afc8d0c6b4c4567c64254cfa91d}{get\+Head\+Commit}} ()
+\begin{DoxyCompactList}\small\item\em Получает хеш коммита текущего HEAD. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a429931c290ba31a4616832335d368c59}{delete\+Branch}} (const std\+::string \&name, bool force=false)
+\begin{DoxyCompactList}\small\item\em Удаляет существующую ветвь. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a32cb34d10f0c6075951fef6ae6e21dd9}{rename\+Branch}} (const std\+::string \&old\+\_\+name, const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Переименовывает существующую ветвь. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a6ad3b172ced1c0f427634998d700436d}{switch\+Branch}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Переключает активную ветвь на указанное имя. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch}} $>$ \mbox{\hyperlink{classBranchManager_a846faa415db0516c4eccda9f7ef3c316}{get\+All\+Branches}} () const
+\begin{DoxyCompactList}\small\item\em Извлекает список всех известных ветвей, включая их состояние. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchManager_ad9f599e0b37e4319fef083063bc47883}{get\+Current\+Branch}} () const
+\begin{DoxyCompactList}\small\item\em Извлекает имя текущей активной ветви. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a0cdd864c1c3ed12af16e77bf932e63ce}{update\+Branch\+Head}} (const std\+::string \&branch\+\_\+name, const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Обновляет хеш коммита, на который указывает указанная ветвь. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a6d9226441cbc178c6afe0b957b50d406}{branch\+Exists}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли ветвь с заданным именем. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchManager_acd0aa8b6f71b83cc190081c1845e3284}{get\+Branch\+Head}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Извлекает хеш коммита, на который указывает конкретная ветвь. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classBranchManager_a2bed7bba95e0d75b22b5264c9058b600}{is\+Valid\+Branch\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли заданная строка допустимым именем для новой ветви. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classBranchManager_ad43258d9fbf5987e44f51515d39a1211}{commit\+Exists}} (const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли коммит (реализация, предположительно, проверяет хранилище объектов). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Основной сервис для управления ветвями системы контроля версий (создание, удаление, переключение). 
+
+Этот класс абстрагирует детали хранения ветвей и предоставляет высокоуровневый интерфейс для манипулирования ветвями. Он использует внутреннюю карту для отслеживания ветвей и передает статус/ошибки через шину событий \doxylink{classISubject}{ISubject}. 
+
+\label{doc-constructors}
+\Hypertarget{classBranchManager_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classBranchManager_a4f034befce006a84693d8ce6673805dc}\index{BranchManager@{BranchManager}!BranchManager@{BranchManager}}
+\index{BranchManager@{BranchManager}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{BranchManager()}{BranchManager()}}
+{\footnotesize\ttfamily \label{classBranchManager_a4f034befce006a84693d8ce6673805dc} 
+Branch\+Manager\+::\+Branch\+Manager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{event\+\_\+bus}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструирует \doxylink{classBranchManager}{Branch\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\+\_\+bus} & Общий указатель на шину событий (\doxylink{classISubject}{ISubject}) для связи. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classBranchManager_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classBranchManager_a6d9226441cbc178c6afe0b957b50d406}\index{BranchManager@{BranchManager}!branchExists@{branchExists}}
+\index{branchExists@{branchExists}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{branchExists()}{branchExists()}}
+{\footnotesize\ttfamily \label{classBranchManager_a6d9226441cbc178c6afe0b957b50d406} 
+bool Branch\+Manager\+::branch\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, существует ли ветвь с заданным именем. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя ветви для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если ветвь существует, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_ad43258d9fbf5987e44f51515d39a1211}\index{BranchManager@{BranchManager}!commitExists@{commitExists}}
+\index{commitExists@{commitExists}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{commitExists()}{commitExists()}}
+{\footnotesize\ttfamily \label{classBranchManager_ad43258d9fbf5987e44f51515d39a1211} 
+bool Branch\+Manager\+::commit\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Проверяет, существует ли коммит (реализация, предположительно, проверяет хранилище объектов). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если коммит существует, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_af601359cfb82389fb273c74af7820b2a}\index{BranchManager@{BranchManager}!createBranch@{createBranch}}
+\index{createBranch@{createBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{createBranch()}{createBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_af601359cfb82389fb273c74af7820b2a} 
+bool Branch\+Manager\+::create\+Branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Создает новую ветвь, указывающую на определенный коммит (обычно HEAD). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя новой ветви. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если ветвь успешно создана, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_ab0982ccff90a6853cde203afd456320d}\index{BranchManager@{BranchManager}!createBranchFromCommit@{createBranchFromCommit}}
+\index{createBranchFromCommit@{createBranchFromCommit}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{createBranchFromCommit()}{createBranchFromCommit()}}
+{\footnotesize\ttfamily \label{classBranchManager_ab0982ccff90a6853cde203afd456320d} 
+bool Branch\+Manager\+::create\+Branch\+From\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption})}
+
+
+
+Создает новую ветвь из определенного коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя ветви. \\
+\hline
+{\em commit\+\_\+hash} & Хеш коммита, от которого создается ветвь. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если успешно, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a429931c290ba31a4616832335d368c59}\index{BranchManager@{BranchManager}!deleteBranch@{deleteBranch}}
+\index{deleteBranch@{deleteBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{deleteBranch()}{deleteBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_a429931c290ba31a4616832335d368c59} 
+bool Branch\+Manager\+::delete\+Branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{bool}]{force}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Удаляет существующую ветвь. 
+
+Предотвращает удаление текущей ветви, если только {\ttfamily force} не равно true. 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя ветви для удаления. \\
+\hline
+{\em force} & Если {\ttfamily true}, принудительно удаляет, даже если ветвь не полностью слита (зависит от реализации). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если ветвь успешно удалена, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a846faa415db0516c4eccda9f7ef3c316}\index{BranchManager@{BranchManager}!getAllBranches@{getAllBranches}}
+\index{getAllBranches@{getAllBranches}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{getAllBranches()}{getAllBranches()}}
+{\footnotesize\ttfamily \label{classBranchManager_a846faa415db0516c4eccda9f7ef3c316} 
+std\+::vector$<$ \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch\+Manager\+::\+Branch}} $>$ Branch\+Manager\+::get\+All\+Branches (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает список всех известных ветвей, включая их состояние. 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор структур \doxylink{structBranchManager_1_1Branch}{Branch}. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_acd0aa8b6f71b83cc190081c1845e3284}\index{BranchManager@{BranchManager}!getBranchHead@{getBranchHead}}
+\index{getBranchHead@{getBranchHead}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{getBranchHead()}{getBranchHead()}}
+{\footnotesize\ttfamily \label{classBranchManager_acd0aa8b6f71b83cc190081c1845e3284} 
+std\+::string Branch\+Manager\+::get\+Branch\+Head (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает хеш коммита, на который указывает конкретная ветвь. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Имя ветви. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хеш HEAD коммита ветви, или пустая строка, если ветвь не существует. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_ad9f599e0b37e4319fef083063bc47883}\index{BranchManager@{BranchManager}!getCurrentBranch@{getCurrentBranch}}
+\index{getCurrentBranch@{getCurrentBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentBranch()}{getCurrentBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_ad9f599e0b37e4319fef083063bc47883} 
+std\+::string Branch\+Manager\+::get\+Current\+Branch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает имя текущей активной ветви. 
+
+\begin{DoxyReturn}{Возвращает}
+Строковое имя текущей ветви. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_af64f1afc8d0c6b4c4567c64254cfa91d}\index{BranchManager@{BranchManager}!getHeadCommit@{getHeadCommit}}
+\index{getHeadCommit@{getHeadCommit}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{getHeadCommit()}{getHeadCommit()}}
+{\footnotesize\ttfamily \label{classBranchManager_af64f1afc8d0c6b4c4567c64254cfa91d} 
+std\+::string Branch\+Manager\+::get\+Head\+Commit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получает хеш коммита текущего HEAD. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Хеш коммита текущего HEAD, или пустая строка, если не найден. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a2bed7bba95e0d75b22b5264c9058b600}\index{BranchManager@{BranchManager}!isValidBranchName@{isValidBranchName}}
+\index{isValidBranchName@{isValidBranchName}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{isValidBranchName()}{isValidBranchName()}}
+{\footnotesize\ttfamily \label{classBranchManager_a2bed7bba95e0d75b22b5264c9058b600} 
+bool Branch\+Manager\+::is\+Valid\+Branch\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Проверяет, является ли заданная строка допустимым именем для новой ветви. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Строка для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если имя допустимо, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a32cb34d10f0c6075951fef6ae6e21dd9}\index{BranchManager@{BranchManager}!renameBranch@{renameBranch}}
+\index{renameBranch@{renameBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{renameBranch()}{renameBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_a32cb34d10f0c6075951fef6ae6e21dd9} 
+bool Branch\+Manager\+::rename\+Branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{old\+\_\+name}{, }\item[{const std\+::string \&}]{new\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Переименовывает существующую ветвь. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em old\+\_\+name} & Текущее имя ветви. \\
+\hline
+{\em new\+\_\+name} & Желаемое новое имя для ветви. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если ветвь успешно переименована, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a6ad3b172ced1c0f427634998d700436d}\index{BranchManager@{BranchManager}!switchBranch@{switchBranch}}
+\index{switchBranch@{switchBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{switchBranch()}{switchBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_a6ad3b172ced1c0f427634998d700436d} 
+bool Branch\+Manager\+::switch\+Branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Переключает активную ветвь на указанное имя. 
+
+Обычно это включает обновление ссылки HEAD и извлечение файлов (логика извлечения файлов может находиться в \doxylink{classRepositoryManager}{Repository\+Manager}). 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя ветви для переключения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если переключение было успешным, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a0cdd864c1c3ed12af16e77bf932e63ce}\index{BranchManager@{BranchManager}!updateBranchHead@{updateBranchHead}}
+\index{updateBranchHead@{updateBranchHead}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{updateBranchHead()}{updateBranchHead()}}
+{\footnotesize\ttfamily \label{classBranchManager_a0cdd864c1c3ed12af16e77bf932e63ce} 
+bool Branch\+Manager\+::update\+Branch\+Head (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{, }\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption})}
+
+
+
+Обновляет хеш коммита, на который указывает указанная ветвь. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Имя ветви для обновления. \\
+\hline
+{\em commit\+\_\+hash} & Новый хеш коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если обновление было успешным, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{BranchManager_8hxx}{Branch\+Manager.\+hxx}}\item 
+core/src/\mbox{\hyperlink{BranchManager_8cxx}{Branch\+Manager.\+cxx}}\end{DoxyCompactItemize}

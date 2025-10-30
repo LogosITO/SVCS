@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: server/src/RepoCommand.cxx File Reference</title>
+<title>SVCS - English Documentation: server/src/RepoCommand.cxx File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -101,17 +99,13 @@ $(function(){initNavTree('RepoCommand_8cxx.html','',''); });
 <code>#include &lt;iostream&gt;</code><br />
 </div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> class for managing remote configurations. </p>
-<p>This file implements the concrete logic for the "svcs repo" command. It primarily delegates its core functionality—adding, removing, renaming, and listing remotes— to the <a class="el" href="classRemoteManager.html">RemoteManager</a> class.</p>
-<p>The implementation includes:</p><ol type="1">
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
+<p>This file implements the concrete logic for the "svcs repo" command. It primarily delegates its core functionality—adding, removing, renaming, and listing remotes— to the <a class="el" href="classRemoteManager.html">RemoteManager</a> class. The implementation includes:</p><ol type="1">
 <li><b><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> Context Check</b>: Ensures the command is run inside an initialized SVCS repository.</li>
 <li><b>Subcommand Dispatch</b>: Parses the first argument to determine which handler (<span class="tt">handleAdd</span>, <span class="tt">handleRemove</span>, etc.) to call.</li>
 <li><b>Argument Validation</b>: Performs specific argument count checks for each subcommand.</li>
-<li><b>User Output</b>: Directly prints confirmation messages (<span class="tt">std::cout</span>) or uses the <a class="el" href="classISubject.html">ISubject</a> event bus for errors and informational messages.</li>
+<li><b>User Output</b>: Directly prints confirmation messages (<span class="tt">std::cout</span>) or uses the <a class="el" href="classISubject.html">ISubject</a> event bus for errors and informational messages. </li>
 </ol>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="RepoCommand_8hxx.html" title="Declaration of the RepoCommand class.">RepoCommand.hxx</a> </dd>
-<dd>
-<a class="el" href="RemoteManager_8hxx.html" title="Declaration of the RemoteManager class and Remote struct.">RemoteManager.hxx</a></dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

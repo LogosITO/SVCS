@@ -1,0 +1,68 @@
+\doxysection{cli/include/\+Add\+Command.hxx File Reference}
+\hypertarget{AddCommand_8hxx}{}\label{AddCommand_8hxx}\index{cli/include/AddCommand.hxx@{cli/include/AddCommand.hxx}}
+
+
+Declaration of the \doxylink{classAddCommand}{Add\+Command} class.  
+
+
+{\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAddCommand}{Add\+Command}}
+\begin{DoxyCompactList}\small\item\em Implements the "{}add"{} command for the Simple Version Control System (SVCS). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c}{File\+Status}} \{ \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2}{UNTRACKED}}
+, \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca40e3819215b52841e19a7cac06b5f065}{MODIFIED}}
+, \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca63c2867fdcae0e8e8413d7ac21b69b59}{DELETED}}
+, \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8}{UNMODIFIED}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the status of a file within the SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classAddCommand}{Add\+Command} class. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+
+
+\label{doc-enum-members}
+\Hypertarget{AddCommand_8hxx_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c}\index{AddCommand.hxx@{AddCommand.hxx}!FileStatus@{FileStatus}}
+\index{FileStatus@{FileStatus}!AddCommand.hxx@{AddCommand.hxx}}
+\doxysubsubsection{\texorpdfstring{FileStatus}{FileStatus}}
+{\footnotesize\ttfamily \label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c} 
+enum class \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c}{File\+Status}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines the status of a file within the SVCS. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNTRACKED@{UNTRACKED}!AddCommand.hxx@{AddCommand.hxx}}\index{AddCommand.hxx@{AddCommand.hxx}!UNTRACKED@{UNTRACKED}}}\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2}\label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2} 
+UNTRACKED&File is present but not tracked by SVCS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODIFIED@{MODIFIED}!AddCommand.hxx@{AddCommand.hxx}}\index{AddCommand.hxx@{AddCommand.hxx}!MODIFIED@{MODIFIED}}}\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca40e3819215b52841e19a7cac06b5f065}\label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca40e3819215b52841e19a7cac06b5f065} 
+MODIFIED&File is tracked and has been modified since the last commit. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DELETED@{DELETED}!AddCommand.hxx@{AddCommand.hxx}}\index{AddCommand.hxx@{AddCommand.hxx}!DELETED@{DELETED}}}\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca63c2867fdcae0e8e8413d7ac21b69b59}\label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca63c2867fdcae0e8e8413d7ac21b69b59} 
+DELETED&File is tracked but has been deleted from the working directory. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNMODIFIED@{UNMODIFIED}!AddCommand.hxx@{AddCommand.hxx}}\index{AddCommand.hxx@{AddCommand.hxx}!UNMODIFIED@{UNMODIFIED}}}\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8}\label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8} 
+UNMODIFIED&File is tracked and has no changes since the last commit. \\
+\hline
+
+\end{DoxyEnumFields}

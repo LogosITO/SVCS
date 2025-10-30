@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: cli/include/Utils.hxx File Reference</title>
+<title>SVCS - English Documentation: cli/include/Utils.hxx File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -108,10 +106,8 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility functions for conditional debugging output. </p>
-<p>This header defines the <span class="tt">printDebug</span> function, which provides a simple mechanism for logging debug messages to standard output only when the <span class="tt">DEBUG_MODE</span> preprocessor macro is defined.</p><ul>
-<li><dl class="section copyright"><dt>Copyright</dt><dd><b>Copyright (c) 2025 LogosITO</b> @license <b>MIT License</b> </dd></dl>
-</li>
-</ul>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
+<p>This header defines the <span class="tt">printDebug</span> function, which provides a simple mechanism for logging debug messages to standard output only when the <span class="tt">DEBUG_MODE</span> preprocessor macro is defined. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a4b171a7d705ca7ae2910200e76bd96e2" name="a4b171a7d705ca7ae2910200e76bd96e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b171a7d705ca7ae2910200e76bd96e2">&#9670;&#160;</a></span>printDebug()</h2>
@@ -137,8 +133,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Conditionally prints a debug message to standard output. </p>
-<p>The message is only printed if the DEBUG_MODE macro is defined at the time of compilation. The function is marked as <span class="tt">inline</span> to suggest inlining by the compiler, and is compiled to a no-op when DEBUG_MODE is not defined, resulting in zero runtime overhead in release builds.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>The message is only printed if the DEBUG_MODE macro is defined at the time of compilation. The function is marked as <span class="tt">inline</span> to suggest inlining by the compiler, and is compiled to a no-op when DEBUG_MODE is not defined, resulting in zero runtime overhead in release builds. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>The string message to output, prefixed with "DEBUG: ". </td></tr>
   </table>

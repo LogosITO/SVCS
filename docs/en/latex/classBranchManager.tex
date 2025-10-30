@@ -1,0 +1,316 @@
+\doxysection{Branch\+Manager Class Reference}
+\hypertarget{classBranchManager}{}\label{classBranchManager}\index{BranchManager@{BranchManager}}
+
+
+Core service for managing version control branches (creation, deletion, switching).  
+
+
+
+
+{\ttfamily \#include $<$Branch\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch}}
+\begin{DoxyCompactList}\small\item\em Structure to hold the metadata for a single branch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBranchManager_a4f034befce006a84693d8ce6673805dc}{Branch\+Manager}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classBranchManager}{Branch\+Manager}. \end{DoxyCompactList}\item 
+\Hypertarget{classBranchManager_a486a8fc23c1b1880fb12d864d5c7db0b}\label{classBranchManager_a486a8fc23c1b1880fb12d864d5c7db0b} 
+void {\bfseries create\+Default\+Branches} ()
+\begin{DoxyCompactList}\small\item\em Creates the initial set of default branches (e.\+g., \textquotesingle{}main\textquotesingle{}). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_af601359cfb82389fb273c74af7820b2a}{create\+Branch}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Creates a new branch pointing to a specific commit (usually HEAD). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_ab0982ccff90a6853cde203afd456320d}{create\+Branch\+From\+Commit}} (const std\+::string \&name, const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Creates a new branch from a specific commit. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchManager_af64f1afc8d0c6b4c4567c64254cfa91d}{get\+Head\+Commit}} ()
+\begin{DoxyCompactList}\small\item\em Get the current HEAD commit hash. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a429931c290ba31a4616832335d368c59}{delete\+Branch}} (const std\+::string \&name, bool force=false)
+\begin{DoxyCompactList}\small\item\em Deletes an existing branch. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a32cb34d10f0c6075951fef6ae6e21dd9}{rename\+Branch}} (const std\+::string \&old\+\_\+name, const std\+::string \&new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Renames an existing branch. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a6ad3b172ced1c0f427634998d700436d}{switch\+Branch}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Switches the active branch to the specified name. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch}} $>$ \mbox{\hyperlink{classBranchManager_a846faa415db0516c4eccda9f7ef3c316}{get\+All\+Branches}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves a list of all known branches, including their state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchManager_ad9f599e0b37e4319fef083063bc47883}{get\+Current\+Branch}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the currently active branch. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a0cdd864c1c3ed12af16e77bf932e63ce}{update\+Branch\+Head}} (const std\+::string \&branch\+\_\+name, const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Updates the commit hash that a specific branch points to. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBranchManager_a6d9226441cbc178c6afe0b957b50d406}{branch\+Exists}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if a branch with the given name exists. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBranchManager_acd0aa8b6f71b83cc190081c1845e3284}{get\+Branch\+Head}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Retrieves the commit hash that a specific branch points to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classBranchManager_a2bed7bba95e0d75b22b5264c9058b600}{is\+Valid\+Branch\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Checks if the given string is a valid name for a new branch. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classBranchManager_ad43258d9fbf5987e44f51515d39a1211}{commit\+Exists}} (const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Checks if a commit exists (implementation assumed to check the object store). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core service for managing version control branches (creation, deletion, switching). 
+
+This class abstracts the details of branch storage and provides a high-\/level interface for branch manipulation. It uses an internal map to track branches and communicates status/errors via the \doxylink{classISubject}{ISubject} event bus. 
+
+\label{doc-constructors}
+\Hypertarget{classBranchManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBranchManager_a4f034befce006a84693d8ce6673805dc}\index{BranchManager@{BranchManager}!BranchManager@{BranchManager}}
+\index{BranchManager@{BranchManager}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{BranchManager()}{BranchManager()}}
+{\footnotesize\ttfamily \label{classBranchManager_a4f034befce006a84693d8ce6673805dc} 
+Branch\+Manager\+::\+Branch\+Manager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{event\+\_\+bus}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classBranchManager}{Branch\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+\_\+bus} & A shared pointer to the event bus (\doxylink{classISubject}{ISubject}) for communication. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classBranchManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBranchManager_a6d9226441cbc178c6afe0b957b50d406}\index{BranchManager@{BranchManager}!branchExists@{branchExists}}
+\index{branchExists@{branchExists}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{branchExists()}{branchExists()}}
+{\footnotesize\ttfamily \label{classBranchManager_a6d9226441cbc178c6afe0b957b50d406} 
+bool Branch\+Manager\+::branch\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a branch with the given name exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the branch to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the branch exists, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_ad43258d9fbf5987e44f51515d39a1211}\index{BranchManager@{BranchManager}!commitExists@{commitExists}}
+\index{commitExists@{commitExists}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{commitExists()}{commitExists()}}
+{\footnotesize\ttfamily \label{classBranchManager_ad43258d9fbf5987e44f51515d39a1211} 
+bool Branch\+Manager\+::commit\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a commit exists (implementation assumed to check the object store). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commit\+\_\+hash} & Hash to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if commit exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_af601359cfb82389fb273c74af7820b2a}\index{BranchManager@{BranchManager}!createBranch@{createBranch}}
+\index{createBranch@{createBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{createBranch()}{createBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_af601359cfb82389fb273c74af7820b2a} 
+bool Branch\+Manager\+::create\+Branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new branch pointing to a specific commit (usually HEAD). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the new branch. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the branch was created successfully, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_ab0982ccff90a6853cde203afd456320d}\index{BranchManager@{BranchManager}!createBranchFromCommit@{createBranchFromCommit}}
+\index{createBranchFromCommit@{createBranchFromCommit}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{createBranchFromCommit()}{createBranchFromCommit()}}
+{\footnotesize\ttfamily \label{classBranchManager_ab0982ccff90a6853cde203afd456320d} 
+bool Branch\+Manager\+::create\+Branch\+From\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new branch from a specific commit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxylink{structBranchManager_1_1Branch}{Branch} name. \\
+\hline
+{\em commit\+\_\+hash} & Hash of the commit to branch from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a429931c290ba31a4616832335d368c59}\index{BranchManager@{BranchManager}!deleteBranch@{deleteBranch}}
+\index{deleteBranch@{deleteBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{deleteBranch()}{deleteBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_a429931c290ba31a4616832335d368c59} 
+bool Branch\+Manager\+::delete\+Branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{bool}]{force}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Deletes an existing branch. 
+
+Prevents deletion of the current branch unless {\ttfamily force} is true. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the branch to delete. \\
+\hline
+{\em force} & If {\ttfamily true}, forces deletion even if the branch is not fully merged (implementation dependent). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the branch was deleted successfully, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a846faa415db0516c4eccda9f7ef3c316}\index{BranchManager@{BranchManager}!getAllBranches@{getAllBranches}}
+\index{getAllBranches@{getAllBranches}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{getAllBranches()}{getAllBranches()}}
+{\footnotesize\ttfamily \label{classBranchManager_a846faa415db0516c4eccda9f7ef3c316} 
+std\+::vector$<$ \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch\+Manager\+::\+Branch}} $>$ Branch\+Manager\+::get\+All\+Branches (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a list of all known branches, including their state. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{structBranchManager_1_1Branch}{Branch} structures. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_acd0aa8b6f71b83cc190081c1845e3284}\index{BranchManager@{BranchManager}!getBranchHead@{getBranchHead}}
+\index{getBranchHead@{getBranchHead}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{getBranchHead()}{getBranchHead()}}
+{\footnotesize\ttfamily \label{classBranchManager_acd0aa8b6f71b83cc190081c1845e3284} 
+std\+::string Branch\+Manager\+::get\+Branch\+Head (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the commit hash that a specific branch points to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em branch\+\_\+name} & The name of the branch. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The HEAD commit hash of the branch, or an empty string if the branch doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_ad9f599e0b37e4319fef083063bc47883}\index{BranchManager@{BranchManager}!getCurrentBranch@{getCurrentBranch}}
+\index{getCurrentBranch@{getCurrentBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentBranch()}{getCurrentBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_ad9f599e0b37e4319fef083063bc47883} 
+std\+::string Branch\+Manager\+::get\+Current\+Branch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the name of the currently active branch. 
+
+\begin{DoxyReturn}{Returns}
+The string name of the current branch. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_af64f1afc8d0c6b4c4567c64254cfa91d}\index{BranchManager@{BranchManager}!getHeadCommit@{getHeadCommit}}
+\index{getHeadCommit@{getHeadCommit}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{getHeadCommit()}{getHeadCommit()}}
+{\footnotesize\ttfamily \label{classBranchManager_af64f1afc8d0c6b4c4567c64254cfa91d} 
+std\+::string Branch\+Manager\+::get\+Head\+Commit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the current HEAD commit hash. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The commit hash of current HEAD, or empty string if not found. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a2bed7bba95e0d75b22b5264c9058b600}\index{BranchManager@{BranchManager}!isValidBranchName@{isValidBranchName}}
+\index{isValidBranchName@{isValidBranchName}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{isValidBranchName()}{isValidBranchName()}}
+{\footnotesize\ttfamily \label{classBranchManager_a2bed7bba95e0d75b22b5264c9058b600} 
+bool Branch\+Manager\+::is\+Valid\+Branch\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the given string is a valid name for a new branch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The string to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the name is valid, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a32cb34d10f0c6075951fef6ae6e21dd9}\index{BranchManager@{BranchManager}!renameBranch@{renameBranch}}
+\index{renameBranch@{renameBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{renameBranch()}{renameBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_a32cb34d10f0c6075951fef6ae6e21dd9} 
+bool Branch\+Manager\+::rename\+Branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{old\+\_\+name}{, }\item[{const std\+::string \&}]{new\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Renames an existing branch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+\_\+name} & The current name of the branch. \\
+\hline
+{\em new\+\_\+name} & The desired new name for the branch. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the branch was renamed successfully, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a6ad3b172ced1c0f427634998d700436d}\index{BranchManager@{BranchManager}!switchBranch@{switchBranch}}
+\index{switchBranch@{switchBranch}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{switchBranch()}{switchBranch()}}
+{\footnotesize\ttfamily \label{classBranchManager_a6ad3b172ced1c0f427634998d700436d} 
+bool Branch\+Manager\+::switch\+Branch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Switches the active branch to the specified name. 
+
+This typically involves updating the HEAD reference and checking out files (the file checkout logic may reside in the \doxylink{classRepositoryManager}{Repository\+Manager}). 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the branch to switch to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the switch was successful, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBranchManager_a0cdd864c1c3ed12af16e77bf932e63ce}\index{BranchManager@{BranchManager}!updateBranchHead@{updateBranchHead}}
+\index{updateBranchHead@{updateBranchHead}!BranchManager@{BranchManager}}
+\doxysubsubsection{\texorpdfstring{updateBranchHead()}{updateBranchHead()}}
+{\footnotesize\ttfamily \label{classBranchManager_a0cdd864c1c3ed12af16e77bf932e63ce} 
+bool Branch\+Manager\+::update\+Branch\+Head (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{, }\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption})}
+
+
+
+Updates the commit hash that a specific branch points to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em branch\+\_\+name} & The name of the branch to update. \\
+\hline
+{\em commit\+\_\+hash} & The new commit hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the update was successful, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{BranchManager_8hxx}{Branch\+Manager.\+hxx}}\item 
+core/src/\mbox{\hyperlink{BranchManager_8cxx}{Branch\+Manager.\+cxx}}\end{DoxyCompactItemize}

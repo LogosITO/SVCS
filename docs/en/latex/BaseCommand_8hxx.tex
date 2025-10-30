@@ -1,0 +1,26 @@
+\doxysection{cli/include/\+Base\+Command.hxx File Reference}
+\hypertarget{BaseCommand_8hxx}{}\label{BaseCommand_8hxx}\index{cli/include/BaseCommand.hxx@{cli/include/BaseCommand.hxx}}
+
+
+Declaration of the \doxylink{classBaseCommand}{Base\+Command} class for all commands in the system.  
+
+
+{\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBaseCommand}{Base\+Command}}
+\begin{DoxyCompactList}\small\item\em Base class for all CLI commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classBaseCommand}{Base\+Command} class for all commands in the system. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+\doxylink{classBaseCommand}{Base\+Command} implements the logic for interacting with the \doxylink{structEvent}{Event} Bus system, allowing all derived commands to easily generate informational, debug, and other messages that will be automatically processed by registered observers (e.\+g., \doxylink{classLogger}{Logger}). 

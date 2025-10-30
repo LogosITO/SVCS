@@ -1,0 +1,25 @@
+\doxysection{tests/cli/mocks/\+Mock\+Subject.hxx File Reference}
+\hypertarget{MockSubject_8hxx}{}\label{MockSubject_8hxx}\index{tests/cli/mocks/MockSubject.hxx@{tests/cli/mocks/MockSubject.hxx}}
+
+
+Mock implementation of the \doxylink{classISubject}{ISubject} interface for unit testing purposes.  
+
+
+{\ttfamily \#include "{}../../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include $<$gmock/gmock.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMockSubject}{Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classISubject}{ISubject} (\doxylink{structEvent}{Event} Bus). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mock implementation of the \doxylink{classISubject}{ISubject} interface for unit testing purposes. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This class captures all events published by the system core without requiring the full Observer system implementation. It provides utility methods for easy assertion checks in unit tests. 

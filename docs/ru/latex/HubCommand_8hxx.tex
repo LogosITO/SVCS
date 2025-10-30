@@ -1,0 +1,29 @@
+\doxysection{Файл server/include/\+Hub\+Command.hxx}
+\hypertarget{HubCommand_8hxx}{}\label{HubCommand_8hxx}\index{server/include/HubCommand.hxx@{server/include/HubCommand.hxx}}
+
+
+Объявление класса \doxylink{classHubCommand}{Hub\+Command} для создания центральных голых репозиториев.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHubCommand}{Hub\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для создания центральных репозиториев-\/хабов для командного сотрудничества. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Объявление класса \doxylink{classHubCommand}{Hub\+Command} для создания центральных голых репозиториев. 
+
+~\newline
+ \begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+\doxylink{classHubCommand}{Hub\+Command} реализует команду \textquotesingle{}svcs hub\textquotesingle{} для создания центральных голых репозиториев, которые служат центрами сотрудничества для команд разработчиков. Эти репозитории не имеют рабочих директорий и оптимизированы для удаленного доступа. Команда создает необходимую структуру директорий и файлы конфигурации, требуемые для функционального центрального репозитория. 

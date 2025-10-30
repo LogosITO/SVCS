@@ -1,0 +1,42 @@
+\doxysection{Help\+Command.\+hxx}
+\hypertarget{HelpCommand_8hxx_source}{}\label{HelpCommand_8hxx_source}\index{cli/include/HelpCommand.hxx@{cli/include/HelpCommand.hxx}}
+\mbox{\hyperlink{HelpCommand_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{ICommand.hxx}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{HelpService_8hxx}{../include/HelpService.hxx}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHelpCommand_a7dad941d44085add252579daf3faf8c0}{HelpCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \ \ std::shared\_ptr<HelpService>\ helpService\_;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classHelpCommand_a7dad941d44085add252579daf3faf8c0}{HelpCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<HelpService>\ helpService);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHelpCommand_aacde352bc8bc40668b09415c07857ac7}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00097\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHelpCommand_ad7b1ec70f8f31646035b4bbb4ef94899}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}help"{}};\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00108\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHelpCommand_a236f111255786e8949a0bea269c48677}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00119\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHelpCommand_a682a95b46e84c2489771dabb7c5e240d}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHelpCommand_afacdd5404027b7bd4dc7a6958b2e8c3a}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ showGeneralHelp()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ showCommandHelp(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00154\ \};}
+
+\end{DoxyCode}

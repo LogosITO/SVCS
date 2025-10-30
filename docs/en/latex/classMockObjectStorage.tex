@@ -1,0 +1,123 @@
+\doxysection{Mock\+Object\+Storage Class Reference}
+\hypertarget{classMockObjectStorage}{}\label{classMockObjectStorage}\index{MockObjectStorage@{MockObjectStorage}}
+
+
+Mock implementation of \doxylink{classObjectStorage}{Object\+Storage}.  
+
+
+Inheritance diagram for Mock\+Object\+Storage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMockObjectStorage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMockObjectStorage_a435d599ef47054afe225443e60a933a9}\label{classMockObjectStorage_a435d599ef47054afe225443e60a933a9} 
+{\bfseries Mock\+Object\+Storage} (const fs\+::path \&temp\+\_\+dir)
+\item 
+bool \mbox{\hyperlink{classMockObjectStorage_a0d17e41ae6b3787ed45aad9b75ea0518}{save\+Object}} (const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&object) const override
+\begin{DoxyCompactList}\small\item\em Saves a \doxylink{classVcsObject}{Vcs\+Object} to the object database. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} $>$ \mbox{\hyperlink{classMockObjectStorage_a6710861deb4109e3c4a716ac9b38fe66}{load\+Object}} (const std\+::string \&hash) const override
+\begin{DoxyCompactList}\small\item\em Loads an object from the disk by its hash ID. \end{DoxyCompactList}\item 
+\Hypertarget{classMockObjectStorage_a0c6859b204e1e089a2ddefd0963f403a}\label{classMockObjectStorage_a0c6859b204e1e089a2ddefd0963f403a} 
+void {\bfseries clear} ()
+\item 
+\Hypertarget{classMockObjectStorage_a9ae69ebb59854a8e1d17e03f3d6361d6}\label{classMockObjectStorage_a9ae69ebb59854a8e1d17e03f3d6361d6} 
+bool {\bfseries is\+\_\+blob\+\_\+saved} (const std\+::string \&hash) const
+\item 
+\Hypertarget{classMockObjectStorage_abd3dd66b1873d619fa6ee4965882de48}\label{classMockObjectStorage_abd3dd66b1873d619fa6ee4965882de48} 
+size\+\_\+t {\bfseries get\+\_\+saved\+\_\+blobs\+\_\+count} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObjectStorage}{Object\+Storage}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObjectStorage_a97cd1089e57caec02d91e9d5177f2607}{Object\+Storage}} (const std\+::string \&root\+\_\+path, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ \&subject=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Object\+Storage} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObjectStorage_a0dc7bb15cb48b9795149e3572c4c7c3c}{set\+Subject}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subj)
+\begin{DoxyCompactList}\small\item\em Sets or replaces the event subject used by the \doxylink{classObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classObjectStorage_a3bdb2110012cbe733cdeb4d438b583d0}{get\+Object\+Path}} (const std\+::string \&hash) const
+\begin{DoxyCompactList}\small\item\em Forms the full filesystem path for an object based on its hash. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObjectStorage_abbc8d8426ae0f500aa7a6dba213e0bed}{object\+Exists}} (const std\+::string \&hash) const
+\begin{DoxyCompactList}\small\item\em Checks if an object with the given hash exists on disk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMockObjectStorage_a5b9d03f4ac4ee12bd8ae53b23122b04c}\label{classMockObjectStorage_a5b9d03f4ac4ee12bd8ae53b23122b04c} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries saved\+\_\+blobs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mock implementation of \doxylink{classObjectStorage}{Object\+Storage}. 
+
+
+\begin{DoxyItemize}
+\item This mock substitutes the actual filesystem I/O for object saving and loading with an in-\/memory map, allowing for fast, isolated testing of the \doxylink{classIndex}{Index}\textquotesingle{}s interaction with the storage layer. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classMockObjectStorage_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMockObjectStorage_a6710861deb4109e3c4a716ac9b38fe66}\index{MockObjectStorage@{MockObjectStorage}!loadObject@{loadObject}}
+\index{loadObject@{loadObject}!MockObjectStorage@{MockObjectStorage}}
+\doxysubsubsection{\texorpdfstring{loadObject()}{loadObject()}}
+{\footnotesize\ttfamily \label{classMockObjectStorage_a6710861deb4109e3c4a716ac9b38fe66} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} $>$ Mock\+Object\+Storage\+::load\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads an object from the disk by its hash ID. 
+
+Reads the compressed file, decompresses it, performs integrity checks, and deserializes the object using the internal factory method. 
+\begin{DoxyParams}{Parameters}
+{\em hash} & The hash ID of the object to load. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Vcs\+Object$>$ The restored object instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the object is not found, corrupted, or invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classObjectStorage_ad287a079892332b3a6d71b10275b925f}{Object\+Storage}}.
+
+\Hypertarget{classMockObjectStorage_a0d17e41ae6b3787ed45aad9b75ea0518}\index{MockObjectStorage@{MockObjectStorage}!saveObject@{saveObject}}
+\index{saveObject@{saveObject}!MockObjectStorage@{MockObjectStorage}}
+\doxysubsubsection{\texorpdfstring{saveObject()}{saveObject()}}
+{\footnotesize\ttfamily \label{classMockObjectStorage_a0d17e41ae6b3787ed45aad9b75ea0518} 
+bool Mock\+Object\+Storage\+::save\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&}]{obj}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Saves a \doxylink{classVcsObject}{Vcs\+Object} to the object database. 
+
+Serializes the object, prefixes it with a header, compresses it, and writes it to a file. Publishes events on success/failure. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & The \doxylink{classVcsObject}{Vcs\+Object} to save. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if saving was successful. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if hash is invalid or file IO fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classObjectStorage_acab6226c60b2979078001d539f56de3b}{Object\+Storage}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{IndexTest_8cxx}{Index\+Test.\+cxx}}\end{DoxyCompactItemize}

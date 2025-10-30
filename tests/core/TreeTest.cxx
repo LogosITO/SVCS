@@ -1,10 +1,15 @@
 /**
- * @file tree_test.cxx
+ * @file TreeTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for the Tree class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity.
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для класса Tree, проверяющие построение объектов, каноническую сортировку, управление записями и целостность сериализации/десериализации.
  */
-
 #include "../../core/include/Tree.hxx"
 
 #include <gtest/gtest.h>

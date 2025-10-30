@@ -1,0 +1,28 @@
+\doxysection{server/include/\+Remote\+Protocol.hxx File Reference}
+\hypertarget{RemoteProtocol_8hxx}{}\label{RemoteProtocol_8hxx}\index{server/include/RemoteProtocol.hxx@{server/include/RemoteProtocol.hxx}}
+
+
+Declaration of the \doxylink{classRemoteProtocol}{Remote\+Protocol} class for handling remote communication protocol.  
+
+
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classRemoteProtocol}{Remote\+Protocol}}
+\begin{DoxyCompactList}\small\item\em Handles the remote communication protocol for SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classRemoteProtocol}{Remote\+Protocol} class for handling remote communication protocol. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+The \doxylink{classRemoteProtocol}{Remote\+Protocol} implements the custom protocol for push/pull operations between SVCS clients and servers. It handles object negotiation, transfer, and reference updates through a simple text-\/based protocol over stdin/stdout. 

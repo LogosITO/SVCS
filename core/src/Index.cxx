@@ -1,9 +1,14 @@
 /**
- * @file Index.cxx
+* @file Index.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the Index class, managing the staging area and building the commit tree.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса Index, управляющего областью подготовки и построением дерева коммитов.
  */
 
 #include "../include/Index.hxx"

@@ -1,0 +1,26 @@
+\doxysection{Файл cli/include/\+Base\+Command.hxx}
+\hypertarget{BaseCommand_8hxx}{}\label{BaseCommand_8hxx}\index{cli/include/BaseCommand.hxx@{cli/include/BaseCommand.hxx}}
+
+
+Объявление класса \doxylink{classBaseCommand}{Base\+Command} для всех команд в системе.  
+
+
+{\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBaseCommand}{Base\+Command}}
+\begin{DoxyCompactList}\small\item\em Базовый класс для всех CLI команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Объявление класса \doxylink{classBaseCommand}{Base\+Command} для всех команд в системе. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+\doxylink{classBaseCommand}{Base\+Command} реализует логику взаимодействия с системой шины событий, позволяя всем производным командам легко генерировать информационные, отладочные и другие сообщения, которые будут автоматически обработаны зарегистрированными наблюдателями (например, \doxylink{classLogger}{Logger}). 

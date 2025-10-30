@@ -1,0 +1,177 @@
+\doxysection{Status\+Command\+Test Class Reference}
+\hypertarget{classStatusCommandTest}{}\label{classStatusCommandTest}\index{StatusCommandTest@{StatusCommandTest}}
+
+
+Google Test fixture for running integration tests against the \doxylink{classStatusCommand}{Status\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Status\+Command\+Test.\+hxx$>$}
+
+Inheritance diagram for Status\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStatusCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classStatusCommandTest_a4b64e9ceee859f30dba84fb78e34c515}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the testing environment before each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusCommandTest_ac424b312832d960ba08cf0e4b4c4a6d1}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Tears down the testing environment after each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusCommandTest_a8587508fb0b6d664f65104295a92e427}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Creates a test file with specified content in the temporary directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusCommandTest_ae506c0d397d564d8a6251daf19e40343}{create\+Test\+Directory}} (const std\+::string \&dirname)
+\begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusCommandTest_a84af63358f1e67af9e3793c76ea9c63c}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusCommandTest_a2d962d5ecae575783a8f43e377650430}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classStatusCommandTest_ab7d44e5852460b81086e8d060d919d84}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Counts the occurrences of a specific message (substring) across all event notifications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classStatusCommandTest_aafad0abcce6f3366a2ffa72a75c384ca}\label{classStatusCommandTest_aafad0abcce6f3366a2ffa72a75c384ca} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer). \end{DoxyCompactList}\item 
+\Hypertarget{classStatusCommandTest_a6d57f14451cbb38043fd453dd955d4c5}\label{classStatusCommandTest_a6d57f14451cbb38043fd453dd955d4c5} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
+\Hypertarget{classStatusCommandTest_ac58a7bbee391eeee2d23692f4c6206e9}\label{classStatusCommandTest_ac58a7bbee391eeee2d23692f4c6206e9} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classStatusCommand}{Status\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
+\Hypertarget{classStatusCommandTest_a3f876228661d8132ba80c33c3f6e3ee2}\label{classStatusCommandTest_a3f876228661d8132ba80c33c3f6e3ee2} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Path to the temporary test repository directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Google Test fixture for running integration tests against the \doxylink{classStatusCommand}{Status\+Command}. 
+
+This fixture provides the necessary infrastructure for integration tests\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Manage a temporary SVCS repository directory.
+\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for event bus) and \doxylink{classRepositoryManager}{Repository\+Manager} (for core logic).
+\item {\bfseries{Helper Methods\+:}} Simplify file creation, directory setup, staging, and verification of notifications. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classStatusCommandTest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStatusCommandTest_a2d962d5ecae575783a8f43e377650430}\index{StatusCommandTest@{StatusCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!StatusCommandTest@{StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classStatusCommandTest_a2d962d5ecae575783a8f43e377650430} 
+bool Status\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Checks if a specific message (substring) exists in any event notification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the message is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classStatusCommandTest_ab7d44e5852460b81086e8d060d919d84}\index{StatusCommandTest@{StatusCommandTest}!countMessages@{countMessages}}
+\index{countMessages@{countMessages}!StatusCommandTest@{StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
+{\footnotesize\ttfamily \label{classStatusCommandTest_ab7d44e5852460b81086e8d060d919d84} 
+int Status\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counts the occurrences of a specific message (substring) across all event notifications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to count. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of events containing the substring. 
+\end{DoxyReturn}
+\Hypertarget{classStatusCommandTest_ae506c0d397d564d8a6251daf19e40343}\index{StatusCommandTest@{StatusCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!StatusCommandTest@{StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classStatusCommandTest_ae506c0d397d564d8a6251daf19e40343} 
+void Status\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test directory in the temporary location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & The relative path/name of the directory. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStatusCommandTest_a8587508fb0b6d664f65104295a92e427}\index{StatusCommandTest@{StatusCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!StatusCommandTest@{StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classStatusCommandTest_a8587508fb0b6d664f65104295a92e427} 
+void Status\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test file with specified content in the temporary directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The relative path/name of the file. \\
+\hline
+{\em content} & The content to write to the file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStatusCommandTest_a4b64e9ceee859f30dba84fb78e34c515}\index{StatusCommandTest@{StatusCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!StatusCommandTest@{StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classStatusCommandTest_a4b64e9ceee859f30dba84fb78e34c515} 
+void Status\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Sets up the testing environment before each test. 
+
+Initializes components, creates the temporary directory, and initializes the repository. \Hypertarget{classStatusCommandTest_a84af63358f1e67af9e3793c76ea9c63c}\index{StatusCommandTest@{StatusCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!StatusCommandTest@{StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classStatusCommandTest_a84af63358f1e67af9e3793c76ea9c63c} 
+void Status\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & A vector of file names to stage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStatusCommandTest_ac424b312832d960ba08cf0e4b4c4a6d1}\index{StatusCommandTest@{StatusCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!StatusCommandTest@{StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classStatusCommandTest_ac424b312832d960ba08cf0e4b4c4a6d1} 
+void Status\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Tears down the testing environment after each test. 
+
+Cleans up the temporary directory and restores the working path. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntStatusCommandTest_8hxx}{Int\+Status\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntStatusCommandTest_8cxx}{Int\+Status\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

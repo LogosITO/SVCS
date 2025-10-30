@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['debug_0',['DEBUG',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15',1,'Logger.hxx']]],
-  ['deleted_1',['DELETED',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40ca63c2867fdcae0e8e8413d7ac21b69b59',1,'AddCommand.hxx']]]
+  ['commit_5fcreated_0',['COMMIT_CREATED',['../structEvent.html#a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c',1,'Event']]]
 ];

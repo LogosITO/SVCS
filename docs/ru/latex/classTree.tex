@@ -1,0 +1,218 @@
+\doxysection{Класс Tree}
+\hypertarget{classTree}{}\label{classTree}\index{Tree@{Tree}}
+
+
+Представляет состояние директории в СКВ, реализуя контракт \doxylink{classVcsObject}{Vcs\+Object}.  
+
+
+
+
+{\ttfamily \#include $<$Tree.\+hxx$>$}
+
+Граф наследования\+:Tree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTree}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTree_af660984821d0ae2f73725ee33c73ad20}{Tree}} (std\+::vector$<$ \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} $>$ entries)
+\begin{DoxyCompactList}\small\item\em Конструктор для объекта \doxylink{classTree}{Tree}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTree_a9b3870b1189b06efecd0a56aad4e467e}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Возвращает тип объекта СКВ. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTree_aae4f965e5566b0addf5467ba5db10e3f}{serialize}} () const override
+\begin{DoxyCompactList}\small\item\em Сериализует содержимое \doxylink{classTree}{Tree} в стандартизированный строковый формат для хеширования и хранения. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTree_a772b4bcfb5e44dda6a9ede2470d23250}{add\+Entry}} (const \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \&entry)
+\begin{DoxyCompactList}\small\item\em Добавляет новую запись в \doxylink{classTree}{Tree} или обновляет существующую запись, если имя совпадает. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTree_a85035a45ff8778df5bb8be32f57bf232}{remove\+Entry}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Удаляет запись (файл или поддиректорию) из \doxylink{classTree}{Tree} по имени. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} $>$ \mbox{\hyperlink{classTree_a944fe0075293396036606f6a999643f4}{find\+Entry}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Ищет конкретную запись внутри \doxylink{classTree}{Tree} по имени. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} $>$ \& \mbox{\hyperlink{classTree_a57ecc3c34be17f9e349ef386223eead8}{get\+Entries}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает список записей, хранящихся в \doxylink{classTree}{Tree}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию. Требуется для производных классов. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVcsObject_af2840ade6006e4d64eb6bd9f15b37539}{Vcs\+Object}} (const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Конструктор копирования. Требуется для производных классов для корректного копирования hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVcsObject_a866849775b4541573b40b2b85be20df5}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a0e8cd703d917813ca43d4b0622c70bdd}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает уникальный хеш-\/идентификатор объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classTree}{Tree}} \mbox{\hyperlink{classTree_a85166cfd9d904644216cdacb0b4b7d54}{deserialize}} (const std\+::string \&raw\+\_\+content)
+\begin{DoxyCompactList}\small\item\em Создает объект \doxylink{classTree}{Tree} из сериализованной строки, прочитанной из базы данных объектов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые статические члены унаследованные от \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classVcsObject_a73ec7fbaac32df9c4570de02b8bda56f}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Вычисляет SHA-\/256 хеш для заданного канонического содержимого. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Защищенные члены унаследованные от \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Вычисляет криптографический хеш-\/идентификатор для содержимого объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a6c9fd4ab39bb9781c5399da07305d28d}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Уникальный криптографический хеш-\/идентификатор (например, SHA-\/256) для этого объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Представляет состояние директории в СКВ, реализуя контракт \doxylink{classVcsObject}{Vcs\+Object}. 
+
+Хранит коллекцию объектов \doxylink{structTreeEntry}{Tree\+Entry}, эффективно отображая имена на хеш-\/указатели. 
+
+\label{doc-constructors}
+\Hypertarget{classTree_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classTree_af660984821d0ae2f73725ee33c73ad20}\index{Tree@{Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{Tree()}{Tree()}}
+{\footnotesize\ttfamily \label{classTree_af660984821d0ae2f73725ee33c73ad20} 
+Tree\+::\+Tree (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} $>$}]{entries}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор для объекта \doxylink{classTree}{Tree}. 
+
+Конструктор должен внутренне отсортировать записи перед вызовом \doxylink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{compute\+Hash()}. 
+\begin{DoxyParams}{Аргументы}
+{\em entries} & Коллекция структур \doxylink{structTreeEntry}{Tree\+Entry}, представляющих содержимое директории. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classTree_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classTree_a772b4bcfb5e44dda6a9ede2470d23250}\index{Tree@{Tree}!addEntry@{addEntry}}
+\index{addEntry@{addEntry}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{addEntry()}{addEntry()}}
+{\footnotesize\ttfamily \label{classTree_a772b4bcfb5e44dda6a9ede2470d23250} 
+void Tree\+::add\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \&}]{entry}{}\end{DoxyParamCaption})}
+
+
+
+Добавляет новую запись в \doxylink{classTree}{Tree} или обновляет существующую запись, если имя совпадает. 
+
+Если список записей изменен, хеш \doxylink{classTree}{Tree} становится недействительным и должен быть пересчитан перед сохранением. 
+\begin{DoxyParams}{Аргументы}
+{\em entry} & Запись \doxylink{structTreeEntry}{Tree\+Entry} для добавления или обновления. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTree_a85166cfd9d904644216cdacb0b4b7d54}\index{Tree@{Tree}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{classTree_a85166cfd9d904644216cdacb0b4b7d54} 
+\mbox{\hyperlink{classTree}{Tree}} Tree\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+\_\+content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Создает объект \doxylink{classTree}{Tree} из сериализованной строки, прочитанной из базы данных объектов. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em raw\+\_\+content} & Сериализованные строковые данные, обычно прочитанные из распакованного файла объекта. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+\doxylink{classTree}{Tree} Полностью восстановленный объект \doxylink{classTree}{Tree}. 
+\end{DoxyReturn}
+\Hypertarget{classTree_a944fe0075293396036606f6a999643f4}\index{Tree@{Tree}!findEntry@{findEntry}}
+\index{findEntry@{findEntry}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{findEntry()}{findEntry()}}
+{\footnotesize\ttfamily \label{classTree_a944fe0075293396036606f6a999643f4} 
+std\+::optional$<$ \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} $>$ Tree\+::find\+Entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Ищет конкретную запись внутри \doxylink{classTree}{Tree} по имени. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя записи для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::optional$<$\+Tree\+Entry$>$ Опциональное значение, содержащее запись, если найдена, иначе пустое. 
+\end{DoxyReturn}
+\Hypertarget{classTree_a57ecc3c34be17f9e349ef386223eead8}\index{Tree@{Tree}!getEntries@{getEntries}}
+\index{getEntries@{getEntries}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{getEntries()}{getEntries()}}
+{\footnotesize\ttfamily \label{classTree_a57ecc3c34be17f9e349ef386223eead8} 
+const std\+::vector$<$ \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} $>$ \& Tree\+::get\+Entries (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Возвращает список записей, хранящихся в \doxylink{classTree}{Tree}. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::vector$<$\+Tree\+Entry$>$\& Константная ссылка на внутренний вектор записей. 
+\end{DoxyReturn}
+\Hypertarget{classTree_a9b3870b1189b06efecd0a56aad4e467e}\index{Tree@{Tree}!getType@{getType}}
+\index{getType@{getType}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classTree_a9b3870b1189b06efecd0a56aad4e467e} 
+std\+::string Tree\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Возвращает тип объекта СКВ. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Всегда возвращает "{}tree"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classVcsObject_a6997c320772a504fc61a986f6e8f9ff7}{Vcs\+Object}}.
+
+\Hypertarget{classTree_a85035a45ff8778df5bb8be32f57bf232}\index{Tree@{Tree}!removeEntry@{removeEntry}}
+\index{removeEntry@{removeEntry}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{removeEntry()}{removeEntry()}}
+{\footnotesize\ttfamily \label{classTree_a85035a45ff8778df5bb8be32f57bf232} 
+bool Tree\+::remove\+Entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Удаляет запись (файл или поддиректорию) из \doxylink{classTree}{Tree} по имени. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя записи для удаления. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True, если запись найдена и удалена, иначе false. 
+\end{DoxyReturn}
+\Hypertarget{classTree_aae4f965e5566b0addf5467ba5db10e3f}\index{Tree@{Tree}!serialize@{serialize}}
+\index{serialize@{serialize}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classTree_aae4f965e5566b0addf5467ba5db10e3f} 
+std\+::string Tree\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Сериализует содержимое \doxylink{classTree}{Tree} в стандартизированный строковый формат для хеширования и хранения. 
+
+Сериализация должна гарантировать, что записи отсортированы для обеспечения согласованности хеша. \begin{DoxyReturn}{Возвращает}
+std\+::string Стандартизированная, сериализованная структура директории. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7}{Vcs\+Object}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Tree_8hxx}{Tree.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Tree_8cxx}{Tree.\+cxx}}\end{DoxyCompactItemize}

@@ -1,14 +1,21 @@
 /**
  * @file InitCommandIntegrationTest.hxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Declaration of the test fixture for InitCommand integration tests.
- * * This fixture sets up an isolated environment with a temporary directory 
+ * @details This fixture sets up an isolated environment with a temporary directory
  * and uses the real RepositoryManager to verify end-to-end repository initialization.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Объявление тестового фикстура для интеграционных тестов InitCommand.
+ * @details Этот фикстур настраивает изолированное окружение с временной директорией
+ * и использует реальный RepositoryManager для проверки сквозной инициализации репозитория.
  */
 
-#pragma once 
+#pragma once
 
 #include "../../../core/include/RepositoryManager.hxx"
 #include "../../../cli/include/InitCommand.hxx"
@@ -17,36 +24,81 @@
 #include <gtest/gtest.h>
 
 /**
+ * @english
+ * @class InitCommandIntegrationTest
  * @brief Test fixture for InitCommand integration tests.
- * * Manages the setup and teardown of a temporary, isolated directory on the filesystem 
- * for each test case. It uses the real RepositoryManager to test actual repository 
+ * @details Manages the setup and teardown of a temporary, isolated directory on the filesystem
+ * for each test case. It uses the real RepositoryManager to test actual repository
  * creation logic and a MockSubject to verify event publications.
+ * @ingroup IntegrationTests
+ *
+ * @russian
+ * @class InitCommandIntegrationTest
+ * @brief Тестовый фикстур для интеграционных тестов InitCommand.
+ * @details Управляет настройкой и очисткой временной изолированной директории в файловой системе
+ * для каждого тестового случая. Использует реальный RepositoryManager для тестирования фактической
+ * логики создания репозитория и MockSubject для проверки публикации событий.
  * @ingroup IntegrationTests
  */
 class InitCommandIntegrationTest : public ::testing::Test {
 protected:
-    /** @brief Mock event bus for capturing system notifications. */
+    /**
+     * @english
+     * @brief Mock event bus for capturing system notifications.
+     *
+     * @russian
+     * @brief Mock шина событий для захвата системных уведомлений.
+     */
     std::shared_ptr<MockSubject> mockEventBus;
-    
-    /** @brief Real RepositoryManager instance under test. */
+
+    /**
+     * @english
+     * @brief Real RepositoryManager instance under test.
+     *
+     * @russian
+     * @brief Реальный экземпляр RepositoryManager под тестом.
+     */
     std::shared_ptr<RepositoryManager> repoManager;
-    
-    /** @brief InitCommand instance under test. */
+
+    /**
+     * @english
+     * @brief InitCommand instance under test.
+     *
+     * @russian
+     * @brief Экземпляр InitCommand под тестом.
+     */
     std::unique_ptr<InitCommand> command;
-    
-    /** @brief Path to the temporary directory created for the test. */
+
+    /**
+     * @english
+     * @brief Path to the temporary directory created for the test.
+     *
+     * @russian
+     * @brief Путь к временной директории, созданной для теста.
+     */
     std::filesystem::path testDir;
 
     /**
+     * @english
      * @brief Sets up the test environment.
-     * * Creates a unique temporary directory, changes the current path to it, 
+     * @details Creates a unique temporary directory, changes the current path to it,
      * and initializes the RepositoryManager and InitCommand.
+     *
+     * @russian
+     * @brief Настраивает тестовое окружение.
+     * @details Создает уникальную временную директорию, изменяет текущий путь на нее
+     * и инициализирует RepositoryManager и InitCommand.
      */
     void SetUp() override;
 
     /**
+     * @english
      * @brief Tears down the test environment.
-     * * Restores the original current path and recursively removes the temporary directory.
+     * @details Restores the original current path and recursively removes the temporary directory.
+     *
+     * @russian
+     * @brief Очищает тестовое окружение.
+     * @details Восстанавливает оригинальный текущий путь и рекурсивно удаляет временную директорию.
      */
     void TearDown() override;
 };

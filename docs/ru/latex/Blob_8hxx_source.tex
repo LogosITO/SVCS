@@ -1,0 +1,27 @@
+\doxysection{Blob.\+hxx}
+\hypertarget{Blob_8hxx_source}{}\label{Blob_8hxx_source}\index{core/include/Blob.hxx@{core/include/Blob.hxx}}
+\mbox{\hyperlink{Blob_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VcsObject_8hxx}{VcsObject.hxx}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBlob_ae99377ce893ac26195a4c4578167f976}{Blob}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classVcsObject_a58691887a54d3d632038cacb36034075}{VcsObject}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ data;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classBlob_ae99377ce893ac26195a4c4578167f976}{Blob}}(std::string\ \ raw\_data);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ VcsObject\ overrides}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00072\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classBlob_ac493b1634f088e53d436ba808ba02e86}{getType}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00084\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classBlob_acab4226b36adcfa257c94b96b40c3510}{serialize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00095\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classBlob_aef90cffb1d8d5492b73ac330ac933006}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \};}
+
+\end{DoxyCode}

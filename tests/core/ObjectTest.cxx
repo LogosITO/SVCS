@@ -1,8 +1,14 @@
 /**
- * @file object_test.cxx
+ * @file ObjectTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for the core hashing logic of the VcsObject abstract base class.
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для основной логики хэширования абстрактного базового класса VcsObject.
  */
 
 #include "../../core/include/VcsObject.hxx"

@@ -1,0 +1,25 @@
+\doxysection{Файл core/include/\+Commit.hxx}
+\hypertarget{Commit_8hxx}{}\label{Commit_8hxx}\index{core/include/Commit.hxx@{core/include/Commit.hxx}}
+
+
+Определяет класс \doxylink{classCommit}{Commit}, представляющий постоянный снимок в истории СКВ.  
+
+
+{\ttfamily \#include "{}Vcs\+Object.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCommit}{Commit}}
+\begin{DoxyCompactList}\small\item\em Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Определяет класс \doxylink{classCommit}{Commit}, представляющий постоянный снимок в истории СКВ. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Объект \doxylink{classCommit}{Commit} связывает объект \doxylink{classTree}{Tree} (состояние репозитория) с родительскими коммитами и основными метаданными, такими как автор, временная метка и сообщение коммита, формируя основу истории проекта. 

@@ -1,0 +1,189 @@
+\doxysection{Vcs\+Object Class Reference}
+\hypertarget{classVcsObject}{}\label{classVcsObject}\index{VcsObject@{VcsObject}}
+
+
+Abstract base class representing any storable, addressable object within the VCS.  
+
+
+
+
+{\ttfamily \#include $<$Vcs\+Object.\+hxx$>$}
+
+Inheritance diagram for Vcs\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVcsObject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVcsObject_a58691887a54d3d632038cacb36034075}\label{classVcsObject_a58691887a54d3d632038cacb36034075} 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. Required for derived classes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVcsObject_af2840ade6006e4d64eb6bd9f15b37539}{Vcs\+Object}} (const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. Required for derived classes to correctly copy the hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVcsObject_a866849775b4541573b40b2b85be20df5}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7}{serialize}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to serialize the object\textquotesingle{}s core data. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classVcsObject_a6997c320772a504fc61a986f6e8f9ff7}{get\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to get the type of the VCS object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a0e8cd703d917813ca43d4b0622c70bdd}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Returns the unique hash identifier of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classVcsObject_a73ec7fbaac32df9c4570de02b8bda56f}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Calculates SHA-\/256 hash for given canonical content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Computes the cryptographic hash ID for the object\textquotesingle{}s content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a6c9fd4ab39bb9781c5399da07305d28d}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em The unique cryptographic hash identifier (e.\+g., SHA-\/256) for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing any storable, addressable object within the VCS. 
+
+\doxylink{classVcsObject}{Vcs\+Object} enforces the mandatory presence of a hash ID, serialization logic, and type identification for all derived classes. It serves as the core domain entity for the object database. 
+
+\label{doc-constructors}
+\Hypertarget{classVcsObject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVcsObject_af2840ade6006e4d64eb6bd9f15b37539}\index{VcsObject@{VcsObject}!VcsObject@{VcsObject}}
+\index{VcsObject@{VcsObject}!VcsObject@{VcsObject}}
+\doxysubsubsection{\texorpdfstring{VcsObject()}{VcsObject()}}
+{\footnotesize\ttfamily \label{classVcsObject_af2840ade6006e4d64eb6bd9f15b37539} 
+Vcs\+Object\+::\+Vcs\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. Required for derived classes to correctly copy the hash\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{classVcsObject}{Vcs\+Object} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classVcsObject_a866849775b4541573b40b2b85be20df5}\index{VcsObject@{VcsObject}!````~VcsObject@{\texorpdfstring{$\sim$}{\string~}VcsObject}}
+\index{````~VcsObject@{\texorpdfstring{$\sim$}{\string~}VcsObject}!VcsObject@{VcsObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VcsObject()}{\string~VcsObject()}}
+{\footnotesize\ttfamily \label{classVcsObject_a866849775b4541573b40b2b85be20df5} 
+virtual Vcs\+Object\+::\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Ensures proper cleanup when deleting derived objects via a base class pointer. 
+
+\label{doc-func-members}
+\Hypertarget{classVcsObject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVcsObject_a73ec7fbaac32df9c4570de02b8bda56f}\index{VcsObject@{VcsObject}!calculateHash@{calculateHash}}
+\index{calculateHash@{calculateHash}!VcsObject@{VcsObject}}
+\doxysubsubsection{\texorpdfstring{calculateHash()}{calculateHash()}}
+{\footnotesize\ttfamily \label{classVcsObject_a73ec7fbaac32df9c4570de02b8bda56f} 
+std\+::string Vcs\+Object\+::calculate\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates SHA-\/256 hash for given canonical content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Git-\/format object content (header + raw\+\_\+data). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Calculated 64-\/character hash. 
+\end{DoxyReturn}
+\Hypertarget{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}\index{VcsObject@{VcsObject}!computeHash@{computeHash}}
+\index{computeHash@{computeHash}!VcsObject@{VcsObject}}
+\doxysubsubsection{\texorpdfstring{computeHash()}{computeHash()}}
+{\footnotesize\ttfamily \label{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0} 
+void Vcs\+Object\+::compute\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Computes the cryptographic hash ID for the object\textquotesingle{}s content. 
+
+This method should prepend the object\textquotesingle{}s type and content length (Git-\/style) before hashing the full content and setting the internal hash\+\_\+id. 
+\begin{DoxyParams}{Parameters}
+{\em content} & The serialized string data of the object (usually returned by \doxylink{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7}{serialize()}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classVcsObject_a0e8cd703d917813ca43d4b0622c70bdd}\index{VcsObject@{VcsObject}!getHashId@{getHashId}}
+\index{getHashId@{getHashId}!VcsObject@{VcsObject}}
+\doxysubsubsection{\texorpdfstring{getHashId()}{getHashId()}}
+{\footnotesize\ttfamily \label{classVcsObject_a0e8cd703d917813ca43d4b0622c70bdd} 
+std\+::string Vcs\+Object\+::get\+Hash\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the unique hash identifier of the object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The cryptographic hash ID. 
+\end{DoxyReturn}
+\Hypertarget{classVcsObject_a6997c320772a504fc61a986f6e8f9ff7}\index{VcsObject@{VcsObject}!getType@{getType}}
+\index{getType@{getType}!VcsObject@{VcsObject}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classVcsObject_a6997c320772a504fc61a986f6e8f9ff7} 
+virtual std\+::string Vcs\+Object\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method to get the type of the VCS object. 
+
+This is crucial for object storage and reconstruction (e.\+g., "{}commit"{}, "{}blob"{}, "{}tree"{}). \begin{DoxyReturn}{Returns}
+std\+::string The type identifier of the object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBlob_ac493b1634f088e53d436ba808ba02e86}{Blob}}, \mbox{\hyperlink{classCommit_a213b92691c2dae9e7ae7862eb9c369df}{Commit}}, \mbox{\hyperlink{classTestableObject_a89133227b30cea6642769a8cad7c1375}{Testable\+Object}}, and \mbox{\hyperlink{classTree_a9b3870b1189b06efecd0a56aad4e467e}{Tree}}.
+
+\Hypertarget{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7}\index{VcsObject@{VcsObject}!serialize@{serialize}}
+\index{serialize@{serialize}!VcsObject@{VcsObject}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7} 
+virtual std\+::string Vcs\+Object\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method to serialize the object\textquotesingle{}s core data. 
+
+The returned string content is what will be hashed and stored in the database. \begin{DoxyReturn}{Returns}
+std\+::string The standardized, serialized data of the object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBlob_acab4226b36adcfa257c94b96b40c3510}{Blob}}, \mbox{\hyperlink{classCommit_a53f442e035ddbdb18d0635bbac2709b5}{Commit}}, \mbox{\hyperlink{classTestableObject_ae79c1d60869dedd6c298a56e8e9f2309}{Testable\+Object}}, and \mbox{\hyperlink{classTree_aae4f965e5566b0addf5467ba5db10e3f}{Tree}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classVcsObject_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classVcsObject_a6c9fd4ab39bb9781c5399da07305d28d}\index{VcsObject@{VcsObject}!hash\_id@{hash\_id}}
+\index{hash\_id@{hash\_id}!VcsObject@{VcsObject}}
+\doxysubsubsection{\texorpdfstring{hash\_id}{hash\_id}}
+{\footnotesize\ttfamily \label{classVcsObject_a6c9fd4ab39bb9781c5399da07305d28d} 
+std\+::string Vcs\+Object\+::hash\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The unique cryptographic hash identifier (e.\+g., SHA-\/256) for this object. 
+
+Protected to allow internal setting via \doxylink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{compute\+Hash()} but prevent external modification. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{VcsObject_8hxx}{Vcs\+Object.\+hxx}}\item 
+core/src/Vcs\+Object.\+cxx\end{DoxyCompactItemize}

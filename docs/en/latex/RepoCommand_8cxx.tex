@@ -1,0 +1,25 @@
+\doxysection{server/src/\+Repo\+Command.cxx File Reference}
+\hypertarget{RepoCommand_8cxx}{}\label{RepoCommand_8cxx}\index{server/src/RepoCommand.cxx@{server/src/RepoCommand.cxx}}
+
+
+Implementation of the \doxylink{classRepoCommand}{Repo\+Command} class for managing remote configurations.  
+
+
+{\ttfamily \#include "{}../include/\+Repo\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classRepoCommand}{Repo\+Command} class for managing remote configurations. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This file implements the concrete logic for the "{}svcs repo"{} command. It primarily delegates its core functionality—adding, removing, renaming, and listing remotes— to the \doxylink{classRemoteManager}{Remote\+Manager} class. The implementation includes\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{\doxylink{classRepository}{Repository} Context Check}}\+: Ensures the command is run inside an initialized SVCS repository.
+\item {\bfseries{Subcommand Dispatch}}\+: Parses the first argument to determine which handler ({\ttfamily handle\+Add}, {\ttfamily handle\+Remove}, etc.) to call.
+\item {\bfseries{Argument Validation}}\+: Performs specific argument count checks for each subcommand.
+\item {\bfseries{User Output}}\+: Directly prints confirmation messages ({\ttfamily std\+::cout}) or uses the \doxylink{classISubject}{ISubject} event bus for errors and informational messages. 
+\end{DoxyEnumerate}

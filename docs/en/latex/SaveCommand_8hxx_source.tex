@@ -1,0 +1,46 @@
+\doxysection{Save\+Command.\+hxx}
+\hypertarget{SaveCommand_8hxx_source}{}\label{SaveCommand_8hxx_source}\index{cli/include/SaveCommand.hxx@{cli/include/SaveCommand.hxx}}
+\mbox{\hyperlink{SaveCommand_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{ICommand.hxx}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSaveCommand_a6a33ae3a66e6de40b4d58b13223460a2}{SaveCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classSaveCommand_a6a33ae3a66e6de40b4d58b13223460a2}{SaveCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSaveCommand_a813b7d30d64cd3c3c09822ba4ff9ab18}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00091\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classSaveCommand_a321fd9d2886313df9539b483c5441e1a}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}save"{}};\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00102\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classSaveCommand_a03f7a93a180bbf0deb017d13127168ea}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00113\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classSaveCommand_a0c5f57f088edabb3ba4e15e6b12fcc7d}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSaveCommand_ac05d0595300a110c9dcc0e24638c33c1}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00136\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ parseMessage(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00149\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ validateMessage(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00160\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ hasStagedChanges()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00173\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ createSavePoint(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00174\ \};}
+
+\end{DoxyCode}

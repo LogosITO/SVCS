@@ -1,0 +1,162 @@
+\doxysection{Clear\+Command Class Reference}
+\hypertarget{classClearCommand}{}\label{classClearCommand}\index{ClearCommand@{ClearCommand}}
+
+
+Command for removing SVCS repository structure.  
+
+
+
+
+{\ttfamily \#include $<$Clear\+Command.\+hxx$>$}
+
+Inheritance diagram for Clear\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classClearCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClearCommand_a4bf463b32c04877d6e906acd0f227327}{Clear\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classClearCommand}{Clear\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classClearCommand_a9a6dfeec2af7b10ed370b34ba898a480}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the clear command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classClearCommand_a6fa0a9276ccbe430e9d9d72ce751c45e}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classClearCommand_ab06756efe5a274e3877609823c11fd29}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classClearCommand_a97bfb2c60605ba5bd922b04478fafa9e}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the usage syntax of the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClearCommand_a73a9824cb6c0c1bec56362ac6c7bed21}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Shows detailed help information for this command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command for removing SVCS repository structure. 
+
+The \doxylink{classClearCommand}{Clear\+Command} safely removes the .svcs directory and all repository data. 
+
+\label{doc-constructors}
+\Hypertarget{classClearCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classClearCommand_a4bf463b32c04877d6e906acd0f227327}\index{ClearCommand@{ClearCommand}!ClearCommand@{ClearCommand}}
+\index{ClearCommand@{ClearCommand}!ClearCommand@{ClearCommand}}
+\doxysubsubsection{\texorpdfstring{ClearCommand()}{ClearCommand()}}
+{\footnotesize\ttfamily \label{classClearCommand_a4bf463b32c04877d6e906acd0f227327} 
+Clear\+Command\+::\+Clear\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{classClearCommand}{Clear\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & Shared pointer to the event bus for notifications. \\
+\hline
+{\em repo\+Manager} & Shared pointer to the repository manager. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classClearCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classClearCommand_a9a6dfeec2af7b10ed370b34ba898a480}\index{ClearCommand@{ClearCommand}!execute@{execute}}
+\index{execute@{execute}!ClearCommand@{ClearCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classClearCommand_a9a6dfeec2af7b10ed370b34ba898a480} 
+bool Clear\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the clear command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Command arguments (--force to skip confirmation). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if clear succeeded, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classClearCommand_ab06756efe5a274e3877609823c11fd29}\index{ClearCommand@{ClearCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!ClearCommand@{ClearCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classClearCommand_ab06756efe5a274e3877609823c11fd29} 
+std\+::string Clear\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the description of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Remove SVCS repository from current directory"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classClearCommand_a6fa0a9276ccbe430e9d9d72ce751c45e}\index{ClearCommand@{ClearCommand}!getName@{getName}}
+\index{getName@{getName}!ClearCommand@{ClearCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classClearCommand_a6fa0a9276ccbe430e9d9d72ce751c45e} 
+std\+::string Clear\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}clear"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classClearCommand_a97bfb2c60605ba5bd922b04478fafa9e}\index{ClearCommand@{ClearCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!ClearCommand@{ClearCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classClearCommand_a97bfb2c60605ba5bd922b04478fafa9e} 
+std\+::string Clear\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the usage syntax of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}svcs clear \mbox{[}-\/-\/force\mbox{]}"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classClearCommand_a73a9824cb6c0c1bec56362ac6c7bed21}\index{ClearCommand@{ClearCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!ClearCommand@{ClearCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classClearCommand_a73a9824cb6c0c1bec56362ac6c7bed21} 
+void Clear\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Shows detailed help information for this command. 
+
+
+
+Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{ClearCommand_8hxx}{Clear\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{ClearCommand_8cxx}{Clear\+Command.\+cxx}}\end{DoxyCompactItemize}

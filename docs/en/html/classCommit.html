@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Commit Class Reference</title>
+<title>SVCS - English Documentation: Commit Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -110,6 +108,9 @@ Inheritance diagram for Commit:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a201c5f3c2f29a4db8e40e69d55b2fa1f" id="r_a201c5f3c2f29a4db8e40e69d55b2fa1f"><td class="memItemLeft" align="right" valign="top"><a id="a201c5f3c2f29a4db8e40e69d55b2fa1f" name="a201c5f3c2f29a4db8e40e69d55b2fa1f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Commit</b> ()</td></tr>
+<tr class="memdesc:a201c5f3c2f29a4db8e40e69d55b2fa1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
 <tr class="memitem:aa8cbe918dbe5f319752284ef39f3adb3" id="r_aa8cbe918dbe5f319752284ef39f3adb3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8cbe918dbe5f319752284ef39f3adb3">Commit</a> (std::string thash, std::vector&lt; std::string &gt; phashes, std::string auth, std::string msg, std::time_t tstamp=std::time(nullptr))</td></tr>
 <tr class="memdesc:aa8cbe918dbe5f319752284ef39f3adb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main constructor for the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> object.  <br /></td></tr>
 <tr class="memitem:a213b92691c2dae9e7ae7862eb9c369df" id="r_a213b92691c2dae9e7ae7862eb9c369df"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a213b92691c2dae9e7ae7862eb9c369df">getType</a> () const override</td></tr>
@@ -126,23 +127,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a68c3572fa2fdb3a182da27acae0adc69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the UNIX timestamp of the commit creation.  <br /></td></tr>
 <tr class="memitem:a341a1826cec171e37a95f0317183ea5d" id="r_a341a1826cec171e37a95f0317183ea5d"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a341a1826cec171e37a95f0317183ea5d">getMessage</a> () const</td></tr>
 <tr class="memdesc:a341a1826cec171e37a95f0317183ea5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the user-defined commit message.  <br /></td></tr>
-<tr class="memitem:ae75dbe7170f17040ae69f084a36fadf7" id="r_ae75dbe7170f17040ae69f084a36fadf7"><td class="memItemLeft" align="right" valign="top"><a id="ae75dbe7170f17040ae69f084a36fadf7" name="ae75dbe7170f17040ae69f084a36fadf7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMessage</b> (const std::string &amp;msg)</td></tr>
-<tr class="memitem:a884794e13b9df7e9d6a416c0d69de0ff" id="r_a884794e13b9df7e9d6a416c0d69de0ff"><td class="memItemLeft" align="right" valign="top"><a id="a884794e13b9df7e9d6a416c0d69de0ff" name="a884794e13b9df7e9d6a416c0d69de0ff"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimestamp</b> (std::time_t tstamp)</td></tr>
+<tr class="memitem:ae75dbe7170f17040ae69f084a36fadf7" id="r_ae75dbe7170f17040ae69f084a36fadf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae75dbe7170f17040ae69f084a36fadf7">setMessage</a> (const std::string &amp;msg)</td></tr>
+<tr class="memdesc:ae75dbe7170f17040ae69f084a36fadf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the commit message.  <br /></td></tr>
+<tr class="memitem:a884794e13b9df7e9d6a416c0d69de0ff" id="r_a884794e13b9df7e9d6a416c0d69de0ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a884794e13b9df7e9d6a416c0d69de0ff">setTimestamp</a> (std::time_t tstamp)</td></tr>
+<tr class="memdesc:a884794e13b9df7e9d6a416c0d69de0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the commit timestamp.  <br /></td></tr>
 <tr class="memitem:a9f8351b67005ad46e2bbd2671f5985f0" id="r_a9f8351b67005ad46e2bbd2671f5985f0"><td class="memItemLeft" align="right" valign="top"><a id="a9f8351b67005ad46e2bbd2671f5985f0" name="a9f8351b67005ad46e2bbd2671f5985f0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimestampNow</b> ()</td></tr>
-<tr class="memitem:a97cdf233fb1ad1fb766c016c1650c54c" id="r_a97cdf233fb1ad1fb766c016c1650c54c"><td class="memItemLeft" align="right" valign="top"><a id="a97cdf233fb1ad1fb766c016c1650c54c" name="a97cdf233fb1ad1fb766c016c1650c54c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setParent</b> (const std::string &amp;parent)</td></tr>
+<tr class="memdesc:a9f8351b67005ad46e2bbd2671f5985f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the commit timestamp to the current time. <br /></td></tr>
+<tr class="memitem:a97cdf233fb1ad1fb766c016c1650c54c" id="r_a97cdf233fb1ad1fb766c016c1650c54c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97cdf233fb1ad1fb766c016c1650c54c">setParent</a> (const std::string &amp;parent)</td></tr>
+<tr class="memdesc:a97cdf233fb1ad1fb766c016c1650c54c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a parent commit hash.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
 <tr class="memitem:a58691887a54d3d632038cacb36034075 inherit pub_methods_classVcsObject" id="r_a58691887a54d3d632038cacb36034075"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>VcsObject</b> ()=default</td></tr>
 <tr class="memdesc:a58691887a54d3d632038cacb36034075 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Required for derived classes. <br /></td></tr>
 <tr class="memitem:af2840ade6006e4d64eb6bd9f15b37539 inherit pub_methods_classVcsObject" id="r_af2840ade6006e4d64eb6bd9f15b37539"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#af2840ade6006e4d64eb6bd9f15b37539">VcsObject</a> (const <a class="el" href="classVcsObject.html">VcsObject</a> &amp;other)=default</td></tr>
 <tr class="memdesc:af2840ade6006e4d64eb6bd9f15b37539 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. Required for derived classes to correctly copy the hash_id.  <br /></td></tr>
-<tr class="memitem:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top">
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VcsObject</b> ()=default</td></tr>
-<tr class="memdesc:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. Ensures proper cleanup when deleting derived objects via a base class pointer. <br /></td></tr>
+<tr class="memitem:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject" id="r_a866849775b4541573b40b2b85be20df5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a866849775b4541573b40b2b85be20df5">~VcsObject</a> ()=default</td></tr>
+<tr class="memdesc:a866849775b4541573b40b2b85be20df5 inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 <tr class="memitem:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject" id="r_a0e8cd703d917813ca43d4b0622c70bdd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a0e8cd703d917813ca43d4b0622c70bdd">getHashId</a> () const</td></tr>
 <tr class="memdesc:a0e8cd703d917813ca43d4b0622c70bdd inherit pub_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique hash identifier of the object.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -152,7 +153,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0f37624e98ed1dc6404795756127be52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> object from a serialized string read from the object database.  <br /></td></tr>
 <tr class="inherit_header pub_static_methods_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
 <tr class="memitem:a73ec7fbaac32df9c4570de02b8bda56f inherit pub_static_methods_classVcsObject" id="r_a73ec7fbaac32df9c4570de02b8bda56f"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a73ec7fbaac32df9c4570de02b8bda56f">calculateHash</a> (const std::string &amp;content)</td></tr>
-<tr class="memdesc:a73ec7fbaac32df9c4570de02b8bda56f inherit pub_static_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет SHA-1 хеш для заданного канонического содержимого.  <br /></td></tr>
+<tr class="memdesc:a73ec7fbaac32df9c4570de02b8bda56f inherit pub_static_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates SHA-256 hash for given canonical content.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -160,15 +161,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pro_methods_classVcsObject" id="r_ae2b7544a63a2f0b1ef764dd4710a13e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0">computeHash</a> (const std::string &amp;content)</td></tr>
 <tr class="memdesc:ae2b7544a63a2f0b1ef764dd4710a13e0 inherit pro_methods_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cryptographic hash ID for the object's content.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_classVcsObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classVcsObject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classVcsObject.html">VcsObject</a></td></tr>
-<tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top">
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></td></tr>
-<tr class="memdesc:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique cryptographic hash identifier (e.g., SHA-256) for this object. Protected to allow internal setting via <a class="el" href="classVcsObject.html#ae2b7544a63a2f0b1ef764dd4710a13e0" title="Computes the cryptographic hash ID for the object&#39;s content.">computeHash()</a> but prevent external modification. <br /></td></tr>
+<tr class="memitem:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject" id="r_a6c9fd4ab39bb9781c5399da07305d28d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVcsObject.html#a6c9fd4ab39bb9781c5399da07305d28d">hash_id</a></td></tr>
+<tr class="memdesc:a6c9fd4ab39bb9781c5399da07305d28d inherit pro_attribs_classVcsObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique cryptographic hash identifier (e.g., SHA-256) for this object.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a single, immutable historical point (snapshot) in the repository's history. </p>
-<ul>
-<li>This object binds the content structure (<a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> hash) with the metadata (author, message, parent history). </li>
-</ul>
+<p>This object binds the content structure (<a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> hash) with the metadata (author, message, parent history). </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa8cbe918dbe5f319752284ef39f3adb3" name="aa8cbe918dbe5f319752284ef39f3adb3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8cbe918dbe5f319752284ef39f3adb3">&#9670;&#160;</a></span>Commit()</h2>
@@ -418,10 +416,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <p>Returns the type of the VCS object. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string Always returns "commit".   Pure virtual method to get the type of the VCS object.   </dd></dl>
-<ul>
-<li>This is crucial for object storage and reconstruction (e.g., "commit", "blob", "tree"). <dl class="section return"><dt>Returns</dt><dd>std::string The type identifier of the object.    </dd></dl>
-</li>
-</ul>
+<p>This is crucial for object storage and reconstruction (e.g., "commit", "blob", "tree"). </p><dl class="section return"><dt>Returns</dt><dd>std::string The type identifier of the object.    </dd></dl>
 
 <p>Implements <a class="el" href="classVcsObject.html#a6997c320772a504fc61a986f6e8f9ff7">VcsObject</a>.</p>
 
@@ -452,12 +447,84 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>hash_id</b></t
 
 <p>Serializes the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> metadata into a standardized, canonical format for hashing and storage. </p>
 <p>The serialized format includes key/value pairs (tree, parent, author) followed by the message. </p><dl class="section return"><dt>Returns</dt><dd>std::string The standardized, serialized commit data.   Pure virtual method to serialize the object's core data.   </dd></dl>
-<ul>
-<li>The returned string content is what will be hashed and stored in the database. <dl class="section return"><dt>Returns</dt><dd>std::string The standardized, serialized data of the object.    </dd></dl>
-</li>
-</ul>
+<p>The returned string content is what will be hashed and stored in the database. </p><dl class="section return"><dt>Returns</dt><dd>std::string The standardized, serialized data of the object.    </dd></dl>
 
 <p>Implements <a class="el" href="classVcsObject.html#a987c76bf8ad51d267297cc6ba7da1eb7">VcsObject</a>.</p>
+
+</div>
+</div>
+<a id="ae75dbe7170f17040ae69f084a36fadf7" name="ae75dbe7170f17040ae69f084a36fadf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae75dbe7170f17040ae69f084a36fadf7">&#9670;&#160;</a></span>setMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Commit::setMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the commit message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>The new commit message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a97cdf233fb1ad1fb766c016c1650c54c" name="a97cdf233fb1ad1fb766c016c1650c54c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97cdf233fb1ad1fb766c016c1650c54c">&#9670;&#160;</a></span>setParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Commit::setParent </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a parent commit hash. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent commit hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a884794e13b9df7e9d6a416c0d69de0ff" name="a884794e13b9df7e9d6a416c0d69de0ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a884794e13b9df7e9d6a416c0d69de0ff">&#9670;&#160;</a></span>setTimestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Commit::setTimestamp </td>
+          <td>(</td>
+          <td class="paramtype">std::time_t</td>          <td class="paramname"><span class="paramname"><em>tstamp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the commit timestamp. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tstamp</td><td>The new timestamp value. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -1,10 +1,14 @@
 /**
  * @file AddCommandTest.cxx
- * @brief Tests for the 'add' command (AddCommand) using Google Test.
- *
- * @copyright 
+ * @copyright
  * Copyright 2025 LogosITO
  * Licensed under MIT-License
+ *
+ * @english
+ * @brief Tests for the 'add' command (AddCommand) using Google Test.
+ *
+ * @russian
+ * @brief Тесты для команды 'add' (AddCommand) с использованием Google Test.
  */
 
 #include "mocks/MockSubject.hxx"

@@ -1,0 +1,63 @@
+\doxysection{Branch\+Manager\+::Branch Struct Reference}
+\hypertarget{structBranchManager_1_1Branch}{}\label{structBranchManager_1_1Branch}\index{BranchManager::Branch@{BranchManager::Branch}}
+
+
+Structure to hold the metadata for a single branch.  
+
+
+
+
+{\ttfamily \#include $<$Branch\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structBranchManager_1_1Branch_a3fdd98d5cdfe9166c7a95e65e0771c50}\label{structBranchManager_1_1Branch_a3fdd98d5cdfe9166c7a95e65e0771c50} 
+{\bfseries Branch} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBranchManager_1_1Branch_a6fd8961395157dd30c5d2ce2ab8da6bc}{Branch}} (std\+::string \mbox{\hyperlink{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}{name}}, std\+::string \mbox{\hyperlink{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}{head\+\_\+commit}}, bool \mbox{\hyperlink{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}{is\+\_\+current}}=false)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{structBranchManager_1_1Branch}{Branch} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}\label{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em The unique name of the branch. \end{DoxyCompactList}\item 
+\Hypertarget{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}\label{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8} 
+std\+::string {\bfseries head\+\_\+commit}
+\begin{DoxyCompactList}\small\item\em The hash of the latest commit on this branch. \end{DoxyCompactList}\item 
+\Hypertarget{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}\label{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2} 
+bool {\bfseries is\+\_\+current}
+\begin{DoxyCompactList}\small\item\em Flag indicating if this is the currently active branch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to hold the metadata for a single branch. 
+
+\label{doc-constructors}
+\Hypertarget{structBranchManager_1_1Branch_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structBranchManager_1_1Branch_a6fd8961395157dd30c5d2ce2ab8da6bc}\index{BranchManager::Branch@{BranchManager::Branch}!Branch@{Branch}}
+\index{Branch@{Branch}!BranchManager::Branch@{BranchManager::Branch}}
+\doxysubsubsection{\texorpdfstring{Branch()}{Branch()}}
+{\footnotesize\ttfamily \label{structBranchManager_1_1Branch_a6fd8961395157dd30c5d2ce2ab8da6bc} 
+Branch\+Manager\+::\+Branch\+::\+Branch (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{head\+\_\+commit}{, }\item[{bool}]{is\+\_\+current}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{structBranchManager_1_1Branch}{Branch} structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The branch name. \\
+\hline
+{\em head\+\_\+commit} & The hash of the commit this branch points to. \\
+\hline
+{\em is\+\_\+current} & Flag indicating if the branch is active. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{BranchManager_8hxx}{Branch\+Manager.\+hxx}}\end{DoxyCompactItemize}

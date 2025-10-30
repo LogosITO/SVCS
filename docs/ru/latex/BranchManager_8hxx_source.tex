@@ -1,0 +1,108 @@
+\doxysection{Branch\+Manager.\+hxx}
+\hypertarget{BranchManager_8hxx_source}{}\label{BranchManager_8hxx_source}\index{core/include/BranchManager.hxx@{core/include/BranchManager.hxx}}
+\mbox{\hyperlink{BranchManager_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBranchManager_a4f034befce006a84693d8ce6673805dc}{BranchManager}}\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBranchManager_1_1Branch_a3fdd98d5cdfe9166c7a95e65e0771c50}{Branch}}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}{name}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}{head\_commit}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}{is\_current}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBranchManager_1_1Branch_a3fdd98d5cdfe9166c7a95e65e0771c50}{Branch}}()\ :\ \mbox{\hyperlink{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}{name}}(\textcolor{stringliteral}{"{}"{}}),\ \mbox{\hyperlink{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}{head\_commit}}(\textcolor{stringliteral}{"{}"{}}),\ \mbox{\hyperlink{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}{is\_current}}(false)\ \{\}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBranchManager_1_1Branch_a3fdd98d5cdfe9166c7a95e65e0771c50}{Branch}}(std::string\ \ \mbox{\hyperlink{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}{name}},\ std::string\ \ \mbox{\hyperlink{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}{head\_commit}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}{is\_current}}\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}{name}}(std::move(\mbox{\hyperlink{structBranchManager_1_1Branch_a80e5e33b87462f64ab198ba86295aec3}{name}})),\ \mbox{\hyperlink{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}{head\_commit}}(std::move(\mbox{\hyperlink{structBranchManager_1_1Branch_a94b6bba7fbdaeec7576b86ce04fc07c8}{head\_commit}})),\ \mbox{\hyperlink{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}{is\_current}}(\mbox{\hyperlink{structBranchManager_1_1Branch_a24e9cf18a5f02f34ccb34119da97dea2}{is\_current}})\ \{\}}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classBranchManager_a4f034befce006a84693d8ce6673805dc}{BranchManager}}(std::shared\_ptr<ISubject>\ event\_bus);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBranchManager_a486a8fc23c1b1880fb12d864d5c7db0b}{createDefaultBranches}}();}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Public\ Branch\ Operations\ /\ Публичные\ операции\ с\ ветвями\ -\/-\/-\/}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_af601359cfb82389fb273c74af7820b2a}{createBranch}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_ab0982ccff90a6853cde203afd456320d}{createBranchFromCommit}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ commit\_hash);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00172\ \ \ \ \ std::string\ \mbox{\hyperlink{classBranchManager_af64f1afc8d0c6b4c4567c64254cfa91d}{getHeadCommit}}();}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_a429931c290ba31a4616832335d368c59}{deleteBranch}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ force\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_a32cb34d10f0c6075951fef6ae6e21dd9}{renameBranch}}(\textcolor{keyword}{const}\ std::string\&\ old\_name,\ \textcolor{keyword}{const}\ std::string\&\ new\_name);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_a6ad3b172ced1c0f427634998d700436d}{switchBranch}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Public\ Branch\ Queries\ /\ Публичные\ запросы\ о\ ветвях\ -\/-\/-\/}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00234\ \ \ \ \ std::vector<Branch>\ \mbox{\hyperlink{classBranchManager_a846faa415db0516c4eccda9f7ef3c316}{getAllBranches}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00245\ \ \ \ \ std::string\ \mbox{\hyperlink{classBranchManager_ad9f599e0b37e4319fef083063bc47883}{getCurrentBranch}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_a0cdd864c1c3ed12af16e77bf932e63ce}{updateBranchHead}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name,\ \textcolor{keyword}{const}\ std::string\&\ commit\_hash);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_a6d9226441cbc178c6afe0b957b50d406}{branchExists}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00286\ \ \ \ \ std::string\ \mbox{\hyperlink{classBranchManager_acd0aa8b6f71b83cc190081c1845e3284}{getBranchHead}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Public\ Utility\ Methods\ /\ Публичные\ служебные\ методы\ -\/-\/-\/}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_a2bed7bba95e0d75b22b5264c9058b600}{isValidBranchName}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchManager_ad43258d9fbf5987e44f51515d39a1211}{commitExists}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash);}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Private\ Persistence\ Methods\ /\ Приватные\ методы\ сохранения\ состояния\ -\/-\/-\/}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{void}\ loadBranches();}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{void}\ saveBranches();}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ saveBranchToFile(\textcolor{keyword}{const}\ std::string\ \&branch\_name,\ \textcolor{keyword}{const}\ std::string\ \&commit\_hash);}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ deleteBranchFile(\textcolor{keyword}{const}\ std::string\ \&branch\_name);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{void}\ loadCurrentBranch();}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordtype}{bool}\ saveCurrentBranch()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Private\ File\ System\ Abstraction\ Methods\ /\ Приватные\ методы\ абстракции\ файловой\ системы\ -\/-\/-\/}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ readFile(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ writeFile(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ content);}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ fileExists(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ createDirectory(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Private\ Path\ Generation\ Methods\ /\ Приватные\ методы\ генерации\ путей\ -\/-\/-\/}}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ getBranchesFilePath();}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ getHeadFilePath();}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ getBranchesDirectory();}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00475\ \ \ \ \ std::unordered\_map<std::string,\ Branch>\ branches;}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00484\ \ \ \ \ std::string\ current\_branch;}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00493\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus;}
+\DoxyCodeLine{00494\ \};}
+
+\end{DoxyCode}

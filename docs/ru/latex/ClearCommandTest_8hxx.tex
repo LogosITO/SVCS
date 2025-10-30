@@ -1,0 +1,26 @@
+\doxysection{Файл tests/cli/utils/\+Clear\+Command\+Test.hxx}
+\hypertarget{ClearCommandTest_8hxx}{}\label{ClearCommandTest_8hxx}\index{tests/cli/utils/ClearCommandTest.hxx@{tests/cli/utils/ClearCommandTest.hxx}}
+
+
+Объявление тестового фикстура для интеграционных тестов \doxylink{classClearCommand}{Clear\+Command}.  
+
+
+{\ttfamily \#include "{}../../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../../cli/include/\+Clear\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../mocks/\+Mock\+Subject.\+hxx"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classClearCommandTest}{Clear\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Тестовый фикстур для интеграционных тестов \doxylink{classClearCommand}{Clear\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Объявление тестового фикстура для интеграционных тестов \doxylink{classClearCommand}{Clear\+Command}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот фикстур настраивает изолированное окружение с временным репозиторием SVCS и обрабатывает перенаправление стандартного ввода ({\ttfamily std\+::cin}) для имитации подтверждения пользователем во время процесса очистки репозитория. 

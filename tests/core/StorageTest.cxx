@@ -1,8 +1,14 @@
 /**
- * @file storage_test.cxx
+ * @file StorageTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for the ObjectStorage class, verifying persistence, file path generation, compression, and object loading integrity for all VcsObject types (Blob, Tree, Commit).
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для класса ObjectStorage, проверяющие сохранение, генерацию путей файлов, сжатие и целостность загрузки объектов для всех типов VcsObject (Blob, Tree, Commit).
  */
 
 #include "../../core/include/ObjectStorage.hxx"

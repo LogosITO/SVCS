@@ -1,15 +1,14 @@
 /**
  * @file IntUndoCommandTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of integration tests for the UndoCommand class, focusing on forced operations.
  *
- * @details This file contains test cases that verify the 'svcs undo' command's 
- * behavior when the `--force` (`-f`) flag is used. The tests ensure that the 
- * command correctly skips the interactive confirmation prompt, delegates to the 
- * repository manager with the correct target (last commit or specified hash), 
- * and handles edge cases like the initial commit and invalid hashes.
- *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация интеграционных тестов для класса UndoCommand, сфокусированная на принудительных операциях.
  */
  
 #include "utils/IntUndoCommandTest.hxx"

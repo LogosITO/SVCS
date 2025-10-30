@@ -1,8 +1,14 @@
 /**
- * @file repository_test.cxx
+ * @file RepositoryTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for the Repository class, covering initialization, filesystem structure creation, and Subject/Observer pattern implementation.
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для класса Repository, охватывающие инициализацию, создание структуры файловой системы и реализацию шаблона Subject/Observer.
  */
 
 #include "../../core/include/Repository.hxx" 

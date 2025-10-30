@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: server/include/RemoteProtocol.hxx Source File</title>
+<title>SVCS - English Documentation: server/include/RemoteProtocol.hxx Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,103 +92,119 @@ $(function(){initNavTree('RemoteProtocol_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="RemoteProtocol_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../services/ISubject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="RepositoryManager_8hxx.html">../../core/include/RepositoryManager.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classRemoteProtocol.html">   33</a></span><span class="keyword">class </span><a class="code hl_function" href="classRemoteProtocol.html#ae13f8845715408297f5466fdcecce981">RemoteProtocol</a> {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classRemoteProtocol.html#ae13f8845715408297f5466fdcecce981">RemoteProtocol</a>(std::shared_ptr&lt;ISubject&gt; event_bus,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                   std::shared_ptr&lt;RepositoryManager&gt; repository_manager);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classRemoteProtocol.html#af00770931128eaaaf4b9bfc19ef73e69">   47</a></span>    <a class="code hl_function" href="classRemoteProtocol.html#af00770931128eaaaf4b9bfc19ef73e69">~RemoteProtocol</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRemoteProtocol.html#a54d6ce28df9c8a53e79908c038493372">handleReceivePack</a>();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRemoteProtocol.html#a67939ef40e01647387fc991cff543485">handleUploadPack</a>();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">bool</span> processPushNegotiation();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">bool</span> receiveObjects(<span class="keyword">const</span> std::unordered_set&lt;std::string&gt;&amp; wanted_objects);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">bool</span> updateReferences(<span class="keyword">const</span> std::vector&lt;std::pair&lt;std::string, std::string&gt;&gt;&amp; ref_updates);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordtype">bool</span> processPullNegotiation();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    std::unordered_set&lt;std::string&gt; findMissingObjects(<span class="keyword">const</span> std::unordered_set&lt;std::string&gt;&amp; client_has);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">bool</span> sendObjects(<span class="keyword">const</span> std::unordered_set&lt;std::string&gt;&amp; objects_to_send);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">bool</span> objectExists(<span class="keyword">const</span> std::string&amp; object_hash) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    std::string readObject(<span class="keyword">const</span> std::string&amp; object_hash) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">bool</span> writeObject(<span class="keyword">const</span> std::string&amp; object_hash, <span class="keyword">const</span> std::string&amp; object_data);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    std::unordered_set&lt;std::string&gt; getAllReferences() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">bool</span> updateReference(<span class="keyword">const</span> std::string&amp; ref_name, <span class="keyword">const</span> std::string&amp; new_hash);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../services/ISubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="RepositoryManager_8hxx.html">../../core/include/RepositoryManager.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classRemoteProtocol.html">   32</a></span><span class="comment"> * @class RemoteProtocol</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * @brief Handles the remote communication protocol for SVCS.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * @details Manages the custom protocol for **push** and **pull** operations, including</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * object negotiation, data transfer, and reference updates between client and server.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * The protocol is a simple text-based exchange over standard input/output.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * @russian</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * @class RemoteProtocol</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * @brief Обрабатывает протокол удаленной связи для SVCS.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * @details Управляет пользовательским протоколом для операций **push** и **pull**, включая</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * согласование объектов, передачу данных и обновления ссылок между клиентом и сервером.</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * Протокол представляет собой простой текстовый обмен через стандартный ввод/вывод.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">class </span><a class="code hl_function" href="classRemoteProtocol.html#ae13f8845715408297f5466fdcecce981">RemoteProtocol</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="classRemoteProtocol.html#ae13f8845715408297f5466fdcecce981">RemoteProtocol</a>(std::shared_ptr&lt;ISubject&gt; event_bus,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                   std::shared_ptr&lt;RepositoryManager&gt; repository_manager);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_function" href="classRemoteProtocol.html#af00770931128eaaaf4b9bfc19ef73e69">~RemoteProtocol</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRemoteProtocol.html#a54d6ce28df9c8a53e79908c038493372">handleReceivePack</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRemoteProtocol.html#a67939ef40e01647387fc991cff543485">handleUploadPack</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// Receive-pack (Push) Protocol Methods</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">bool</span> processPushNegotiation();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordtype">bool</span> receiveObjects(<span class="keyword">const</span> std::unordered_set&lt;std::string&gt;&amp; wanted_objects);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordtype">bool</span> updateReferences(<span class="keyword">const</span> std::vector&lt;std::pair&lt;std::string, std::string&gt;&gt;&amp; ref_updates);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="comment">// Upload-pack (Pull) Protocol Methods</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordtype">bool</span> processPullNegotiation();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    std::unordered_set&lt;std::string&gt; findMissingObjects(<span class="keyword">const</span> std::unordered_set&lt;std::string&gt;&amp; client_has);</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">bool</span> readLine(std::string&amp; line) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">bool</span> sendLine(<span class="keyword">const</span> std::string&amp; line) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">bool</span> sendData(<span class="keyword">const</span> std::string&amp; data) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span></div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">bool</span> sendError(<span class="keyword">const</span> std::string&amp; error) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordtype">bool</span> isValidObjectHash(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordtype">bool</span> isValidReference(<span class="keyword">const</span> std::string&amp; ref_name) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordtype">void</span> notifyDebug(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordtype">void</span> notifyInfo(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordtype">void</span> notifyError(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordtype">void</span> notifyProtocolStart(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordtype">void</span> notifyProtocolSuccess(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span></div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keywordtype">void</span> notifyProtocolError(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordtype">void</span> notifyNetworkSend(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordtype">void</span> notifyNetworkReceive(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordtype">void</span> notifyObjectTransfer(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordtype">void</span> notifyReferenceUpdate(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordtype">void</span> notifyNegotiation(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span></div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordtype">bool</span> sendProtocolError(<span class="keyword">const</span> std::string&amp; error) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    std::shared_ptr&lt;ISubject&gt; event_bus_;           </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    std::shared_ptr&lt;RepositoryManager&gt; repository_manager_; </div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>};</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordtype">bool</span> sendObjects(<span class="keyword">const</span> std::unordered_set&lt;std::string&gt;&amp; objects_to_send);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="comment">// Object and Reference Management Methods</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">bool</span> objectExists(<span class="keyword">const</span> std::string&amp; object_hash) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    std::string readObject(<span class="keyword">const</span> std::string&amp; object_hash) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordtype">bool</span> writeObject(<span class="keyword">const</span> std::string&amp; object_hash, <span class="keyword">const</span> std::string&amp; object_data);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    std::unordered_set&lt;std::string&gt; getAllReferences() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordtype">bool</span> updateReference(<span class="keyword">const</span> std::string&amp; ref_name, <span class="keyword">const</span> std::string&amp; new_hash);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="comment">// Protocol Communication Methods</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordtype">bool</span> readLine(std::string&amp; line) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordtype">bool</span> sendLine(<span class="keyword">const</span> std::string&amp; line) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordtype">bool</span> sendData(<span class="keyword">const</span> std::string&amp; data) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordtype">bool</span> sendError(<span class="keyword">const</span> std::string&amp; error) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="comment">// Validation Methods</span></div>
 </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    <span class="keywordtype">bool</span> isValidObjectHash(<span class="keyword">const</span> std::string&amp; hash) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    <span class="keywordtype">bool</span> isValidReference(<span class="keyword">const</span> std::string&amp; ref_name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="comment">// Notification Methods</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    <span class="keywordtype">void</span> notifyDebug(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    <span class="keywordtype">void</span> notifyInfo(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span></div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordtype">void</span> notifyError(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span></div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    <span class="keywordtype">void</span> notifyProtocolStart(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    <span class="keywordtype">void</span> notifyProtocolSuccess(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span></div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    <span class="keywordtype">void</span> notifyProtocolError(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span></div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    <span class="keywordtype">void</span> notifyNetworkSend(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <span class="keywordtype">void</span> notifyNetworkReceive(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span></div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    <span class="keywordtype">void</span> notifyObjectTransfer(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span></div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <span class="keywordtype">void</span> notifyReferenceUpdate(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span></div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>    <span class="keywordtype">void</span> notifyNegotiation(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span></div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>    <span class="keywordtype">bool</span> sendProtocolError(<span class="keyword">const</span> std::string&amp; error) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span> </div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>    std::shared_ptr&lt;ISubject&gt; event_bus_;</div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span></div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>    std::shared_ptr&lt;RepositoryManager&gt; repository_manager_;</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>};</div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
 <div class="ttc" id="aRepositoryManager_8hxx_html"><div class="ttname"><a href="RepositoryManager_8hxx.html">RepositoryManager.hxx</a></div><div class="ttdoc">Declaration of the RepositoryManager class, managing all repository-level file operations.</div></div>
-<div class="ttc" id="aclassRemoteProtocol_html_a54d6ce28df9c8a53e79908c038493372"><div class="ttname"><a href="classRemoteProtocol.html#a54d6ce28df9c8a53e79908c038493372">RemoteProtocol::handleReceivePack</a></div><div class="ttdeci">bool handleReceivePack()</div><div class="ttdoc">Handles the &#39;receive-pack&#39; protocol for push operations.</div><div class="ttdef"><b>Definition</b> RemoteProtocol.cxx:26</div></div>
-<div class="ttc" id="aclassRemoteProtocol_html_a67939ef40e01647387fc991cff543485"><div class="ttname"><a href="classRemoteProtocol.html#a67939ef40e01647387fc991cff543485">RemoteProtocol::handleUploadPack</a></div><div class="ttdeci">bool handleUploadPack()</div><div class="ttdoc">Handles the &#39;upload-pack&#39; protocol for pull operations.</div><div class="ttdef"><b>Definition</b> RemoteProtocol.cxx:38</div></div>
-<div class="ttc" id="aclassRemoteProtocol_html_ae13f8845715408297f5466fdcecce981"><div class="ttname"><a href="classRemoteProtocol.html#ae13f8845715408297f5466fdcecce981">RemoteProtocol::RemoteProtocol</a></div><div class="ttdeci">RemoteProtocol(std::shared_ptr&lt; ISubject &gt; event_bus, std::shared_ptr&lt; RepositoryManager &gt; repository_manager)</div><div class="ttdoc">Constructs a RemoteProtocol with necessary dependencies.</div><div class="ttdef"><b>Definition</b> RemoteProtocol.cxx:19</div></div>
+<div class="ttc" id="aclassRemoteProtocol_html_a54d6ce28df9c8a53e79908c038493372"><div class="ttname"><a href="classRemoteProtocol.html#a54d6ce28df9c8a53e79908c038493372">RemoteProtocol::handleReceivePack</a></div><div class="ttdeci">bool handleReceivePack()</div><div class="ttdoc">Handles the &#39;receive-pack&#39; protocol for push operations.</div><div class="ttdef"><b>Definition</b> RemoteProtocol.cxx:28</div></div>
+<div class="ttc" id="aclassRemoteProtocol_html_a67939ef40e01647387fc991cff543485"><div class="ttname"><a href="classRemoteProtocol.html#a67939ef40e01647387fc991cff543485">RemoteProtocol::handleUploadPack</a></div><div class="ttdeci">bool handleUploadPack()</div><div class="ttdoc">Handles the &#39;upload-pack&#39; protocol for pull operations.</div><div class="ttdef"><b>Definition</b> RemoteProtocol.cxx:40</div></div>
+<div class="ttc" id="aclassRemoteProtocol_html_ae13f8845715408297f5466fdcecce981"><div class="ttname"><a href="classRemoteProtocol.html#ae13f8845715408297f5466fdcecce981">RemoteProtocol::RemoteProtocol</a></div><div class="ttdeci">RemoteProtocol(std::shared_ptr&lt; ISubject &gt; event_bus, std::shared_ptr&lt; RepositoryManager &gt; repository_manager)</div><div class="ttdoc">Constructs a RemoteProtocol with necessary dependencies.</div><div class="ttdef"><b>Definition</b> RemoteProtocol.cxx:21</div></div>
 <div class="ttc" id="aclassRemoteProtocol_html_af00770931128eaaaf4b9bfc19ef73e69"><div class="ttname"><a href="classRemoteProtocol.html#af00770931128eaaaf4b9bfc19ef73e69">RemoteProtocol::~RemoteProtocol</a></div><div class="ttdeci">~RemoteProtocol()=default</div><div class="ttdoc">Default destructor.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

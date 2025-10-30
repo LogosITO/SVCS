@@ -1,8 +1,14 @@
 /**
- * @file commit_test.cxx
+ * @file CommitTest.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Unit tests for the Commit class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity.
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ *
+ * @russian
+ * @brief Модульные тесты для класса Commit, проверяющие построение объектов, стабильность хэшей (порядок родителей) и целостность сериализации/десериализации.
  */
 
 #include "../../core/include/Commit.hxx"

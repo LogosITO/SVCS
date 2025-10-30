@@ -1,0 +1,178 @@
+\doxysection{Класс Object\+Storage}
+\hypertarget{classObjectStorage}{}\label{classObjectStorage}\index{ObjectStorage@{ObjectStorage}}
+
+
+Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов.  
+
+
+
+
+{\ttfamily \#include $<$Object\+Storage.\+hxx$>$}
+
+Граф наследования\+:Object\+Storage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classObjectStorage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObjectStorage_a97cd1089e57caec02d91e9d5177f2607}{Object\+Storage}} (const std\+::string \&root\+\_\+path, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ \&subject=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор для \doxylink{classObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\item 
+\Hypertarget{classObjectStorage_a84986af89788ac235900ee9278e681d1}\label{classObjectStorage_a84986af89788ac235900ee9278e681d1} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Object\+Storage} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObjectStorage_a0dc7bb15cb48b9795149e3572c4c7c3c}{set\+Subject}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subj)
+\begin{DoxyCompactList}\small\item\em Устанавливает или заменяет субъект событий, используемый \doxylink{classObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classObjectStorage_a3bdb2110012cbe733cdeb4d438b583d0}{get\+Object\+Path}} (const std\+::string \&hash) const
+\begin{DoxyCompactList}\small\item\em Формирует полный путь в файловой системе для объекта на основе его хеша. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classObjectStorage_acab6226c60b2979078001d539f56de3b}{save\+Object}} (const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&obj) const
+\begin{DoxyCompactList}\small\item\em Сохраняет \doxylink{classVcsObject}{Vcs\+Object} в базе данных объектов. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} $>$ \mbox{\hyperlink{classObjectStorage_ad287a079892332b3a6d71b10275b925f}{load\+Object}} (const std\+::string \&hash) const
+\begin{DoxyCompactList}\small\item\em Загружает объект с диска по его ID хеша. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObjectStorage_abbc8d8426ae0f500aa7a6dba213e0bed}{object\+Exists}} (const std\+::string \&hash) const
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли объект с заданным хешем на диске. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов. 
+
+Реализует низкоуровневые операции файловой системы (генерация путей, чтение, запись), сжатие, распаковку и десериализацию объектов. 
+
+\label{doc-constructors}
+\Hypertarget{classObjectStorage_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classObjectStorage_a97cd1089e57caec02d91e9d5177f2607}\index{ObjectStorage@{ObjectStorage}!ObjectStorage@{ObjectStorage}}
+\index{ObjectStorage@{ObjectStorage}!ObjectStorage@{ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{ObjectStorage()}{ObjectStorage()}}
+{\footnotesize\ttfamily \label{classObjectStorage_a97cd1089e57caec02d91e9d5177f2607} 
+Object\+Storage\+::\+Object\+Storage (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{root\+\_\+path}{, }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ \&}]{subject}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор для \doxylink{classObjectStorage}{Object\+Storage}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em root\+\_\+path} & Корневой путь репозитория (например, директория, содержащая "{}.\+svcs"{}). \\
+\hline
+{\em subject} & Общий указатель на интерфейс \doxylink{classISubject}{ISubject} для логирования событий. По умолчанию nullptr, если логирование пока не требуется. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classObjectStorage_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classObjectStorage_a3bdb2110012cbe733cdeb4d438b583d0}\index{ObjectStorage@{ObjectStorage}!getObjectPath@{getObjectPath}}
+\index{getObjectPath@{getObjectPath}!ObjectStorage@{ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{getObjectPath()}{getObjectPath()}}
+{\footnotesize\ttfamily \label{classObjectStorage_a3bdb2110012cbe733cdeb4d438b583d0} 
+std\+::string Object\+Storage\+::get\+Object\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Формирует полный путь в файловой системе для объекта на основе его хеша. 
+
+Использует первые два символа хеша для имени поддиректории и оставшиеся 38 символов для имени файла. 
+\begin{DoxyParams}{Аргументы}
+{\em hash} & Полный 40-\/символьный ID хеша SHA-\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::string Полный, независимый от платформы путь к файлу. 
+\end{DoxyReturn}
+\Hypertarget{classObjectStorage_ad287a079892332b3a6d71b10275b925f}\index{ObjectStorage@{ObjectStorage}!loadObject@{loadObject}}
+\index{loadObject@{loadObject}!ObjectStorage@{ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{loadObject()}{loadObject()}}
+{\footnotesize\ttfamily \label{classObjectStorage_ad287a079892332b3a6d71b10275b925f} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} $>$ Object\+Storage\+::load\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [virtual]}}
+
+
+
+Загружает объект с диска по его ID хеша. 
+
+Читает сжатый файл, распаковывает его, выполняет проверки целостности и десериализует объект с использованием внутреннего фабричного метода. 
+\begin{DoxyParams}{Аргументы}
+{\em hash} & ID хеша объекта для загрузки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::unique\+\_\+ptr$<$\+Vcs\+Object$>$ Восстановленный экземпляр объекта. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & если объект не найден, поврежден или недействителен. \\
+\hline
+\end{DoxyExceptions}
+
+
+Переопределяется в \mbox{\hyperlink{classMockObjectStorage_a6710861deb4109e3c4a716ac9b38fe66}{Mock\+Object\+Storage}}.
+
+\Hypertarget{classObjectStorage_abbc8d8426ae0f500aa7a6dba213e0bed}\index{ObjectStorage@{ObjectStorage}!objectExists@{objectExists}}
+\index{objectExists@{objectExists}!ObjectStorage@{ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{objectExists()}{objectExists()}}
+{\footnotesize\ttfamily \label{classObjectStorage_abbc8d8426ae0f500aa7a6dba213e0bed} 
+bool Object\+Storage\+::object\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Проверяет, существует ли объект с заданным хешем на диске. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hash} & ID хеша для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True, если файл объекта существует. 
+\end{DoxyReturn}
+\Hypertarget{classObjectStorage_acab6226c60b2979078001d539f56de3b}\index{ObjectStorage@{ObjectStorage}!saveObject@{saveObject}}
+\index{saveObject@{saveObject}!ObjectStorage@{ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{saveObject()}{saveObject()}}
+{\footnotesize\ttfamily \label{classObjectStorage_acab6226c60b2979078001d539f56de3b} 
+bool Object\+Storage\+::save\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&}]{obj}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [virtual]}}
+
+
+
+Сохраняет \doxylink{classVcsObject}{Vcs\+Object} в базе данных объектов. 
+
+Сериализует объект, добавляет заголовок, сжимает его и записывает в файл. Публикует события об успехе/неудаче. 
+\begin{DoxyParams}{Аргументы}
+{\em obj} & \doxylink{classVcsObject}{Vcs\+Object} для сохранения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True, если сохранение прошло успешно. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & если хеш недействителен или операции ввода-\/вывода завершаются неудачно. \\
+\hline
+\end{DoxyExceptions}
+
+
+Переопределяется в \mbox{\hyperlink{classMockObjectStorage_a0d17e41ae6b3787ed45aad9b75ea0518}{Mock\+Object\+Storage}}.
+
+\Hypertarget{classObjectStorage_a0dc7bb15cb48b9795149e3572c4c7c3c}\index{ObjectStorage@{ObjectStorage}!setSubject@{setSubject}}
+\index{setSubject@{setSubject}!ObjectStorage@{ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{setSubject()}{setSubject()}}
+{\footnotesize\ttfamily \label{classObjectStorage_a0dc7bb15cb48b9795149e3572c4c7c3c} 
+void Object\+Storage\+::set\+Subject (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Устанавливает или заменяет субъект событий, используемый \doxylink{classObjectStorage}{Object\+Storage}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subj} & Новый указатель \doxylink{classISubject}{ISubject} для использования при публикации событий. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{ObjectStorage_8hxx}{Object\+Storage.\+hxx}}\item 
+core/src/\mbox{\hyperlink{ObjectStorage_8cxx}{Object\+Storage.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,28 @@
+\doxysection{tests/cli/utils/\+Int\+Save\+Command\+Test.hxx File Reference}
+\hypertarget{IntSaveCommandTest_8hxx}{}\label{IntSaveCommandTest_8hxx}\index{tests/cli/utils/IntSaveCommandTest.hxx@{tests/cli/utils/IntSaveCommandTest.hxx}}
+
+
+Test fixture header for integration tests of the \doxylink{classSaveCommand}{Save\+Command} (commit) class.  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include "{}../../../cli/include/\+Save\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../mocks/\+Mock\+Subject.\+hxx"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSaveCommandTest}{Save\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classSaveCommand}{Save\+Command} (commit). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test fixture header for integration tests of the \doxylink{classSaveCommand}{Save\+Command} (commit) class. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Declares the \doxylink{classSaveCommandTest}{Save\+Command\+Test} fixture, which sets up a controlled environment for testing the \textquotesingle{}svcs save\textquotesingle{} command. This includes initializing mock and core components (\doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classRepositoryManager}{Repository\+Manager}) and providing helper functions for file manipulation and staging changes prior to a save operation. 

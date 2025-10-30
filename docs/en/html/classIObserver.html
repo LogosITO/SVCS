@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: IObserver Class Reference</title>
+<title>SVCS - English Documentation: IObserver Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -122,9 +120,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The Observer Interface (Abstract Base Class). </p>
-<ul>
-<li>Any class that wants to receive notifications from the system core (e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a>, Command) must implement this interface to be registered with a Subject. </li>
-</ul>
+<p>Any class that wants to receive notifications from the system core (e.g., <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a>, Command) must implement this interface to be registered with a Subject. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1306da2dbaf55620130af5586e3a0373" name="a1306da2dbaf55620130af5586e3a0373"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1306da2dbaf55620130af5586e3a0373">&#9670;&#160;</a></span>~IObserver()</h2>
@@ -150,9 +146,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default virtual destructor. </p>
-<ul>
-<li>Ensures correct cleanup of derived observer classes via a base class pointer. </li>
-</ul>
+<p>Ensures correct cleanup of derived observer classes via a base class pointer. </p>
 
 </div>
 </div>
@@ -187,7 +181,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>Note: This method appears redundant with <a class="el" href="#af15fbd52637f4bf0225fde86051d8354" title="Method called by the Subject to update the observer.">update(const Event&amp; event)</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>Note: This method appears redundant with <a class="el" href="#af15fbd52637f4bf0225fde86051d8354" title="Method called by the Subject to update the observer.">update(const Event&amp; event)</a>.</dd></dl>
 
 <p>Implemented in <a class="el" href="classLogger.html#a96a2b88ee6d81d3ecf0fed3a6291c9a2">Logger</a>, <a class="el" href="classManualMockObserver.html#a2d0cef17d9225d64ce23dbf3451bb610">ManualMockObserver</a>, <a class="el" href="classMockObserver.html#a8fd6d2d376fb45dfee6968489b2057bb">MockObserver</a>, and <a class="el" href="classNullObserver.html#aeb635126b1e4270cb50229b157525270">NullObserver</a>.</p>
 

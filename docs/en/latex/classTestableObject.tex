@@ -1,0 +1,129 @@
+\doxysection{Testable\+Object Class Reference}
+\hypertarget{classTestableObject}{}\label{classTestableObject}\index{TestableObject@{TestableObject}}
+
+
+Helper class for testing the non-\/abstract methods of \doxylink{classVcsObject}{Vcs\+Object}.  
+
+
+
+
+{\ttfamily \#include $<$Vcs\+Object.\+hxx$>$}
+
+Inheritance diagram for Testable\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTestableObject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTestableObject_acf53db7ed6ce4f127322860e1d68b6a5}{Testable\+Object}} (std\+::string type, std\+::string data)
+\begin{DoxyCompactList}\small\item\em Primary constructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTestableObject_ae79c1d60869dedd6c298a56e8e9f2309}{serialize}} () const override
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method. Returns the stored content. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTestableObject_a89133227b30cea6642769a8cad7c1375}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method. Returns the stored type name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. Required for derived classes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVcsObject_af2840ade6006e4d64eb6bd9f15b37539}{Vcs\+Object}} (const \mbox{\hyperlink{classVcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. Required for derived classes to correctly copy the hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVcsObject_a866849775b4541573b40b2b85be20df5}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a0e8cd703d917813ca43d4b0622c70bdd}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Returns the unique hash identifier of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classVcsObject_a73ec7fbaac32df9c4570de02b8bda56f}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Calculates SHA-\/256 hash for given canonical content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Computes the cryptographic hash ID for the object\textquotesingle{}s content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classVcsObject}{Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classVcsObject_a6c9fd4ab39bb9781c5399da07305d28d}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em The unique cryptographic hash identifier (e.\+g., SHA-\/256) for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class for testing the non-\/abstract methods of \doxylink{classVcsObject}{Vcs\+Object}. 
+
+This class implements all pure virtual methods of \doxylink{classVcsObject}{Vcs\+Object} with simple stubs, allowing its instances to be created for unit testing the hashing logic in \doxylink{classVcsObject_ae2b7544a63a2f0b1ef764dd4710a13e0}{Vcs\+Object\+::compute\+Hash}. 
+
+\label{doc-constructors}
+\Hypertarget{classTestableObject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTestableObject_acf53db7ed6ce4f127322860e1d68b6a5}\index{TestableObject@{TestableObject}!TestableObject@{TestableObject}}
+\index{TestableObject@{TestableObject}!TestableObject@{TestableObject}}
+\doxysubsubsection{\texorpdfstring{TestableObject()}{TestableObject()}}
+{\footnotesize\ttfamily \label{classTestableObject_acf53db7ed6ce4f127322860e1d68b6a5} 
+Testable\+Object\+::\+Testable\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{type}{, }\item[{std\+::string}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Primary constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The name of the object type (e.\+g., "{}test\+\_\+blob"{}). \\
+\hline
+{\em data} & The content that will be serialized and hashed. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classTestableObject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTestableObject_a89133227b30cea6642769a8cad7c1375}\index{TestableObject@{TestableObject}!getType@{getType}}
+\index{getType@{getType}!TestableObject@{TestableObject}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classTestableObject_a89133227b30cea6642769a8cad7c1375} 
+std\+::string Testable\+Object\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method. Returns the stored type name. 
+
+Pure virtual method to get the type of the VCS object.   
+
+This is crucial for object storage and reconstruction (e.\+g., "{}commit"{}, "{}blob"{}, "{}tree"{}). \begin{DoxyReturn}{Returns}
+std\+::string The type identifier of the object.    
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classVcsObject_a6997c320772a504fc61a986f6e8f9ff7}{Vcs\+Object}}.
+
+\Hypertarget{classTestableObject_ae79c1d60869dedd6c298a56e8e9f2309}\index{TestableObject@{TestableObject}!serialize@{serialize}}
+\index{serialize@{serialize}!TestableObject@{TestableObject}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classTestableObject_ae79c1d60869dedd6c298a56e8e9f2309} 
+std\+::string Testable\+Object\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method. Returns the stored content. 
+
+Pure virtual method to serialize the object\textquotesingle{}s core data.   
+
+The returned string content is what will be hashed and stored in the database. \begin{DoxyReturn}{Returns}
+std\+::string The standardized, serialized data of the object.    
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classVcsObject_a987c76bf8ad51d267297cc6ba7da1eb7}{Vcs\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{VcsObject_8hxx}{Vcs\+Object.\+hxx}}\item 
+core/src/Vcs\+Object.\+cxx\end{DoxyCompactItemize}

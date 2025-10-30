@@ -1,0 +1,26 @@
+\doxysection{core/include/\+Branch\+Manager.hxx File Reference}
+\hypertarget{BranchManager_8hxx}{}\label{BranchManager_8hxx}\index{core/include/BranchManager.hxx@{core/include/BranchManager.hxx}}
+
+
+Declaration of the \doxylink{classBranchManager}{Branch\+Manager} class for handling version control branches.  
+
+
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBranchManager}{Branch\+Manager}}
+\begin{DoxyCompactList}\small\item\em Core service for managing version control branches (creation, deletion, switching). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch\+Manager\+::\+Branch}}
+\begin{DoxyCompactList}\small\item\em Structure to hold the metadata for a single branch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classBranchManager}{Branch\+Manager} class for handling version control branches. 
+
+The \doxylink{classBranchManager}{Branch\+Manager} is responsible for all operations related to managing branches within the SVCS repository, including creation, deletion, renaming, and switching. It manages branch metadata in memory and persists changes to the underlying file system using utility methods for loading and saving state. 

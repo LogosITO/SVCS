@@ -1,7 +1,11 @@
 /**
  * @file HubCommandTest.cpp
- * @brief Integration tests for the HubCommand class.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
+ * @english
+ * @brief Integration tests for the HubCommand class.
  * @details This file contains integration tests for the @ref HubCommand class,
  * utilizing the Google Test (gtest) framework.
  *
@@ -31,8 +35,36 @@
  * @note These tests perform real I/O operations and will create/delete
  * directories in the system's temporary folder.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Интеграционные тесты для класса HubCommand.
+ * @details Этот файл содержит интеграционные тесты для класса @ref HubCommand,
+ * использующие фреймворк Google Test (gtest).
+ *
+ * Эти тесты не являются чистыми модульными тестами; они используют *реальный*
+ * @ref RepositoryManager для выполнения фактических операций ввода-вывода
+ * файловой системы во временной системной директории (определенной `fs::temp_directory_path()`).
+ *
+ * Используется простая stub-реализация @ref ISubject (`SimpleEventBus`),
+ * так как тестирование уведомлений о событиях не является целью этих тестов.
+ *
+ * Тестовый фикстур `HubCommandTest` управляет созданием и очисткой
+ * временной тестовой директории до и после каждого теста.
+ *
+ * @b Области_тестирования:
+ * - **Валидация аргументов**: Проверяет случаи отсутствия аргументов,
+ * слишком большого количества аргументов и пустых путей.
+ * - **Создание файловой системы**: Гарантирует корректное создание
+ * репозитория (`.svcs`), включая создание родительских директорий.
+ * - **Обработка ошибок**: Обеспечивает провал команды,
+ * если репозиторий уже существует в целевой директории.
+ * - **Структура репозитория**: Подтверждает создание всех необходимых
+ * поддиректорий (objects, refs, hooks, info и т.д.).
+ * - **Содержимое файлов**: Проверяет корректность содержимого файла `config`
+ * (проверка `bare = true`, `hub = true`) и содержимого файла `HEAD`
+ * (проверка ссылки на `refs/heads/main`).
+ *
+ * @note Эти тесты выполняют реальные операции ввода-вывода и будут создавать/удалять
+ * директории во временной папке системы.
  */
 
 #include <gtest/gtest.h>

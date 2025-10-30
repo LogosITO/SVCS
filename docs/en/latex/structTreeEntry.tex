@@ -1,0 +1,65 @@
+\doxysection{Tree\+Entry Struct Reference}
+\hypertarget{structTreeEntry}{}\label{structTreeEntry}\index{TreeEntry@{TreeEntry}}
+
+
+Represents a single item (file or subdirectory) within a \doxylink{classTree}{Tree} object.  
+
+
+
+
+{\ttfamily \#include $<$Tree.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structTreeEntry_ad89dfd85abbb8b8a1041fea93f50a940}{operator$<$}} (const \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \&other) const
+\begin{DoxyCompactList}\small\item\em Comparison operator required for sorting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structTreeEntry_a134f10cecd1f81227572389485e04ad4}\label{structTreeEntry_a134f10cecd1f81227572389485e04ad4} 
+std\+::string {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em File mode (permissions) and type identifier (e.\+g., "{}100644"{} for a blob, "{}040000"{} for a tree). \end{DoxyCompactList}\item 
+\Hypertarget{structTreeEntry_aa025cb0a365aac0c2942a3249a244b1f}\label{structTreeEntry_aa025cb0a365aac0c2942a3249a244b1f} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em The name of the file or subdirectory. \end{DoxyCompactList}\item 
+\Hypertarget{structTreeEntry_a8236e8177bef9f2380f9893ee916cc77}\label{structTreeEntry_a8236e8177bef9f2380f9893ee916cc77} 
+std\+::string {\bfseries hash\+\_\+id}
+\begin{DoxyCompactList}\small\item\em The hash ID (SHA-\/256) of the referenced object (\doxylink{classBlob}{Blob} or \doxylink{classTree}{Tree}). \end{DoxyCompactList}\item 
+\Hypertarget{structTreeEntry_a499a6f99a9c45e62c78e6d61f6341e0c}\label{structTreeEntry_a499a6f99a9c45e62c78e6d61f6341e0c} 
+std\+::string {\bfseries type}
+\begin{DoxyCompactList}\small\item\em The type of the referenced object ("{}blob"{} or "{}tree"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single item (file or subdirectory) within a \doxylink{classTree}{Tree} object. 
+
+This structure links a name and file mode to the hash ID of another VCS object. 
+
+\label{doc-func-members}
+\Hypertarget{structTreeEntry_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structTreeEntry_ad89dfd85abbb8b8a1041fea93f50a940}\index{TreeEntry@{TreeEntry}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!TreeEntry@{TreeEntry}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{structTreeEntry_ad89dfd85abbb8b8a1041fea93f50a940} 
+bool Tree\+Entry\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Comparison operator required for sorting. 
+
+Entries must be sorted alphabetically by name before serialization to ensure a stable and consistent hash ID for the \doxylink{classTree}{Tree} object. 
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{structTreeEntry}{Tree\+Entry} to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if this entry should precede the \textquotesingle{}other\textquotesingle{} entry in the sorted list. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Tree_8hxx}{Tree.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Tree_8cxx}{Tree.\+cxx}}\end{DoxyCompactItemize}

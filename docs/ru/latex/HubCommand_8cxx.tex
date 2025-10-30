@@ -1,0 +1,28 @@
+\doxysection{Файл server/src/\+Hub\+Command.cxx}
+\hypertarget{HubCommand_8cxx}{}\label{HubCommand_8cxx}\index{server/src/HubCommand.cxx@{server/src/HubCommand.cxx}}
+
+
+Реализация класса \doxylink{classHubCommand}{Hub\+Command} для создания голых репозиториев.  
+
+
+{\ttfamily \#include "{}../include/\+Hub\+Command.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+
+
+\doxysubsection{Подробное описание}
+Реализация класса \doxylink{classHubCommand}{Hub\+Command} для создания голых репозиториев. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот файл предоставляет конкретную реализацию для класса \doxylink{classHubCommand}{Hub\+Command}. Метод {\ttfamily execute} обрабатывает логику для\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Проверки аргументов}}\+: Обеспечивает предоставление ровно одного валидного пути.
+\item {\bfseries{Проверок файловой системы}}\+: Проверяет, что репозиторий еще не существует в целевом местоположении.
+\item {\bfseries{Создания директорий}}\+: Создает целевую директорию и полную структуру "{}голого"{} репозитория {\ttfamily .svcs} (objects, refs, hooks и т.\+д.).
+\item {\bfseries{Инициализации файлов}}\+: Записывает начальные файлы {\ttfamily config}, {\ttfamily HEAD} и {\ttfamily description}.
+\item {\bfseries{Уведомлений}}\+: Использует шину событий \doxylink{classISubject}{ISubject} для отчетов об успехе, информации или сообщениях об ошибках. Эта команда использует зависимость {\ttfamily \doxylink{classRepositoryManager}{Repository\+Manager}} косвенно, так как логика достаточно проста для самостоятельных операций файловой системы, но полагается на соглашения о путях менеджера. 
+\end{DoxyEnumerate}

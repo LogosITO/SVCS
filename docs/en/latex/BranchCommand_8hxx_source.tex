@@ -1,0 +1,60 @@
+\doxysection{Branch\+Command.\+hxx}
+\hypertarget{BranchCommand_8hxx_source}{}\label{BranchCommand_8hxx_source}\index{cli/include/BranchCommand.hxx@{cli/include/BranchCommand.hxx}}
+\mbox{\hyperlink{BranchCommand_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{ICommand.hxx}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BranchManager_8hxx}{../../core/include/BranchManager.hxx}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBranchCommand_a4eaa697694eb6ff5f25638bd57cad585}{BranchCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classBranchCommand_a4eaa697694eb6ff5f25638bd57cad585}{BranchCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<BranchManager>\ branch\_manager);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classBranchCommand_a37c58a79e576a68fb2d7390ef47deea0}{\string~BranchCommand}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00078\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classBranchCommand_ac19f2028fc5d1d199cee69308850292d}{getName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00089\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classBranchCommand_aab365b92eb53db8e84d1016f3006a693}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00100\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classBranchCommand_a9ee1ab8405a6a4e8359baa1f3860e45c}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBranchCommand_a6aa576bca717782d4e6900c12186565c}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBranchCommand_aeafc61159b00629309ff2cbac2089831}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ listBranches()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{bool}\ createBranch(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{bool}\ createBranchFromCommit(\textcolor{keyword}{const}\ std::string\&\ branch\_name,\ \textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ deleteBranch(\textcolor{keyword}{const}\ std::string\&\ branch\_name,\ \textcolor{keywordtype}{bool}\ force\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{bool}\ renameBranch(\textcolor{keyword}{const}\ std::string\&\ old\_name,\ \textcolor{keyword}{const}\ std::string\&\ new\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{bool}\ showCurrentBranch()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{bool}\ switchBranch(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00229\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isValidBranchName(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00242\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ branchExists(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00255\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isValidCommitHash(\textcolor{keyword}{const}\ std::string\&\ hash);}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00265\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus\_;}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00274\ \ \ \ \ std::shared\_ptr<BranchManager>\ branch\_manager\_;}
+\DoxyCodeLine{00275\ \};}
+
+\end{DoxyCode}

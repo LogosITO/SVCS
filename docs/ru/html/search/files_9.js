@@ -9,8 +9,10 @@ var searchData=
   ['removecommand_2ehxx_6',['RemoveCommand.hxx',['../RemoveCommand_8hxx.html',1,'']]],
   ['repocommand_2ecxx_7',['RepoCommand.cxx',['../RepoCommand_8cxx.html',1,'']]],
   ['repocommand_2ehxx_8',['RepoCommand.hxx',['../RepoCommand_8hxx.html',1,'']]],
-  ['repository_2ecxx_9',['Repository.cxx',['../Repository_8cxx.html',1,'']]],
-  ['repository_2ehxx_10',['Repository.hxx',['../Repository_8hxx.html',1,'']]],
-  ['repositorymanager_2ecxx_11',['RepositoryManager.cxx',['../RepositoryManager_8cxx.html',1,'']]],
-  ['repositorymanager_2ehxx_12',['RepositoryManager.hxx',['../RepositoryManager_8hxx.html',1,'']]]
+  ['repomanagertest_2ecxx_9',['RepoManagerTest.cxx',['../RepoManagerTest_8cxx.html',1,'']]],
+  ['repository_2ecxx_10',['Repository.cxx',['../Repository_8cxx.html',1,'']]],
+  ['repository_2ehxx_11',['Repository.hxx',['../Repository_8hxx.html',1,'']]],
+  ['repositorymanager_2ecxx_12',['RepositoryManager.cxx',['../RepositoryManager_8cxx.html',1,'']]],
+  ['repositorymanager_2ehxx_13',['RepositoryManager.hxx',['../RepositoryManager_8hxx.html',1,'']]],
+  ['repositorytest_2ecxx_14',['RepositoryTest.cxx',['../RepositoryTest_8cxx.html',1,'']]]
 ];

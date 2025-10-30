@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: tests/core Directory Reference</title>
+<title>SVCS - English Documentation: tests/core Directory Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -100,8 +98,20 @@ Files</h2></td></tr>
 <tr class="memdesc:BlobTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for the <a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a> class, verifying object construction, hash calculation, and data integrity. <br /></td></tr>
 <tr class="memitem:BranchManagerTest_2Ecxx" id="r_BranchManagerTest_2Ecxx"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchManagerTest_8cxx.html">BranchManagerTest.cxx</a></td></tr>
 <tr class="memdesc:BranchManagerTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of unit tests for the <a class="el" href="classBranchManager.html" title="Core service for managing version control branches (creation, deletion, switching).">BranchManager</a> class. <br /></td></tr>
+<tr class="memitem:CommitTest_2Ecxx" id="r_CommitTest_2Ecxx"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CommitTest_8cxx.html">CommitTest.cxx</a></td></tr>
+<tr class="memdesc:CommitTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity. <br /></td></tr>
 <tr class="memitem:IndexTest_2Ecxx" id="r_IndexTest_2Ecxx"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndexTest_8cxx.html">IndexTest.cxx</a></td></tr>
 <tr class="memdesc:IndexTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for the <a class="el" href="classIndex.html" title="Manages the Staging Area (Index) of the VCS repository.">Index</a> class, verifying staging area management, file modification tracking, and index persistence. <br /></td></tr>
+<tr class="memitem:ObjectTest_2Ecxx" id="r_ObjectTest_2Ecxx"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObjectTest_8cxx.html">ObjectTest.cxx</a></td></tr>
+<tr class="memdesc:ObjectTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for the core hashing logic of the <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> abstract base class. <br /></td></tr>
+<tr class="memitem:RepoManagerTest_2Ecxx" id="r_RepoManagerTest_2Ecxx"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RepoManagerTest_8cxx.html">RepoManagerTest.cxx</a></td></tr>
+<tr class="memdesc:RepoManagerTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> class. <br /></td></tr>
+<tr class="memitem:RepositoryTest_2Ecxx" id="r_RepositoryTest_2Ecxx"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RepositoryTest_8cxx.html">RepositoryTest.cxx</a></td></tr>
+<tr class="memdesc:RepositoryTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for the <a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> class, covering initialization, filesystem structure creation, and Subject/Observer pattern implementation. <br /></td></tr>
+<tr class="memitem:StorageTest_2Ecxx" id="r_StorageTest_2Ecxx"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StorageTest_8cxx.html">StorageTest.cxx</a></td></tr>
+<tr class="memdesc:StorageTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for the <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a> class, verifying persistence, file path generation, compression, and object loading integrity for all <a class="el" href="classVcsObject.html" title="Abstract base class representing any storable, addressable object within the VCS.">VcsObject</a> types (<a class="el" href="classBlob.html" title="Represents the content of a file (Binary Large Object).">Blob</a>, <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a>, <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a>). <br /></td></tr>
+<tr class="memitem:TreeTest_2Ecxx" id="r_TreeTest_2Ecxx"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TreeTest_8cxx.html">TreeTest.cxx</a></td></tr>
+<tr class="memdesc:TreeTest_8cxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity. <br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

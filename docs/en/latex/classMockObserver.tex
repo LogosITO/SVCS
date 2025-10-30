@@ -1,0 +1,93 @@
+\doxysection{Mock\+Observer Class Reference}
+\hypertarget{classMockObserver}{}\label{classMockObserver}\index{MockObserver@{MockObserver}}
+
+
+Mock observer for testing event notifications.  
+
+
+Inheritance diagram for Mock\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMockObserver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMockObserver_a8fd6d2d376fb45dfee6968489b2057bb}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to notify the observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMockObserver_ab453d08d096802df88465bebe3af0615}{update}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to update the observer. \end{DoxyCompactList}\item 
+\Hypertarget{classMockObserver_a632af728bce69ca21a029ba90e835252}\label{classMockObserver_a632af728bce69ca21a029ba90e835252} 
+size\+\_\+t {\bfseries get\+Event\+Count} () const
+\item 
+\Hypertarget{classMockObserver_a4ea7f5c24be73c9bc01fa27417bcbf60}\label{classMockObserver_a4ea7f5c24be73c9bc01fa27417bcbf60} 
+bool {\bfseries contains\+Message} (const std\+::string \&text) const
+\item 
+\Hypertarget{classMockObserver_a00103e2e1fd531de2b210dba336257bb}\label{classMockObserver_a00103e2e1fd531de2b210dba336257bb} 
+void {\bfseries clear} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObserver}{IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObserver_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMockObserver_a4143f0662f0b1abe81f0df99d96fba0a}\label{classMockObserver_a4143f0662f0b1abe81f0df99d96fba0a} 
+std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ {\bfseries received\+\_\+events}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mock observer for testing event notifications. 
+
+\label{doc-func-members}
+\Hypertarget{classMockObserver_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMockObserver_a8fd6d2d376fb45dfee6968489b2057bb}\index{MockObserver@{MockObserver}!notify@{notify}}
+\index{notify@{notify}!MockObserver@{MockObserver}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classMockObserver_a8fd6d2d376fb45dfee6968489b2057bb} 
+void Mock\+Observer\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method called by the Subject to notify the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structEvent}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Note\+: This method appears redundant with \doxylink{classMockObserver_ab453d08d096802df88465bebe3af0615}{update(const Event\& event)}.\end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{classIObserver_a325451b0d0100feaad6f683850a616dc}{IObserver}}.
+
+\Hypertarget{classMockObserver_ab453d08d096802df88465bebe3af0615}\index{MockObserver@{MockObserver}!update@{update}}
+\index{update@{update}!MockObserver@{MockObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classMockObserver_ab453d08d096802df88465bebe3af0615} 
+void Mock\+Observer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method called by the Subject to update the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structEvent}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIObserver_af15fbd52637f4bf0225fde86051d8354}{IObserver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{RepoManagerTest_8cxx}{Repo\+Manager\+Test.\+cxx}}\end{DoxyCompactItemize}

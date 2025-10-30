@@ -1,0 +1,81 @@
+\doxysection{Файл tests/server/\+Remote\+Protocol\+Test.cxx}
+\hypertarget{RemoteProtocolTest_8cxx}{}\label{RemoteProtocolTest_8cxx}\index{tests/server/RemoteProtocolTest.cxx@{tests/server/RemoteProtocolTest.cxx}}
+
+
+Google Тесты для класса \doxylink{classRemoteProtocol}{Remote\+Protocol}.  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include "{}../../server/include/\+Remote\+Protocol.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMockEventBus}{Mock\+Event\+Bus}}
+\item 
+class \mbox{\hyperlink{classMockRepositoryManager}{Mock\+Repository\+Manager}}
+\item 
+class \mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}
+\item 
+class \mbox{\hyperlink{classRemoteProtocolIntegrationTest}{Remote\+Protocol\+Integration\+Test}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_ac916ca7911d6a99b0d85b3b8f2b2bc30}\label{RemoteProtocolTest_8cxx_ac916ca7911d6a99b0d85b3b8f2b2bc30} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Construction)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_ac7ece6386cd1a3d7fffed033a6f243c4}\label{RemoteProtocolTest_8cxx_ac7ece6386cd1a3d7fffed033a6f243c4} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Validation\+Methods)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_a92b7107eb260ea6a2deed560854ce1ae}\label{RemoteProtocolTest_8cxx_a92b7107eb260ea6a2deed560854ce1ae} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Object\+Management)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_a624189fb58f21ae998065d87c06a5aa4}\label{RemoteProtocolTest_8cxx_a624189fb58f21ae998065d87c06a5aa4} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Event\+Notifications)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_a4e577dac6b42937bc803acd9bc421e32}\label{RemoteProtocolTest_8cxx_a4e577dac6b42937bc803acd9bc421e32} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolIntegrationTest}{Remote\+Protocol\+Integration\+Test}}, Simple\+Protocol\+Communication)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_a456da1b56bdd41c735fe7c5504f44eeb}\label{RemoteProtocolTest_8cxx_a456da1b56bdd41c735fe7c5504f44eeb} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolIntegrationTest}{Remote\+Protocol\+Integration\+Test}}, Stream\+Error\+Conditions)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_a4c293ee182caf9f58b2eca068403112f}\label{RemoteProtocolTest_8cxx_a4c293ee182caf9f58b2eca068403112f} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Error\+Handling)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_a6d2f4c344853e5eb7ff198640a530561}\label{RemoteProtocolTest_8cxx_a6d2f4c344853e5eb7ff198640a530561} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Repository\+Validation)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_a1af0d1ff52f722ea33cd63b3f8c42b88}\label{RemoteProtocolTest_8cxx_a1af0d1ff52f722ea33cd63b3f8c42b88} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Validation\+Performance)
+\item 
+\Hypertarget{RemoteProtocolTest_8cxx_a3c04138a5bfe5d72780bb7e82a18e627}\label{RemoteProtocolTest_8cxx_a3c04138a5bfe5d72780bb7e82a18e627} 
+int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Тесты для класса \doxylink{classRemoteProtocol}{Remote\+Protocol}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот файл содержит комплексные модульные тесты для класса \doxylink{classRemoteProtocol}{Remote\+Protocol}, проверяющие сетевое взаимодействие, сериализацию/десериализацию протокольных сообщений, обработку ошибок и управление соединениями с удаленными репозиториями.
+
+Тесты охватывают\+:
+\begin{DoxyItemize}
+\item Установление соединения и аутентификацию
+\item Форматирование и парсинг протокольных сообщений
+\item Надежность и целостность передачи данных
+\item Восстановление после ошибок и обработку таймаутов
+\item Сценарии многопоточного взаимодействия
+\end{DoxyItemize}
+
+Используются mock-\/компоненты сети для моделирования различных сетевых условий и граничных случаев без необходимости реального сетевого подключения. 

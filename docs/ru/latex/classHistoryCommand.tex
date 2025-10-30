@@ -1,0 +1,162 @@
+\doxysection{Класс History\+Command}
+\hypertarget{classHistoryCommand}{}\label{classHistoryCommand}\index{HistoryCommand@{HistoryCommand}}
+
+
+Команда для просмотра истории сохранений (коммитов) в репозитории.  
+
+
+
+
+{\ttfamily \#include $<$History\+Command.\+hxx$>$}
+
+Граф наследования\+:History\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHistoryCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHistoryCommand_a91327f300a414761734016ebdc51c8e6}{History\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Конструктор для \doxylink{classHistoryCommand}{History\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHistoryCommand_a48844d2bcf6037cdac90a8672df62dbd}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду "{}history"{} с заданными аргументами. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHistoryCommand_a8334db6e45ef2aff5c6aab7e199f0e96}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHistoryCommand_abcd0ec4cd00950437d9a4e804e2d60a8}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает краткое описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHistoryCommand_a92cda98ffa5562e659c0addb3742005b}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryCommand_ab46337849e9e68730e844285327e4e2b}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает подробную справочную информацию для команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classICommand}{ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для просмотра истории сохранений (коммитов) в репозитории. 
+
+{\bfseries{\doxylink{classHistoryCommand}{History\+Command}}} отображает хронологическую историю всех сохранений с их сообщениями, авторами, временными метками и уникальными идентификаторами. Он поддерживает различные форматы вывода, включая стандартный, однострочный и подробный виды. 
+
+\label{doc-constructors}
+\Hypertarget{classHistoryCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classHistoryCommand_a91327f300a414761734016ebdc51c8e6}\index{HistoryCommand@{HistoryCommand}!HistoryCommand@{HistoryCommand}}
+\index{HistoryCommand@{HistoryCommand}!HistoryCommand@{HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{HistoryCommand()}{HistoryCommand()}}
+{\footnotesize\ttfamily \label{classHistoryCommand_a91327f300a414761734016ebdc51c8e6} 
+History\+Command\+::\+History\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор для \doxylink{classHistoryCommand}{History\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Общий указатель на \doxylink{classISubject}{ISubject} (шину событий). \\
+\hline
+{\em repo\+Manager} & Общий указатель на \doxylink{classRepositoryManager}{Repository\+Manager}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classHistoryCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classHistoryCommand_a48844d2bcf6037cdac90a8672df62dbd}\index{HistoryCommand@{HistoryCommand}!execute@{execute}}
+\index{execute@{execute}!HistoryCommand@{HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classHistoryCommand_a48844d2bcf6037cdac90a8672df62dbd} 
+bool History\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду "{}history"{} с заданными аргументами. 
+
+Этот метод является основной точкой входа для команды, обрабатывая разбор аргументов и делегируя соответствующей функции отображения истории. 
+\begin{DoxyParams}{Аргументы}
+{\em args} & Вектор строковых аргументов для команды (например, лимит, опции формата). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если команда выполнена успешно, false в противном случае. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+
+\Hypertarget{classHistoryCommand_abcd0ec4cd00950437d9a4e804e2d60a8}\index{HistoryCommand@{HistoryCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!HistoryCommand@{HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classHistoryCommand_abcd0ec4cd00950437d9a4e804e2d60a8} 
+std\+::string History\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает краткое описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, описывающая назначение команды. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+
+\Hypertarget{classHistoryCommand_a8334db6e45ef2aff5c6aab7e199f0e96}\index{HistoryCommand@{HistoryCommand}!getName@{getName}}
+\index{getName@{getName}!HistoryCommand@{HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classHistoryCommand_a8334db6e45ef2aff5c6aab7e199f0e96} 
+std\+::string History\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя команды, "{}history"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+
+\Hypertarget{classHistoryCommand_a92cda98ffa5562e659c0addb3742005b}\index{HistoryCommand@{HistoryCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!HistoryCommand@{HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classHistoryCommand_a92cda98ffa5562e659c0addb3742005b} 
+std\+::string History\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, показывающая как использовать команду. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+
+\Hypertarget{classHistoryCommand_ab46337849e9e68730e844285327e4e2b}\index{HistoryCommand@{HistoryCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!HistoryCommand@{HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classHistoryCommand_ab46337849e9e68730e844285327e4e2b} 
+void History\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает подробную справочную информацию для команды. 
+
+
+
+Замещает \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{HistoryCommand_8hxx}{History\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{HistoryCommand_8cxx}{History\+Command.\+cxx}}\end{DoxyCompactItemize}

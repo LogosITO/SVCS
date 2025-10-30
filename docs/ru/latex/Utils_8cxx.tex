@@ -1,0 +1,98 @@
+\doxysection{Файл core/src/\+Utils.cxx}
+\hypertarget{Utils_8cxx}{}\label{Utils_8cxx}\index{core/src/Utils.cxx@{core/src/Utils.cxx}}
+
+
+Реализация общих служебных функций для файлового ввода/вывода и преобразования форматов хешей.  
+
+
+{\ttfamily \#include "{}../include/\+Utils.\+hxx"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{Utils_8cxx_aee4ae6af295150b8d2daa18f1b1b1a01}{read\+\_\+file\+\_\+to\+\_\+string}} (const fs\+::path \&full\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Читает всё содержимое файла в одну строку std\+::string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{Utils_8cxx_ab217ef02a1053f512a96c2e9002e8ebe}{binary\+\_\+to\+\_\+hex\+\_\+string}} (const unsigned char \texorpdfstring{$\ast$}{*}data, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Преобразует бинарный буфер (например, сырой хеш SHA-\/1) в его шестнадцатеричное строковое представление. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{Utils_8cxx_a7fc89ff4883c714ee7a53698eb485ec3}{hex\+\_\+to\+\_\+binary\+\_\+string}} (const std\+::string \&hex\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Преобразует шестнадцатеричную строку (например, 40 символов) в её сырое бинарное байтовое представление (например, 20 байт). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Реализация общих служебных функций для файлового ввода/вывода и преобразования форматов хешей. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{Utils_8cxx_doc-func-members}
+\doxysubsection{Функции}
+\Hypertarget{Utils_8cxx_ab217ef02a1053f512a96c2e9002e8ebe}\index{Utils.cxx@{Utils.cxx}!binary\_to\_hex\_string@{binary\_to\_hex\_string}}
+\index{binary\_to\_hex\_string@{binary\_to\_hex\_string}!Utils.cxx@{Utils.cxx}}
+\doxysubsubsection{\texorpdfstring{binary\_to\_hex\_string()}{binary\_to\_hex\_string()}}
+{\footnotesize\ttfamily \label{Utils_8cxx_ab217ef02a1053f512a96c2e9002e8ebe} 
+std\+::string binary\+\_\+to\+\_\+hex\+\_\+string (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{binary\+\_\+data}{, }\item[{size\+\_\+t}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Преобразует бинарный буфер (например, сырой хеш SHA-\/1) в его шестнадцатеричное строковое представление. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em binary\+\_\+data} & Указатель на сырые бинарные данные. \\
+\hline
+{\em length} & Длина бинарных данных в байтах (например, 20 для SHA-\/1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка std\+::string, содержащая шестнадцатеричное представление (например, 40 символов для SHA-\/1). 
+\end{DoxyReturn}
+\Hypertarget{Utils_8cxx_a7fc89ff4883c714ee7a53698eb485ec3}\index{Utils.cxx@{Utils.cxx}!hex\_to\_binary\_string@{hex\_to\_binary\_string}}
+\index{hex\_to\_binary\_string@{hex\_to\_binary\_string}!Utils.cxx@{Utils.cxx}}
+\doxysubsubsection{\texorpdfstring{hex\_to\_binary\_string()}{hex\_to\_binary\_string()}}
+{\footnotesize\ttfamily \label{Utils_8cxx_a7fc89ff4883c714ee7a53698eb485ec3} 
+std\+::string hex\+\_\+to\+\_\+binary\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hex\+\_\+string}{}\end{DoxyParamCaption})}
+
+
+
+Преобразует шестнадцатеричную строку (например, 40 символов) в её сырое бинарное байтовое представление (например, 20 байт). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hex\+\_\+string} & Входная шестнадцатеричная строка. Должна иметь чётную длину. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка std\+::string, содержащая сырые бинарные байты. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & если входная строка имеет нечётную длину или содержит недопустимые шестнадцатеричные символы. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{Utils_8cxx_aee4ae6af295150b8d2daa18f1b1b1a01}\index{Utils.cxx@{Utils.cxx}!read\_file\_to\_string@{read\_file\_to\_string}}
+\index{read\_file\_to\_string@{read\_file\_to\_string}!Utils.cxx@{Utils.cxx}}
+\doxysubsubsection{\texorpdfstring{read\_file\_to\_string()}{read\_file\_to\_string()}}
+{\footnotesize\ttfamily \label{Utils_8cxx_aee4ae6af295150b8d2daa18f1b1b1a01} 
+std\+::string read\+\_\+file\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{full\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Читает всё содержимое файла в одну строку std\+::string. 
+
+Эта служебная функция предназначена для чтения файлов малого и среднего размера и является критически важной для создания содержимого \doxylink{classVcsObject}{Vcs\+Object} (например, Blobs). Она открывает файл в бинарном режиме, чтобы гарантировать корректное чтение всех символов на всех платформах. 
+\begin{DoxyParams}{Аргументы}
+{\em full\+\_\+path} & Полный, абсолютный путь к файлу на диске. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Всё содержимое файла в виде одной строки std\+::string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если файл не может быть открыт для чтения. \\
+\hline
+\end{DoxyExceptions}

@@ -1,0 +1,18 @@
+\doxysection{tests/cli/utils/\+Int\+Version\+Command\+Test.cxx File Reference}
+\hypertarget{IntVersionCommandTest_8cxx}{}\label{IntVersionCommandTest_8cxx}\index{tests/cli/utils/IntVersionCommandTest.cxx@{tests/cli/utils/IntVersionCommandTest.cxx}}
+
+
+Implementation of integration tests for the \doxylink{classVersionCommand}{Version\+Command} class.  
+
+
+{\ttfamily \#include "{}Int\+Version\+Command\+Test.\+hxx"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of integration tests for the \doxylink{classVersionCommand}{Version\+Command} class. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This file provides the concrete implementation for the \doxylink{classVersionCommandTest}{Version\+Command\+Test} fixture. Since the {\ttfamily svcs version} command is stateless and does not interact with a repository, the setup focuses on initializing the \doxylink{classMockSubject}{Mock\+Subject} (event bus) to capture the output and the command instance itself. Helper methods are provided for verifying the exact content of the command\textquotesingle{}s notifications. 

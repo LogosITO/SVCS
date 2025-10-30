@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: tests/cli/utils/IntVersionCommandTest.hxx Source File</title>
+<title>SVCS - English Documentation: tests/cli/utils/IntVersionCommandTest.hxx Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,33 +92,58 @@ $(function(){initNavTree('IntVersionCommandTest_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="IntVersionCommandTest_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="VersionCommand_8hxx.html">../../../cli/include/VersionCommand.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="MockSubject_8hxx.html">../mocks/MockSubject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classVersionCommandTest.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="classVersionCommandTest.html">VersionCommandTest</a> : <span class="keyword">public</span> ::testing::Test {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> SetUp() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> TearDown() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> containsMessage(<span class="keyword">const</span> std::vector&lt;Event&gt;&amp; notifications, <span class="keyword">const</span> std::string&amp; message);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> containsExactMessage(<span class="keyword">const</span> std::vector&lt;Event&gt;&amp; notifications, <span class="keyword">const</span> std::string&amp; message);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::shared_ptr&lt;MockSubject&gt; mockEventBus;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::unique_ptr&lt;VersionCommand&gt; command;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="VersionCommand_8hxx.html">../../../cli/include/VersionCommand.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="MockSubject_8hxx.html">../mocks/MockSubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classVersionCommandTest.html">   34</a></span><span class="comment"> * @details This fixture provides the necessary infrastructure for testing the VersionCommand:</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * - **SetUp/TearDown:** Initialize and clean up the mock event bus and the command object.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * - **Core Components:** Instances of MockSubject (for capturing output) and the VersionCommand itself.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * - **Helper Methods:** Simplify checking the captured event notifications for specific content.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * @ingroup IntegrationTests</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * @russian</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * @class VersionCommandTest</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * @brief Google Test фикстур для запуска модульных/интеграционных тестов VersionCommand.</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * @details Этот фикстур предоставляет необходимую инфраструктуру для тестирования VersionCommand:</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * - **SetUp/TearDown:** Инициализация и очистка mock шины событий и объекта команды.</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> * - **Основные компоненты:** Экземпляры MockSubject (для захвата вывода) и самого VersionCommand.</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> * - **Вспомогательные методы:** Упрощают проверку захваченных уведомлений о событиях на наличие конкретного содержимого.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * @ingroup IntegrationTests</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">class </span><a class="code hl_class" href="classVersionCommandTest.html">VersionCommandTest</a> : <span class="keyword">public</span> ::testing::Test {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVersionCommandTest.html#aa1c45b84502742e866d49c66a626809c">SetUp</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVersionCommandTest.html#ad7127cf990e521a44f3ce2830538ceba">TearDown</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
 </div>
-<div class="ttc" id="aMockSubject_8hxx_html"><div class="ttname"><a href="MockSubject_8hxx.html">MockSubject.hxx</a></div><div class="ttdoc">Declaration of the MockSubject class for testing components that depend on ISubject (Event Bus).</div></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classVersionCommandTest.html#a738595ee329e516a065707b410b2d966">containsMessage</a>(<span class="keyword">const</span> std::vector&lt;Event&gt;&amp; notifications, <span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classVersionCommandTest.html#a039d68276bd7252137dbfbeb8bb800e6">containsExactMessage</a>(<span class="keyword">const</span> std::vector&lt;Event&gt;&amp; notifications, <span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    std::shared_ptr&lt;MockSubject&gt; <a class="code hl_variable" href="classVersionCommandTest.html#a068600dc371791315262b93226ccbb14">mockEventBus</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    std::unique_ptr&lt;VersionCommand&gt; <a class="code hl_variable" href="classVersionCommandTest.html#ac151e54debae29644927cbc3573d0fc7">command</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
+<div class="ttc" id="aMockSubject_8hxx_html"><div class="ttname"><a href="MockSubject_8hxx.html">MockSubject.hxx</a></div><div class="ttdoc">Mock implementation of the ISubject interface for unit testing purposes.</div></div>
 <div class="ttc" id="aVersionCommand_8hxx_html"><div class="ttname"><a href="VersionCommand_8hxx.html">VersionCommand.hxx</a></div><div class="ttdoc">Declaration of the VersionCommand class for displaying version information.</div></div>
-<div class="ttc" id="aclassVersionCommandTest_html"><div class="ttname"><a href="classVersionCommandTest.html">VersionCommandTest</a></div><div class="ttdoc">Google Test fixture for running unit/integration tests against the VersionCommand.</div><div class="ttdef"><b>Definition</b> IntVersionCommandTest.hxx:33</div></div>
+<div class="ttc" id="aclassVersionCommandTest_html"><div class="ttname"><a href="classVersionCommandTest.html">VersionCommandTest</a></div><div class="ttdoc">Google Test fixture for running unit/integration tests against the VersionCommand.</div><div class="ttdef"><b>Definition</b> IntVersionCommandTest.hxx:34</div></div>
+<div class="ttc" id="aclassVersionCommandTest_html_a039d68276bd7252137dbfbeb8bb800e6"><div class="ttname"><a href="classVersionCommandTest.html#a039d68276bd7252137dbfbeb8bb800e6">VersionCommandTest::containsExactMessage</a></div><div class="ttdeci">bool containsExactMessage(const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</div><div class="ttdoc">Checks if any event notification contains the exact specified message.</div><div class="ttdef"><b>Definition</b> IntVersionCommandTest.cxx:37</div></div>
+<div class="ttc" id="aclassVersionCommandTest_html_a068600dc371791315262b93226ccbb14"><div class="ttname"><a href="classVersionCommandTest.html#a068600dc371791315262b93226ccbb14">VersionCommandTest::mockEventBus</a></div><div class="ttdeci">std::shared_ptr&lt; MockSubject &gt; mockEventBus</div><div class="ttdoc">Shared pointer to the mock event bus for capturing command output.</div><div class="ttdef"><b>Definition</b> IntVersionCommandTest.hxx:70</div></div>
+<div class="ttc" id="aclassVersionCommandTest_html_a738595ee329e516a065707b410b2d966"><div class="ttname"><a href="classVersionCommandTest.html#a738595ee329e516a065707b410b2d966">VersionCommandTest::containsMessage</a></div><div class="ttdeci">bool containsMessage(const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</div><div class="ttdoc">Checks if a specific message (substring) exists in any event notification.</div><div class="ttdef"><b>Definition</b> IntVersionCommandTest.cxx:30</div></div>
+<div class="ttc" id="aclassVersionCommandTest_html_aa1c45b84502742e866d49c66a626809c"><div class="ttname"><a href="classVersionCommandTest.html#aa1c45b84502742e866d49c66a626809c">VersionCommandTest::SetUp</a></div><div class="ttdeci">void SetUp() override</div><div class="ttdoc">Sets up the testing environment before each test.</div><div class="ttdef"><b>Definition</b> IntVersionCommandTest.cxx:20</div></div>
+<div class="ttc" id="aclassVersionCommandTest_html_ac151e54debae29644927cbc3573d0fc7"><div class="ttname"><a href="classVersionCommandTest.html#ac151e54debae29644927cbc3573d0fc7">VersionCommandTest::command</a></div><div class="ttdeci">std::unique_ptr&lt; VersionCommand &gt; command</div><div class="ttdoc">Unique pointer to the command being tested.</div><div class="ttdef"><b>Definition</b> IntVersionCommandTest.hxx:76</div></div>
+<div class="ttc" id="aclassVersionCommandTest_html_ad7127cf990e521a44f3ce2830538ceba"><div class="ttname"><a href="classVersionCommandTest.html#ad7127cf990e521a44f3ce2830538ceba">VersionCommandTest::TearDown</a></div><div class="ttdeci">void TearDown() override</div><div class="ttdoc">Tears down the testing environment after each test.</div><div class="ttdef"><b>Definition</b> IntVersionCommandTest.cxx:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

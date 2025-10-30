@@ -1,14 +1,22 @@
 /**
  * @file IntRemoveCommandTest.cxx
- * @brief Implementation of integration tests for the RemoveCommand class.
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
  *
+ * @english
+ * @brief Implementation of integration tests for the RemoveCommand class.
  * @details This file provides the concrete implementation for the RemoveCommandTest fixture,
  * setting up a temporary SVCS repository with staged and unstaged files to thoroughly
- * test the 'svcs rm' command's logic, including handling files, directories, 
+ * test the 'svcs rm' command's logic, including handling files, directories,
  * and various options.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация интеграционных тестов для класса RemoveCommand.
+ * @details Этот файл предоставляет конкретную реализацию для фикстура RemoveCommandTest,
+ * настраивая временный репозиторий SVCS с проиндексированными и непроиндексированными файлами
+ * для тщательного тестирования логики команды 'svcs rm', включая обработку файлов, директорий
+ * и различных параметров.
  */
 
 #include "IntRemoveCommandTest.hxx"

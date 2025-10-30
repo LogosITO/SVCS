@@ -1,0 +1,60 @@
+\doxysection{Класс Repository\+Manager\+Test}
+\hypertarget{classRepositoryManagerTest}{}\label{classRepositoryManagerTest}\index{RepositoryManagerTest@{RepositoryManagerTest}}
+
+
+Test fixture for \doxylink{classRepositoryManager}{Repository\+Manager} tests.  
+
+
+Граф наследования\+:Repository\+Manager\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRepositoryManagerTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRepositoryManagerTest_a1b4e169207cfaab61a5d4d14e059fd06}\label{classRepositoryManagerTest_a1b4e169207cfaab61a5d4d14e059fd06} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classRepositoryManagerTest_a7b8277f21bbd31a92b631c0655e337d8}\label{classRepositoryManagerTest_a7b8277f21bbd31a92b631c0655e337d8} 
+void {\bfseries Tear\+Down} () override
+\item 
+\Hypertarget{classRepositoryManagerTest_aa377de086b908bf8c49475db091ba35f}\label{classRepositoryManagerTest_aa377de086b908bf8c49475db091ba35f} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries create\+Repository\+Manager} ()
+\item 
+\Hypertarget{classRepositoryManagerTest_a05deebc818f3f54925ddba9fc51c6981}\label{classRepositoryManagerTest_a05deebc818f3f54925ddba9fc51c6981} 
+void {\bfseries create\+Test\+File} (const std\+::string \&filename, const std\+::string \&content="{}test content"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные статические члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRepositoryManagerTest_ad674e0a7fada8c8f67e5219ac416d134}\label{classRepositoryManagerTest_ad674e0a7fada8c8f67e5219ac416d134} 
+static bool {\bfseries is\+Valid\+Repository\+Structure} (const fs\+::path \&path)
+\item 
+\Hypertarget{classRepositoryManagerTest_aaa833ba65859ed2a6c3b7bdb05dad1b8}\label{classRepositoryManagerTest_aaa833ba65859ed2a6c3b7bdb05dad1b8} 
+static std\+::string {\bfseries get\+Relative\+Path} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRepositoryManagerTest_a066b59a9594181ff3965f38e683f37e1}\label{classRepositoryManagerTest_a066b59a9594181ff3965f38e683f37e1} 
+fs\+::path {\bfseries temp\+\_\+dir\+\_\+}
+\item 
+\Hypertarget{classRepositoryManagerTest_ac74ed96dd6e16a88d92e8073d712fc34}\label{classRepositoryManagerTest_ac74ed96dd6e16a88d92e8073d712fc34} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classEventBus}{Event\+Bus}} $>$ {\bfseries event\+\_\+bus\+\_\+}
+\item 
+\Hypertarget{classRepositoryManagerTest_afe387646ac1c2a520ccaada3d738fa76}\label{classRepositoryManagerTest_afe387646ac1c2a520ccaada3d738fa76} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockObserver}{Mock\+Observer}} $>$ {\bfseries mock\+\_\+observer\+\_\+}
+\item 
+\Hypertarget{classRepositoryManagerTest_a80bcb6806943a2efc683caf6bd2bde6b}\label{classRepositoryManagerTest_a80bcb6806943a2efc683caf6bd2bde6b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLogger}{Logger}} $>$ {\bfseries test\+\_\+logger\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Test fixture for \doxylink{classRepositoryManager}{Repository\+Manager} tests. 
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{RepoManagerTest_8cxx}{Repo\+Manager\+Test.\+cxx}}\end{DoxyCompactItemize}

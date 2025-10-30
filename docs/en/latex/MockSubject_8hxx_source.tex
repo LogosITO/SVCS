@@ -1,0 +1,60 @@
+\doxysection{Mock\+Subject.\+hxx}
+\hypertarget{MockSubject_8hxx_source}{}\label{MockSubject_8hxx_source}\index{tests/cli/mocks/MockSubject.hxx@{tests/cli/mocks/MockSubject.hxx}}
+\mbox{\hyperlink{MockSubject_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <gmock/gmock.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMockSubject}{MockSubject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classISubject}{ISubject}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<Event>\ \mbox{\hyperlink{classMockSubject_a6a613cc4261f7b403fb24d5bde39debc}{notifications}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockSubject_a1cbe4aefca976d0a2f7c5077e9998604}{attach}}(std::shared\_ptr<IObserver>\ observer)\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockSubject_a7a19cfe5e16907e32c0ace1ff7d6992e}{detach}}(std::shared\_ptr<IObserver>\ observer)\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockSubject_a9aaffe9cd012979c90c186ea3ec86fc0}{notify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structEvent}{Event}}\&\ event)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classMockSubject}{MockSubject}}*\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>\mbox{\hyperlink{classMockSubject_a6a613cc4261f7b403fb24d5bde39debc}{notifications}}.push\_back(event);}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockSubject_ac26a01d646eb4972bbda3c3eaa6cbb46}{clear}}()\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMockSubject_a6a613cc4261f7b403fb24d5bde39debc}{notifications}}.clear();}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00117\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMockSubject_a74308a4946c1ecb59f75feaa6c6862ae}{containsMessage}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ notification\ :\ \mbox{\hyperlink{classMockSubject_a6a613cc4261f7b403fb24d5bde39debc}{notifications}})\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (notification.details.find(message)\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00137\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMockSubject_a01a1291b4fd5c992762e8d12c69e7b5d}{containsEventType}}(\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058}{Event::Type}}\ type)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ notification\ :\ \mbox{\hyperlink{classMockSubject_a6a613cc4261f7b403fb24d5bde39debc}{notifications}})\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (notification.type\ ==\ type)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockSubject_a412a981f56f4865488764884bc97c913}{storeNotification}}(\textcolor{keyword}{const}\ Event\&\ event)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMockSubject_a6a613cc4261f7b403fb24d5bde39debc}{notifications}}.push\_back(event);}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMockSubject_a9aa095581620f22597477f92881297c9}{clearNotifications}}()\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMockSubject_a6a613cc4261f7b403fb24d5bde39debc}{notifications}}.clear();}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00179\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::vector<Event>\&\ \mbox{\hyperlink{classMockSubject_ad4e43bb42aa6f87b175e84f1d0381fa8}{getNotifications}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMockSubject_a6a613cc4261f7b403fb24d5bde39debc}{notifications}};}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \};}
+
+\end{DoxyCode}

@@ -1,9 +1,14 @@
 /**
- * @file RepositoryManager.cxx
+* @file RepositoryManager.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the RepositoryManager class, handling high-level repository creation, initialization, and cleanup utilities.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса RepositoryManager, обрабатывающего создание, инициализацию и утилиты очистки репозиториев высокого уровня.
  */
 
 #include "../include/RepositoryManager.hxx"

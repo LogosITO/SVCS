@@ -1,0 +1,44 @@
+\doxysection{Remove\+Command.\+hxx}
+\hypertarget{RemoveCommand_8hxx_source}{}\label{RemoveCommand_8hxx_source}\index{cli/include/RemoveCommand.hxx@{cli/include/RemoveCommand.hxx}}
+\mbox{\hyperlink{RemoveCommand_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{ICommand.hxx}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRemoveCommand_a740894bbd2e7bad0711ffd1191d4691c}{RemoveCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classRemoveCommand_a740894bbd2e7bad0711ffd1191d4691c}{RemoveCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRemoveCommand_a46919288c69d6c00c77e3ac9ebdf0278}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00091\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classRemoveCommand_a26241aa87a8de9457f5a94406520d3d7}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}remove"{}};\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00102\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classRemoveCommand_ac40db3e0127048f9b084e84b6a206a3f}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00113\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classRemoveCommand_aaa2c2457393ab1ee5d48954f5ef17f8f}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoveCommand_a0bc7a6be4c9c02abe353ec9f8357e80d}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{bool}\ removeFileFromStaging(\textcolor{keyword}{const}\ std::string\&\ filePath)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{bool}\ removeAllFromStaging()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00158\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ confirmRemoveAll()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00159\ \};}
+
+\end{DoxyCode}

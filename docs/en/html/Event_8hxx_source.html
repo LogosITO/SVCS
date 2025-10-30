@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: services/Event.hxx Source File</title>
+<title>SVCS - English Documentation: services/Event.hxx Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - English Documentation
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,53 +92,104 @@ $(function(){initNavTree('Event_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="Event_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structEvent.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structEvent.html">Event</a> {</div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">   21</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Type</a> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        FATAL_ERROR, </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        RUNTIME_ERROR,         </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        REPOSITORY_INIT_SUCCESS,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        STAGE_SUCCESS,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        SAVE_SUCCESS,</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        OBJECT_WRITE_SUCCESS,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        OBJECT_READ_SUCCESS, </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        INDEX_UPDATE, </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        COMMIT_CREATED, </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        GENERAL_INFO,  </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        HELP_MESSAGE,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        DEBUG_MESSAGE,          </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        ERROR_MESSAGE,          </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        WARNING_MESSAGE,</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        PROTOCOL_START,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        PROTOCOL_SUCCESS,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        PROTOCOL_ERROR,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        NETWORK_SEND,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        NETWORK_RECEIVE,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        OBJECT_TRANSFER,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        REFERENCE_UPDATE,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        NEGOTIATION_PHASE</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    };</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structEvent.html">   20</a></span><span class="comment"> * @details This is the &quot;message&quot; that the Subject (Publisher, e.g., Repository)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * sends to all its Observers.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * @russian</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * @brief Структура, описывающая событие, опубликованное ядром VCS.</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">   25</a></span><span class="comment"> * @details Это &quot;сообщение&quot;, которое Subject (Издатель, например, Repository)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * отправляет всем своим Observers.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">struct </span><a class="code hl_struct" href="structEvent.html">Event</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c">   36</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Type</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a">FATAL_ERROR</a>,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c">RUNTIME_ERROR</a>,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686">   54</a></span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04">REPOSITORY_INIT_SUCCESS</a>,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058aad0f3057bed3b9321d5e67cdc86dc51e">STAGE_SUCCESS</a>,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775">   72</a></span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686">SAVE_SUCCESS</a>,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70">OBJECT_WRITE_SUCCESS</a>,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b">   90</a></span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092">OBJECT_READ_SUCCESS</a>,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775">INDEX_UPDATE</a>,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4">  108</a></span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c">COMMIT_CREATED</a>,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7">GENERAL_INFO</a>,</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89">  126</a></span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b">HELP_MESSAGE</a>,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5">DEBUG_MESSAGE</a>,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="structEvent.html#a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec">  144</a></span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61">ERROR_MESSAGE</a>,</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3">   49</a></span>    <a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Type</a> <a class="code hl_variable" href="structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3">type</a>;                  </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structEvent.html#afedba76038909cf242d7642da3b7bfd9">   50</a></span>    std::string <a class="code hl_variable" href="structEvent.html#afedba76038909cf242d7642da3b7bfd9">details</a>;        </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structEvent.html#af3aea97224cf810339754ab8bd53e893">   56</a></span>    std::string <a class="code hl_variable" href="structEvent.html#af3aea97224cf810339754ab8bd53e893">source_name</a>;    </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4">WARNING_MESSAGE</a>,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d">PROTOCOL_START</a>,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
 </div>
-<div class="ttc" id="astructEvent_html"><div class="ttname"><a href="structEvent.html">Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:17</div></div>
-<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a></div><div class="ttdeci">Type</div><div class="ttdoc">Types of events that can be published.</div><div class="ttdef"><b>Definition</b> Event.hxx:21</div></div>
-<div class="ttc" id="astructEvent_html_acb1e67cf0d5f22ac9360447b6f0fb5d3"><div class="ttname"><a href="structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3">Event::type</a></div><div class="ttdeci">Type type</div><div class="ttdoc">The type of event that occurred.</div><div class="ttdef"><b>Definition</b> Event.hxx:49</div></div>
-<div class="ttc" id="astructEvent_html_af3aea97224cf810339754ab8bd53e893"><div class="ttname"><a href="structEvent.html#af3aea97224cf810339754ab8bd53e893">Event::source_name</a></div><div class="ttdeci">std::string source_name</div><div class="ttdoc">Source of the event (e.g., &quot;main&quot;, &quot;InitCommand&quot;, &quot;Repository&quot;).</div><div class="ttdef"><b>Definition</b> Event.hxx:56</div></div>
-<div class="ttc" id="astructEvent_html_afedba76038909cf242d7642da3b7bfd9"><div class="ttname"><a href="structEvent.html#afedba76038909cf242d7642da3b7bfd9">Event::details</a></div><div class="ttdeci">std::string details</div><div class="ttdoc">Detailed description or payload (e.g., object hash)</div><div class="ttdef"><b>Definition</b> Event.hxx:50</div></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7">PROTOCOL_SUCCESS</a>,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89">PROTOCOL_ERROR</a>,</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be">NETWORK_SEND</a>,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad">NETWORK_RECEIVE</a>,</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec">OBJECT_TRANSFER</a>,</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5">REFERENCE_UPDATE</a>,</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e">NEGOTIATION_PHASE</a></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    };</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <a class="code hl_enumeration" href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Type</a> <a class="code hl_variable" href="structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3">type</a>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    std::string <a class="code hl_variable" href="structEvent.html#afedba76038909cf242d7642da3b7bfd9">details</a>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    std::string <a class="code hl_variable" href="structEvent.html#af3aea97224cf810339754ab8bd53e893">source_name</a>;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>};</div>
+<div class="ttc" id="astructEvent_html"><div class="ttname"><a href="structEvent.html">Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:20</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058">Event::Type</a></div><div class="ttdeci">Type</div><div class="ttdoc">Types of events that can be published.</div><div class="ttdef"><b>Definition</b> Event.hxx:25</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a0dd0bfc8fcdc6610d464efcd60c61e89">Event::PROTOCOL_ERROR</a></div><div class="ttdeci">@ PROTOCOL_ERROR</div><div class="ttdoc">Protocol operation encountered an error.</div><div class="ttdef"><b>Definition</b> Event.hxx:126</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a12135945c12c64801f4c45076b733c70">Event::OBJECT_WRITE_SUCCESS</a></div><div class="ttdeci">@ OBJECT_WRITE_SUCCESS</div><div class="ttdoc">Object write operation completed successfully.</div><div class="ttdef"><b>Definition</b> Event.hxx:60</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5">Event::DEBUG_MESSAGE</a></div><div class="ttdeci">@ DEBUG_MESSAGE</div><div class="ttdoc">Debug message for development purposes.</div><div class="ttdef"><b>Definition</b> Event.hxx:96</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a3881c0427bb732f17a1c312bd259d5d5">Event::REFERENCE_UPDATE</a></div><div class="ttdeci">@ REFERENCE_UPDATE</div><div class="ttdoc">Reference (branch/tag) has been updated.</div><div class="ttdef"><b>Definition</b> Event.hxx:150</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a3ee406952ee2961a46a7c49321b718ad">Event::NETWORK_RECEIVE</a></div><div class="ttdeci">@ NETWORK_RECEIVE</div><div class="ttdoc">Data has been received over network.</div><div class="ttdef"><b>Definition</b> Event.hxx:138</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a44dfea505cb9eee2be972976824b2ab4">Event::WARNING_MESSAGE</a></div><div class="ttdeci">@ WARNING_MESSAGE</div><div class="ttdoc">Warning message for potential issues.</div><div class="ttdef"><b>Definition</b> Event.hxx:108</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b">Event::HELP_MESSAGE</a></div><div class="ttdeci">@ HELP_MESSAGE</div><div class="ttdoc">Help message for user assistance.</div><div class="ttdef"><b>Definition</b> Event.hxx:90</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a59e557a4187b5456f2933f7eeca36686">Event::SAVE_SUCCESS</a></div><div class="ttdeci">@ SAVE_SUCCESS</div><div class="ttdoc">Save (commit) operation completed successfully.</div><div class="ttdef"><b>Definition</b> Event.hxx:54</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a63465dc09fb9f43da3ec1f4144e86c1c">Event::COMMIT_CREATED</a></div><div class="ttdeci">@ COMMIT_CREATED</div><div class="ttdoc">New commit has been created.</div><div class="ttdef"><b>Definition</b> Event.hxx:78</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a7fc884985070fef748fc2def0d682092">Event::OBJECT_READ_SUCCESS</a></div><div class="ttdeci">@ OBJECT_READ_SUCCESS</div><div class="ttdoc">Object read operation completed successfully.</div><div class="ttdef"><b>Definition</b> Event.hxx:66</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a823d8383d26741c149fdd5ec8491fe04">Event::REPOSITORY_INIT_SUCCESS</a></div><div class="ttdeci">@ REPOSITORY_INIT_SUCCESS</div><div class="ttdoc">Repository initialization completed successfully.</div><div class="ttdef"><b>Definition</b> Event.hxx:42</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a84a83929e0941316a1a9cdfe6be15a3a">Event::FATAL_ERROR</a></div><div class="ttdeci">@ FATAL_ERROR</div><div class="ttdoc">Fatal error that causes application termination.</div><div class="ttdef"><b>Definition</b> Event.hxx:30</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a913c724d515b6c72ebebcd1e3ea2e7c7">Event::PROTOCOL_SUCCESS</a></div><div class="ttdeci">@ PROTOCOL_SUCCESS</div><div class="ttdoc">Protocol operation completed successfully.</div><div class="ttdef"><b>Definition</b> Event.hxx:120</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c">Event::RUNTIME_ERROR</a></div><div class="ttdeci">@ RUNTIME_ERROR</div><div class="ttdoc">Runtime error that may allow continued execution.</div><div class="ttdef"><b>Definition</b> Event.hxx:36</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058aa984fc226403beb06c898a545ba54cec">Event::OBJECT_TRANSFER</a></div><div class="ttdeci">@ OBJECT_TRANSFER</div><div class="ttdoc">Object transfer in progress.</div><div class="ttdef"><b>Definition</b> Event.hxx:144</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058aad0f3057bed3b9321d5e67cdc86dc51e"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058aad0f3057bed3b9321d5e67cdc86dc51e">Event::STAGE_SUCCESS</a></div><div class="ttdeci">@ STAGE_SUCCESS</div><div class="ttdoc">File staging operation completed successfully.</div><div class="ttdef"><b>Definition</b> Event.hxx:48</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058ac5e66ec8873c068f2ce4ff4ac7975775">Event::INDEX_UPDATE</a></div><div class="ttdeci">@ INDEX_UPDATE</div><div class="ttdoc">Index has been updated.</div><div class="ttdef"><b>Definition</b> Event.hxx:72</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058ac89c411f66df42f057c8ee70595a9d61">Event::ERROR_MESSAGE</a></div><div class="ttdeci">@ ERROR_MESSAGE</div><div class="ttdoc">Error message for user notification.</div><div class="ttdef"><b>Definition</b> Event.hxx:102</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058ad15b159610f75314c16391e26b288f4e">Event::NEGOTIATION_PHASE</a></div><div class="ttdeci">@ NEGOTIATION_PHASE</div><div class="ttdoc">Protocol negotiation phase in progress.</div><div class="ttdef"><b>Definition</b> Event.hxx:156</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7">Event::GENERAL_INFO</a></div><div class="ttdeci">@ GENERAL_INFO</div><div class="ttdoc">General informational message.</div><div class="ttdef"><b>Definition</b> Event.hxx:84</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058aec17d6a86f962e4e67993c83d21f1d7d">Event::PROTOCOL_START</a></div><div class="ttdeci">@ PROTOCOL_START</div><div class="ttdoc">Protocol operation has started.</div><div class="ttdef"><b>Definition</b> Event.hxx:114</div></div>
+<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058af9d451e6c46056a427f2219a243a17be">Event::NETWORK_SEND</a></div><div class="ttdeci">@ NETWORK_SEND</div><div class="ttdoc">Data has been sent over network.</div><div class="ttdef"><b>Definition</b> Event.hxx:132</div></div>
+<div class="ttc" id="astructEvent_html_acb1e67cf0d5f22ac9360447b6f0fb5d3"><div class="ttname"><a href="structEvent.html#acb1e67cf0d5f22ac9360447b6f0fb5d3">Event::type</a></div><div class="ttdeci">Type type</div><div class="ttdoc">The type of event that occurred.</div><div class="ttdef"><b>Definition</b> Event.hxx:163</div></div>
+<div class="ttc" id="astructEvent_html_af3aea97224cf810339754ab8bd53e893"><div class="ttname"><a href="structEvent.html#af3aea97224cf810339754ab8bd53e893">Event::source_name</a></div><div class="ttdeci">std::string source_name</div><div class="ttdoc">Source of the event (e.g., &quot;main&quot;, &quot;InitCommand&quot;, &quot;Repository&quot;).</div><div class="ttdef"><b>Definition</b> Event.hxx:176</div></div>
+<div class="ttc" id="astructEvent_html_afedba76038909cf242d7642da3b7bfd9"><div class="ttname"><a href="structEvent.html#afedba76038909cf242d7642da3b7bfd9">Event::details</a></div><div class="ttdeci">std::string details</div><div class="ttdoc">Detailed description or payload (e.g., object hash).</div><div class="ttdef"><b>Definition</b> Event.hxx:169</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

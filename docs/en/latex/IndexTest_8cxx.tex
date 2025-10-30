@@ -1,0 +1,64 @@
+\doxysection{tests/core/\+Index\+Test.cxx File Reference}
+\hypertarget{IndexTest_8cxx}{}\label{IndexTest_8cxx}\index{tests/core/IndexTest.cxx@{tests/core/IndexTest.cxx}}
+
+
+Unit tests for the \doxylink{classIndex}{Index} class, verifying staging area management, file modification tracking, and index persistence.  
+
+
+{\ttfamily \#include "{}../../core/include/\+Index.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Blob.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Object\+Storage.\+hxx"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMockSubject}{Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classISubject}{ISubject} (\doxylink{structEvent}{Event} Bus). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMockObjectStorage}{Mock\+Object\+Storage}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIndexTest}{Index\+Test}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{IndexTest_8cxx_a67dac0eb78bdb674669d65a339f668ab}\label{IndexTest_8cxx_a67dac0eb78bdb674669d65a339f668ab} 
+void {\bfseries create\+\_\+test\+\_\+file} (const fs\+::path \&path, const std\+::string \&content)
+\item 
+\Hypertarget{IndexTest_8cxx_a2fd71617f1205cb97d16142b7f2d532b}\label{IndexTest_8cxx_a2fd71617f1205cb97d16142b7f2d532b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Basic\+File\+Operations)
+\item 
+\Hypertarget{IndexTest_8cxx_afecfa5c45e3b3efef0e4f0b2ad873963}\label{IndexTest_8cxx_afecfa5c45e3b3efef0e4f0b2ad873963} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Stage\+New\+File\+\_\+\+Adds\+Correct\+Entry)
+\item 
+\Hypertarget{IndexTest_8cxx_abb7ef29f8eb1024642a7682f2949df7f}\label{IndexTest_8cxx_abb7ef29f8eb1024642a7682f2949df7f} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Stage\+File\+\_\+\+Throws\+On\+Non\+Existent\+File)
+\item 
+\Hypertarget{IndexTest_8cxx_a3b622ddd43bc94ed35fa5356903b9660}\label{IndexTest_8cxx_a3b622ddd43bc94ed35fa5356903b9660} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+False\+\_\+\+When\+No\+Change)
+\item 
+\Hypertarget{IndexTest_8cxx_ac9476d8cef2b1a98dbbf17d06610603b}\label{IndexTest_8cxx_ac9476d8cef2b1a98dbbf17d06610603b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+Size\+Changes)
+\item 
+\Hypertarget{IndexTest_8cxx_a9add58ac0562dcde1b7a85131fe35f32}\label{IndexTest_8cxx_a9add58ac0562dcde1b7a85131fe35f32} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+File\+Deleted)
+\item 
+\Hypertarget{IndexTest_8cxx_a34250156caa94989fa1a5f942f6ce8ab}\label{IndexTest_8cxx_a34250156caa94989fa1a5f942f6ce8ab} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+Untracked\+Exists)
+\item 
+\Hypertarget{IndexTest_8cxx_a2cf7df6db081df9db187b6eee911d519}\label{IndexTest_8cxx_a2cf7df6db081df9db187b6eee911d519} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Persistence\+\_\+\+Save\+And\+Load)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit tests for the \doxylink{classIndex}{Index} class, verifying staging area management, file modification tracking, and index persistence. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}

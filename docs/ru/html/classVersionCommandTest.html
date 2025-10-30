@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS: Класс VersionCommandTest</title>
+<title>SVCS - Русская документация: Класс VersionCommandTest</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="100x100tree.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">SVCS<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">SVCS - Русская документация
    </div>
-   <div id="projectbrief">Simple Version Control System</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +92,7 @@ $(function(){initNavTree('classVersionCommandTest.html','','classVersionCommandT
 </div><!--header-->
 <div class="contents">
 
-<p>Google Test fixture for running unit/integration tests against the <a class="el" href="classVersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a>.  
+<p>Google Test фикстур для запуска модульных/интеграционных тестов <a class="el" href="classVersionCommand.html" title="Команда для отображения информации о версии SVCS.">VersionCommand</a>.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IntVersionCommandTest_8hxx_source.html">IntVersionCommandTest.hxx</a>&gt;</code></p>
@@ -109,28 +107,111 @@ $(function(){initNavTree('classVersionCommandTest.html','','classVersionCommandT
 Защищенные члены</h2></td></tr>
 <tr class="memitem:aa1c45b84502742e866d49c66a626809c" id="r_aa1c45b84502742e866d49c66a626809c"><td class="memItemLeft" align="right" valign="top"><a id="aa1c45b84502742e866d49c66a626809c" name="aa1c45b84502742e866d49c66a626809c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetUp</b> () override</td></tr>
+<tr class="memdesc:aa1c45b84502742e866d49c66a626809c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настраивает тестовое окружение перед каждым тестом. <br /></td></tr>
 <tr class="memitem:ad7127cf990e521a44f3ce2830538ceba" id="r_ad7127cf990e521a44f3ce2830538ceba"><td class="memItemLeft" align="right" valign="top"><a id="ad7127cf990e521a44f3ce2830538ceba" name="ad7127cf990e521a44f3ce2830538ceba"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>TearDown</b> () override</td></tr>
-<tr class="memitem:a738595ee329e516a065707b410b2d966" id="r_a738595ee329e516a065707b410b2d966"><td class="memItemLeft" align="right" valign="top"><a id="a738595ee329e516a065707b410b2d966" name="a738595ee329e516a065707b410b2d966"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>containsMessage</b> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
-<tr class="memitem:a039d68276bd7252137dbfbeb8bb800e6" id="r_a039d68276bd7252137dbfbeb8bb800e6"><td class="memItemLeft" align="right" valign="top"><a id="a039d68276bd7252137dbfbeb8bb800e6" name="a039d68276bd7252137dbfbeb8bb800e6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>containsExactMessage</b> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memdesc:ad7127cf990e521a44f3ce2830538ceba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает тестовое окружение после каждого теста. <br /></td></tr>
+<tr class="memitem:a738595ee329e516a065707b410b2d966" id="r_a738595ee329e516a065707b410b2d966"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a738595ee329e516a065707b410b2d966">containsMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memdesc:a738595ee329e516a065707b410b2d966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии.  <br /></td></tr>
+<tr class="memitem:a039d68276bd7252137dbfbeb8bb800e6" id="r_a039d68276bd7252137dbfbeb8bb800e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a039d68276bd7252137dbfbeb8bb800e6">containsExactMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memdesc:a039d68276bd7252137dbfbeb8bb800e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, содержит ли какое-либо уведомление о событии точно указанное сообщение.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Защищенные данные</h2></td></tr>
 <tr class="memitem:a068600dc371791315262b93226ccbb14" id="r_a068600dc371791315262b93226ccbb14"><td class="memItemLeft" align="right" valign="top"><a id="a068600dc371791315262b93226ccbb14" name="a068600dc371791315262b93226ccbb14"></a>
 std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockEventBus</b></td></tr>
+<tr class="memdesc:a068600dc371791315262b93226ccbb14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Общий указатель на mock шину событий для захвата вывода команды. <br /></td></tr>
 <tr class="memitem:ac151e54debae29644927cbc3573d0fc7" id="r_ac151e54debae29644927cbc3573d0fc7"><td class="memItemLeft" align="right" valign="top"><a id="ac151e54debae29644927cbc3573d0fc7" name="ac151e54debae29644927cbc3573d0fc7"></a>
 std::unique_ptr&lt; <a class="el" href="classVersionCommand.html">VersionCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+<tr class="memdesc:ac151e54debae29644927cbc3573d0fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уникальный указатель на тестируемую команду. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Google Test fixture for running unit/integration tests against the <a class="el" href="classVersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a>. </p>
-<p>This fixture provides the necessary infrastructure for testing the <a class="el" href="classVersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a>:</p><ul>
-<li><b>SetUp/TearDown:</b> Initialize and clean up the mock event bus and the command object.</li>
-<li><b>Core Components:</b> Instances of <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject.">MockSubject</a> (for capturing output) and the <a class="el" href="classVersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a> itself.</li>
-<li><b>Helper Methods:</b> Simplify checking the captured event notifications for specific content. </li>
+<div class="textblock"><p>Google Test фикстур для запуска модульных/интеграционных тестов <a class="el" href="classVersionCommand.html" title="Команда для отображения информации о версии SVCS.">VersionCommand</a>. </p>
+<p>Этот фикстур предоставляет необходимую инфраструктуру для тестирования <a class="el" href="classVersionCommand.html" title="Команда для отображения информации о версии SVCS.">VersionCommand</a>:</p><ul>
+<li><b>SetUp/TearDown:</b> Инициализация и очистка mock шины событий и объекта команды.</li>
+<li><b>Основные компоненты:</b> Экземпляры <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> (для захвата вывода) и самого <a class="el" href="classVersionCommand.html" title="Команда для отображения информации о версии SVCS.">VersionCommand</a>.</li>
+<li><b>Вспомогательные методы:</b> Упрощают проверку захваченных уведомлений о событиях на наличие конкретного содержимого. </li>
 </ul>
-</div><hr/>Объявления и описания членов классов находятся в файлах:<ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a039d68276bd7252137dbfbeb8bb800e6" name="a039d68276bd7252137dbfbeb8bb800e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a039d68276bd7252137dbfbeb8bb800e6">&#9670;&#160;</a></span>containsExactMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VersionCommandTest::containsExactMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, содержит ли какое-либо уведомление о событии точно указанное сообщение. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifications</td><td>Список захваченных событий. </td></tr>
+    <tr><td class="paramname">message</td><td>Точное сообщение для поиска. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если найдено точное совпадение, false в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a738595ee329e516a065707b410b2d966" name="a738595ee329e516a065707b410b2d966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a738595ee329e516a065707b410b2d966">&#9670;&#160;</a></span>containsMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VersionCommandTest::containsMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifications</td><td>Список захваченных событий. </td></tr>
+    <tr><td class="paramname">message</td><td>Подстрока для поиска. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если сообщение найдено, false в противном случае. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
 <li>tests/cli/utils/<a class="el" href="IntVersionCommandTest_8hxx_source.html">IntVersionCommandTest.hxx</a></li>
 <li>tests/cli/utils/<a class="el" href="IntVersionCommandTest_8cxx.html">IntVersionCommandTest.cxx</a></li>
 </ul>

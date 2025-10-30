@@ -28,6 +28,18 @@ target_link_libraries(svcs_core PUBLIC
     svcs_services
 )
 
+add_custom_target(docs_en
+        COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_SOURCE_DIR}/Doxyfile.en
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        COMMENT "Generating English documentation"
+)
+
+add_custom_target(docs_ru
+        COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_SOURCE_DIR}/Doxyfile.ru
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        COMMENT "Generating Russian documentation"
+)
+
 enable_testing()
 
 add_subdirectory(tests)

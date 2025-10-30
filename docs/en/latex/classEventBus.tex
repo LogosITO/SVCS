@@ -1,0 +1,112 @@
+\doxysection{Event\+Bus Class Reference}
+\hypertarget{classEventBus}{}\label{classEventBus}\index{EventBus@{EventBus}}
+
+
+A thread-\/safe implementation of \doxylink{classISubject}{ISubject} for centralized event distribution.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Bus.\+hxx$>$}
+
+Inheritance diagram for Event\+Bus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEventBus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEventBus_af9f702d10d6340e1f3da65e487fd73be}\label{classEventBus_af9f702d10d6340e1f3da65e487fd73be} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Event\+Bus} () override=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventBus_a131f28abdfe25a80f94a202aff5e6edb}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Registers a new Observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventBus_a42559fdfdd62a10ae1494f123a06e96a}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$ observer\+\_\+to\+\_\+remove) override
+\begin{DoxyCompactList}\small\item\em Deregisters a specific Observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventBus_a581f243551365d2dc9599665540486dd}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) const override
+\begin{DoxyCompactList}\small\item\em Sends an event to all active Observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classISubject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classISubject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classISubject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classIObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Collection of registered observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A thread-\/safe implementation of \doxylink{classISubject}{ISubject} for centralized event distribution. 
+
+This class uses std\+::weak\+\_\+ptr to store observers, preventing circular dependencies and ensuring automatic cleanup of destroyed observers. It inherits from std\+::enable\+\_\+shared\+\_\+from\+\_\+this to ensure that valid shared pointers to the bus can be created even inside its member functions. 
+
+\label{doc-func-members}
+\Hypertarget{classEventBus_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEventBus_a131f28abdfe25a80f94a202aff5e6edb}\index{EventBus@{EventBus}!attach@{attach}}
+\index{attach@{attach}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{classEventBus_a131f28abdfe25a80f94a202aff5e6edb} 
+void Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Registers a new Observer. 
+
+The observer\textquotesingle{}s shared pointer is stored as a weak pointer internally. 
+\begin{DoxyParams}{Parameters}
+{\em observer} & The smart pointer to the Observer to be registered. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{ISubject}}.
+
+\Hypertarget{classEventBus_a42559fdfdd62a10ae1494f123a06e96a}\index{EventBus@{EventBus}!detach@{detach}}
+\index{detach@{detach}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classEventBus_a42559fdfdd62a10ae1494f123a06e96a} 
+void Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer\+\_\+to\+\_\+remove}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Deregisters a specific Observer. 
+
+Compares the provided shared\+\_\+ptr against all stored weak\+\_\+ptr objects. 
+\begin{DoxyParams}{Parameters}
+{\em observer\+\_\+to\+\_\+remove} & The smart pointer to the Observer to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{ISubject}}.
+
+\Hypertarget{classEventBus_a581f243551365d2dc9599665540486dd}\index{EventBus@{EventBus}!notify@{notify}}
+\index{notify@{notify}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classEventBus_a581f243551365d2dc9599665540486dd} 
+void Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sends an event to all active Observers. 
+
+Iterates over the list, safely locking each weak pointer before calling update(). Invalid (expired) weak pointers are effectively ignored. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The constant reference to the \doxylink{structEvent}{Event} to be published. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{ISubject}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{EventBus_8hxx}{Event\+Bus.\+hxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,26 @@
+\doxysection{core/include/\+Repository\+Manager.hxx File Reference}
+\hypertarget{RepositoryManager_8hxx}{}\label{RepositoryManager_8hxx}\index{core/include/RepositoryManager.hxx@{core/include/RepositoryManager.hxx}}
+
+
+Declaration of the \doxylink{classRepositoryManager}{Repository\+Manager} class, managing all repository-\/level file operations.  
+
+
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCommitInfo}{Commit\+Info}}
+\begin{DoxyCompactList}\small\item\em Structure containing essential metadata for a single commit. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages all physical file and directory operations within the SVCS repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classRepositoryManager}{Repository\+Manager} class, managing all repository-\/level file operations. 
+
+This class is the core service provider for the SVCS application, handling all low-\/level file system interactions related to the repository structure, staging area, commits, and history. It relies on the \doxylink{classISubject}{ISubject} interface for all internal logging and error reporting. 

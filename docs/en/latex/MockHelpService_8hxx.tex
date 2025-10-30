@@ -1,0 +1,29 @@
+\doxysection{tests/cli/mocks/\+Mock\+Help\+Service.hxx File Reference}
+\hypertarget{MockHelpService_8hxx}{}\label{MockHelpService_8hxx}\index{tests/cli/mocks/MockHelpService.hxx@{tests/cli/mocks/MockHelpService.hxx}}
+
+
+Mock implementation of the \doxylink{classHelpService}{Help\+Service} interface for unit testing purposes.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}../../../cli/include/\+Help\+Service.\+hxx"{}}\newline
+{\ttfamily \#include "{}Mock\+Subject.\+hxx"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMockHelpService}{Mock\+Help\+Service}}
+\begin{DoxyCompactList}\small\item\em A mock implementation of the \doxylink{classHelpService}{Help\+Service} for testing the \doxylink{classHelpCommand}{Help\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mock implementation of the \doxylink{classHelpService}{Help\+Service} interface for unit testing purposes. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+This class inherits from \doxylink{classHelpService}{Help\+Service} and overrides its abstract methods ({\ttfamily get\+Available\+Commands}, {\ttfamily get\+Command\+Description}, {\ttfamily show\+Command\+Help}) with controlled implementations. It includes utility methods ({\ttfamily set\+Available\+Commands}, {\ttfamily was\+Command\+Help\+Called}, etc.) to allow tests to configure the mock\textquotesingle{}s behavior and inspect its interactions. This mock is essential for unit testing the {\bfseries{\doxylink{classHelpCommand}{Help\+Command}}} without depending on the actual implementation of the CLI command registration system. 

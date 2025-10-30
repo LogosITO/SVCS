@@ -1,9 +1,14 @@
 /**
- * @file Repository.cxx
+* @file Repository.cxx
+ * @copyright
+ * Copyright 2025 LogosITO
+ * Licensed under MIT-License
+ *
+ * @english
  * @brief Implementation of the Repository class, which serves as the main application facade and core logic for the VCS.
  *
- * @copyright **Copyright (c) 2025 LogosITO**
- * @license **MIT License**
+ * @russian
+ * @brief Реализация класса Repository, который служит основным фасадом приложения и ядром логики для СКВ.
  */
 
 #include "../include/Repository.hxx"

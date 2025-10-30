@@ -1,0 +1,98 @@
+\doxysection{Manual\+Mock\+Observer Class Reference}
+\hypertarget{classManualMockObserver}{}\label{classManualMockObserver}\index{ManualMockObserver@{ManualMockObserver}}
+
+
+Manual mock implementation of the \doxylink{classIObserver}{IObserver} interface.  
+
+
+Inheritance diagram for Manual\+Mock\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classManualMockObserver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classManualMockObserver_a2d0cef17d9225d64ce23dbf3451bb610}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to notify the observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classManualMockObserver_a69920f02d27bbea5a79566d616d844fd}{update}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to update the observer. \end{DoxyCompactList}\item 
+\Hypertarget{classManualMockObserver_ace80df6b326f4af52205b182aa256bee}\label{classManualMockObserver_ace80df6b326f4af52205b182aa256bee} 
+size\+\_\+t {\bfseries get\+\_\+event\+\_\+count} () const
+\item 
+\Hypertarget{classManualMockObserver_a9a350d87e5c6d49b67cc7b295f08b58a}\label{classManualMockObserver_a9a350d87e5c6d49b67cc7b295f08b58a} 
+bool {\bfseries contains\+\_\+event\+\_\+with\+\_\+text} (const std\+::string \&text) const
+\item 
+\Hypertarget{classManualMockObserver_ab2aef6bfd9a0ae0b9b20140ed6005d22}\label{classManualMockObserver_ab2aef6bfd9a0ae0b9b20140ed6005d22} 
+void {\bfseries clear\+\_\+events} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObserver}{IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObserver_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classManualMockObserver_a0285a1d501ee9e835e1a9587fbc05f3c}\label{classManualMockObserver_a0285a1d501ee9e835e1a9587fbc05f3c} 
+std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ {\bfseries received\+\_\+events}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manual mock implementation of the \doxylink{classIObserver}{IObserver} interface. 
+
+
+\begin{DoxyItemize}
+\item This class records all events received via the \textquotesingle{}update\textquotesingle{} or \textquotesingle{}notify\textquotesingle{} methods, allowing test assertions on event content and count. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classManualMockObserver_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classManualMockObserver_a2d0cef17d9225d64ce23dbf3451bb610}\index{ManualMockObserver@{ManualMockObserver}!notify@{notify}}
+\index{notify@{notify}!ManualMockObserver@{ManualMockObserver}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classManualMockObserver_a2d0cef17d9225d64ce23dbf3451bb610} 
+void Manual\+Mock\+Observer\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method called by the Subject to notify the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structEvent}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Note\+: This method appears redundant with \doxylink{classManualMockObserver_a69920f02d27bbea5a79566d616d844fd}{update(const Event\& event)}.\end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{classIObserver_a325451b0d0100feaad6f683850a616dc}{IObserver}}.
+
+\Hypertarget{classManualMockObserver_a69920f02d27bbea5a79566d616d844fd}\index{ManualMockObserver@{ManualMockObserver}!update@{update}}
+\index{update@{update}!ManualMockObserver@{ManualMockObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classManualMockObserver_a69920f02d27bbea5a79566d616d844fd} 
+void Manual\+Mock\+Observer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method called by the Subject to update the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structEvent}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIObserver_af15fbd52637f4bf0225fde86051d8354}{IObserver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{RepositoryTest_8cxx}{Repository\+Test.\+cxx}}\end{DoxyCompactItemize}

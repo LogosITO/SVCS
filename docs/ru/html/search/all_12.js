@@ -11,6 +11,7 @@ var searchData=
   ['updatebranchreference_8',['updateBranchReference',['../classRepositoryManager.html#a887e56ac86447c2735597e2ea88c33bb',1,'RepositoryManager']]],
   ['updatecommitreferences_9',['updateCommitReferences',['../classRepositoryManager.html#a7b5d52f3d9d35ee3b19e3de95381b97f',1,'RepositoryManager']]],
   ['updatehead_10',['updateHead',['../classRepositoryManager.html#a65eba6d28cbf99fd3fbad48845a2cd34',1,'RepositoryManager']]],
-  ['utils_2ecxx_11',['Utils.cxx',['../Utils_8cxx.html',1,'']]],
-  ['utils_2ehxx_12',['Utils.hxx',['../cli_2include_2Utils_8hxx.html',1,'(Глобальное пространство имён)'],['../core_2include_2Utils_8hxx.html',1,'(Глобальное пространство имён)']]]
+  ['url_11',['url',['../structRemote.html#a810f7afd25db68a519088944f1cc8945',1,'Remote']]],
+  ['utils_2ecxx_12',['Utils.cxx',['../Utils_8cxx.html',1,'']]],
+  ['utils_2ehxx_13',['Utils.hxx',['../cli_2include_2Utils_8hxx.html',1,'(Глобальное пространство имён)'],['../core_2include_2Utils_8hxx.html',1,'(Глобальное пространство имён)']]]
 ];

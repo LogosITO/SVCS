@@ -47,6 +47,8 @@ var hierarchy =
     [ "ObjectStorage", "classObjectStorage.html", [
       [ "MockObjectStorage", "classMockObjectStorage.html", null ]
     ] ],
+    [ "Remote", "structRemote.html", null ],
+    [ "RemoteManager", "classRemoteManager.html", null ],
     [ "RemoteProtocol", "classRemoteProtocol.html", null ],
     [ "RepositoryManager", "classRepositoryManager.html", [
       [ "MockRepositoryManager", "classMockRepositoryManager.html", null ]
@@ -61,6 +63,7 @@ var hierarchy =
       [ "IndexTest", "classIndexTest.html", null ],
       [ "InitCommandIntegrationTest", "classInitCommandIntegrationTest.html", null ],
       [ "ObjectStorageTest", "classObjectStorageTest.html", null ],
+      [ "RemoteManagerTest", "classRemoteManagerTest.html", null ],
       [ "RemoteProtocolIntegrationTest", "classRemoteProtocolIntegrationTest.html", null ],
       [ "RemoteProtocolTest", "classRemoteProtocolTest.html", null ],
       [ "RemoveCommandTest", "classRemoveCommandTest.html", null ],

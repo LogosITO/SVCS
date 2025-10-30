@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['save_0',['save',['../classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21',1,'Index']]],
+  ['save_0',['save',['../classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21',1,'Index::save()'],['../classRemoteManager.html#afc039aa6f117ef6ae93b664c149b589a',1,'RemoteManager::save()']]],
   ['savecommand_1',['SaveCommand',['../classSaveCommand.html#a6a33ae3a66e6de40b4d58b13223460a2',1,'SaveCommand']]],
   ['saveobject_2',['saveObject',['../classObjectStorage.html#acab6226c60b2979078001d539f56de3b',1,'ObjectStorage::saveObject()'],['../classMockObjectStorage.html#a0d17e41ae6b3787ed45aad9b75ea0518',1,'MockObjectStorage::saveObject()']]],
   ['savestagedchanges_3',['saveStagedChanges',['../classRepositoryManager.html#a647383203955484c1b57222ce5e5faf8',1,'RepositoryManager']]],

@@ -1,10 +1,12 @@
 set(SERVER_SOURCES
     src/HubCommand.cxx
+    src/RemoteManager.cxx
     src/RemoteProtocol.cxx
 )
 
 set(SERVER_HEADERS
     include/HubCommand.hxx
+    include/RemoteManager.hxx
     include/RemoteProtocol.hxx
 )
 

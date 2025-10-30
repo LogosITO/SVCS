@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['save_0',['save',['../classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21',1,'Index']]],
+  ['save_0',['save',['../classIndex.html#a4c99f86d04fd91dc90727b9a17e60a21',1,'Index::save()'],['../classRemoteManager.html#afc039aa6f117ef6ae93b664c149b589a',1,'RemoteManager::save()']]],
   ['savecommand_1',['SaveCommand',['../classSaveCommand.html',1,'SaveCommand'],['../classSaveCommand.html#a6a33ae3a66e6de40b4d58b13223460a2',1,'SaveCommand::SaveCommand()']]],
   ['savecommand_2ecxx_2',['SaveCommand.cxx',['../SaveCommand_8cxx.html',1,'']]],
   ['savecommand_2ehxx_3',['SaveCommand.hxx',['../SaveCommand_8hxx.html',1,'']]],

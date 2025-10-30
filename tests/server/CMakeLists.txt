@@ -3,6 +3,7 @@ find_package(GTest REQUIRED)
 set(SERVER_TEST_SOURCES
     RemoteProtocolTest.cxx
     HubCommandTest.cxx
+    RemoteManagerTest.cxx
 )
 
 add_executable(svcs_server_unit_tests ${SERVER_TEST_SOURCES})

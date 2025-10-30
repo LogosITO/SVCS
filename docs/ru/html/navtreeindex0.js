@@ -111,10 +111,13 @@ var NAVTREEINDEX0 =
 "ObjectStorage_8cxx.html":[4,0,1,1,4],
 "ObjectStorage_8hxx.html":[4,0,1,0,4],
 "ObjectStorage_8hxx_source.html":[4,0,1,0,4],
+"RemoteManager_8cxx.html":[4,0,2,1,1],
+"RemoteManager_8hxx.html":[4,0,2,0,1],
+"RemoteManager_8hxx_source.html":[4,0,2,0,1],
 "RemoteProtocolTest_8cxx.html":[4,0,4,2,0],
-"RemoteProtocol_8cxx.html":[4,0,2,1,1],
-"RemoteProtocol_8hxx.html":[4,0,2,0,1],
-"RemoteProtocol_8hxx_source.html":[4,0,2,0,1],
+"RemoteProtocol_8cxx.html":[4,0,2,1,2],
+"RemoteProtocol_8hxx.html":[4,0,2,0,2],
+"RemoteProtocol_8hxx_source.html":[4,0,2,0,2],
 "RemoveCommand_8cxx.html":[4,0,0,1,10],
 "RemoveCommand_8hxx.html":[4,0,0,0,11],
 "RemoveCommand_8hxx_source.html":[4,0,0,0,11],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "classEventBus.html":[3,0,13],
 "classEventBus.html#a131f28abdfe25a80f94a202aff5e6edb":[3,0,13,1],
 "classEventBus.html#a42559fdfdd62a10ae1494f123a06e96a":[3,0,13,2],
-"classEventBus.html#a581f243551365d2dc9599665540486dd":[3,0,13,3],
-"classEventBus.html#af9f702d10d6340e1f3da65e487fd73be":[3,0,13,0],
-"classHelpCommand.html":[3,0,14],
-"classHelpCommand.html#a236f111255786e8949a0bea269c48677":[3,0,14,2]
+"classEventBus.html#a581f243551365d2dc9599665540486dd":[3,0,13,3]
 };

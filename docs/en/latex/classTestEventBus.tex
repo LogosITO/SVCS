@@ -1,0 +1,101 @@
+\doxysection{Test\+Event\+Bus Class Reference}
+\hypertarget{classTestEventBus}{}\label{classTestEventBus}\index{TestEventBus@{TestEventBus}}
+Inheritance diagram for Test\+Event\+Bus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTestEventBus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTestEventBus_a4b6cce8928c58aebcb958520632a4ee6}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTestEventBus_a5b945cbd354add74aa65c82682602326}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTestEventBus_a1afce3fec9d12a9b025f0f3c2eddafd0}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) const override
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers about an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classISubject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classISubject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTestEventBus_a313f179e78e9c806874c02cc74a37de0}\label{classTestEventBus_a313f179e78e9c806874c02cc74a37de0} 
+std\+::optional$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ {\bfseries last\+\_\+event}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classISubject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classIObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Collection of registered observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classTestEventBus_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTestEventBus_a4b6cce8928c58aebcb958520632a4ee6}\index{TestEventBus@{TestEventBus}!attach@{attach}}
+\index{attach@{attach}!TestEventBus@{TestEventBus}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{classTestEventBus_a4b6cce8928c58aebcb958520632a4ee6} 
+void Test\+Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attaches an observer to the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A smart pointer to the observer object to attach. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{ISubject}}.
+
+\Hypertarget{classTestEventBus_a5b945cbd354add74aa65c82682602326}\index{TestEventBus@{TestEventBus}!detach@{detach}}
+\index{detach@{detach}!TestEventBus@{TestEventBus}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classTestEventBus_a5b945cbd354add74aa65c82682602326} 
+void Test\+Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Detaches an observer from the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A smart pointer to the observer object to detach. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{ISubject}}.
+
+\Hypertarget{classTestEventBus_a1afce3fec9d12a9b025f0f3c2eddafd0}\index{TestEventBus@{TestEventBus}!notify@{notify}}
+\index{notify@{notify}!TestEventBus@{TestEventBus}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classTestEventBus_a1afce3fec9d12a9b025f0f3c2eddafd0} 
+void Test\+Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Notifies all attached observers about an event. 
+
+This method is made public so that component classes (like \doxylink{classObjectStorage}{Object\+Storage}) can publish events through the injected \doxylink{classISubject}{ISubject} pointer. The method is declared as {\ttfamily const} because event notification is a logically non-\/mutating action on the Subject\textquotesingle{}s state. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The constant reference to the event structure to be sent. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{ISubject}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/server/Server\+Test.\+cxx\end{DoxyCompactItemize}

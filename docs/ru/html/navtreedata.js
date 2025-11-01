@@ -90,7 +90,7 @@ var NAVTREEINDEX =
 "AddCommandTest_8cxx.html",
 "classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46",
 "classRepositoryManager.html#a349a454c83ccbd63eb9b5a7c12b6a2ef",
-"structCommitInfo.html#a7859b0ad6d68755896ee2d831480622a"
+"structBranchManager_1_1Branch.html#a94b6bba7fbdaeec7576b86ce04fc07c8"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

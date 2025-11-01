@@ -1,0 +1,46 @@
+\doxysection{Класс Server\+Integration\+Test}
+\hypertarget{classServerIntegrationTest}{}\label{classServerIntegrationTest}\index{ServerIntegrationTest@{ServerIntegrationTest}}
+Граф наследования\+:Server\+Integration\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classServerIntegrationTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classServerIntegrationTest_a475c792861277d2badf776ae0d1ef303}\label{classServerIntegrationTest_a475c792861277d2badf776ae0d1ef303} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classServerIntegrationTest_a371043c72b8f21715f3b247e02428c01}\label{classServerIntegrationTest_a371043c72b8f21715f3b247e02428c01} 
+void {\bfseries Tear\+Down} () override
+\item 
+\Hypertarget{classServerIntegrationTest_afb06fde22adba03282cb46e754113597}\label{classServerIntegrationTest_afb06fde22adba03282cb46e754113597} 
+unsigned short {\bfseries find\+Free\+Port} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classServerIntegrationTest_acadc7fa40b95170ff057e6574f7287fb}\label{classServerIntegrationTest_acadc7fa40b95170ff057e6574f7287fb} 
+std\+::filesystem\+::path {\bfseries test\+\_\+dir}
+\item 
+\Hypertarget{classServerIntegrationTest_a759a92b49c1374ce9718c3f74040e815}\label{classServerIntegrationTest_a759a92b49c1374ce9718c3f74040e815} 
+std\+::shared\+\_\+ptr$<$ boost\+::asio\+::io\+\_\+context $>$ {\bfseries io\+\_\+context}
+\item 
+\Hypertarget{classServerIntegrationTest_a421821b97bf89fb0f2f5731b78f702c4}\label{classServerIntegrationTest_a421821b97bf89fb0f2f5731b78f702c4} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTestEventBus}{Test\+Event\+Bus}} $>$ {\bfseries event\+\_\+bus}
+\item 
+\Hypertarget{classServerIntegrationTest_ae80c024549d049c4fa02fd5144424fe2}\label{classServerIntegrationTest_ae80c024549d049c4fa02fd5144424fe2} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+\_\+manager}
+\item 
+\Hypertarget{classServerIntegrationTest_a426880bd933f88ff9592d6b133f58d4e}\label{classServerIntegrationTest_a426880bd933f88ff9592d6b133f58d4e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classServer}{Server}} $>$ {\bfseries server}
+\item 
+\Hypertarget{classServerIntegrationTest_a4716c780b8dd730986893a962e1cde09}\label{classServerIntegrationTest_a4716c780b8dd730986893a962e1cde09} 
+unsigned short {\bfseries port}
+\end{DoxyCompactItemize}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/server/Server\+Test.\+cxx\end{DoxyCompactItemize}

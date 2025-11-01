@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"structBranchManager_1_1Branch.html#a94b6bba7fbdaeec7576b86ce04fc07c8":[4,0,5,0,2],
+"structCommitInfo.html":[4,0,11],
+"structCommitInfo.html#a058d42cb536a2d4d2ae5fc49fecf9ad7":[4,0,11,5],
+"structCommitInfo.html#a17b73098845c08e071b05234db336fcd":[4,0,11,3],
+"structCommitInfo.html#a5d011d8d9edd88ef6953f8bc146681b2":[4,0,11,2],
 "structCommitInfo.html#a7859b0ad6d68755896ee2d831480622a":[4,0,11,1],
 "structCommitInfo.html#aa9dce2c2bf3c1622d77ef5bbbb63113e":[4,0,11,4],
 "structCommitInfo.html#ade2668c2ddc4785889792a443f88cc4a":[4,0,11,0],
@@ -40,11 +45,11 @@ var NAVTREEINDEX3 =
 "structRemote.html#a58f44daf8c1656ea1f4d1e69b8dad50a":[4,0,41,0],
 "structRemote.html#a5a35fa45f21f0fd363517d0775e5c69f":[4,0,41,2],
 "structRemote.html#a810f7afd25db68a519088944f1cc8945":[4,0,41,3],
-"structTreeEntry.html":[4,0,63],
-"structTreeEntry.html#a134f10cecd1f81227572389485e04ad4":[4,0,63,2],
-"structTreeEntry.html#a499a6f99a9c45e62c78e6d61f6341e0c":[4,0,63,4],
-"structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77":[4,0,63,1],
-"structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f":[4,0,63,3],
-"structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940":[4,0,63,0],
+"structTreeEntry.html":[4,0,65],
+"structTreeEntry.html#a134f10cecd1f81227572389485e04ad4":[4,0,65,2],
+"structTreeEntry.html#a499a6f99a9c45e62c78e6d61f6341e0c":[4,0,65,4],
+"structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77":[4,0,65,1],
+"structTreeEntry.html#aa025cb0a365aac0c2942a3249a244b1f":[4,0,65,3],
+"structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940":[4,0,65,0],
 "utils_2ClearCommandTest_8cxx.html":[5,0,4,0,1,0]
 };

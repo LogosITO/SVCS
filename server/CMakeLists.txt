@@ -2,6 +2,7 @@ set(SERVER_SOURCES
     src/ServerBaseCommand.cxx
     src/HubCommand.cxx
     src/RepoCommand.cxx
+    src/ServerCommandFactory.cxx
     src/RemoteManager.cxx
     src/RemoteProtocol.cxx
     src/Server.cxx
@@ -11,6 +12,7 @@ set(SERVER_HEADERS
     include/ServerBaseCommand.hxx
     include/HubCommand.hxx
     include/RepoCommand.hxx
+    include/ServerCommandFactory.hxx
     include/RemoteManager.hxx
     include/RemoteProtocol.hxx
     include/Server.hxx

@@ -42,8 +42,7 @@ namespace fs = std::filesystem;
 
 HubCommand::HubCommand(std::shared_ptr<ISubject> event_bus,
                        std::shared_ptr<RepositoryManager> repository_manager)
-    : event_bus_(std::move(event_bus))
-    , repository_manager_(std::move(repository_manager))
+    : ServerBaseCommand(std::move(event_bus), std::move(repository_manager))
 {
 }
 
@@ -122,7 +121,8 @@ bool HubCommand::execute(const std::vector<std::string>& args) {
         return false;
     }
 
-    notifySuccess("Hub repository successfully created at " + repo_dir.string());
+    // Use notifyInfo for success since ServerBaseCommand doesn't have notifySuccess
+    notifyInfo("Hub repository successfully created at " + repo_dir.string());
     return true;
 }
 
@@ -136,26 +136,103 @@ void HubCommand::showHelp() const {
               << std::endl;
 }
 
-void HubCommand::notifyInfo(const std::string& message) const {
-    if (event_bus_) {
-        event_bus_->notify({Event::Type::GENERAL_INFO, message});
-    } else {
-        std::cout << "[INFO] " << message << std::endl;
+bool HubCommand::initializeHubRepository(const std::filesystem::path& repo_path) const {
+    // This method is kept for interface compatibility but cannot call execute() directly
+    // since execute() is not const. We'll implement the logic here instead.
+
+    fs::path repo_dir = repo_path / ".svcs";
+
+    if (fs::exists(repo_dir)) {
+        notifyError("Repository already exists at: " + repo_dir.string());
+        return false;
+    }
+
+    if (!fs::exists(repo_path)) {
+        fs::create_directories(repo_path);
+    }
+
+    notifyInfo("Creating hub repository at " + repo_dir.string());
+
+    try {
+        if (!createHubDirectoryStructure(repo_dir)) {
+            return false;
+        }
+
+        if (!createHubConfigFile(repo_dir)) {
+            return false;
+        }
+
+        if (!createHubHEADFile(repo_dir)) {
+            return false;
+        }
+
+        // Create description file
+        std::ofstream description(repo_dir / "description");
+        description << "Unnamed repository; edit this file to name the repository.\n";
+        description.close();
+
+    } catch (const std::exception& e) {
+        notifyError(std::string("Initialization failed: ") + e.what());
+        fs::remove_all(repo_dir);
+        return false;
+    }
+
+    notifyInfo("Hub repository successfully created at " + repo_dir.string());
+    return true;
+}
+
+bool HubCommand::createHubDirectoryStructure(const std::filesystem::path& svcs_path) const {
+    try {
+        fs::create_directories(svcs_path / "objects");
+        fs::create_directories(svcs_path / "refs" / "heads");
+        fs::create_directories(svcs_path / "refs" / "tags");
+        fs::create_directories(svcs_path / "hooks");
+        fs::create_directories(svcs_path / "info");
+        return true;
+    } catch (const std::exception& e) {
+        notifyError(std::string("Failed to create directory structure: ") + e.what());
+        return false;
     }
 }
 
-void HubCommand::notifyError(const std::string& message) const {
-    if (event_bus_) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, message});
-    } else {
-        std::cerr << "[ERROR] " << message << std::endl;
+bool HubCommand::createHubConfigFile(const std::filesystem::path& svcs_path) const {
+    try {
+        std::ofstream config(svcs_path / "config");
+        config << "[core]\n"
+               << "bare = true\n"
+               << "repositoryformatversion = 0\n"
+               << "[svcs]\n"
+               << "hub = true\n";
+        return true;
+    } catch (const std::exception& e) {
+        notifyError(std::string("Failed to create config file: ") + e.what());
+        return false;
     }
 }
 
-void HubCommand::notifySuccess(const std::string& message) const {
-    if (event_bus_) {
-        event_bus_->notify({Event::Type::REPOSITORY_INIT_SUCCESS, message});
-    } else {
-        std::cout << "[SUCCESS] " << message << std::endl;
+bool HubCommand::createHubHEADFile(const std::filesystem::path& svcs_path) const {
+    try {
+        std::ofstream head(svcs_path / "HEAD");
+        head << "ref: refs/heads/main\n";
+        return true;
+    } catch (const std::exception& e) {
+        notifyError(std::string("Failed to create HEAD file: ") + e.what());
+        return false;
     }
+}
+
+bool HubCommand::isValidHubPath(const std::filesystem::path& path) const {
+    return !path.empty();
+}
+
+bool HubCommand::isPathAvailable(const std::filesystem::path& path) const {
+    if (!fs::exists(path)) {
+        return true;
+    }
+
+    if (fs::is_directory(path)) {
+        return fs::is_empty(path);
+    }
+
+    return false;
 }

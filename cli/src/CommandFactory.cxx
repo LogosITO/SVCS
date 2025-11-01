@@ -68,12 +68,6 @@ void CommandFactory::registerDefaultCommands() {
         return std::make_unique<InitCommand>(bus, repoManager);
     });
 
-    registerCommand("hub", [](const std::shared_ptr<ISubject>& bus,
-                                const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
-        printDebug("Creating HubCommand instance");
-        return std::make_unique<HubCommand>(bus, repoManager);
-    });
-
     registerCommand("clear", [](const std::shared_ptr<ISubject>& bus,
                             const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
         printDebug("Creating ClearCommand instance");
@@ -109,12 +103,6 @@ void CommandFactory::registerDefaultCommands() {
         printDebug("Creating HistoryCommand instance");
         return std::make_unique<HistoryCommand>(bus, repoManager);
     });
-
-	registerCommand("repo", [](const std::shared_ptr<ISubject>& bus,
-							const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {
-		printDebug("Creating RepoCommand instance");
-		return std::make_unique<RepoCommand>(bus, repoManager);
-	});
 
     registerCommand("undo", [](const std::shared_ptr<ISubject>& bus,
                              const std::shared_ptr<RepositoryManager>& repoManager) -> std::unique_ptr<ICommand> {

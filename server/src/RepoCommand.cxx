@@ -35,8 +35,7 @@
 
 RepoCommand::RepoCommand(std::shared_ptr<ISubject> event_bus,
                        std::shared_ptr<RepositoryManager> repo_manager)
-    : event_bus_(std::move(event_bus))
-    , repo_manager_(std::move(repo_manager))
+    : ServerBaseCommand(std::move(event_bus), std::move(repo_manager))
 {
 }
 
@@ -54,7 +53,7 @@ std::string RepoCommand::getUsage() const {
 
 bool RepoCommand::execute(const std::vector<std::string>& args) {
     if (!repo_manager_->isRepositoryInitialized()) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Not in a SVCS repository"});
+        notifyError("Not in a SVCS repository");
         return false;
     }
 
@@ -76,14 +75,14 @@ bool RepoCommand::execute(const std::vector<std::string>& args) {
     } else if (subcommand == "list") {
         return handleList(remote_manager);
     } else {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Unknown subcommand: " + subcommand});
+        notifyError("Unknown subcommand: " + subcommand);
         return false;
     }
 }
 
 bool RepoCommand::handleAdd(RemoteManager& remote_manager, const std::vector<std::string>& args) {
     if (args.size() != 3) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Usage: svcs repo add <name> <url>"});
+        notifyError("Usage: svcs repo add <name> <url>");
         return false;
     }
 
@@ -96,14 +95,14 @@ bool RepoCommand::handleAdd(RemoteManager& remote_manager, const std::vector<std
         return true;
     } else {
         std::cout << "DEBUG: Failed to add remote" << std::endl;
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to add remote repository"});
+        notifyError("Failed to add remote repository");
         return false;
     }
 }
 
 bool RepoCommand::handleRemove(RemoteManager& remote_manager, const std::vector<std::string>& args) {
     if (args.size() != 2) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Usage: svcs repo remove <name>"});
+        notifyError("Usage: svcs repo remove <name>");
         return false;
     }
 
@@ -111,14 +110,14 @@ bool RepoCommand::handleRemove(RemoteManager& remote_manager, const std::vector<
         std::cout << "Remote repository '" << args[1] << "' removed\n";
         return true;
     } else {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Remote repository '" + args[1] + "' not found"});
+        notifyError("Remote repository '" + args[1] + "' not found");
         return false;
     }
 }
 
 bool RepoCommand::handleRename(RemoteManager& remote_manager, const std::vector<std::string>& args) {
     if (args.size() != 3) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Usage: svcs repo rename <old-name> <new-name>"});
+        notifyError("Usage: svcs repo rename <old-name> <new-name>");
         return false;
     }
 
@@ -126,19 +125,19 @@ bool RepoCommand::handleRename(RemoteManager& remote_manager, const std::vector<
     const std::string& new_name = args[2];
 
     if (!remote_manager.hasRemote(old_name)) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Remote repository '" + old_name + "' not found"});
+        notifyError("Remote repository '" + old_name + "' not found");
         return false;
     }
 
     if (remote_manager.hasRemote(new_name)) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Remote repository '" + new_name + "' already exists"});
+        notifyError("Remote repository '" + new_name + "' already exists");
         return false;
     }
 
     // Get the URL and remove old remote
     std::string url = remote_manager.getRemoteUrl(old_name);
     if (!remote_manager.removeRemote(old_name)) {
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to remove old remote"});
+        notifyError("Failed to remove old remote");
         return false;
     }
 
@@ -149,7 +148,7 @@ bool RepoCommand::handleRename(RemoteManager& remote_manager, const std::vector<
     } else {
         // Try to restore old remote if rename failed
         remote_manager.addRemote(old_name, url);
-        event_bus_->notify({Event::Type::ERROR_MESSAGE, "Failed to rename remote repository"});
+        notifyError("Failed to rename remote repository");
         return false;
     }
 }

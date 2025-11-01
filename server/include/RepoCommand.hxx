@@ -12,6 +12,7 @@
  * to the @ref RemoteManager class after ensuring the command is executed within
  * a valid repository context (implicitly handled by @ref RepositoryManager).
  * The command supports subcommands like `add`, `remove`, `list`, and `rename`.
+ * Inherits from ServerBaseCommand for common server command functionality.
  *
  * @russian
  * @brief Объявление класса RepoCommand.
@@ -21,13 +22,12 @@
  * классу @ref RemoteManager после обеспечения выполнения команды в контексте
  * валидного репозитория (неявно обрабатывается @ref RepositoryManager).
  * Команда поддерживает подкоманды такие как `add`, `remove`, `list` и `rename`.
+ * Наследуется от ServerBaseCommand для общей функциональности серверных команд.
  */
 #pragma once
 
-#include "../../cli/include/ICommand.hxx"
-#include "../../core/include/RepositoryManager.hxx"
+#include "ServerBaseCommand.hxx"
 #include "../../core/include/Repository.hxx"
-#include "../../services/ISubject.hxx"
 #include "RemoteManager.hxx"
 #include <memory>
 #include <vector>
@@ -38,33 +38,16 @@
  * @brief Command handler for managing repository remotes and configurations.
  * @details Implements the "svcs repo" command, providing subcommands for
  * managing the list of remote repositories associated with the current project.
+ * Inherits from ServerBaseCommand for common server command functionality.
  *
  * @russian
  * @class RepoCommand
  * @brief Обработчик команд для управления удаленными репозиториями и конфигурациями.
  * @details Реализует команду "svcs repo", предоставляя подкоманды для
  * управления списком удаленных репозиториев, связанных с текущим проектом.
+ * Наследуется от ServerBaseCommand для общей функциональности серверных команд.
  */
-class RepoCommand : public ICommand {
-private:
-    /**
-     * @english
-     * @brief Event bus for sending notifications (info, error, success).
-     *
-     * @russian
-     * @brief Шина событий для отправки уведомлений (информация, ошибка, успех).
-     */
-    std::shared_ptr<ISubject> event_bus_;
-
-    /**
-     * @english
-     * @brief Manager to locate and access the current repository.
-     *
-     * @russian
-     * @brief Менеджер для поиска и доступа к текущему репозиторию.
-     */
-    std::shared_ptr<RepositoryManager> repo_manager_;
-
+class RepoCommand : public ServerBaseCommand {
 public:
     /**
      * @english

@@ -36,7 +36,6 @@ set(CLI_HEADERS
 )
 
 add_library(svcs_cli_commands STATIC ${CLI_SOURCES})
-add_executable(svcs src/main.cxx ${CLI_SOURCES})
 
 set_target_properties(svcs_core PROPERTIES
     CXX_STANDARD 17
@@ -44,20 +43,3 @@ set_target_properties(svcs_core PROPERTIES
     CXX_EXTENSIONS OFF
     OUTPUT_NAME "svcs"
 )
-
-target_include_directories(svcs PRIVATE include)
-target_include_directories(svcs PRIVATE ../core/include)
-
-target_link_libraries(svcs
-    svcs_core
-    svcs_services
-    svcs_server
-)
-
-if(UNIX)
-    install(TARGETS svcs DESTINATION bin)
-endif()
-  
-if(WIN32)
-    install(TARGETS svcs DESTINATION .)
-endif()

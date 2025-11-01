@@ -18,7 +18,8 @@ find_package(ZLIB REQUIRED)
 add_subdirectory(core)
 add_subdirectory(cli)
 add_subdirectory(server)
-add_subdirectory(services) 
+add_subdirectory(services)
+add_subdirectory(integration)
 
 target_include_directories(svcs_core PUBLIC
     ${CMAKE_SOURCE_DIR}/services

@@ -22,13 +22,7 @@
  */
 #pragma once
 
-#include "../../cli/include/ICommand.hxx"
-#include "../../services/ISubject.hxx"
-#include "../../core/include/RepositoryManager.hxx"
-
-#include <string>
-#include <vector>
-#include <memory>
+#include "ServerBaseCommand.hxx"
 #include <filesystem>
 
 /**
@@ -38,6 +32,7 @@
  * @details Implements the 'svcs hub' functionality to initialize bare repositories
  * that act as central points for pushing, pulling and collaborating on code.
  * This command is essential for setting up remote collaboration infrastructure.
+ * Inherits from ServerBaseCommand for common server command functionality.
  *
  * @russian
  * @class HubCommand
@@ -45,8 +40,9 @@
  * @details Реализует функциональность 'svcs hub' для инициализации голых репозиториев,
  * которые действуют как центральные точки для отправки, получения и совместной работы над кодом.
  * Эта команда необходима для настройки инфраструктуры удаленного сотрудничества.
+ * Наследуется от ServerBaseCommand для общей функциональности серверных команд.
  */
-class HubCommand : public ICommand {
+class HubCommand : public ServerBaseCommand {
 public:
     /**
      * @english
@@ -228,56 +224,4 @@ private:
      * @details Гарантирует, что мы не перезапишем существующие непустые директории.
      */
     [[nodiscard]] bool isPathAvailable(const std::filesystem::path& path) const;
-
-    /**
-     * @english
-     * @brief Sends an informational message through the event bus.
-     * @param message The informational message to display.
-     *
-     * @russian
-     * @brief Отправляет информационное сообщение через шину событий.
-     * @param message Информационное сообщение для отображения.
-     */
-    void notifyInfo(const std::string& message) const;
-
-    /**
-     * @english
-     * @brief Sends an error message through the event bus.
-     * @param message The error message to display.
-     *
-     * @russian
-     * @brief Отправляет сообщение об ошибке через шину событий.
-     * @param message Сообщение об ошибке для отображения.
-     */
-    void notifyError(const std::string& message) const;
-
-    /**
-     * @english
-     * @brief Sends a success message through the event bus.
-     * @param message The success message to display.
-     *
-     * @russian
-     * @brief Отправляет сообщение об успехе через шину событий.
-     * @param message Сообщение об успехе для отображения.
-     */
-    void notifySuccess(const std::string& message) const;
-
-private:
-    /**
-     * @english
-     * @brief Event bus for user notifications and feedback.
-     *
-     * @russian
-     * @brief Шина событий для уведомлений пользователя и обратной связи.
-     */
-    std::shared_ptr<ISubject> event_bus_;
-
-    /**
-     * @english
-     * @brief Repository manager for core repository operations.
-     *
-     * @russian
-     * @brief Менеджер репозитория для основных операций с репозиторием.
-     */
-    std::shared_ptr<RepositoryManager> repository_manager_;
 };

@@ -11,5 +11,6 @@ var searchData=
   ['ismergeinprogress_8',['isMergeInProgress',['../classRepositoryManager.html#abde5809b74cc06049e784ca08c293c01',1,'RepositoryManager']]],
   ['isrepository_9',['isRepository',['../classRepository.html#aed550b2bede1ebe31d4dc4ac42026ba6',1,'Repository']]],
   ['isrepositoryinitialized_10',['isRepositoryInitialized',['../classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674',1,'RepositoryManager']]],
-  ['isvalidbranchname_11',['isValidBranchName',['../classBranchManager.html#a2bed7bba95e0d75b22b5264c9058b600',1,'BranchManager']]]
+  ['isrunning_11',['isRunning',['../classServer.html#ad9c27dae78e9034d6bd718ea9e724bd4',1,'Server']]],
+  ['isvalidbranchname_12',['isValidBranchName',['../classBranchManager.html#a2bed7bba95e0d75b22b5264c9058b600',1,'BranchManager']]]
 ];

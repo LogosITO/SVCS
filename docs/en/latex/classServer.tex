@@ -1,0 +1,133 @@
+\doxysection{Server Class Reference}
+\hypertarget{classServer}{}\label{classServer}\index{Server@{Server}}
+
+
+Main TCP server for SVCS remote operations.  
+
+
+
+
+{\ttfamily \#include $<$Server.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_a5b86b125b0f108a4b108a3335d9aca1d}{Server}} (boost\+::asio\+::io\+\_\+context \&io\+\_\+context, unsigned short port, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+\_\+manager, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classServer}{Server} with specified dependencies. \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Server} ()
+\begin{DoxyCompactList}\small\item\em Destructor -\/ stops the server and cleans up resources. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_acec935535d1d5b58d95cf24678eac014}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the server and begins accepting connections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the server gracefully. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_ad9c27dae78e9034d6bd718ea9e724bd4}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the server is currently running. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classServer_ab23ffb44df2151b7c9ff51fc07b60207}{get\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Gets the port number the server is listening on. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classServer_a9676db9ad600cce926848e5299e1d55d}{get\+Active\+Connections}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of currently active client connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main TCP server for SVCS remote operations. 
+
+Listens on specified port, accepts client connections, and spawns \doxylink{classRemoteProtocol}{Remote\+Protocol} instances to handle push/pull operations. Supports multiple concurrent clients through thread pooling. 
+
+\label{doc-constructors}
+\Hypertarget{classServer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classServer_a5b86b125b0f108a4b108a3335d9aca1d}\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily \label{classServer_a5b86b125b0f108a4b108a3335d9aca1d} 
+Server\+::\+Server (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+context \&}]{io\+\_\+context}{, }\item[{unsigned short}]{port}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+\_\+manager}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{event\+\_\+bus}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classServer}{Server} with specified dependencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & ASIO I/O context for asynchronous operations. \\
+\hline
+{\em port} & TCP port to listen on (default\+: 9418 -\/ Git protocol port). \\
+\hline
+{\em repo\+\_\+manager} & Shared pointer to repository manager. \\
+\hline
+{\em event\+\_\+bus} & Shared pointer to event bus for notifications. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classServer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classServer_a9676db9ad600cce926848e5299e1d55d}\index{Server@{Server}!getActiveConnections@{getActiveConnections}}
+\index{getActiveConnections@{getActiveConnections}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getActiveConnections()}{getActiveConnections()}}
+{\footnotesize\ttfamily \label{classServer_a9676db9ad600cce926848e5299e1d55d} 
+size\+\_\+t Server\+::get\+Active\+Connections (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of currently active client connections. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Number of active connections. 
+\end{DoxyReturn}
+\Hypertarget{classServer_ab23ffb44df2151b7c9ff51fc07b60207}\index{Server@{Server}!getPort@{getPort}}
+\index{getPort@{getPort}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily \label{classServer_ab23ffb44df2151b7c9ff51fc07b60207} 
+unsigned short Server\+::get\+Port (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the port number the server is listening on. 
+
+\begin{DoxyReturn}{Returns}
+unsigned short Port number. 
+\end{DoxyReturn}
+\Hypertarget{classServer_ad9c27dae78e9034d6bd718ea9e724bd4}\index{Server@{Server}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily \label{classServer_ad9c27dae78e9034d6bd718ea9e724bd4} 
+bool Server\+::is\+Running (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the server is currently running. 
+
+\begin{DoxyReturn}{Returns}
+bool True if server is running, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classServer_acec935535d1d5b58d95cf24678eac014}\index{Server@{Server}!start@{start}}
+\index{start@{start}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{classServer_acec935535d1d5b58d95cf24678eac014} 
+bool Server\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Starts the server and begins accepting connections. 
+
+\begin{DoxyReturn}{Returns}
+bool True if server started successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}\index{Server@{Server}!stop@{stop}}
+\index{stop@{stop}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{classServer_a07c45a7e101a3926d8f9685c3c5d14e4} 
+void Server\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Stops the server gracefully. 
+
+Stops accepting new connections and allows existing connections to complete. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{Server_8hxx}{Server.\+hxx}}\item 
+server/src/\mbox{\hyperlink{Server_8cxx}{Server.\+cxx}}\end{DoxyCompactItemize}

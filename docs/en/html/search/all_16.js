@@ -13,5 +13,6 @@ var searchData=
   ['_7eobjectstorage_10',['~ObjectStorage',['../classObjectStorage.html#a84986af89788ac235900ee9278e681d1',1,'ObjectStorage']]],
   ['_7eremoteprotocol_11',['~RemoteProtocol',['../classRemoteProtocol.html#af00770931128eaaaf4b9bfc19ef73e69',1,'RemoteProtocol']]],
   ['_7erepository_12',['~Repository',['../classRepository.html#a64de863b90dcce47cad8389326d5d0f7',1,'Repository']]],
-  ['_7evcsobject_13',['~VcsObject',['../classVcsObject.html#a866849775b4541573b40b2b85be20df5',1,'VcsObject']]]
+  ['_7eserver_13',['~Server',['../classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6',1,'Server']]],
+  ['_7evcsobject_14',['~VcsObject',['../classVcsObject.html#a866849775b4541573b40b2b85be20df5',1,'VcsObject']]]
 ];

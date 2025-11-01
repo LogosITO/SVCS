@@ -1,0 +1,21 @@
+\doxysection{server/src/\+Server.cxx File Reference}
+\hypertarget{Server_8cxx}{}\label{Server_8cxx}\index{server/src/Server.cxx@{server/src/Server.cxx}}
+
+
+Implementation of the \doxylink{classServer}{Server} class for SVCS remote operations.  
+
+
+{\ttfamily \#include "{}Server.\+hxx"{}}\newline
+{\ttfamily \#include $<$boost/asio.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classServer}{Server} class for SVCS remote operations. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Provides TCP server functionality for handling Git protocol connections and delegating to \doxylink{classRemoteProtocol}{Remote\+Protocol} for actual push/pull operations. 

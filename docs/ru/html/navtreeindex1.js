@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46":[4,0,9,1],
+"classCommandFactory.html#ae02afa8bcfb45a9e847afc4341a6478c":[4,0,9,3],
+"classCommandFactory.html#ae390c14a70557144e76f3b114036078e":[4,0,9,4],
 "classCommit.html":[4,0,10],
 "classCommit.html#a201c5f3c2f29a4db8e40e69d55b2fa1f":[4,0,10,0],
 "classCommit.html#a213b92691c2dae9e7ae7862eb9c369df":[4,0,10,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "classRepositoryManager.html#a06c251dbfab7dd09ebe42dcd2585416d":[4,0,52,12],
 "classRepositoryManager.html#a1af28901603c2e70dce49af751105bef":[4,0,52,4],
 "classRepositoryManager.html#a1ddddb02e8b5f59b06b8a40465716103":[4,0,52,18],
-"classRepositoryManager.html#a2b1e565145033e923fd3881734939b0a":[4,0,52,6],
-"classRepositoryManager.html#a349a454c83ccbd63eb9b5a7c12b6a2ef":[4,0,52,11],
-"classRepositoryManager.html#a3e1c8b2b9f7686ec651c4f205c576cc5":[4,0,52,10],
-"classRepositoryManager.html#a411879a02a3df9de01aceb9d36ae30ff":[4,0,52,21]
+"classRepositoryManager.html#a2b1e565145033e923fd3881734939b0a":[4,0,52,6]
 };

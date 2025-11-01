@@ -1,0 +1,33 @@
+\doxysection{server/include/\+Server.hxx File Reference}
+\hypertarget{Server_8hxx}{}\label{Server_8hxx}\index{server/include/Server.hxx@{server/include/Server.hxx}}
+
+
+Main server component for handling incoming Git connections.  
+
+
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include "{}Remote\+Protocol.\+hxx"{}}\newline
+{\ttfamily \#include $<$boost/asio.\+hpp$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classServer}{Server}}
+\begin{DoxyCompactList}\small\item\em Main TCP server for SVCS remote operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main server component for handling incoming Git connections. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+\doxylink{classServer}{Server} manages TCP connections, spawns protocol handlers for each client, and provides the main entry point for the SVCS server application. 

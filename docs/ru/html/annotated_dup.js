@@ -57,6 +57,7 @@ var annotated_dup =
     [ "RepositoryTest", "classRepositoryTest.html", null ],
     [ "SaveCommand", "classSaveCommand.html", "classSaveCommand" ],
     [ "SaveCommandTest", "classSaveCommandTest.html", "classSaveCommandTest" ],
+    [ "Server", "classServer.html", "classServer" ],
     [ "SimpleEventBus", "classSimpleEventBus.html", "classSimpleEventBus" ],
     [ "StatusCommand", "classStatusCommand.html", "classStatusCommand" ],
     [ "StatusCommandTest", "classStatusCommandTest.html", "classStatusCommandTest" ],

@@ -48,7 +48,8 @@ var searchData=
   ['ismergeinprogress_45',['isMergeInProgress',['../classRepositoryManager.html#abde5809b74cc06049e784ca08c293c01',1,'RepositoryManager']]],
   ['isrepository_46',['isRepository',['../classRepository.html#aed550b2bede1ebe31d4dc4ac42026ba6',1,'Repository']]],
   ['isrepositoryinitialized_47',['isRepositoryInitialized',['../classRepositoryManager.html#ae03ccf6c40689d204f8579b6ac860674',1,'RepositoryManager']]],
-  ['isubject_48',['ISubject',['../classISubject.html',1,'']]],
-  ['isubject_2ehxx_49',['ISubject.hxx',['../ISubject_8hxx.html',1,'']]],
-  ['isvalidbranchname_50',['isValidBranchName',['../classBranchManager.html#a2bed7bba95e0d75b22b5264c9058b600',1,'BranchManager']]]
+  ['isrunning_48',['isRunning',['../classServer.html#ad9c27dae78e9034d6bd718ea9e724bd4',1,'Server']]],
+  ['isubject_49',['ISubject',['../classISubject.html',1,'']]],
+  ['isubject_2ehxx_50',['ISubject.hxx',['../ISubject_8hxx.html',1,'']]],
+  ['isvalidbranchname_51',['isValidBranchName',['../classBranchManager.html#a2bed7bba95e0d75b22b5264c9058b600',1,'BranchManager']]]
 ];

@@ -88,9 +88,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classCommit.html",
-"classRepositoryManager.html#a458ddacf912fdc1774ab351f736a19cf",
-"structEvent.html#a2abf13b5be49315e9e362af02029f058a4aabf70b32e6e94e7f5000284ba1bb8b"
+"classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46",
+"classRepositoryManager.html#a349a454c83ccbd63eb9b5a7c12b6a2ef",
+"structCommitInfo.html#a7859b0ad6d68755896ee2d831480622a"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

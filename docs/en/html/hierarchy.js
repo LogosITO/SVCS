@@ -55,6 +55,7 @@ var hierarchy =
     [ "RepositoryManager", "classRepositoryManager.html", [
       [ "MockRepositoryManager", "classMockRepositoryManager.html", null ]
     ] ],
+    [ "Server", "classServer.html", null ],
     [ "testing::Test", null, [
       [ "AddCommandTest", "classAddCommandTest.html", null ],
       [ "BranchManagerTest", "classBranchManagerTest.html", null ],

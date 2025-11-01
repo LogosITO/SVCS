@@ -1,26 +1,18 @@
-\doxysection{cli/src/main.cxx File Reference}
-\hypertarget{main_8cxx}{}\label{main_8cxx}\index{cli/src/main.cxx@{cli/src/main.cxx}}
-
-
-Main entry point and command-\/line interface (CLI) driver for the SVCS application.  
-
-
-{\ttfamily \#include "{}../include/\+Command\+Factory.\+hxx"{}}\newline
-{\ttfamily \#include "{}../../services/logging/\+Logger.\+hxx"{}}\newline
-{\ttfamily \#include "{}../../services/\+Event\+Bus.\+hxx"{}}\newline
+\doxysection{integration/src/main.cxx File Reference}
+\hypertarget{main_8cxx}{}\label{main_8cxx}\index{integration/src/main.cxx@{integration/src/main.cxx}}
+{\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}../include/\+Composite\+Command\+Factory.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event\+Bus.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cxx_a78bff6626e5bb01b57212715ab7c8718}\label{main_8cxx_a78bff6626e5bb01b57212715ab7c8718} 
+void {\bfseries show\+General\+Help} (const \mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}} \&factory)
 \item 
 \Hypertarget{main_8cxx_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cxx_a0ddf1224851353fc92bfbff6f499fa97} 
 int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-Main entry point and command-\/line interface (CLI) driver for the SVCS application. 
-
-\begin{DoxyCopyright}{Copyright}
-Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
-\end{DoxyCopyright}

@@ -1,0 +1,187 @@
+\doxysection{Класс Composite\+Command\+Factory}
+\hypertarget{classCompositeCommandFactory}{}\label{classCompositeCommandFactory}\index{CompositeCommandFactory@{CompositeCommandFactory}}
+
+
+Интеграционный компонент для объединения нескольких фабрик команд.  
+
+
+
+
+{\ttfamily \#include $<$Composite\+Command\+Factory.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCompositeCommandFactory_a147909003b1d25858f9ab25bc0739eb4}{Composite\+Command\+Factory}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classCompositeCommandFactory}{Composite\+Command\+Factory} с необходимыми зависимостями. \end{DoxyCompactList}\item 
+\Hypertarget{classCompositeCommandFactory_a28969fd9167f3eee8835a7867ac32bb4}\label{classCompositeCommandFactory_a28969fd9167f3eee8835a7867ac32bb4} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Composite\+Command\+Factory} ()=default
+\begin{DoxyCompactList}\small\item\em Деструктор по умолчанию. \end{DoxyCompactList}\item 
+\Hypertarget{classCompositeCommandFactory_a5582a7bb7e69e4dafa225eb824289223}\label{classCompositeCommandFactory_a5582a7bb7e69e4dafa225eb824289223} 
+{\bfseries Composite\+Command\+Factory} (const \mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Удаленный конструктор копирования. \end{DoxyCompactList}\item 
+\Hypertarget{classCompositeCommandFactory_afcdfab2ae55f6846b9dfcc4369042a70}\label{classCompositeCommandFactory_afcdfab2ae55f6846b9dfcc4369042a70} 
+\mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Удаленный оператор присваивания. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompositeCommandFactory_a47f9bd23038cb8e6222220e0c0923919}{register\+Factory}} (std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$(const std\+::string \&)$>$ factory)
+\begin{DoxyCompactList}\small\item\em Регистрирует фабричную функцию для создания команд. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$ \mbox{\hyperlink{classCompositeCommandFactory_ac51821a7d4dd52b865854a8b27d4ff07}{create\+Command}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Создает команду по имени с использованием зарегистрированных фабрик. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classCompositeCommandFactory_a4d2b48b74555d7682bba48a137b3ee27}{get\+All\+Command\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Получает имена всех доступных команд из всех фабрик. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCompositeCommandFactory_a04cc9b2d98193562a97faf61b5e7866e}{get\+Command\+Description}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Получает описание для команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompositeCommandFactory_aad47ad47f3a3d32fef11574f5406c665}{show\+Command\+Help}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Отображает подробную справку для команды. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCompositeCommandFactory_a0da48501ef908953216e364849bd170a}{command\+Exists}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли команда с заданным именем. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classCompositeCommandFactory_a646308f5fd853602b7fb04728dd645a7}{get\+Factory\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Получает количество зарегистрированных фабрик. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Интеграционный компонент для объединения нескольких фабрик команд. 
+
+Служит мостом между различными подсистемами команд (CLI, \doxylink{classServer}{Server}). При создании команды пробует каждую зарегистрированную фабрику по порядку, пока одна из них не создаст команду успешно. Такая архитектура позволяет чисто разделить ответственность, предоставляя единый интерфейс команд приложению. 
+
+\label{doc-constructors}
+\Hypertarget{classCompositeCommandFactory_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classCompositeCommandFactory_a147909003b1d25858f9ab25bc0739eb4}\index{CompositeCommandFactory@{CompositeCommandFactory}!CompositeCommandFactory@{CompositeCommandFactory}}
+\index{CompositeCommandFactory@{CompositeCommandFactory}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{CompositeCommandFactory()}{CompositeCommandFactory()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a147909003b1d25858f9ab25bc0739eb4} 
+Composite\+Command\+Factory\+::\+Composite\+Command\+Factory (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classCompositeCommandFactory}{Composite\+Command\+Factory} с необходимыми зависимостями. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\+\_\+bus} & Общий указатель на шину событий для уведомлений команд. \\
+\hline
+{\em repo\+\_\+manager} & Общий указатель на менеджер репозиториев для операций с репозиториями. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classCompositeCommandFactory_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classCompositeCommandFactory_a0da48501ef908953216e364849bd170a}\index{CompositeCommandFactory@{CompositeCommandFactory}!commandExists@{commandExists}}
+\index{commandExists@{commandExists}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{commandExists()}{commandExists()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a0da48501ef908953216e364849bd170a} 
+bool Composite\+Command\+Factory\+::command\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, существует ли команда с заданным именем. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя команды для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+True если любая зарегистрированная фабрика может создать команду, false в противном случае.
+\end{DoxyReturn}
+Пытается создать команду для определения существования. \Hypertarget{classCompositeCommandFactory_ac51821a7d4dd52b865854a8b27d4ff07}\index{CompositeCommandFactory@{CompositeCommandFactory}!createCommand@{createCommand}}
+\index{createCommand@{createCommand}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{createCommand()}{createCommand()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_ac51821a7d4dd52b865854a8b27d4ff07} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$ Composite\+Command\+Factory\+::create\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Создает команду по имени с использованием зарегистрированных фабрик. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя команды для создания. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Уникальный указатель на созданную команду, или nullptr если ни одна фабрика не может ее создать.
+\end{DoxyReturn}
+Пробует каждую зарегистрированную фабрику по порядку, пока одна не создаст команду успешно. Возвращает первую найденную команду (не null). \Hypertarget{classCompositeCommandFactory_a4d2b48b74555d7682bba48a137b3ee27}\index{CompositeCommandFactory@{CompositeCommandFactory}!getAllCommandNames@{getAllCommandNames}}
+\index{getAllCommandNames@{getAllCommandNames}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{getAllCommandNames()}{getAllCommandNames()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a4d2b48b74555d7682bba48a137b3ee27} 
+std\+::vector$<$ std\+::string $>$ Composite\+Command\+Factory\+::get\+All\+Command\+Names (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает имена всех доступных команд из всех фабрик. 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор всех имен команд, которые могут быть созданы любой зарегистрированной фабрикой.
+\end{DoxyReturn}
+Собирает имена команд из всех зарегистрированных фабрик, удаляя дубликаты. Команды возвращаются в порядке регистрации (порядок фабрик), не в алфавитном порядке. \Hypertarget{classCompositeCommandFactory_a04cc9b2d98193562a97faf61b5e7866e}\index{CompositeCommandFactory@{CompositeCommandFactory}!getCommandDescription@{getCommandDescription}}
+\index{getCommandDescription@{getCommandDescription}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{getCommandDescription()}{getCommandDescription()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a04cc9b2d98193562a97faf61b5e7866e} 
+std\+::string Composite\+Command\+Factory\+::get\+Command\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает описание для команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя команды. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Описание команды или сообщение об ошибке, если команда не найдена.
+\end{DoxyReturn}
+Создает временный экземпляр команды для получения ее описания. Если команда не может быть создана, возвращает соответствующее сообщение об ошибке. \Hypertarget{classCompositeCommandFactory_a646308f5fd853602b7fb04728dd645a7}\index{CompositeCommandFactory@{CompositeCommandFactory}!getFactoryCount@{getFactoryCount}}
+\index{getFactoryCount@{getFactoryCount}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{getFactoryCount()}{getFactoryCount()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a646308f5fd853602b7fb04728dd645a7} 
+size\+\_\+t Composite\+Command\+Factory\+::get\+Factory\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает количество зарегистрированных фабрик. 
+
+\begin{DoxyReturn}{Возвращает}
+Количество фабричных функций, зарегистрированных в данный момент. 
+\end{DoxyReturn}
+\Hypertarget{classCompositeCommandFactory_a47f9bd23038cb8e6222220e0c0923919}\index{CompositeCommandFactory@{CompositeCommandFactory}!registerFactory@{registerFactory}}
+\index{registerFactory@{registerFactory}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{registerFactory()}{registerFactory()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a47f9bd23038cb8e6222220e0c0923919} 
+void Composite\+Command\+Factory\+::register\+Factory (\begin{DoxyParamCaption}\item[{std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$(const std\+::string \&)$>$}]{factory}{}\end{DoxyParamCaption})}
+
+
+
+Регистрирует фабричную функцию для создания команд. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em factory} & Фабричная функция, которая принимает имя команды и возвращает указатель на команду.\\
+\hline
+\end{DoxyParams}
+Фабрики вызываются в порядке их регистрации до тех пор, пока одна не вернет команду (не null). Это позволяет приоритизировать определенные типы команд над другими. \Hypertarget{classCompositeCommandFactory_aad47ad47f3a3d32fef11574f5406c665}\index{CompositeCommandFactory@{CompositeCommandFactory}!showCommandHelp@{showCommandHelp}}
+\index{showCommandHelp@{showCommandHelp}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{showCommandHelp()}{showCommandHelp()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_aad47ad47f3a3d32fef11574f5406c665} 
+void Composite\+Command\+Factory\+::show\+Command\+Help (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Отображает подробную справку для команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя команды.\\
+\hline
+\end{DoxyParams}
+Создает временный экземпляр команды и вызывает его метод show\+Help. Если команда не может быть создана, показывает сообщение об ошибке. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+integration/include/\mbox{\hyperlink{CompositeCommandFactory_8hxx}{Composite\+Command\+Factory.\+hxx}}\item 
+integration/src/\mbox{\hyperlink{CompositeCommandFactory_8cxx}{Composite\+Command\+Factory.\+cxx}}\end{DoxyCompactItemize}

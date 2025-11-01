@@ -1,0 +1,27 @@
+\doxysection{Файл server/include/\+Server\+Base\+Command.hxx}
+\hypertarget{ServerBaseCommand_8hxx}{}\label{ServerBaseCommand_8hxx}\index{server/include/ServerBaseCommand.hxx@{server/include/ServerBaseCommand.hxx}}
+
+
+Базовый класс для команд администрирования сервера с использованием интерфейса \doxylink{classICommand}{ICommand}.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classServerBaseCommand}{Server\+Base\+Command}}
+\begin{DoxyCompactList}\small\item\em Абстрактный базовый класс для всех команд администрирования сервера. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Базовый класс для команд администрирования сервера с использованием интерфейса \doxylink{classICommand}{ICommand}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Предоставляет общую функциональность для команд управления сервером с поддержкой шины событий и менеджера репозиториев. Служит основой для всех серверных административных команд. 

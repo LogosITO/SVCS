@@ -1,0 +1,29 @@
+\doxysection{integration/include/\+Composite\+Command\+Factory.hxx File Reference}
+\hypertarget{CompositeCommandFactory_8hxx}{}\label{CompositeCommandFactory_8hxx}\index{integration/include/CompositeCommandFactory.hxx@{integration/include/CompositeCommandFactory.hxx}}
+
+
+Composite factory that combines multiple command factories.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}}
+\begin{DoxyCompactList}\small\item\em Integration component for combining multiple command factories. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Composite factory that combines multiple command factories. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Integration component that delegates command creation to multiple underlying factories in sequence. Provides unified interface for both standard CLI commands and server administration commands. 

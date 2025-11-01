@@ -1,0 +1,29 @@
+\doxysection{Файл server/include/\+Server\+Command\+Factory.hxx}
+\hypertarget{ServerCommandFactory_8hxx}{}\label{ServerCommandFactory_8hxx}\index{server/include/ServerCommandFactory.hxx@{server/include/ServerCommandFactory.hxx}}
+
+
+Объявление класса \doxylink{classServerCommandFactory}{Server\+Command\+Factory} для команд администрирования сервера.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classServerCommandFactory}{Server\+Command\+Factory}}
+\begin{DoxyCompactList}\small\item\em Фабрика для создания объектов \doxylink{classICommand}{ICommand} администрирования сервера. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Объявление класса \doxylink{classServerCommandFactory}{Server\+Command\+Factory} для команд администрирования сервера. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Реализует фабричный шаблон специально для команд управления сервером. Создает команды для управления хабами, администрирования пользователей и контроля доступа к репозиториям. 

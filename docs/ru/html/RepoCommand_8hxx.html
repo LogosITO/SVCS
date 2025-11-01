@@ -94,10 +94,8 @@ $(function(){initNavTree('RepoCommand_8hxx.html','',''); });
 
 <p>Объявление класса <a class="el" href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями.">RepoCommand</a>.  
 <a href="#details">Подробнее...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ICommand_8hxx_source.html">../../cli/include/ICommand.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RepositoryManager_8hxx_source.html">../../core/include/RepositoryManager.hxx</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ServerBaseCommand_8hxx_source.html">ServerBaseCommand.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Repository_8hxx_source.html">../../core/include/Repository.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ISubject_8hxx_source.html">../../services/ISubject.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RemoteManager_8hxx_source.html">RemoteManager.hxx</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -112,7 +110,7 @@ $(function(){initNavTree('RepoCommand_8hxx.html','',''); });
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Объявление класса <a class="el" href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями.">RepoCommand</a>. </p>
 <dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p><a class="el" href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями.">RepoCommand</a> реализует интерфейс <a class="el" href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.">ICommand</a> для управления конфигурациями на уровне репозитория, в основном сосредотачиваясь на управлении <b>удаленными репозиториями</b>. Эта команда действует как фасад, делегируя фактическое управление удаленными репозиториями классу <a class="el" href="classRemoteManager.html">RemoteManager</a> после обеспечения выполнения команды в контексте валидного репозитория (неявно обрабатывается <a class="el" href="classRepositoryManager.html">RepositoryManager</a>). Команда поддерживает подкоманды такие как <span class="tt">add</span>, <span class="tt">remove</span>, <span class="tt">list</span> и <span class="tt">rename</span>. </p>
+<p><a class="el" href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями.">RepoCommand</a> реализует интерфейс <a class="el" href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.">ICommand</a> для управления конфигурациями на уровне репозитория, в основном сосредотачиваясь на управлении <b>удаленными репозиториями</b>. Эта команда действует как фасад, делегируя фактическое управление удаленными репозиториями классу <a class="el" href="classRemoteManager.html">RemoteManager</a> после обеспечения выполнения команды в контексте валидного репозитория (неявно обрабатывается <a class="el" href="classRepositoryManager.html">RepositoryManager</a>). Команда поддерживает подкоманды такие как <span class="tt">add</span>, <span class="tt">remove</span>, <span class="tt">list</span> и <span class="tt">rename</span>. Наследуется от <a class="el" href="classServerBaseCommand.html" title="Абстрактный базовый класс для всех команд администрирования сервера.">ServerBaseCommand</a> для общей функциональности серверных команд. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

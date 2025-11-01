@@ -102,7 +102,8 @@ Inheritance diagram for RepoCommand:</div>
  <div class="center">
   <img src="classRepoCommand.png" usemap="#RepoCommand_map" alt=""/>
   <map id="RepoCommand_map" name="RepoCommand_map">
-<area href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI." alt="ICommand" shape="rect" coords="0,0,96,24"/>
+<area href="classServerBaseCommand.html" title="Abstract base class for all server administration commands." alt="ServerBaseCommand" shape="rect" coords="0,56,134,80"/>
+<area href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI." alt="ICommand" shape="rect" coords="0,0,134,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -120,13 +121,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8e4992a1384b8ffc8ed954060bf76e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> logic.  <br /></td></tr>
 <tr class="memitem:a1d59c5c0f8a4f8a9297605a0001b1a8c" id="r_a1d59c5c0f8a4f8a9297605a0001b1a8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d59c5c0f8a4f8a9297605a0001b1a8c">showHelp</a> () const override</td></tr>
 <tr class="memdesc:a1d59c5c0f8a4f8a9297605a0001b1a8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays help information for the command.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classServerBaseCommand"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classServerBaseCommand')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classServerBaseCommand.html">ServerBaseCommand</a></td></tr>
+<tr class="memitem:aa0fe8087dbffaa6c93362945281eb787 inherit pub_methods_classServerBaseCommand" id="r_aa0fe8087dbffaa6c93362945281eb787"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerBaseCommand.html#aa0fe8087dbffaa6c93362945281eb787">ServerBaseCommand</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; event_bus, std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt; repo_manager)</td></tr>
+<tr class="memdesc:aa0fe8087dbffaa6c93362945281eb787 inherit pub_methods_classServerBaseCommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classServerBaseCommand.html" title="Abstract base class for all server administration commands.">ServerBaseCommand</a> with necessary dependencies.  <br /></td></tr>
+<tr class="memitem:a45b57a38f34b7cd65a7cc4aaafc4edc7 inherit pub_methods_classServerBaseCommand" id="r_a45b57a38f34b7cd65a7cc4aaafc4edc7"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ServerBaseCommand</b> ()=default</td></tr>
+<tr class="memdesc:a45b57a38f34b7cd65a7cc4aaafc4edc7 inherit pub_methods_classServerBaseCommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for proper cleanup of derived classes. <br /></td></tr>
 <tr class="inherit_header pub_methods_classICommand"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classICommand')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classICommand.html">ICommand</a></td></tr>
 <tr class="memitem:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand" id="r_aa8a6346c5a0dcfe7fd49413a69e854ef"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classICommand.html#aa8a6346c5a0dcfe7fd49413a69e854ef">~ICommand</a> ()=default</td></tr>
 <tr class="memdesc:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classServerBaseCommand"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classServerBaseCommand')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classServerBaseCommand.html">ServerBaseCommand</a></td></tr>
+<tr class="memitem:ab946376a525068e444ceb8f2e5bbf2bd inherit pro_methods_classServerBaseCommand" id="r_ab946376a525068e444ceb8f2e5bbf2bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerBaseCommand.html#ab946376a525068e444ceb8f2e5bbf2bd">notifyInfo</a> (const std::string &amp;message) const</td></tr>
+<tr class="memdesc:ab946376a525068e444ceb8f2e5bbf2bd inherit pro_methods_classServerBaseCommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an informational notification via the event bus.  <br /></td></tr>
+<tr class="memitem:a67bfad4d62fdd7097e0a6d3679a27ffb inherit pro_methods_classServerBaseCommand" id="r_a67bfad4d62fdd7097e0a6d3679a27ffb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerBaseCommand.html#a67bfad4d62fdd7097e0a6d3679a27ffb">notifyError</a> (const std::string &amp;message) const</td></tr>
+<tr class="memdesc:a67bfad4d62fdd7097e0a6d3679a27ffb inherit pro_methods_classServerBaseCommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an error notification via the event bus.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_classServerBaseCommand"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classServerBaseCommand')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classServerBaseCommand.html">ServerBaseCommand</a></td></tr>
+<tr class="memitem:abc66722d1aa70cf927b02560c6022735 inherit pro_attribs_classServerBaseCommand" id="r_abc66722d1aa70cf927b02560c6022735"><td class="memItemLeft" align="right" valign="top">
+std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>event_bus_</b></td></tr>
+<tr class="memdesc:abc66722d1aa70cf927b02560c6022735 inherit pro_attribs_classServerBaseCommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the event bus for system notifications. <br /></td></tr>
+<tr class="memitem:a43340ed56980959183df8cf722c0db7e inherit pro_attribs_classServerBaseCommand" id="r_a43340ed56980959183df8cf722c0db7e"><td class="memItemLeft" align="right" valign="top">
+std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repo_manager_</b></td></tr>
+<tr class="memdesc:a43340ed56980959183df8cf722c0db7e inherit pro_attribs_classServerBaseCommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the repository manager for repository operations. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Command handler for managing repository remotes and configurations. </p>
-<p>Implements the "svcs repo" command, providing subcommands for managing the list of remote repositories associated with the current project. </p>
+<p>Implements the "svcs repo" command, providing subcommands for managing the list of remote repositories associated with the current project. Inherits from <a class="el" href="classServerBaseCommand.html" title="Abstract base class for all server administration commands.">ServerBaseCommand</a> for common server command functionality. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4d548a346d0b59339661502c9df8b5bf" name="a4d548a346d0b59339661502c9df8b5bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d548a346d0b59339661502c9df8b5bf">&#9670;&#160;</a></span>RepoCommand()</h2>
@@ -192,7 +214,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>bool True if the command executes successfully, false otherwise.</dd></dl>
 <p>Finds the current repository and delegates the task based on the subcommand. </p>
 
-<p>Implements <a class="el" href="classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0">ICommand</a>.</p>
+<p>Implements <a class="el" href="classServerBaseCommand.html#aed2de55dae7433e8654afd772dab2789">ServerBaseCommand</a>.</p>
 
 </div>
 </div>
@@ -222,7 +244,7 @@ Public Member Functions</h2></td></tr>
 <p>Gets a brief description of the command. </p>
 <dl class="section return"><dt>Returns</dt><dd>Description of the command's purpose. </dd></dl>
 
-<p>Implements <a class="el" href="classICommand.html#a1018a1a6abaf28e40b27eca8344e78c6">ICommand</a>.</p>
+<p>Implements <a class="el" href="classServerBaseCommand.html#a48b3a6c094aec2535cde2db7a9b393d7">ServerBaseCommand</a>.</p>
 
 </div>
 </div>
@@ -252,7 +274,7 @@ Public Member Functions</h2></td></tr>
 <p>Gets the name of the command. </p>
 <dl class="section return"><dt>Returns</dt><dd>The command name "repo". </dd></dl>
 
-<p>Implements <a class="el" href="classICommand.html#ac676ae6b9315436978fc62201e5b31dc">ICommand</a>.</p>
+<p>Implements <a class="el" href="classServerBaseCommand.html#add79d0005e090d5286957ccd6aa8d69c">ServerBaseCommand</a>.</p>
 
 </div>
 </div>
@@ -282,7 +304,7 @@ Public Member Functions</h2></td></tr>
 <p>Gets the usage syntax of the command. </p>
 <dl class="section return"><dt>Returns</dt><dd>The usage syntax string. </dd></dl>
 
-<p>Implements <a class="el" href="classICommand.html#a9e912ad55e38e0cf9ae2f6e558d6c401">ICommand</a>.</p>
+<p>Implements <a class="el" href="classServerBaseCommand.html#a58279f395219e9ac6c88034fe01aec71">ServerBaseCommand</a>.</p>
 
 </div>
 </div>
@@ -311,7 +333,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Displays help information for the command. </p>
 
-<p>Implements <a class="el" href="classICommand.html#a4e74912364d9172184235e5e5df55c7d">ICommand</a>.</p>
+<p>Implements <a class="el" href="classServerBaseCommand.html#a9d57c3fed1b5ba2ce53844818f32bca9">ServerBaseCommand</a>.</p>
 
 </div>
 </div>

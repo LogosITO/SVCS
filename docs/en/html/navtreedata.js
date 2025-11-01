@@ -88,9 +88,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classCommandFactory.html#ac31cdcf058989c9f45fb228908530d46",
-"classRepositoryManager.html#a349a454c83ccbd63eb9b5a7c12b6a2ef",
-"structBranchManager_1_1Branch.html#a94b6bba7fbdaeec7576b86ce04fc07c8"
+"classClearCommandTest.html#a974fec48c350cf3a165d645e2bb82fa4",
+"classRepoCommand.html#acb1b0c594bc5ff13da81126a1baddc73",
+"functions_s.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

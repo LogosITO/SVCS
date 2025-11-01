@@ -12,7 +12,7 @@ var searchData=
   ['observers_9',['observers',['../classISubject.html#a66f4ce666ed8b85d694a9b73d6bc16fb',1,'ISubject']]],
   ['operations_10',['Advanced Operations',['../md_README.html#autotoc_md13',1,'']]],
   ['operator_3c_11',['operator&lt;',['../structTreeEntry.html#ad89dfd85abbb8b8a1041fea93f50a940',1,'TreeEntry']]],
-  ['operator_3d_12',['operator=',['../classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7',1,'CommandFactory']]],
+  ['operator_3d_12',['operator=',['../classCommandFactory.html#aa7fb0a11d596213f1b2f62ecea795ae7',1,'CommandFactory::operator=()'],['../classCompositeCommandFactory.html#afcdfab2ae55f6846b9dfcc4369042a70',1,'CompositeCommandFactory::operator=()'],['../classServerCommandFactory.html#a1cb7c0198a6e5dc38bc2a3a2a7685e66',1,'ServerCommandFactory::operator=()']]],
   ['options_13',['Command Options',['../md_README.html#autotoc_md8',1,'']]],
   ['originalcin_14',['originalCin',['../classClearCommandTest.html#a849c79d660b8123e65698847fa4612da',1,'ClearCommandTest']]],
   ['our_20process_15',['Our Process',['../md_SECURITY.html#autotoc_md33',1,'']]]

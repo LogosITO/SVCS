@@ -1,0 +1,44 @@
+\doxysection{Server\+Base\+Command.\+hxx}
+\hypertarget{ServerBaseCommand_8hxx_source}{}\label{ServerBaseCommand_8hxx_source}\index{server/include/ServerBaseCommand.hxx@{server/include/ServerBaseCommand.hxx}}
+\mbox{\hyperlink{ServerBaseCommand_8hxx}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{../../cli/include/ICommand.hxx}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Event_8hxx}{../../services/Event.hxx}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServerBaseCommand_aa0fe8087dbffaa6c93362945281eb787}{ServerBaseCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classServerBaseCommand_aa0fe8087dbffaa6c93362945281eb787}{ServerBaseCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classServerBaseCommand_a45b57a38f34b7cd65a7cc4aaafc4edc7}{\string~ServerBaseCommand}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00083\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classServerBaseCommand_add79d0005e090d5286957ccd6aa8d69c}{getName}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00096\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classServerBaseCommand_a48b3a6c094aec2535cde2db7a9b393d7}{getDescription}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00109\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classServerBaseCommand_a58279f395219e9ac6c88034fe01aec71}{getUsage}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServerBaseCommand_aed2de55dae7433e8654afd772dab2789}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override}\ =\ 0;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServerBaseCommand_a9d57c3fed1b5ba2ce53844818f32bca9}{showHelp}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServerBaseCommand_ab946376a525068e444ceb8f2e5bbf2bd}{notifyInfo}}(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServerBaseCommand_a67bfad4d62fdd7097e0a6d3679a27ffb}{notifyError}}(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00171\ \ \ \ \ std::shared\_ptr<ISubject>\ \mbox{\hyperlink{classServerBaseCommand_abc66722d1aa70cf927b02560c6022735}{event\_bus\_}};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00180\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classServerBaseCommand_a43340ed56980959183df8cf722c0db7e}{repo\_manager\_}};}
+\DoxyCodeLine{00181\ \};}
+
+\end{DoxyCode}

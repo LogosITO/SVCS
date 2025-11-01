@@ -94,10 +94,8 @@ $(function(){initNavTree('RepoCommand_8hxx.html','',''); });
 
 <p>Declaration of the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ICommand_8hxx_source.html">../../cli/include/ICommand.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RepositoryManager_8hxx_source.html">../../core/include/RepositoryManager.hxx</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ServerBaseCommand_8hxx_source.html">ServerBaseCommand.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Repository_8hxx_source.html">../../core/include/Repository.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ISubject_8hxx_source.html">../../services/ISubject.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RemoteManager_8hxx_source.html">RemoteManager.hxx</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -112,7 +110,7 @@ Classes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Declaration of the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p><a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> implements the <a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a> interface to manage repository-level configurations, primarily focusing on managing <b>remotes</b>. This command acts as a facade, delegating the actual management of remotes to the <a class="el" href="classRemoteManager.html">RemoteManager</a> class after ensuring the command is executed within a valid repository context (implicitly handled by <a class="el" href="classRepositoryManager.html">RepositoryManager</a>). The command supports subcommands like <span class="tt">add</span>, <span class="tt">remove</span>, <span class="tt">list</span>, and <span class="tt">rename</span>. </p>
+<p><a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> implements the <a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a> interface to manage repository-level configurations, primarily focusing on managing <b>remotes</b>. This command acts as a facade, delegating the actual management of remotes to the <a class="el" href="classRemoteManager.html">RemoteManager</a> class after ensuring the command is executed within a valid repository context (implicitly handled by <a class="el" href="classRepositoryManager.html">RepositoryManager</a>). The command supports subcommands like <span class="tt">add</span>, <span class="tt">remove</span>, <span class="tt">list</span>, and <span class="tt">rename</span>. Inherits from <a class="el" href="classServerBaseCommand.html" title="Abstract base class for all server administration commands.">ServerBaseCommand</a> for common server command functionality. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

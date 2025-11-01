@@ -1,0 +1,29 @@
+\doxysection{server/include/\+Server\+Command\+Factory.hxx File Reference}
+\hypertarget{ServerCommandFactory_8hxx}{}\label{ServerCommandFactory_8hxx}\index{server/include/ServerCommandFactory.hxx@{server/include/ServerCommandFactory.hxx}}
+
+
+Declaration of the \doxylink{classServerCommandFactory}{Server\+Command\+Factory} class for server administration commands.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classServerCommandFactory}{Server\+Command\+Factory}}
+\begin{DoxyCompactList}\small\item\em Factory for creating server administration \doxylink{classICommand}{ICommand} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classServerCommandFactory}{Server\+Command\+Factory} class for server administration commands. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Implements the Factory pattern specifically for server management commands. Creates commands for hub management, user administration, and repository access control. 

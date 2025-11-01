@@ -4,6 +4,7 @@ var hierarchy =
     [ "BranchManager", "classBranchManager.html", null ],
     [ "CommandFactory", "classCommandFactory.html", null ],
     [ "CommitInfo", "structCommitInfo.html", null ],
+    [ "CompositeCommandFactory", "classCompositeCommandFactory.html", null ],
     [ "std::enable_shared_from_this", null, [
       [ "EventBus", "classEventBus.html", null ]
     ] ],
@@ -18,12 +19,14 @@ var hierarchy =
       [ "ClearCommand", "classClearCommand.html", null ],
       [ "HelpCommand", "classHelpCommand.html", null ],
       [ "HistoryCommand", "classHistoryCommand.html", null ],
-      [ "HubCommand", "classHubCommand.html", null ],
       [ "InitCommand", "classInitCommand.html", null ],
       [ "MergeCommand", "classMergeCommand.html", null ],
       [ "RemoveCommand", "classRemoveCommand.html", null ],
-      [ "RepoCommand", "classRepoCommand.html", null ],
       [ "SaveCommand", "classSaveCommand.html", null ],
+      [ "ServerBaseCommand", "classServerBaseCommand.html", [
+        [ "HubCommand", "classHubCommand.html", null ],
+        [ "RepoCommand", "classRepoCommand.html", null ]
+      ] ],
       [ "StatusCommand", "classStatusCommand.html", null ],
       [ "UndoCommand", "classUndoCommand.html", null ],
       [ "VersionCommand", "classVersionCommand.html", null ]
@@ -57,6 +60,7 @@ var hierarchy =
       [ "MockRepositoryManager", "classMockRepositoryManager.html", null ]
     ] ],
     [ "Server", "classServer.html", null ],
+    [ "ServerCommandFactory", "classServerCommandFactory.html", null ],
     [ "testing::Test", null, [
       [ "AddCommandTest", "classAddCommandTest.html", null ],
       [ "BranchManagerTest", "classBranchManagerTest.html", null ],

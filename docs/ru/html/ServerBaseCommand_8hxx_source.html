@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Исходный файл server/include/ServerBaseCommand.hxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('ServerBaseCommand_8hxx_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ServerBaseCommand.hxx</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ServerBaseCommand_8hxx.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="ICommand_8hxx.html">../../cli/include/ICommand.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../services/ISubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="Event_8hxx.html">../../services/Event.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="RepositoryManager_8hxx.html">../../core/include/RepositoryManager.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classServerBaseCommand.html">   31</a></span><span class="comment"> * @english</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * @class ServerBaseCommand</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * @brief Abstract base class for all server administration commands.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * @details Inherits from ICommand and provides common infrastructure</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * for server management operations including event notification and</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * repository management. All server-specific commands should derive</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * from this class.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * @russian</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * @class ServerBaseCommand</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * @brief Абстрактный базовый класс для всех команд администрирования сервера.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * @details Наследуется от ICommand и предоставляет общую инфраструктуру</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * для операций управления сервером, включая уведомления о событиях и</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classServerBaseCommand.html#a45b57a38f34b7cd65a7cc4aaafc4edc7">   44</a></span><span class="comment"> * управление репозиториями. Все серверные команды должны наследоваться</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> * от этого класса.</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">class </span><a class="code hl_function" href="classServerBaseCommand.html#aa0fe8087dbffaa6c93362945281eb787">ServerBaseCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="classICommand.html">ICommand</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_function" href="classServerBaseCommand.html#aa0fe8087dbffaa6c93362945281eb787">ServerBaseCommand</a>(std::shared_ptr&lt;ISubject&gt; event_bus,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                      std::shared_ptr&lt;RepositoryManager&gt; repo_manager);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classServerBaseCommand.html#a45b57a38f34b7cd65a7cc4aaafc4edc7">~ServerBaseCommand</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    [[nodiscard]] <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classServerBaseCommand.html#add79d0005e090d5286957ccd6aa8d69c">getName</a>() <span class="keyword">const override</span> = 0;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    [[nodiscard]] <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classServerBaseCommand.html#a48b3a6c094aec2535cde2db7a9b393d7">getDescription</a>() <span class="keyword">const override</span> = 0;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    [[nodiscard]] <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classServerBaseCommand.html#a58279f395219e9ac6c88034fe01aec71">getUsage</a>() <span class="keyword">const override</span> = 0;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classServerBaseCommand.html#aed2de55dae7433e8654afd772dab2789">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span> = 0;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classServerBaseCommand.html#a9d57c3fed1b5ba2ce53844818f32bca9">showHelp</a>() <span class="keyword">const override</span> = 0;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServerBaseCommand.html#ab946376a525068e444ceb8f2e5bbf2bd">notifyInfo</a>(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServerBaseCommand.html#a67bfad4d62fdd7097e0a6d3679a27ffb">notifyError</a>(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    std::shared_ptr&lt;ISubject&gt; <a class="code hl_variable" href="classServerBaseCommand.html#abc66722d1aa70cf927b02560c6022735">event_bus_</a>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    std::shared_ptr&lt;RepositoryManager&gt; <a class="code hl_variable" href="classServerBaseCommand.html#a43340ed56980959183df8cf722c0db7e">repo_manager_</a>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>};</div>
+<div class="ttc" id="aEvent_8hxx_html"><div class="ttname"><a href="Event_8hxx.html">Event.hxx</a></div><div class="ttdoc">Определяет структуру события, используемую для уведомлений по шаблону Observer.</div></div>
+<div class="ttc" id="aICommand_8hxx_html"><div class="ttname"><a href="ICommand_8hxx.html">ICommand.hxx</a></div><div class="ttdoc">Объявление интерфейса ICommand для всех исполняемых CLI команд.</div></div>
+<div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Определяет интерфейс для компонента Subject (Издатель) шаблона Observer.</div></div>
+<div class="ttc" id="aRepositoryManager_8hxx_html"><div class="ttname"><a href="RepositoryManager_8hxx.html">RepositoryManager.hxx</a></div><div class="ttdoc">Declaration of the RepositoryManager class, managing all repository-level file operations.</div></div>
+<div class="ttc" id="aclassICommand_html"><div class="ttname"><a href="classICommand.html">ICommand</a></div><div class="ttdoc">Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.</div><div class="ttdef"><b>Определения</b> ICommand.hxx:23</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_a43340ed56980959183df8cf722c0db7e"><div class="ttname"><a href="classServerBaseCommand.html#a43340ed56980959183df8cf722c0db7e">ServerBaseCommand::repo_manager_</a></div><div class="ttdeci">std::shared_ptr&lt; RepositoryManager &gt; repo_manager_</div><div class="ttdoc">Общий указатель на менеджер репозиториев для операций с репозиториями.</div><div class="ttdef"><b>Определения</b> ServerBaseCommand.hxx:104</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_a45b57a38f34b7cd65a7cc4aaafc4edc7"><div class="ttname"><a href="classServerBaseCommand.html#a45b57a38f34b7cd65a7cc4aaafc4edc7">ServerBaseCommand::~ServerBaseCommand</a></div><div class="ttdeci">virtual ~ServerBaseCommand()=default</div><div class="ttdoc">Виртуальный деструктор для корректной очистки производных классов.</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_a48b3a6c094aec2535cde2db7a9b393d7"><div class="ttname"><a href="classServerBaseCommand.html#a48b3a6c094aec2535cde2db7a9b393d7">ServerBaseCommand::getDescription</a></div><div class="ttdeci">virtual std::string getDescription() const override=0</div><div class="ttdoc">Чисто виртуальный метод для получения описания команды.</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_a58279f395219e9ac6c88034fe01aec71"><div class="ttname"><a href="classServerBaseCommand.html#a58279f395219e9ac6c88034fe01aec71">ServerBaseCommand::getUsage</a></div><div class="ttdeci">virtual std::string getUsage() const override=0</div><div class="ttdoc">Чисто виртуальный метод для получения синтаксиса использования команды.</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_a67bfad4d62fdd7097e0a6d3679a27ffb"><div class="ttname"><a href="classServerBaseCommand.html#a67bfad4d62fdd7097e0a6d3679a27ffb">ServerBaseCommand::notifyError</a></div><div class="ttdeci">void notifyError(const std::string &amp;message) const</div><div class="ttdoc">Отправляет уведомление об ошибке через шину событий.</div><div class="ttdef"><b>Определения</b> ServerBaseCommand.cxx:28</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_a9d57c3fed1b5ba2ce53844818f32bca9"><div class="ttname"><a href="classServerBaseCommand.html#a9d57c3fed1b5ba2ce53844818f32bca9">ServerBaseCommand::showHelp</a></div><div class="ttdeci">virtual void showHelp() const override=0</div><div class="ttdoc">Чисто виртуальный метод для отображения подробной справочной информации.</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_aa0fe8087dbffaa6c93362945281eb787"><div class="ttname"><a href="classServerBaseCommand.html#aa0fe8087dbffaa6c93362945281eb787">ServerBaseCommand::ServerBaseCommand</a></div><div class="ttdeci">ServerBaseCommand(std::shared_ptr&lt; ISubject &gt; event_bus, std::shared_ptr&lt; RepositoryManager &gt; repo_manager)</div><div class="ttdoc">Конструирует ServerBaseCommand с необходимыми зависимостями.</div><div class="ttdef"><b>Определения</b> ServerBaseCommand.cxx:14</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_ab946376a525068e444ceb8f2e5bbf2bd"><div class="ttname"><a href="classServerBaseCommand.html#ab946376a525068e444ceb8f2e5bbf2bd">ServerBaseCommand::notifyInfo</a></div><div class="ttdeci">void notifyInfo(const std::string &amp;message) const</div><div class="ttdoc">Отправляет информационное уведомление через шину событий.</div><div class="ttdef"><b>Определения</b> ServerBaseCommand.cxx:21</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_abc66722d1aa70cf927b02560c6022735"><div class="ttname"><a href="classServerBaseCommand.html#abc66722d1aa70cf927b02560c6022735">ServerBaseCommand::event_bus_</a></div><div class="ttdeci">std::shared_ptr&lt; ISubject &gt; event_bus_</div><div class="ttdoc">Общий указатель на шину событий для системных уведомлений.</div><div class="ttdef"><b>Определения</b> ServerBaseCommand.hxx:99</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_add79d0005e090d5286957ccd6aa8d69c"><div class="ttname"><a href="classServerBaseCommand.html#add79d0005e090d5286957ccd6aa8d69c">ServerBaseCommand::getName</a></div><div class="ttdeci">virtual std::string getName() const override=0</div><div class="ttdoc">Чисто виртуальный метод для получения имени команды.</div></div>
+<div class="ttc" id="aclassServerBaseCommand_html_aed2de55dae7433e8654afd772dab2789"><div class="ttname"><a href="classServerBaseCommand.html#aed2de55dae7433e8654afd772dab2789">ServerBaseCommand::execute</a></div><div class="ttdeci">virtual bool execute(const std::vector&lt; std::string &gt; &amp;args) override=0</div><div class="ttdoc">Чисто виртуальный метод для выполнения логики команды.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_41e1742e44e2de38b3bc91f993fed282.html">server</a></li><li class="navelem"><a href="dir_2b32f7736d6a65027d17676f6279053c.html">include</a></li><li class="navelem"><a href="ServerBaseCommand_8hxx.html">ServerBaseCommand.hxx</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

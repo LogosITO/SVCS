@@ -12,7 +12,7 @@ Command handler for managing repository remotes and configurations.
 Inheritance diagram for Repo\+Command\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classRepoCommand}
+\includegraphics[height=3.000000cm]{classRepoCommand}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -30,17 +30,39 @@ bool \mbox{\hyperlink{classRepoCommand_a8e4992a1384b8ffc8ed954060bf76e7b}{execut
 \begin{DoxyCompactList}\small\item\em Executes the \doxylink{classRepoCommand}{Repo\+Command} logic. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRepoCommand_a1d59c5c0f8a4f8a9297605a0001b1a8c}{show\+Help}} () const override
 \begin{DoxyCompactList}\small\item\em Displays help information for the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classServerBaseCommand}{Server\+Base\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServerBaseCommand_aa0fe8087dbffaa6c93362945281eb787}{Server\+Base\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classServerBaseCommand}{Server\+Base\+Command} with necessary dependencies. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Server\+Base\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICommand}{ICommand}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{classICommand_aa8a6346c5a0dcfe7fd49413a69e854ef}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classServerBaseCommand}{Server\+Base\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classServerBaseCommand_ab946376a525068e444ceb8f2e5bbf2bd}{notify\+Info}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Sends an informational notification via the event bus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServerBaseCommand_a67bfad4d62fdd7097e0a6d3679a27ffb}{notify\+Error}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Sends an error notification via the event bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classServerBaseCommand}{Server\+Base\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ {\bfseries event\+\_\+bus\+\_\+}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the event bus for system notifications. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+\_\+manager\+\_\+}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the repository manager for repository operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Command handler for managing repository remotes and configurations. 
 
-Implements the "{}svcs repo"{} command, providing subcommands for managing the list of remote repositories associated with the current project. 
+Implements the "{}svcs repo"{} command, providing subcommands for managing the list of remote repositories associated with the current project. Inherits from \doxylink{classServerBaseCommand}{Server\+Base\+Command} for common server command functionality. 
 
 \label{doc-constructors}
 \Hypertarget{classRepoCommand_doc-constructors}
@@ -87,7 +109,7 @@ bool True if the command executes successfully, false otherwise.
 \end{DoxyReturn}
 Finds the current repository and delegates the task based on the subcommand. 
 
-Implements \mbox{\hyperlink{classICommand_a17e2218ad5fc50edbfa9b920cdf101c0}{ICommand}}.
+Implements \mbox{\hyperlink{classServerBaseCommand_aed2de55dae7433e8654afd772dab2789}{Server\+Base\+Command}}.
 
 \Hypertarget{classRepoCommand_a580fadfb3d9f278c300e047e2e5af999}\index{RepoCommand@{RepoCommand}!getDescription@{getDescription}}
 \index{getDescription@{getDescription}!RepoCommand@{RepoCommand}}
@@ -104,7 +126,7 @@ Description of the command\textquotesingle{}s purpose.
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classICommand_a1018a1a6abaf28e40b27eca8344e78c6}{ICommand}}.
+Implements \mbox{\hyperlink{classServerBaseCommand_a48b3a6c094aec2535cde2db7a9b393d7}{Server\+Base\+Command}}.
 
 \Hypertarget{classRepoCommand_af6d30490f0692b302c71cc7f4526a91b}\index{RepoCommand@{RepoCommand}!getName@{getName}}
 \index{getName@{getName}!RepoCommand@{RepoCommand}}
@@ -121,7 +143,7 @@ The command name "{}repo"{}.
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classICommand_ac676ae6b9315436978fc62201e5b31dc}{ICommand}}.
+Implements \mbox{\hyperlink{classServerBaseCommand_add79d0005e090d5286957ccd6aa8d69c}{Server\+Base\+Command}}.
 
 \Hypertarget{classRepoCommand_acb1b0c594bc5ff13da81126a1baddc73}\index{RepoCommand@{RepoCommand}!getUsage@{getUsage}}
 \index{getUsage@{getUsage}!RepoCommand@{RepoCommand}}
@@ -138,7 +160,7 @@ The usage syntax string.
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classICommand_a9e912ad55e38e0cf9ae2f6e558d6c401}{ICommand}}.
+Implements \mbox{\hyperlink{classServerBaseCommand_a58279f395219e9ac6c88034fe01aec71}{Server\+Base\+Command}}.
 
 \Hypertarget{classRepoCommand_a1d59c5c0f8a4f8a9297605a0001b1a8c}\index{RepoCommand@{RepoCommand}!showHelp@{showHelp}}
 \index{showHelp@{showHelp}!RepoCommand@{RepoCommand}}
@@ -152,7 +174,7 @@ Displays help information for the command.
 
 
 
-Implements \mbox{\hyperlink{classICommand_a4e74912364d9172184235e5e5df55c7d}{ICommand}}.
+Implements \mbox{\hyperlink{classServerBaseCommand_a9d57c3fed1b5ba2ce53844818f32bca9}{Server\+Base\+Command}}.
 
 
 

@@ -1,0 +1,29 @@
+\doxysection{Файл integration/include/\+Composite\+Command\+Factory.hxx}
+\hypertarget{CompositeCommandFactory_8hxx}{}\label{CompositeCommandFactory_8hxx}\index{integration/include/CompositeCommandFactory.hxx@{integration/include/CompositeCommandFactory.hxx}}
+
+
+Композитная фабрика, объединяющая несколько фабрик команд.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}}
+\begin{DoxyCompactList}\small\item\em Интеграционный компонент для объединения нескольких фабрик команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Композитная фабрика, объединяющая несколько фабрик команд. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Интеграционный компонент, который делегирует создание команд нескольким базовым фабрикам последовательно. Предоставляет унифицированный интерфейс для стандартных CLI команд и команд администрирования сервера. 

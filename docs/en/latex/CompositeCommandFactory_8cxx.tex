@@ -1,0 +1,22 @@
+\doxysection{integration/src/\+Composite\+Command\+Factory.cxx File Reference}
+\hypertarget{CompositeCommandFactory_8cxx}{}\label{CompositeCommandFactory_8cxx}\index{integration/src/CompositeCommandFactory.cxx@{integration/src/CompositeCommandFactory.cxx}}
+
+
+Implementation of the \doxylink{classCompositeCommandFactory}{Composite\+Command\+Factory} class.  
+
+
+{\ttfamily \#include "{}../include/\+Composite\+Command\+Factory.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../cli/include/\+Command\+Factory.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../server/include/\+Server\+Command\+Factory.\+hxx"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classCompositeCommandFactory}{Composite\+Command\+Factory} class. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Provides concrete implementation for combining multiple command factories into a unified interface. Handles command creation, help display, and command discovery across all registered factories. 

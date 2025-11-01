@@ -1,0 +1,22 @@
+\doxysection{Файл integration/src/\+Composite\+Command\+Factory.cxx}
+\hypertarget{CompositeCommandFactory_8cxx}{}\label{CompositeCommandFactory_8cxx}\index{integration/src/CompositeCommandFactory.cxx@{integration/src/CompositeCommandFactory.cxx}}
+
+
+Реализация класса \doxylink{classCompositeCommandFactory}{Composite\+Command\+Factory}.  
+
+
+{\ttfamily \#include "{}../include/\+Composite\+Command\+Factory.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../cli/include/\+Command\+Factory.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../server/include/\+Server\+Command\+Factory.\+hxx"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+
+
+\doxysubsection{Подробное описание}
+Реализация класса \doxylink{classCompositeCommandFactory}{Composite\+Command\+Factory}. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Предоставляет конкретную реализацию для объединения нескольких фабрик команд в единый интерфейс. Обрабатывает создание команд, отображение справки и обнаружение команд во всех зарегистрированных фабриках. 

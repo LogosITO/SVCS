@@ -4,5 +4,7 @@ var dir_a063914ab482288b7b0e1b2fca86158c =
     [ "RemoteManager.cxx", "RemoteManager_8cxx.html", null ],
     [ "RemoteProtocol.cxx", "RemoteProtocol_8cxx.html", null ],
     [ "RepoCommand.cxx", "RepoCommand_8cxx.html", null ],
-    [ "Server.cxx", "Server_8cxx.html", null ]
+    [ "Server.cxx", "Server_8cxx.html", null ],
+    [ "ServerBaseCommand.cxx", "ServerBaseCommand_8cxx.html", null ],
+    [ "ServerCommandFactory.cxx", "ServerCommandFactory_8cxx.html", null ]
 ];

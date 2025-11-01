@@ -1,0 +1,27 @@
+\doxysection{server/include/\+Server\+Base\+Command.hxx File Reference}
+\hypertarget{ServerBaseCommand_8hxx}{}\label{ServerBaseCommand_8hxx}\index{server/include/ServerBaseCommand.hxx@{server/include/ServerBaseCommand.hxx}}
+
+
+Base class for server administration commands using \doxylink{classICommand}{ICommand} interface.  
+
+
+{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classServerBaseCommand}{Server\+Base\+Command}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for all server administration commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for server administration commands using \doxylink{classICommand}{ICommand} interface. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Provides common functionality for server management commands with event bus and repository manager support. Serves as the foundation for all server-\/specific administrative commands. 

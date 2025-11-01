@@ -1,0 +1,187 @@
+\doxysection{Composite\+Command\+Factory Class Reference}
+\hypertarget{classCompositeCommandFactory}{}\label{classCompositeCommandFactory}\index{CompositeCommandFactory@{CompositeCommandFactory}}
+
+
+Integration component for combining multiple command factories.  
+
+
+
+
+{\ttfamily \#include $<$Composite\+Command\+Factory.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCompositeCommandFactory_a147909003b1d25858f9ab25bc0739eb4}{Composite\+Command\+Factory}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ repo\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classCompositeCommandFactory}{Composite\+Command\+Factory} with necessary dependencies. \end{DoxyCompactList}\item 
+\Hypertarget{classCompositeCommandFactory_a28969fd9167f3eee8835a7867ac32bb4}\label{classCompositeCommandFactory_a28969fd9167f3eee8835a7867ac32bb4} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Composite\+Command\+Factory} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\Hypertarget{classCompositeCommandFactory_a5582a7bb7e69e4dafa225eb824289223}\label{classCompositeCommandFactory_a5582a7bb7e69e4dafa225eb824289223} 
+{\bfseries Composite\+Command\+Factory} (const \mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classCompositeCommandFactory_afcdfab2ae55f6846b9dfcc4369042a70}\label{classCompositeCommandFactory_afcdfab2ae55f6846b9dfcc4369042a70} 
+\mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classCompositeCommandFactory}{Composite\+Command\+Factory}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompositeCommandFactory_a47f9bd23038cb8e6222220e0c0923919}{register\+Factory}} (std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$(const std\+::string \&)$>$ factory)
+\begin{DoxyCompactList}\small\item\em Registers a factory function for command creation. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$ \mbox{\hyperlink{classCompositeCommandFactory_ac51821a7d4dd52b865854a8b27d4ff07}{create\+Command}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Creates a command by name using registered factories. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classCompositeCommandFactory_a4d2b48b74555d7682bba48a137b3ee27}{get\+All\+Command\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Gets names of all available commands from all factories. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCompositeCommandFactory_a04cc9b2d98193562a97faf61b5e7866e}{get\+Command\+Description}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Gets the description for a command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompositeCommandFactory_aad47ad47f3a3d32fef11574f5406c665}{show\+Command\+Help}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Shows detailed help for a command. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCompositeCommandFactory_a0da48501ef908953216e364849bd170a}{command\+Exists}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if a command with the given name exists. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classCompositeCommandFactory_a646308f5fd853602b7fb04728dd645a7}{get\+Factory\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of registered factories. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Integration component for combining multiple command factories. 
+
+Serves as a bridge between different command subsystems (CLI, \doxylink{classServer}{Server}). When creating a command, it tries each registered factory in order until one successfully creates the command. This design allows clean separation of concerns while providing a unified command interface to the application. 
+
+\label{doc-constructors}
+\Hypertarget{classCompositeCommandFactory_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCompositeCommandFactory_a147909003b1d25858f9ab25bc0739eb4}\index{CompositeCommandFactory@{CompositeCommandFactory}!CompositeCommandFactory@{CompositeCommandFactory}}
+\index{CompositeCommandFactory@{CompositeCommandFactory}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{CompositeCommandFactory()}{CompositeCommandFactory()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a147909003b1d25858f9ab25bc0739eb4} 
+Composite\+Command\+Factory\+::\+Composite\+Command\+Factory (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$}]{repo\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classCompositeCommandFactory}{Composite\+Command\+Factory} with necessary dependencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+\_\+bus} & Shared pointer to the event bus for command notifications. \\
+\hline
+{\em repo\+\_\+manager} & Shared pointer to the repository manager for repository operations. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classCompositeCommandFactory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCompositeCommandFactory_a0da48501ef908953216e364849bd170a}\index{CompositeCommandFactory@{CompositeCommandFactory}!commandExists@{commandExists}}
+\index{commandExists@{commandExists}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{commandExists()}{commandExists()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a0da48501ef908953216e364849bd170a} 
+bool Composite\+Command\+Factory\+::command\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a command with the given name exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the command to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if any registered factory can create the command, false otherwise.
+\end{DoxyReturn}
+Tries to create the command to determine existence. \Hypertarget{classCompositeCommandFactory_ac51821a7d4dd52b865854a8b27d4ff07}\index{CompositeCommandFactory@{CompositeCommandFactory}!createCommand@{createCommand}}
+\index{createCommand@{createCommand}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{createCommand()}{createCommand()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_ac51821a7d4dd52b865854a8b27d4ff07} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$ Composite\+Command\+Factory\+::create\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Creates a command by name using registered factories. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the command to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unique pointer to the created command, or nullptr if no factory can create it.
+\end{DoxyReturn}
+Tries each registered factory in order until one successfully creates the command. Returns the first non-\/null command found. \Hypertarget{classCompositeCommandFactory_a4d2b48b74555d7682bba48a137b3ee27}\index{CompositeCommandFactory@{CompositeCommandFactory}!getAllCommandNames@{getAllCommandNames}}
+\index{getAllCommandNames@{getAllCommandNames}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{getAllCommandNames()}{getAllCommandNames()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a4d2b48b74555d7682bba48a137b3ee27} 
+std\+::vector$<$ std\+::string $>$ Composite\+Command\+Factory\+::get\+All\+Command\+Names (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets names of all available commands from all factories. 
+
+\begin{DoxyReturn}{Returns}
+Vector of all command names that can be created by any registered factory.
+\end{DoxyReturn}
+Collects command names from all registered factories, removing duplicates. Commands are returned in registration order (factory order), not alphabetical order. \Hypertarget{classCompositeCommandFactory_a04cc9b2d98193562a97faf61b5e7866e}\index{CompositeCommandFactory@{CompositeCommandFactory}!getCommandDescription@{getCommandDescription}}
+\index{getCommandDescription@{getCommandDescription}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{getCommandDescription()}{getCommandDescription()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a04cc9b2d98193562a97faf61b5e7866e} 
+std\+::string Composite\+Command\+Factory\+::get\+Command\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the description for a command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Command description, or error message if command not found.
+\end{DoxyReturn}
+Creates a temporary command instance to retrieve its description. If command cannot be created, returns an appropriate error message. \Hypertarget{classCompositeCommandFactory_a646308f5fd853602b7fb04728dd645a7}\index{CompositeCommandFactory@{CompositeCommandFactory}!getFactoryCount@{getFactoryCount}}
+\index{getFactoryCount@{getFactoryCount}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{getFactoryCount()}{getFactoryCount()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a646308f5fd853602b7fb04728dd645a7} 
+size\+\_\+t Composite\+Command\+Factory\+::get\+Factory\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of registered factories. 
+
+\begin{DoxyReturn}{Returns}
+Number of factory functions currently registered. 
+\end{DoxyReturn}
+\Hypertarget{classCompositeCommandFactory_a47f9bd23038cb8e6222220e0c0923919}\index{CompositeCommandFactory@{CompositeCommandFactory}!registerFactory@{registerFactory}}
+\index{registerFactory@{registerFactory}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{registerFactory()}{registerFactory()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_a47f9bd23038cb8e6222220e0c0923919} 
+void Composite\+Command\+Factory\+::register\+Factory (\begin{DoxyParamCaption}\item[{std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classICommand}{ICommand}} $>$(const std\+::string \&)$>$}]{factory}{}\end{DoxyParamCaption})}
+
+
+
+Registers a factory function for command creation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & Factory function that takes a command name and returns a command pointer.\\
+\hline
+\end{DoxyParams}
+Factories are called in the order they are registered until one returns a non-\/null command. This allows prioritizing certain command types over others. \Hypertarget{classCompositeCommandFactory_aad47ad47f3a3d32fef11574f5406c665}\index{CompositeCommandFactory@{CompositeCommandFactory}!showCommandHelp@{showCommandHelp}}
+\index{showCommandHelp@{showCommandHelp}!CompositeCommandFactory@{CompositeCommandFactory}}
+\doxysubsubsection{\texorpdfstring{showCommandHelp()}{showCommandHelp()}}
+{\footnotesize\ttfamily \label{classCompositeCommandFactory_aad47ad47f3a3d32fef11574f5406c665} 
+void Composite\+Command\+Factory\+::show\+Command\+Help (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Shows detailed help for a command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the command.\\
+\hline
+\end{DoxyParams}
+Creates a temporary command instance and calls its show\+Help method. If command cannot be created, shows an error message. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+integration/include/\mbox{\hyperlink{CompositeCommandFactory_8hxx}{Composite\+Command\+Factory.\+hxx}}\item 
+integration/src/\mbox{\hyperlink{CompositeCommandFactory_8cxx}{Composite\+Command\+Factory.\+cxx}}\end{DoxyCompactItemize}

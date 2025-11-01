@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Класс ServerBaseCommand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classServerBaseCommand.html','','classServerBaseCommand-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс ServerBaseCommand<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Абстрактный базовый класс для всех команд администрирования сервера.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ServerBaseCommand_8hxx_source.html">ServerBaseCommand.hxx</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:ServerBaseCommand:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classServerBaseCommand.png" usemap="#ServerBaseCommand_map" alt=""/>
+  <map id="ServerBaseCommand_map" name="ServerBaseCommand_map">
+<area href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI." alt="ICommand" shape="rect" coords="72,0,206,24"/>
+<area href="classHubCommand.html" title="Команда для создания центральных репозиториев-хабов для командного сотрудничества." alt="HubCommand" shape="rect" coords="0,112,134,136"/>
+<area href="classRepoCommand.html" title="Обработчик команд для управления удаленными репозиториями и конфигурациями." alt="RepoCommand" shape="rect" coords="144,112,278,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aa0fe8087dbffaa6c93362945281eb787" id="r_aa0fe8087dbffaa6c93362945281eb787"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0fe8087dbffaa6c93362945281eb787">ServerBaseCommand</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; event_bus, std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt; repo_manager)</td></tr>
+<tr class="memdesc:aa0fe8087dbffaa6c93362945281eb787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует <a class="el" href="classServerBaseCommand.html" title="Абстрактный базовый класс для всех команд администрирования сервера.">ServerBaseCommand</a> с необходимыми зависимостями.  <br /></td></tr>
+<tr class="memitem:a45b57a38f34b7cd65a7cc4aaafc4edc7" id="r_a45b57a38f34b7cd65a7cc4aaafc4edc7"><td class="memItemLeft" align="right" valign="top"><a id="a45b57a38f34b7cd65a7cc4aaafc4edc7" name="a45b57a38f34b7cd65a7cc4aaafc4edc7"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ServerBaseCommand</b> ()=default</td></tr>
+<tr class="memdesc:a45b57a38f34b7cd65a7cc4aaafc4edc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор для корректной очистки производных классов. <br /></td></tr>
+<tr class="memitem:add79d0005e090d5286957ccd6aa8d69c" id="r_add79d0005e090d5286957ccd6aa8d69c"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add79d0005e090d5286957ccd6aa8d69c">getName</a> () const override=0</td></tr>
+<tr class="memdesc:add79d0005e090d5286957ccd6aa8d69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальный метод для получения имени команды.  <br /></td></tr>
+<tr class="memitem:a48b3a6c094aec2535cde2db7a9b393d7" id="r_a48b3a6c094aec2535cde2db7a9b393d7"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48b3a6c094aec2535cde2db7a9b393d7">getDescription</a> () const override=0</td></tr>
+<tr class="memdesc:a48b3a6c094aec2535cde2db7a9b393d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальный метод для получения описания команды.  <br /></td></tr>
+<tr class="memitem:a58279f395219e9ac6c88034fe01aec71" id="r_a58279f395219e9ac6c88034fe01aec71"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58279f395219e9ac6c88034fe01aec71">getUsage</a> () const override=0</td></tr>
+<tr class="memdesc:a58279f395219e9ac6c88034fe01aec71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальный метод для получения синтаксиса использования команды.  <br /></td></tr>
+<tr class="memitem:aed2de55dae7433e8654afd772dab2789" id="r_aed2de55dae7433e8654afd772dab2789"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed2de55dae7433e8654afd772dab2789">execute</a> (const std::vector&lt; std::string &gt; &amp;args) override=0</td></tr>
+<tr class="memdesc:aed2de55dae7433e8654afd772dab2789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальный метод для выполнения логики команды.  <br /></td></tr>
+<tr class="memitem:a9d57c3fed1b5ba2ce53844818f32bca9" id="r_a9d57c3fed1b5ba2ce53844818f32bca9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d57c3fed1b5ba2ce53844818f32bca9">showHelp</a> () const override=0</td></tr>
+<tr class="memdesc:a9d57c3fed1b5ba2ce53844818f32bca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальный метод для отображения подробной справочной информации.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classICommand"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classICommand')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classICommand.html">ICommand</a></td></tr>
+<tr class="memitem:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand" id="r_aa8a6346c5a0dcfe7fd49413a69e854ef"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classICommand.html#aa8a6346c5a0dcfe7fd49413a69e854ef">~ICommand</a> ()=default</td></tr>
+<tr class="memdesc:aa8a6346c5a0dcfe7fd49413a69e854ef inherit pub_methods_classICommand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:ab946376a525068e444ceb8f2e5bbf2bd" id="r_ab946376a525068e444ceb8f2e5bbf2bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab946376a525068e444ceb8f2e5bbf2bd">notifyInfo</a> (const std::string &amp;message) const</td></tr>
+<tr class="memdesc:ab946376a525068e444ceb8f2e5bbf2bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет информационное уведомление через шину событий.  <br /></td></tr>
+<tr class="memitem:a67bfad4d62fdd7097e0a6d3679a27ffb" id="r_a67bfad4d62fdd7097e0a6d3679a27ffb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67bfad4d62fdd7097e0a6d3679a27ffb">notifyError</a> (const std::string &amp;message) const</td></tr>
+<tr class="memdesc:a67bfad4d62fdd7097e0a6d3679a27ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет уведомление об ошибке через шину событий.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:abc66722d1aa70cf927b02560c6022735" id="r_abc66722d1aa70cf927b02560c6022735"><td class="memItemLeft" align="right" valign="top"><a id="abc66722d1aa70cf927b02560c6022735" name="abc66722d1aa70cf927b02560c6022735"></a>
+std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>event_bus_</b></td></tr>
+<tr class="memdesc:abc66722d1aa70cf927b02560c6022735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Общий указатель на шину событий для системных уведомлений. <br /></td></tr>
+<tr class="memitem:a43340ed56980959183df8cf722c0db7e" id="r_a43340ed56980959183df8cf722c0db7e"><td class="memItemLeft" align="right" valign="top"><a id="a43340ed56980959183df8cf722c0db7e" name="a43340ed56980959183df8cf722c0db7e"></a>
+std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repo_manager_</b></td></tr>
+<tr class="memdesc:a43340ed56980959183df8cf722c0db7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Общий указатель на менеджер репозиториев для операций с репозиториями. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Абстрактный базовый класс для всех команд администрирования сервера. </p>
+<p>Наследуется от <a class="el" href="classICommand.html" title="Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.">ICommand</a> и предоставляет общую инфраструктуру для операций управления сервером, включая уведомления о событиях и управление репозиториями. Все серверные команды должны наследоваться от этого класса. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="aa0fe8087dbffaa6c93362945281eb787" name="aa0fe8087dbffaa6c93362945281eb787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0fe8087dbffaa6c93362945281eb787">&#9670;&#160;</a></span>ServerBaseCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServerBaseCommand::ServerBaseCommand </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>event_bus</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>repo_manager</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструирует <a class="el" href="classServerBaseCommand.html" title="Абстрактный базовый класс для всех команд администрирования сервера.">ServerBaseCommand</a> с необходимыми зависимостями. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event_bus</td><td>Общий указатель на шину событий для системных уведомлений. </td></tr>
+    <tr><td class="paramname">repo_manager</td><td>Общий указатель на менеджер репозиториев для операций с репозиториями. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="aed2de55dae7433e8654afd772dab2789" name="aed2de55dae7433e8654afd772dab2789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2de55dae7433e8654afd772dab2789">&#9670;&#160;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ServerBaseCommand::execute </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чисто виртуальный метод для выполнения логики команды. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Вектор строковых аргументов, переданных команде. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если выполнение команды было успешным, false в противном случае.</dd></dl>
+<p>Должен быть реализован производными классами для предоставления специфичной для команды логики. </p>
+
+<p>Замещает <a class="el" href="classICommand.html#a17e2218ad5fc50edbfa9b920cdf101c0">ICommand</a>.</p>
+
+<p>Замещается в <a class="el" href="classHubCommand.html#a326681c2b0577b7871c6a5a2f5be16a5">HubCommand</a> и <a class="el" href="classRepoCommand.html#a8e4992a1384b8ffc8ed954060bf76e7b">RepoCommand</a>.</p>
+
+</div>
+</div>
+<a id="a48b3a6c094aec2535cde2db7a9b393d7" name="a48b3a6c094aec2535cde2db7a9b393d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b3a6c094aec2535cde2db7a9b393d7">&#9670;&#160;</a></span>getDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string ServerBaseCommand::getDescription </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чисто виртуальный метод для получения описания команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Описание команды в виде строки.</dd></dl>
+<p>Должен быть реализован производными классами для описания функциональности команды. </p>
+
+<p>Замещает <a class="el" href="classICommand.html#a1018a1a6abaf28e40b27eca8344e78c6">ICommand</a>.</p>
+
+<p>Замещается в <a class="el" href="classHubCommand.html#a1dba268b5ef60af5ddc4115da540b560">HubCommand</a> и <a class="el" href="classRepoCommand.html#a580fadfb3d9f278c300e047e2e5af999">RepoCommand</a>.</p>
+
+</div>
+</div>
+<a id="add79d0005e090d5286957ccd6aa8d69c" name="add79d0005e090d5286957ccd6aa8d69c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add79d0005e090d5286957ccd6aa8d69c">&#9670;&#160;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string ServerBaseCommand::getName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чисто виртуальный метод для получения имени команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Имя команды в виде строки.</dd></dl>
+<p>Должен быть реализован производными классами для предоставления уникального идентификатора команды. </p>
+
+<p>Замещает <a class="el" href="classICommand.html#ac676ae6b9315436978fc62201e5b31dc">ICommand</a>.</p>
+
+<p>Замещается в <a class="el" href="classHubCommand.html#a701eb297ef49001ddd918608275de0e1">HubCommand</a> и <a class="el" href="classRepoCommand.html#af6d30490f0692b302c71cc7f4526a91b">RepoCommand</a>.</p>
+
+</div>
+</div>
+<a id="a58279f395219e9ac6c88034fe01aec71" name="a58279f395219e9ac6c88034fe01aec71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58279f395219e9ac6c88034fe01aec71">&#9670;&#160;</a></span>getUsage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string ServerBaseCommand::getUsage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чисто виртуальный метод для получения синтаксиса использования команды. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Синтаксис использования команды в виде строки.</dd></dl>
+<p>Должен быть реализован производными классами для отображения правильного использования команды. </p>
+
+<p>Замещает <a class="el" href="classICommand.html#a9e912ad55e38e0cf9ae2f6e558d6c401">ICommand</a>.</p>
+
+<p>Замещается в <a class="el" href="classHubCommand.html#a6236c37f7e57f1267eeea4f6335ff31d">HubCommand</a> и <a class="el" href="classRepoCommand.html#acb1b0c594bc5ff13da81126a1baddc73">RepoCommand</a>.</p>
+
+</div>
+</div>
+<a id="a67bfad4d62fdd7097e0a6d3679a27ffb" name="a67bfad4d62fdd7097e0a6d3679a27ffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67bfad4d62fdd7097e0a6d3679a27ffb">&#9670;&#160;</a></span>notifyError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerBaseCommand::notifyError </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отправляет уведомление об ошибке через шину событий. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Сообщение об ошибке для отправки.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Вспомогательный метод для производных классов для отправки уведомлений об ошибках. </p>
+
+</div>
+</div>
+<a id="ab946376a525068e444ceb8f2e5bbf2bd" name="ab946376a525068e444ceb8f2e5bbf2bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab946376a525068e444ceb8f2e5bbf2bd">&#9670;&#160;</a></span>notifyInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerBaseCommand::notifyInfo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отправляет информационное уведомление через шину событий. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Информационное сообщение для отправки.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Вспомогательный метод для производных классов для отправки информационных уведомлений. </p>
+
+</div>
+</div>
+<a id="a9d57c3fed1b5ba2ce53844818f32bca9" name="a9d57c3fed1b5ba2ce53844818f32bca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d57c3fed1b5ba2ce53844818f32bca9">&#9670;&#160;</a></span>showHelp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ServerBaseCommand::showHelp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чисто виртуальный метод для отображения подробной справочной информации. </p>
+<p>Должен быть реализован производными классами для отображения специфичной для команды справки. </p>
+
+<p>Замещает <a class="el" href="classICommand.html#a4e74912364d9172184235e5e5df55c7d">ICommand</a>.</p>
+
+<p>Замещается в <a class="el" href="classHubCommand.html#a2a331abe87c7c5b028ce276557cf5177">HubCommand</a> и <a class="el" href="classRepoCommand.html#a1d59c5c0f8a4f8a9297605a0001b1a8c">RepoCommand</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>server/include/<a class="el" href="ServerBaseCommand_8hxx_source.html">ServerBaseCommand.hxx</a></li>
+<li>server/src/<a class="el" href="ServerBaseCommand_8cxx.html">ServerBaseCommand.cxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="classServerBaseCommand.html">ServerBaseCommand</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

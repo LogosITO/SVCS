@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 1333.333374
+%%BoundingBox: 0 0 500 1056.338013
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.375000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.473333 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 16 def
+/rows 15 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -180,12 +180,11 @@ boxfont setfont
 (ClearCommand) cw
 (HelpCommand) cw
 (HistoryCommand) cw
-(HubCommand) cw
 (InitCommand) cw
 (MergeCommand) cw
 (RemoveCommand) cw
-(RepoCommand) cw
 (SaveCommand) cw
+(ServerBaseCommand) cw
 (StatusCommand) cw
 (UndoCommand) cw
 (VersionCommand) cw
@@ -200,19 +199,19 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (ICommand) 0.000000 15.000000 box
- (AddCommand) 1.000000 14.000000 box
- (BaseCommand) 1.000000 13.000000 box
- (BranchCommand) 1.000000 12.000000 box
- (ClearCommand) 1.000000 11.000000 box
- (HelpCommand) 1.000000 10.000000 box
- (HistoryCommand) 1.000000 9.000000 box
- (HubCommand) 1.000000 8.000000 box
+ (ICommand) 0.000000 14.000000 box
+ (AddCommand) 1.000000 13.000000 box
+ (BaseCommand) 1.000000 12.000000 box
+ (BranchCommand) 1.000000 11.000000 box
+ (ClearCommand) 1.000000 10.000000 box
+ (HelpCommand) 1.000000 9.000000 box
+ (HistoryCommand) 1.000000 8.000000 box
  (InitCommand) 1.000000 7.000000 box
  (MergeCommand) 1.000000 6.000000 box
  (RemoveCommand) 1.000000 5.000000 box
- (RepoCommand) 1.000000 4.000000 box
- (SaveCommand) 1.000000 3.000000 box
+ (SaveCommand) 1.000000 4.000000 box
+ (ServerBaseCommand) 1.000000 3.000000 box
+1.000000 3.000000 mark
  (StatusCommand) 1.000000 2.000000 box
  (UndoCommand) 1.000000 1.000000 box
  (VersionCommand) 1.000000 0.000000 box
@@ -220,9 +219,7 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 solid
-1 0.000000 14.250000 out
-solid
-0 0.000000 14.500000 hedge
+1 0.000000 13.250000 out
 solid
 0 0.000000 13.500000 hedge
 solid
@@ -252,4 +249,4 @@ solid
 solid
 0 0.000000 0.500000 hedge
 solid
-0.000000 15.000000 0.500000 vedge
+0.000000 14.000000 0.500000 vedge

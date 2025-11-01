@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SVCS - Русская документация: Файл cli/src/main.cxx</title>
+<title>SVCS - Русская документация: Файл integration/src/main.cxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,24 +91,22 @@ $(function(){initNavTree('main_8cxx.html','',''); });
   <div class="headertitle"><div class="title">Файл main.cxx</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Основная точка входа и драйвер интерфейса командной строки (CLI) для приложения SVCS.  
-<a href="#details">Подробнее...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="CommandFactory_8hxx_source.html">../include/CommandFactory.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Logger_8hxx_source.html">../../services/logging/Logger.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="EventBus_8hxx_source.html">../../services/EventBus.hxx</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="CompositeCommandFactory_8hxx_source.html">../include/CompositeCommandFactory.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EventBus_8hxx_source.html">../../services/EventBus.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RepositoryManager_8hxx_source.html">../../core/include/RepositoryManager.hxx</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Функции</h2></td></tr>
+<tr class="memitem:a78bff6626e5bb01b57212715ab7c8718" id="r_a78bff6626e5bb01b57212715ab7c8718"><td class="memItemLeft" align="right" valign="top"><a id="a78bff6626e5bb01b57212715ab7c8718" name="a78bff6626e5bb01b57212715ab7c8718"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>showGeneralHelp</b> (const <a class="el" href="classCompositeCommandFactory.html">CompositeCommandFactory</a> &amp;factory)</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Основная точка входа и драйвер интерфейса командной строки (CLI) для приложения SVCS. </p>
-<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -121,7 +119,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_2990d7c532eb7441b74916b8f5365141.html">cli</a></li><li class="navelem"><a href="dir_79b6dccc634a0e640565b87a866d8ba9.html">src</a></li><li class="navelem"><a href="main_8cxx.html">main.cxx</a></li>
+    <li class="navelem"><a href="dir_31b277648a83fb9e4f2036de3792f5c5.html">integration</a></li><li class="navelem"><a href="dir_c7a62ce3a7e5b029795024de1cdee222.html">src</a></li><li class="navelem"><a href="main_8cxx.html">main.cxx</a></li>
     <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

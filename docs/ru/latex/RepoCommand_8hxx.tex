@@ -5,10 +5,8 @@
 Объявление класса \doxylink{classRepoCommand}{Repo\+Command}.  
 
 
-{\ttfamily \#include "{}../../cli/include/\+ICommand.\+hxx"{}}\newline
-{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
+{\ttfamily \#include "{}Server\+Base\+Command.\+hxx"{}}\newline
 {\ttfamily \#include "{}../../core/include/\+Repository.\+hxx"{}}\newline
-{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
 {\ttfamily \#include "{}Remote\+Manager.\+hxx"{}}\newline
 {\ttfamily \#include $<$memory$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
@@ -25,4 +23,4 @@ class \mbox{\hyperlink{classRepoCommand}{Repo\+Command}}
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classRepoCommand}{Repo\+Command} реализует интерфейс \doxylink{classICommand}{ICommand} для управления конфигурациями на уровне репозитория, в основном сосредотачиваясь на управлении {\bfseries{удаленными репозиториями}}. Эта команда действует как фасад, делегируя фактическое управление удаленными репозиториями классу \doxylink{classRemoteManager}{Remote\+Manager} после обеспечения выполнения команды в контексте валидного репозитория (неявно обрабатывается \doxylink{classRepositoryManager}{Repository\+Manager}). Команда поддерживает подкоманды такие как {\ttfamily add}, {\ttfamily remove}, {\ttfamily list} и {\ttfamily rename}. 
+\doxylink{classRepoCommand}{Repo\+Command} реализует интерфейс \doxylink{classICommand}{ICommand} для управления конфигурациями на уровне репозитория, в основном сосредотачиваясь на управлении {\bfseries{удаленными репозиториями}}. Эта команда действует как фасад, делегируя фактическое управление удаленными репозиториями классу \doxylink{classRemoteManager}{Remote\+Manager} после обеспечения выполнения команды в контексте валидного репозитория (неявно обрабатывается \doxylink{classRepositoryManager}{Repository\+Manager}). Команда поддерживает подкоманды такие как {\ttfamily add}, {\ttfamily remove}, {\ttfamily list} и {\ttfamily rename}. Наследуется от \doxylink{classServerBaseCommand}{Server\+Base\+Command} для общей функциональности серверных команд. 

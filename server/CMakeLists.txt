@@ -29,6 +29,7 @@ target_include_directories(svcs_server PRIVATE include)
 target_include_directories(svcs_server PRIVATE ../core/include)
 
 target_link_libraries(svcs_server PRIVATE svcs_core)
+target_link_libraries(svcs_server PRIVATE svcs_platform)
 
 find_package(Boost REQUIRED COMPONENTS system)
 if(Boost_FOUND)

@@ -6,6 +6,7 @@ set(SERVER_TEST_SOURCES
     RepoCommandTest.cxx
     RemoteManagerTest.cxx
     ServerTest.cxx
+    SSHConfigTest.cxx
 )
 
 add_executable(svcs_server_unit_tests ${SERVER_TEST_SOURCES})

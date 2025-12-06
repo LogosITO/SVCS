@@ -29,13 +29,28 @@ SSHConfig SSHConfig::load(const std::string& path) {
 
     std::string line;
     while (std::getline(file, line)) {
+        // Убираем пробелы в начале и конце
         line.erase(0, line.find_first_not_of(" \t"));
         line.erase(line.find_last_not_of(" \t") + 1);
 
-        if (line.empty() || line[0] == '#') continue;
+        // Пропускаем пустые строки и комментарии
+        if (line.empty() || line[0] == '#') {
+            continue;
+        }
 
+        // Удаляем inline комментарии
+        size_t comment_pos = line.find('#');
+        if (comment_pos != std::string::npos) {
+            line = line.substr(0, comment_pos);
+            // Убираем пробелы после удаления комментария
+            line.erase(line.find_last_not_of(" \t") + 1);
+        }
+
+        // Ищем разделитель '='
         size_t eq = line.find('=');
-        if (eq == std::string::npos) continue;
+        if (eq == std::string::npos) {
+            continue; // Пропускаем строки без '='
+        }
 
         std::string key = line.substr(0, eq);
         std::string value = line.substr(eq + 1);

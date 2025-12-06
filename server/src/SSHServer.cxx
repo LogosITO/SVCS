@@ -8,13 +8,7 @@
 #include "SSHServer.hxx"
 #include "RemoteProtocol.hxx"
 #include "../../services/Event.hxx"
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <errno.h>
+#include "../../platform/include/NetworkUtils.hxx"
 #include <openssl/evp.h>
 #include <openssl/rand.h>
 #include <algorithm>
@@ -33,48 +27,6 @@ using namespace svcs::services;
 namespace fs = std::filesystem;
 
 namespace {
-
-int createServerSocket(const std::string& host, uint16_t port) {
-    int sock = socket(AF_INET, SOCK_STREAM, 0);
-    if (sock < 0) {
-        return -1;
-    }
-
-    int opt = 1;
-    if (setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
-        close(sock);
-        return -1;
-    }
-
-    int flags = fcntl(sock, F_GETFL, 0);
-    if (flags < 0 || fcntl(sock, F_SETFL, flags | O_NONBLOCK) < 0) {
-        close(sock);
-        return -1;
-    }
-
-    sockaddr_in addr{};
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(port);
-
-    if (host == "0.0.0.0") {
-        addr.sin_addr.s_addr = INADDR_ANY;
-    } else if (inet_pton(AF_INET, host.c_str(), &addr.sin_addr) <= 0) {
-        close(sock);
-        return -1;
-    }
-
-    if (bind(sock, (sockaddr*)&addr, sizeof(addr)) < 0) {
-        close(sock);
-        return -1;
-    }
-
-    if (listen(sock, 128) < 0) {
-        close(sock);
-        return -1;
-    }
-
-    return sock;
-}
 
 bool generateHostKey(const std::string& key_path) {
     if (fs::exists(key_path)) {
@@ -105,8 +57,11 @@ bool generateHostKey(const std::string& key_path) {
     ssh_key_free(key);
 
     if (success) {
+        // Устанавливаем права доступа (кроссплатформенно)
+        #ifndef _WIN32
         ::chmod(key_path.c_str(), 0600);
         ::chmod(pubkey_path.c_str(), 0644);
+        #endif
     }
 
     return success;
@@ -172,6 +127,11 @@ bool writePasswordFile(const std::string& path,
         file << pair.first << ":" << pair.second << "\n";
     }
 
+    #ifndef _WIN32
+    // На Windows права доступа работают иначе
+    ::chmod(path.c_str(), 0600);
+    #endif
+
     return file.good();
 }
 
@@ -206,25 +166,10 @@ void writeAuthorizedKey(const std::string& username,
     std::ofstream file(key_path, std::ios::app);
     if (file) {
         file << public_key << "\n";
+        #ifndef _WIN32
         ::chmod(key_path.c_str(), 0600);
+        #endif
     }
-}
-
-// Альтернативная функция для получения IP клиента
-std::string getClientIpFromSocket(int sock) {
-    struct sockaddr_in addr;
-    socklen_t addr_len = sizeof(addr);
-
-    if (getpeername(sock, (struct sockaddr*)&addr, &addr_len) < 0) {
-        return "";
-    }
-
-    char ip_str[INET_ADDRSTRLEN];
-    if (inet_ntop(AF_INET, &addr.sin_addr, ip_str, sizeof(ip_str)) == nullptr) {
-        return "";
-    }
-
-    return std::string(ip_str);
 }
 
 } // anonymous namespace
@@ -259,13 +204,20 @@ bool SSHServer::start() {
         return true;
     }
 
+    // Инициализируем сеть через платформенную утилиту
+    if (!svcs::platform::initializeNetwork()) {
+        logEvent("Failed to initialize network", true);
+        return false;
+    }
+
     if (!initializeSSH()) {
         logEvent("Failed to initialize SSH", true);
         return false;
     }
 
-    server_socket_ = createServerSocket(config_.host, config_.port);
-    if (server_socket_ < 0) {
+    // Создаем серверный сокет через платформенную утилиту
+    server_socket_ = svcs::platform::createServerSocket(config_.host, config_.port);
+    if (server_socket_ == INVALID_SOCKET_HANDLE) {
         logEvent("Failed to create server socket", true);
         cleanup();
         return false;
@@ -287,11 +239,19 @@ void SSHServer::stop() {
 
     running_ = false;
 
+    // Останавливаем принятие новых соединений
+    if (server_socket_ != INVALID_SOCKET_HANDLE) {
+        svcs::platform::closeSocket(server_socket_);
+    }
+
     if (server_thread_.joinable()) {
         server_thread_.join();
     }
 
     cleanup();
+
+    // Очищаем сеть через платформенную утилиту
+    svcs::platform::cleanupNetwork();
 
     logEvent("SSH server stopped");
 }
@@ -324,96 +284,78 @@ void SSHServer::setUserPassword(const std::string& username,
     if (!hash.empty()) {
         users[username] = hash;
         if (writePasswordFile(passwd_path, users)) {
-            ::chmod(passwd_path.c_str(), 0600);
             logEvent("Set password for user: " + username);
         }
     }
 }
 
 void SSHServer::run() {
-    fd_set read_fds;
-    timeval timeout;
-
     while (running_) {
-        FD_ZERO(&read_fds);
-        FD_SET(server_socket_, &read_fds);
+        // Используем платформенную функцию для accept
+        svcs::platform::SocketHandle client_fd =
+            svcs::platform::acceptConnection(server_socket_);
 
-        timeout.tv_sec = 1;
-        timeout.tv_usec = 0;
-
-        int activity = select(server_socket_ + 1, &read_fds, nullptr, nullptr, &timeout);
-
-        if (activity < 0 && errno != EINTR) {
-            logEvent("select() error", true);
-            break;
-        }
-
-        if (activity > 0 && FD_ISSET(server_socket_, &read_fds)) {
-            sockaddr_in client_addr{};
-            socklen_t addr_len = sizeof(client_addr);
-
-            int client_fd = accept(server_socket_,
-                                  (sockaddr*)&client_addr,
-                                  &addr_len);
-
-            if (client_fd < 0) {
-                if (errno != EWOULDBLOCK && errno != EAGAIN) {
-                    logEvent("accept() error", true);
-                }
-                continue;
+        if (client_fd == INVALID_SOCKET_HANDLE) {
+            // Проверяем, не было ли это из-за остановки сервера
+            if (!running_) {
+                break;
             }
 
-            if (active_connections_ >= config_.max_connections) {
-                logEvent("Max connections reached, rejecting client", true);
-                close(client_fd);
-                continue;
-            }
-
-            active_connections_++;
-
-            std::thread client_thread(&SSHServer::handleClient, this, client_fd);
-
-            std::lock_guard<std::mutex> lock(connections_mutex_);
-            client_threads_.push_back(std::move(client_thread));
-
-            client_threads_.erase(
-                std::remove_if(client_threads_.begin(), client_threads_.end(),
-                    [](std::thread& t) {
-                        return !t.joinable();
-                    }),
-                client_threads_.end()
-            );
+            // Для неблокирующего сокета это нормально
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            continue;
         }
+
+        // Проверяем лимит соединений
+        if (active_connections_ >= config_.max_connections) {
+            logEvent("Max connections reached, rejecting client", true);
+            svcs::platform::closeSocket(client_fd);
+            continue;
+        }
+
+        active_connections_++;
+
+        std::thread client_thread(&SSHServer::handleClient, this, client_fd);
+
+        std::lock_guard<std::mutex> lock(connections_mutex_);
+        client_threads_.push_back(std::move(client_thread));
+
+        // Очищаем завершенные потоки
+        client_threads_.erase(
+            std::remove_if(client_threads_.begin(), client_threads_.end(),
+                [](std::thread& t) {
+                    return !t.joinable();
+                }),
+            client_threads_.end()
+        );
     }
 }
 
-void SSHServer::handleClient(int client_fd) {
-    int flags = fcntl(client_fd, F_GETFL, 0);
-    fcntl(client_fd, F_SETFL, flags & ~O_NONBLOCK);
+void SSHServer::handleClient(svcs::platform::SocketHandle client_fd) {
+    // Получаем IP клиента через платформенную функцию
+    std::string client_ip = svcs::platform::getClientIpFromSocket(client_fd);
+    if (client_ip.empty()) {
+        client_ip = "unknown";
+    }
+
+    logEvent("Client connected: " + client_ip);
 
     ssh_session session = ssh_new();
     if (!session) {
-        close(client_fd);
+        svcs::platform::closeSocket(client_fd);
         active_connections_--;
         return;
     }
 
+    // Настраиваем SSH сессию
     if (ssh_bind_accept(ssh_bind_, session) != SSH_OK) {
         ssh_free(session);
-        close(client_fd);
+        svcs::platform::closeSocket(client_fd);
         active_connections_--;
         return;
     }
 
     ssh_set_blocking(session, 1);
-
-    // Получаем IP через сокет
-    std::string ip_str = getClientIpFromSocket(client_fd);
-    if (ip_str.empty()) {
-        ip_str = "unknown";
-    }
-
-    logEvent("Client connected: " + ip_str);
 
     auto handler = [this](const std::string& cmd, ssh_channel chan) {
         return handleSVCSCommand(cmd, chan);
@@ -428,10 +370,10 @@ void SSHServer::handleClient(int client_fd) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 
-    close(client_fd);
+    svcs::platform::closeSocket(client_fd);
     active_connections_--;
 
-    logEvent("Client disconnected: " + ip_str);
+    logEvent("Client disconnected: " + client_ip);
 }
 
 bool SSHServer::initializeSSH() {
@@ -480,18 +422,21 @@ void SSHServer::cleanup() {
         ssh_bind_ = nullptr;
     }
 
-    if (server_socket_ >= 0) {
-        close(server_socket_);
-        server_socket_ = -1;
+    if (server_socket_ != INVALID_SOCKET_HANDLE) {
+        svcs::platform::closeSocket(server_socket_);
+        server_socket_ = INVALID_SOCKET_HANDLE;
     }
 
-    std::lock_guard<std::mutex> lock(connections_mutex_);
-    for (auto& thread : client_threads_) {
-        if (thread.joinable()) {
-            thread.join();
+    // Ждем завершения клиентских потоков
+    {
+        std::lock_guard<std::mutex> lock(connections_mutex_);
+        for (auto& thread : client_threads_) {
+            if (thread.joinable()) {
+                thread.join();
+            }
         }
+        client_threads_.clear();
     }
-    client_threads_.clear();
 
     active_connections_ = 0;
 }

@@ -20,6 +20,7 @@
 #endif
 
 #include "SSHConfig.hxx"
+#include "../../platform/include/NetworkUtils.hxx"
 #include <libssh/libssh.h>
 #include <libssh/server.h>
 #include <memory>

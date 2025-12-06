@@ -19,6 +19,7 @@
 #include "SSHSession.hxx"
 #include "../../services/ISubject.hxx"
 #include "../../core/include/RepositoryManager.hxx"
+#include "../../platform/include/NetworkUtils.hxx"
 
 #include <cstring>
 #include <memory>
@@ -144,7 +145,7 @@ public:
 
 private:
     void run();
-    void handleClient(int client_fd);
+    void handleClient(svcs::platform::SocketHandle client_fd);
     bool initializeSSH();
     void cleanup();
     void logEvent(const std::string& message, bool is_error = false) const;
@@ -157,7 +158,7 @@ private:
     std::atomic<bool> running_{false};
     std::thread server_thread_;
 
-    int server_socket_ = -1;
+    svcs::platform::SocketHandle server_socket_ = INVALID_SOCKET_HANDLE;
     ssh_bind ssh_bind_ = nullptr;
 
     mutable std::mutex connections_mutex_;

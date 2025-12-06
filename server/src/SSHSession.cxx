@@ -6,12 +6,10 @@
  */
 
 #include "SSHSession.hxx"
+#include "../../platform/include/NetworkUtils.hxx"  // Используем платформенные утилиты
 #include <fstream>
 #include <filesystem>
 #include <cstring>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
 
 namespace svcs::server::ssh {
 
@@ -84,25 +82,15 @@ std::string SSHSession::getClientIp() const {
         return "";
     }
 
-    // Альтернативный способ получения IP через сокетный дескриптор
+    // Получаем сокетный дескриптор из SSH сессии
     int sock = ssh_get_fd(session_);
     if (sock < 0) {
         return "";
     }
 
-    struct sockaddr_in addr;
-    socklen_t addr_len = sizeof(addr);
-
-    if (getpeername(sock, (struct sockaddr*)&addr, &addr_len) < 0) {
-        return "";
-    }
-
-    char ip_str[INET_ADDRSTRLEN];
-    if (inet_ntop(AF_INET, &addr.sin_addr, ip_str, sizeof(ip_str)) == nullptr) {
-        return "";
-    }
-
-    return std::string(ip_str);
+    // Используем нашу платформенную функцию для получения IP
+    // Конвертируем int в SocketHandle
+    return svcs::platform::getClientIpFromSocket(static_cast<svcs::platform::SocketHandle>(sock));
 }
 
 void SSHSession::close() {

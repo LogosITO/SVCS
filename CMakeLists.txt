@@ -20,6 +20,7 @@ add_subdirectory(cli)
 add_subdirectory(server)
 add_subdirectory(services)
 add_subdirectory(integration)
+add_subdirectory(platform)
 
 target_include_directories(svcs_core PUBLIC
     ${CMAKE_SOURCE_DIR}/services

@@ -1,0 +1,36 @@
+\doxysection{svcs\+::core\+::Index\+Entry Struct Reference}
+\hypertarget{structsvcs_1_1core_1_1IndexEntry}{}\label{structsvcs_1_1core_1_1IndexEntry}\index{svcs::core::IndexEntry@{svcs::core::IndexEntry}}
+
+
+Represents a single file entry in the staging area (\doxylink{classsvcs_1_1core_1_1Index}{Index}).  
+
+
+
+
+{\ttfamily \#include $<$Index.\+hxx$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structsvcs_1_1core_1_1IndexEntry_aebf4cc2167bb5bc331431b0b6e8899ec}\label{structsvcs_1_1core_1_1IndexEntry_aebf4cc2167bb5bc331431b0b6e8899ec} 
+std\+::string {\bfseries blob\+\_\+hash}
+\begin{DoxyCompactList}\small\item\em The SHA-\/256 hash of the file\textquotesingle{}s content (the \doxylink{classsvcs_1_1core_1_1Blob}{Blob} object ID). \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1core_1_1IndexEntry_aa6e7f6b7d31799713b3a8a27d164730b}\label{structsvcs_1_1core_1_1IndexEntry_aa6e7f6b7d31799713b3a8a27d164730b} 
+fs\+::path {\bfseries file\+\_\+path}
+\begin{DoxyCompactList}\small\item\em The file\textquotesingle{}s path, relative to the repository\textquotesingle{}s root directory. \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1core_1_1IndexEntry_ae2673145f069c57b8540b198bf6bb48c}\label{structsvcs_1_1core_1_1IndexEntry_ae2673145f069c57b8540b198bf6bb48c} 
+fs\+::file\+\_\+time\+\_\+type {\bfseries last\+\_\+modified}
+\begin{DoxyCompactList}\small\item\em The time of the file\textquotesingle{}s last modification, used to detect changes. \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1core_1_1IndexEntry_a69ef8ed231f4b7b00f7bac1c7a28cb74}\label{structsvcs_1_1core_1_1IndexEntry_a69ef8ed231f4b7b00f7bac1c7a28cb74} 
+long long {\bfseries file\+\_\+size} = 0
+\begin{DoxyCompactList}\small\item\em The size of the file in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single file entry in the staging area (\doxylink{classsvcs_1_1core_1_1Index}{Index}). 
+
+An \doxylink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry} stores information about a file that is staged for the next commit, including its object ID (hash) and file metadata used to detect modifications. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Index_8hxx}{Index.\+hxx}}\end{DoxyCompactItemize}

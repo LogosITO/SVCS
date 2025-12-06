@@ -18,6 +18,30 @@
 #include <memory>
 #include <iostream>
 
+/**
+ * @english
+ * @namespace svcs::test::cli
+ * @brief Unit tests for command-line interface components.
+ * @details Contains test cases for CLI commands, command parsing,
+ * and user interaction scenarios. Tests in this namespace validate
+ * the behavior and correctness of all user-facing commands.
+ *
+ * @russian
+ * @namespace svcs::test::cli
+ * @brief Модульные тесты для компонентов интерфейса командной строки.
+ * @details Содержит тест-кейсы для CLI команд, парсинга команд
+ * и сценариев взаимодействия с пользователем. Тесты в этом пространстве имен
+ * проверяют поведение и корректность всех пользовательских команд.
+ */
+namespace svcs::test::cli {
+
+using namespace svcs::test::cli::utils;
+using namespace svcs::test::cli::mocks;
+
+using namespace svcs::core;
+using namespace svcs::cli;
+using namespace svcs::services;
+
 TEST_F(ClearCommandTest, Failure_NoRepository) {
     // Тестируем случай когда репозиторий не инициализирован
     std::filesystem::current_path(std::filesystem::temp_directory_path());
@@ -195,4 +219,6 @@ TEST_F(ClearCommandTest, Debug_RepositoryStructure) {
     
     EXPECT_TRUE(result);
     EXPECT_FALSE(repositoryExists());
+}
+
 }

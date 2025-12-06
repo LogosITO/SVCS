@@ -2,21 +2,26 @@
 \hypertarget{RemoteManager_8cxx}{}\label{RemoteManager_8cxx}\index{server/src/RemoteManager.cxx@{server/src/RemoteManager.cxx}}
 
 
-Реализация класса \doxylink{classRemoteManager}{Remote\+Manager}.  
+Реализация класса Remote\+Manager.  
 
 
 {\ttfamily \#include "{}../include/\+Remote\+Manager.\+hxx"{}}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Серверные компоненты и команды администрирования. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация класса \doxylink{classRemoteManager}{Remote\+Manager}. 
+Реализация класса Remote\+Manager. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Этот файл реализует методы для класса \doxylink{classRemoteManager}{Remote\+Manager}. Он обрабатывает загрузку, сохранение и управление в памяти конфигураций удаленных репозиториев. Сохранение обрабатывается чтением и записью в выделенный файл \textquotesingle{}remotes\textquotesingle{} (например, /path/to/repo/remotes) в формате, подобном Git-\/config. \begin{DoxyNote}{Заметки}
+Этот файл реализует методы для класса Remote\+Manager. Он обрабатывает загрузку, сохранение и управление в памяти конфигураций удаленных репозиториев. Сохранение обрабатывается чтением и записью в выделенный файл \textquotesingle{}remotes\textquotesingle{} (например, /path/to/repo/remotes) в формате, подобном Git-\/config. \begin{DoxyNote}{Заметки}
 Эта реализация предполагает, что конфигурация находится в отдельном файле \textquotesingle{}remotes\textquotesingle{} в корне репозитория, {\itshape а не} внутри {\ttfamily .svcs/config}. 
 \end{DoxyNote}

@@ -1,0 +1,162 @@
+\doxysection{svcs\+::test\+::cli\+::utils\+::History\+Command Class Reference}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}\index{svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}}
+
+
+Command for viewing the history of saves (commits) in the repository.  
+
+
+
+
+{\ttfamily \#include $<$History\+Command.\+hxx$>$}
+
+Inheritance diagram for svcs\+::test\+::cli\+::utils\+::History\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a1aa10531baa97514fa7cc5796f1d3a39}{History\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_abfc9c53dfcc108abcb7d09e8eb3e266d}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the "{}history"{} command with the given arguments. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a608e3bc61d3647dc51eefb632b993e97}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a243832e2e65b7a1a62a72b602ce49ca4}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets a brief description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a9f2afa7b244e7be1b7617e2d18677260}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the command\textquotesingle{}s usage syntax. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a4420fbcd3bc173204770932bd61c88e0}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the detailed help information for the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command for viewing the history of saves (commits) in the repository. 
+
+The {\bfseries{\doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}}} displays the chronological history of all saves with their messages, authors, timestamps, and unique identifiers. It supports different output formats, including default, one-\/line, and detailed views. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a1aa10531baa97514fa7cc5796f1d3a39}\index{svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}!HistoryCommand@{HistoryCommand}}
+\index{HistoryCommand@{HistoryCommand}!svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{HistoryCommand()}{HistoryCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a1aa10531baa97514fa7cc5796f1d3a39} 
+svcs\+::cli\+::\+History\+Command\+::\+History\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & A shared pointer to the \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (event bus). \\
+\hline
+{\em repo\+Manager} & A shared pointer to the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_abfc9c53dfcc108abcb7d09e8eb3e266d}\index{svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_abfc9c53dfcc108abcb7d09e8eb3e266d} 
+bool svcs\+::cli\+::\+History\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the "{}history"{} command with the given arguments. 
+
+This method is the main entry point for the command, handling argument parsing and delegating to the appropriate history display function. 
+\begin{DoxyParams}{Parameters}
+{\em args} & The vector of string arguments for the command (e.\+g., limit, format options). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the command executed successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a243832e2e65b7a1a62a72b602ce49ca4}\index{svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a243832e2e65b7a1a62a72b602ce49ca4} 
+std\+::string svcs\+::cli\+::\+History\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a brief description of the command. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the command\textquotesingle{}s purpose. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a608e3bc61d3647dc51eefb632b993e97}\index{svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a608e3bc61d3647dc51eefb632b993e97} 
+std\+::string svcs\+::cli\+::\+History\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+The command name, "{}history"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a9f2afa7b244e7be1b7617e2d18677260}\index{svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a9f2afa7b244e7be1b7617e2d18677260} 
+std\+::string svcs\+::cli\+::\+History\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the command\textquotesingle{}s usage syntax. 
+
+\begin{DoxyReturn}{Returns}
+A string showing how to use the command. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a4420fbcd3bc173204770932bd61c88e0}\index{svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::test::cli::utils::HistoryCommand@{svcs::test::cli::utils::HistoryCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a4420fbcd3bc173204770932bd61c88e0} 
+void svcs\+::cli\+::\+History\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the detailed help information for the command. 
+
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{HistoryCommand_8hxx}{History\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{HistoryCommand_8cxx}{History\+Command.\+cxx}}\end{DoxyCompactItemize}

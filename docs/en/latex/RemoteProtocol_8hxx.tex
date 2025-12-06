@@ -2,7 +2,7 @@
 \hypertarget{RemoteProtocol_8hxx}{}\label{RemoteProtocol_8hxx}\index{server/include/RemoteProtocol.hxx@{server/include/RemoteProtocol.hxx}}
 
 
-Declaration of the \doxylink{classRemoteProtocol}{Remote\+Protocol} class for handling remote communication protocol.  
+Declaration of the Remote\+Protocol class for handling remote communication protocol.  
 
 
 {\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
@@ -15,14 +15,19 @@ Declaration of the \doxylink{classRemoteProtocol}{Remote\+Protocol} class for ha
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classRemoteProtocol}{Remote\+Protocol}}
+class \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteProtocol}{svcs\+::server\+::\+Remote\+Protocol}}
 \begin{DoxyCompactList}\small\item\em Handles the remote communication protocol for SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Server-\/side components and administration commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaration of the \doxylink{classRemoteProtocol}{Remote\+Protocol} class for handling remote communication protocol. 
+Declaration of the Remote\+Protocol class for handling remote communication protocol. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-The \doxylink{classRemoteProtocol}{Remote\+Protocol} implements the custom protocol for push/pull operations between SVCS clients and servers. It handles object negotiation, transfer, and reference updates through a simple text-\/based protocol over stdin/stdout. 
+The Remote\+Protocol implements the custom protocol for push/pull operations between SVCS clients and servers. It handles object negotiation, transfer, and reference updates through a simple text-\/based protocol over stdin/stdout. 

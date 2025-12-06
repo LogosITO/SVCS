@@ -92,59 +92,32 @@ $(function(){initNavTree('Tree_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> class, which represents a directory structure in the SVCS and maps names to object hashes.  
+<p>Implementation of the Tree class, which represents a directory structure in the SVCS and maps names to object hashes.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Tree_8hxx_source.html">../include/Tree.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="core_2include_2Utils_8hxx_source.html">../include/Utils.hxx</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Acore" id="r_svcs_3A_3Acore"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1core.html">svcs::core</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Core VCS data structures and object model. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a15d13a6036a062282a24e34a2fe7751f" id="r_a15d13a6036a062282a24e34a2fe7751f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTreeEntry.html">TreeEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15d13a6036a062282a24e34a2fe7751f">createEntry</a> (std::string name, std::string hash_id)</td></tr>
-<tr class="memdesc:a15d13a6036a062282a24e34a2fe7751f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creating tree entry.  <br /></td></tr>
+<tr class="memitem:a0d0715b6f2a56f90b0f7fccbe3b2b1a9" id="r_a0d0715b6f2a56f90b0f7fccbe3b2b1a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsvcs_1_1core_1_1TreeEntry.html">TreeEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1core.html#a0d0715b6f2a56f90b0f7fccbe3b2b1a9">svcs::core::createEntry</a> (std::string name, std::string hash_id)</td></tr>
+<tr class="memdesc:a0d0715b6f2a56f90b0f7fccbe3b2b1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creating tree entry.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab701d9343b98572bdceaf66d1ab43fb1" id="r_ab701d9343b98572bdceaf66d1ab43fb1"><td class="memItemLeft" align="right" valign="top"><a id="ab701d9343b98572bdceaf66d1ab43fb1" name="ab701d9343b98572bdceaf66d1ab43fb1"></a>
-constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_BYTE_SIZE</b> = 32</td></tr>
+<tr class="memitem:a6c61f3309e13612b39fe80837500710c" id="r_a6c61f3309e13612b39fe80837500710c"><td class="memItemLeft" align="right" valign="top"><a id="a6c61f3309e13612b39fe80837500710c" name="a6c61f3309e13612b39fe80837500710c"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::core::HASH_BYTE_SIZE</b> = 32</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> class, which represents a directory structure in the SVCS and maps names to object hashes. </p>
+<div class="textblock"><p>Implementation of the Tree class, which represents a directory structure in the SVCS and maps names to object hashes. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a15d13a6036a062282a24e34a2fe7751f" name="a15d13a6036a062282a24e34a2fe7751f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15d13a6036a062282a24e34a2fe7751f">&#9670;&#160;</a></span>createEntry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structTreeEntry.html">TreeEntry</a> createEntry </td>
-          <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>hash_id</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creating tree entry. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns finished <a class="el" href="structTreeEntry.html" title="Represents a single item (file or subdirectory) within a Tree object.">TreeEntry</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of file or subdirectory. </td></tr>
-    <tr><td class="paramname">hash_id</td><td>The hash ID (SHA-256). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

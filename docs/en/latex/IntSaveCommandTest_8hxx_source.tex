@@ -13,29 +13,38 @@
 \DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <filesystem>}}
 \DoxyCodeLine{00029\ }
 \DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SaveCommand_8hxx}{../../../cli/include/SaveCommand.hxx}}"{}}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cli_2mocks_2MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSaveCommandTest}{SaveCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
-\DoxyCodeLine{00053\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSaveCommandTest_a18b39c15087110afbe4f669ce36efc0e}{SetUp}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSaveCommandTest_accf541fe18a23379bb833eaaa6750d45}{TearDown}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSaveCommandTest_af4c62b884cd988e8f1ff6b9970e03bf4}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content);}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSaveCommandTest_abbb2a3e30fad0a9626d224b2c890abc2}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname);}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSaveCommandTest_a82fc477fb849e9ea7335ae225e35e7b6}{stageFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files);}
+\DoxyCodeLine{00048\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs::test::cli::utils}}\ \{}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{using\ }svcs::services::Event;}
+\DoxyCodeLine{00051\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs::core::RepositoryManager}};}
+\DoxyCodeLine{00052\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1SaveCommand}{svcs::cli::SaveCommand}};}
+\DoxyCodeLine{00053\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{svcs::test::cli::mocks::MockSubject}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{SaveCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00075\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_aa0a792be56dcae8e6eed05f6b29eb038}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_a8a8a91503ac254fff49fc642c7d6494b}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_ada7b25efc37bd51abf937f9a6211fb95}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content);}
 \DoxyCodeLine{00110\ }
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSaveCommandTest_a2024312f64f0b9e394110506c0cf26b0}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00133\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classSaveCommandTest_aa37b2eb8820070c5079889220fd8ef57}{mockEventBus}};}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00142\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classSaveCommandTest_a14fdcfd46ec656cd52e1a6241320d49a}{repoManager}};}
-\DoxyCodeLine{00143\ }
-\DoxyCodeLine{00151\ \ \ \ \ std::unique\_ptr<SaveCommand>\ \mbox{\hyperlink{classSaveCommandTest_aac4baff35723bce4d333802a72ca1e76}{command}};}
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00160\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classSaveCommandTest_af74e76c9d6f76befea2da0c84ef6631c}{testDir}};}
-\DoxyCodeLine{00161\ \};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_a80912b9e023b759bda9b63ce97a01501}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_a778e935e59139a984f6fd9fa1fdc9a0e}{stageFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_a882e4c5a933d77e3671b4a2e07dca878}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00155\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_a46649de697f5e2f8bc0ff15002935e52}{mockEventBus}};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00164\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_a408a068345a386aad2ca088ab86f3dab}{repoManager}};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00173\ \ \ \ \ std::unique\_ptr<SaveCommand>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_a57b0ba39948a8f82fd79b6ed54ea1ed8}{command}};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00182\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest_a56684656c93df2607ba695aa46b1919d}{testDir}};}
+\DoxyCodeLine{00183\ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \}}
 
 \end{DoxyCode}

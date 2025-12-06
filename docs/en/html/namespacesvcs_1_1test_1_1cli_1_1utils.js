@@ -1,0 +1,25 @@
+var namespacesvcs_1_1test_1_1cli_1_1utils =
+[
+    [ "AddCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest" ],
+    [ "ClearCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest" ],
+    [ "Event", "structsvcs_1_1test_1_1cli_1_1utils_1_1Event.html", "structsvcs_1_1test_1_1cli_1_1utils_1_1Event" ],
+    [ "HelpCommand", "classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand" ],
+    [ "HelpCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html", null ],
+    [ "HistoryCommand", "classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand" ],
+    [ "HistoryCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest" ],
+    [ "InitCommand", "classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand" ],
+    [ "InitCommandIntegrationTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest" ],
+    [ "MockHelpService", "classsvcs_1_1test_1_1cli_1_1utils_1_1MockHelpService.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1MockHelpService" ],
+    [ "MockSubject", "classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject" ],
+    [ "RemoveCommand", "classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand" ],
+    [ "RemoveCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest" ],
+    [ "RepositoryManager", "classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager" ],
+    [ "SaveCommand", "classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand" ],
+    [ "SaveCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest" ],
+    [ "StatusCommand", "classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand" ],
+    [ "StatusCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest" ],
+    [ "UndoCommand", "classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand" ],
+    [ "UndoCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest" ],
+    [ "VersionCommand", "classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand" ],
+    [ "VersionCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest.html", "classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest" ]
+];

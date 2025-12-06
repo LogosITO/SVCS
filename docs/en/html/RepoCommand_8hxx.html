@@ -92,7 +92,7 @@ $(function(){initNavTree('RepoCommand_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> class.  
+<p>Declaration of the RepoCommand class.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ServerBaseCommand_8hxx_source.html">ServerBaseCommand.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Repository_8hxx_source.html">../../core/include/Repository.hxx</a>&quot;</code><br />
@@ -104,13 +104,20 @@ $(function(){initNavTree('RepoCommand_8hxx.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:RepoCommand" id="r_RepoCommand"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRepoCommand.html">RepoCommand</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command handler for managing repository remotes and configurations.  <a href="classRepoCommand.html#details">More...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Aserver_3A_3Acli_3A_3ARepoCommand" id="r_svcs_3A_3Aserver_3A_3Acli_3A_3ARepoCommand"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1server_1_1cli_1_1RepoCommand.html">svcs::server::cli::RepoCommand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command handler for managing repository remotes and configurations.  <a href="classsvcs_1_1server_1_1cli_1_1RepoCommand.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Aserver_3A_3Acli" id="r_svcs_3A_3Aserver_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1server_1_1cli.html">svcs::server::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1server_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsvcs_1_1server_1_1Server.html" title="Main TCP server for SVCS remote operations.">Server</a> administration command-line interface components. <br /></td></tr>
+<tr class="memitem:svcs_3A_3Aserver" id="r_svcs_3A_3Aserver"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1server.html">svcs::server</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1server"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server-side components and administration commands. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declaration of the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> class. </p>
+<div class="textblock"><p>Declaration of the RepoCommand class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p><a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> implements the <a class="el" href="classICommand.html" title="Interface (abstract base class) for all commands executed via the CLI.">ICommand</a> interface to manage repository-level configurations, primarily focusing on managing <b>remotes</b>. This command acts as a facade, delegating the actual management of remotes to the <a class="el" href="classRemoteManager.html">RemoteManager</a> class after ensuring the command is executed within a valid repository context (implicitly handled by <a class="el" href="classRepositoryManager.html">RepositoryManager</a>). The command supports subcommands like <span class="tt">add</span>, <span class="tt">remove</span>, <span class="tt">list</span>, and <span class="tt">rename</span>. Inherits from <a class="el" href="classServerBaseCommand.html" title="Abstract base class for all server administration commands.">ServerBaseCommand</a> for common server command functionality. </p>
+<p>RepoCommand implements the ICommand interface to manage repository-level configurations, primarily focusing on managing <b>remotes</b>. This command acts as a facade, delegating the actual management of remotes to the RemoteManager class after ensuring the command is executed within a valid repository context (implicitly handled by RepositoryManager). The command supports subcommands like <span class="tt">add</span>, <span class="tt">remove</span>, <span class="tt">list</span>, and <span class="tt">rename</span>. Inherits from ServerBaseCommand for common server command functionality. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

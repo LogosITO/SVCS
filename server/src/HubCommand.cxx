@@ -38,6 +38,8 @@
 #include <fstream>
 #include <iostream>
 
+namespace svcs::server::cli {
+
 namespace fs = std::filesystem;
 
 HubCommand::HubCommand(std::shared_ptr<ISubject> event_bus,
@@ -235,4 +237,6 @@ bool HubCommand::isPathAvailable(const std::filesystem::path& path) const {
     }
 
     return false;
+}
+
 }

@@ -1,0 +1,162 @@
+\doxysection{svcs\+::cli\+::Help\+Command Class Reference}
+\hypertarget{classsvcs_1_1cli_1_1HelpCommand}{}\label{classsvcs_1_1cli_1_1HelpCommand}\index{svcs::cli::HelpCommand@{svcs::cli::HelpCommand}}
+
+
+Command for displaying help information about other commands.  
+
+
+
+
+{\ttfamily \#include $<$Help\+Command.\+hxx$>$}
+
+Inheritance diagram for svcs\+::cli\+::Help\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1HelpCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a998f4d18c5386623edc1919b8e9f39db}{Help\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService}{Help\+Service}} $>$ help\+Service)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classsvcs_1_1cli_1_1HelpCommand}{Help\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a52b3d59f5e7d2a1a813f51de285ba821}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the help command logic. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a8af5d006b893f386c9dd0cbdbbe77d93}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a1b4bc5373f8ce27b7dd37d709771900c}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the brief description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a04b5a097d88ac3f5f7168e8974e091c9}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the usage syntax of the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a3f9e2f116424e6d9359252ff7de41d76}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Shows detailed help information for this specific command via the event bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command for displaying help information about other commands. 
+
+The {\bfseries{\doxylink{classsvcs_1_1cli_1_1HelpCommand}{Help\+Command}}} is the application\textquotesingle{}s built-\/in help utility. It can show a general list of all available commands or display detailed usage and descriptions for a specific command provided as an argument. It delegates the retrieval of command information to the {\bfseries{\doxylink{classsvcs_1_1cli_1_1HelpService}{Help\+Service}}} to maintain a clean separation of concerns. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1HelpCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1cli_1_1HelpCommand_a998f4d18c5386623edc1919b8e9f39db}\index{svcs::cli::HelpCommand@{svcs::cli::HelpCommand}!HelpCommand@{HelpCommand}}
+\index{HelpCommand@{HelpCommand}!svcs::cli::HelpCommand@{svcs::cli::HelpCommand}}
+\doxysubsubsection{\texorpdfstring{HelpCommand()}{HelpCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpCommand_a998f4d18c5386623edc1919b8e9f39db} 
+svcs\+::cli\+::\+Help\+Command\+::\+Help\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService}{Help\+Service}} $>$}]{help\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{classsvcs_1_1cli_1_1HelpCommand}{Help\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & Shared pointer to the event bus for logging and output notifications. \\
+\hline
+{\em help\+Service} & Shared pointer to the help service dependency. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1HelpCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1cli_1_1HelpCommand_a52b3d59f5e7d2a1a813f51de285ba821}\index{svcs::cli::HelpCommand@{svcs::cli::HelpCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::cli::HelpCommand@{svcs::cli::HelpCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpCommand_a52b3d59f5e7d2a1a813f51de285ba821} 
+bool svcs\+::cli\+::\+Help\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the help command logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Command arguments. If the vector is empty, general help is shown. If it contains one command name, detailed help for that command is shown. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} always, as the help command is not expected to encounter a runtime failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1HelpCommand_a1b4bc5373f8ce27b7dd37d709771900c}\index{svcs::cli::HelpCommand@{svcs::cli::HelpCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::HelpCommand@{svcs::cli::HelpCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpCommand_a1b4bc5373f8ce27b7dd37d709771900c} 
+std\+::string svcs\+::cli\+::\+Help\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the brief description of the command. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}\+Show help information for commands"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1HelpCommand_a8af5d006b893f386c9dd0cbdbbe77d93}\index{svcs::cli::HelpCommand@{svcs::cli::HelpCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::HelpCommand@{svcs::cli::HelpCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpCommand_a8af5d006b893f386c9dd0cbdbbe77d93} 
+std\+::string svcs\+::cli\+::\+Help\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}help"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1HelpCommand_a04b5a097d88ac3f5f7168e8974e091c9}\index{svcs::cli::HelpCommand@{svcs::cli::HelpCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::HelpCommand@{svcs::cli::HelpCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpCommand_a04b5a097d88ac3f5f7168e8974e091c9} 
+std\+::string svcs\+::cli\+::\+Help\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the usage syntax of the command. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}svcs help \mbox{[}command\mbox{]}"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1HelpCommand_a3f9e2f116424e6d9359252ff7de41d76}\index{svcs::cli::HelpCommand@{svcs::cli::HelpCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::HelpCommand@{svcs::cli::HelpCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpCommand_a3f9e2f116424e6d9359252ff7de41d76} 
+void svcs\+::cli\+::\+Help\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Shows detailed help information for this specific command via the event bus. 
+
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{HelpCommand_8hxx}{Help\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{HelpCommand_8cxx}{Help\+Command.\+cxx}}\end{DoxyCompactItemize}

@@ -13,7 +13,7 @@ The main goal of the project is to gain a deep understanding of core concepts\+:
 
 
 \begin{DoxyItemize}
-\item {\bfseries{Immutable Objects\+:}} Creating and handling objects ({\ttfamily \doxylink{classCommit}{Commit}}, {\ttfamily \doxylink{classBlob}{Blob}}, {\ttfamily \doxylink{classTree}{Tree}}) based on a single abstract {\ttfamily \doxylink{classVcsObject}{Vcs\+Object}} class. ~\newline
+\item {\bfseries{Immutable Objects\+:}} Creating and handling objects ({\ttfamily Commit}, {\ttfamily Blob}, {\ttfamily Tree}) based on a single abstract {\ttfamily Vcs\+Object} class. ~\newline
 
 \item {\bfseries{Data Integrity\+:}} Applying cryptographic hashing ({\bfseries{SHA-\/256}}) for data identification and verification. ~\newline
 
@@ -27,9 +27,9 @@ SVCS now provides a complete, production-\/ready command-\/line interface for ve
 
 \begin{DoxyItemize}
 \item ✅ {\bfseries{Complete Command Suite\+:}} Full set of essential VCS commands
-\item ✅ {\bfseries{Robust Object Model\+:}} {\ttfamily \doxylink{classBlob}{Blob}}, {\ttfamily \doxylink{classTree}{Tree}}, and {\ttfamily \doxylink{classCommit}{Commit}} fully implemented
+\item ✅ {\bfseries{Robust Object Model\+:}} {\ttfamily Blob}, {\ttfamily Tree}, and {\ttfamily Commit} fully implemented
 \item ✅ {\bfseries{Advanced CLI\+:}} Intuitive command-\/line interface with help system
-\item ✅ {\bfseries{Event-\/\+Driven Architecture\+:}} Flexible logging with \doxylink{classEventBus}{Event\+Bus} pattern
+\item ✅ {\bfseries{Event-\/\+Driven Architecture\+:}} Flexible logging with Event\+Bus pattern
 \item ✅ {\bfseries{Memory Safety\+:}} Zero memory errors (Valgrind verified)
 \item ✅ {\bfseries{Data Integrity\+:}} SHA-\/256 hashing for all repository objects
 \item ✅ {\bfseries{Factory Pattern\+:}} Extensible command system
@@ -121,9 +121,9 @@ SVCS now provides a complete, production-\/ready command-\/line interface for ve
 \hline
 \PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Command  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ What You\textquotesingle{}ll Learn  }\\\cline{1-3}
 \endhead
-{\ttfamily init}  &{\ttfamily svcs init}  &\doxylink{classRepository}{Repository} initialization and structure  \\\cline{1-3}
+{\ttfamily init}  &{\ttfamily svcs init}  &Repository initialization and structure  \\\cline{1-3}
 {\ttfamily add}  &{\ttfamily svcs add \texorpdfstring{$\ast$}{*}.cpp}  &Staging area mechanics and file tracking  \\\cline{1-3}
-{\ttfamily save}  &{\ttfamily svcs save -\/m "{}feat\+: add auth"{}}  &\doxylink{classCommit}{Commit} objects and message formatting  \\\cline{1-3}
+{\ttfamily save}  &{\ttfamily svcs save -\/m "{}feat\+: add auth"{}}  &Commit objects and message formatting  \\\cline{1-3}
 {\ttfamily status}  &{\ttfamily svcs status file.\+txt}  &Working tree state management  \\\cline{1-3}
 \end{longtabu}
 \hypertarget{md_README_autotoc_md13}{}\doxysubsection{\texorpdfstring{Advanced Operations}{Advanced Operations}}\label{md_README_autotoc_md13}
@@ -139,7 +139,7 @@ SVCS now provides a complete, production-\/ready command-\/line interface for ve
 \endhead
 {\ttfamily remove}  &{\ttfamily svcs remove temp.\+txt}  &Staging area manipulation  \\\cline{1-3}
 {\ttfamily remove -\/-\/all}  &{\ttfamily svcs remove -\/-\/all}  &Bulk operations with safety  \\\cline{1-3}
-{\ttfamily clear}  &{\ttfamily svcs clear -\/-\/force}  &\doxylink{classRepository}{Repository} lifecycle management  \\\cline{1-3}
+{\ttfamily clear}  &{\ttfamily svcs clear -\/-\/force}  &Repository lifecycle management  \\\cline{1-3}
 \end{longtabu}
 \hypertarget{md_README_autotoc_md14}{}\doxysubsection{\texorpdfstring{Information \& Discovery}{Information \& Discovery}}\label{md_README_autotoc_md14}
 \tabulinesep=1mm
@@ -170,10 +170,10 @@ SVCS now provides a complete, production-\/ready command-\/line interface for ve
 \hline
 \PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Layer  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Components  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Learning Value  }\\\cline{1-3}
 \endhead
-{\bfseries{Storage}}  &{\ttfamily \doxylink{classRepository}{Repository}}, {\ttfamily \doxylink{classObjectStorage}{Object\+Storage}}, {\ttfamily \doxylink{classIndex}{Index}}  &Data persistence patterns  \\\cline{1-3}
-{\bfseries{Objects}}  &{\ttfamily \doxylink{classBlob}{Blob}}, {\ttfamily \doxylink{classTree}{Tree}}, {\ttfamily \doxylink{classCommit}{Commit}}  &Polymorphism and inheritance  \\\cline{1-3}
-{\bfseries{CLI}}  &{\ttfamily \doxylink{classCommandFactory}{Command\+Factory}}, {\ttfamily \doxylink{classICommand}{ICommand}}  &Factory and strategy patterns  \\\cline{1-3}
-{\bfseries{Infra}}  &{\ttfamily \doxylink{classEventBus}{Event\+Bus}}, {\ttfamily \doxylink{classLogger}{Logger}}  &Observer pattern and event handling  \\\cline{1-3}
+{\bfseries{Storage}}  &{\ttfamily Repository}, {\ttfamily Object\+Storage}, {\ttfamily Index}  &Data persistence patterns  \\\cline{1-3}
+{\bfseries{Objects}}  &{\ttfamily Blob}, {\ttfamily Tree}, {\ttfamily Commit}  &Polymorphism and inheritance  \\\cline{1-3}
+{\bfseries{CLI}}  &{\ttfamily Command\+Factory}, {\ttfamily ICommand}  &Factory and strategy patterns  \\\cline{1-3}
+{\bfseries{Infra}}  &{\ttfamily Event\+Bus}, {\ttfamily Logger}  &Observer pattern and event handling  \\\cline{1-3}
 \end{longtabu}
 \hypertarget{md_README_autotoc_md18}{}\doxysubsection{\texorpdfstring{🎓 Educational Architecture Patterns}{🎓 Educational Architecture Patterns}}\label{md_README_autotoc_md18}
 
@@ -202,7 +202,7 @@ SVCS now provides a complete, production-\/ready command-\/line interface for ve
 \begin{DoxyItemize}
 \item ⏳ Branching and merging mechanics
 \item ⏳ Difference analysis with {\ttfamily diff}
-\item ⏳ \doxylink{structRemote}{Remote} repository operations
+\item ⏳ Remote repository operations
 \item ⏳ Configuration management systems
 \end{DoxyItemize}
 

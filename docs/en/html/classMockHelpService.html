@@ -92,7 +92,7 @@ $(function(){initNavTree('classMockHelpService.html','','classMockHelpService-me
 </div><!--header-->
 <div class="contents">
 
-<p>A mock implementation of the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> for testing the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a>.  
+<p>A mock implementation of the HelpService for testing the HelpCommand.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="MockHelpService_8hxx_source.html">MockHelpService.hxx</a>&gt;</code></p>
@@ -100,11 +100,8 @@ $(function(){initNavTree('classMockHelpService.html','','classMockHelpService-me
 Inheritance diagram for MockHelpService:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classMockHelpService.png" usemap="#MockHelpService_map" alt=""/>
-  <map id="MockHelpService_map" name="MockHelpService_map">
-<area href="classHelpService.html" title="Service that provides help information for commands." alt="HelpService" shape="rect" coords="0,0,113,24"/>
-  </map>
-</div></div>
+  <img src="classMockHelpService.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -125,26 +122,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e5c10b1ef3a05be719dcaece9c8855e" id="r_a1e5c10b1ef3a05be719dcaece9c8855e"><td class="memItemLeft" align="right" valign="top"><a id="a1e5c10b1ef3a05be719dcaece9c8855e" name="a1e5c10b1ef3a05be719dcaece9c8855e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
 <tr class="memdesc:a1e5c10b1ef3a05be719dcaece9c8855e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the mock's internal state (called commands, lists, and descriptions). <br /></td></tr>
-<tr class="inherit_header pub_methods_classHelpService"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classHelpService')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classHelpService.html">HelpService</a></td></tr>
-<tr class="memitem:ac380002930a510d355fe11cf11e946ce inherit pub_methods_classHelpService" id="r_ac380002930a510d355fe11cf11e946ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHelpService.html#ac380002930a510d355fe11cf11e946ce">HelpService</a> (std::shared_ptr&lt; <a class="el" href="classISubject.html">ISubject</a> &gt; bus, std::function&lt; std::vector&lt; std::string &gt;()&gt; getCommands, std::function&lt; std::string(const std::string &amp;)&gt; getDescription, std::function&lt; void(const std::string &amp;)&gt; showHelp, std::function&lt; std::string(const std::string &amp;)&gt; getUsage=nullptr)</td></tr>
-<tr class="memdesc:ac380002930a510d355fe11cf11e946ce inherit pub_methods_classHelpService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> by injecting necessary dependencies as callbacks.  <br /></td></tr>
-<tr class="memitem:a3e101dee42668c57dd56669a3939d335 inherit pub_methods_classHelpService" id="r_a3e101dee42668c57dd56669a3939d335"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHelpService.html#a3e101dee42668c57dd56669a3939d335">getAvailableCommands</a> () const</td></tr>
-<tr class="memdesc:a3e101dee42668c57dd56669a3939d335 inherit pub_methods_classHelpService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getCommandsCallback_</span> to retrieve the list of all available command names.  <br /></td></tr>
-<tr class="memitem:acc76b5372129d61b894efb2fa25349c2 inherit pub_methods_classHelpService" id="r_acc76b5372129d61b894efb2fa25349c2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHelpService.html#acc76b5372129d61b894efb2fa25349c2">getCommandDescription</a> (const std::string &amp;commandName) const</td></tr>
-<tr class="memdesc:acc76b5372129d61b894efb2fa25349c2 inherit pub_methods_classHelpService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getDescriptionCallback_</span> to retrieve the brief description of a specific command.  <br /></td></tr>
-<tr class="memitem:a1ea55dca8e2d594c97ce5dc3efca8053 inherit pub_methods_classHelpService" id="r_a1ea55dca8e2d594c97ce5dc3efca8053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHelpService.html#a1ea55dca8e2d594c97ce5dc3efca8053">showCommandHelp</a> (const std::string &amp;commandName) const</td></tr>
-<tr class="memdesc:a1ea55dca8e2d594c97ce5dc3efca8053 inherit pub_methods_classHelpService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">showHelpCallback_</span> to trigger the display of detailed help for a specific command.  <br /></td></tr>
-<tr class="memitem:a71d1aba53c9ac3d40b16af8890bcac95 inherit pub_methods_classHelpService" id="r_a71d1aba53c9ac3d40b16af8890bcac95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHelpService.html#a71d1aba53c9ac3d40b16af8890bcac95">commandExists</a> (const std::string &amp;commandName) const</td></tr>
-<tr class="memdesc:a71d1aba53c9ac3d40b16af8890bcac95 inherit pub_methods_classHelpService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for the existence of a command by comparing against the list returned by <span class="tt">getAvailableCommands</span>.  <br /></td></tr>
-<tr class="memitem:a6e1869acb698c4c37d1b15d19b92ce9c inherit pub_methods_classHelpService" id="r_a6e1869acb698c4c37d1b15d19b92ce9c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHelpService.html#a6e1869acb698c4c37d1b15d19b92ce9c">getCommandUsage</a> (const std::string &amp;commandName) const</td></tr>
-<tr class="memdesc:a6e1869acb698c4c37d1b15d19b92ce9c inherit pub_methods_classHelpService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the <span class="tt">getUsageCallback_</span> to retrieve the usage syntax of a specific command.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A mock implementation of the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> for testing the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a>. </p>
+<div class="textblock"><p>A mock implementation of the HelpService for testing the HelpCommand. </p>
 <p>This mock allows test cases to:</p><ol type="1">
 <li><b>Configure</b> the list of available commands.</li>
 <li><b>Configure</b> the descriptions for specific commands.</li>
-<li><b>Verify</b> which command's help was requested by the <span class="tt"><a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a></span>.</li>
+<li><b>Verify</b> which command's help was requested by the <span class="tt">HelpCommand</span>.</li>
 <li>Use the provided <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> for emitting debug information during testing. </li>
 </ol>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -172,7 +156,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 </div><div class="memdoc">
 
 <p>Constructor for <a class="el" href="classMockHelpService.html" title="A mock implementation of the HelpService for testing the HelpCommand.">MockHelpService</a>. </p>
-<p>Initializes the base <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> with lambda functions that delegate to the mock's own control methods, and stores the mock event bus. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Initializes the base HelpService with lambda functions that delegate to the mock's own control methods, and stores the mock event bus. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mockEventBus</td><td>The shared pointer to the <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> used for notifications. </td></tr>
   </table>

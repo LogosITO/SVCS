@@ -15,6 +15,25 @@
 
 #include <gtest/gtest.h>
 
+/**
+ * @english
+ * @namespace svcs::test::core
+ * @brief Unit tests for core components and data structures.
+ * @details Contains test cases for core VCS objects, repository management,
+ * and fundamental data structures. Tests in this namespace validate
+ * the basic functionality and integrity of the system core.
+ *
+ * @russian
+ * @namespace svcs::test::core
+ * @brief Модульные тесты для основных компонентов и структур данных.
+ * @details Содержит тест-кейсы для основных объектов СКВ, управления репозиториями
+ * и фундаментальных структур данных. Тесты в этом пространстве имен проверяют
+ * базовую функциональность и целостность ядра системы.
+ */
+namespace svcs::test::core {
+
+using namespace svcs::core;
+
 const std::string HASH_TREE_EMPTY = "4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a";
 const std::string HASH_PARENT_A = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 const std::string HASH_PARENT_B = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
@@ -101,4 +120,6 @@ TEST(CommitTest, SerializationDeserializationRoundTrip) {
     EXPECT_EQ(restored.getParentHashes().size(), 2);
     EXPECT_EQ(original.getParentHashes()[0], restored.getParentHashes()[0]);
     EXPECT_EQ(original.getParentHashes()[1], restored.getParentHashes()[1]);
+}
+
 }

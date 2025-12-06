@@ -2,7 +2,7 @@
 \hypertarget{ICommand_8hxx}{}\label{ICommand_8hxx}\index{cli/include/ICommand.hxx@{cli/include/ICommand.hxx}}
 
 
-Declaration of the \doxylink{classICommand}{ICommand} interface for all executable CLI commands.  
+Declaration of the ICommand interface for all executable CLI commands.  
 
 
 {\ttfamily \#include $<$string$>$}\newline
@@ -10,14 +10,19 @@ Declaration of the \doxylink{classICommand}{ICommand} interface for all executab
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classICommand}{ICommand}}
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}
 \begin{DoxyCompactList}\small\item\em Interface (abstract base class) for all commands executed via the CLI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Command-\/line interface components and command implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaration of the \doxylink{classICommand}{ICommand} interface for all executable CLI commands. 
+Declaration of the ICommand interface for all executable CLI commands. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classICommand}{ICommand} defines the basic contract that any command in the system must conform to, ensuring a uniform way to retrieve metadata (name, description, usage) and execute the command\textquotesingle{}s logic. 
+ICommand defines the basic contract that any command in the system must conform to, ensuring a uniform way to retrieve metadata (name, description, usage) and execute the command\textquotesingle{}s logic. 

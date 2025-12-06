@@ -13,66 +13,72 @@
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c}{FileStatus}}\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2}{UNTRACKED}},}
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}}\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}};}
 \DoxyCodeLine{00039\ }
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca40e3819215b52841e19a7cac06b5f065}{MODIFIED}},}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca63c2867fdcae0e8e8413d7ac21b69b59}{DELETED}},}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8}{UNMODIFIED}}}
-\DoxyCodeLine{00066\ \};}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00087\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAddCommand}{AddCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
-\DoxyCodeLine{00088\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00089\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
-\DoxyCodeLine{00090\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{struct\ }AddOptions\ \{}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dryRun\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae}{FileStatus}}\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2}{UNTRACKED}},}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065}{MODIFIED}},}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea63c2867fdcae0e8e8413d7ac21b69b59}{DELETED}},}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8}{UNMODIFIED}}}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand}{AddCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00105\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00106\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00107\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
 \DoxyCodeLine{00108\ }
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ interactive\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ patch\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ update\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ force\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAddCommand_a43d794841014e2fb5065d3d42a9f4606}{showHelp}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ std::vector<std::string>\ files;}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ std::vector<std::string>\ excludePatterns;}
-\DoxyCodeLine{00171\ \ \ \ \ \};}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ New\ methods}}
-\DoxyCodeLine{00183\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ addInteractive()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00184\ }
-\DoxyCodeLine{00196\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ addPatch(\textcolor{keyword}{const}\ std::string\&\ filePath)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00197\ }
-\DoxyCodeLine{00209\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ showDryRun(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00224\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ shouldAddFile(\textcolor{keyword}{const}\ std::string\&\ file,\ \textcolor{keywordtype}{bool}\ force)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00225\ }
-\DoxyCodeLine{00226\ \ \ \ \ \textcolor{comment}{//\ Argument\ Parsing}}
-\DoxyCodeLine{00238\ \ \ \ \ [[nodiscard]]\ AddOptions\ parseArguments(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00239\ }
-\DoxyCodeLine{00240\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{classAddCommand_abf4de44d0417fb1b10a4c1d624c149ad}{AddCommand}}(std::shared\_ptr<ISubject>\ subject,}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
-\DoxyCodeLine{00254\ }
-\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAddCommand_acb3d216e7788b6fa20c8fdc88686ffb3}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00267\ }
-\DoxyCodeLine{00279\ \ \ \ \ [[nodiscard]]\ std::vector<std::string>\ \mbox{\hyperlink{classAddCommand_ab8dae07ff8a1cc76baab967e509d0cfc}{getAllFilesInDirectory}}(\textcolor{keyword}{const}\ std::string\&\ directory)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00280\ }
-\DoxyCodeLine{00290\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classAddCommand_a630e9b965886f1d17ab3b62873896b61}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}add"{}};\ \}}
-\DoxyCodeLine{00291\ }
-\DoxyCodeLine{00301\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classAddCommand_a345dbb78e01de3deab55e1ca2bac6374}{getDescription}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00302\ }
-\DoxyCodeLine{00312\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classAddCommand_a600ccdcfb9bda487506cb826ac86b729}{getUsage}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00313\ }
-\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAddCommand_a43d794841014e2fb5065d3d42a9f4606}{showHelp}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00322\ \};}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{struct\ }AddOptions\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dryRun\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ interactive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ patch\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ update\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ force\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a08697e340b45e17e6b767dca9476bdb3}{showHelp}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ std::vector<std::string>\ files;}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ std::vector<std::string>\ excludePatterns;}
+\DoxyCodeLine{00188\ \ \ \ \ \};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{comment}{//\ New\ methods}}
+\DoxyCodeLine{00200\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ addInteractive()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00213\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ addPatch(\textcolor{keyword}{const}\ std::string\&\ filePath)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00226\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ showDryRun(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00241\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ shouldAddFile(\textcolor{keyword}{const}\ std::string\&\ file,\ \textcolor{keywordtype}{bool}\ force)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{comment}{//\ Argument\ Parsing}}
+\DoxyCodeLine{00255\ \ \ \ \ [[nodiscard]]\ AddOptions\ parseArguments(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00269\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_ab86cb0726603ea7379e76e446ec688a3}{AddCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a15e28cdfea0015ba33d0c22abfe48889}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00296\ \ \ \ \ [[nodiscard]]\ std::vector<std::string>\ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a5692e4155843313da5dd625c556e04fd}{getAllFilesInDirectory}}(\textcolor{keyword}{const}\ std::string\&\ directory)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00307\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a1a2d6f366905ca9ec8a49bf92dcd6f73}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}add"{}};\ \}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00318\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_ad5a561fba4db64d2351fce3882cac592}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00329\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_abdaa56b756ede64e3e5fde754a48e3c7}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a08697e340b45e17e6b767dca9476bdb3}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00339\ \};}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \}}
 
 \end{DoxyCode}

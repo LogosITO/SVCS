@@ -26,6 +26,8 @@
 #include <fstream>
 #include <algorithm>
 
+namespace svcs::test::cli::utils {
+
 void StatusCommandTest::SetUp() {
     this->mockEventBus = std::make_shared<MockSubject>();
     this->repoManager = std::make_shared<RepositoryManager>(this->mockEventBus);
@@ -83,4 +85,6 @@ int StatusCommandTest::countMessages(const std::vector<Event>& notifications, co
         [&message](const Event& event) {
             return event.details.find(message) != std::string::npos;
         });
+}
+
 }

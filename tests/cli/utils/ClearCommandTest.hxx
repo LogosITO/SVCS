@@ -27,6 +27,28 @@
 
 /**
  * @english
+ * @namespace svcs::test::cli::utils
+ * @brief Utility classes and test fixtures for CLI command testing.
+ * @details Contains test fixtures, helper classes, and utility functions
+ * that support the testing of CLI commands. These components provide
+ * common setup, teardown, and testing patterns for command integration tests.
+ *
+ * @russian
+ * @namespace svcs::test::cli::utils
+ * @brief Служебные классы и тестовые фикстуры для тестирования CLI команд.
+ * @details Содержит тестовые фикстуры, вспомогательные классы и служебные функции,
+ * которые поддерживают тестирование CLI команд. Эти компоненты предоставляют
+ * общие шаблоны настройки, очистки и тестирования для интеграционных тестов команд.
+ */
+namespace svcs::test::cli::utils {
+
+using namespace svcs::test::cli::mocks;
+
+using namespace svcs::core;
+using namespace svcs::cli;
+
+/**
+ * @english
  * @class ClearCommandTest
  * @brief Test fixture for ClearCommand integration tests.
  * @details Manages the setup and teardown of a temporary, initialized SVCS repository.
@@ -166,3 +188,5 @@ protected:
      */
     bool repositoryExists() const;
 };
+
+}

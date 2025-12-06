@@ -2,18 +2,25 @@
 \hypertarget{IntStatusCommandTest_8cxx}{}\label{IntStatusCommandTest_8cxx}\index{tests/cli/utils/IntStatusCommandTest.cxx@{tests/cli/utils/IntStatusCommandTest.cxx}}
 
 
-Implementation of the integration tests for the \doxylink{classStatusCommand}{Status\+Command} class.  
+Implementation of the integration tests for the Status\+Command class.  
 
 
 {\ttfamily \#include "{}Int\+Status\+Command\+Test.\+hxx"{}}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Unit tests for command-\/line interface components. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs\+::test\+::cli\+::utils}}
+\begin{DoxyCompactList}\small\item\em Utility classes and test fixtures for CLI command testing. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementation of the integration tests for the \doxylink{classStatusCommand}{Status\+Command} class. 
+Implementation of the integration tests for the Status\+Command class. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-This file provides the concrete implementation for the \doxylink{classStatusCommandTest}{Status\+Command\+Test} fixture. It sets up a temporary SVCS repository with initial untracked files and includes helper functions for creating files, directories, and staging changes. The fixture is designed to test the {\ttfamily svcs status} command\textquotesingle{}s ability to report the working tree\textquotesingle{}s state accurately. 
+This file provides the concrete implementation for the Status\+Command\+Test fixture. It sets up a temporary SVCS repository with initial untracked files and includes helper functions for creating files, directories, and staging changes. The fixture is designed to test the {\ttfamily svcs status} command\textquotesingle{}s ability to report the working tree\textquotesingle{}s state accurately. 

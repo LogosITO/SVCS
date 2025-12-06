@@ -46,38 +46,44 @@
  */
 
 #include <gtest/gtest.h>
-#include "../../server/include/RepoCommand.hxx"
-#include "../../services/EventBus.hxx"
-#include "../../core/include/RepositoryManager.hxx"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <memory>
 
 namespace fs = std::filesystem;
 
-class SimpleEventBus : public ISubject {
+#include "../../server/include/RepoCommand.hxx"
+#include "../../services/ISubject.hxx"
+#include "../../services/IObserver.hxx"
+#include "../../services/Event.hxx"
+#include "../../core/include/RepositoryManager.hxx"
+
+namespace svcs::test::server {
+
+class SimpleEventBus : public svcs::services::ISubject {
 public:
-    void attach(std::shared_ptr<IObserver>) override {}
-    void detach(std::shared_ptr<IObserver>) override {}
-    void notify(const Event&) const override {}
+    void attach(std::shared_ptr<svcs::services::IObserver>) override {}
+    void detach(std::shared_ptr<svcs::services::IObserver>) override {}
+    void notify(const svcs::services::Event&) const override {}
 };
 
 class RepoCommandTest : public ::testing::Test {
 protected:
     std::shared_ptr<SimpleEventBus> event_bus;
-    std::shared_ptr<RepositoryManager> repo_manager;
-    std::unique_ptr<RepoCommand> command;
+    std::shared_ptr<svcs::core::RepositoryManager> repo_manager;
+    std::unique_ptr<svcs::server::cli::RepoCommand> command;
     fs::path temp_dir;
 
     void SetUp() override {
         event_bus = std::make_shared<SimpleEventBus>();
-        repo_manager = std::make_shared<RepositoryManager>(event_bus);
+        repo_manager = std::make_shared<svcs::core::RepositoryManager>(event_bus);
 
         temp_dir = fs::temp_directory_path() / "repo_command_test";
         fs::remove_all(temp_dir);
         fs::create_directories(temp_dir);
 
-        command = std::make_unique<RepoCommand>(event_bus, repo_manager);
+        command = std::make_unique<svcs::server::cli::RepoCommand>(event_bus, repo_manager);
     }
 
     void TearDown() override {
@@ -185,4 +191,6 @@ TEST_F(RepoCommandTest, EmptyCommandShowsList) {
     EXPECT_TRUE(output.find("No remote repositories configured") != std::string::npos);
 
     fs::current_path(original_cwd);
+}
+
 }

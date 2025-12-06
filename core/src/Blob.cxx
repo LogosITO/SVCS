@@ -15,6 +15,9 @@
 
 #include "../include/Blob.hxx"
 
+
+namespace svcs::core {
+
 Blob::Blob(std::string  raw_data) : data(std::move(raw_data)) {
     std::string raw_content = this->serialize(); 
     std::string full_content = this->getType() + " " + 
@@ -34,4 +37,6 @@ std::string Blob::serialize() const {
 
 const std::string& Blob::getData() const {
     return data;
+}
+
 }

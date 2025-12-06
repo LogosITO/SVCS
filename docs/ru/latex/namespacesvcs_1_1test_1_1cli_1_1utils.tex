@@ -1,0 +1,66 @@
+\doxysection{Пространство имен svcs\+::test\+::cli\+::utils}
+\hypertarget{namespacesvcs_1_1test_1_1cli_1_1utils}{}\label{namespacesvcs_1_1test_1_1cli_1_1utils}\index{svcs::test::cli::utils@{svcs::test::cli::utils}}
+
+
+Служебные классы и тестовые фикстуры для тестирования CLI команд.  
+
+
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Тестовый фикстур для интеграционных тестов \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Тестовый фикстур для интеграционных тестов \doxylink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1test_1_1cli_1_1utils_1_1Event}{Event}}
+\begin{DoxyCompactList}\small\item\em Структура, описывающая событие, опубликованное ядром VCS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand}{Help\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для отображения справочной информации о других командах. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для просмотра истории сохранений (коммитов) в репозитории. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command}}
+\begin{DoxyCompactList}\small\item\em Реализует команду "{}init"{} для системы контроля версий (VCS). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{Init\+Command\+Integration\+Test}}
+\begin{DoxyCompactList}\small\item\em Тестовый фикстур для интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockHelpService}{Mock\+Help\+Service}}
+\begin{DoxyCompactList}\small\item\em Mock реализация \doxylink{classsvcs_1_1cli_1_1HelpService}{Help\+Service} для тестирования \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand}{Help\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}{Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em Mock реализация \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} для тестирования событийно-\/ориентированных компонентов. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}{Remove\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для удаления файлов из области подготовки. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}{Remove\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager}}
+\begin{DoxyCompactList}\small\item\em Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand}{Save\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для сохранения (коммита) подготовленных изменений в репозиторий. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand}{Save\+Command} (коммит). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}{Status\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для отображения текущего статуса репозитория. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}{Status\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для возврата состояния репозитория к предыдущему коммиту. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для отображения информации о версии SVCS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска модульных/интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_1_1utils_ad7a196684a6b9a814521785cf7ebc5d7}\label{namespacesvcs_1_1test_1_1cli_1_1utils_ad7a196684a6b9a814521785cf7ebc5d7} 
+using {\bfseries Event} = \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs\+::services\+::\+Event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Служебные классы и тестовые фикстуры для тестирования CLI команд. 
+
+Содержит тестовые фикстуры, вспомогательные классы и служебные функции, которые поддерживают тестирование CLI команд. Эти компоненты предоставляют общие шаблоны настройки, очистки и тестирования для интеграционных тестов команд. 

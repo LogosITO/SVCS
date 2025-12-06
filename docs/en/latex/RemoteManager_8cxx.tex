@@ -2,21 +2,26 @@
 \hypertarget{RemoteManager_8cxx}{}\label{RemoteManager_8cxx}\index{server/src/RemoteManager.cxx@{server/src/RemoteManager.cxx}}
 
 
-Implementation of the \doxylink{classRemoteManager}{Remote\+Manager} class.  
+Implementation of the Remote\+Manager class.  
 
 
 {\ttfamily \#include "{}../include/\+Remote\+Manager.\+hxx"{}}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Server-\/side components and administration commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementation of the \doxylink{classRemoteManager}{Remote\+Manager} class. 
+Implementation of the Remote\+Manager class. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-This file implements the methods for the \doxylink{classRemoteManager}{Remote\+Manager} class. It handles the loading, saving, and in-\/memory management of remote repository configurations. Persistence is handled by reading from and writing to a dedicated \textquotesingle{}remotes\textquotesingle{} file (e.\+g., /path/to/repo/remotes) in a Git-\/config-\/like format. \begin{DoxyNote}{Note}
+This file implements the methods for the Remote\+Manager class. It handles the loading, saving, and in-\/memory management of remote repository configurations. Persistence is handled by reading from and writing to a dedicated \textquotesingle{}remotes\textquotesingle{} file (e.\+g., /path/to/repo/remotes) in a Git-\/config-\/like format. \begin{DoxyNote}{Note}
 This implementation assumes the configuration is in a separate \textquotesingle{}remotes\textquotesingle{} file at the root of the repository, {\itshape not} inside {\ttfamily .svcs/config}. 
 \end{DoxyNote}

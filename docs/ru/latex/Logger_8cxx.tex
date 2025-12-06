@@ -2,7 +2,7 @@
 \hypertarget{Logger_8cxx}{}\label{Logger_8cxx}\index{services/logging/Logger.cxx@{services/logging/Logger.cxx}}
 
 
-Реализация класса \doxylink{classLogger}{Logger} для потокобезопасной системы логирования.  
+Реализация класса Logger для потокобезопасной системы логирования.  
 
 
 {\ttfamily \#include "{}Logger.\+hxx"{}}\newline
@@ -10,12 +10,17 @@
 {\ttfamily \#include $<$iomanip$>$}\newline
 {\ttfamily \#include $<$chrono$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1services}{svcs\+::services}}
+\begin{DoxyCompactList}\small\item\em Компоненты сервисного слоя и инфраструктурные сервисы. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация класса \doxylink{classLogger}{Logger} для потокобезопасной системы логирования. 
+Реализация класса Logger для потокобезопасной системы логирования. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Этот файл предоставляет конкретную реализацию для класса \doxylink{classLogger}{Logger}, включая управление шаблоном Singleton, фильтрацию уровней логов, форматирование сообщений и интеграцию с шиной событий. \doxylink{classLogger}{Logger} автоматически обрабатывает системные события из шины событий и предоставляет прямые методы логирования для ручного использования. 
+Этот файл предоставляет конкретную реализацию для класса Logger, включая управление шаблоном Singleton, фильтрацию уровней логов, форматирование сообщений и интеграцию с шиной событий. Logger автоматически обрабатывает системные события из шины событий и предоставляет прямые методы логирования для ручного использования. 

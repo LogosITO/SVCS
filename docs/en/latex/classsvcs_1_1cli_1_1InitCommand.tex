@@ -1,0 +1,162 @@
+\doxysection{svcs\+::cli\+::Init\+Command Class Reference}
+\hypertarget{classsvcs_1_1cli_1_1InitCommand}{}\label{classsvcs_1_1cli_1_1InitCommand}\index{svcs::cli::InitCommand@{svcs::cli::InitCommand}}
+
+
+Implements the "{}init"{} command for the Version Control System (VCS).  
+
+
+
+
+{\ttfamily \#include $<$Init\+Command.\+hxx$>$}
+
+Inheritance diagram for svcs\+::cli\+::Init\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1InitCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a0dc7c08945be6b2d281c5b2a7b7322e6}{Init\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classsvcs_1_1cli_1_1InitCommand}{Init\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a993c86956e71217c1720c57cfc1090e4}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the repository initialization logic. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a867b27d397625ad19ea168ac43117f1a}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the command name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a45eefc9d0ddfc577595615b7b000cbaa}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a brief description of the command\textquotesingle{}s purpose. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_ab892966e19c23a19ce5c4661bc881dd4}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the usage syntax for the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a365b83ad89e13155a87b2c6205182acc}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Displays detailed help information about the command via the event bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the "{}init"{} command for the Version Control System (VCS). 
+
+This command is responsible for initializing a new SVCS repository in the current directory or a specified location, setting up the necessary internal structure (e.\+g., the hidden .svcs directory). The class inherits from \doxylink{classsvcs_1_1cli_1_1ICommand}{ICommand}, ensuring it adheres to the Command pattern interface. It requires an event bus for communication and a repository manager to perform the actual initialization logic. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1InitCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1cli_1_1InitCommand_a0dc7c08945be6b2d281c5b2a7b7322e6}\index{svcs::cli::InitCommand@{svcs::cli::InitCommand}!InitCommand@{InitCommand}}
+\index{InitCommand@{InitCommand}!svcs::cli::InitCommand@{svcs::cli::InitCommand}}
+\doxysubsubsection{\texorpdfstring{InitCommand()}{InitCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1InitCommand_a0dc7c08945be6b2d281c5b2a7b7322e6} 
+svcs\+::cli\+::\+Init\+Command\+::\+Init\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{classsvcs_1_1cli_1_1InitCommand}{Init\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & A shared pointer to the event bus (\doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}). \\
+\hline
+{\em repo\+Manager} & A shared pointer to the \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1InitCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1cli_1_1InitCommand_a993c86956e71217c1720c57cfc1090e4}\index{svcs::cli::InitCommand@{svcs::cli::InitCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::cli::InitCommand@{svcs::cli::InitCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1InitCommand_a993c86956e71217c1720c57cfc1090e4} 
+bool svcs\+::cli\+::\+Init\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the repository initialization logic. 
+
+This method attempts to create the repository structure. 
+\begin{DoxyParams}{Parameters}
+{\em args} & A vector of strings containing command-\/line arguments (usually empty for \textquotesingle{}init\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the repository was successfully initialized or if it already exists, {\ttfamily false} if the initialization failed. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1InitCommand_a45eefc9d0ddfc577595615b7b000cbaa}\index{svcs::cli::InitCommand@{svcs::cli::InitCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::InitCommand@{svcs::cli::InitCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1InitCommand_a45eefc9d0ddfc577595615b7b000cbaa} 
+std\+::string svcs\+::cli\+::\+Init\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a brief description of the command\textquotesingle{}s purpose. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the description. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1InitCommand_a867b27d397625ad19ea168ac43117f1a}\index{svcs::cli::InitCommand@{svcs::cli::InitCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::InitCommand@{svcs::cli::InitCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1InitCommand_a867b27d397625ad19ea168ac43117f1a} 
+std\+::string svcs\+::cli\+::\+Init\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the command name. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}init"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1InitCommand_ab892966e19c23a19ce5c4661bc881dd4}\index{svcs::cli::InitCommand@{svcs::cli::InitCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::InitCommand@{svcs::cli::InitCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1InitCommand_ab892966e19c23a19ce5c4661bc881dd4} 
+std\+::string svcs\+::cli\+::\+Init\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the usage syntax for the command. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the usage\+: "{}svcs init"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1InitCommand_a365b83ad89e13155a87b2c6205182acc}\index{svcs::cli::InitCommand@{svcs::cli::InitCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::InitCommand@{svcs::cli::InitCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1InitCommand_a365b83ad89e13155a87b2c6205182acc} 
+void svcs\+::cli\+::\+Init\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays detailed help information about the command via the event bus. 
+
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{InitCommand_8hxx}{Init\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{InitCommand_8cxx}{Init\+Command.\+cxx}}\end{DoxyCompactItemize}

@@ -2,50 +2,55 @@
 \hypertarget{BranchManagerTest_8cxx}{}\label{BranchManagerTest_8cxx}\index{tests/core/BranchManagerTest.cxx@{tests/core/BranchManagerTest.cxx}}
 
 
-Implementation of unit tests for the \doxylink{classBranchManager}{Branch\+Manager} class.  
+Implementation of unit tests for the Branch\+Manager class.  
 
 
 {\ttfamily \#include "{}../../core/include/\+Branch\+Manager.\+hxx"{}}\newline
-{\ttfamily \#include "{}../cli/mocks/\+Mock\+Subject.\+hxx"{}}\newline
+{\ttfamily \#include "{}utils/\+Mock\+Subject.\+hxx"{}}\newline
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
 {\ttfamily \#include $<$filesystem$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{svcs\+::test\+::core\+::\+Branch\+Manager\+Test}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1core}{svcs\+::test\+::core}}
+\begin{DoxyCompactList}\small\item\em Unit tests for core components and data structures. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{BranchManagerTest_8cxx_a413f2199710fd82c0dac53cd02e63d42}\label{BranchManagerTest_8cxx_a413f2199710fd82c0dac53cd02e63d42} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}, Create\+Duplicate\+Branch)
+\Hypertarget{namespacesvcs_1_1test_1_1core_addf336b392ee416fa089d2c566f6d887}\label{namespacesvcs_1_1test_1_1core_addf336b392ee416fa089d2c566f6d887} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Create\+Duplicate\+Branch)
 \item 
-\Hypertarget{BranchManagerTest_8cxx_ad2d394a7fec9999e602c7715b154d756}\label{BranchManagerTest_8cxx_ad2d394a7fec9999e602c7715b154d756} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}, Create\+Branch\+With\+Invalid\+Name)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a20d84bf48189bfed94c9ff9f54e623c7}\label{namespacesvcs_1_1test_1_1core_a20d84bf48189bfed94c9ff9f54e623c7} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Create\+Branch\+With\+Invalid\+Name)
 \item 
-\Hypertarget{BranchManagerTest_8cxx_a3c54746a478466add7a814adac6fe10d}\label{BranchManagerTest_8cxx_a3c54746a478466add7a814adac6fe10d} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}, Delete\+Non\+Existent\+Branch)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a61aa61a5c97e5908c47ea9704a48733b}\label{namespacesvcs_1_1test_1_1core_a61aa61a5c97e5908c47ea9704a48733b} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Delete\+Non\+Existent\+Branch)
 \item 
-\Hypertarget{BranchManagerTest_8cxx_ab1bbeca70e5bf740cfdf26117a2c5ca0}\label{BranchManagerTest_8cxx_ab1bbeca70e5bf740cfdf26117a2c5ca0} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}, Rename\+Branch)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a8fb9394ce727d4ce18d73e245aeecc6a}\label{namespacesvcs_1_1test_1_1core_a8fb9394ce727d4ce18d73e245aeecc6a} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Rename\+Branch)
 \item 
-\Hypertarget{BranchManagerTest_8cxx_a2fb2ab7793ec446056df94331ab478ce}\label{BranchManagerTest_8cxx_a2fb2ab7793ec446056df94331ab478ce} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}, Rename\+To\+Existing\+Branch)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a6534c023637263f4fe1704a246341f78}\label{namespacesvcs_1_1test_1_1core_a6534c023637263f4fe1704a246341f78} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Rename\+To\+Existing\+Branch)
 \item 
-\Hypertarget{BranchManagerTest_8cxx_ad56c3d6ef7e9bae84579982b375cc0ab}\label{BranchManagerTest_8cxx_ad56c3d6ef7e9bae84579982b375cc0ab} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}, Switch\+To\+Non\+Existent\+Branch)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a003d2bcad2dc9ebbfd02d62a61c88213}\label{namespacesvcs_1_1test_1_1core_a003d2bcad2dc9ebbfd02d62a61c88213} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Switch\+To\+Non\+Existent\+Branch)
 \item 
-\Hypertarget{BranchManagerTest_8cxx_a869a2d69730d62e12f3f706d8f9fa71f}\label{BranchManagerTest_8cxx_a869a2d69730d62e12f3f706d8f9fa71f} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}, Branch\+Name\+Validation)
+\Hypertarget{namespacesvcs_1_1test_1_1core_adca3c96ced13291f514299afa4b586fd}\label{namespacesvcs_1_1test_1_1core_adca3c96ced13291f514299afa4b586fd} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Branch\+Name\+Validation)
 \item 
-\Hypertarget{BranchManagerTest_8cxx_aa5f79283663f6d3632e3532c43a8b8c9}\label{BranchManagerTest_8cxx_aa5f79283663f6d3632e3532c43a8b8c9} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classBranchManagerTest}{Branch\+Manager\+Test}}, Get\+Branch\+Head\+For\+Non\+Existent\+Branch)
+\Hypertarget{namespacesvcs_1_1test_1_1core_adba54191caa968b19a4ed1e68b6d0c55}\label{namespacesvcs_1_1test_1_1core_adba54191caa968b19a4ed1e68b6d0c55} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Get\+Branch\+Head\+For\+Non\+Existent\+Branch)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementation of unit tests for the \doxylink{classBranchManager}{Branch\+Manager} class. 
+Implementation of unit tests for the Branch\+Manager class. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License

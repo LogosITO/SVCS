@@ -16,6 +16,8 @@
 #include <fstream>
 #include <sstream>
 
+namespace svcs::core {
+
 std::string read_file_to_string(const fs::path& full_path) {
     std::ifstream file(full_path, std::ios::in | std::ios::binary | std::ios::ate);
     
@@ -67,4 +69,6 @@ std::string hex_to_binary_string(const std::string& hex_string) {
     }
 
     return binary_data;
+}
+
 }

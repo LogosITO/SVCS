@@ -1,0 +1,182 @@
+\doxysection{Класс svcs\+::cli\+::Add\+Command}
+\hypertarget{classsvcs_1_1cli_1_1AddCommand}{}\label{classsvcs_1_1cli_1_1AddCommand}\index{svcs::cli::AddCommand@{svcs::cli::AddCommand}}
+
+
+Реализует команду "{}add"{} для Simple Version Control System (SVCS).  
+
+
+
+
+{\ttfamily \#include $<$Add\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::cli\+::Add\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1AddCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_ab86cb0726603ea7379e76e446ec688a3}{Add\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Конструктор для \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a15e28cdfea0015ba33d0c22abfe48889}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду "{}add"{} с заданными аргументами. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a5692e4155843313da5dd625c556e04fd}{get\+All\+Files\+In\+Directory}} (const std\+::string \&directory) const
+\begin{DoxyCompactList}\small\item\em Получает все пути к файлам в заданной директории рекурсивно. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a1a2d6f366905ca9ec8a49bf92dcd6f73}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_ad5a561fba4db64d2351fce3882cac592}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает краткое описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_abdaa56b756ede64e3e5fde754a48e3c7}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a08697e340b45e17e6b767dca9476bdb3}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает подробную справочную информацию для команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Реализует команду "{}add"{} для Simple Version Control System (SVCS). 
+
+Эта команда отвечает за добавление (подготовку) указанных файлов в область подготовки репозитория для последующего коммита. Класс наследуется от \doxylink{classsvcs_1_1cli_1_1ICommand}{ICommand} и использует шаблон Command для выполнения своих операций. Он зависит от \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (шина событий) для уведомлений пользователя и \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager} для операций с репозиторием. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_ab86cb0726603ea7379e76e446ec688a3}\index{svcs::cli::AddCommand@{svcs::cli::AddCommand}!AddCommand@{AddCommand}}
+\index{AddCommand@{AddCommand}!svcs::cli::AddCommand@{svcs::cli::AddCommand}}
+\doxysubsubsection{\texorpdfstring{AddCommand()}{AddCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1AddCommand_ab86cb0726603ea7379e76e446ec688a3} 
+svcs\+::cli\+::\+Add\+Command\+::\+Add\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор для \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Общий указатель на \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (шина событий). \\
+\hline
+{\em repo\+Manager} & Общий указатель на \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_a15e28cdfea0015ba33d0c22abfe48889}\index{svcs::cli::AddCommand@{svcs::cli::AddCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::cli::AddCommand@{svcs::cli::AddCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1AddCommand_a15e28cdfea0015ba33d0c22abfe48889} 
+bool svcs\+::cli\+::\+Add\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду "{}add"{} с заданными аргументами. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Вектор строковых аргументов для команды. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если команда выполнена успешно, false в противном случае. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_a5692e4155843313da5dd625c556e04fd}\index{svcs::cli::AddCommand@{svcs::cli::AddCommand}!getAllFilesInDirectory@{getAllFilesInDirectory}}
+\index{getAllFilesInDirectory@{getAllFilesInDirectory}!svcs::cli::AddCommand@{svcs::cli::AddCommand}}
+\doxysubsubsection{\texorpdfstring{getAllFilesInDirectory()}{getAllFilesInDirectory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1AddCommand_a5692e4155843313da5dd625c556e04fd} 
+std\+::vector$<$ std\+::string $>$ svcs\+::cli\+::\+Add\+Command\+::get\+All\+Files\+In\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Получает все пути к файлам в заданной директории рекурсивно. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em directory} & Путь к директории. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Вектор строк, содержащий все пути к файлам. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_ad5a561fba4db64d2351fce3882cac592}\index{svcs::cli::AddCommand@{svcs::cli::AddCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::AddCommand@{svcs::cli::AddCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1AddCommand_ad5a561fba4db64d2351fce3882cac592} 
+std\+::string svcs\+::cli\+::\+Add\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает краткое описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, описывающая назначение команды. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_a1a2d6f366905ca9ec8a49bf92dcd6f73}\index{svcs::cli::AddCommand@{svcs::cli::AddCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::AddCommand@{svcs::cli::AddCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1AddCommand_a1a2d6f366905ca9ec8a49bf92dcd6f73} 
+std\+::string svcs\+::cli\+::\+Add\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя команды, "{}add"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_abdaa56b756ede64e3e5fde754a48e3c7}\index{svcs::cli::AddCommand@{svcs::cli::AddCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::AddCommand@{svcs::cli::AddCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1AddCommand_abdaa56b756ede64e3e5fde754a48e3c7} 
+std\+::string svcs\+::cli\+::\+Add\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, показывающая как использовать команду. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1AddCommand_a08697e340b45e17e6b767dca9476bdb3}\index{svcs::cli::AddCommand@{svcs::cli::AddCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::AddCommand@{svcs::cli::AddCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1AddCommand_a08697e340b45e17e6b767dca9476bdb3} 
+void svcs\+::cli\+::\+Add\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает подробную справочную информацию для команды. 
+
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{AddCommand_8hxx}{Add\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{AddCommand_8cxx}{Add\+Command.\+cxx}}\end{DoxyCompactItemize}

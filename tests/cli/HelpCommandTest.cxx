@@ -20,9 +20,22 @@
  * справки и несуществующие команды.
  */
 
- #include "utils/IntHelpCommandTest.hxx"
+#include "utils/IntHelpCommandTest.hxx"
+#include "mocks/MockHelpServiceAdapter.hxx"
 
- TEST_F(HelpCommandTest, ShowGeneralHelp) {
+/**
+ * @namespace svcs::test::cli
+ * @brief Unit tests for command-line interface components.
+ */
+namespace svcs::test::cli {
+
+using namespace svcs::test::cli::mocks;
+using namespace svcs::test::cli::utils;
+
+using ::svcs::cli::HelpCommand;
+using ::svcs::services::Event;
+
+TEST_F(HelpCommandTest, ShowGeneralHelp) {
     // Setup mock help service to return available commands
     mockHelpService->setAvailableCommands({"init", "add", "save", "status", "history"});
     mockHelpService->setCommandDescription("init", "Initialize a new repository");
@@ -30,14 +43,14 @@
     mockHelpService->setCommandDescription("save", "Save staged changes");
     mockHelpService->setCommandDescription("status", "Show repository status");
     mockHelpService->setCommandDescription("history", "Show commit history");
-    
+
     std::vector<std::string> args = {};
     bool result = command->execute(args);
-    
+
     EXPECT_TRUE(result);
-    
+
     auto notifications = mockEventBus->getNotifications();
-    
+
     // Should show general help information
     EXPECT_TRUE(containsMessage(notifications, "SVCS - Simple Version Control System"));
     EXPECT_TRUE(containsMessage(notifications, "Usage: svcs <command>"));
@@ -53,9 +66,9 @@
 TEST_F(HelpCommandTest, ShowCommandHelp) {
     std::vector<std::string> args = {"init"};
     bool result = command->execute(args);
-    
+
     EXPECT_TRUE(result);
-    
+
     // Should call help service for specific command
     EXPECT_TRUE(mockHelpService->wasCommandHelpCalled("init"));
     EXPECT_FALSE(mockHelpService->wasCommandHelpCalled("add"));
@@ -65,9 +78,9 @@ TEST_F(HelpCommandTest, ShowCommandHelp) {
 TEST_F(HelpCommandTest, ShowCommandHelpMultipleArgs) {
     std::vector<std::string> args = {"add", "extra", "arguments"};
     bool result = command->execute(args);
-    
+
     EXPECT_TRUE(result);
-    
+
     // Should only use first argument as command name
     EXPECT_TRUE(mockHelpService->wasCommandHelpCalled("add"));
 }
@@ -75,9 +88,9 @@ TEST_F(HelpCommandTest, ShowCommandHelpMultipleArgs) {
 // Test help command's own help
 TEST_F(HelpCommandTest, ShowHelpCommandHelp) {
     command->showHelp();
-    
+
     auto notifications = mockEventBus->getNotifications();
-    
+
     EXPECT_TRUE(containsMessage(notifications, "Usage: svcs help [command]"));
     EXPECT_TRUE(containsMessage(notifications, "Show help information for commands"));
     EXPECT_TRUE(containsMessage(notifications, "If no command is specified, shows general help"));
@@ -88,12 +101,12 @@ TEST_F(HelpCommandTest, ShowHelpCommandHelp) {
 TEST_F(HelpCommandTest, ErrorWhenHelpServiceNotAvailableGeneral) {
     // Create command without help service
     auto commandWithoutService = std::make_unique<HelpCommand>(mockEventBus, nullptr);
-    
+
     std::vector<std::string> args = {};
     bool result = commandWithoutService->execute(args);
-    
+
     EXPECT_TRUE(result); // Should still return true
-    
+
     auto notifications = mockEventBus->getNotifications();
     EXPECT_TRUE(containsMessage(notifications, "Help service not available"));
 }
@@ -102,12 +115,12 @@ TEST_F(HelpCommandTest, ErrorWhenHelpServiceNotAvailableGeneral) {
 TEST_F(HelpCommandTest, ErrorWhenHelpServiceNotAvailableCommand) {
     // Create command without help service
     auto commandWithoutService = std::make_unique<HelpCommand>(mockEventBus, nullptr);
-    
+
     std::vector<std::string> args = {"init"};
     bool result = commandWithoutService->execute(args);
-    
+
     EXPECT_TRUE(result); // Should still return true
-    
+
     auto notifications = mockEventBus->getNotifications();
     EXPECT_TRUE(containsMessage(notifications, "Help service not available"));
 }
@@ -122,9 +135,9 @@ TEST_F(HelpCommandTest, CommandDescriptionAndUsage) {
 TEST_F(HelpCommandTest, CorrectSource) {
     std::vector<std::string> args = {};
     command->execute(args);
-    
+
     auto notifications = mockEventBus->getNotifications();
-    
+
     // All notifications should have source "help"
     for (const auto& event : notifications) {
         EXPECT_EQ(event.source_name, "help");
@@ -135,14 +148,14 @@ TEST_F(HelpCommandTest, CorrectSource) {
 TEST_F(HelpCommandTest, EmptyCommandList) {
     // Setup empty command list
     mockHelpService->setAvailableCommands({});
-    
+
     std::vector<std::string> args = {};
     bool result = command->execute(args);
-    
+
     EXPECT_TRUE(result);
-    
+
     auto notifications = mockEventBus->getNotifications();
-    
+
     // Should still show general help structure
     EXPECT_TRUE(containsMessage(notifications, "Available commands:"));
     EXPECT_TRUE(containsMessage(notifications, "SVCS - Simple Version Control System"));
@@ -152,9 +165,9 @@ TEST_F(HelpCommandTest, EmptyCommandList) {
 TEST_F(HelpCommandTest, HelpForNonExistentCommand) {
     std::vector<std::string> args = {"nonexistent"};
     bool result = command->execute(args);
-    
+
     EXPECT_TRUE(result);
-    
+
     // Should still call help service (it will handle the error)
     EXPECT_TRUE(mockHelpService->wasCommandHelpCalled("nonexistent"));
 }
@@ -165,20 +178,22 @@ TEST_F(HelpCommandTest, MultipleHelpCommands) {
     std::vector<std::string> args1 = {};
     bool result1 = command->execute(args1);
     EXPECT_TRUE(result1);
-    
+
     mockEventBus->clear();
     mockHelpService->clear();
-    
+
     // Second: specific command help
     std::vector<std::string> args2 = {"save"};
     bool result2 = command->execute(args2);
     EXPECT_TRUE(result2);
-    
+
     // Third: another specific command
     std::vector<std::string> args3 = {"status"};
     bool result3 = command->execute(args3);
     EXPECT_TRUE(result3);
-    
+
     EXPECT_TRUE(mockHelpService->wasCommandHelpCalled("save"));
     EXPECT_TRUE(mockHelpService->wasCommandHelpCalled("status"));
 }
+
+} // namespace svcs::test::cli

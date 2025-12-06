@@ -13,6 +13,10 @@
  
 #include "utils/IntUndoCommandTest.hxx"
 
+namespace svcs::test::cli {
+
+using svcs::test::cli::utils::UndoCommandTest;
+
 TEST_F(UndoCommandTest, UndoLastCommitWithForce) {
     // Create test commits
     createTestCommit("First commit");
@@ -378,4 +382,6 @@ TEST_F(UndoCommandTest, UndoWithLargeCommitHistory) {
     }
 
     SUCCEED();
+}
+
 }

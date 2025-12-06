@@ -92,7 +92,7 @@ $(function(){initNavTree('MockHelpService_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Mock implementation of the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> interface for unit testing purposes.  
+<p>Mock implementation of the HelpService interface for unit testing purposes.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -100,20 +100,29 @@ $(function(){initNavTree('MockHelpService_8hxx.html','',''); });
 <code>#include &lt;set&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
-<code>#include &quot;<a class="el" href="HelpService_8hxx_source.html">../../../cli/include/HelpService.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MockSubject_8hxx_source.html">MockSubject.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cli_2mocks_2MockSubject_8hxx_source.html">MockSubject.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Event_8hxx_source.html">../../../services/Event.hxx</a>&quot;</code><br />
 </div>
 <p><a href="MockHelpService_8hxx_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:MockHelpService" id="r_MockHelpService"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockHelpService.html">MockHelpService</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mock implementation of the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> for testing the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a>.  <a href="classMockHelpService.html#details">More...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3Amocks_3A_3AMockHelpService" id="r_svcs_3A_3Atest_3A_3Acli_3A_3Amocks_3A_3AMockHelpService"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html">svcs::test::cli::mocks::MockHelpService</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mock implementation of the <a class="el" href="classsvcs_1_1cli_1_1HelpService.html" title="Service that provides help information for commands.">HelpService</a> for testing the <a class="el" href="classsvcs_1_1test_1_1cli_1_1HelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a>.  <a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#details">More...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3Amocks_3A_3AEvent" id="r_svcs_3A_3Atest_3A_3Acli_3A_3Amocks_3A_3AEvent"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsvcs_1_1test_1_1cli_1_1mocks_1_1Event.html">svcs::test::cli::mocks::Event</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure describing an event published by the VCS core.  <a href="structsvcs_1_1test_1_1cli_1_1mocks_1_1Event.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3Amocks" id="r_svcs_3A_3Atest_3A_3Acli_3A_3Amocks"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli_1_1mocks.html">svcs::test::cli::mocks</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli_1_1mocks"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock objects and test doubles for CLI command testing. <br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli" id="r_svcs_3A_3Atest_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli.html">svcs::test::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for command-line interface components. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Mock implementation of the <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> interface for unit testing purposes. </p>
+<div class="textblock"><p>Mock implementation of the HelpService interface for unit testing purposes. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p>This class inherits from <a class="el" href="classHelpService.html" title="Service that provides help information for commands.">HelpService</a> and overrides its abstract methods (<span class="tt">getAvailableCommands</span>, <span class="tt">getCommandDescription</span>, <span class="tt">showCommandHelp</span>) with controlled implementations. It includes utility methods (<span class="tt">setAvailableCommands</span>, <span class="tt">wasCommandHelpCalled</span>, etc.) to allow tests to configure the mock's behavior and inspect its interactions. This mock is essential for unit testing the <b><a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a></b> without depending on the actual implementation of the CLI command registration system. </p>
+<p>This class provides a mock implementation with the same interface as HelpService but with controlled behavior for testing. It includes utility methods (<span class="tt">setAvailableCommands</span>, <span class="tt">wasCommandHelpCalled</span>, etc.) to allow tests to configure the mock's behavior and inspect its interactions. This mock is essential for unit testing the <b>HelpCommand</b> without depending on the actual implementation of the CLI command registration system. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

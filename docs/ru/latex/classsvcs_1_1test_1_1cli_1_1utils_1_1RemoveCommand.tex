@@ -1,0 +1,162 @@
+\doxysection{Класс svcs\+::test\+::cli\+::utils\+::Remove\+Command}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}\index{svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}}
+
+
+Команда для удаления файлов из области подготовки.  
+
+
+
+
+{\ttfamily \#include $<$Remove\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::utils\+::Remove\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_aaa059d8bcb4643b91c9fc7babb801fc6}{Remove\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}{Remove\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a2bb886849d062d5ded28d78c399d2141}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду remove. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a3ad04f2f0aac567cbc186a7ad341f4c6}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a7c6fefbbc15bbcb3ced866943ac895b9}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a134896ccaaa85d63f2cc73f274df4a65}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a87ec4c8a9b544ed88e33120f3ef7af45}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Показывает подробную справочную информацию для этой команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для удаления файлов из области подготовки. 
+
+\doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}{Remove\+Command} удаляет файлы из области подготовки (индекса), эффективно убирая их из подготовки, сохраняя при этом сами файлы нетронутыми. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_aaa059d8bcb4643b91c9fc7babb801fc6}\index{svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}!RemoveCommand@{RemoveCommand}}
+\index{RemoveCommand@{RemoveCommand}!svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{RemoveCommand()}{RemoveCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_aaa059d8bcb4643b91c9fc7babb801fc6} 
+svcs\+::cli\+::\+Remove\+Command\+::\+Remove\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}{Remove\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Общий указатель на шину событий для уведомлений. \\
+\hline
+{\em repo\+Manager} & Общий указатель на менеджер репозитория. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a2bb886849d062d5ded28d78c399d2141}\index{svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a2bb886849d062d5ded28d78c399d2141} 
+bool svcs\+::cli\+::\+Remove\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду remove. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы команды -\/ пути к файлам для удаления из подготовки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если удаление успешно, false в противном случае. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a7c6fefbbc15bbcb3ced866943ac895b9}\index{svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a7c6fefbbc15bbcb3ced866943ac895b9} 
+std\+::string svcs\+::cli\+::\+Remove\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}Удалить файлы из области подготовки"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a3ad04f2f0aac567cbc186a7ad341f4c6}\index{svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a3ad04f2f0aac567cbc186a7ad341f4c6} 
+std\+::string svcs\+::cli\+::\+Remove\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}remove"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a134896ccaaa85d63f2cc73f274df4a65}\index{svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a134896ccaaa85d63f2cc73f274df4a65} 
+std\+::string svcs\+::cli\+::\+Remove\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}svcs remove $<$file$>$ \mbox{[}file2 ...\mbox{]}"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a87ec4c8a9b544ed88e33120f3ef7af45}\index{svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::test::cli::utils::RemoveCommand@{svcs::test::cli::utils::RemoveCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a87ec4c8a9b544ed88e33120f3ef7af45} 
+void svcs\+::cli\+::\+Remove\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Показывает подробную справочную информацию для этой команды. 
+
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{RemoveCommand_8hxx}{Remove\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{RemoveCommand_8cxx}{Remove\+Command.\+cxx}}\end{DoxyCompactItemize}

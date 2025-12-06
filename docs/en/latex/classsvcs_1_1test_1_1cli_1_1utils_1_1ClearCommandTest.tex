@@ -1,0 +1,149 @@
+\doxysection{svcs\+::test\+::cli\+::utils\+::Clear\+Command\+Test Class Reference}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}\index{svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}}
+
+
+Test fixture for \doxylink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command} integration tests.  
+
+
+
+
+{\ttfamily \#include $<$Clear\+Command\+Test.\+hxx$>$}
+
+Inheritance diagram for svcs\+::test\+::cli\+::utils\+::Clear\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_ab7f6b49b6e57bb5b75f718338f2e4809}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the test environment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_acf2bcbbbfd371372c022b2335349813c}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Tears down the test environment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a051e89b0515657a3e2833ab26d147509}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content="{}test content"{}) const
+\begin{DoxyCompactList}\small\item\em Creates a test file inside the test directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a34bb56411c8746128a0afeed75aac700}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Creates a test directory inside the test directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a75c10d0d1bf4c3cc34a62ea52653587c}{simulate\+User\+Input}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Simulates user input by redirecting std\+::cin to a string stream. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_ad7b32d70e026fadf27a0b7c5748de415}{repository\+Exists}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the .svcs repository directory exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a96d180646967d04d1a99fbf0d7536da7}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a96d180646967d04d1a99fbf0d7536da7} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Mock event bus for capturing system notifications. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a0c45fc2e24e7c1a43c33db91edf80429}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a0c45fc2e24e7c1a43c33db91edf80429} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Real \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} instance under test. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_ac4ee7b9733b3ced94d1ae63808291cd7}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_ac4ee7b9733b3ced94d1ae63808291cd7} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em \doxylink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command} instance under test. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a01b431e40f1824d3e57c84500d50bf80}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a01b431e40f1824d3e57c84500d50bf80} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Path to the temporary directory used as the repository root. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a0e8f2853062fcc0a8589bc27952790c0}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a0e8f2853062fcc0a8589bc27952790c0} 
+std\+::stringstream {\bfseries input\+Stream}
+\begin{DoxyCompactList}\small\item\em String stream used to feed simulated input to std\+::cin. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a2f6e08e867ac845c720b8371f5f48987}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a2f6e08e867ac845c720b8371f5f48987} 
+std\+::streambuf \texorpdfstring{$\ast$}{*} {\bfseries original\+Cin}
+\begin{DoxyCompactList}\small\item\em Pointer to the original buffer of std\+::cin, saved for restoration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test fixture for \doxylink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command} integration tests. 
+
+Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create test files/directories and to simulate user input required for the \textquotesingle{}clear\textquotesingle{} confirmation prompt. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a34bb56411c8746128a0afeed75aac700}\index{svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a34bb56411c8746128a0afeed75aac700} 
+void svcs\+::test\+::cli\+::utils\+::\+Clear\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test directory inside the test directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & The name of the directory to create. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a051e89b0515657a3e2833ab26d147509}\index{svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a051e89b0515657a3e2833ab26d147509} 
+void svcs\+::test\+::cli\+::utils\+::\+Clear\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{ = {\ttfamily "{}test~content"{}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test file inside the test directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to create. \\
+\hline
+{\em content} & The content of the file (defaults to "{}test content"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_ad7b32d70e026fadf27a0b7c5748de415}\index{svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}!repositoryExists@{repositoryExists}}
+\index{repositoryExists@{repositoryExists}!svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{repositoryExists()}{repositoryExists()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_ad7b32d70e026fadf27a0b7c5748de415} 
+bool svcs\+::test\+::cli\+::utils\+::\+Clear\+Command\+Test\+::repository\+Exists (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Checks if the .svcs repository directory exists. 
+
+\begin{DoxyReturn}{Returns}
+true if the repository exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_ab7f6b49b6e57bb5b75f718338f2e4809}\index{svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_ab7f6b49b6e57bb5b75f718338f2e4809} 
+void svcs\+::test\+::cli\+::utils\+::\+Clear\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Sets up the test environment. 
+
+Creates and initializes a new temporary SVCS repository and saves the original std\+::cin buffer. \Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a75c10d0d1bf4c3cc34a62ea52653587c}\index{svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}!simulateUserInput@{simulateUserInput}}
+\index{simulateUserInput@{simulateUserInput}!svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{simulateUserInput()}{simulateUserInput()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_a75c10d0d1bf4c3cc34a62ea52653587c} 
+void svcs\+::test\+::cli\+::utils\+::\+Clear\+Command\+Test\+::simulate\+User\+Input (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Simulates user input by redirecting std\+::cin to a string stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The string that will be read as user input. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_acf2bcbbbfd371372c022b2335349813c}\index{svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!svcs::test::cli::utils::ClearCommandTest@{svcs::test::cli::utils::ClearCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest_acf2bcbbbfd371372c022b2335349813c} 
+void svcs\+::test\+::cli\+::utils\+::\+Clear\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Tears down the test environment. 
+
+Restores the original std\+::cin buffer and recursively removes the temporary directory. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{ClearCommandTest_8hxx}{Clear\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{utils_2ClearCommandTest_8cxx}{Clear\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

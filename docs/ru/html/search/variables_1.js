@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['blob_5fhash_0',['blob_hash',['../structIndexEntry.html#af0add5ce12c5dfa70a32542fd4417f12',1,'IndexEntry']]],
-  ['branch_1',['branch',['../structCommitInfo.html#a7859b0ad6d68755896ee2d831480622a',1,'CommitInfo']]]
+  ['blob_5fhash_0',['blob_hash',['../structsvcs_1_1core_1_1IndexEntry.html#aebf4cc2167bb5bc331431b0b6e8899ec',1,'svcs::core::IndexEntry']]],
+  ['branch_1',['branch',['../structsvcs_1_1core_1_1CommitInfo.html#a13bf52279934fb69911f27829496a468',1,'svcs::core::CommitInfo']]]
 ];

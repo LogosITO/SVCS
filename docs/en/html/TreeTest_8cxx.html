@@ -92,41 +92,46 @@ $(function(){initNavTree('TreeTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Unit tests for the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity.  
+<p>Unit tests for the Tree class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Tree_8hxx_source.html">../../core/include/Tree.hxx</a>&quot;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acore" id="r_svcs_3A_3Atest_3A_3Acore"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1core.html">svcs::test::core</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for core components and data structures. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abfbff93bb1459d7106bb5d881f4877c0" id="r_abfbff93bb1459d7106bb5d881f4877c0"><td class="memItemLeft" align="right" valign="top"><a id="abfbff93bb1459d7106bb5d881f4877c0" name="abfbff93bb1459d7106bb5d881f4877c0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (TreeTest, HashIsCalculatedAndTypeIsCorrect)</td></tr>
-<tr class="memitem:a4ff60cd18cbb5f4446b5af434f12a388" id="r_a4ff60cd18cbb5f4446b5af434f12a388"><td class="memItemLeft" align="right" valign="top"><a id="a4ff60cd18cbb5f4446b5af434f12a388" name="a4ff60cd18cbb5f4446b5af434f12a388"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (TreeTest, HashIsConsistentRegardlessOfInitialOrder)</td></tr>
-<tr class="memitem:aee4702bce9e70bdf04201d01ec8b7087" id="r_aee4702bce9e70bdf04201d01ec8b7087"><td class="memItemLeft" align="right" valign="top"><a id="aee4702bce9e70bdf04201d01ec8b7087" name="aee4702bce9e70bdf04201d01ec8b7087"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (TreeTest, HashChangesWhenChildHashChanges)</td></tr>
-<tr class="memitem:ae2200383943c7724f6a1837efd3a8eb5" id="r_ae2200383943c7724f6a1837efd3a8eb5"><td class="memItemLeft" align="right" valign="top"><a id="ae2200383943c7724f6a1837efd3a8eb5" name="ae2200383943c7724f6a1837efd3a8eb5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (TreeTest, AddAndUpdateEntry)</td></tr>
-<tr class="memitem:a724c038bc09647ee149b066d97a27a52" id="r_a724c038bc09647ee149b066d97a27a52"><td class="memItemLeft" align="right" valign="top"><a id="a724c038bc09647ee149b066d97a27a52" name="a724c038bc09647ee149b066d97a27a52"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (TreeTest, RemoveEntry)</td></tr>
-<tr class="memitem:a1f7005a5bb213babd0b29be9a4b1921b" id="r_a1f7005a5bb213babd0b29be9a4b1921b"><td class="memItemLeft" align="right" valign="top"><a id="a1f7005a5bb213babd0b29be9a4b1921b" name="a1f7005a5bb213babd0b29be9a4b1921b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (TreeTest, FindEntry)</td></tr>
-<tr class="memitem:a7560b6d55323cbfa445cddae4bda3bfc" id="r_a7560b6d55323cbfa445cddae4bda3bfc"><td class="memItemLeft" align="right" valign="top"><a id="a7560b6d55323cbfa445cddae4bda3bfc" name="a7560b6d55323cbfa445cddae4bda3bfc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (TreeTest, SerializationAndDeserializationRoundTrip)</td></tr>
+<tr class="memitem:a65150faacc694237df4d90efb41ccb1a" id="r_a65150faacc694237df4d90efb41ccb1a"><td class="memItemLeft" align="right" valign="top"><a id="a65150faacc694237df4d90efb41ccb1a" name="a65150faacc694237df4d90efb41ccb1a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (TreeTest, HashIsCalculatedAndTypeIsCorrect)</td></tr>
+<tr class="memitem:ae9b328921984ac6a04ecc642beddf771" id="r_ae9b328921984ac6a04ecc642beddf771"><td class="memItemLeft" align="right" valign="top"><a id="ae9b328921984ac6a04ecc642beddf771" name="ae9b328921984ac6a04ecc642beddf771"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (TreeTest, HashIsConsistentRegardlessOfInitialOrder)</td></tr>
+<tr class="memitem:acbb759a34a7d1dfd872a3ea2dcede356" id="r_acbb759a34a7d1dfd872a3ea2dcede356"><td class="memItemLeft" align="right" valign="top"><a id="acbb759a34a7d1dfd872a3ea2dcede356" name="acbb759a34a7d1dfd872a3ea2dcede356"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (TreeTest, HashChangesWhenChildHashChanges)</td></tr>
+<tr class="memitem:a2bb88575254f78d531650b2c53b1ae17" id="r_a2bb88575254f78d531650b2c53b1ae17"><td class="memItemLeft" align="right" valign="top"><a id="a2bb88575254f78d531650b2c53b1ae17" name="a2bb88575254f78d531650b2c53b1ae17"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (TreeTest, AddAndUpdateEntry)</td></tr>
+<tr class="memitem:a21d1bca4a14153e95017f553190e1db8" id="r_a21d1bca4a14153e95017f553190e1db8"><td class="memItemLeft" align="right" valign="top"><a id="a21d1bca4a14153e95017f553190e1db8" name="a21d1bca4a14153e95017f553190e1db8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (TreeTest, RemoveEntry)</td></tr>
+<tr class="memitem:ad3edbef3324de01bddf5b4db1cdd4a34" id="r_ad3edbef3324de01bddf5b4db1cdd4a34"><td class="memItemLeft" align="right" valign="top"><a id="ad3edbef3324de01bddf5b4db1cdd4a34" name="ad3edbef3324de01bddf5b4db1cdd4a34"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (TreeTest, FindEntry)</td></tr>
+<tr class="memitem:a6d6d78feaa7436d70aab048ea70f4e21" id="r_a6d6d78feaa7436d70aab048ea70f4e21"><td class="memItemLeft" align="right" valign="top"><a id="a6d6d78feaa7436d70aab048ea70f4e21" name="a6d6d78feaa7436d70aab048ea70f4e21"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (TreeTest, SerializationAndDeserializationRoundTrip)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac12b4363d924366b59daf081894244ff" id="r_ac12b4363d924366b59daf081894244ff"><td class="memItemLeft" align="right" valign="top"><a id="ac12b4363d924366b59daf081894244ff" name="ac12b4363d924366b59daf081894244ff"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_A</b> = &quot;a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0&quot;</td></tr>
-<tr class="memitem:a69690ea0ec6dbeef9c9b174418068b8f" id="r_a69690ea0ec6dbeef9c9b174418068b8f"><td class="memItemLeft" align="right" valign="top"><a id="a69690ea0ec6dbeef9c9b174418068b8f" name="a69690ea0ec6dbeef9c9b174418068b8f"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_B</b> = &quot;b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1&quot;</td></tr>
-<tr class="memitem:a4c23159031be481753f189a235824190" id="r_a4c23159031be481753f189a235824190"><td class="memItemLeft" align="right" valign="top"><a id="a4c23159031be481753f189a235824190" name="a4c23159031be481753f189a235824190"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_C</b> = &quot;c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2&quot;</td></tr>
-<tr class="memitem:acc60c501f3a559028769e4eb32044b96" id="r_acc60c501f3a559028769e4eb32044b96"><td class="memItemLeft" align="right" valign="top"><a id="acc60c501f3a559028769e4eb32044b96" name="acc60c501f3a559028769e4eb32044b96"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_D</b> = &quot;d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3&quot;</td></tr>
+<tr class="memitem:a648eb0f3cd1db32c6ac3313319fa565c" id="r_a648eb0f3cd1db32c6ac3313319fa565c"><td class="memItemLeft" align="right" valign="top"><a id="a648eb0f3cd1db32c6ac3313319fa565c" name="a648eb0f3cd1db32c6ac3313319fa565c"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_A</b> = &quot;a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0&quot;</td></tr>
+<tr class="memitem:a48a6a6ff857512967f0192df28fcedc8" id="r_a48a6a6ff857512967f0192df28fcedc8"><td class="memItemLeft" align="right" valign="top"><a id="a48a6a6ff857512967f0192df28fcedc8" name="a48a6a6ff857512967f0192df28fcedc8"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_B</b> = &quot;b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1&quot;</td></tr>
+<tr class="memitem:aa9f0d1c467c6216dc74f00e40dbe2d34" id="r_aa9f0d1c467c6216dc74f00e40dbe2d34"><td class="memItemLeft" align="right" valign="top"><a id="aa9f0d1c467c6216dc74f00e40dbe2d34" name="aa9f0d1c467c6216dc74f00e40dbe2d34"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_C</b> = &quot;c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2&quot;</td></tr>
+<tr class="memitem:aa91e3251258987513e67a5014a5529c9" id="r_aa91e3251258987513e67a5014a5529c9"><td class="memItemLeft" align="right" valign="top"><a id="aa91e3251258987513e67a5014a5529c9" name="aa91e3251258987513e67a5014a5529c9"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_D</b> = &quot;d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3&quot;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Unit tests for the <a class="el" href="classTree.html" title="Represents the state of a directory in the VCS, implementing the VcsObject contract.">Tree</a> class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity. </p>
+<div class="textblock"><p>Unit tests for the Tree class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

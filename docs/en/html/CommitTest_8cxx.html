@@ -92,41 +92,46 @@ $(function(){initNavTree('CommitTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Unit tests for the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity.  
+<p>Unit tests for the Commit class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Commit_8hxx_source.html">../../core/include/Commit.hxx</a>&quot;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acore" id="r_svcs_3A_3Atest_3A_3Acore"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1core.html">svcs::test::core</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for core components and data structures. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae7a926bf7d7dcc3902b15b1de2fe0e6d" id="r_ae7a926bf7d7dcc3902b15b1de2fe0e6d"><td class="memItemLeft" align="right" valign="top"><a id="ae7a926bf7d7dcc3902b15b1de2fe0e6d" name="ae7a926bf7d7dcc3902b15b1de2fe0e6d"></a>
-<a class="el" href="classCommit.html">Commit</a>&#160;</td><td class="memItemRight" valign="bottom"><b>createTestCommit</b> (const std::string &amp;tree_hash, const std::vector&lt; std::string &gt; &amp;parents, const std::string &amp;message, std::time_t timestamp=1600000000)</td></tr>
-<tr class="memitem:a30dc08fac2c0325d5c0b57840807276f" id="r_a30dc08fac2c0325d5c0b57840807276f"><td class="memItemLeft" align="right" valign="top"><a id="a30dc08fac2c0325d5c0b57840807276f" name="a30dc08fac2c0325d5c0b57840807276f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (CommitTest, BasicInitialCommit)</td></tr>
-<tr class="memitem:a56628a9c956d11551faa222eca76cda4" id="r_a56628a9c956d11551faa222eca76cda4"><td class="memItemLeft" align="right" valign="top"><a id="a56628a9c956d11551faa222eca76cda4" name="a56628a9c956d11551faa222eca76cda4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (CommitTest, HashIsStableRegardlessOfParentOrder)</td></tr>
-<tr class="memitem:a799c1e48f2313e727eea83677d8d359d" id="r_a799c1e48f2313e727eea83677d8d359d"><td class="memItemLeft" align="right" valign="top"><a id="a799c1e48f2313e727eea83677d8d359d" name="a799c1e48f2313e727eea83677d8d359d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (CommitTest, HashChangesWithDifferentMessage)</td></tr>
-<tr class="memitem:a73659178faf1e76365387127541b98e4" id="r_a73659178faf1e76365387127541b98e4"><td class="memItemLeft" align="right" valign="top"><a id="a73659178faf1e76365387127541b98e4" name="a73659178faf1e76365387127541b98e4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST</b> (CommitTest, SerializationDeserializationRoundTrip)</td></tr>
+<tr class="memitem:a4fb8ff6caf118bcecfc1eac5e7f4f4e2" id="r_a4fb8ff6caf118bcecfc1eac5e7f4f4e2"><td class="memItemLeft" align="right" valign="top"><a id="a4fb8ff6caf118bcecfc1eac5e7f4f4e2" name="a4fb8ff6caf118bcecfc1eac5e7f4f4e2"></a>
+<a class="el" href="classsvcs_1_1core_1_1Commit.html">Commit</a>&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::createTestCommit</b> (const std::string &amp;tree_hash, const std::vector&lt; std::string &gt; &amp;parents, const std::string &amp;message, std::time_t timestamp=1600000000)</td></tr>
+<tr class="memitem:a4f982b5800598d469dc3ea9685844b7c" id="r_a4f982b5800598d469dc3ea9685844b7c"><td class="memItemLeft" align="right" valign="top"><a id="a4f982b5800598d469dc3ea9685844b7c" name="a4f982b5800598d469dc3ea9685844b7c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (CommitTest, BasicInitialCommit)</td></tr>
+<tr class="memitem:a0f7e4fd13d6062bb22f96cb2951a81b6" id="r_a0f7e4fd13d6062bb22f96cb2951a81b6"><td class="memItemLeft" align="right" valign="top"><a id="a0f7e4fd13d6062bb22f96cb2951a81b6" name="a0f7e4fd13d6062bb22f96cb2951a81b6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (CommitTest, HashIsStableRegardlessOfParentOrder)</td></tr>
+<tr class="memitem:adce82e1d3746b5390ca553ab0f74149a" id="r_adce82e1d3746b5390ca553ab0f74149a"><td class="memItemLeft" align="right" valign="top"><a id="adce82e1d3746b5390ca553ab0f74149a" name="adce82e1d3746b5390ca553ab0f74149a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (CommitTest, HashChangesWithDifferentMessage)</td></tr>
+<tr class="memitem:aa40536aac1767e718ea82600d293ab2e" id="r_aa40536aac1767e718ea82600d293ab2e"><td class="memItemLeft" align="right" valign="top"><a id="aa40536aac1767e718ea82600d293ab2e" name="aa40536aac1767e718ea82600d293ab2e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST</b> (CommitTest, SerializationDeserializationRoundTrip)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad57cdec7a6e84fefe8d5fe2c2e6cbb90" id="r_ad57cdec7a6e84fefe8d5fe2c2e6cbb90"><td class="memItemLeft" align="right" valign="top"><a id="ad57cdec7a6e84fefe8d5fe2c2e6cbb90" name="ad57cdec7a6e84fefe8d5fe2c2e6cbb90"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_TREE_EMPTY</b> = &quot;4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a&quot;</td></tr>
-<tr class="memitem:af33b3d23844c6ebeafa6e65a17476208" id="r_af33b3d23844c6ebeafa6e65a17476208"><td class="memItemLeft" align="right" valign="top"><a id="af33b3d23844c6ebeafa6e65a17476208" name="af33b3d23844c6ebeafa6e65a17476208"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_PARENT_A</b> = &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;</td></tr>
-<tr class="memitem:adfe7dbab581c64e6c87819aa6380a190" id="r_adfe7dbab581c64e6c87819aa6380a190"><td class="memItemLeft" align="right" valign="top"><a id="adfe7dbab581c64e6c87819aa6380a190" name="adfe7dbab581c64e6c87819aa6380a190"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_PARENT_B</b> = &quot;bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&quot;</td></tr>
-<tr class="memitem:a1127791517517f0b0fa8b95bc4342e31" id="r_a1127791517517f0b0fa8b95bc4342e31"><td class="memItemLeft" align="right" valign="top"><a id="a1127791517517f0b0fa8b95bc4342e31" name="a1127791517517f0b0fa8b95bc4342e31"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_TREE_NEW</b> = &quot;c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1&quot;</td></tr>
-<tr class="memitem:afbd82a565f16d182383e44439950669e" id="r_afbd82a565f16d182383e44439950669e"><td class="memItemLeft" align="right" valign="top"><a id="afbd82a565f16d182383e44439950669e" name="afbd82a565f16d182383e44439950669e"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_PARENT_P1</b> = &quot;d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2&quot;</td></tr>
-<tr class="memitem:a4a3217c574a21f7414c660f7811af020" id="r_a4a3217c574a21f7414c660f7811af020"><td class="memItemLeft" align="right" valign="top"><a id="a4a3217c574a21f7414c660f7811af020" name="a4a3217c574a21f7414c660f7811af020"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>HASH_PARENT_P2</b> = &quot;e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3&quot;</td></tr>
+<tr class="memitem:a67af790154c075f144af8c559437dc2b" id="r_a67af790154c075f144af8c559437dc2b"><td class="memItemLeft" align="right" valign="top"><a id="a67af790154c075f144af8c559437dc2b" name="a67af790154c075f144af8c559437dc2b"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_TREE_EMPTY</b> = &quot;4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a&quot;</td></tr>
+<tr class="memitem:a85c7818229ade6c61ea942679a507c8b" id="r_a85c7818229ade6c61ea942679a507c8b"><td class="memItemLeft" align="right" valign="top"><a id="a85c7818229ade6c61ea942679a507c8b" name="a85c7818229ade6c61ea942679a507c8b"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_PARENT_A</b> = &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;</td></tr>
+<tr class="memitem:ae2c3b5ed217c5dadad2145c743d4ff33" id="r_ae2c3b5ed217c5dadad2145c743d4ff33"><td class="memItemLeft" align="right" valign="top"><a id="ae2c3b5ed217c5dadad2145c743d4ff33" name="ae2c3b5ed217c5dadad2145c743d4ff33"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_PARENT_B</b> = &quot;bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&quot;</td></tr>
+<tr class="memitem:aced91404e2e9d33ee5f68384857e0e4a" id="r_aced91404e2e9d33ee5f68384857e0e4a"><td class="memItemLeft" align="right" valign="top"><a id="aced91404e2e9d33ee5f68384857e0e4a" name="aced91404e2e9d33ee5f68384857e0e4a"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_TREE_NEW</b> = &quot;c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1&quot;</td></tr>
+<tr class="memitem:a1d4bda334e97c04c2f4ac8f825f133da" id="r_a1d4bda334e97c04c2f4ac8f825f133da"><td class="memItemLeft" align="right" valign="top"><a id="a1d4bda334e97c04c2f4ac8f825f133da" name="a1d4bda334e97c04c2f4ac8f825f133da"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_PARENT_P1</b> = &quot;d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2&quot;</td></tr>
+<tr class="memitem:a99fe0d19e41efa399d3441adfe30297a" id="r_a99fe0d19e41efa399d3441adfe30297a"><td class="memItemLeft" align="right" valign="top"><a id="a99fe0d19e41efa399d3441adfe30297a" name="a99fe0d19e41efa399d3441adfe30297a"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::HASH_PARENT_P2</b> = &quot;e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3&quot;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Unit tests for the <a class="el" href="classCommit.html" title="Represents a single, immutable historical point (snapshot) in the repository&#39;s history.">Commit</a> class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity. </p>
+<div class="textblock"><p>Unit tests for the Commit class, verifying object construction, hash stability (parent order), and serialization/deserialization integrity. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

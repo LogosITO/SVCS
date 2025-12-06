@@ -2,7 +2,7 @@
 \hypertarget{classRemoveCommandTest}{}\label{classRemoveCommandTest}\index{RemoveCommandTest@{RemoveCommandTest}}
 
 
-Google Test fixture for running integration tests against the \doxylink{classRemoveCommand}{Remove\+Command}.  
+Google Test fixture for running integration tests against the Remove\+Command.  
 
 
 
@@ -27,8 +27,8 @@ void \mbox{\hyperlink{classRemoveCommandTest_a84749538ba2d893f044554a9c18b5ff1}{
 void \mbox{\hyperlink{classRemoveCommandTest_a90e4479ea9547df7885ea31f7ae08be5}{create\+Test\+Directory}} (const std\+::string \&dirname)
 \begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRemoveCommandTest_a2b86efc078f51d495d09353cb94251e5}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
-\begin{DoxyCompactList}\small\item\em Stages a list of files (using the add command logic for convenience) in the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging area. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Stages a list of files (using the add command logic for convenience) in the Repository\+Manager\textquotesingle{}s staging area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51}{contains\+Message}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -37,10 +37,10 @@ bool \mbox{\hyperlink{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51}{
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
 \begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer). \end{DoxyCompactList}\item 
 \Hypertarget{classRemoveCommandTest_a15568c85580d2f6515c679fdadef3df8}\label{classRemoveCommandTest_a15568c85580d2f6515c679fdadef3df8} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+std\+::shared\+\_\+ptr$<$ Repository\+Manager $>$ {\bfseries repo\+Manager}
 \begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
 \Hypertarget{classRemoveCommandTest_a3f82597bc8ae4cb6d8e96f9e097bb1df}\label{classRemoveCommandTest_a3f82597bc8ae4cb6d8e96f9e097bb1df} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRemoveCommand}{Remove\+Command}} $>$ {\bfseries command}
+std\+::unique\+\_\+ptr$<$ Remove\+Command $>$ {\bfseries command}
 \begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
 \Hypertarget{classRemoveCommandTest_afaa2df2092f0992a12d69cd988a38f9f}\label{classRemoveCommandTest_afaa2df2092f0992a12d69cd988a38f9f} 
 std\+::filesystem\+::path {\bfseries test\+Dir}
@@ -48,7 +48,7 @@ std\+::filesystem\+::path {\bfseries test\+Dir}
 
 
 \doxysubsection{Detailed Description}
-Google Test fixture for running integration tests against the \doxylink{classRemoveCommand}{Remove\+Command}. 
+Google Test fixture for running integration tests against the Remove\+Command. 
 
 This fixture provides the necessary infrastructure for testing the file removal command, ensuring it correctly stages files for removal from the repository, handles errors, and respects command line options. 
 
@@ -59,7 +59,7 @@ This fixture provides the necessary infrastructure for testing the file removal 
 \index{containsMessage@{containsMessage}!RemoveCommandTest@{RemoveCommandTest}}
 \doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
 {\footnotesize\ttfamily \label{classRemoveCommandTest_aea5058104cb64f2573de6ec9acc24f51} 
-bool Remove\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+bool Remove\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -125,7 +125,7 @@ void Remove\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const
 
 
 
-Stages a list of files (using the add command logic for convenience) in the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging area. 
+Stages a list of files (using the add command logic for convenience) in the Repository\+Manager\textquotesingle{}s staging area. 
 
 
 \begin{DoxyParams}{Parameters}

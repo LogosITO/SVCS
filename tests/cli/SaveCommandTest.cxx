@@ -13,6 +13,10 @@
 
 #include "utils/IntSaveCommandTest.hxx"
 
+namespace svcs::test::cli {
+
+using svcs::test::cli::utils::SaveCommandTest;
+
  TEST_F(SaveCommandTest, SaveWithStagedChanges) {
     // Stage files first
     stageFiles({"file1.txt", "file2.txt"});
@@ -181,4 +185,6 @@ TEST_F(SaveCommandTest, SaveWithSpecialCharactersInMessage) {
     
     auto notifications = mockEventBus->getNotifications();
     EXPECT_TRUE(containsMessage(notifications, "Message with spéciål chàräctêrs & symbols!"));
+}
+
 }

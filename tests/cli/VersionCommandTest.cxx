@@ -13,6 +13,10 @@
 
 #include "utils/IntVersionCommandTest.hxx"
 
+namespace svcs::test::cli {
+
+using svcs::test::cli::utils::VersionCommandTest;
+
 TEST_F(VersionCommandTest, ShowVersion) {
     std::vector<std::string> args = {};
     bool result = command->execute(args);
@@ -183,4 +187,6 @@ TEST_F(VersionCommandTest, AlwaysReturnsTrue) {
     std::vector<std::string> args3 = {"random", "arguments"};
     bool result3 = command->execute(args3);
     EXPECT_TRUE(result3);
+}
+
 }

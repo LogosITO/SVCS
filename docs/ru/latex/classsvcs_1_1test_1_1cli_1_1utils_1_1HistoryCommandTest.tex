@@ -1,0 +1,200 @@
+\doxysection{Класс svcs\+::test\+::cli\+::utils\+::History\+Command\+Test}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+
+
+Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+History\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::utils\+::History\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a4d5cb5af56568d8e4ff54af439b7ebbd}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ad277ae842437fd846cdbc1701bfd4844}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ac06926adb1f5a115a56b38bd7734da71}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content) const
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл с указанным содержимым во временной директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a3340384b08c07fd14d93418a4c3266e8}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию во временном расположении. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a808f84de4a7c9cb8413c54c2a7b7a6ee}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files) const
+\begin{DoxyCompactList}\small\item\em Индексирует список файлов с использованием логики индексации \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a3c10d3cee6d8197e8901f01e910bb090}{create\+Test\+Commit}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Создает новый коммит (сохранение) с указанным сообщением. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ad0fdfc41bc5102132584069c8bf606d5}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Подсчитывает количество вхождений конкретного сообщения (подстроки) во всех уведомлениях о событиях. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a88534c0896fd6a68fb7eb4eecc8cd283}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a68c6e98a4570360b56fbef448edcd0f4}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a68c6e98a4570360b56fbef448edcd0f4} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий (наблюдатель). \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a37e0a982519e902c291112bfcb4b4632}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a37e0a982519e902c291112bfcb4b4632} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Общий указатель на компонент основной логики репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a8457103ad641422081ac2ce50b003e3a}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a8457103ad641422081ac2ce50b003e3a} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand}{History\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_adf596a52c9a90335640aa4cf5aacae05}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_adf596a52c9a90335640aa4cf5aacae05} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной тестовой директории репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}. 
+
+Этот фикстур предоставляет необходимую инфраструктуру для интеграционных тестов команды history\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Управление временной директорией репозитория SVCS.
+\item {\bfseries{Основные компоненты\+:}} Экземпляры \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}{Mock\+Subject} (для шины событий) и \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} (для основной логики).
+\item {\bfseries{Вспомогательные методы\+:}} Упрощают создание файлов, индексацию и, что важно, создание mock коммитов для заполнения истории для тестирования различных форматов вывода и ограничений. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a88534c0896fd6a68fb7eb4eecc8cd283}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a88534c0896fd6a68fb7eb4eecc8cd283} 
+bool svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ad0fdfc41bc5102132584069c8bf606d5}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}!countMessages@{countMessages}}
+\index{countMessages@{countMessages}!svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ad0fdfc41bc5102132584069c8bf606d5} 
+int svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Подсчитывает количество вхождений конкретного сообщения (подстроки) во всех уведомлениях о событиях. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для подсчета. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество событий, содержащих подстроку. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a3c10d3cee6d8197e8901f01e910bb090}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}!createTestCommit@{createTestCommit}}
+\index{createTestCommit@{createTestCommit}!svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestCommit()}{createTestCommit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a3c10d3cee6d8197e8901f01e910bb090} 
+bool svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test\+::create\+Test\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый коммит (сохранение) с указанным сообщением. 
+
+Внутренне индексирует файлы (если необходимо) и вызывает логику коммита менеджера репозитория. 
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если коммит успешен, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a3340384b08c07fd14d93418a4c3266e8}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a3340384b08c07fd14d93418a4c3266e8} 
+void svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию во временном расположении. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Относительный путь/имя директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ac06926adb1f5a115a56b38bd7734da71}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ac06926adb1f5a115a56b38bd7734da71} 
+void svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл с указанным содержимым во временной директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Относительный путь/имя файла. \\
+\hline
+{\em content} & Содержимое для записи в файл. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a4d5cb5af56568d8e4ff54af439b7ebbd}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a4d5cb5af56568d8e4ff54af439b7ebbd} 
+void svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение перед каждым тестом. 
+
+Инициализирует компоненты, создает временную директорию и инициализирует репозиторий. \Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a808f84de4a7c9cb8413c54c2a7b7a6ee}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a808f84de4a7c9cb8413c54c2a7b7a6ee} 
+void svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Индексирует список файлов с использованием логики индексации \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em files} & Вектор имен файлов для индексации. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ad277ae842437fd846cdbc1701bfd4844}\index{svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!svcs::test::cli::utils::HistoryCommandTest@{svcs::test::cli::utils::HistoryCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ad277ae842437fd846cdbc1701bfd4844} 
+void svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение после каждого теста. 
+
+Очищает временную директорию и восстанавливает рабочий путь. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntHistoryCommandTest_8hxx}{Int\+History\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntHistoryCommandTest_8cxx}{Int\+History\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

@@ -16,6 +16,10 @@
 #include "../include/HelpCommand.hxx"
 #include "../../services/ISubject.hxx"
 
+namespace svcs::cli {
+
+using namespace svcs::services;
+
 HelpCommand::HelpCommand(std::shared_ptr<ISubject> subject,
                          std::shared_ptr<HelpService> helpService)
     : eventBus_(std::move(subject)), helpService_(std::move(helpService)) {
@@ -109,4 +113,6 @@ void HelpCommand::showCommandHelp(const std::string& commandName) const {
     
     // Use HelpService to show help for specific command
     helpService_->showCommandHelp(commandName);
+}
+
 }

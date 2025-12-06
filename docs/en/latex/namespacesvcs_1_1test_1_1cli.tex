@@ -1,0 +1,394 @@
+\doxysection{svcs\+::test\+::cli Namespace Reference}
+\hypertarget{namespacesvcs_1_1test_1_1cli}{}\label{namespacesvcs_1_1test_1_1cli}\index{svcs::test::cli@{svcs::test::cli}}
+
+
+Unit tests for command-\/line interface components.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1mocks}{mocks}}
+\begin{DoxyCompactList}\small\item\em Mock objects and test doubles for CLI command testing. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{utils}}
+\begin{DoxyCompactList}\small\item\em Utility classes and test fixtures for CLI command testing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsvcs_1_1test_1_1cli_1_1Event}{Event}}
+\begin{DoxyCompactList}\small\item\em Structure describing an event published by the VCS core. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1HelpCommand}{Help\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for displaying help information about other commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest}{Remove\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1cli_1_1RemoveCommand}{Remove\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1SaveCommandTest}{Save\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1cli_1_1SaveCommand}{Save\+Command} (commit). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1StatusCommandTest}{Status\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1cli_1_1StatusCommand}{Status\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest}{Undo\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1VersionCommandTest}{Version\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running unit/integration tests against the \doxylink{classsvcs_1_1cli_1_1VersionCommand}{Version\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a877268f94351a669c06b40a4611cb6f8}\label{namespacesvcs_1_1test_1_1cli_a877268f94351a669c06b40a4611cb6f8} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Failure\+\_\+\+No\+Repository)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a29424fb195639d50b7ddd84548ddf788}\label{namespacesvcs_1_1test_1_1cli_a29424fb195639d50b7ddd84548ddf788} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Add\+Single\+File)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a97426590852c1c5e636de345cad91097}\label{namespacesvcs_1_1test_1_1cli_a97426590852c1c5e636de345cad91097} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Add\+Multiple\+Files)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a02af1827641730c6f113c1595b82cdcc}\label{namespacesvcs_1_1test_1_1cli_a02af1827641730c6f113c1595b82cdcc} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Add\+All\+Files\+With\+Dot)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a9c264a9fd9ca9993f44d3c28632c2537}\label{namespacesvcs_1_1test_1_1cli_a9c264a9fd9ca9993f44d3c28632c2537} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Add\+Directory)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ae533f992ed4ec6ce8402855ab0cf0296}\label{namespacesvcs_1_1test_1_1cli_ae533f992ed4ec6ce8402855ab0cf0296} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Debug\+\_\+\+File\+Not\+Found\+But\+Continue)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a8baeb95f2e57cc6cdb473ea2b30c1673}\label{namespacesvcs_1_1test_1_1cli_a8baeb95f2e57cc6cdb473ea2b30c1673} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Warning\+\_\+\+File\+Not\+Found\+But\+Continue)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a541bfa333f31f3d1138a9202684c9360}\label{namespacesvcs_1_1test_1_1cli_a541bfa333f31f3d1138a9202684c9360} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+No\+Valid\+Files\+To\+Add)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a8a565eddd570e27b086e2d77851eae43}\label{namespacesvcs_1_1test_1_1cli_a8a565eddd570e27b086e2d77851eae43} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+All\+Files\+Not\+Found\+But\+No\+Error)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a32784f965cfee6f86f188558faedc2b4}\label{namespacesvcs_1_1test_1_1cli_a32784f965cfee6f86f188558faedc2b4} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Dry\+Run\+Mode)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a40bbf335f8725fb74e3a4ef9dd485e38}\label{namespacesvcs_1_1test_1_1cli_a40bbf335f8725fb74e3a4ef9dd485e38} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Help\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_afb74aeb9acd8493c1b9ec6c731f3e254}\label{namespacesvcs_1_1test_1_1cli_afb74aeb9acd8493c1b9ec6c731f3e254} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Failure\+\_\+\+No\+Files\+Specified)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a6743c5e4885d005210ca066a9dd9d166}\label{namespacesvcs_1_1test_1_1cli_a6743c5e4885d005210ca066a9dd9d166} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Interactive\+Mode\+Basic)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a2ebcc523908587d8c9501189f9164dd8}\label{namespacesvcs_1_1test_1_1cli_a2ebcc523908587d8c9501189f9164dd8} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Warning\+\_\+\+Unknown\+Option)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a5b870d6aafb84fa26bc9a27b7f85ad9a}\label{namespacesvcs_1_1test_1_1cli_a5b870d6aafb84fa26bc9a27b7f85ad9a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Exclude\+Pattern)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a9ece9ca571276efd1afa1475fd1505a2}\label{namespacesvcs_1_1test_1_1cli_a9ece9ca571276efd1afa1475fd1505a2} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Ignore\+Svcs\+Directory)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a8b1e262b8697029f18d7bb6c8eccf741}\label{namespacesvcs_1_1test_1_1cli_a8b1e262b8697029f18d7bb6c8eccf741} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}, Success\+\_\+\+Update\+And\+Force\+Flags)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a0b8dbc737fca9eeebf4141fff6cbf231}\label{namespacesvcs_1_1test_1_1cli_a0b8dbc737fca9eeebf4141fff6cbf231} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Failure\+\_\+\+No\+Repository)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aa55c6d2b47538e8d18e17281e556f630}\label{namespacesvcs_1_1test_1_1cli_aa55c6d2b47538e8d18e17281e556f630} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Success\+\_\+\+Help\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a7d1abc4da7c34456394859b648ec8716}\label{namespacesvcs_1_1test_1_1cli_a7d1abc4da7c34456394859b648ec8716} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Success\+\_\+\+Force\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aede53333f873283731c3457d128db1c5}\label{namespacesvcs_1_1test_1_1cli_aede53333f873283731c3457d128db1c5} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Success\+\_\+\+Force\+Short\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a559f85f1efb9dcbfbff5f54646639a0e}\label{namespacesvcs_1_1test_1_1cli_a559f85f1efb9dcbfbff5f54646639a0e} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Success\+\_\+\+User\+Confirmation\+Yes)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a5c5d0813c96c60982bdbafc0bef6222c}\label{namespacesvcs_1_1test_1_1cli_a5c5d0813c96c60982bdbafc0bef6222c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Success\+\_\+\+User\+Confirmation\+Yes\+Uppercase)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_adc4a7b1cb6d2d4060c4e745044ab8105}\label{namespacesvcs_1_1test_1_1cli_adc4a7b1cb6d2d4060c4e745044ab8105} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Success\+\_\+\+User\+Confirmation\+Yes\+Full)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a84075fa25eaeed2b914a01eeafb5bded}\label{namespacesvcs_1_1test_1_1cli_a84075fa25eaeed2b914a01eeafb5bded} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Failure\+\_\+\+User\+Confirmation\+No)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_abacdecbe66e08747a16121c4e8318753}\label{namespacesvcs_1_1test_1_1cli_abacdecbe66e08747a16121c4e8318753} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Failure\+\_\+\+User\+Confirmation\+Empty)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_adeb5e545a3e0605a070646412686d34d}\label{namespacesvcs_1_1test_1_1cli_adeb5e545a3e0605a070646412686d34d} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Success\+\_\+\+Warning\+Messages)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a1024c3240c59eb78e0f1042d6eef661c}\label{namespacesvcs_1_1test_1_1cli_a1024c3240c59eb78e0f1042d6eef661c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}, Debug\+\_\+\+Repository\+Structure)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ae0edd48f24928f83502c14ecbe9f5fd1}\label{namespacesvcs_1_1test_1_1cli_ae0edd48f24928f83502c14ecbe9f5fd1} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Show\+General\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a77094bcc4d5426ff4f89c085408c76f2}\label{namespacesvcs_1_1test_1_1cli_a77094bcc4d5426ff4f89c085408c76f2} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Show\+Command\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ab5085121f47b04c49aef9c13b60f3147}\label{namespacesvcs_1_1test_1_1cli_ab5085121f47b04c49aef9c13b60f3147} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Show\+Command\+Help\+Multiple\+Args)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ac79dd7d51125e8e1dcff08786d070e53}\label{namespacesvcs_1_1test_1_1cli_ac79dd7d51125e8e1dcff08786d070e53} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Show\+Help\+Command\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_afa0e163590a760247bdcf7427ecc1949}\label{namespacesvcs_1_1test_1_1cli_afa0e163590a760247bdcf7427ecc1949} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Error\+When\+Help\+Service\+Not\+Available\+General)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ab91104b3f2de40eb09de91cd8e68ee55}\label{namespacesvcs_1_1test_1_1cli_ab91104b3f2de40eb09de91cd8e68ee55} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Error\+When\+Help\+Service\+Not\+Available\+Command)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a8ef945f7164f996701901c773a27b1a5}\label{namespacesvcs_1_1test_1_1cli_a8ef945f7164f996701901c773a27b1a5} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Command\+Description\+And\+Usage)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a4a797568670c27cd69d7b89b25c5a9d5}\label{namespacesvcs_1_1test_1_1cli_a4a797568670c27cd69d7b89b25c5a9d5} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Correct\+Source)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a5ccefed550b0b100b7d9fc726bc504f9}\label{namespacesvcs_1_1test_1_1cli_a5ccefed550b0b100b7d9fc726bc504f9} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Empty\+Command\+List)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a96cc65c0b7fad1f35110eead89169664}\label{namespacesvcs_1_1test_1_1cli_a96cc65c0b7fad1f35110eead89169664} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Help\+For\+Non\+Existent\+Command)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a9ed881f0e6c56f7825dc4a111afecff2}\label{namespacesvcs_1_1test_1_1cli_a9ed881f0e6c56f7825dc4a111afecff2} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}, Multiple\+Help\+Commands)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a16c89e8a8e899f15be3224d3c9c6dc69}\label{namespacesvcs_1_1test_1_1cli_a16c89e8a8e899f15be3224d3c9c6dc69} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Debug\+Commit\+History)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a403664cf0d9701a91a6e9b28aea1d2c0}\label{namespacesvcs_1_1test_1_1cli_a403664cf0d9701a91a6e9b28aea1d2c0} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, History\+No\+Commits)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a1c12d48233c8ad591880c3187b9824ea}\label{namespacesvcs_1_1test_1_1cli_a1c12d48233c8ad591880c3187b9824ea} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, History\+With\+Commits)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a163afa85a49d78ec87411cb01dfdb7e4}\label{namespacesvcs_1_1test_1_1cli_a163afa85a49d78ec87411cb01dfdb7e4} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, History\+Oneline\+Format)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_afebc408df6f7d63b86e0b248d17f29ce}\label{namespacesvcs_1_1test_1_1cli_afebc408df6f7d63b86e0b248d17f29ce} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Debug\+Last\+NCommits\+Detailed)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ae90652b81d7eeb1f73c2eced44f7f55b}\label{namespacesvcs_1_1test_1_1cli_ae90652b81d7eeb1f73c2eced44f7f55b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, History\+Last\+NWith\+Oneline)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a9f83d2c6b2d80c0df61eea5ec42f7fff}\label{namespacesvcs_1_1test_1_1cli_a9f83d2c6b2d80c0df61eea5ec42f7fff} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Error\+When\+No\+Repository)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ad3c7312c078aa11966407a6a96fed181}\label{namespacesvcs_1_1test_1_1cli_ad3c7312c078aa11966407a6a96fed181} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Show\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a2b488ffb730c16805a5d4ea64ad46255}\label{namespacesvcs_1_1test_1_1cli_a2b488ffb730c16805a5d4ea64ad46255} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Error\+Missing\+Limit\+Value)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ab37e407a7d3c63a96cbcbd27d0b5d533}\label{namespacesvcs_1_1test_1_1cli_ab37e407a7d3c63a96cbcbd27d0b5d533} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Error\+Invalid\+Limit\+Value)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a24414224b7a8cd799e0a9c22204c0240}\label{namespacesvcs_1_1test_1_1cli_a24414224b7a8cd799e0a9c22204c0240} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Error\+Negative\+Limit)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a024c2e344232d2619696bbc739826353}\label{namespacesvcs_1_1test_1_1cli_a024c2e344232d2619696bbc739826353} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Error\+Zero\+Limit)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a0b85d4590cecc5421cc962be27da1e14}\label{namespacesvcs_1_1test_1_1cli_a0b85d4590cecc5421cc962be27da1e14} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Error\+Unknown\+Option)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ac8917713d05ba34aa2bc008c9f851bfb}\label{namespacesvcs_1_1test_1_1cli_ac8917713d05ba34aa2bc008c9f851bfb} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, Error\+Mutually\+Exclusive\+Options)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_adb080ce71aa36efc152dae176cdf9e99}\label{namespacesvcs_1_1test_1_1cli_adb080ce71aa36efc152dae176cdf9e99} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}, History\+Full\+Details)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ad7d5415064c966a9278a0f4be52c2b96}\label{namespacesvcs_1_1test_1_1cli_ad7d5415064c966a9278a0f4be52c2b96} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{Init\+Command\+Integration\+Test}}, Success\+\_\+\+Init\+In\+Empty\+Directory)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ac93320b9611d82aac4ebf80e4ee0eb09}\label{namespacesvcs_1_1test_1_1cli_ac93320b9611d82aac4ebf80e4ee0eb09} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{Init\+Command\+Integration\+Test}}, Success\+\_\+\+With\+Force\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a73fbdd8a812946ca47cd7c3b4c34caef}\label{namespacesvcs_1_1test_1_1cli_a73fbdd8a812946ca47cd7c3b4c34caef} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{Init\+Command\+Integration\+Test}}, Success\+\_\+\+With\+Custom\+Path)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a458eb2944ccbe04f9954f8a6d0132379}\label{namespacesvcs_1_1test_1_1cli_a458eb2944ccbe04f9954f8a6d0132379} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{Init\+Command\+Integration\+Test}}, Help\+Flag\+Shows\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a19f8c59d6b7524e01bee9528ceae2d99}\label{namespacesvcs_1_1test_1_1cli_a19f8c59d6b7524e01bee9528ceae2d99} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Remove\+Single\+File)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a8facc606d2903b1089e208b8c859ead1}\label{namespacesvcs_1_1test_1_1cli_a8facc606d2903b1089e208b8c859ead1} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Remove\+Multiple\+Files)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ab1e45fbb810fc93bd49aaa598f6407dc}\label{namespacesvcs_1_1test_1_1cli_ab1e45fbb810fc93bd49aaa598f6407dc} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Remove\+All\+Files\+With\+Confirmation)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a2cd97f54ea122937544f35bea00992b8}\label{namespacesvcs_1_1test_1_1cli_a2cd97f54ea122937544f35bea00992b8} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Remove\+All\+Files\+With\+Rejection)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a40c079b3381b280c7540bd7983935de8}\label{namespacesvcs_1_1test_1_1cli_a40c079b3381b280c7540bd7983935de8} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Remove\+All\+Files\+With\+Dot)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ae7892a42827b54b5c320ff9cc00fad6e}\label{namespacesvcs_1_1test_1_1cli_ae7892a42827b54b5c320ff9cc00fad6e} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Remove\+All\+Files\+With\+Force)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_af4ff6f99a1e2135ff67fe9300c51cf7e}\label{namespacesvcs_1_1test_1_1cli_af4ff6f99a1e2135ff67fe9300c51cf7e} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Remove\+When\+No\+Files\+Staged)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a642f11c91e7bbdcfbd9dec14be434363}\label{namespacesvcs_1_1test_1_1cli_a642f11c91e7bbdcfbd9dec14be434363} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Show\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a4c637bae82c3090bc9a897e256abd021}\label{namespacesvcs_1_1test_1_1cli_a4c637bae82c3090bc9a897e256abd021} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Error\+When\+No\+Repository)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a2f7a58e078156951460866e2e871e49d}\label{namespacesvcs_1_1test_1_1cli_a2f7a58e078156951460866e2e871e49d} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Error\+When\+No\+Arguments)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a139a772e3081e6847c96ebf5d1ff1bdd}\label{namespacesvcs_1_1test_1_1cli_a139a772e3081e6847c96ebf5d1ff1bdd} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}, Remove\+File\+From\+Subdirectory)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a6230e8f2ba5d1e921e04a4102f8f22e1}\label{namespacesvcs_1_1test_1_1cli_a6230e8f2ba5d1e921e04a4102f8f22e1} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Save\+With\+Staged\+Changes)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a00f5493a36db058b36cccd089dbd6e9a}\label{namespacesvcs_1_1test_1_1cli_a00f5493a36db058b36cccd089dbd6e9a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Save\+With\+Message\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a95557207ab17d317842ccf96656ad986}\label{namespacesvcs_1_1test_1_1cli_a95557207ab17d317842ccf96656ad986} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Error\+When\+No\+Repository)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a197a881e3d5aa92519a7dd0be9be577a}\label{namespacesvcs_1_1test_1_1cli_a197a881e3d5aa92519a7dd0be9be577a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Error\+When\+No\+Message)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a83bac91d719246aceac0e227f336ab5c}\label{namespacesvcs_1_1test_1_1cli_a83bac91d719246aceac0e227f336ab5c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Error\+When\+Empty\+Message)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_abeb1a77decdeb036222fdaebd86a2275}\label{namespacesvcs_1_1test_1_1cli_abeb1a77decdeb036222fdaebd86a2275} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Error\+When\+Message\+Too\+Short)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a137baaf98883af0d59db9253ab6c799a}\label{namespacesvcs_1_1test_1_1cli_a137baaf98883af0d59db9253ab6c799a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Error\+When\+No\+Staged\+Changes)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a5ca04008e935659046f41768c9e9db5b}\label{namespacesvcs_1_1test_1_1cli_a5ca04008e935659046f41768c9e9db5b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Show\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ad62cc7bb7b8fb774b45fdc068bf153a1}\label{namespacesvcs_1_1test_1_1cli_ad62cc7bb7b8fb774b45fdc068bf153a1} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Message\+Parsing\+Different\+Orders)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a13e1c7d8e53996ac22b018c769e1f311}\label{namespacesvcs_1_1test_1_1cli_a13e1c7d8e53996ac22b018c769e1f311} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Save\+With\+Long\+Message\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aaf25999d3b6233534836f8a67172bb7a}\label{namespacesvcs_1_1test_1_1cli_aaf25999d3b6233534836f8a67172bb7a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Staging\+Area\+Cleared\+After\+Save)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aacc59f69223b21a28aac7ce416945881}\label{namespacesvcs_1_1test_1_1cli_aacc59f69223b21a28aac7ce416945881} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}, Save\+With\+Special\+Characters\+In\+Message)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a7acbcdb21db4bc14a4137755bb1c2ac8}\label{namespacesvcs_1_1test_1_1cli_a7acbcdb21db4bc14a4137755bb1c2ac8} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, Full\+Status\+No\+Staged\+Files)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a1ac421086ced48840934b3bb2a0ffa38}\label{namespacesvcs_1_1test_1_1cli_a1ac421086ced48840934b3bb2a0ffa38} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, Full\+Status\+With\+Staged\+Files)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a602863249baabdcf50804728f19b00b5}\label{namespacesvcs_1_1test_1_1cli_a602863249baabdcf50804728f19b00b5} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, File\+Status\+Specific\+Files)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a95acb30608b2e6d82ff115c2720244cd}\label{namespacesvcs_1_1test_1_1cli_a95acb30608b2e6d82ff115c2720244cd} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, File\+Status\+With\+Missing\+File)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_af60959211426a445a326d3e17af8359c}\label{namespacesvcs_1_1test_1_1cli_af60959211426a445a326d3e17af8359c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, File\+Status\+Only\+Missing\+Files)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a16e51f07bb92fa247530369bdc5ef30e}\label{namespacesvcs_1_1test_1_1cli_a16e51f07bb92fa247530369bdc5ef30e} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, Error\+When\+No\+Repository)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ab0474695f5dae9160d182fbfdc46197d}\label{namespacesvcs_1_1test_1_1cli_ab0474695f5dae9160d182fbfdc46197d} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, Show\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ac0b781a9f13121ace82beaacb7b74a54}\label{namespacesvcs_1_1test_1_1cli_ac0b781a9f13121ace82beaacb7b74a54} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, Status\+With\+Subdirectory\+Files)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a6d8c830798394a4df5622e58885f7b8c}\label{namespacesvcs_1_1test_1_1cli_a6d8c830798394a4df5622e58885f7b8c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, Empty\+File\+Status)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_add7a7661209496b0f88c5eecfb3ed025}\label{namespacesvcs_1_1test_1_1cli_add7a7661209496b0f88c5eecfb3ed025} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, File\+Status\+Empty\+List)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ad3ef165aad9d539dff6cdc429013f151}\label{namespacesvcs_1_1test_1_1cli_ad3ef165aad9d539dff6cdc429013f151} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}, Status\+Shows\+Correct\+File\+States)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a0dd1a7a2e8cfb740144f2b3b1fb17695}\label{namespacesvcs_1_1test_1_1cli_a0dd1a7a2e8cfb740144f2b3b1fb17695} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+Last\+Commit\+With\+Force)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aa38a7f681aa7a9b61a40c2c7c1a00b2c}\label{namespacesvcs_1_1test_1_1cli_aa38a7f681aa7a9b61a40c2c7c1a00b2c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+Last\+Commit\+Explicit\+With\+Force)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aa1463c5089180609ac14357c3a57d17c}\label{namespacesvcs_1_1test_1_1cli_aa1463c5089180609ac14357c3a57d17c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+Specific\+Commit\+With\+Force)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a55e4fe227a4fbb1df2108a975c3b6df1}\label{namespacesvcs_1_1test_1_1cli_a55e4fe227a4fbb1df2108a975c3b6df1} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Commit\+Flag\+And\+Force)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aebd2ddafe44510ea467750be337b4b8d}\label{namespacesvcs_1_1test_1_1cli_aebd2ddafe44510ea467750be337b4b8d} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Force\+Undo\+Initial\+Commit)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aa5f4393b936e531dfa9d52719a0765b9}\label{namespacesvcs_1_1test_1_1cli_aa5f4393b936e531dfa9d52719a0765b9} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Multiple\+Flags\+And\+Force)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ad02eea0c987104506799d0fe5bd5c927}\label{namespacesvcs_1_1test_1_1cli_ad02eea0c987104506799d0fe5bd5c927} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Multiple\+Undo\+Commands\+With\+Force)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a012b16c6a836cd8c628885bf5a6518ed}\label{namespacesvcs_1_1test_1_1cli_a012b16c6a836cd8c628885bf5a6518ed} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Short\+Force\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a67a9d4d3032382a43c8f70ae4dfb6a8a}\label{namespacesvcs_1_1test_1_1cli_a67a9d4d3032382a43c8f70ae4dfb6a8a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Short\+Flags)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a920b04f8285ced44fababe6b145f08bb}\label{namespacesvcs_1_1test_1_1cli_a920b04f8285ced44fababe6b145f08bb} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Invalid\+Commit\+Hash)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a50ed959366bd558b5b076d5d680aaf97}\label{namespacesvcs_1_1test_1_1cli_a50ed959366bd558b5b076d5d680aaf97} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Only\+Force\+Flag)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ada50aff253ae40310d77b16a8928d5ef}\label{namespacesvcs_1_1test_1_1cli_ada50aff253ae40310d77b16a8928d5ef} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Full\+Commit\+Hash)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a9c7b4b16cce84ab941ed781f1a58cbc3}\label{namespacesvcs_1_1test_1_1cli_a9c7b4b16cce84ab941ed781f1a58cbc3} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Mixed\+Flag\+Order)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a0f417e282cdc4c3a106b181947eba70a}\label{namespacesvcs_1_1test_1_1cli_a0f417e282cdc4c3a106b181947eba70a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Verify\+Repository\+State\+After\+Force\+Undo)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a9eda79a2fa1be5b7fc767752cfffaf6c}\label{namespacesvcs_1_1test_1_1cli_a9eda79a2fa1be5b7fc767752cfffaf6c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+Commit\+With\+Special\+Characters)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a2ec0bf2f0339c7640ea0e56e2ac70a20}\label{namespacesvcs_1_1test_1_1cli_a2ec0bf2f0339c7640ea0e56e2ac70a20} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}, Undo\+With\+Large\+Commit\+History)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ab812c411e5f93843e22135a0be0881b0}\label{namespacesvcs_1_1test_1_1cli_ab812c411e5f93843e22135a0be0881b0} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Show\+Version)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a82c26fea9309a4b9f749fd7399b643b1}\label{namespacesvcs_1_1test_1_1cli_a82c26fea9309a4b9f749fd7399b643b1} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Show\+Version\+With\+Arguments)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a3845fd07accf56001a05d165383a42ce}\label{namespacesvcs_1_1test_1_1cli_a3845fd07accf56001a05d165383a42ce} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Show\+Help)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aa60b0a3adfb34350811488fe2527668a}\label{namespacesvcs_1_1test_1_1cli_aa60b0a3adfb34350811488fe2527668a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Version\+String\+Format)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a4272597a83cbdad1c5e8d0932ecb0752}\label{namespacesvcs_1_1test_1_1cli_a4272597a83cbdad1c5e8d0932ecb0752} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Copyright\+Information)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aae559949f021330e580e9f630ff39473}\label{namespacesvcs_1_1test_1_1cli_aae559949f021330e580e9f630ff39473} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Build\+Information)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_aa5c325587dc9219d8b79bf6b4bd39d22}\label{namespacesvcs_1_1test_1_1cli_aa5c325587dc9219d8b79bf6b4bd39d22} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Multiple\+Executions)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a758c674a13936348ba760e99e951dc6e}\label{namespacesvcs_1_1test_1_1cli_a758c674a13936348ba760e99e951dc6e} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Correct\+Source)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_ab6a6d4e42b5e5ac2e06770cb4bdacb23}\label{namespacesvcs_1_1test_1_1cli_ab6a6d4e42b5e5ac2e06770cb4bdacb23} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Empty\+Arguments)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_a7998e303acfffa9cb1dc620a109c9fe0}\label{namespacesvcs_1_1test_1_1cli_a7998e303acfffa9cb1dc620a109c9fe0} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}, Always\+Returns\+True)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit tests for command-\/line interface components. 
+
+Contains test cases for CLI commands, command parsing, and user interaction scenarios. Tests in this namespace validate the behavior and correctness of all user-\/facing commands. 

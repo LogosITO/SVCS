@@ -60,7 +60,12 @@ var NAVTREE =
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -75,12 +80,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Enumerations", "globals_enum.html", null ]
-      ] ]
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
@@ -88,9 +88,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classClearCommandTest.html#a974fec48c350cf3a165d645e2bb82fa4",
-"classRepoCommand.html#acb1b0c594bc5ff13da81126a1baddc73",
-"functions_s.html"
+"classsvcs_1_1cli_1_1HelpCommand.html#a04b5a097d88ac3f5f7168e8974e091c9",
+"classsvcs_1_1core_1_1ObjectStorage.html#ab6ceb81115dacf56d6a99f5721e30c78",
+"classsvcs_1_1server_1_1cli_1_1ServerBaseCommand.html#aa74199cd1feddb12fe2afd072c9053ed",
+"classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html",
+"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#acdb90f4f22c89514d2429730b5a3623d",
+"dir_7aaa9be0db659c034f76fbd23c494013.html",
+"structsvcs_1_1test_1_1cli_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a6827e02397f1c41d06295d14a60cd45a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

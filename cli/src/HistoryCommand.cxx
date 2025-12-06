@@ -18,6 +18,11 @@
 #include <sstream>
 #include <utility>
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 HistoryCommand::HistoryCommand(std::shared_ptr<ISubject> subject,
                                std::shared_ptr<RepositoryManager> repoManager)
     : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
@@ -212,4 +217,6 @@ std::string HistoryCommand::truncateString(const std::string& str, const size_t 
         return str;
     }
     return str.substr(0, length - 3) + "...";
+}
+
 }

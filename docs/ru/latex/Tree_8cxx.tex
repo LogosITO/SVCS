@@ -2,54 +2,34 @@
 \hypertarget{Tree_8cxx}{}\label{Tree_8cxx}\index{core/src/Tree.cxx@{core/src/Tree.cxx}}
 
 
-Реализация класса \doxylink{classTree}{Tree}, который представляет структуру директорий в SVCS и отображает имена на хеши объектов.  
+Реализация класса Tree, который представляет структуру директорий в SVCS и отображает имена на хеши объектов.  
 
 
 {\ttfamily \#include "{}../include/\+Tree.\+hxx"{}}\newline
 {\ttfamily \#include "{}../include/\+Utils.\+hxx"{}}\newline
 {\ttfamily \#include $<$algorithm$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Основные структуры данных СКВ и модель объектов. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Функции}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \mbox{\hyperlink{Tree_8cxx_a15d13a6036a062282a24e34a2fe7751f}{create\+Entry}} (std\+::string name, std\+::string hash\+\_\+id)
+\mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} \mbox{\hyperlink{namespacesvcs_1_1core_a0d0715b6f2a56f90b0f7fccbe3b2b1a9}{svcs\+::core\+::create\+Entry}} (std\+::string name, std\+::string hash\+\_\+id)
 \begin{DoxyCompactList}\small\item\em Создание записи дерева. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Переменные}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{Tree_8cxx_ab701d9343b98572bdceaf66d1ab43fb1}\label{Tree_8cxx_ab701d9343b98572bdceaf66d1ab43fb1} 
-constexpr size\+\_\+t {\bfseries HASH\+\_\+\+BYTE\+\_\+\+SIZE} = 32
+\Hypertarget{namespacesvcs_1_1core_a6c61f3309e13612b39fe80837500710c}\label{namespacesvcs_1_1core_a6c61f3309e13612b39fe80837500710c} 
+constexpr size\+\_\+t {\bfseries svcs\+::core\+::\+HASH\+\_\+\+BYTE\+\_\+\+SIZE} = 32
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация класса \doxylink{classTree}{Tree}, который представляет структуру директорий в SVCS и отображает имена на хеши объектов. 
+Реализация класса Tree, который представляет структуру директорий в SVCS и отображает имена на хеши объектов. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License 
 \end{DoxyCopyright}
-
-
-\label{doc-func-members}
-\Hypertarget{Tree_8cxx_doc-func-members}
-\doxysubsection{Функции}
-\Hypertarget{Tree_8cxx_a15d13a6036a062282a24e34a2fe7751f}\index{Tree.cxx@{Tree.cxx}!createEntry@{createEntry}}
-\index{createEntry@{createEntry}!Tree.cxx@{Tree.cxx}}
-\doxysubsubsection{\texorpdfstring{createEntry()}{createEntry()}}
-{\footnotesize\ttfamily \label{Tree_8cxx_a15d13a6036a062282a24e34a2fe7751f} 
-\mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} create\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{hash\+\_\+id}{}\end{DoxyParamCaption})}
-
-
-
-Создание записи дерева. 
-
-\begin{DoxyReturn}{Возвращает}
-Возвращает готовую запись \doxylink{structTreeEntry}{Tree\+Entry}. 
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Аргументы}
-{\em name} & Имя файла или поддиректории. \\
-\hline
-{\em hash\+\_\+id} & Хеш-\/идентификатор (SHA-\/256). \\
-\hline
-\end{DoxyParams}

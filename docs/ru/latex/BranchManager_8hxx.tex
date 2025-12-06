@@ -2,7 +2,7 @@
 \hypertarget{BranchManager_8hxx}{}\label{BranchManager_8hxx}\index{core/include/BranchManager.hxx@{core/include/BranchManager.hxx}}
 
 
-Declaration of the \doxylink{classBranchManager}{Branch\+Manager} class for handling version control branches.  
+Declaration of the Branch\+Manager class for handling version control branches.  
 
 
 {\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
@@ -14,16 +14,21 @@ Declaration of the \doxylink{classBranchManager}{Branch\+Manager} class for hand
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classBranchManager}{Branch\+Manager}}
+class \mbox{\hyperlink{classsvcs_1_1core_1_1BranchManager}{svcs\+::core\+::\+Branch\+Manager}}
 \begin{DoxyCompactList}\small\item\em Основной сервис для управления ветвями системы контроля версий (создание, удаление, переключение). \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch\+Manager\+::\+Branch}}
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1BranchManager_1_1Branch}{svcs\+::core\+::\+Branch\+Manager\+::\+Branch}}
 \begin{DoxyCompactList}\small\item\em Структура для хранения метаданных одной ветви. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Основные структуры данных СКВ и модель объектов. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Declaration of the \doxylink{classBranchManager}{Branch\+Manager} class for handling version control branches. 
+Declaration of the Branch\+Manager class for handling version control branches. 
 
-\doxylink{classBranchManager}{Branch\+Manager} отвечает за все операции, связанные с управлением ветвями в репозитории SVCS, включая создание, удаление, переименование и переключение. Он управляет метаданными ветвей в памяти и сохраняет изменения в файловой системе, используя служебные методы для загрузки и сохранения состояния.
+Branch\+Manager отвечает за все операции, связанные с управлением ветвями в репозитории SVCS, включая создание, удаление, переименование и переключение. Он управляет метаданными ветвей в памяти и сохраняет изменения в файловой системе, используя служебные методы для загрузки и сохранения состояния.
 
 \begin{DoxyCopyright}{Авторство}
 {\bfseries{Copyright (c) 2025 Logos\+ITO}} @license {\bfseries{MIT License}} 

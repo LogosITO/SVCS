@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Структура svcs::core::IndexEntry</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('structsvcs_1_1core_1_1IndexEntry.html','','structsvcs_1_1core_1_1IndexEntry-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Структура svcs::core::IndexEntry</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Представляет одну запись файла в области подготовки (<a class="el" href="classsvcs_1_1core_1_1Index.html" title="Управляет областью подготовки (Index) репозитория СКВ.">Index</a>).  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Index_8hxx_source.html">Index.hxx</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:aebf4cc2167bb5bc331431b0b6e8899ec" id="r_aebf4cc2167bb5bc331431b0b6e8899ec"><td class="memItemLeft" align="right" valign="top"><a id="aebf4cc2167bb5bc331431b0b6e8899ec" name="aebf4cc2167bb5bc331431b0b6e8899ec"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>blob_hash</b></td></tr>
+<tr class="memdesc:aebf4cc2167bb5bc331431b0b6e8899ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хеш SHA-256 содержимого файла (ID объекта <a class="el" href="classsvcs_1_1core_1_1Blob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a>). <br /></td></tr>
+<tr class="memitem:aa6e7f6b7d31799713b3a8a27d164730b" id="r_aa6e7f6b7d31799713b3a8a27d164730b"><td class="memItemLeft" align="right" valign="top"><a id="aa6e7f6b7d31799713b3a8a27d164730b" name="aa6e7f6b7d31799713b3a8a27d164730b"></a>
+fs::path&#160;</td><td class="memItemRight" valign="bottom"><b>file_path</b></td></tr>
+<tr class="memdesc:aa6e7f6b7d31799713b3a8a27d164730b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Путь к файлу относительно корневой директории репозитория. <br /></td></tr>
+<tr class="memitem:ae2673145f069c57b8540b198bf6bb48c" id="r_ae2673145f069c57b8540b198bf6bb48c"><td class="memItemLeft" align="right" valign="top"><a id="ae2673145f069c57b8540b198bf6bb48c" name="ae2673145f069c57b8540b198bf6bb48c"></a>
+fs::file_time_type&#160;</td><td class="memItemRight" valign="bottom"><b>last_modified</b></td></tr>
+<tr class="memdesc:ae2673145f069c57b8540b198bf6bb48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время последнего изменения файла, используется для обнаружения изменений. <br /></td></tr>
+<tr class="memitem:a69ef8ed231f4b7b00f7bac1c7a28cb74" id="r_a69ef8ed231f4b7b00f7bac1c7a28cb74"><td class="memItemLeft" align="right" valign="top"><a id="a69ef8ed231f4b7b00f7bac1c7a28cb74" name="a69ef8ed231f4b7b00f7bac1c7a28cb74"></a>
+long long&#160;</td><td class="memItemRight" valign="bottom"><b>file_size</b> = 0</td></tr>
+<tr class="memdesc:a69ef8ed231f4b7b00f7bac1c7a28cb74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер файла в байтах. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Представляет одну запись файла в области подготовки (<a class="el" href="classsvcs_1_1core_1_1Index.html" title="Управляет областью подготовки (Index) репозитория СКВ.">Index</a>). </p>
+<p><a class="el" href="structsvcs_1_1core_1_1IndexEntry.html" title="Представляет одну запись файла в области подготовки (Index).">IndexEntry</a> хранит информацию о файле, который подготовлен для следующего коммита, включая его ID объекта (хеш) и метаданные файла, используемые для обнаружения изменений. </p>
+</div><hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>core/include/<a class="el" href="Index_8hxx_source.html">Index.hxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>svcs</b></li><li class="navelem"><a href="namespacesvcs_1_1core.html">core</a></li><li class="navelem"><a href="structsvcs_1_1core_1_1IndexEntry.html">IndexEntry</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

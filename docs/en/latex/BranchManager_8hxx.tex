@@ -2,7 +2,7 @@
 \hypertarget{BranchManager_8hxx}{}\label{BranchManager_8hxx}\index{core/include/BranchManager.hxx@{core/include/BranchManager.hxx}}
 
 
-Declaration of the \doxylink{classBranchManager}{Branch\+Manager} class for handling version control branches.  
+Declaration of the Branch\+Manager class for handling version control branches.  
 
 
 {\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
@@ -14,13 +14,18 @@ Declaration of the \doxylink{classBranchManager}{Branch\+Manager} class for hand
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classBranchManager}{Branch\+Manager}}
+class \mbox{\hyperlink{classsvcs_1_1core_1_1BranchManager}{svcs\+::core\+::\+Branch\+Manager}}
 \begin{DoxyCompactList}\small\item\em Core service for managing version control branches (creation, deletion, switching). \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structBranchManager_1_1Branch}{Branch\+Manager\+::\+Branch}}
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1BranchManager_1_1Branch}{svcs\+::core\+::\+Branch\+Manager\+::\+Branch}}
 \begin{DoxyCompactList}\small\item\em Structure to hold the metadata for a single branch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Core VCS data structures and object model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaration of the \doxylink{classBranchManager}{Branch\+Manager} class for handling version control branches. 
+Declaration of the Branch\+Manager class for handling version control branches. 
 
-The \doxylink{classBranchManager}{Branch\+Manager} is responsible for all operations related to managing branches within the SVCS repository, including creation, deletion, renaming, and switching. It manages branch metadata in memory and persists changes to the underlying file system using utility methods for loading and saving state. 
+The Branch\+Manager is responsible for all operations related to managing branches within the SVCS repository, including creation, deletion, renaming, and switching. It manages branch metadata in memory and persists changes to the underlying file system using utility methods for loading and saving state. 

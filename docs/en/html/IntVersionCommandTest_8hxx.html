@@ -92,26 +92,35 @@ $(function(){initNavTree('IntVersionCommandTest_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Test fixture header for integration tests of the <a class="el" href="classVersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a> class.  
+<p>Test fixture header for integration tests of the <a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a> class.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &quot;<a class="el" href="VersionCommand_8hxx_source.html">../../../cli/include/VersionCommand.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MockSubject_8hxx_source.html">../mocks/MockSubject.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cli_2mocks_2MockSubject_8hxx_source.html">../mocks/MockSubject.hxx</a>&quot;</code><br />
 </div>
 <p><a href="IntVersionCommandTest_8hxx_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:VersionCommandTest" id="r_VersionCommandTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVersionCommandTest.html">VersionCommandTest</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Google Test fixture for running unit/integration tests against the <a class="el" href="classVersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a>.  <a href="classVersionCommandTest.html#details">More...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3Autils_3A_3AVersionCommandTest" id="r_svcs_3A_3Atest_3A_3Acli_3A_3Autils_3A_3AVersionCommandTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest.html">svcs::test::cli::utils::VersionCommandTest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Google Test fixture for running unit/integration tests against the <a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a>.  <a href="classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest.html#details">More...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3Autils_3A_3AVersionCommand" id="r_svcs_3A_3Atest_3A_3Acli_3A_3Autils_3A_3AVersionCommand"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand.html">svcs::test::cli::utils::VersionCommand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command for displaying version information about SVCS.  <a href="classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3Autils" id="r_svcs_3A_3Atest_3A_3Acli_3A_3Autils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli_1_1utils.html">svcs::test::cli::utils</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli_1_1utils"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility classes and test fixtures for CLI command testing. <br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli" id="r_svcs_3A_3Atest_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli.html">svcs::test::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for command-line interface components. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Test fixture header for integration tests of the <a class="el" href="classVersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a> class. </p>
+<div class="textblock"><p>Test fixture header for integration tests of the <a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand.html" title="Command for displaying version information about SVCS.">VersionCommand</a> class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p>Declares the <a class="el" href="classVersionCommandTest.html" title="Google Test fixture for running unit/integration tests against the VersionCommand.">VersionCommandTest</a> fixture, which sets up the mock event bus and the command instance necessary to verify the output and behavior of the 'svcs version' command. Since the command is stateless, the setup is minimal. </p>
+<p>Declares the VersionCommandTest fixture, which sets up the mock event bus and the command instance necessary to verify the output and behavior of the 'svcs version' command. Since the command is stateless, the setup is minimal. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

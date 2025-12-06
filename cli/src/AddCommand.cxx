@@ -15,6 +15,11 @@
 
 #include "../include/AddCommand.hxx"
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 AddCommand::AddCommand(std::shared_ptr<ISubject> subject, 
                        std::shared_ptr<RepositoryManager> repoManager)
     : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
@@ -308,4 +313,6 @@ void AddCommand::showHelp() const {
     eventBus_->notify({Event::HELP_MESSAGE, "  svcs add .                     Add all files in current directory", "add"});
     eventBus_->notify({Event::HELP_MESSAGE, "  svcs add --dry-run .           Show what would be added", "add"});
     eventBus_->notify({Event::HELP_MESSAGE, "  svcs add src/ include/         Add directories", "add"});
+}
+
 }

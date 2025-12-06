@@ -16,6 +16,11 @@
 #include <fstream>
 #include <set>
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 MergeCommand::MergeCommand(std::shared_ptr<ISubject> event_bus,
                          std::shared_ptr<RepositoryManager> repo_manager)
     : event_bus_(std::move(event_bus))
@@ -429,4 +434,6 @@ bool MergeCommand::mergeFileContent(const std::string& ancestor_content,
                     "\n=======\n" + other_content + 
                     "\n>>>>>>> Other\n";
     return false; // Conflict
+}
+
 }

@@ -2,7 +2,7 @@
 \hypertarget{HubCommand_8hxx}{}\label{HubCommand_8hxx}\index{server/include/HubCommand.hxx@{server/include/HubCommand.hxx}}
 
 
-Объявление класса \doxylink{classHubCommand}{Hub\+Command} для создания центральных голых репозиториев.  
+Объявление класса Hub\+Command для создания центральных голых репозиториев.  
 
 
 {\ttfamily \#include "{}Server\+Base\+Command.\+hxx"{}}\newline
@@ -10,15 +10,22 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classHubCommand}{Hub\+Command}}
+class \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand}{svcs\+::server\+::cli\+::\+Hub\+Command}}
 \begin{DoxyCompactList}\small\item\em Команда для создания центральных репозиториев-\/хабов для командного сотрудничества. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server_1_1cli}{svcs\+::server\+::cli}}
+\begin{DoxyCompactList}\small\item\em Компоненты командной строки для администрирования сервера. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Серверные компоненты и команды администрирования. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Объявление класса \doxylink{classHubCommand}{Hub\+Command} для создания центральных голых репозиториев. 
+Объявление класса Hub\+Command для создания центральных голых репозиториев. 
 
 ~\newline
  \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classHubCommand}{Hub\+Command} реализует команду \textquotesingle{}svcs hub\textquotesingle{} для создания центральных голых репозиториев, которые служат центрами сотрудничества для команд разработчиков. Эти репозитории не имеют рабочих директорий и оптимизированы для удаленного доступа. Команда создает необходимую структуру директорий и файлы конфигурации, требуемые для функционального центрального репозитория. 
+Hub\+Command реализует команду \textquotesingle{}svcs hub\textquotesingle{} для создания центральных голых репозиториев, которые служат центрами сотрудничества для команд разработчиков. Эти репозитории не имеют рабочих директорий и оптимизированы для удаленного доступа. Команда создает необходимую структуру директорий и файлы конфигурации, требуемые для функционального центрального репозитория. 

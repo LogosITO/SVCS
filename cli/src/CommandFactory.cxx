@@ -34,6 +34,11 @@
 #include <memory>
 #include <utility>
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 static bool isInitializing = false;
 
 CommandFactory::CommandFactory(std::shared_ptr<ISubject> bus, 
@@ -183,4 +188,6 @@ std::vector<std::string> CommandFactory::getRegisteredCommands() const {
         commands.push_back(pair.first);
     }
     return commands;
+}
+
 }

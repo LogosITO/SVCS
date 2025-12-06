@@ -2,7 +2,7 @@
 \hypertarget{StorageTest_8cxx}{}\label{StorageTest_8cxx}\index{tests/core/StorageTest.cxx@{tests/core/StorageTest.cxx}}
 
 
-Unit tests for the \doxylink{classObjectStorage}{Object\+Storage} class, verifying persistence, file path generation, compression, and object loading integrity for all \doxylink{classVcsObject}{Vcs\+Object} types (\doxylink{classBlob}{Blob}, \doxylink{classTree}{Tree}, \doxylink{classCommit}{Commit}).  
+Unit tests for the Object\+Storage class, verifying persistence, file path generation, compression, and object loading integrity for all Vcs\+Object types (Blob, Tree, Commit).  
 
 
 {\ttfamily \#include "{}../../core/include/\+Object\+Storage.\+hxx"{}}\newline
@@ -15,61 +15,66 @@ Unit tests for the \doxylink{classObjectStorage}{Object\+Storage} class, verifyi
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classMockSubject}{Mock\+Subject}}
-\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classISubject}{ISubject} (\doxylink{structEvent}{Event} Bus). \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classNullObserver}{Null\+Observer}}
-\begin{DoxyCompactList}\small\item\em Null implementation of \doxylink{classIObserver}{IObserver}. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classObjectStorageTest}{Object\+Storage\+Test}}
-\begin{DoxyCompactList}\small\item\em Test fixture for the \doxylink{classObjectStorage}{Object\+Storage} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject}{svcs\+::test\+::core\+::\+Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (\doxylink{structsvcs_1_1services_1_1Event}{Event} Bus). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1NullObserver}{svcs\+::test\+::core\+::\+Null\+Observer}}
+\begin{DoxyCompactList}\small\item\em Null implementation of \doxylink{classsvcs_1_1services_1_1IObserver}{IObserver}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{svcs\+::test\+::core\+::\+Object\+Storage\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for the \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1core}{svcs\+::test\+::core}}
+\begin{DoxyCompactList}\small\item\em Unit tests for core components and data structures. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{StorageTest_8cxx_a1c7bb5745a29e268f7d6c358443b568c}\label{StorageTest_8cxx_a1c7bb5745a29e268f7d6c358443b568c} 
-\mbox{\hyperlink{classBlob}{Blob}} {\bfseries create\+\_\+blob} (const std\+::string \&content)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a47ad619962717854bea4cb8974bac5ec}\label{namespacesvcs_1_1test_1_1core_a47ad619962717854bea4cb8974bac5ec} 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Blob}{Blob}} {\bfseries svcs\+::test\+::core\+::create\+\_\+blob} (const std\+::string \&content)
 \item 
-\Hypertarget{StorageTest_8cxx_ad58e386c02e574eb1386c69a19ac83dd}\label{StorageTest_8cxx_ad58e386c02e574eb1386c69a19ac83dd} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classObjectStorageTest}{Object\+Storage\+Test}}, Saves\+Object\+To\+Correct\+Path)
+\Hypertarget{namespacesvcs_1_1test_1_1core_ac5ef8ebbe07af649fa1f9b96be551ce0}\label{namespacesvcs_1_1test_1_1core_ac5ef8ebbe07af649fa1f9b96be551ce0} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Saves\+Object\+To\+Correct\+Path)
 \item 
-\Hypertarget{StorageTest_8cxx_a891adf06cc81a568383d613a4f5362c6}\label{StorageTest_8cxx_a891adf06cc81a568383d613a4f5362c6} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Blob)
+\Hypertarget{namespacesvcs_1_1test_1_1core_ac7c5deb565ca0e0eac56813447d4c9a6}\label{namespacesvcs_1_1test_1_1core_ac7c5deb565ca0e0eac56813447d4c9a6} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Blob)
 \item 
-\Hypertarget{StorageTest_8cxx_af8cdac7f6a3cfc21518205e7071228f9}\label{StorageTest_8cxx_af8cdac7f6a3cfc21518205e7071228f9} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classObjectStorageTest}{Object\+Storage\+Test}}, Load\+Throws\+Exception\+If\+Not\+Found)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a73a233f1a4c07809bdd59147b798bab6}\label{namespacesvcs_1_1test_1_1core_a73a233f1a4c07809bdd59147b798bab6} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Load\+Throws\+Exception\+If\+Not\+Found)
 \item 
-\Hypertarget{StorageTest_8cxx_a3a7aa8fd239bebb720e7bf2c552e1b02}\label{StorageTest_8cxx_a3a7aa8fd239bebb720e7bf2c552e1b02} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Tree)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a7e71bfef5749a1567726f9ff404a07e4}\label{namespacesvcs_1_1test_1_1core_a7e71bfef5749a1567726f9ff404a07e4} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Tree)
 \item 
-\Hypertarget{StorageTest_8cxx_a5e77111fe353ef7d68c217d636b514ee}\label{StorageTest_8cxx_a5e77111fe353ef7d68c217d636b514ee} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Commit)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a5107cd967906f2015b66b6258bf4addd}\label{namespacesvcs_1_1test_1_1core_a5107cd967906f2015b66b6258bf4addd} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Commit)
 \item 
-\Hypertarget{StorageTest_8cxx_a0ddf1224851353fc92bfbff6f499fa97}\label{StorageTest_8cxx_a0ddf1224851353fc92bfbff6f499fa97} 
-int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\Hypertarget{namespacesvcs_1_1test_1_1core_a0ebdfc2bd61e5694f60c7083b04c2fdc}\label{namespacesvcs_1_1test_1_1core_a0ebdfc2bd61e5694f60c7083b04c2fdc} 
+int {\bfseries svcs\+::test\+::core\+::main} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{StorageTest_8cxx_a6a3ba985a41728716e4f2a88674c075a}\label{StorageTest_8cxx_a6a3ba985a41728716e4f2a88674c075a} 
-const std\+::string {\bfseries DUMMY\+\_\+\+HASH\+\_\+\+FILE\+\_\+A} = "{}a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a327505f9d0b5a5e1540708a11e4b2d70}\label{namespacesvcs_1_1test_1_1core_a327505f9d0b5a5e1540708a11e4b2d70} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+DUMMY\+\_\+\+HASH\+\_\+\+FILE\+\_\+A} = "{}a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"{}
 \item 
-\Hypertarget{StorageTest_8cxx_aad7c34d224c2deff4279184cfe5b68d5}\label{StorageTest_8cxx_aad7c34d224c2deff4279184cfe5b68d5} 
-const std\+::string {\bfseries DUMMY\+\_\+\+HASH\+\_\+\+PARENT\+\_\+1} = "{}p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a6ce36ffa712db84437643035349f87b6}\label{namespacesvcs_1_1test_1_1core_a6ce36ffa712db84437643035349f87b6} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+DUMMY\+\_\+\+HASH\+\_\+\+PARENT\+\_\+1} = "{}p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1"{}
 \item 
-\Hypertarget{StorageTest_8cxx_ac5fda568bef49ac5e987031c0219799d}\label{StorageTest_8cxx_ac5fda568bef49ac5e987031c0219799d} 
-const std\+::string {\bfseries DUMMY\+\_\+\+HASH\+\_\+\+PARENT\+\_\+2} = "{}p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a2644de2903e56b2a7c22780c9b780282}\label{namespacesvcs_1_1test_1_1core_a2644de2903e56b2a7c22780c9b780282} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+DUMMY\+\_\+\+HASH\+\_\+\+PARENT\+\_\+2} = "{}p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2"{}
 \item 
-\Hypertarget{StorageTest_8cxx_aa16a50df78b0fb924d16a8a8f889047b}\label{StorageTest_8cxx_aa16a50df78b0fb924d16a8a8f889047b} 
-const std\+::string {\bfseries DUMMY\+\_\+\+HASH\+\_\+\+TREE\+\_\+\+ROOT} = "{}t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_aeb0c5c6fd7f3afe444fdfb7e1fbcec57}\label{namespacesvcs_1_1test_1_1core_aeb0c5c6fd7f3afe444fdfb7e1fbcec57} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+DUMMY\+\_\+\+HASH\+\_\+\+TREE\+\_\+\+ROOT} = "{}t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0"{}
 \item 
-\Hypertarget{StorageTest_8cxx_a9e50995a188d02778aca90ad04acb317}\label{StorageTest_8cxx_a9e50995a188d02778aca90ad04acb317} 
-const std\+::string {\bfseries TEST\+\_\+\+ROOT} = "{}test\+\_\+repo\+\_\+root"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a04b12c125d82b681c4443d82be899726}\label{namespacesvcs_1_1test_1_1core_a04b12c125d82b681c4443d82be899726} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+\+ROOT} = "{}test\+\_\+repo\+\_\+root"{}
 \item 
-\Hypertarget{StorageTest_8cxx_a159e114e9669f9f933983b572ea63d9f}\label{StorageTest_8cxx_a159e114e9669f9f933983b572ea63d9f} 
-const std\+::string {\bfseries OBJECTS\+\_\+\+DIR} = TEST\+\_\+\+ROOT + "{}/.svcs/objects"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad996eb03dc694413efb22e6ce991e5fc}\label{namespacesvcs_1_1test_1_1core_ad996eb03dc694413efb22e6ce991e5fc} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+OBJECTS\+\_\+\+DIR} = TEST\+\_\+\+ROOT + "{}/.svcs/objects"{}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Unit tests for the \doxylink{classObjectStorage}{Object\+Storage} class, verifying persistence, file path generation, compression, and object loading integrity for all \doxylink{classVcsObject}{Vcs\+Object} types (\doxylink{classBlob}{Blob}, \doxylink{classTree}{Tree}, \doxylink{classCommit}{Commit}). 
+Unit tests for the Object\+Storage class, verifying persistence, file path generation, compression, and object loading integrity for all Vcs\+Object types (Blob, Tree, Commit). 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License

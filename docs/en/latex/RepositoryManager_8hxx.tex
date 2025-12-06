@@ -2,7 +2,7 @@
 \hypertarget{RepositoryManager_8hxx}{}\label{RepositoryManager_8hxx}\index{core/include/RepositoryManager.hxx@{core/include/RepositoryManager.hxx}}
 
 
-Declaration of the \doxylink{classRepositoryManager}{Repository\+Manager} class, managing all repository-\/level file operations.  
+Declaration of the Repository\+Manager class, managing all repository-\/level file operations.  
 
 
 {\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
@@ -14,13 +14,18 @@ Declaration of the \doxylink{classRepositoryManager}{Repository\+Manager} class,
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structCommitInfo}{Commit\+Info}}
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{svcs\+::core\+::\+Commit\+Info}}
 \begin{DoxyCompactList}\small\item\em Structure containing essential metadata for a single commit. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}}
+class \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs\+::core\+::\+Repository\+Manager}}
 \begin{DoxyCompactList}\small\item\em Manages all physical file and directory operations within the SVCS repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Core VCS data structures and object model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaration of the \doxylink{classRepositoryManager}{Repository\+Manager} class, managing all repository-\/level file operations. 
+Declaration of the Repository\+Manager class, managing all repository-\/level file operations. 
 
-This class is the core service provider for the SVCS application, handling all low-\/level file system interactions related to the repository structure, staging area, commits, and history. It relies on the \doxylink{classISubject}{ISubject} interface for all internal logging and error reporting. 
+This class is the core service provider for the SVCS application, handling all low-\/level file system interactions related to the repository structure, staging area, commits, and history. It relies on the ISubject interface for all internal logging and error reporting. 

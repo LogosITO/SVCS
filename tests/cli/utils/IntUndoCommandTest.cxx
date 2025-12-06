@@ -28,6 +28,8 @@
 #include <fstream>
 #include <algorithm>
 
+namespace svcs::test::cli::utils {
+
 void UndoCommandTest::SetUp() {
     this->mockEventBus = std::make_shared<MockSubject>();
     this->repoManager = std::make_shared<RepositoryManager>(this->mockEventBus);
@@ -92,3 +94,4 @@ int UndoCommandTest::countMessages(const std::vector<Event>& notifications, cons
 
 void UndoCommandTest::simulateUserInput(const std::string& input) {}
 
+}

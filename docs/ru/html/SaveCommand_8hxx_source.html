@@ -102,57 +102,58 @@ $(function(){initNavTree('SaveCommand_8hxx_source.html','',''); });
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classSaveCommand.html">   24</a></span><span class="comment"> * @english</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * @brief Command for saving (committing) staged changes to the repository.</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * @details The SaveCommand creates a permanent snapshot of all staged changes</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * with a descriptive message.</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * @russian</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> * @brief Команда для сохранения (коммита) подготовленных изменений в репозиторий.</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * @details SaveCommand создает постоянный снимок всех подготовленных изменений</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * с описательным сообщением.</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">class </span><a class="code hl_function" href="classSaveCommand.html#a6a33ae3a66e6de40b4d58b13223460a2">SaveCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="classICommand.html">ICommand</a> {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::shared_ptr&lt;RepositoryManager&gt; repoManager_;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="classSaveCommand.html#a6a33ae3a66e6de40b4d58b13223460a2">SaveCommand</a>(std::shared_ptr&lt;ISubject&gt; subject,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                std::shared_ptr&lt;RepositoryManager&gt; repoManager);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSaveCommand.html#a813b7d30d64cd3c3c09822ba4ff9ab18">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    [[nodiscard]] std::string <a class="code hl_function" href="classSaveCommand.html#a321fd9d2886313df9539b483c5441e1a">getName</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;save&quot;</span>; }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    [[nodiscard]] std::string <a class="code hl_function" href="classSaveCommand.html#a03f7a93a180bbf0deb017d13127168ea">getDescription</a>() <span class="keyword">const override</span>;</div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classsvcs_1_1cli_1_1SaveCommand.html">   34</a></span><span class="comment"> * включая AddCommand, CommitCommand, StatusCommand и другие.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesvcs_1_1cli.html">svcs::cli</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacesvcs_1_1core.html">svcs::core</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">class </span><a class="code hl_function" href="classsvcs_1_1cli_1_1SaveCommand.html#a99974b5dc4b6a25da15cc80e8dd602e0">SaveCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="classsvcs_1_1cli_1_1ICommand.html">ICommand</a> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    std::shared_ptr&lt;RepositoryManager&gt; repoManager_;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_function" href="classsvcs_1_1cli_1_1SaveCommand.html#a99974b5dc4b6a25da15cc80e8dd602e0">SaveCommand</a>(std::shared_ptr&lt;ISubject&gt; subject,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                std::shared_ptr&lt;RepositoryManager&gt; repoManager);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsvcs_1_1cli_1_1SaveCommand.html#ae70493712868eecdf217655eb2e0dc05">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    [[nodiscard]] std::string <a class="code hl_function" href="classsvcs_1_1cli_1_1SaveCommand.html#a604d6cb09fd548bb595ba34881c3c5aa">getName</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;save&quot;</span>; }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
 </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    [[nodiscard]] std::string <a class="code hl_function" href="classSaveCommand.html#a0c5f57f088edabb3ba4e15e6b12fcc7d">getUsage</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSaveCommand.html#ac05d0595300a110c9dcc0e24638c33c1">showHelp</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    [[nodiscard]] <span class="keyword">static</span> std::string parseMessage(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    [[nodiscard]] <span class="keywordtype">bool</span> validateMessage(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    [[nodiscard]] <span class="keywordtype">bool</span> hasStagedChanges() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    [[nodiscard]] <span class="keywordtype">bool</span> createSavePoint(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>};</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    [[nodiscard]] std::string <a class="code hl_function" href="classsvcs_1_1cli_1_1SaveCommand.html#aeb3f25a8980ab8a0d63e7575df210f96">getDescription</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    [[nodiscard]] std::string <a class="code hl_function" href="classsvcs_1_1cli_1_1SaveCommand.html#aaf2153e02f35b59fef2f1129d0c9d2b5">getUsage</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1cli_1_1SaveCommand.html#aa0d4c3807d82dca53c3a1345cdb2702a">showHelp</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    [[nodiscard]] <span class="keyword">static</span> std::string parseMessage(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    [[nodiscard]] <span class="keywordtype">bool</span> validateMessage(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    [[nodiscard]] <span class="keywordtype">bool</span> hasStagedChanges() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    [[nodiscard]] <span class="keywordtype">bool</span> createSavePoint(<span class="keyword">const</span> std::string&amp; message) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>};</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>}</div>
 <div class="ttc" id="aICommand_8hxx_html"><div class="ttname"><a href="ICommand_8hxx.html">ICommand.hxx</a></div><div class="ttdoc">Объявление интерфейса ICommand для всех исполняемых CLI команд.</div></div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Определяет интерфейс для компонента Subject (Издатель) шаблона Observer.</div></div>
 <div class="ttc" id="aRepositoryManager_8hxx_html"><div class="ttname"><a href="RepositoryManager_8hxx.html">RepositoryManager.hxx</a></div><div class="ttdoc">Declaration of the RepositoryManager class, managing all repository-level file operations.</div></div>
-<div class="ttc" id="aclassICommand_html"><div class="ttname"><a href="classICommand.html">ICommand</a></div><div class="ttdoc">Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.</div><div class="ttdef"><b>Определения</b> ICommand.hxx:23</div></div>
-<div class="ttc" id="aclassSaveCommand_html_a03f7a93a180bbf0deb017d13127168ea"><div class="ttname"><a href="classSaveCommand.html#a03f7a93a180bbf0deb017d13127168ea">SaveCommand::getDescription</a></div><div class="ttdeci">std::string getDescription() const override</div><div class="ttdoc">Получает описание команды.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:66</div></div>
-<div class="ttc" id="aclassSaveCommand_html_a0c5f57f088edabb3ba4e15e6b12fcc7d"><div class="ttname"><a href="classSaveCommand.html#a0c5f57f088edabb3ba4e15e6b12fcc7d">SaveCommand::getUsage</a></div><div class="ttdeci">std::string getUsage() const override</div><div class="ttdoc">Получает синтаксис использования команды.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:70</div></div>
-<div class="ttc" id="aclassSaveCommand_html_a321fd9d2886313df9539b483c5441e1a"><div class="ttname"><a href="classSaveCommand.html#a321fd9d2886313df9539b483c5441e1a">SaveCommand::getName</a></div><div class="ttdeci">std::string getName() const override</div><div class="ttdoc">Получает имя команды.</div><div class="ttdef"><b>Определения</b> SaveCommand.hxx:56</div></div>
-<div class="ttc" id="aclassSaveCommand_html_a6a33ae3a66e6de40b4d58b13223460a2"><div class="ttname"><a href="classSaveCommand.html#a6a33ae3a66e6de40b4d58b13223460a2">SaveCommand::SaveCommand</a></div><div class="ttdeci">SaveCommand(std::shared_ptr&lt; ISubject &gt; subject, std::shared_ptr&lt; RepositoryManager &gt; repoManager)</div><div class="ttdoc">Конструирует SaveCommand.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:15</div></div>
-<div class="ttc" id="aclassSaveCommand_html_a813b7d30d64cd3c3c09822ba4ff9ab18"><div class="ttname"><a href="classSaveCommand.html#a813b7d30d64cd3c3c09822ba4ff9ab18">SaveCommand::execute</a></div><div class="ttdeci">bool execute(const std::vector&lt; std::string &gt; &amp;args) override</div><div class="ttdoc">Выполняет команду save.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:20</div></div>
-<div class="ttc" id="aclassSaveCommand_html_ac05d0595300a110c9dcc0e24638c33c1"><div class="ttname"><a href="classSaveCommand.html#ac05d0595300a110c9dcc0e24638c33c1">SaveCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Показывает подробную справочную информацию для этой команды.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:74</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1ICommand_html"><div class="ttname"><a href="classsvcs_1_1cli_1_1ICommand.html">svcs::cli::ICommand</a></div><div class="ttdoc">Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.</div><div class="ttdef"><b>Определения</b> ICommand.hxx:31</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1SaveCommand_html_a604d6cb09fd548bb595ba34881c3c5aa"><div class="ttname"><a href="classsvcs_1_1cli_1_1SaveCommand.html#a604d6cb09fd548bb595ba34881c3c5aa">svcs::cli::SaveCommand::getName</a></div><div class="ttdeci">std::string getName() const override</div><div class="ttdoc">Получает имя команды.</div><div class="ttdef"><b>Определения</b> SaveCommand.hxx:66</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1SaveCommand_html_a99974b5dc4b6a25da15cc80e8dd602e0"><div class="ttname"><a href="classsvcs_1_1cli_1_1SaveCommand.html#a99974b5dc4b6a25da15cc80e8dd602e0">svcs::cli::SaveCommand::SaveCommand</a></div><div class="ttdeci">SaveCommand(std::shared_ptr&lt; ISubject &gt; subject, std::shared_ptr&lt; RepositoryManager &gt; repoManager)</div><div class="ttdoc">Конструирует SaveCommand.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:20</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1SaveCommand_html_aa0d4c3807d82dca53c3a1345cdb2702a"><div class="ttname"><a href="classsvcs_1_1cli_1_1SaveCommand.html#aa0d4c3807d82dca53c3a1345cdb2702a">svcs::cli::SaveCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Показывает подробную справочную информацию для этой команды.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:79</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1SaveCommand_html_aaf2153e02f35b59fef2f1129d0c9d2b5"><div class="ttname"><a href="classsvcs_1_1cli_1_1SaveCommand.html#aaf2153e02f35b59fef2f1129d0c9d2b5">svcs::cli::SaveCommand::getUsage</a></div><div class="ttdeci">std::string getUsage() const override</div><div class="ttdoc">Получает синтаксис использования команды.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:75</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1SaveCommand_html_ae70493712868eecdf217655eb2e0dc05"><div class="ttname"><a href="classsvcs_1_1cli_1_1SaveCommand.html#ae70493712868eecdf217655eb2e0dc05">svcs::cli::SaveCommand::execute</a></div><div class="ttdeci">bool execute(const std::vector&lt; std::string &gt; &amp;args) override</div><div class="ttdoc">Выполняет команду save.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:25</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1SaveCommand_html_aeb3f25a8980ab8a0d63e7575df210f96"><div class="ttname"><a href="classsvcs_1_1cli_1_1SaveCommand.html#aeb3f25a8980ab8a0d63e7575df210f96">svcs::cli::SaveCommand::getDescription</a></div><div class="ttdeci">std::string getDescription() const override</div><div class="ttdoc">Получает описание команды.</div><div class="ttdef"><b>Определения</b> SaveCommand.cxx:71</div></div>
+<div class="ttc" id="anamespacesvcs_1_1cli_html"><div class="ttname"><a href="namespacesvcs_1_1cli.html">svcs::cli</a></div><div class="ttdoc">Компоненты командной строки и реализации команд.</div></div>
+<div class="ttc" id="anamespacesvcs_1_1core_html"><div class="ttname"><a href="namespacesvcs_1_1core.html">svcs::core</a></div><div class="ttdoc">Основные структуры данных СКВ и модель объектов.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

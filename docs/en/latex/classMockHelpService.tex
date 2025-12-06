@@ -2,7 +2,7 @@
 \hypertarget{classMockHelpService}{}\label{classMockHelpService}\index{MockHelpService@{MockHelpService}}
 
 
-A mock implementation of the \doxylink{classHelpService}{Help\+Service} for testing the \doxylink{classHelpCommand}{Help\+Command}.  
+A mock implementation of the Help\+Service for testing the Help\+Command.  
 
 
 
@@ -35,31 +35,16 @@ bool \mbox{\hyperlink{classMockHelpService_a75eea5375c564e93e597b8ccdb3181d8}{wa
 \Hypertarget{classMockHelpService_a1e5c10b1ef3a05be719dcaece9c8855e}\label{classMockHelpService_a1e5c10b1ef3a05be719dcaece9c8855e} 
 void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em Resets the mock\textquotesingle{}s internal state (called commands, lists, and descriptions). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHelpService}{Help\+Service}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classHelpService_ac380002930a510d355fe11cf11e946ce}{Help\+Service}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classISubject}{ISubject}} $>$ bus, std\+::function$<$ std\+::vector$<$ std\+::string $>$()$>$ get\+Commands, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Description, std\+::function$<$ void(const std\+::string \&)$>$ show\+Help, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Usage=nullptr)
-\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classHelpService}{Help\+Service} by injecting necessary dependencies as callbacks. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classHelpService_a3e101dee42668c57dd56669a3939d335}{get\+Available\+Commands}} () const
-\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Commands\+Callback\+\_\+} to retrieve the list of all available command names. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classHelpService_acc76b5372129d61b894efb2fa25349c2}{get\+Command\+Description}} (const std\+::string \&command\+Name) const
-\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Description\+Callback\+\_\+} to retrieve the brief description of a specific command. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classHelpService_a1ea55dca8e2d594c97ce5dc3efca8053}{show\+Command\+Help}} (const std\+::string \&command\+Name) const
-\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily show\+Help\+Callback\+\_\+} to trigger the display of detailed help for a specific command. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classHelpService_a71d1aba53c9ac3d40b16af8890bcac95}{command\+Exists}} (const std\+::string \&command\+Name) const
-\begin{DoxyCompactList}\small\item\em Checks for the existence of a command by comparing against the list returned by {\ttfamily get\+Available\+Commands}. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classHelpService_a6e1869acb698c4c37d1b15d19b92ce9c}{get\+Command\+Usage}} (const std\+::string \&command\+Name) const
-\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Usage\+Callback\+\_\+} to retrieve the usage syntax of a specific command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A mock implementation of the \doxylink{classHelpService}{Help\+Service} for testing the \doxylink{classHelpCommand}{Help\+Command}. 
+A mock implementation of the Help\+Service for testing the Help\+Command. 
 
 This mock allows test cases to\+:
 \begin{DoxyEnumerate}
 \item {\bfseries{Configure}} the list of available commands.
 \item {\bfseries{Configure}} the descriptions for specific commands.
-\item {\bfseries{Verify}} which command\textquotesingle{}s help was requested by the {\ttfamily \doxylink{classHelpCommand}{Help\+Command}}.
+\item {\bfseries{Verify}} which command\textquotesingle{}s help was requested by the {\ttfamily Help\+Command}.
 \item Use the provided \doxylink{classMockSubject}{Mock\+Subject} for emitting debug information during testing. 
 \end{DoxyEnumerate}
 
@@ -76,7 +61,7 @@ Mock\+Help\+Service\+::\+Mock\+Help\+Service (\begin{DoxyParamCaption}\item[{con
 
 Constructor for \doxylink{classMockHelpService}{Mock\+Help\+Service}. 
 
-Initializes the base \doxylink{classHelpService}{Help\+Service} with lambda functions that delegate to the mock\textquotesingle{}s own control methods, and stores the mock event bus. 
+Initializes the base Help\+Service with lambda functions that delegate to the mock\textquotesingle{}s own control methods, and stores the mock event bus. 
 \begin{DoxyParams}{Parameters}
 {\em mock\+Event\+Bus} & The shared pointer to the \doxylink{classMockSubject}{Mock\+Subject} used for notifications. \\
 \hline

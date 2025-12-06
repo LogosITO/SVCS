@@ -1,0 +1,60 @@
+\doxysection{svcs\+::test\+::core\+::Repository\+Manager\+Test Class Reference}
+\hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}\index{svcs::test::core::RepositoryManagerTest@{svcs::test::core::RepositoryManagerTest}}
+
+
+Test fixture for \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager} tests.  
+
+
+Inheritance diagram for svcs\+::test\+::core\+::Repository\+Manager\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_afa33e626eaf0f6f17c0706063d56f11e}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_afa33e626eaf0f6f17c0706063d56f11e} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_aae657e1c6973a832abba9210d5206d2b}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_aae657e1c6973a832abba9210d5206d2b} 
+void {\bfseries Tear\+Down} () override
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_af817dfdeeb20d29ffc5ebd739398fdcf}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_af817dfdeeb20d29ffc5ebd739398fdcf} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries create\+Repository\+Manager} ()
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_ab91c4d0cb0b4a55d4e2776ea7a53f90c}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_ab91c4d0cb0b4a55d4e2776ea7a53f90c} 
+void {\bfseries create\+Test\+File} (const std\+::string \&filename, const std\+::string \&content="{}test content"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a688092345b2ff1149f745c88ba0ce5eb}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a688092345b2ff1149f745c88ba0ce5eb} 
+static bool {\bfseries is\+Valid\+Repository\+Structure} (const fs\+::path \&path)
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a27171475d0849a92df939fbb5eea8198}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a27171475d0849a92df939fbb5eea8198} 
+static std\+::string {\bfseries get\+Relative\+Path} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a584e2a5c6709103b210e313fea9da064}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a584e2a5c6709103b210e313fea9da064} 
+fs\+::path {\bfseries temp\+\_\+dir\+\_\+}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_aa750c5b50732f832d5ab2bd1fd9be550}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_aa750c5b50732f832d5ab2bd1fd9be550} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus}{Event\+Bus}} $>$ {\bfseries event\+\_\+bus\+\_\+}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a51b00cb9fdda011eda6c1cf1d1989643}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a51b00cb9fdda011eda6c1cf1d1989643} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObserver}{Mock\+Observer}} $>$ {\bfseries mock\+\_\+observer\+\_\+}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a1cff1a3c0d69b0ad838e6893ee60062a}\label{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest_a1cff1a3c0d69b0ad838e6893ee60062a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger}{Logger}} $>$ {\bfseries test\+\_\+logger\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test fixture for \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager} tests. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{RepoManagerTest_8cxx}{Repo\+Manager\+Test.\+cxx}}\end{DoxyCompactItemize}

@@ -92,39 +92,49 @@ $(function(){initNavTree('SaveCommandTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Integration tests for the <a class="el" href="classSaveCommand.html" title="Command for saving (committing) staged changes to the repository.">SaveCommand</a> (commit) class.  
+<p>Integration tests for the SaveCommand (commit) class.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="IntSaveCommandTest_8hxx_source.html">utils/IntSaveCommandTest.hxx</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3ASaveCommandTest" id="r_svcs_3A_3Atest_3A_3Acli_3A_3ASaveCommandTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1cli_1_1SaveCommandTest.html">svcs::test::cli::SaveCommandTest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Google Test fixture for running integration tests against the <a class="el" href="classsvcs_1_1cli_1_1SaveCommand.html" title="Command for saving (committing) staged changes to the repository.">SaveCommand</a> (commit).  <a href="classsvcs_1_1test_1_1cli_1_1SaveCommandTest.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli" id="r_svcs_3A_3Atest_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli.html">svcs::test::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for command-line interface components. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aedea51afebe6dea4baefc847b0794471" id="r_aedea51afebe6dea4baefc847b0794471"><td class="memItemLeft" align="right" valign="top"><a id="aedea51afebe6dea4baefc847b0794471" name="aedea51afebe6dea4baefc847b0794471"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, SaveWithStagedChanges)</td></tr>
-<tr class="memitem:acc63f5d336ef49b7bba3aa564434cd52" id="r_acc63f5d336ef49b7bba3aa564434cd52"><td class="memItemLeft" align="right" valign="top"><a id="acc63f5d336ef49b7bba3aa564434cd52" name="acc63f5d336ef49b7bba3aa564434cd52"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, SaveWithMessageFlag)</td></tr>
-<tr class="memitem:a2a121181f395f6b269da02fd1fc7d5a0" id="r_a2a121181f395f6b269da02fd1fc7d5a0"><td class="memItemLeft" align="right" valign="top"><a id="a2a121181f395f6b269da02fd1fc7d5a0" name="a2a121181f395f6b269da02fd1fc7d5a0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, ErrorWhenNoRepository)</td></tr>
-<tr class="memitem:a473b02829c46315648b0ff0a7455fd5e" id="r_a473b02829c46315648b0ff0a7455fd5e"><td class="memItemLeft" align="right" valign="top"><a id="a473b02829c46315648b0ff0a7455fd5e" name="a473b02829c46315648b0ff0a7455fd5e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, ErrorWhenNoMessage)</td></tr>
-<tr class="memitem:a4bf86ea85f3513c237159526bfa3bfe9" id="r_a4bf86ea85f3513c237159526bfa3bfe9"><td class="memItemLeft" align="right" valign="top"><a id="a4bf86ea85f3513c237159526bfa3bfe9" name="a4bf86ea85f3513c237159526bfa3bfe9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, ErrorWhenEmptyMessage)</td></tr>
-<tr class="memitem:ae60864c114edad6140328a5ccd9939ac" id="r_ae60864c114edad6140328a5ccd9939ac"><td class="memItemLeft" align="right" valign="top"><a id="ae60864c114edad6140328a5ccd9939ac" name="ae60864c114edad6140328a5ccd9939ac"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, ErrorWhenMessageTooShort)</td></tr>
-<tr class="memitem:af524b9732d4118544bfbe6facedda826" id="r_af524b9732d4118544bfbe6facedda826"><td class="memItemLeft" align="right" valign="top"><a id="af524b9732d4118544bfbe6facedda826" name="af524b9732d4118544bfbe6facedda826"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, ErrorWhenNoStagedChanges)</td></tr>
-<tr class="memitem:a963a4d93e1ea04aca38ef475362a059b" id="r_a963a4d93e1ea04aca38ef475362a059b"><td class="memItemLeft" align="right" valign="top"><a id="a963a4d93e1ea04aca38ef475362a059b" name="a963a4d93e1ea04aca38ef475362a059b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, ShowHelp)</td></tr>
-<tr class="memitem:ab19fd457103d37637c48a5708efbc0bd" id="r_ab19fd457103d37637c48a5708efbc0bd"><td class="memItemLeft" align="right" valign="top"><a id="ab19fd457103d37637c48a5708efbc0bd" name="ab19fd457103d37637c48a5708efbc0bd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, MessageParsingDifferentOrders)</td></tr>
-<tr class="memitem:a39cd83cd3c413cbf87ebddc7d923a803" id="r_a39cd83cd3c413cbf87ebddc7d923a803"><td class="memItemLeft" align="right" valign="top"><a id="a39cd83cd3c413cbf87ebddc7d923a803" name="a39cd83cd3c413cbf87ebddc7d923a803"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, SaveWithLongMessageFlag)</td></tr>
-<tr class="memitem:a4fb87f759b35d5e60a75eed72c0e1330" id="r_a4fb87f759b35d5e60a75eed72c0e1330"><td class="memItemLeft" align="right" valign="top"><a id="a4fb87f759b35d5e60a75eed72c0e1330" name="a4fb87f759b35d5e60a75eed72c0e1330"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, StagingAreaClearedAfterSave)</td></tr>
-<tr class="memitem:a843ff7597cbe882be05bc0bc03fd1735" id="r_a843ff7597cbe882be05bc0bc03fd1735"><td class="memItemLeft" align="right" valign="top"><a id="a843ff7597cbe882be05bc0bc03fd1735" name="a843ff7597cbe882be05bc0bc03fd1735"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classSaveCommandTest.html">SaveCommandTest</a>, SaveWithSpecialCharactersInMessage)</td></tr>
+<tr class="memitem:a6230e8f2ba5d1e921e04a4102f8f22e1" id="r_a6230e8f2ba5d1e921e04a4102f8f22e1"><td class="memItemLeft" align="right" valign="top"><a id="a6230e8f2ba5d1e921e04a4102f8f22e1" name="a6230e8f2ba5d1e921e04a4102f8f22e1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, SaveWithStagedChanges)</td></tr>
+<tr class="memitem:a00f5493a36db058b36cccd089dbd6e9a" id="r_a00f5493a36db058b36cccd089dbd6e9a"><td class="memItemLeft" align="right" valign="top"><a id="a00f5493a36db058b36cccd089dbd6e9a" name="a00f5493a36db058b36cccd089dbd6e9a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, SaveWithMessageFlag)</td></tr>
+<tr class="memitem:a95557207ab17d317842ccf96656ad986" id="r_a95557207ab17d317842ccf96656ad986"><td class="memItemLeft" align="right" valign="top"><a id="a95557207ab17d317842ccf96656ad986" name="a95557207ab17d317842ccf96656ad986"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, ErrorWhenNoRepository)</td></tr>
+<tr class="memitem:a197a881e3d5aa92519a7dd0be9be577a" id="r_a197a881e3d5aa92519a7dd0be9be577a"><td class="memItemLeft" align="right" valign="top"><a id="a197a881e3d5aa92519a7dd0be9be577a" name="a197a881e3d5aa92519a7dd0be9be577a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, ErrorWhenNoMessage)</td></tr>
+<tr class="memitem:a83bac91d719246aceac0e227f336ab5c" id="r_a83bac91d719246aceac0e227f336ab5c"><td class="memItemLeft" align="right" valign="top"><a id="a83bac91d719246aceac0e227f336ab5c" name="a83bac91d719246aceac0e227f336ab5c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, ErrorWhenEmptyMessage)</td></tr>
+<tr class="memitem:abeb1a77decdeb036222fdaebd86a2275" id="r_abeb1a77decdeb036222fdaebd86a2275"><td class="memItemLeft" align="right" valign="top"><a id="abeb1a77decdeb036222fdaebd86a2275" name="abeb1a77decdeb036222fdaebd86a2275"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, ErrorWhenMessageTooShort)</td></tr>
+<tr class="memitem:a137baaf98883af0d59db9253ab6c799a" id="r_a137baaf98883af0d59db9253ab6c799a"><td class="memItemLeft" align="right" valign="top"><a id="a137baaf98883af0d59db9253ab6c799a" name="a137baaf98883af0d59db9253ab6c799a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, ErrorWhenNoStagedChanges)</td></tr>
+<tr class="memitem:a5ca04008e935659046f41768c9e9db5b" id="r_a5ca04008e935659046f41768c9e9db5b"><td class="memItemLeft" align="right" valign="top"><a id="a5ca04008e935659046f41768c9e9db5b" name="a5ca04008e935659046f41768c9e9db5b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, ShowHelp)</td></tr>
+<tr class="memitem:ad62cc7bb7b8fb774b45fdc068bf153a1" id="r_ad62cc7bb7b8fb774b45fdc068bf153a1"><td class="memItemLeft" align="right" valign="top"><a id="ad62cc7bb7b8fb774b45fdc068bf153a1" name="ad62cc7bb7b8fb774b45fdc068bf153a1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, MessageParsingDifferentOrders)</td></tr>
+<tr class="memitem:a13e1c7d8e53996ac22b018c769e1f311" id="r_a13e1c7d8e53996ac22b018c769e1f311"><td class="memItemLeft" align="right" valign="top"><a id="a13e1c7d8e53996ac22b018c769e1f311" name="a13e1c7d8e53996ac22b018c769e1f311"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, SaveWithLongMessageFlag)</td></tr>
+<tr class="memitem:aaf25999d3b6233534836f8a67172bb7a" id="r_aaf25999d3b6233534836f8a67172bb7a"><td class="memItemLeft" align="right" valign="top"><a id="aaf25999d3b6233534836f8a67172bb7a" name="aaf25999d3b6233534836f8a67172bb7a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, StagingAreaClearedAfterSave)</td></tr>
+<tr class="memitem:aacc59f69223b21a28aac7ce416945881" id="r_aacc59f69223b21a28aac7ce416945881"><td class="memItemLeft" align="right" valign="top"><a id="aacc59f69223b21a28aac7ce416945881" name="aacc59f69223b21a28aac7ce416945881"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest.html">SaveCommandTest</a>, SaveWithSpecialCharactersInMessage)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Integration tests for the <a class="el" href="classSaveCommand.html" title="Command for saving (committing) staged changes to the repository.">SaveCommand</a> (commit) class. </p>
+<div class="textblock"><p>Integration tests for the SaveCommand (commit) class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

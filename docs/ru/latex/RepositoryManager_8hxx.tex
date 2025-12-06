@@ -2,7 +2,7 @@
 \hypertarget{RepositoryManager_8hxx}{}\label{RepositoryManager_8hxx}\index{core/include/RepositoryManager.hxx@{core/include/RepositoryManager.hxx}}
 
 
-Declaration of the \doxylink{classRepositoryManager}{Repository\+Manager} class, managing all repository-\/level file operations.  
+Declaration of the Repository\+Manager class, managing all repository-\/level file operations.  
 
 
 {\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
@@ -14,16 +14,21 @@ Declaration of the \doxylink{classRepositoryManager}{Repository\+Manager} class,
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structCommitInfo}{Commit\+Info}}
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{svcs\+::core\+::\+Commit\+Info}}
 \begin{DoxyCompactList}\small\item\em Структура, содержащая основные метаданные для одного коммита. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}}
+class \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs\+::core\+::\+Repository\+Manager}}
 \begin{DoxyCompactList}\small\item\em Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Основные структуры данных СКВ и модель объектов. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Declaration of the \doxylink{classRepositoryManager}{Repository\+Manager} class, managing all repository-\/level file operations. 
+Declaration of the Repository\+Manager class, managing all repository-\/level file operations. 
 
-Этот класс является основным поставщиком услуг для приложения SVCS, обрабатывая все низкоуровневые взаимодействия с файловой системой, связанные со структурой репозитория, областью подготовки, коммитами и историей. Он полагается на интерфейс \doxylink{classISubject}{ISubject} для всего внутреннего логирования и отчетов об ошибках.
+Этот класс является основным поставщиком услуг для приложения SVCS, обрабатывая все низкоуровневые взаимодействия с файловой системой, связанные со структурой репозитория, областью подготовки, коммитами и историей. Он полагается на интерфейс ISubject для всего внутреннего логирования и отчетов об ошибках.
 
 \begin{DoxyCopyright}{Авторство}
 {\bfseries{Copyright (c) 2025 Logos\+ITO}} @license {\bfseries{MIT License}} 

@@ -26,7 +26,11 @@ var menudata={children:[
 {text:"Титульная страница",url:"index.html"},
 {text:"Описания",url:"pages.html"},
 {text:"Пространства имен",url:"namespaces.html",children:[
-{text:"Пространства имен",url:"namespaces.html"}]},
+{text:"Пространства имен",url:"namespaces.html"},
+{text:"Члены пространств имен",url:"namespacemembers.html",children:[
+{text:"Указатель",url:"namespacemembers.html"},
+{text:"Функции",url:"namespacemembers_func.html"},
+{text:"Перечисления",url:"namespacemembers_enum.html"}]}]},
 {text:"Классы",url:"annotated.html",children:[
 {text:"Классы",url:"annotated.html"},
 {text:"Алфавитный указатель классов",url:"classes.html"},
@@ -93,10 +97,19 @@ var menudata={children:[
 {text:"t",url:"functions_vars.html#index_t"},
 {text:"u",url:"functions_vars.html#index_u"}]},
 {text:"Перечисления",url:"functions_enum.html"},
-{text:"Элементы перечислений",url:"functions_eval.html"}]}]},
+{text:"Элементы перечислений",url:"functions_eval.html",children:[
+{text:"c",url:"functions_eval.html#index_c"},
+{text:"d",url:"functions_eval.html#index_d"},
+{text:"e",url:"functions_eval.html#index_e"},
+{text:"f",url:"functions_eval.html#index_f"},
+{text:"g",url:"functions_eval.html#index_g"},
+{text:"h",url:"functions_eval.html#index_h"},
+{text:"i",url:"functions_eval.html#index_i"},
+{text:"n",url:"functions_eval.html#index_n"},
+{text:"o",url:"functions_eval.html#index_o"},
+{text:"p",url:"functions_eval.html#index_p"},
+{text:"r",url:"functions_eval.html#index_r"},
+{text:"s",url:"functions_eval.html#index_s"},
+{text:"w",url:"functions_eval.html#index_w"}]}]}]},
 {text:"Файлы",url:"files.html",children:[
-{text:"Файлы",url:"files.html"},
-{text:"Список членов всех файлов",url:"globals.html",children:[
-{text:"Указатель",url:"globals.html"},
-{text:"Функции",url:"globals_func.html"},
-{text:"Перечисления",url:"globals_enum.html"}]}]}]}
+{text:"Файлы",url:"files.html"}]}]}

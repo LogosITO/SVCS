@@ -37,33 +37,37 @@
  * и граничных случаев без необходимости реального сетевого подключения.
  */
 #include <gtest/gtest.h>
-#include "../../server/include/RemoteProtocol.hxx"
-#include "../../services/ISubject.hxx"
-#include "../../services/Event.hxx"
-#include "../../core/include/RepositoryManager.hxx"
-
 #include <iostream>
 #include <sstream>
 #include <filesystem>
 #include <fstream>
 #include <algorithm>
+#include <memory>
 
 namespace fs = std::filesystem;
 
-class MockEventBus : public ISubject {
+#include "../../server/include/RemoteProtocol.hxx"
+#include "../../services/ISubject.hxx"
+#include "../../services/IObserver.hxx"
+#include "../../services/Event.hxx"
+#include "../../core/include/RepositoryManager.hxx"
+
+namespace svcs::test::server {
+
+class MockEventBus : public svcs::services::ISubject {
 public:
-    void attach(std::shared_ptr<IObserver> observer) override {
+    void attach(std::shared_ptr<svcs::services::IObserver> observer) override {
         observers.push_back(observer);
     }
 
-    void detach(std::shared_ptr<IObserver> observer) override {
+    void detach(std::shared_ptr<svcs::services::IObserver> observer) override {
         observers.erase(
             std::remove(observers.begin(), observers.end(), observer),
             observers.end()
         );
     }
 
-    void notify(const Event& event) const override {
+    void notify(const svcs::services::Event& event) const override {
         last_event = event;
         notification_count++;
 
@@ -72,18 +76,18 @@ public:
         }
     }
 
-    mutable Event last_event;
+    mutable svcs::services::Event last_event;
     mutable int notification_count = 0;
-    std::vector<std::shared_ptr<IObserver>> observers;
+    std::vector<std::shared_ptr<svcs::services::IObserver>> observers;
 };
 
-class MockRepositoryManager : public RepositoryManager {
+class MockRepositoryManager : public svcs::core::RepositoryManager {
 public:
-    MockRepositoryManager(std::shared_ptr<ISubject> bus)
-        : RepositoryManager(bus) {}
+    MockRepositoryManager(std::shared_ptr<svcs::services::ISubject> bus)
+        : svcs::core::RepositoryManager(bus) {}
 
-    explicit MockRepositoryManager(std::shared_ptr<ISubject> bus, const std::string& path)
-        : RepositoryManager(bus), repo_path_(path) {}
+    explicit MockRepositoryManager(std::shared_ptr<svcs::services::ISubject> bus, const std::string& path)
+        : svcs::core::RepositoryManager(bus), repo_path_(path) {}
 
     bool isInitialized() const {
         return true;
@@ -113,7 +117,7 @@ protected:
         event_bus = std::make_shared<MockEventBus>();
         repo_manager = std::make_shared<MockRepositoryManager>(event_bus);
         repo_manager->setupTestObjects();
-        protocol = std::make_unique<RemoteProtocol>(event_bus, repo_manager);
+        protocol = std::make_unique<svcs::server::RemoteProtocol>(event_bus, repo_manager);
 
         fs::create_directories("/tmp/test-repo/.svcs/objects");
         fs::create_directories("/tmp/test-repo/.svcs/refs/heads");
@@ -139,7 +143,7 @@ protected:
 
     std::shared_ptr<MockEventBus> event_bus;
     std::shared_ptr<MockRepositoryManager> repo_manager;
-    std::unique_ptr<RemoteProtocol> protocol;
+    std::unique_ptr<svcs::server::RemoteProtocol> protocol;
 };
 
 TEST_F(RemoteProtocolTest, Construction) {
@@ -181,11 +185,11 @@ TEST_F(RemoteProtocolTest, ObjectManagement) {
 }
 
 TEST_F(RemoteProtocolTest, EventNotifications) {
-    Event test_event({Event::Type::GENERAL_INFO, "Test message"});
+    svcs::services::Event test_event({svcs::services::Event::Type::GENERAL_INFO, "Test message"});
     event_bus->notify(test_event);
 
     EXPECT_EQ(event_bus->notification_count, 1);
-    EXPECT_EQ(event_bus->last_event.type, Event::Type::GENERAL_INFO);
+    EXPECT_EQ(event_bus->last_event.type, svcs::services::Event::Type::GENERAL_INFO);
     EXPECT_EQ(event_bus->last_event.details, "Test message");
 }
 
@@ -202,7 +206,7 @@ protected:
 
         event_bus = std::make_shared<MockEventBus>();
         repo_manager = std::make_shared<MockRepositoryManager>(event_bus);
-        protocol = std::make_unique<RemoteProtocol>(event_bus, repo_manager);
+        protocol = std::make_unique<svcs::server::RemoteProtocol>(event_bus, repo_manager);
     }
 
     void TearDown() override {
@@ -241,7 +245,7 @@ protected:
 
     std::shared_ptr<MockEventBus> event_bus;
     std::shared_ptr<MockRepositoryManager> repo_manager;
-    std::unique_ptr<RemoteProtocol> protocol;
+    std::unique_ptr<svcs::server::RemoteProtocol> protocol;
 };
 
 TEST_F(RemoteProtocolIntegrationTest, SimpleProtocolCommunication) {
@@ -269,7 +273,7 @@ TEST_F(RemoteProtocolIntegrationTest, StreamErrorConditions) {
 
 TEST_F(RemoteProtocolTest, ErrorHandling) {
     EXPECT_NO_THROW({
-        RemoteProtocol error_protocol(event_bus, repo_manager);
+        svcs::server::RemoteProtocol error_protocol(event_bus, repo_manager);
     });
 }
 
@@ -294,6 +298,8 @@ TEST_F(RemoteProtocolTest, ValidationPerformance) {
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
 
     EXPECT_LT(duration.count(), 100);
+}
+
 }
 
 int main(int argc, char** argv) {

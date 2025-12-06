@@ -1,0 +1,49 @@
+\doxysection{svcs\+::test\+::cli\+::mocks\+::Mock\+Help\+Service\+Adapter Class Reference}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter}{}\label{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter}\index{svcs::test::cli::mocks::MockHelpServiceAdapter@{svcs::test::cli::mocks::MockHelpServiceAdapter}}
+
+
+Адаптер для использования \doxylink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService}{Mock\+Help\+Service} с \doxylink{classsvcs_1_1test_1_1cli_1_1HelpCommand}{Help\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Mock\+Help\+Service\+Adapter.\+hxx$>$}
+
+Inheritance diagram for svcs\+::test\+::cli\+::mocks\+::Mock\+Help\+Service\+Adapter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter_a5caa41ac9314e8dd5435c8b47cdbc9f2}\label{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter_a5caa41ac9314e8dd5435c8b47cdbc9f2} 
+{\bfseries Mock\+Help\+Service\+Adapter} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService}{Mock\+Help\+Service}} $>$ mock\+Help\+Service)
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter_aa060cebafb52dfc62c14034f7b09744c}\label{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter_aa060cebafb52dfc62c14034f7b09744c} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService}{Mock\+Help\+Service}} $>$ {\bfseries get\+Mock} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService}{svcs\+::cli\+::\+Help\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a48e82d071c038c517266aacb36f5b98a}{Help\+Service}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ bus, std\+::function$<$ std\+::vector$<$ std\+::string $>$()$>$ get\+Commands, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Description, std\+::function$<$ void(const std\+::string \&)$>$ show\+Help, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Usage=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classsvcs_1_1cli_1_1HelpService}{Help\+Service} by injecting necessary dependencies as callbacks. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a51fc45e41c002a70d477cc30dc3d52a0}{get\+Available\+Commands}} () const
+\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Commands\+Callback\+\_\+} to retrieve the list of all available command names. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_aea2600a15351225caa966c1f3f6a3420}{get\+Command\+Description}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Description\+Callback\+\_\+} to retrieve the brief description of a specific command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a9d635c88b8b370658e7ebe6722225046}{show\+Command\+Help}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily show\+Help\+Callback\+\_\+} to trigger the display of detailed help for a specific command. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a9ed3ffc25e641718af84cadc815dfdd4}{command\+Exists}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Checks for the existence of a command by comparing against the list returned by {\ttfamily get\+Available\+Commands}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_ae013b91f186ea3cdebfbe72fec3442e8}{get\+Command\+Usage}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Executes the {\ttfamily get\+Usage\+Callback\+\_\+} to retrieve the usage syntax of a specific command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Адаптер для использования \doxylink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService}{Mock\+Help\+Service} с \doxylink{classsvcs_1_1test_1_1cli_1_1HelpCommand}{Help\+Command}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/mocks/Mock\+Help\+Service\+Adapter.\+hxx\end{DoxyCompactItemize}

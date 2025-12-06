@@ -23,6 +23,8 @@
 #include <regex>
 #include <sstream>
 
+namespace svcs::core {
+
 BranchManager::BranchManager(std::shared_ptr<ISubject> event_bus)
     : event_bus(std::move(event_bus)) {
     loadCurrentBranch();
@@ -508,4 +510,6 @@ std::string BranchManager::getHeadFilePath() {
 
 std::string BranchManager::getBranchesDirectory() {
     return ".svcs/refs/heads";
+}
+
 }

@@ -1,0 +1,292 @@
+\doxysection{svcs\+::cli\+::Base\+Command Class Reference}
+\hypertarget{classsvcs_1_1cli_1_1BaseCommand}{}\label{classsvcs_1_1cli_1_1BaseCommand}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+
+
+Base class for all CLI commands.  
+
+
+
+
+{\ttfamily \#include $<$Base\+Command.\+hxx$>$}
+
+Inheritance diagram for svcs\+::cli\+::Base\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1BaseCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a143ac6f12e29d7a64165e786dff1ddaf}{Base\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_aff9c257d0a8a818fdc1c108b2097dbbf}{\texorpdfstring{$\sim$}{\string~}\+Base\+Command}} () override=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{get\+Name}} () const override=0
+\begin{DoxyCompactList}\small\item\em Gets the command name (e.\+g., "{}init"{}, "{}commit"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3}{get\+Description}} () const override=0
+\begin{DoxyCompactList}\small\item\em Gets a brief description of the command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1}{get\+Usage}} () const override=0
+\begin{DoxyCompactList}\small\item\em Gets the command\textquotesingle{}s usage syntax. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a9312eba108d0af67c5048ae8831f109c}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the command\textquotesingle{}s help (Usage and Description). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a6826e962dcc1821867657181ad75a951}{log\+Debug}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a debug information event (DEBUG\+\_\+\+MESSAGE). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a924d330958eebb1a55d19448e7743b07}{log\+Info}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a general informational event (GENERAL\+\_\+\+INFO). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a9fedd48541f6e0742088b87ebae2031b}{log\+Error}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a runtime error event (RUNTIME\+\_\+\+ERROR). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a23cef7adcdd61aa970db00a8962f0106}{log\+Success}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a successful execution event (GENERAL\+\_\+\+INFO with SUCCESS prefix). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_af547d2c947a8d7a8d171cd2a8a3d4c3e}{log\+Warning}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Generates a warning event (RUNTIME\+\_\+\+ERROR with WARNING prefix). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args)=0
+\begin{DoxyCompactList}\small\item\em Executes the main logic of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ab0450a3435cdf9647d26cde0d0631dc2}{find\+Repository}} ()
+\begin{DoxyCompactList}\small\item\em Finds an existing repository in the current or parent directories. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a22e18e67d0a61988f8085430d8769bdc}{create\+Repository}} (const std\+::string \&path="{}."{})
+\begin{DoxyCompactList}\small\item\em Creates a new repository instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{event\+Subject\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{structsvcs_1_1services_1_1Event}{Event} Subject (\doxylink{structsvcs_1_1services_1_1Event}{Event} Bus) instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all CLI commands. 
+
+Provides a common infrastructure for interacting with the \doxylink{structsvcs_1_1services_1_1Event}{Event} Bus system (\doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}) and utility methods for working with the repository. It is responsible for logging via the \doxylink{structsvcs_1_1services_1_1Event}{Event} Bus. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a143ac6f12e29d7a64165e786dff1ddaf}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!BaseCommand@{BaseCommand}}
+\index{BaseCommand@{BaseCommand}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{BaseCommand()}{BaseCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a143ac6f12e29d7a64165e786dff1ddaf} 
+svcs\+::cli\+::\+Base\+Command\+::\+Base\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & The \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (\doxylink{structsvcs_1_1services_1_1Event}{Event} Bus) instance that will be used for generating events and logs. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_aff9c257d0a8a818fdc1c108b2097dbbf}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!````~BaseCommand@{\texorpdfstring{$\sim$}{\string~}BaseCommand}}
+\index{````~BaseCommand@{\texorpdfstring{$\sim$}{\string~}BaseCommand}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BaseCommand()}{\string~BaseCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_aff9c257d0a8a818fdc1c108b2097dbbf} 
+svcs\+::cli\+::\+Base\+Command\+::\texorpdfstring{$\sim$}{\string~}\+Base\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Ensures correct cleanup of derived classes. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a22e18e67d0a61988f8085430d8769bdc}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!createRepository@{createRepository}}
+\index{createRepository@{createRepository}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{createRepository()}{createRepository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a22e18e67d0a61988f8085430d8769bdc} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ svcs\+::cli\+::\+Base\+Command\+::create\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Creates a new repository instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path where the repository should be created (defaults to \textquotesingle{}.\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A smart pointer to the new \doxylink{classsvcs_1_1core_1_1Repository}{Repository}. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_ab0450a3435cdf9647d26cde0d0631dc2}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!findRepository@{findRepository}}
+\index{findRepository@{findRepository}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{findRepository()}{findRepository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_ab0450a3435cdf9647d26cde0d0631dc2} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ svcs\+::cli\+::\+Base\+Command\+::find\+Repository (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Finds an existing repository in the current or parent directories. 
+
+\begin{DoxyReturn}{Returns}
+A smart pointer to the found \doxylink{classsvcs_1_1core_1_1Repository}{Repository} or nullptr if no repository is found. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3} 
+virtual std\+::string svcs\+::cli\+::\+Base\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets a brief description of the command. 
+
+\begin{DoxyReturn}{Returns}
+The command\textquotesingle{}s description. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d} 
+virtual std\+::string svcs\+::cli\+::\+Base\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets the command name (e.\+g., "{}init"{}, "{}commit"{}). 
+
+\begin{DoxyReturn}{Returns}
+The command name as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1} 
+virtual std\+::string svcs\+::cli\+::\+Base\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Gets the command\textquotesingle{}s usage syntax. 
+
+\begin{DoxyReturn}{Returns}
+A string with the syntax (e.\+g., "{}vcs init $<$path$>$"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a6826e962dcc1821867657181ad75a951}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logDebug@{logDebug}}
+\index{logDebug@{logDebug}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logDebug()}{logDebug()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a6826e962dcc1821867657181ad75a951} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a debug information event (DEBUG\+\_\+\+MESSAGE). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the debug message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a9fedd48541f6e0742088b87ebae2031b}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logError@{logError}}
+\index{logError@{logError}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a9fedd48541f6e0742088b87ebae2031b} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a runtime error event (RUNTIME\+\_\+\+ERROR). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the error message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a924d330958eebb1a55d19448e7743b07}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logInfo@{logInfo}}
+\index{logInfo@{logInfo}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logInfo()}{logInfo()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a924d330958eebb1a55d19448e7743b07} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a general informational event (GENERAL\+\_\+\+INFO). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the informational message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a23cef7adcdd61aa970db00a8962f0106}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logSuccess@{logSuccess}}
+\index{logSuccess@{logSuccess}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logSuccess()}{logSuccess()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a23cef7adcdd61aa970db00a8962f0106} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Success (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a successful execution event (GENERAL\+\_\+\+INFO with SUCCESS prefix). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the successful execution message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_af547d2c947a8d7a8d171cd2a8a3d4c3e}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logWarning@{logWarning}}
+\index{logWarning@{logWarning}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logWarning()}{logWarning()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_af547d2c947a8d7a8d171cd2a8a3d4c3e} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a warning event (RUNTIME\+\_\+\+ERROR with WARNING prefix). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The text of the warning message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a9312eba108d0af67c5048ae8831f109c}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a9312eba108d0af67c5048ae8831f109c} 
+void svcs\+::cli\+::\+Base\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the command\textquotesingle{}s help (Usage and Description). 
+
+This method outputs information directly to the standard output stream (stdout). 
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!eventSubject\_@{eventSubject\_}}
+\index{eventSubject\_@{eventSubject\_}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{eventSubject\_}{eventSubject\_}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4} 
+std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}}$>$ svcs\+::cli\+::\+Base\+Command\+::event\+Subject\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \doxylink{structsvcs_1_1services_1_1Event}{Event} Subject (\doxylink{structsvcs_1_1services_1_1Event}{Event} Bus) instance. 
+
+Used to generate events (logs) that will be received by observers, such as the \doxylink{classsvcs_1_1services_1_1Logger}{Logger}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{BaseCommand_8hxx}{Base\+Command.\+hxx}}\end{DoxyCompactItemize}

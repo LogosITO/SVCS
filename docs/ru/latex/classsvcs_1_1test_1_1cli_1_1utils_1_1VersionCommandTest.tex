@@ -1,0 +1,100 @@
+\doxysection{Класс svcs\+::test\+::cli\+::utils\+::Version\+Command\+Test}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}\index{svcs::test::cli::utils::VersionCommandTest@{svcs::test::cli::utils::VersionCommandTest}}
+
+
+Google Test фикстур для запуска модульных/интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Version\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::utils\+::Version\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a78461d3951cb3d664b0e2b7fb0fb82a2}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a78461d3951cb3d664b0e2b7fb0fb82a2} 
+void {\bfseries Set\+Up} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a7f9e4779224b0a7346e6726c053fedb5}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a7f9e4779224b0a7346e6726c053fedb5} 
+void {\bfseries Tear\+Down} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_ad73d0a3f7da64649fdc56c2870679d9e}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a1120a5efdb1e52159b089a6dc5a30371}{contains\+Exact\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, содержит ли какое-\/либо уведомление о событии точно указанное сообщение. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a0c99979c59a7b0035a942229e486c49e}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a0c99979c59a7b0035a942229e486c49e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий для захвата вывода команды. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a7e6efe066332760ec5c24c1f5026dbf1}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a7e6efe066332760ec5c24c1f5026dbf1} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand}{Version\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска модульных/интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}. 
+
+Этот фикстур предоставляет необходимую инфраструктуру для тестирования \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Инициализация и очистка mock шины событий и объекта команды.
+\item {\bfseries{Основные компоненты\+:}} Экземпляры \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}{Mock\+Subject} (для захвата вывода) и самого \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}.
+\item {\bfseries{Вспомогательные методы\+:}} Упрощают проверку захваченных уведомлений о событиях на наличие конкретного содержимого. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a1120a5efdb1e52159b089a6dc5a30371}\index{svcs::test::cli::utils::VersionCommandTest@{svcs::test::cli::utils::VersionCommandTest}!containsExactMessage@{containsExactMessage}}
+\index{containsExactMessage@{containsExactMessage}!svcs::test::cli::utils::VersionCommandTest@{svcs::test::cli::utils::VersionCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsExactMessage()}{containsExactMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a1120a5efdb1e52159b089a6dc5a30371} 
+bool svcs\+::test\+::cli\+::utils\+::\+Version\+Command\+Test\+::contains\+Exact\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, содержит ли какое-\/либо уведомление о событии точно указанное сообщение. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Точное сообщение для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если найдено точное совпадение, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_ad73d0a3f7da64649fdc56c2870679d9e}\index{svcs::test::cli::utils::VersionCommandTest@{svcs::test::cli::utils::VersionCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!svcs::test::cli::utils::VersionCommandTest@{svcs::test::cli::utils::VersionCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_ad73d0a3f7da64649fdc56c2870679d9e} 
+bool svcs\+::test\+::cli\+::utils\+::\+Version\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено, false в противном случае. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntVersionCommandTest_8hxx}{Int\+Version\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntVersionCommandTest_8cxx}{Int\+Version\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

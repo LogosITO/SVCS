@@ -2,7 +2,7 @@
 \hypertarget{Commit_8hxx}{}\label{Commit_8hxx}\index{core/include/Commit.hxx@{core/include/Commit.hxx}}
 
 
-Определяет класс \doxylink{classCommit}{Commit}, представляющий постоянный снимок в истории СКВ.  
+Определяет класс Commit, представляющий постоянный снимок в истории СКВ.  
 
 
 {\ttfamily \#include "{}Vcs\+Object.\+hxx"{}}\newline
@@ -12,14 +12,19 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classCommit}{Commit}}
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Commit}{svcs\+::core\+::\+Commit}}
 \begin{DoxyCompactList}\small\item\em Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Основные структуры данных СКВ и модель объектов. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Определяет класс \doxylink{classCommit}{Commit}, представляющий постоянный снимок в истории СКВ. 
+Определяет класс Commit, представляющий постоянный снимок в истории СКВ. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Объект \doxylink{classCommit}{Commit} связывает объект \doxylink{classTree}{Tree} (состояние репозитория) с родительскими коммитами и основными метаданными, такими как автор, временная метка и сообщение коммита, формируя основу истории проекта. 
+Объект Commit связывает объект Tree (состояние репозитория) с родительскими коммитами и основными метаданными, такими как автор, временная метка и сообщение коммита, формируя основу истории проекта. 

@@ -1,0 +1,209 @@
+\doxysection{Класс svcs\+::core\+::Index}
+\hypertarget{classsvcs_1_1core_1_1Index}{}\label{classsvcs_1_1core_1_1Index}\index{svcs::core::Index@{svcs::core::Index}}
+
+
+Управляет областью подготовки (\doxylink{classsvcs_1_1core_1_1Index}{Index}) репозитория СКВ.  
+
+
+
+
+{\ttfamily \#include $<$Index.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Index_a920e69911a8617367d5f609a4277eb6b}{Index}} (const fs\+::path \&vcs\+\_\+root\+\_\+path, fs\+::path repo\+\_\+root\+\_\+path, \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}} \&storage)
+\begin{DoxyCompactList}\small\item\em Конструирует менеджер \doxylink{classsvcs_1_1core_1_1Index}{Index}, настраивая пути и загружая индекс. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1core_1_1Index_ab54d5d68e1c78c1e10a628441cb12ba2}\label{classsvcs_1_1core_1_1Index_ab54d5d68e1c78c1e10a628441cb12ba2} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Index} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Index_aa9f812d5c3398bee8d88e97aa326070d}{add\+Entry}} (const \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}} \&entry)
+\begin{DoxyCompactList}\small\item\em Добавляет или обновляет запись в области подготовки. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a99d3bfb0d32b68f0cb5f1078b278a88b}{get\+Entry}} (const fs\+::path \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Извлекает запись из индекса по относительному пути файла. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Index_afddc8e6ce0c5b84c65b29f929ffc9369}{load}} ()
+\begin{DoxyCompactList}\small\item\em Загружает записи индекса из файла индекса на диске (временный текстовый формат). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a91deed3cc258bcc09e02d2ab3ffbade4}{save}} () const
+\begin{DoxyCompactList}\small\item\em Сохраняет текущее состояние записей индекса в файл индекса (временный текстовый формат). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1Index_ae1b806d543dc61e0a0b36f14e521618b}{write}} () const
+\begin{DoxyCompactList}\small\item\em Еще одна функция сохранения (как load), но возвращает bool. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a1b1ade074d4de8c11b055e7568395937}{is\+File\+Modified}} (const fs\+::path \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Проверяет, был ли файл в рабочей директории изменен с момента последней подготовки. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a6190e5a2227df88c30b4c620c6b058c3}{stage\+\_\+file}} (const fs\+::path \&relative\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Подготавливает файл, создавая объект \doxylink{classsvcs_1_1core_1_1Blob}{Blob}, сохраняя его в хранилище и обновляя запись \doxylink{classsvcs_1_1core_1_1Index}{Index} (Основная логика \textquotesingle{}svcs add\textquotesingle{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a55c5d4ac4ccd15dcb16b288b09833d6d}{create\+Tree\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Создает иерархическую структуру \doxylink{classsvcs_1_1core_1_1Tree}{Tree} на основе текущих подготовленных записей и сохраняет объекты \doxylink{classsvcs_1_1core_1_1Tree}{Tree} в \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет областью подготовки (\doxylink{classsvcs_1_1core_1_1Index}{Index}) репозитория СКВ. 
+
+Класс \doxylink{classsvcs_1_1core_1_1Index}{Index} отвечает за чтение и запись списка подготовленных файлов в файл индекса (.svcs/index), управление операцией \textquotesingle{}svcs add\textquotesingle{} и предоставление необходимой структуры для создания коммитов. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1Index_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1core_1_1Index_a920e69911a8617367d5f609a4277eb6b}\index{svcs::core::Index@{svcs::core::Index}!Index@{Index}}
+\index{Index@{Index}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a920e69911a8617367d5f609a4277eb6b} 
+svcs\+::core\+::\+Index\+::\+Index (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{vcs\+\_\+root\+\_\+path}{, }\item[{fs\+::path}]{repo\+\_\+root\+\_\+path}{, }\item[{\mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}} \&}]{storage}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует менеджер \doxylink{classsvcs_1_1core_1_1Index}{Index}, настраивая пути и загружая индекс. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em vcs\+\_\+root\+\_\+path} & Путь к управляющей директории СКВ (например, .svcs). \\
+\hline
+{\em repo\+\_\+root\+\_\+path} & Путь к корню рабочей директории репозитория. \\
+\hline
+{\em storage} & Ссылка на экземпляр \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1Index_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1core_1_1Index_aa9f812d5c3398bee8d88e97aa326070d}\index{svcs::core::Index@{svcs::core::Index}!addEntry@{addEntry}}
+\index{addEntry@{addEntry}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{addEntry()}{addEntry()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_aa9f812d5c3398bee8d88e97aa326070d} 
+void svcs\+::core\+::\+Index\+::add\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}} \&}]{entry}{}\end{DoxyParamCaption})}
+
+
+
+Добавляет или обновляет запись в области подготовки. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em entry} & Объект \doxylink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry} для добавления или обновления. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1Index_a55c5d4ac4ccd15dcb16b288b09833d6d}\index{svcs::core::Index@{svcs::core::Index}!createTreeObject@{createTreeObject}}
+\index{createTreeObject@{createTreeObject}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{createTreeObject()}{createTreeObject()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a55c5d4ac4ccd15dcb16b288b09833d6d} 
+std\+::string svcs\+::core\+::\+Index\+::create\+Tree\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Создает иерархическую структуру \doxylink{classsvcs_1_1core_1_1Tree}{Tree} на основе текущих подготовленных записей и сохраняет объекты \doxylink{classsvcs_1_1core_1_1Tree}{Tree} в \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. 
+
+\begin{DoxyReturn}{Возвращает}
+Хеш SHA-\/1 (ID) конечного корневого объекта \doxylink{classsvcs_1_1core_1_1Tree}{Tree}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если индекс пуст или создание дерева завершается неудачно. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classsvcs_1_1core_1_1Index_a99d3bfb0d32b68f0cb5f1078b278a88b}\index{svcs::core::Index@{svcs::core::Index}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{getEntry()}{getEntry()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a99d3bfb0d32b68f0cb5f1078b278a88b} 
+const \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}} \texorpdfstring{$\ast$}{*} svcs\+::core\+::\+Index\+::get\+Entry (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Извлекает запись из индекса по относительному пути файла. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+path} & Относительный путь файла. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на константный \doxylink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry} или nullptr, если не найден. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Index_a1b1ade074d4de8c11b055e7568395937}\index{svcs::core::Index@{svcs::core::Index}!isFileModified@{isFileModified}}
+\index{isFileModified@{isFileModified}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{isFileModified()}{isFileModified()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a1b1ade074d4de8c11b055e7568395937} 
+bool svcs\+::core\+::\+Index\+::is\+File\+Modified (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Проверяет, был ли файл в рабочей директории изменен с момента последней подготовки. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+path} & Относительный путь проверяемого файла. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true Если файл изменен, удален или не отслеживается; false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Index_afddc8e6ce0c5b84c65b29f929ffc9369}\index{svcs::core::Index@{svcs::core::Index}!load@{load}}
+\index{load@{load}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_afddc8e6ce0c5b84c65b29f929ffc9369} 
+void svcs\+::core\+::\+Index\+::load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Загружает записи индекса из файла индекса на диске (временный текстовый формат). 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если файл индекса не может быть прочитан. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classsvcs_1_1core_1_1Index_a91deed3cc258bcc09e02d2ab3ffbade4}\index{svcs::core::Index@{svcs::core::Index}!save@{save}}
+\index{save@{save}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a91deed3cc258bcc09e02d2ab3ffbade4} 
+void svcs\+::core\+::\+Index\+::save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Сохраняет текущее состояние записей индекса в файл индекса (временный текстовый формат). 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если файл индекса не может быть записан. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classsvcs_1_1core_1_1Index_a6190e5a2227df88c30b4c620c6b058c3}\index{svcs::core::Index@{svcs::core::Index}!stage\_file@{stage\_file}}
+\index{stage\_file@{stage\_file}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{stage\_file()}{stage\_file()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a6190e5a2227df88c30b4c620c6b058c3} 
+void svcs\+::core\+::\+Index\+::stage\+\_\+file (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{relative\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Подготавливает файл, создавая объект \doxylink{classsvcs_1_1core_1_1Blob}{Blob}, сохраняя его в хранилище и обновляя запись \doxylink{classsvcs_1_1core_1_1Index}{Index} (Основная логика \textquotesingle{}svcs add\textquotesingle{}). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em relative\+\_\+path} & Путь к файлу относительно корневой директории репозитория. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если путь недействителен или операции чтения/записи завершаются неудачно. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classsvcs_1_1core_1_1Index_ae1b806d543dc61e0a0b36f14e521618b}\index{svcs::core::Index@{svcs::core::Index}!write@{write}}
+\index{write@{write}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_ae1b806d543dc61e0a0b36f14e521618b} 
+bool svcs\+::core\+::\+Index\+::write (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Еще одна функция сохранения (как load), но возвращает bool. 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если файл индекса не может быть записан. \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Index_8hxx}{Index.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Index_8cxx}{Index.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,32 @@
+\doxysection{Файл tests/cli/mocks/\+Mock\+Subject.hxx}
+\hypertarget{cli_2mocks_2MockSubject_8hxx}{}\label{cli_2mocks_2MockSubject_8hxx}\index{tests/cli/mocks/MockSubject.hxx@{tests/cli/mocks/MockSubject.hxx}}
+
+
+Mock реализация интерфейса ISubject для целей модульного тестирования.  
+
+
+{\ttfamily \#include "{}../../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include $<$gmock/gmock.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em Mock реализация \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} для тестирования событийно-\/ориентированных компонентов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1mocks}{svcs\+::test\+::cli\+::mocks}}
+\begin{DoxyCompactList}\small\item\em Mock объекты и тестовые дубли для тестирования CLI команд. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Модульные тесты для компонентов интерфейса командной строки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Mock реализация интерфейса ISubject для целей модульного тестирования. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Этот класс захватывает все события, публикуемые ядром системы, без необходимости полной реализации системы Observer. Он предоставляет вспомогательные методы для удобства проверки утверждений в модульных тестах. 

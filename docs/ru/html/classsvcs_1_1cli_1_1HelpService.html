@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Класс svcs::cli::HelpService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classsvcs_1_1cli_1_1HelpService.html','','classsvcs_1_1cli_1_1HelpService-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс svcs::cli::HelpService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Сервис, предоставляющий справочную информацию для команд.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="HelpService_8hxx_source.html">HelpService.hxx</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:svcs::cli::HelpService:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classsvcs_1_1cli_1_1HelpService.png" usemap="#svcs_3A_3Acli_3A_3AHelpService_map" alt=""/>
+  <map id="svcs_3A_3Acli_3A_3AHelpService_map" name="svcs_3A_3Acli_3A_3AHelpService_map">
+<area href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter.html" title="Адаптер для использования MockHelpService с HelpCommand." alt="svcs::test::cli::mocks::MockHelpServiceAdapter" shape="rect" coords="0,56,275,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a48e82d071c038c517266aacb36f5b98a" id="r_a48e82d071c038c517266aacb36f5b98a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48e82d071c038c517266aacb36f5b98a">HelpService</a> (std::shared_ptr&lt; <a class="el" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> &gt; bus, std::function&lt; std::vector&lt; std::string &gt;()&gt; getCommands, std::function&lt; std::string(const std::string &amp;)&gt; getDescription, std::function&lt; void(const std::string &amp;)&gt; showHelp, std::function&lt; std::string(const std::string &amp;)&gt; getUsage=nullptr)</td></tr>
+<tr class="memdesc:a48e82d071c038c517266aacb36f5b98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует <a class="el" href="classsvcs_1_1cli_1_1HelpService.html" title="Сервис, предоставляющий справочную информацию для команд.">HelpService</a> путем внедрения необходимых зависимостей в виде обратных вызовов.  <br /></td></tr>
+<tr class="memitem:a51fc45e41c002a70d477cc30dc3d52a0" id="r_a51fc45e41c002a70d477cc30dc3d52a0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51fc45e41c002a70d477cc30dc3d52a0">getAvailableCommands</a> () const</td></tr>
+<tr class="memdesc:a51fc45e41c002a70d477cc30dc3d52a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет <span class="tt">getCommandsCallback_</span> для получения списка всех доступных имен команд.  <br /></td></tr>
+<tr class="memitem:aea2600a15351225caa966c1f3f6a3420" id="r_aea2600a15351225caa966c1f3f6a3420"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea2600a15351225caa966c1f3f6a3420">getCommandDescription</a> (const std::string &amp;commandName) const</td></tr>
+<tr class="memdesc:aea2600a15351225caa966c1f3f6a3420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет <span class="tt">getDescriptionCallback_</span> для получения краткого описания конкретной команды.  <br /></td></tr>
+<tr class="memitem:a9d635c88b8b370658e7ebe6722225046" id="r_a9d635c88b8b370658e7ebe6722225046"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d635c88b8b370658e7ebe6722225046">showCommandHelp</a> (const std::string &amp;commandName) const</td></tr>
+<tr class="memdesc:a9d635c88b8b370658e7ebe6722225046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет <span class="tt">showHelpCallback_</span> для запуска отображения подробной справки для конкретной команды.  <br /></td></tr>
+<tr class="memitem:a9ed3ffc25e641718af84cadc815dfdd4" id="r_a9ed3ffc25e641718af84cadc815dfdd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ed3ffc25e641718af84cadc815dfdd4">commandExists</a> (const std::string &amp;commandName) const</td></tr>
+<tr class="memdesc:a9ed3ffc25e641718af84cadc815dfdd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет существование команды путем сравнения со списком, возвращенным <span class="tt">getAvailableCommands</span>.  <br /></td></tr>
+<tr class="memitem:ae013b91f186ea3cdebfbe72fec3442e8" id="r_ae013b91f186ea3cdebfbe72fec3442e8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae013b91f186ea3cdebfbe72fec3442e8">getCommandUsage</a> (const std::string &amp;commandName) const</td></tr>
+<tr class="memdesc:ae013b91f186ea3cdebfbe72fec3442e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет <span class="tt">getUsageCallback_</span> для получения синтаксиса использования конкретной команды.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Сервис, предоставляющий справочную информацию для команд. </p>
+<p>Этот сервис реализует логику приложения для отображения справки. Он использует набор <b>функций обратного вызова</b> (<span class="tt">std::function</span>) для получения данных команд (имена, описания, использование) и отображения конкретной справки. Этот выбор дизайна предотвращает прямую зависимость от <a class="el" href="classsvcs_1_1cli_1_1CommandFactory.html" title="Фабрика для создания объектов ICommand по их строковому имени.">CommandFactory</a>, тем самым разрывая потенциальную <b>циклическую зависимость</b>. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a48e82d071c038c517266aacb36f5b98a" name="a48e82d071c038c517266aacb36f5b98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e82d071c038c517266aacb36f5b98a">&#9670;&#160;</a></span>HelpService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">svcs::cli::HelpService::HelpService </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>bus</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; std::vector&lt; std::string &gt;()&gt;</td>          <td class="paramname"><span class="paramname"><em>getCommands</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; std::string(const std::string &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>getDescription</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(const std::string &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>showHelp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; std::string(const std::string &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>getUsage</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструирует <a class="el" href="classsvcs_1_1cli_1_1HelpService.html" title="Сервис, предоставляющий справочную информацию для команд.">HelpService</a> путем внедрения необходимых зависимостей в виде обратных вызовов. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bus</td><td>Общий указатель на шину событий для уведомлений. </td></tr>
+    <tr><td class="paramname">getCommands</td><td>Функция (обратный вызов), которая возвращает список доступных имен команд. </td></tr>
+    <tr><td class="paramname">getDescription</td><td>Функция (обратный вызов), которая возвращает краткое описание команды. </td></tr>
+    <tr><td class="paramname">showHelp</td><td>Функция (обратный вызов), которая запускает полное отображение справки для команды. </td></tr>
+    <tr><td class="paramname">getUsage</td><td>Функция (обратный вызов), которая возвращает синтаксис использования команды (по умолчанию nullptr, если не требуется строго). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a9ed3ffc25e641718af84cadc815dfdd4" name="a9ed3ffc25e641718af84cadc815dfdd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed3ffc25e641718af84cadc815dfdd4">&#9670;&#160;</a></span>commandExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::cli::HelpService::commandExists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commandName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет существование команды путем сравнения со списком, возвращенным <span class="tt">getAvailableCommands</span>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandName</td><td>Имя команды для проверки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> если команда зарегистрирована, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a51fc45e41c002a70d477cc30dc3d52a0" name="a51fc45e41c002a70d477cc30dc3d52a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51fc45e41c002a70d477cc30dc3d52a0">&#9670;&#160;</a></span>getAvailableCommands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; svcs::cli::HelpService::getAvailableCommands </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Выполняет <span class="tt">getCommandsCallback_</span> для получения списка всех доступных имен команд. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Вектор строк, содержащий имена всех зарегистрированных команд. </dd></dl>
+
+</div>
+</div>
+<a id="aea2600a15351225caa966c1f3f6a3420" name="aea2600a15351225caa966c1f3f6a3420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2600a15351225caa966c1f3f6a3420">&#9670;&#160;</a></span>getCommandDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::cli::HelpService::getCommandDescription </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commandName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Выполняет <span class="tt">getDescriptionCallback_</span> для получения краткого описания конкретной команды. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandName</td><td>Имя команды. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Описание команды или "Неизвестная команда", если имя команды недействительно или обратный вызов не сработал. </dd></dl>
+
+</div>
+</div>
+<a id="ae013b91f186ea3cdebfbe72fec3442e8" name="ae013b91f186ea3cdebfbe72fec3442e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae013b91f186ea3cdebfbe72fec3442e8">&#9670;&#160;</a></span>getCommandUsage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::cli::HelpService::getCommandUsage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commandName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Выполняет <span class="tt">getUsageCallback_</span> для получения синтаксиса использования конкретной команды. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandName</td><td>Имя команды. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка использования команды или пустая строка, если команда не найдена или обратный вызов не установлен. </dd></dl>
+
+</div>
+</div>
+<a id="a9d635c88b8b370658e7ebe6722225046" name="a9d635c88b8b370658e7ebe6722225046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d635c88b8b370658e7ebe6722225046">&#9670;&#160;</a></span>showCommandHelp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void svcs::cli::HelpService::showCommandHelp </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commandName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выполняет <span class="tt">showHelpCallback_</span> для запуска отображения подробной справки для конкретной команды. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandName</td><td>Имя команды, для которой показывается справка. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>cli/include/<a class="el" href="HelpService_8hxx_source.html">HelpService.hxx</a></li>
+<li>cli/src/<a class="el" href="HelpService_8cxx.html">HelpService.cxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>svcs</b></li><li class="navelem"><a href="namespacesvcs_1_1cli.html">cli</a></li><li class="navelem"><a href="classsvcs_1_1cli_1_1HelpService.html">HelpService</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
 var SaveCommand_8hxx =
 [
-    [ "SaveCommand", "classSaveCommand.html", "classSaveCommand" ]
+    [ "svcs::cli::SaveCommand", "classsvcs_1_1cli_1_1SaveCommand.html", "classsvcs_1_1cli_1_1SaveCommand" ]
 ];

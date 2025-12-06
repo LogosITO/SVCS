@@ -21,6 +21,8 @@
 #include <sstream>
 #include <thread>
 
+namespace svcs::server {
+
 using namespace std::chrono_literals;
 using boost::asio::ip::tcp;
 
@@ -292,4 +294,6 @@ void Server::notifyServerError(const std::string& message) const
     if (event_bus_) {
         event_bus_->notify(Event{Event::ERROR_MESSAGE, message, "Server"});
     }
+}
+
 }

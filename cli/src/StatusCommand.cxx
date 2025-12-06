@@ -19,6 +19,11 @@
 #include <set>
 #include <utility>
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 namespace fs = std::filesystem;
 
 StatusCommand::StatusCommand(std::shared_ptr<ISubject> subject,
@@ -335,4 +340,6 @@ std::string StatusCommand::formatFileStatus(char status, const std::string& file
         case 'D': return "[deleted]   " + filePath;
         default:  return "[unknown]   " + filePath;
     }
+}
+
 }

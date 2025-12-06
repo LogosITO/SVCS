@@ -19,62 +19,69 @@
 \DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
 \DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <mutex>}}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{keyword}{using\ }boost::asio::ip::tcp;}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServer_a5b86b125b0f108a4b108a3335d9aca1d}{Server}}\ \{}
-\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classServer_a5b86b125b0f108a4b108a3335d9aca1d}{Server}}(boost::asio::io\_context\&\ io\_context,}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port,}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager,}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus);}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\string~Server}}();}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_acec935535d1d5b58d95cf24678eac014}{start}}();}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}{stop}}();}
+\DoxyCodeLine{00050\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1server}{svcs::server}}\ \{}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}};}
+\DoxyCodeLine{00053\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1services}{svcs::services}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{using\ }boost::asio::ip::tcp;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1server_1_1Server_a9d492a8428f99b2dff54f2187c8e0b31}{Server}}\ \{}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a9d492a8428f99b2dff54f2187c8e0b31}{Server}}(boost::asio::io\_context\&\ io\_context,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a1f2f56eea71047aa92720231a86eff82}{\string~Server}}();}
 \DoxyCodeLine{00102\ }
-\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_ad9c27dae78e9034d6bd718ea9e724bd4}{isRunning}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a417bbdb237deca6638c5cf7d9481907d}{start}}();}
 \DoxyCodeLine{00113\ }
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{classServer_ab23ffb44df2151b7c9ff51fc07b60207}{getPort}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a252bf24c9940ca31498bc66969548f07}{stop}}();}
 \DoxyCodeLine{00124\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classServer_a9676db9ad600cce926848e5299e1d55d}{getActiveConnections}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a25b1443769dcceef091b11611cce6600}{isRunning}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ startAccept();}
-\DoxyCodeLine{00145\ }
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ handleAccept(std::shared\_ptr<tcp::socket>\ socket,\ \textcolor{keyword}{const}\ boost::system::error\_code\&\ error);}
-\DoxyCodeLine{00158\ }
-\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnClientHandler(std::shared\_ptr<tcp::socket>\ socket);}
-\DoxyCodeLine{00169\ }
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ handleClient(std::shared\_ptr<tcp::socket>\ socket);}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{classsvcs_1_1server_1_1Server_af580ac58d1c8eab5af462e7401346812}{getPort}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a77b63f3cabc921e87659d7174b8d7dfb}{getActiveConnections}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ startAccept();}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ handleAccept(std::shared\_ptr<tcp::socket>\ socket,\ \textcolor{keyword}{const}\ boost::system::error\_code\&\ error);}
 \DoxyCodeLine{00180\ }
-\DoxyCodeLine{00192\ \ \ \ \ std::string\ determineServiceType(std::shared\_ptr<tcp::socket>\ socket);}
-\DoxyCodeLine{00193\ }
-\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{bool}\ executeProtocol(std::shared\_ptr<tcp::socket>\ socket,\ \textcolor{keyword}{const}\ std::string\&\ service\_type);}
-\DoxyCodeLine{00208\ }
-\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ removeClientConnection(std::shared\_ptr<tcp::socket>\ socket);}
-\DoxyCodeLine{00219\ }
-\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyServerEvent(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnClientHandler(std::shared\_ptr<tcp::socket>\ socket);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ handleClient(std::shared\_ptr<tcp::socket>\ socket);}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00214\ \ \ \ \ std::string\ determineServiceType(std::shared\_ptr<tcp::socket>\ socket);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{bool}\ executeProtocol(std::shared\_ptr<tcp::socket>\ socket,\ \textcolor{keyword}{const}\ std::string\&\ service\_type);}
 \DoxyCodeLine{00230\ }
-\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyClientConnection(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{void}\ removeClientConnection(std::shared\_ptr<tcp::socket>\ socket);}
 \DoxyCodeLine{00241\ }
-\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyServerError(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyServerEvent(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00252\ }
-\DoxyCodeLine{00253\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00261\ \ \ \ \ boost::asio::io\_context\&\ io\_context\_;}
-\DoxyCodeLine{00262\ }
-\DoxyCodeLine{00270\ \ \ \ \ tcp::acceptor\ acceptor\_;}
-\DoxyCodeLine{00271\ }
-\DoxyCodeLine{00279\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repository\_manager\_;}
-\DoxyCodeLine{00280\ }
-\DoxyCodeLine{00288\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus\_;}
-\DoxyCodeLine{00289\ }
-\DoxyCodeLine{00297\ \ \ \ \ std::atomic<bool>\ is\_running\_;}
-\DoxyCodeLine{00298\ }
-\DoxyCodeLine{00306\ \ \ \ \ std::unordered\_set<std::shared\_ptr<tcp::socket>>\ active\_connections\_;}
-\DoxyCodeLine{00307\ }
-\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ connections\_mutex\_;}
-\DoxyCodeLine{00316\ \};}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyClientConnection(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyServerError(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00283\ \ \ \ \ boost::asio::io\_context\&\ io\_context\_;}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00292\ \ \ \ \ tcp::acceptor\ acceptor\_;}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00301\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repository\_manager\_;}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00310\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus\_;}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00319\ \ \ \ \ std::atomic<bool>\ is\_running\_;}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00328\ \ \ \ \ std::unordered\_set<std::shared\_ptr<tcp::socket>>\ active\_connections\_;}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ connections\_mutex\_;}
+\DoxyCodeLine{00338\ \};}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \}}
 
 \end{DoxyCode}

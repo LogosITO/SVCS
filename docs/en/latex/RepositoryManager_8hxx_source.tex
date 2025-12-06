@@ -14,104 +14,110 @@
 \DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCommitInfo}{CommitInfo}}\ \{}
-\DoxyCodeLine{00048\ \ \ \ \ std::string\ \mbox{\hyperlink{structCommitInfo_a17b73098845c08e071b05234db336fcd}{hash}};}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00057\ \ \ \ \ std::string\ \mbox{\hyperlink{structCommitInfo_aa9dce2c2bf3c1622d77ef5bbbb63113e}{message}};}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCommitInfo_a5d011d8d9edd88ef6953f8bc146681b2}{files\_count}}\ =\ 0;}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00075\ \ \ \ \ std::string\ \mbox{\hyperlink{structCommitInfo_ade2668c2ddc4785889792a443f88cc4a}{author}};}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00084\ \ \ \ \ std::string\ \mbox{\hyperlink{structCommitInfo_a058d42cb536a2d4d2ae5fc49fecf9ad7}{timestamp}};}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00093\ \ \ \ \ std::string\ \mbox{\hyperlink{structCommitInfo_a7859b0ad6d68755896ee2d831480622a}{branch}};}
-\DoxyCodeLine{00094\ \};}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00111\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRepositoryManager}{RepositoryManager}}\ \{}
-\DoxyCodeLine{00112\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00120\ \ \ \ \ std::string\ currentRepoPath;}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00129\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus;}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Private\ Utility\ Methods\ for\ Logging\ /\ Приватные\ служебные\ методы\ для\ логирования\ -\/-\/-\/}}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ logError(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00143\ }
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ logDebug(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00154\ }
-\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ logInfo(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Private\ Utility\ Methods\ for\ File\ System\ Operations\ /\ Приватные\ служебные\ методы\ для\ операций\ с\ файловой\ системой\ -\/-\/-\/}}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ createDirectory(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00180\ }
-\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{bool}\ createFile(\textcolor{keyword}{const}\ std::filesystem::path\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ content\ =\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00205\ \ \ \ \ std::string\ getCurrentBranchFromHead()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00207\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classRepositoryManager_a458ddacf912fdc1774ab351f736a19cf}{RepositoryManager}}(std::shared\_ptr<ISubject>\ bus);}
-\DoxyCodeLine{00218\ }
-\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepositoryManager_a65eba6d28cbf99fd3fbad48845a2cd34}{updateHead}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00229\ }
-\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_a1ddddb02e8b5f59b06b8a40465716103}{initializeRepository}}(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keywordtype}{bool}\ force\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}}\ \{}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1services}{svcs::services}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{CommitInfo}}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ std::string\ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo_a22c8de2ed22d1a26c86a75e7081f064e}{hash}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ std::string\ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo_a12ac23b4fb675f21f59f2f90a810c88a}{message}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo_a2be554aecf325f18a1625623370d559a}{files\_count}}\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::string\ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo_a70e66fd024ae0753086976570f9d37ac}{author}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ std::string\ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo_aa09cc28f2e82ed826ca7d14fd1ed8a26}{timestamp}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00110\ \ \ \ \ std::string\ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo_a13bf52279934fb69911f27829496a468}{branch}};}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{RepositoryManager}}\ \{}
+\DoxyCodeLine{00129\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ \ \ \ \ std::string\ currentRepoPath;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00146\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Private\ Utility\ Methods\ for\ Logging\ /\ Приватные\ служебные\ методы\ для\ логирования\ -\/-\/-\/}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ logError(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ logDebug(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ logInfo(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Private\ Utility\ Methods\ for\ File\ System\ Operations\ /\ Приватные\ служебные\ методы\ для\ операций\ с\ файловой\ системой\ -\/-\/-\/}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{bool}\ createDirectory(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{bool}\ createFile(\textcolor{keyword}{const}\ std::filesystem::path\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ content\ =\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00222\ \ \ \ \ std::string\ getCurrentBranchFromHead()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a94770300269bc08cd10f32991ce501d2}{RepositoryManager}}(std::shared\_ptr<ISubject>\ bus);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ac0d42424f59a33af3f2964c7eddcd192}{updateHead}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00246\ }
-\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_ae03ccf6c40689d204f8579b6ac860674}{isRepositoryInitialized}}(\textcolor{keyword}{const}\ std::string\&\ path\ =\ \textcolor{stringliteral}{"{}."{}});}
-\DoxyCodeLine{00259\ }
-\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepositoryManager_a887e56ac86447c2735597e2ea88c33bb}{updateBranchReference}}(\textcolor{keyword}{const}\ std::string\&\ branchName,\ \textcolor{keyword}{const}\ std::string\&\ commitHash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00272\ }
-\DoxyCodeLine{00282\ \ \ \ \ [[nodiscard]]\ std::filesystem::path\ \mbox{\hyperlink{classRepositoryManager_a9e2cecca02ba6ac2638d31ec11d4bc62}{getRepositoryPath}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00283\ }
-\DoxyCodeLine{00284\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Staging\ and\ History\ Management\ Methods\ /\ Методы\ управления\ подготовкой\ и\ историей\ -\/-\/-\/}}
-\DoxyCodeLine{00285\ }
-\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_aa4a9d5d690cc49d33ad5372fed9b6a54}{addFileToStaging}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ad003b3bfb496804283a939224a78c566}{initializeRepository}}(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keywordtype}{bool}\ force\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a529c5a70cc13ab92989e55f7db9f7882}{isRepositoryInitialized}}(\textcolor{keyword}{const}\ std::string\&\ path\ =\ \textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a0938228acbd111de2b8a6c230d61fdf2}{updateBranchReference}}(\textcolor{keyword}{const}\ std::string\&\ branchName,\ \textcolor{keyword}{const}\ std::string\&\ commitHash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00299\ \ \ \ \ [[nodiscard]]\ std::filesystem::path\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a27171d33fc901388a54e811d892458ba}{getRepositoryPath}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00300\ }
-\DoxyCodeLine{00310\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepositoryManager_a063b8ddcbc8a9ffc840df4de77fd9bac}{getHeadCommit}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00311\ }
-\DoxyCodeLine{00323\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepositoryManager_a8e4a9346964bfdff6d44304bca90e2d3}{createCommit}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00324\ }
-\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepositoryManager_a7b5d52f3d9d35ee3b19e3de95381b97f}{updateCommitReferences}}(\textcolor{keyword}{const}\ std::string\&\ removedCommitHash,\ \textcolor{keyword}{const}\ std::string\&\ newParentHash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00337\ }
-\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_abf991881ef84930dd6e81667360ebdef}{revertCommit}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash);}
-\DoxyCodeLine{00352\ }
-\DoxyCodeLine{00364\ \ \ \ \ std::optional<CommitInfo>\ \mbox{\hyperlink{classRepositoryManager_ab6f60e5f4072590eebf0ea6e9de6dcbe}{getCommitByHash}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00365\ }
-\DoxyCodeLine{00377\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepositoryManager_a68c480cfc28657b5027566f3500b6e23}{getParentCommitHash}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00378\ }
-\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classRepositoryManager_aa8cc4f01a4d6167153c9974360053bdb}{generateCommitHash}}(\textcolor{keyword}{const}\ std::string\&\ content);}
-\DoxyCodeLine{00391\ }
-\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_aefb1b537b9c90d9fd0eac7255d5580fd}{restoreFilesFromCommit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCommitInfo}{CommitInfo}}\&\ commit)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00404\ }
-\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_a1af28901603c2e70dce49af751105bef}{clearStagingArea}}();}
-\DoxyCodeLine{00415\ }
-\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_a647383203955484c1b57222ce5e5faf8}{saveStagedChanges}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00428\ }
-\DoxyCodeLine{00438\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classRepositoryManager_a5e0b90c8ec4bb9890ccd1672b99b0712}{getStagedFiles}}();}
-\DoxyCodeLine{00439\ }
-\DoxyCodeLine{00449\ \ \ \ \ std::vector<CommitInfo>\ \mbox{\hyperlink{classRepositoryManager_a3e1c8b2b9f7686ec651c4f205c576cc5}{getCommitHistory}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00450\ }
-\DoxyCodeLine{00462\ \ \ \ \ std::vector<CommitInfo>\ \mbox{\hyperlink{classRepositoryManager_a88ca62ed585f39a3690447d1c6f029de}{getBranchHistory}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00463\ }
-\DoxyCodeLine{00473\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepositoryManager_a349a454c83ccbd63eb9b5a7c12b6a2ef}{getCurrentBranch}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00474\ }
-\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_a411879a02a3df9de01aceb9d36ae30ff}{removeRepository}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00487\ }
-\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_ad3b43df94ac6ede014b7e9874cc78b0b}{branchExists}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00500\ }
-\DoxyCodeLine{00512\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepositoryManager_a2b1e565145033e923fd3881734939b0a}{getBranchHead}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00513\ }
-\DoxyCodeLine{00527\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepositoryManager_a06c251dbfab7dd09ebe42dcd2585416d}{getFileContentAtCommit}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash,\ \textcolor{keyword}{const}\ std::string\&\ file\_path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00528\ }
-\DoxyCodeLine{00540\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classRepositoryManager_a8c70604640f7649809496ff5f3140678}{getCommitFiles}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00541\ }
-\DoxyCodeLine{00553\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepositoryManager_ae1acfdc55c7763a4bb763239dafe510e}{setMergeState}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name,\ \textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00554\ }
-\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepositoryManager_a4aec01d8ae4d1e92557d59d82edf37c8}{clearMergeState}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00563\ }
-\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepositoryManager_abde5809b74cc06049e784ca08c293c01}{isMergeInProgress}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00574\ }
-\DoxyCodeLine{00584\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepositoryManager_a597e22a9a35f0f8175a12b5e0bb651da}{getMergeBranch}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00585\ \};}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Staging\ and\ History\ Management\ Methods\ /\ Методы\ управления\ подготовкой\ и\ историей\ -\/-\/-\/}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_acdb90f4f22c89514d2429730b5a3623d}{addFileToStaging}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00327\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a0036b6bb88ccb15b43e4bebfa073c823}{getHeadCommit}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00340\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a65705c1b91ea0c8878446856ced2ea59}{createCommit}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a34e211523257152d66477f6e9fa5d6ab}{updateCommitReferences}}(\textcolor{keyword}{const}\ std::string\&\ removedCommitHash,\ \textcolor{keyword}{const}\ std::string\&\ newParentHash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae159d5e092b0e945c17ba74e5f5af61e}{revertCommit}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash);}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00381\ \ \ \ \ std::optional<CommitInfo>\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae0706f73124ce12640a1a21fa3309398}{getCommitByHash}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00394\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a1f8b1488fb9d9b1343b35abcc0184464}{getParentCommitHash}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ac7de58f0405dc440d4de884fd2782e64}{generateCommitHash}}(\textcolor{keyword}{const}\ std::string\&\ content);}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a543e43dc2b2ebd12605824064ee4cd8b}{restoreFilesFromCommit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{CommitInfo}}\&\ commit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_aa1b198ef75b6c571dfd4ace68ecc0f89}{clearStagingArea}}();}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a303ff113df6c3fd0dbe0df7e98cfbc29}{saveStagedChanges}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00455\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a002f7a416459e5c17de748fd527a67bc}{getStagedFiles}}();}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00466\ \ \ \ \ std::vector<CommitInfo>\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a3c522df200bd216339feaac08ad45c03}{getCommitHistory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00479\ \ \ \ \ std::vector<CommitInfo>\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae6c18516f1a61af3cdd8b978b5989fe3}{getBranchHistory}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00490\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a1a4b3f81b30778c851f0db4accf5f2d8}{getCurrentBranch}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_adba9e0953fb91a855f593be9de1408e9}{removeRepository}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ad84b0f67d4e6e2e60082497b4e1899a3}{branchExists}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00529\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a2562058c0a617d0ded24030dc8682251}{getBranchHead}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00544\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae565a1db180819ff2e0840ed601beadc}{getFileContentAtCommit}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash,\ \textcolor{keyword}{const}\ std::string\&\ file\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00557\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_aa45d786e39da7deb33648147efbcd739}{getCommitFiles}}(\textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a2c18c663d76a842f4999df20b17e4687}{setMergeState}}(\textcolor{keyword}{const}\ std::string\&\ branch\_name,\ \textcolor{keyword}{const}\ std::string\&\ commit\_hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00579\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a83533e5ffa7ea687981e4611e1e4a9ac}{clearMergeState}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a45a6a691304ae0c2cad9fe10bfbca607}{isMergeInProgress}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00601\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a7c790d31b20b710b6512c0703030fe7a}{getMergeBranch}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00602\ \};}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \}}
 
 \end{DoxyCode}

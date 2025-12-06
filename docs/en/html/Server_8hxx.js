@@ -1,4 +1,4 @@
 var Server_8hxx =
 [
-    [ "Server", "classServer.html", "classServer" ]
+    [ "svcs::server::Server", "classsvcs_1_1server_1_1Server.html", "classsvcs_1_1server_1_1Server" ]
 ];

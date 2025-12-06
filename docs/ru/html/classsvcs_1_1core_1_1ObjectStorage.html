@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Класс svcs::core::ObjectStorage</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classsvcs_1_1core_1_1ObjectStorage.html','','classsvcs_1_1core_1_1ObjectStorage-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс svcs::core::ObjectStorage</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ObjectStorage_8hxx_source.html">ObjectStorage.hxx</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:svcs::core::ObjectStorage:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classsvcs_1_1core_1_1ObjectStorage.png" usemap="#svcs_3A_3Acore_3A_3AObjectStorage_map" alt=""/>
+  <map id="svcs_3A_3Acore_3A_3AObjectStorage_map" name="svcs_3A_3Acore_3A_3AObjectStorage_map">
+<area href="classsvcs_1_1test_1_1core_1_1MockObjectStorage.html" title="Mock implementation of ObjectStorage." alt="svcs::test::core::MockObjectStorage" shape="rect" coords="0,56,213,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a080fa691f97a255abe1d65962c16b0e0" id="r_a080fa691f97a255abe1d65962c16b0e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a080fa691f97a255abe1d65962c16b0e0">ObjectStorage</a> (const std::string &amp;root_path, const std::shared_ptr&lt; <a class="el" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> &gt; &amp;subject=nullptr)</td></tr>
+<tr class="memdesc:a080fa691f97a255abe1d65962c16b0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор для <a class="el" href="classsvcs_1_1core_1_1ObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a>.  <br /></td></tr>
+<tr class="memitem:ab6ceb81115dacf56d6a99f5721e30c78" id="r_ab6ceb81115dacf56d6a99f5721e30c78"><td class="memItemLeft" align="right" valign="top"><a id="ab6ceb81115dacf56d6a99f5721e30c78" name="ab6ceb81115dacf56d6a99f5721e30c78"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ObjectStorage</b> ()</td></tr>
+<tr class="memdesc:ab6ceb81115dacf56d6a99f5721e30c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор. <br /></td></tr>
+<tr class="memitem:a1af2a8c7d75e55827cd1c88a3370beec" id="r_a1af2a8c7d75e55827cd1c88a3370beec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af2a8c7d75e55827cd1c88a3370beec">setSubject</a> (std::shared_ptr&lt; <a class="el" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> &gt; subj)</td></tr>
+<tr class="memdesc:a1af2a8c7d75e55827cd1c88a3370beec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает или заменяет субъект событий, используемый <a class="el" href="classsvcs_1_1core_1_1ObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a>.  <br /></td></tr>
+<tr class="memitem:acf98d1402cbc3bb112bca7a19a3400f3" id="r_acf98d1402cbc3bb112bca7a19a3400f3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf98d1402cbc3bb112bca7a19a3400f3">getObjectPath</a> (const std::string &amp;hash) const</td></tr>
+<tr class="memdesc:acf98d1402cbc3bb112bca7a19a3400f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует полный путь в файловой системе для объекта на основе его хеша.  <br /></td></tr>
+<tr class="memitem:afcd2404560b69f9aa502d7ddc67de225" id="r_afcd2404560b69f9aa502d7ddc67de225"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcd2404560b69f9aa502d7ddc67de225">saveObject</a> (const <a class="el" href="classsvcs_1_1core_1_1VcsObject.html">VcsObject</a> &amp;obj) const</td></tr>
+<tr class="memdesc:afcd2404560b69f9aa502d7ddc67de225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет <a class="el" href="classsvcs_1_1core_1_1VcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a> в базе данных объектов.  <br /></td></tr>
+<tr class="memitem:a6f5c0cacdeb8b319358ef9e3cce2bd9f" id="r_a6f5c0cacdeb8b319358ef9e3cce2bd9f"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classsvcs_1_1core_1_1VcsObject.html">VcsObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f5c0cacdeb8b319358ef9e3cce2bd9f">loadObject</a> (const std::string &amp;hash) const</td></tr>
+<tr class="memdesc:a6f5c0cacdeb8b319358ef9e3cce2bd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает объект с диска по его ID хеша.  <br /></td></tr>
+<tr class="memitem:aceaa59aa102d6f79aae8ed17765b4f6e" id="r_aceaa59aa102d6f79aae8ed17765b4f6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceaa59aa102d6f79aae8ed17765b4f6e">objectExists</a> (const std::string &amp;hash) const</td></tr>
+<tr class="memdesc:aceaa59aa102d6f79aae8ed17765b4f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, существует ли объект с заданным хешем на диске.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов. </p>
+<p>Реализует низкоуровневые операции файловой системы (генерация путей, чтение, запись), сжатие, распаковку и десериализацию объектов. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a080fa691f97a255abe1d65962c16b0e0" name="a080fa691f97a255abe1d65962c16b0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080fa691f97a255abe1d65962c16b0e0">&#9670;&#160;</a></span>ObjectStorage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">svcs::core::ObjectStorage::ObjectStorage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>root_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>subject</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор для <a class="el" href="classsvcs_1_1core_1_1ObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root_path</td><td>Корневой путь репозитория (например, директория, содержащая ".svcs"). </td></tr>
+    <tr><td class="paramname">subject</td><td>Общий указатель на интерфейс <a class="el" href="classsvcs_1_1services_1_1ISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> для логирования событий. По умолчанию nullptr, если логирование пока не требуется. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="acf98d1402cbc3bb112bca7a19a3400f3" name="acf98d1402cbc3bb112bca7a19a3400f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf98d1402cbc3bb112bca7a19a3400f3">&#9670;&#160;</a></span>getObjectPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::ObjectStorage::getObjectPath </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>hash</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Формирует полный путь в файловой системе для объекта на основе его хеша. </p>
+<p>Использует первые два символа хеша для имени поддиректории и оставшиеся 38 символов для имени файла. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>Полный 40-символьный ID хеша SHA-1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::string Полный, независимый от платформы путь к файлу. </dd></dl>
+
+</div>
+</div>
+<a id="a6f5c0cacdeb8b319358ef9e3cce2bd9f" name="a6f5c0cacdeb8b319358ef9e3cce2bd9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f5c0cacdeb8b319358ef9e3cce2bd9f">&#9670;&#160;</a></span>loadObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classsvcs_1_1core_1_1VcsObject.html">VcsObject</a> &gt; svcs::core::ObjectStorage::loadObject </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>hash</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Загружает объект с диска по его ID хеша. </p>
+<p>Читает сжатый файл, распаковывает его, выполняет проверки целостности и десериализует объект с использованием внутреннего фабричного метода. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>ID хеша объекта для загрузки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::unique_ptr&lt;VcsObject&gt; Восстановленный экземпляр объекта. </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>если объект не найден, поврежден или недействителен. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяется в <a class="el" href="classsvcs_1_1test_1_1core_1_1MockObjectStorage.html#a1cc049df93020cc42fdbaa81ad799b40">svcs::test::core::MockObjectStorage</a>.</p>
+
+</div>
+</div>
+<a id="aceaa59aa102d6f79aae8ed17765b4f6e" name="aceaa59aa102d6f79aae8ed17765b4f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceaa59aa102d6f79aae8ed17765b4f6e">&#9670;&#160;</a></span>objectExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::ObjectStorage::objectExists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>hash</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, существует ли объект с заданным хешем на диске. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>ID хеша для проверки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True, если файл объекта существует. </dd></dl>
+
+</div>
+</div>
+<a id="afcd2404560b69f9aa502d7ddc67de225" name="afcd2404560b69f9aa502d7ddc67de225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcd2404560b69f9aa502d7ddc67de225">&#9670;&#160;</a></span>saveObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::ObjectStorage::saveObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classsvcs_1_1core_1_1VcsObject.html">VcsObject</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сохраняет <a class="el" href="classsvcs_1_1core_1_1VcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a> в базе данных объектов. </p>
+<p>Сериализует объект, добавляет заголовок, сжимает его и записывает в файл. Публикует события об успехе/неудаче. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td><a class="el" href="classsvcs_1_1core_1_1VcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a> для сохранения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>bool True, если сохранение прошло успешно. </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>если хеш недействителен или операции ввода-вывода завершаются неудачно. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяется в <a class="el" href="classsvcs_1_1test_1_1core_1_1MockObjectStorage.html#a3bfbf6c9ca8c6298b49cb5ba4a6c20f8">svcs::test::core::MockObjectStorage</a>.</p>
+
+</div>
+</div>
+<a id="a1af2a8c7d75e55827cd1c88a3370beec" name="a1af2a8c7d75e55827cd1c88a3370beec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af2a8c7d75e55827cd1c88a3370beec">&#9670;&#160;</a></span>setSubject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void svcs::core::ObjectStorage::setSubject </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>subj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает или заменяет субъект событий, используемый <a class="el" href="classsvcs_1_1core_1_1ObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subj</td><td>Новый указатель <a class="el" href="classsvcs_1_1services_1_1ISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> для использования при публикации событий. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>core/include/<a class="el" href="ObjectStorage_8hxx_source.html">ObjectStorage.hxx</a></li>
+<li>core/src/<a class="el" href="ObjectStorage_8cxx.html">ObjectStorage.cxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>svcs</b></li><li class="navelem"><a href="namespacesvcs_1_1core.html">core</a></li><li class="navelem"><a href="classsvcs_1_1core_1_1ObjectStorage.html">ObjectStorage</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

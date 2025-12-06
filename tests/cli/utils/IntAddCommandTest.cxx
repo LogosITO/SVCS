@@ -28,6 +28,8 @@
 #include <fstream>
 #include <memory>
 
+namespace svcs::test::cli::utils {
+
 void AddCommandTest::SetUp() {
     // ✅ CORRECT: Assign to the member variables (using 'this->' is explicit, but good practice)
     this->mockEventBus = std::make_shared<MockSubject>();
@@ -60,4 +62,6 @@ void AddCommandTest::createTestFile(const std::string& filename, const std::stri
 
 void AddCommandTest::createTestDirectory(const std::string& dirname) const {
     std::filesystem::create_directories(testDir / dirname);
+}
+
 }

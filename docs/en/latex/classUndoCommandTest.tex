@@ -2,7 +2,7 @@
 \hypertarget{classUndoCommandTest}{}\label{classUndoCommandTest}\index{UndoCommandTest@{UndoCommandTest}}
 
 
-Google Test fixture for running integration tests against the \doxylink{classUndoCommand}{Undo\+Command}.  
+Google Test fixture for running integration tests against the Undo\+Command.  
 
 
 
@@ -27,15 +27,15 @@ void \mbox{\hyperlink{classUndoCommandTest_a8713ecffcd85c2e00b86cf599ad2986e}{cr
 void \mbox{\hyperlink{classUndoCommandTest_a84b1211ba7256902f112b9f6f7726b65}{create\+Test\+Directory}} (const std\+::string \&dirname) const
 \begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classUndoCommandTest_a0040c7c506fa9026c0b9c1bdbd7dfa54}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
-\begin{DoxyCompactList}\small\item\em Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Stages a list of files using the Repository\+Manager\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classUndoCommandTest_a1106d4d824964caf50800ca487355328}{create\+Test\+Commit}} (const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Creates a new commit (save) with a specified message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{classUndoCommandTest_a274ab1a49b83056b359ae465a27cdddc}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+static bool \mbox{\hyperlink{classUndoCommandTest_a274ab1a49b83056b359ae465a27cdddc}{contains\+Message}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{classUndoCommandTest_a19ae731837894936b259f6c12e948f0d}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+static int \mbox{\hyperlink{classUndoCommandTest_a19ae731837894936b259f6c12e948f0d}{count\+Messages}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Counts the occurrences of a specific message (substring) across all event notifications. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{classUndoCommandTest_ab2616fda4df38dac96a12716f353595f}{simulate\+User\+Input}} (const std\+::string \&input)
 \begin{DoxyCompactList}\small\item\em Simulates user input by pushing the string into the mock event bus\textquotesingle{}s input queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -46,10 +46,10 @@ static void \mbox{\hyperlink{classUndoCommandTest_ab2616fda4df38dac96a12716f3535
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
 \begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer/input simulator). \end{DoxyCompactList}\item 
 \Hypertarget{classUndoCommandTest_a953ba8563850b1f59d347f0394db5a4f}\label{classUndoCommandTest_a953ba8563850b1f59d347f0394db5a4f} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+std\+::shared\+\_\+ptr$<$ Repository\+Manager $>$ {\bfseries repo\+Manager}
 \begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
 \Hypertarget{classUndoCommandTest_ae35ccb30eb05bba1da30fcdf7278478a}\label{classUndoCommandTest_ae35ccb30eb05bba1da30fcdf7278478a} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classUndoCommand}{Undo\+Command}} $>$ {\bfseries command}
+std\+::unique\+\_\+ptr$<$ Undo\+Command $>$ {\bfseries command}
 \begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
 \Hypertarget{classUndoCommandTest_a6ada7d6a933f4e447ad01bb6ae17bb27}\label{classUndoCommandTest_a6ada7d6a933f4e447ad01bb6ae17bb27} 
 std\+::filesystem\+::path {\bfseries test\+Dir}
@@ -57,12 +57,12 @@ std\+::filesystem\+::path {\bfseries test\+Dir}
 
 
 \doxysubsection{Detailed Description}
-Google Test fixture for running integration tests against the \doxylink{classUndoCommand}{Undo\+Command}. 
+Google Test fixture for running integration tests against the Undo\+Command. 
 
 This fixture provides the necessary infrastructure for testing the undo command\+:
 \begin{DoxyItemize}
 \item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Manage a temporary SVCS repository directory.
-\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for event bus/output/input simulation) and \doxylink{classRepositoryManager}{Repository\+Manager} (for core logic).
+\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for event bus/output/input simulation) and Repository\+Manager (for core logic).
 \item {\bfseries{Helper Methods\+:}} Simplify file manipulation, staging, committing, and verification of notifications. 
 \end{DoxyItemize}
 
@@ -73,7 +73,7 @@ This fixture provides the necessary infrastructure for testing the undo command\
 \index{containsMessage@{containsMessage}!UndoCommandTest@{UndoCommandTest}}
 \doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
 {\footnotesize\ttfamily \label{classUndoCommandTest_a274ab1a49b83056b359ae465a27cdddc} 
-bool Undo\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+bool Undo\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
 
 
@@ -93,7 +93,7 @@ true if the message is found in any notification, false otherwise.
 \index{countMessages@{countMessages}!UndoCommandTest@{UndoCommandTest}}
 \doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
 {\footnotesize\ttfamily \label{classUndoCommandTest_a19ae731837894936b259f6c12e948f0d} 
-int Undo\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+int Undo\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
 
 
@@ -179,7 +179,7 @@ void Undo\+Command\+Test\+::simulate\+User\+Input (\begin{DoxyParamCaption}\item
 
 Simulates user input by pushing the string into the mock event bus\textquotesingle{}s input queue. 
 
-This is crucial for testing the confirmation prompt in the \doxylink{classUndoCommand}{Undo\+Command}. 
+This is crucial for testing the confirmation prompt in the Undo\+Command. 
 \begin{DoxyParams}{Parameters}
 {\em input} & The string to simulate as user input (e.\+g., "{}y\textbackslash{}n"{} or "{}n\textbackslash{}n"{}). \\
 \hline
@@ -192,7 +192,7 @@ void Undo\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const s
 
 
 
-Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. 
+Stages a list of files using the Repository\+Manager\textquotesingle{}s staging logic. 
 
 
 \begin{DoxyParams}{Parameters}

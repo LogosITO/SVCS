@@ -2,54 +2,59 @@
 \hypertarget{TreeTest_8cxx}{}\label{TreeTest_8cxx}\index{tests/core/TreeTest.cxx@{tests/core/TreeTest.cxx}}
 
 
-Unit tests for the \doxylink{classTree}{Tree} class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity.  
+Unit tests for the Tree class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity.  
 
 
 {\ttfamily \#include "{}../../core/include/\+Tree.\+hxx"{}}\newline
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1core}{svcs\+::test\+::core}}
+\begin{DoxyCompactList}\small\item\em Unit tests for core components and data structures. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{TreeTest_8cxx_abfbff93bb1459d7106bb5d881f4877c0}\label{TreeTest_8cxx_abfbff93bb1459d7106bb5d881f4877c0} 
-{\bfseries TEST} (Tree\+Test, Hash\+Is\+Calculated\+And\+Type\+Is\+Correct)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a65150faacc694237df4d90efb41ccb1a}\label{namespacesvcs_1_1test_1_1core_a65150faacc694237df4d90efb41ccb1a} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Tree\+Test, Hash\+Is\+Calculated\+And\+Type\+Is\+Correct)
 \item 
-\Hypertarget{TreeTest_8cxx_a4ff60cd18cbb5f4446b5af434f12a388}\label{TreeTest_8cxx_a4ff60cd18cbb5f4446b5af434f12a388} 
-{\bfseries TEST} (Tree\+Test, Hash\+Is\+Consistent\+Regardless\+Of\+Initial\+Order)
+\Hypertarget{namespacesvcs_1_1test_1_1core_ae9b328921984ac6a04ecc642beddf771}\label{namespacesvcs_1_1test_1_1core_ae9b328921984ac6a04ecc642beddf771} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Tree\+Test, Hash\+Is\+Consistent\+Regardless\+Of\+Initial\+Order)
 \item 
-\Hypertarget{TreeTest_8cxx_aee4702bce9e70bdf04201d01ec8b7087}\label{TreeTest_8cxx_aee4702bce9e70bdf04201d01ec8b7087} 
-{\bfseries TEST} (Tree\+Test, Hash\+Changes\+When\+Child\+Hash\+Changes)
+\Hypertarget{namespacesvcs_1_1test_1_1core_acbb759a34a7d1dfd872a3ea2dcede356}\label{namespacesvcs_1_1test_1_1core_acbb759a34a7d1dfd872a3ea2dcede356} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Tree\+Test, Hash\+Changes\+When\+Child\+Hash\+Changes)
 \item 
-\Hypertarget{TreeTest_8cxx_ae2200383943c7724f6a1837efd3a8eb5}\label{TreeTest_8cxx_ae2200383943c7724f6a1837efd3a8eb5} 
-{\bfseries TEST} (Tree\+Test, Add\+And\+Update\+Entry)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a2bb88575254f78d531650b2c53b1ae17}\label{namespacesvcs_1_1test_1_1core_a2bb88575254f78d531650b2c53b1ae17} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Tree\+Test, Add\+And\+Update\+Entry)
 \item 
-\Hypertarget{TreeTest_8cxx_a724c038bc09647ee149b066d97a27a52}\label{TreeTest_8cxx_a724c038bc09647ee149b066d97a27a52} 
-{\bfseries TEST} (Tree\+Test, Remove\+Entry)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a21d1bca4a14153e95017f553190e1db8}\label{namespacesvcs_1_1test_1_1core_a21d1bca4a14153e95017f553190e1db8} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Tree\+Test, Remove\+Entry)
 \item 
-\Hypertarget{TreeTest_8cxx_a1f7005a5bb213babd0b29be9a4b1921b}\label{TreeTest_8cxx_a1f7005a5bb213babd0b29be9a4b1921b} 
-{\bfseries TEST} (Tree\+Test, Find\+Entry)
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad3edbef3324de01bddf5b4db1cdd4a34}\label{namespacesvcs_1_1test_1_1core_ad3edbef3324de01bddf5b4db1cdd4a34} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Tree\+Test, Find\+Entry)
 \item 
-\Hypertarget{TreeTest_8cxx_a7560b6d55323cbfa445cddae4bda3bfc}\label{TreeTest_8cxx_a7560b6d55323cbfa445cddae4bda3bfc} 
-{\bfseries TEST} (Tree\+Test, Serialization\+And\+Deserialization\+Round\+Trip)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a6d6d78feaa7436d70aab048ea70f4e21}\label{namespacesvcs_1_1test_1_1core_a6d6d78feaa7436d70aab048ea70f4e21} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Tree\+Test, Serialization\+And\+Deserialization\+Round\+Trip)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{TreeTest_8cxx_ac12b4363d924366b59daf081894244ff}\label{TreeTest_8cxx_ac12b4363d924366b59daf081894244ff} 
-const std\+::string {\bfseries HASH\+\_\+A} = "{}a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a648eb0f3cd1db32c6ac3313319fa565c}\label{namespacesvcs_1_1test_1_1core_a648eb0f3cd1db32c6ac3313319fa565c} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+A} = "{}a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0"{}
 \item 
-\Hypertarget{TreeTest_8cxx_a69690ea0ec6dbeef9c9b174418068b8f}\label{TreeTest_8cxx_a69690ea0ec6dbeef9c9b174418068b8f} 
-const std\+::string {\bfseries HASH\+\_\+B} = "{}b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a48a6a6ff857512967f0192df28fcedc8}\label{namespacesvcs_1_1test_1_1core_a48a6a6ff857512967f0192df28fcedc8} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+B} = "{}b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1"{}
 \item 
-\Hypertarget{TreeTest_8cxx_a4c23159031be481753f189a235824190}\label{TreeTest_8cxx_a4c23159031be481753f189a235824190} 
-const std\+::string {\bfseries HASH\+\_\+C} = "{}c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa9f0d1c467c6216dc74f00e40dbe2d34}\label{namespacesvcs_1_1test_1_1core_aa9f0d1c467c6216dc74f00e40dbe2d34} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+C} = "{}c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2"{}
 \item 
-\Hypertarget{TreeTest_8cxx_acc60c501f3a559028769e4eb32044b96}\label{TreeTest_8cxx_acc60c501f3a559028769e4eb32044b96} 
-const std\+::string {\bfseries HASH\+\_\+D} = "{}d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa91e3251258987513e67a5014a5529c9}\label{namespacesvcs_1_1test_1_1core_aa91e3251258987513e67a5014a5529c9} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+D} = "{}d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3"{}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Unit tests for the \doxylink{classTree}{Tree} class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity. 
+Unit tests for the Tree class, verifying object construction, canonical sorting, entry management, and serialization/deserialization integrity. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License

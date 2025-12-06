@@ -2,7 +2,7 @@
 \hypertarget{IntVersionCommandTest_8hxx}{}\label{IntVersionCommandTest_8hxx}\index{tests/cli/utils/IntVersionCommandTest.hxx@{tests/cli/utils/IntVersionCommandTest.hxx}}
 
 
-Test fixture header for integration tests of the \doxylink{classVersionCommand}{Version\+Command} class.  
+Test fixture header for integration tests of the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command} class.  
 
 
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
@@ -14,14 +14,23 @@ Test fixture header for integration tests of the \doxylink{classVersionCommand}{
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classVersionCommandTest}{Version\+Command\+Test}}
-\begin{DoxyCompactList}\small\item\em Google Test fixture for running unit/integration tests against the \doxylink{classVersionCommand}{Version\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{svcs\+::test\+::cli\+::utils\+::\+Version\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running unit/integration tests against the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{svcs\+::test\+::cli\+::utils\+::\+Version\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for displaying version information about SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs\+::test\+::cli\+::utils}}
+\begin{DoxyCompactList}\small\item\em Utility classes and test fixtures for CLI command testing. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Unit tests for command-\/line interface components. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Test fixture header for integration tests of the \doxylink{classVersionCommand}{Version\+Command} class. 
+Test fixture header for integration tests of the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command} class. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Declares the \doxylink{classVersionCommandTest}{Version\+Command\+Test} fixture, which sets up the mock event bus and the command instance necessary to verify the output and behavior of the \textquotesingle{}svcs version\textquotesingle{} command. Since the command is stateless, the setup is minimal. 
+Declares the Version\+Command\+Test fixture, which sets up the mock event bus and the command instance necessary to verify the output and behavior of the \textquotesingle{}svcs version\textquotesingle{} command. Since the command is stateless, the setup is minimal. 

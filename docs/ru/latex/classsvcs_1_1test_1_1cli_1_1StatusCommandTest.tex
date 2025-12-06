@@ -1,0 +1,177 @@
+\doxysection{Класс svcs\+::test\+::cli\+::Status\+Command\+Test}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest}{}\label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest}\index{svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}}
+
+
+Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1cli_1_1StatusCommand}{Status\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Status\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::Status\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1StatusCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_aefbee62095adda034f08871a4fcb0b04}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a8e0f92c1e44b3260c58ec63a65c3fba3}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a29d2abee6ec67ba72fd50223b161b58e}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл с указанным содержимым во временной директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a311583a45584c1452c954a468978b568}{create\+Test\+Directory}} (const std\+::string \&dirname)
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию во временном расположении. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a01c12b141155f654a3afd883fda25784}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Индексирует список файлов с использованием логики индексации \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a789f2d5c16bb285696e6f2d3506bdbe4}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_ae432d206b56d48641fe9c0bb99bfa162}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Подсчитывает количество вхождений конкретного сообщения (подстроки) во всех уведомлениях о событиях. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a62ea829c90e68b9f074ff69c47d90b0e}\label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a62ea829c90e68b9f074ff69c47d90b0e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий (наблюдатель). \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a9b4ec3a1552b20056accaec60d439959}\label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a9b4ec3a1552b20056accaec60d439959} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Общий указатель на компонент основной логики репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a5023281f4b4295844b8b42be26f742b1}\label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a5023281f4b4295844b8b42be26f742b1} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand}{Status\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a8d3b26079e77a53a01c387c0e1678b3a}\label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a8d3b26079e77a53a01c387c0e1678b3a} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной тестовой директории репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1cli_1_1StatusCommand}{Status\+Command}. 
+
+Этот фикстур предоставляет необходимую инфраструктуру для интеграционных тестов\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Управление временной директорией репозитория SVCS.
+\item {\bfseries{Основные компоненты\+:}} Экземпляры \doxylink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject} (для шины событий) и \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager} (для основной логики).
+\item {\bfseries{Вспомогательные методы\+:}} Упрощают создание файлов, настройку директорий, индексацию и проверку уведомлений. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a789f2d5c16bb285696e6f2d3506bdbe4}\index{svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a789f2d5c16bb285696e6f2d3506bdbe4} 
+bool svcs\+::test\+::cli\+::utils\+::\+Status\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_ae432d206b56d48641fe9c0bb99bfa162}\index{svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}!countMessages@{countMessages}}
+\index{countMessages@{countMessages}!svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_ae432d206b56d48641fe9c0bb99bfa162} 
+int svcs\+::test\+::cli\+::utils\+::\+Status\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Подсчитывает количество вхождений конкретного сообщения (подстроки) во всех уведомлениях о событиях. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для подсчета. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество событий, содержащих подстроку. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a311583a45584c1452c954a468978b568}\index{svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a311583a45584c1452c954a468978b568} 
+void svcs\+::test\+::cli\+::utils\+::\+Status\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию во временном расположении. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Относительный путь/имя директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a29d2abee6ec67ba72fd50223b161b58e}\index{svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a29d2abee6ec67ba72fd50223b161b58e} 
+void svcs\+::test\+::cli\+::utils\+::\+Status\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл с указанным содержимым во временной директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Относительный путь/имя файла. \\
+\hline
+{\em content} & Содержимое для записи в файл. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_aefbee62095adda034f08871a4fcb0b04}\index{svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_aefbee62095adda034f08871a4fcb0b04} 
+void svcs\+::test\+::cli\+::utils\+::\+Status\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение перед каждым тестом. 
+
+Инициализирует компоненты, создает временную директорию и инициализирует репозиторий. \Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a01c12b141155f654a3afd883fda25784}\index{svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a01c12b141155f654a3afd883fda25784} 
+void svcs\+::test\+::cli\+::utils\+::\+Status\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Индексирует список файлов с использованием логики индексации \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em files} & Вектор имен файлов для индексации. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a8e0f92c1e44b3260c58ec63a65c3fba3}\index{svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!svcs::test::cli::StatusCommandTest@{svcs::test::cli::StatusCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1StatusCommandTest_a8e0f92c1e44b3260c58ec63a65c3fba3} 
+void svcs\+::test\+::cli\+::utils\+::\+Status\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение после каждого теста. 
+
+Очищает временную директорию и восстанавливает рабочий путь. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntStatusCommandTest_8hxx}{Int\+Status\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntStatusCommandTest_8cxx}{Int\+Status\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

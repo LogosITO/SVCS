@@ -2,7 +2,7 @@
 \hypertarget{InitCommandIntegrationTest_8hxx}{}\label{InitCommandIntegrationTest_8hxx}\index{tests/cli/utils/InitCommandIntegrationTest.hxx@{tests/cli/utils/InitCommandIntegrationTest.hxx}}
 
 
-Declaration of the test fixture for \doxylink{classInitCommand}{Init\+Command} integration tests.  
+Declaration of the test fixture for \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command} integration tests.  
 
 
 {\ttfamily \#include "{}../../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
@@ -12,14 +12,29 @@ Declaration of the test fixture for \doxylink{classInitCommand}{Init\+Command} i
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classInitCommandIntegrationTest}{Init\+Command\+Integration\+Test}}
-\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classInitCommand}{Init\+Command} integration tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{svcs\+::test\+::cli\+::utils\+::\+Init\+Command\+Integration\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command} integration tests. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1test_1_1cli_1_1utils_1_1Event}{svcs\+::test\+::cli\+::utils\+::\+Event}}
+\begin{DoxyCompactList}\small\item\em Structure describing an event published by the VCS core. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{svcs\+::test\+::cli\+::utils\+::\+Repository\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages all physical file and directory operations within the SVCS repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{svcs\+::test\+::cli\+::utils\+::\+Init\+Command}}
+\begin{DoxyCompactList}\small\item\em Implements the "{}init"{} command for the Version Control System (VCS). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}{svcs\+::test\+::cli\+::utils\+::\+Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em A mock implementation of \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} for testing event-\/driven components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs\+::test\+::cli\+::utils}}
+\begin{DoxyCompactList}\small\item\em Utility classes and test fixtures for CLI command testing. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Unit tests for command-\/line interface components. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaration of the test fixture for \doxylink{classInitCommand}{Init\+Command} integration tests. 
+Declaration of the test fixture for \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command} integration tests. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-This fixture sets up an isolated environment with a temporary directory and uses the real \doxylink{classRepositoryManager}{Repository\+Manager} to verify end-\/to-\/end repository initialization. 
+This fixture sets up an isolated environment with a temporary directory and uses the real \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} to verify end-\/to-\/end repository initialization. 

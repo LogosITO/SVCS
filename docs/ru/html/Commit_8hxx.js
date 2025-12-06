@@ -1,4 +1,4 @@
 var Commit_8hxx =
 [
-    [ "Commit", "classCommit.html", "classCommit" ]
+    [ "svcs::core::Commit", "classsvcs_1_1core_1_1Commit.html", "classsvcs_1_1core_1_1Commit" ]
 ];

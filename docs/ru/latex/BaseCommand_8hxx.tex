@@ -2,7 +2,7 @@
 \hypertarget{BaseCommand_8hxx}{}\label{BaseCommand_8hxx}\index{cli/include/BaseCommand.hxx@{cli/include/BaseCommand.hxx}}
 
 
-Объявление класса \doxylink{classBaseCommand}{Base\+Command} для всех команд в системе.  
+Объявление класса Base\+Command для всех команд в системе.  
 
 
 {\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
@@ -13,14 +13,19 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classBaseCommand}{Base\+Command}}
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand}{svcs\+::cli\+::\+Base\+Command}}
 \begin{DoxyCompactList}\small\item\em Базовый класс для всех CLI команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Компоненты командной строки и реализации команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Объявление класса \doxylink{classBaseCommand}{Base\+Command} для всех команд в системе. 
+Объявление класса Base\+Command для всех команд в системе. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classBaseCommand}{Base\+Command} реализует логику взаимодействия с системой шины событий, позволяя всем производным командам легко генерировать информационные, отладочные и другие сообщения, которые будут автоматически обработаны зарегистрированными наблюдателями (например, \doxylink{classLogger}{Logger}). 
+Base\+Command реализует логику взаимодействия с системой шины событий, позволяя всем производным командам легко генерировать информационные, отладочные и другие сообщения, которые будут автоматически обработаны зарегистрированными наблюдателями (например, Logger). 

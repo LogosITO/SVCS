@@ -15,37 +15,43 @@
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3}{CommandFactory}}\ \{}
-\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00049\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus;}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00058\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager;}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00073\ \ \ \ \ std::unordered\_map<std::string,}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::function<std::unique\_ptr<ICommand>(std::shared\_ptr<ISubject>,}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>)>>\ creators;}
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}}\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_ab1e38511a83bcf6b939dab1b4dd54605}{CommandFactory}}\ \{}
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ std::shared\_ptr<ISubject>\ event\_bus;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager;}
 \DoxyCodeLine{00076\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ registerDefaultCommands();}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3}{CommandFactory}}(std::shared\_ptr<ISubject>\ bus,}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3}{CommandFactory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3}{CommandFactory}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00111\ }
-\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3}{CommandFactory}}\&\ \mbox{\hyperlink{classCommandFactory_aa7fb0a11d596213f1b2f62ecea795ae7}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classCommandFactory_a76d2671de0dbcbeb5840775a10ea10a3}{CommandFactory}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCommandFactory_a917e8d9dc3309ac17ddf923943ad873b}{registerCommand}}(\textcolor{keyword}{const}\ std::string\&\ name,}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<std::unique\_ptr<ICommand>(std::shared\_ptr<ISubject>,}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>)>\ creator);}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00149\ \ \ \ \ std::string\ \mbox{\hyperlink{classCommandFactory_ae02afa8bcfb45a9e847afc4341a6478c}{getCommandDescription}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00150\ }
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCommandFactory_a5cf9650357540bf23af2136d08385f64}{showCommandHelp}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00177\ \ \ \ \ std::unique\_ptr<ICommand>\ \mbox{\hyperlink{classCommandFactory_ab8448b0292b6f5f9cfdafb4fb33102dc}{createCommand}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00188\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classCommandFactory_ae390c14a70557144e76f3b114036078e}{getRegisteredCommands}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00189\ \};}
+\DoxyCodeLine{00090\ \ \ \ \ std::unordered\_map<std::string,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::function<std::unique\_ptr<ICommand>(std::shared\_ptr<ISubject>,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>)>>\ creators;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ registerDefaultCommands();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_ab1e38511a83bcf6b939dab1b4dd54605}{CommandFactory}}(std::shared\_ptr<ISubject>\ bus,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_ab1e38511a83bcf6b939dab1b4dd54605}{CommandFactory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_ab1e38511a83bcf6b939dab1b4dd54605}{CommandFactory}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_ab1e38511a83bcf6b939dab1b4dd54605}{CommandFactory}}\&\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_a7ba6c891fb898a1e26bd6d2f48eba688}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_ab1e38511a83bcf6b939dab1b4dd54605}{CommandFactory}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_a2ee88acd3c17b2cd088206b56d70bc9e}{registerCommand}}(\textcolor{keyword}{const}\ std::string\&\ name,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<std::unique\_ptr<ICommand>(std::shared\_ptr<ISubject>,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>)>\ creator);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00166\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_a4330dbefa4d0a31febc681cd5f3c24f5}{getCommandDescription}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_ab5dcd76239707823f6ceb8df54004fe5}{showCommandHelp}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00194\ \ \ \ \ std::unique\_ptr<ICommand>\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_a7cfdf8a0f47dd2efe3fecf8d688f5df3}{createCommand}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00205\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory_a96259b5a9c0a59c3a5619cd6560daad5}{getRegisteredCommands}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00206\ \};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \}}
 
 \end{DoxyCode}

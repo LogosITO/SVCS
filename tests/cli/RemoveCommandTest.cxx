@@ -17,6 +17,10 @@
 
 #include <memory>
 
+namespace svcs::test::cli {
+
+using svcs::test::cli::utils::RemoveCommandTest;
+
 // Test removing single file from staging
 TEST_F(RemoveCommandTest, RemoveSingleFile) {
     // Stage files first
@@ -218,4 +222,6 @@ TEST_F(RemoveCommandTest, RemoveFileFromSubdirectory) {
     // Verify notifications
     auto notifications = mockEventBus->getNotifications();
     EXPECT_TRUE(containsMessage(notifications, "Removed from staging: subdir/file4.txt"));
+}
+
 }

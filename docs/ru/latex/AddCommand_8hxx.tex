@@ -2,7 +2,7 @@
 \hypertarget{AddCommand_8hxx}{}\label{AddCommand_8hxx}\index{cli/include/AddCommand.hxx@{cli/include/AddCommand.hxx}}
 
 
-Объявление класса \doxylink{classAddCommand}{Add\+Command}.  
+Объявление класса Add\+Command.  
 
 
 {\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
@@ -14,55 +14,27 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classAddCommand}{Add\+Command}}
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand}{svcs\+::cli\+::\+Add\+Command}}
 \begin{DoxyCompactList}\small\item\em Реализует команду "{}add"{} для Simple Version Control System (SVCS). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Компоненты командной строки и реализации команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Перечисления}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c}{File\+Status}} \{ \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2}{UNTRACKED}}
-, \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca40e3819215b52841e19a7cac06b5f065}{MODIFIED}}
-, \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca63c2867fdcae0e8e8413d7ac21b69b59}{DELETED}}
-, \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8}{UNMODIFIED}}
+enum class \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae}{svcs\+::cli\+::\+File\+Status}} \{ \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2}{svcs\+::cli\+::\+UNTRACKED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065}{svcs\+::cli\+::\+MODIFIED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea63c2867fdcae0e8e8413d7ac21b69b59}{svcs\+::cli\+::\+DELETED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8}{svcs\+::cli\+::\+UNMODIFIED}}
  \}
 \begin{DoxyCompactList}\small\item\em Определяет статус файла в SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Объявление класса \doxylink{classAddCommand}{Add\+Command}. 
+Объявление класса Add\+Command. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License 
 \end{DoxyCopyright}
-
-
-\label{doc-enum-members}
-\Hypertarget{AddCommand_8hxx_doc-enum-members}
-\doxysubsection{Перечисления}
-\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c}\index{AddCommand.hxx@{AddCommand.hxx}!FileStatus@{FileStatus}}
-\index{FileStatus@{FileStatus}!AddCommand.hxx@{AddCommand.hxx}}
-\doxysubsubsection{\texorpdfstring{FileStatus}{FileStatus}}
-{\footnotesize\ttfamily \label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c} 
-enum class \mbox{\hyperlink{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40c}{File\+Status}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-
-
-Определяет статус файла в SVCS. 
-
-\begin{DoxyEnumFields}[2]{Элементы перечислений}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UNTRACKED@{UNTRACKED}!AddCommand.hxx@{AddCommand.hxx}}\index{AddCommand.hxx@{AddCommand.hxx}!UNTRACKED@{UNTRACKED}}}\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2}\label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2} 
-UNTRACKED&Файл присутствует, но не отслеживается SVCS. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MODIFIED@{MODIFIED}!AddCommand.hxx@{AddCommand.hxx}}\index{AddCommand.hxx@{AddCommand.hxx}!MODIFIED@{MODIFIED}}}\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca40e3819215b52841e19a7cac06b5f065}\label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca40e3819215b52841e19a7cac06b5f065} 
-MODIFIED&Файл отслеживается и был изменен с последнего коммита. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DELETED@{DELETED}!AddCommand.hxx@{AddCommand.hxx}}\index{AddCommand.hxx@{AddCommand.hxx}!DELETED@{DELETED}}}\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca63c2867fdcae0e8e8413d7ac21b69b59}\label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca63c2867fdcae0e8e8413d7ac21b69b59} 
-DELETED&Файл отслеживается, но был удален из рабочей директории. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UNMODIFIED@{UNMODIFIED}!AddCommand.hxx@{AddCommand.hxx}}\index{AddCommand.hxx@{AddCommand.hxx}!UNMODIFIED@{UNMODIFIED}}}\Hypertarget{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8}\label{AddCommand_8hxx_a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8} 
-UNMODIFIED&Файл отслеживается и не имеет изменений с последнего коммита. \\
-\hline
-
-\end{DoxyEnumFields}

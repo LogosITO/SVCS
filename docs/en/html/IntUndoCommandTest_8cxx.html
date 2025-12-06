@@ -92,17 +92,25 @@ $(function(){initNavTree('IntUndoCommandTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of integration tests for the <a class="el" href="classUndoCommand.html" title="Command to revert the repository state to a previous commit.">UndoCommand</a> class, focusing on forced operations.  
+<p>Implementation of integration tests for the UndoCommand class, focusing on forced operations.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="IntUndoCommandTest_8hxx_source.html">IntUndoCommandTest.hxx</a>&quot;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
-</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of integration tests for the <a class="el" href="classUndoCommand.html" title="Command to revert the repository state to a previous commit.">UndoCommand</a> class, focusing on forced operations. </p>
-<p>Implementation of the <a class="el" href="classUndoCommandTest.html" title="Google Test fixture for running integration tests against the UndoCommand.">UndoCommandTest</a> fixture.</p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli" id="r_svcs_3A_3Atest_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli.html">svcs::test::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for command-line interface components. <br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3Autils" id="r_svcs_3A_3Atest_3A_3Acli_3A_3Autils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli_1_1utils.html">svcs::test::cli::utils</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli_1_1utils"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility classes and test fixtures for CLI command testing. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of integration tests for the UndoCommand class, focusing on forced operations. </p>
+<p>Implementation of the UndoCommandTest fixture.</p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p>This file defines the setup and teardown routines for the <a class="el" href="classUndoCommand.html" title="Command to revert the repository state to a previous commit.">UndoCommand</a> integration test fixture, along with helper methods to simplify test case creation by automating file and directory creation, staging, committing, and output verification. </p><dl class="section note"><dt>Note</dt><dd>The <span class="tt">simulateUserInput</span> method currently contains a placeholder comment, as mocking <span class="tt">std::cin</span> requires more complex setup, which is omitted here. For full interactive testing, the command/event bus must support injectable input streams. </dd></dl>
+<p>This file defines the setup and teardown routines for the UndoCommand integration test fixture, along with helper methods to simplify test case creation by automating file and directory creation, staging, committing, and output verification. </p><dl class="section note"><dt>Note</dt><dd>The <span class="tt">simulateUserInput</span> method currently contains a placeholder comment, as mocking <span class="tt">std::cin</span> requires more complex setup, which is omitted here. For full interactive testing, the command/event bus must support injectable input streams. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

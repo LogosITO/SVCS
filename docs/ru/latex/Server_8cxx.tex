@@ -2,7 +2,7 @@
 \hypertarget{Server_8cxx}{}\label{Server_8cxx}\index{server/src/Server.cxx@{server/src/Server.cxx}}
 
 
-Реализация класса \doxylink{classServer}{Server} для удаленных операций SVCS.  
+Реализация класса Server для удаленных операций SVCS.  
 
 
 {\ttfamily \#include "{}Server.\+hxx"{}}\newline
@@ -10,12 +10,17 @@
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$thread$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Серверные компоненты и команды администрирования. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация класса \doxylink{classServer}{Server} для удаленных операций SVCS. 
+Реализация класса Server для удаленных операций SVCS. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Предоставляет функциональность TCP-\/сервера для обработки соединений по Git-\/протоколу и делегирования \doxylink{classRemoteProtocol}{Remote\+Protocol} для фактических операций push/pull. 
+Предоставляет функциональность TCP-\/сервера для обработки соединений по Git-\/протоколу и делегирования Remote\+Protocol для фактических операций push/pull. 

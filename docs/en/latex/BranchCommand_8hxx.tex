@@ -2,7 +2,7 @@
 \hypertarget{BranchCommand_8hxx}{}\label{BranchCommand_8hxx}\index{cli/include/BranchCommand.hxx@{cli/include/BranchCommand.hxx}}
 
 
-Declaration of the \doxylink{classBranchCommand}{Branch\+Command} class for managing branches.  
+Declaration of the Branch\+Command class for managing branches.  
 
 
 {\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
@@ -14,14 +14,19 @@ Declaration of the \doxylink{classBranchCommand}{Branch\+Command} class for mana
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classBranchCommand}{Branch\+Command}}
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand}{svcs\+::cli\+::\+Branch\+Command}}
 \begin{DoxyCompactList}\small\item\em Command for managing branches in the version control system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Command-\/line interface components and command implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaration of the \doxylink{classBranchCommand}{Branch\+Command} class for managing branches. 
+Declaration of the Branch\+Command class for managing branches. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-The \doxylink{classBranchCommand}{Branch\+Command} is the interface for the \textquotesingle{}svcs branch\textquotesingle{} command. It supports various branch operations, including listing existing branches, creating, deleting, renaming, and switching branches. It relies on the \doxylink{classBranchManager}{Branch\+Manager} for core logic and the \doxylink{classISubject}{ISubject} event bus for user communication. 
+The Branch\+Command is the interface for the \textquotesingle{}svcs branch\textquotesingle{} command. It supports various branch operations, including listing existing branches, creating, deleting, renaming, and switching branches. It relies on the Branch\+Manager for core logic and the ISubject event bus for user communication. 

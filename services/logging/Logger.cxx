@@ -25,6 +25,8 @@
 #include <chrono>
 #include <sstream>
 
+namespace svcs::services {
+
 // Статические члены
 std::unordered_map<std::string, std::shared_ptr<Logger>> Logger::instances_;
 std::mutex Logger::instances_mutex_;
@@ -216,4 +218,6 @@ void Logger::clearInstances() {
 // Простые методы без форматирования
 void Logger::flush() {
     std::cout.flush();
+}
+
 }

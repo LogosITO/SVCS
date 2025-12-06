@@ -2,7 +2,7 @@
 \hypertarget{BranchCommand_8hxx}{}\label{BranchCommand_8hxx}\index{cli/include/BranchCommand.hxx@{cli/include/BranchCommand.hxx}}
 
 
-Объявление класса \doxylink{classBranchCommand}{Branch\+Command} для управления ветками.  
+Объявление класса Branch\+Command для управления ветками.  
 
 
 {\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
@@ -14,14 +14,19 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classBranchCommand}{Branch\+Command}}
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand}{svcs\+::cli\+::\+Branch\+Command}}
 \begin{DoxyCompactList}\small\item\em Команда для управления ветками в системе контроля версий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Компоненты командной строки и реализации команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Объявление класса \doxylink{classBranchCommand}{Branch\+Command} для управления ветками. 
+Объявление класса Branch\+Command для управления ветками. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classBranchCommand}{Branch\+Command} является интерфейсом для команды \textquotesingle{}svcs branch\textquotesingle{}. Он поддерживает различные операции с ветками, включая список существующих веток, создание, удаление, переименование и переключение веток. Он полагается на \doxylink{classBranchManager}{Branch\+Manager} для основной логики и шину событий \doxylink{classISubject}{ISubject} для общения с пользователем. 
+Branch\+Command является интерфейсом для команды \textquotesingle{}svcs branch\textquotesingle{}. Он поддерживает различные операции с ветками, включая список существующих веток, создание, удаление, переименование и переключение веток. Он полагается на Branch\+Manager для основной логики и шину событий ISubject для общения с пользователем. 

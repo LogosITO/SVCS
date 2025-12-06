@@ -1,0 +1,231 @@
+\doxysection{Класс svcs\+::server\+::cli\+::Server\+Base\+Command}
+\hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}{}\label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+
+
+Абстрактный базовый класс для всех команд администрирования сервера.  
+
+
+
+
+{\ttfamily \#include $<$Server\+Base\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::server\+::cli\+::Server\+Base\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_aa74199cd1feddb12fe2afd072c9053ed}{Server\+Base\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}{Server\+Base\+Command} с необходимыми зависимостями. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a374ba5faf54c31d80ffb397568060e21}\label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a374ba5faf54c31d80ffb397568060e21} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Server\+Base\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор для корректной очистки производных классов. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a3f1fd2baa51a5168b342ffe3d09b1119}{get\+Name}} () const override=0
+\begin{DoxyCompactList}\small\item\em Чисто виртуальный метод для получения имени команды. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a2e6579f00f8c275f2d9028a4e0bc83f7}{get\+Description}} () const override=0
+\begin{DoxyCompactList}\small\item\em Чисто виртуальный метод для получения описания команды. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a787cc093291b96dbb785692f7e145618}{get\+Usage}} () const override=0
+\begin{DoxyCompactList}\small\item\em Чисто виртуальный метод для получения синтаксиса использования команды. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad122598b6dfb0a065eb9fc3d5f0c0e7a}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override=0
+\begin{DoxyCompactList}\small\item\em Чисто виртуальный метод для выполнения логики команды. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a8ebf75fc2472e67519770c1e660e7f19}{show\+Help}} () const override=0
+\begin{DoxyCompactList}\small\item\em Чисто виртуальный метод для отображения подробной справочной информации. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a894f4e32bab7afbe52cf3c00790e4aaa}{notify\+Info}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Отправляет информационное уведомление через шину событий. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ae442f184f015147219e511ae2f602f4d}{notify\+Error}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Отправляет уведомление об ошибке через шину событий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a5643c9d9426f1813507672bcff2ca701}\label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a5643c9d9426f1813507672bcff2ca701} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ {\bfseries event\+\_\+bus\+\_\+}
+\begin{DoxyCompactList}\small\item\em Общий указатель на шину событий для системных уведомлений. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad815bf55e3b761845f3b611d5c75d212}\label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad815bf55e3b761845f3b611d5c75d212} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+\_\+manager\+\_\+}
+\begin{DoxyCompactList}\small\item\em Общий указатель на менеджер репозиториев для операций с репозиториями. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Абстрактный базовый класс для всех команд администрирования сервера. 
+
+Наследуется от \doxylink{classsvcs_1_1cli_1_1ICommand}{ICommand} и предоставляет общую инфраструктуру для операций управления сервером, включая уведомления о событиях и управление репозиториями. Все серверные команды должны наследоваться от этого класса. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_aa74199cd1feddb12fe2afd072c9053ed}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}!ServerBaseCommand@{ServerBaseCommand}}
+\index{ServerBaseCommand@{ServerBaseCommand}!svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+\doxysubsubsection{\texorpdfstring{ServerBaseCommand()}{ServerBaseCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_aa74199cd1feddb12fe2afd072c9053ed} 
+svcs\+::server\+::cli\+::\+Server\+Base\+Command\+::\+Server\+Base\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}{Server\+Base\+Command} с необходимыми зависимостями. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\+\_\+bus} & Общий указатель на шину событий для системных уведомлений. \\
+\hline
+{\em repo\+\_\+manager} & Общий указатель на менеджер репозиториев для операций с репозиториями. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad122598b6dfb0a065eb9fc3d5f0c0e7a}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad122598b6dfb0a065eb9fc3d5f0c0e7a} 
+virtual bool svcs\+::server\+::cli\+::\+Server\+Base\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Чисто виртуальный метод для выполнения логики команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Вектор строковых аргументов, переданных команде. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если выполнение команды было успешным, false в противном случае.
+\end{DoxyReturn}
+Должен быть реализован производными классами для предоставления специфичной для команды логики. 
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a28c39200f05a5e4f7c94d05b573cbc18}{svcs\+::server\+::cli\+::\+Hub\+Command}} и \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a4f83b29c700622c57f341a6605d6b53e}{svcs\+::server\+::cli\+::\+Repo\+Command}}.
+
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a2e6579f00f8c275f2d9028a4e0bc83f7}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a2e6579f00f8c275f2d9028a4e0bc83f7} 
+virtual std\+::string svcs\+::server\+::cli\+::\+Server\+Base\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Чисто виртуальный метод для получения описания команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Описание команды в виде строки.
+\end{DoxyReturn}
+Должен быть реализован производными классами для описания функциональности команды. 
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a6c2b48168bc6f7fa8d857d54205117e6}{svcs\+::server\+::cli\+::\+Hub\+Command}} и \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a65def35aa0abe8f3e65ec0dae0364134}{svcs\+::server\+::cli\+::\+Repo\+Command}}.
+
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a3f1fd2baa51a5168b342ffe3d09b1119}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a3f1fd2baa51a5168b342ffe3d09b1119} 
+virtual std\+::string svcs\+::server\+::cli\+::\+Server\+Base\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Чисто виртуальный метод для получения имени команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя команды в виде строки.
+\end{DoxyReturn}
+Должен быть реализован производными классами для предоставления уникального идентификатора команды. 
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a01080d10ab794600470670ec6a22633a}{svcs\+::server\+::cli\+::\+Hub\+Command}} и \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a51aca9eee57888cbb3c57f30a673c616}{svcs\+::server\+::cli\+::\+Repo\+Command}}.
+
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a787cc093291b96dbb785692f7e145618}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a787cc093291b96dbb785692f7e145618} 
+virtual std\+::string svcs\+::server\+::cli\+::\+Server\+Base\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Чисто виртуальный метод для получения синтаксиса использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Синтаксис использования команды в виде строки.
+\end{DoxyReturn}
+Должен быть реализован производными классами для отображения правильного использования команды. 
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a40341e753e4ccc73304ef82e6333c8c4}{svcs\+::server\+::cli\+::\+Hub\+Command}} и \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_af5c769f4820e2a1b1445817284fab5ae}{svcs\+::server\+::cli\+::\+Repo\+Command}}.
+
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ae442f184f015147219e511ae2f602f4d}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}!notifyError@{notifyError}}
+\index{notifyError@{notifyError}!svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+\doxysubsubsection{\texorpdfstring{notifyError()}{notifyError()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ae442f184f015147219e511ae2f602f4d} 
+void svcs\+::server\+::cli\+::\+Server\+Base\+Command\+::notify\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Отправляет уведомление об ошибке через шину событий. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение об ошибке для отправки.\\
+\hline
+\end{DoxyParams}
+Вспомогательный метод для производных классов для отправки уведомлений об ошибках. \Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a894f4e32bab7afbe52cf3c00790e4aaa}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}!notifyInfo@{notifyInfo}}
+\index{notifyInfo@{notifyInfo}!svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+\doxysubsubsection{\texorpdfstring{notifyInfo()}{notifyInfo()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a894f4e32bab7afbe52cf3c00790e4aaa} 
+void svcs\+::server\+::cli\+::\+Server\+Base\+Command\+::notify\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Отправляет информационное уведомление через шину событий. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Информационное сообщение для отправки.\\
+\hline
+\end{DoxyParams}
+Вспомогательный метод для производных классов для отправки информационных уведомлений. \Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a8ebf75fc2472e67519770c1e660e7f19}\index{svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::server::cli::ServerBaseCommand@{svcs::server::cli::ServerBaseCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a8ebf75fc2472e67519770c1e660e7f19} 
+virtual void svcs\+::server\+::cli\+::\+Server\+Base\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Чисто виртуальный метод для отображения подробной справочной информации. 
+
+Должен быть реализован производными классами для отображения специфичной для команды справки. 
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a2ffa2320d34715820f92944c2ec44585}{svcs\+::server\+::cli\+::\+Hub\+Command}} и \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a88715174ee9758ee721368ef9a7aeb84}{svcs\+::server\+::cli\+::\+Repo\+Command}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{ServerBaseCommand_8hxx}{Server\+Base\+Command.\+hxx}}\item 
+server/src/\mbox{\hyperlink{ServerBaseCommand_8cxx}{Server\+Base\+Command.\+cxx}}\end{DoxyCompactItemize}

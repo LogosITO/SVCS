@@ -2,7 +2,7 @@
 \hypertarget{UndoCommand_8hxx}{}\label{UndoCommand_8hxx}\index{cli/include/UndoCommand.hxx@{cli/include/UndoCommand.hxx}}
 
 
-Declaration of the \doxylink{classUndoCommand}{Undo\+Command} class for reverting changes.  
+Declaration of the Undo\+Command class for reverting changes.  
 
 
 {\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
@@ -14,14 +14,19 @@ Declaration of the \doxylink{classUndoCommand}{Undo\+Command} class for revertin
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classUndoCommand}{Undo\+Command}}
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand}{svcs\+::cli\+::\+Undo\+Command}}
 \begin{DoxyCompactList}\small\item\em Command to revert the repository state to a previous commit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Command-\/line interface components and command implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaration of the \doxylink{classUndoCommand}{Undo\+Command} class for reverting changes. 
+Declaration of the Undo\+Command class for reverting changes. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-The \doxylink{classUndoCommand}{Undo\+Command} is responsible for reverting the repository\textquotesingle{}s working directory and history to the state of a previous commit. It supports reverting the last commit or a specific commit identified by its hash. This operation typically involves confirming the action before execution, unless a force flag is used. 
+The Undo\+Command is responsible for reverting the repository\textquotesingle{}s working directory and history to the state of a previous commit. It supports reverting the last commit or a specific commit identified by its hash. This operation typically involves confirming the action before execution, unless a force flag is used. 

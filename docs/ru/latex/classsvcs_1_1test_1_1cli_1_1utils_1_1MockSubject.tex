@@ -1,0 +1,199 @@
+\doxysection{Класс svcs\+::test\+::cli\+::utils\+::Mock\+Subject}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}\index{svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}}
+
+
+Mock реализация \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} для тестирования событийно-\/ориентированных компонентов.  
+
+
+
+
+{\ttfamily \#include $<$Mock\+Subject.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::utils\+::Mock\+Subject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_adc836d74e84b6379f78a2e10ed116665}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Выполняет требования интерфейса \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}, но не выполняет никаких операций. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a1c46d6e5b260b76d18a638f3668e97af}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Выполняет требования интерфейса \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}, но не выполняет никаких операций. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_abfc5bfa7fe007eca3e7e8dd8d84e1d9c}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) const override
+\begin{DoxyCompactList}\small\item\em Захватывает событие во внутренний вектор уведомлений. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a9a7613259015868f3b9d2725a714f0de}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a9a7613259015868f3b9d2725a714f0de} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Очищает все захваченные уведомления. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a7c66c01a5895b3e2bba2647868270cd9}{contains\+Message}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Проверяет, содержат ли детали любого захваченного уведомления указанную подстроку сообщения. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a0fb53dcfb9b83322eae1e259de0813a7}{contains\+Event\+Type}} (\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}{Event\+::\+Type}} type) const
+\begin{DoxyCompactList}\small\item\em Проверяет, соответствует ли какое-\/либо захваченное уведомление указанному типу события. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a0899f6d7dd77c329e9a899d65fda7910}{store\+Notification}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event)
+\begin{DoxyCompactList}\small\item\em Сохраняет уведомление во внутреннем векторе (псевдоним для функциональности notify). \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a6230e6c7a870e15dc3a2cf44d59efc23}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a6230e6c7a870e15dc3a2cf44d59efc23} 
+void {\bfseries clear\+Notifications} ()
+\begin{DoxyCompactList}\small\item\em Очищает все уведомления из внутреннего хранилища. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \& \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a5526783874872235386bf757a8ff64fb}{get\+Notifications}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает константную ссылку на вектор уведомлений для проверки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a48d67b1462dce55e293c0614f59e1064}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_adc637e3e7975e060621501b08f1e7d13}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_adc637e3e7975e060621501b08f1e7d13} 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ {\bfseries notifications}
+\begin{DoxyCompactList}\small\item\em Хранит историю всех событий, полученных через метод \doxylink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_abfc5bfa7fe007eca3e7e8dd8d84e1d9c}{notify()}, для проверки утверждений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Коллекция зарегистрированных наблюдателей. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Mock реализация \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} для тестирования событийно-\/ориентированных компонентов. 
+
+Этот mock позволяет тестовым случаям\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Захватывать}} все события, опубликованные через метод \doxylink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_abfc5bfa7fe007eca3e7e8dd8d84e1d9c}{notify()}.
+\item {\bfseries{Проверять}} захваченные события на наличие определенных типов или сообщений.
+\item {\bfseries{Очищать}} историю событий между тестовыми случаями.
+\item {\bfseries{Проверять}}, что определенные события были опубликованы во время выполнения. 
+\end{DoxyEnumerate}
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_adc836d74e84b6379f78a2e10ed116665}\index{svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}!attach@{attach}}
+\index{attach@{attach}!svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_adc836d74e84b6379f78a2e10ed116665} 
+void svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет требования интерфейса \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}, но не выполняет никаких операций. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Наблюдатель для присоединения (не используется в mock). \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_ae47bfa148a3f12751f1aae86fcca3975}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a0fb53dcfb9b83322eae1e259de0813a7}\index{svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}!containsEventType@{containsEventType}}
+\index{containsEventType@{containsEventType}!svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}}
+\doxysubsubsection{\texorpdfstring{containsEventType()}{containsEventType()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a0fb53dcfb9b83322eae1e259de0813a7} 
+bool svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject\+::contains\+Event\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}{Event\+::\+Type}}}]{type}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Проверяет, соответствует ли какое-\/либо захваченное уведомление указанному типу события. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em type} & Значение перечисления \doxylink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}{Event\+::\+Type} для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если найден событие указанного типа, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a7c66c01a5895b3e2bba2647868270cd9}\index{svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a7c66c01a5895b3e2bba2647868270cd9} 
+bool svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Проверяет, содержат ли детали любого захваченного уведомления указанную подстроку сообщения. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Подстрока для поиска в деталях уведомлений. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если найдено соответствующее сообщение, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a1c46d6e5b260b76d18a638f3668e97af}\index{svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}!detach@{detach}}
+\index{detach@{detach}!svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a1c46d6e5b260b76d18a638f3668e97af} 
+void svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет требования интерфейса \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}, но не выполняет никаких операций. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Наблюдатель для отсоединения (не используется в mock). \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a20e2f5095404c960d2b4f17789e74b28}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a5526783874872235386bf757a8ff64fb}\index{svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}!getNotifications@{getNotifications}}
+\index{getNotifications@{getNotifications}!svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}}
+\doxysubsubsection{\texorpdfstring{getNotifications()}{getNotifications()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a5526783874872235386bf757a8ff64fb} 
+const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \& svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject\+::get\+Notifications (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Возвращает константную ссылку на вектор уведомлений для проверки. 
+
+\begin{DoxyReturn}{Возвращает}
+Константная ссылка на вектор захваченных событий. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_abfc5bfa7fe007eca3e7e8dd8d84e1d9c}\index{svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}!notify@{notify}}
+\index{notify@{notify}!svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_abfc5bfa7fe007eca3e7e8dd8d84e1d9c} 
+void svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Захватывает событие во внутренний вектор уведомлений. 
+
+Это основная тестовая функция, позволяющая тестовым случаям проверять, что были опубликованы правильные события. 
+\begin{DoxyParams}{Аргументы}
+{\em event} & Константная ссылка на структуру события для захвата. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_abd7c4e5d2729c0a3c83ce7b0f7b4e82a}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a0899f6d7dd77c329e9a899d65fda7910}\index{svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}!storeNotification@{storeNotification}}
+\index{storeNotification@{storeNotification}!svcs::test::cli::utils::MockSubject@{svcs::test::cli::utils::MockSubject}}
+\doxysubsubsection{\texorpdfstring{storeNotification()}{storeNotification()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a0899f6d7dd77c329e9a899d65fda7910} 
+void svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject\+::store\+Notification (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Сохраняет уведомление во внутреннем векторе (псевдоним для функциональности notify). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event} & Событие для сохранения. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/mocks/\mbox{\hyperlink{cli_2mocks_2MockSubject_8hxx}{Mock\+Subject.\+hxx}}\end{DoxyCompactItemize}

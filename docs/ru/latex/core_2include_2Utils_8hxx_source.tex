@@ -8,14 +8,18 @@
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <filesystem>}}
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00039\ std::string\ \mbox{\hyperlink{core_2include_2Utils_8hxx_aee4ae6af295150b8d2daa18f1b1b1a01}{read\_file\_to\_string}}(\textcolor{keyword}{const}\ fs::path\&\ full\_path);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00054\ std::string\ \mbox{\hyperlink{core_2include_2Utils_8hxx_a3c03f3592ffa57a1f2ad8be7ddab13f4}{binary\_to\_hex\_string}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ binary\_data,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}}\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00054\ std::string\ \mbox{\hyperlink{namespacesvcs_1_1core_a4568847d1748de37af94b13137664561}{read\_file\_to\_string}}(\textcolor{keyword}{const}\ fs::path\&\ full\_path);}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00069\ std::string\ \mbox{\hyperlink{core_2include_2Utils_8hxx_a7fc89ff4883c714ee7a53698eb485ec3}{hex\_to\_binary\_string}}(\textcolor{keyword}{const}\ std::string\&\ hex\_string);}
+\DoxyCodeLine{00069\ std::string\ \mbox{\hyperlink{namespacesvcs_1_1core_ae4589d250a2f03780b3dc5e4323a5d8d}{binary\_to\_hex\_string}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ binary\_data,\ \textcolor{keywordtype}{size\_t}\ length);}
 \DoxyCodeLine{00070\ }
-\DoxyCodeLine{00082\ std::string\ \mbox{\hyperlink{core_2include_2Utils_8hxx_a98673c362b0d36f58739502e3a21e96f}{compute\_sha256}}(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00084\ std::string\ \mbox{\hyperlink{namespacesvcs_1_1core_a66002a699a8af234d86db96941733398}{hex\_to\_binary\_string}}(\textcolor{keyword}{const}\ std::string\&\ hex\_string);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00097\ std::string\ \mbox{\hyperlink{namespacesvcs_1_1core_a1cabf85fbe47a7f75139b05f045d4a86}{compute\_sha256}}(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \}}
 
 \end{DoxyCode}

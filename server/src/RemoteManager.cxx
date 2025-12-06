@@ -30,6 +30,8 @@
 #include <sstream>
 #include <iostream>
 
+namespace svcs::server {
+
 RemoteManager::RemoteManager(const fs::path& repo_path)
     : config_path_(repo_path / "remotes") {
     load();
@@ -150,4 +152,6 @@ void RemoteManager::load() {
             current_url.clear();
         }
     }
+}
+
 }

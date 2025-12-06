@@ -1,0 +1,65 @@
+\doxysection{Структура svcs\+::core\+::Tree\+Entry}
+\hypertarget{structsvcs_1_1core_1_1TreeEntry}{}\label{structsvcs_1_1core_1_1TreeEntry}\index{svcs::core::TreeEntry@{svcs::core::TreeEntry}}
+
+
+Представляет отдельный элемент (файл или поддиректорию) внутри объекта \doxylink{classsvcs_1_1core_1_1Tree}{Tree}.  
+
+
+
+
+{\ttfamily \#include $<$Tree.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry_ab64fab95c92e1d5da129e10442c68e76}{operator$<$}} (const \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} \&other) const
+\begin{DoxyCompactList}\small\item\em Оператор сравнения, необходимый для сортировки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structsvcs_1_1core_1_1TreeEntry_a9d03371221bfb4b5c8014afbfe591138}\label{structsvcs_1_1core_1_1TreeEntry_a9d03371221bfb4b5c8014afbfe591138} 
+std\+::string {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em Режим файла (права доступа) и идентификатор типа (например, "{}100644"{} для blob, "{}040000"{} для tree). \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1core_1_1TreeEntry_a6ad0fd1952649dea4e21c780c9925c46}\label{structsvcs_1_1core_1_1TreeEntry_a6ad0fd1952649dea4e21c780c9925c46} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Имя файла или поддиректории. \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1core_1_1TreeEntry_abb08a8c496ea42aa65227e4e37c96ef3}\label{structsvcs_1_1core_1_1TreeEntry_abb08a8c496ea42aa65227e4e37c96ef3} 
+std\+::string {\bfseries hash\+\_\+id}
+\begin{DoxyCompactList}\small\item\em Хеш-\/идентификатор (SHA-\/256) ссылаемого объекта (\doxylink{classsvcs_1_1core_1_1Blob}{Blob} или \doxylink{classsvcs_1_1core_1_1Tree}{Tree}). \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1core_1_1TreeEntry_a5f843f5b3835d7d8589e463fab5b9b3e}\label{structsvcs_1_1core_1_1TreeEntry_a5f843f5b3835d7d8589e463fab5b9b3e} 
+std\+::string {\bfseries type}
+\begin{DoxyCompactList}\small\item\em Тип ссылаемого объекта ("{}blob"{} или "{}tree"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Представляет отдельный элемент (файл или поддиректорию) внутри объекта \doxylink{classsvcs_1_1core_1_1Tree}{Tree}. 
+
+Эта структура связывает имя и режим файла с хеш-\/идентификатором другого объекта СКВ. 
+
+\label{doc-func-members}
+\Hypertarget{structsvcs_1_1core_1_1TreeEntry_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{structsvcs_1_1core_1_1TreeEntry_ab64fab95c92e1d5da129e10442c68e76}\index{svcs::core::TreeEntry@{svcs::core::TreeEntry}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!svcs::core::TreeEntry@{svcs::core::TreeEntry}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{structsvcs_1_1core_1_1TreeEntry_ab64fab95c92e1d5da129e10442c68e76} 
+bool svcs\+::core\+::\+Tree\+Entry\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Оператор сравнения, необходимый для сортировки. 
+
+Записи должны быть отсортированы по алфавиту по имени перед сериализацией для обеспечения стабильного и последовательного хеш-\/идентификатора объекта \doxylink{classsvcs_1_1core_1_1Tree}{Tree}. 
+\begin{DoxyParams}{Аргументы}
+{\em other} & Запись \doxylink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry} для сравнения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True, если эта запись должна предшествовать записи \textquotesingle{}other\textquotesingle{} в отсортированном списке. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов структур находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Tree_8hxx}{Tree.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Tree_8cxx}{Tree.\+cxx}}\end{DoxyCompactItemize}

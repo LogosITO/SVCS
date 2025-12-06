@@ -1,0 +1,107 @@
+\doxysection{Класс svcs\+::test\+::server\+::Mock\+Repository\+Manager}
+\hypertarget{classsvcs_1_1test_1_1server_1_1MockRepositoryManager}{}\label{classsvcs_1_1test_1_1server_1_1MockRepositoryManager}\index{svcs::test::server::MockRepositoryManager@{svcs::test::server::MockRepositoryManager}}
+Граф наследования\+:svcs\+::test\+::server\+::Mock\+Repository\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1server_1_1MockRepositoryManager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_a7616b3567771c72bfc1be5bff73b521c}\label{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_a7616b3567771c72bfc1be5bff73b521c} 
+{\bfseries Mock\+Repository\+Manager} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}} $>$ bus)
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_aa085e24c0d4ebac4cd78d6c9ec499a86}\label{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_aa085e24c0d4ebac4cd78d6c9ec499a86} 
+{\bfseries Mock\+Repository\+Manager} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}} $>$ bus, const std\+::string \&path)
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_a3f4c065d85cf06408c666a235b24b589}\label{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_a3f4c065d85cf06408c666a235b24b589} 
+bool {\bfseries is\+Initialized} () const
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_af168d1fae1754351e0fc672863fb43c6}\label{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_af168d1fae1754351e0fc672863fb43c6} 
+std\+::filesystem\+::path {\bfseries get\+Repository\+Path} () const
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_a7817ad9ca6187363c9c6f7845dd35cec}\label{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_a7817ad9ca6187363c9c6f7845dd35cec} 
+void {\bfseries setup\+Test\+Objects} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs\+::core\+::\+Repository\+Manager}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a94770300269bc08cd10f32991ce501d2}{Repository\+Manager}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ bus)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ac0d42424f59a33af3f2964c7eddcd192}{update\+Head}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет ссылку HEAD. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ad003b3bfb496804283a939224a78c566}{initialize\+Repository}} (const std\+::string \&path, bool force=false)
+\begin{DoxyCompactList}\small\item\em Инициализирует новый репозиторий SVCS по указанному пути. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a529c5a70cc13ab92989e55f7db9f7882}{is\+Repository\+Initialized}} (const std\+::string \&path="{}."{})
+\begin{DoxyCompactList}\small\item\em Проверяет, инициализирован ли репозиторий SVCS по заданному пути или его родителям. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a0938228acbd111de2b8a6c230d61fdf2}{update\+Branch\+Reference}} (const std\+::string \&branch\+Name, const std\+::string \&commit\+Hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет файл ссылки ветви хешем коммита. \end{DoxyCompactList}\item 
+std\+::filesystem\+::path \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a27171d33fc901388a54e811d892458ba}{get\+Repository\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает определенный корневой путь текущего активного репозитория. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_acdb90f4f22c89514d2429730b5a3623d}{add\+File\+To\+Staging}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Пытается добавить файл в область подготовки (индекс). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a0036b6bb88ccb15b43e4bebfa073c823}{get\+Head\+Commit}} () const
+\begin{DoxyCompactList}\small\item\em Извлекает хеш текущего коммита HEAD в репозитории. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a65705c1b91ea0c8878446856ced2ea59}{create\+Commit}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Создает коммит из текущих подготовленных файлов. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a34e211523257152d66477f6e9fa5d6ab}{update\+Commit\+References}} (const std\+::string \&removed\+Commit\+Hash, const std\+::string \&new\+Parent\+Hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет ссылки коммитов при удалении коммита. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae159d5e092b0e945c17ba74e5f5af61e}{revert\+Commit}} (const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Откатывает состояние репозитория к предыдущему коммиту. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae0706f73124ce12640a1a21fa3309398}{get\+Commit\+By\+Hash}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Извлекает структуру \doxylink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info} для заданного хеша коммита. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a1f8b1488fb9d9b1343b35abcc0184464}{get\+Parent\+Commit\+Hash}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Извлекает хеш родительского коммита для заданного коммита. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a543e43dc2b2ebd12605824064ee4cd8b}{restore\+Files\+From\+Commit}} (const \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} \&commit) const
+\begin{DoxyCompactList}\small\item\em Восстанавливает файлы рабочей директории до состояния, записанного в конкретном коммите. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_aa1b198ef75b6c571dfd4ace68ecc0f89}{clear\+Staging\+Area}} ()
+\begin{DoxyCompactList}\small\item\em Очищает содержимое области подготовки (индекса). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a303ff113df6c3fd0dbe0df7e98cfbc29}{save\+Staged\+Changes}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Создает коммит из подготовленных изменений. (Удобный метод, часто используемый Save\+Command). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a002f7a416459e5c17de748fd527a67bc}{get\+Staged\+Files}} ()
+\begin{DoxyCompactList}\small\item\em Извлекает список всех файлов, в настоящее время помеченных как подготовленные (индексированные). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a3c522df200bd216339feaac08ad45c03}{get\+Commit\+History}} () const
+\begin{DoxyCompactList}\small\item\em Извлекает полную историю коммитов для текущей ветви. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae6c18516f1a61af3cdd8b978b5989fe3}{get\+Branch\+History}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Извлекает историю коммитов для конкретной ветви. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a1a4b3f81b30778c851f0db4accf5f2d8}{get\+Current\+Branch}} () const
+\begin{DoxyCompactList}\small\item\em Получает имя текущей ветви. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_adba9e0953fb91a855f593be9de1408e9}{remove\+Repository}} (const std\+::filesystem\+::path \&path) const
+\begin{DoxyCompactList}\small\item\em Пытается рекурсивно удалить всю структуру репозитория SVCS (например, директорию .svcs) и ее содержимое. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ad84b0f67d4e6e2e60082497b4e1899a3}{branch\+Exists}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли ветвь. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a2562058c0a617d0ded24030dc8682251}{get\+Branch\+Head}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Получает головной коммит ветви. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae565a1db180819ff2e0840ed601beadc}{get\+File\+Content\+At\+Commit}} (const std\+::string \&commit\+\_\+hash, const std\+::string \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Получает содержимое файла в конкретном коммите. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_aa45d786e39da7deb33648147efbcd739}{get\+Commit\+Files}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Получает все файлы, измененные в коммите. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a2c18c663d76a842f4999df20b17e4687}{set\+Merge\+State}} (const std\+::string \&branch\+\_\+name, const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Устанавливает состояние слияния (для разрешения конфликтов). \end{DoxyCompactList}\item 
+void {\bfseries clear\+Merge\+State} () const
+\begin{DoxyCompactList}\small\item\em Очищает состояние слияния (после завершения/прерывания слияния). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a45a6a691304ae0c2cad9fe10bfbca607}{is\+Merge\+In\+Progress}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, выполняется ли слияние. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a7c790d31b20b710b6512c0703030fe7a}{get\+Merge\+Branch}} () const
+\begin{DoxyCompactList}\small\item\em Получает ветвь, которая сливается. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_ae61e3e8b1d0a86a48e89191662ea7be0}\label{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_ae61e3e8b1d0a86a48e89191662ea7be0} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ {\bfseries objects}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_a7490493ca92b031a641e631a35ffb894}\label{classsvcs_1_1test_1_1server_1_1MockRepositoryManager_a7490493ca92b031a641e631a35ffb894} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ {\bfseries references}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Открытые статические члены унаследованные от \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs\+::core\+::\+Repository\+Manager}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ac7de58f0405dc440d4de884fd2782e64}{generate\+Commit\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Генерирует хеш коммита из содержимого. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/server/\mbox{\hyperlink{RemoteProtocolTest_8cxx}{Remote\+Protocol\+Test.\+cxx}}\end{DoxyCompactItemize}

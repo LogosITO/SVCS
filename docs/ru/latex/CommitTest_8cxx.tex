@@ -2,54 +2,59 @@
 \hypertarget{CommitTest_8cxx}{}\label{CommitTest_8cxx}\index{tests/core/CommitTest.cxx@{tests/core/CommitTest.cxx}}
 
 
-Модульные тесты для класса \doxylink{classCommit}{Commit}, проверяющие построение объектов, стабильность хэшей (порядок родителей) и целостность сериализации/десериализации.  
+Модульные тесты для класса Commit, проверяющие построение объектов, стабильность хэшей (порядок родителей) и целостность сериализации/десериализации.  
 
 
 {\ttfamily \#include "{}../../core/include/\+Commit.\+hxx"{}}\newline
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1core}{svcs\+::test\+::core}}
+\begin{DoxyCompactList}\small\item\em Модульные тесты для основных компонентов и структур данных. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Функции}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{CommitTest_8cxx_ae7a926bf7d7dcc3902b15b1de2fe0e6d}\label{CommitTest_8cxx_ae7a926bf7d7dcc3902b15b1de2fe0e6d} 
-\mbox{\hyperlink{classCommit}{Commit}} {\bfseries create\+Test\+Commit} (const std\+::string \&tree\+\_\+hash, const std\+::vector$<$ std\+::string $>$ \&parents, const std\+::string \&message, std\+::time\+\_\+t timestamp=1600000000)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a4fb8ff6caf118bcecfc1eac5e7f4f4e2}\label{namespacesvcs_1_1test_1_1core_a4fb8ff6caf118bcecfc1eac5e7f4f4e2} 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Commit}{Commit}} {\bfseries svcs\+::test\+::core\+::create\+Test\+Commit} (const std\+::string \&tree\+\_\+hash, const std\+::vector$<$ std\+::string $>$ \&parents, const std\+::string \&message, std\+::time\+\_\+t timestamp=1600000000)
 \item 
-\Hypertarget{CommitTest_8cxx_a30dc08fac2c0325d5c0b57840807276f}\label{CommitTest_8cxx_a30dc08fac2c0325d5c0b57840807276f} 
-{\bfseries TEST} (Commit\+Test, Basic\+Initial\+Commit)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a4f982b5800598d469dc3ea9685844b7c}\label{namespacesvcs_1_1test_1_1core_a4f982b5800598d469dc3ea9685844b7c} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Commit\+Test, Basic\+Initial\+Commit)
 \item 
-\Hypertarget{CommitTest_8cxx_a56628a9c956d11551faa222eca76cda4}\label{CommitTest_8cxx_a56628a9c956d11551faa222eca76cda4} 
-{\bfseries TEST} (Commit\+Test, Hash\+Is\+Stable\+Regardless\+Of\+Parent\+Order)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a0f7e4fd13d6062bb22f96cb2951a81b6}\label{namespacesvcs_1_1test_1_1core_a0f7e4fd13d6062bb22f96cb2951a81b6} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Commit\+Test, Hash\+Is\+Stable\+Regardless\+Of\+Parent\+Order)
 \item 
-\Hypertarget{CommitTest_8cxx_a799c1e48f2313e727eea83677d8d359d}\label{CommitTest_8cxx_a799c1e48f2313e727eea83677d8d359d} 
-{\bfseries TEST} (Commit\+Test, Hash\+Changes\+With\+Different\+Message)
+\Hypertarget{namespacesvcs_1_1test_1_1core_adce82e1d3746b5390ca553ab0f74149a}\label{namespacesvcs_1_1test_1_1core_adce82e1d3746b5390ca553ab0f74149a} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Commit\+Test, Hash\+Changes\+With\+Different\+Message)
 \item 
-\Hypertarget{CommitTest_8cxx_a73659178faf1e76365387127541b98e4}\label{CommitTest_8cxx_a73659178faf1e76365387127541b98e4} 
-{\bfseries TEST} (Commit\+Test, Serialization\+Deserialization\+Round\+Trip)
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa40536aac1767e718ea82600d293ab2e}\label{namespacesvcs_1_1test_1_1core_aa40536aac1767e718ea82600d293ab2e} 
+{\bfseries svcs\+::test\+::core\+::\+TEST} (Commit\+Test, Serialization\+Deserialization\+Round\+Trip)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Переменные}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{CommitTest_8cxx_ad57cdec7a6e84fefe8d5fe2c2e6cbb90}\label{CommitTest_8cxx_ad57cdec7a6e84fefe8d5fe2c2e6cbb90} 
-const std\+::string {\bfseries HASH\+\_\+\+TREE\+\_\+\+EMPTY} = "{}4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a67af790154c075f144af8c559437dc2b}\label{namespacesvcs_1_1test_1_1core_a67af790154c075f144af8c559437dc2b} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+\+TREE\+\_\+\+EMPTY} = "{}4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a"{}
 \item 
-\Hypertarget{CommitTest_8cxx_af33b3d23844c6ebeafa6e65a17476208}\label{CommitTest_8cxx_af33b3d23844c6ebeafa6e65a17476208} 
-const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+A} = "{}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a85c7818229ade6c61ea942679a507c8b}\label{namespacesvcs_1_1test_1_1core_a85c7818229ade6c61ea942679a507c8b} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+\+PARENT\+\_\+A} = "{}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"{}
 \item 
-\Hypertarget{CommitTest_8cxx_adfe7dbab581c64e6c87819aa6380a190}\label{CommitTest_8cxx_adfe7dbab581c64e6c87819aa6380a190} 
-const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+B} = "{}bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_ae2c3b5ed217c5dadad2145c743d4ff33}\label{namespacesvcs_1_1test_1_1core_ae2c3b5ed217c5dadad2145c743d4ff33} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+\+PARENT\+\_\+B} = "{}bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"{}
 \item 
-\Hypertarget{CommitTest_8cxx_a1127791517517f0b0fa8b95bc4342e31}\label{CommitTest_8cxx_a1127791517517f0b0fa8b95bc4342e31} 
-const std\+::string {\bfseries HASH\+\_\+\+TREE\+\_\+\+NEW} = "{}c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_aced91404e2e9d33ee5f68384857e0e4a}\label{namespacesvcs_1_1test_1_1core_aced91404e2e9d33ee5f68384857e0e4a} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+\+TREE\+\_\+\+NEW} = "{}c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1"{}
 \item 
-\Hypertarget{CommitTest_8cxx_afbd82a565f16d182383e44439950669e}\label{CommitTest_8cxx_afbd82a565f16d182383e44439950669e} 
-const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+\+P1} = "{}d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a1d4bda334e97c04c2f4ac8f825f133da}\label{namespacesvcs_1_1test_1_1core_a1d4bda334e97c04c2f4ac8f825f133da} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+\+PARENT\+\_\+\+P1} = "{}d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2"{}
 \item 
-\Hypertarget{CommitTest_8cxx_a4a3217c574a21f7414c660f7811af020}\label{CommitTest_8cxx_a4a3217c574a21f7414c660f7811af020} 
-const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+\+P2} = "{}e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3"{}
+\Hypertarget{namespacesvcs_1_1test_1_1core_a99fe0d19e41efa399d3441adfe30297a}\label{namespacesvcs_1_1test_1_1core_a99fe0d19e41efa399d3441adfe30297a} 
+const std\+::string {\bfseries svcs\+::test\+::core\+::\+HASH\+\_\+\+PARENT\+\_\+\+P2} = "{}e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3"{}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Модульные тесты для класса \doxylink{classCommit}{Commit}, проверяющие построение объектов, стабильность хэшей (порядок родителей) и целостность сериализации/десериализации. 
+Модульные тесты для класса Commit, проверяющие построение объектов, стабильность хэшей (порядок родителей) и целостность сериализации/десериализации. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License 

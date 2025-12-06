@@ -92,7 +92,7 @@ $(function(){initNavTree('classStatusCommandTest.html','','classStatusCommandTes
 </div><!--header-->
 <div class="contents">
 
-<p>Google Test fixture for running integration tests against the <a class="el" href="classStatusCommand.html" title="Command for showing the current status of the repository.">StatusCommand</a>.  
+<p>Google Test fixture for running integration tests against the StatusCommand.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IntStatusCommandTest_8hxx_source.html">IntStatusCommandTest.hxx</a>&gt;</code></p>
@@ -114,10 +114,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae506c0d397d564d8a6251daf19e40343" id="r_ae506c0d397d564d8a6251daf19e40343"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae506c0d397d564d8a6251daf19e40343">createTestDirectory</a> (const std::string &amp;dirname)</td></tr>
 <tr class="memdesc:ae506c0d397d564d8a6251daf19e40343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory in the temporary location.  <br /></td></tr>
 <tr class="memitem:a84af63358f1e67af9e3793c76ea9c63c" id="r_a84af63358f1e67af9e3793c76ea9c63c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84af63358f1e67af9e3793c76ea9c63c">stageFiles</a> (const std::vector&lt; std::string &gt; &amp;files)</td></tr>
-<tr class="memdesc:a84af63358f1e67af9e3793c76ea9c63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files using the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging logic.  <br /></td></tr>
-<tr class="memitem:a2d962d5ecae575783a8f43e377650430" id="r_a2d962d5ecae575783a8f43e377650430"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d962d5ecae575783a8f43e377650430">containsMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memdesc:a84af63358f1e67af9e3793c76ea9c63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files using the RepositoryManager's staging logic.  <br /></td></tr>
+<tr class="memitem:a2d962d5ecae575783a8f43e377650430" id="r_a2d962d5ecae575783a8f43e377650430"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d962d5ecae575783a8f43e377650430">containsMessage</a> (const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</td></tr>
 <tr class="memdesc:a2d962d5ecae575783a8f43e377650430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific message (substring) exists in any event notification.  <br /></td></tr>
-<tr class="memitem:ab7d44e5852460b81086e8d060d919d84" id="r_ab7d44e5852460b81086e8d060d919d84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7d44e5852460b81086e8d060d919d84">countMessages</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memitem:ab7d44e5852460b81086e8d060d919d84" id="r_ab7d44e5852460b81086e8d060d919d84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7d44e5852460b81086e8d060d919d84">countMessages</a> (const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</td></tr>
 <tr class="memdesc:ab7d44e5852460b81086e8d060d919d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the occurrences of a specific message (substring) across all event notifications.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -126,20 +126,20 @@ Protected Attributes</h2></td></tr>
 std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockEventBus</b></td></tr>
 <tr class="memdesc:aafad0abcce6f3366a2ffa72a75c384ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the mock event bus (observer). <br /></td></tr>
 <tr class="memitem:a6d57f14451cbb38043fd453dd955d4c5" id="r_a6d57f14451cbb38043fd453dd955d4c5"><td class="memItemLeft" align="right" valign="top"><a id="a6d57f14451cbb38043fd453dd955d4c5" name="a6d57f14451cbb38043fd453dd955d4c5"></a>
-std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
+std::shared_ptr&lt; RepositoryManager &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
 <tr class="memdesc:a6d57f14451cbb38043fd453dd955d4c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the repository core logic component. <br /></td></tr>
 <tr class="memitem:ac58a7bbee391eeee2d23692f4c6206e9" id="r_ac58a7bbee391eeee2d23692f4c6206e9"><td class="memItemLeft" align="right" valign="top"><a id="ac58a7bbee391eeee2d23692f4c6206e9" name="ac58a7bbee391eeee2d23692f4c6206e9"></a>
-std::unique_ptr&lt; <a class="el" href="classStatusCommand.html">StatusCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+std::unique_ptr&lt; StatusCommand &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
 <tr class="memdesc:ac58a7bbee391eeee2d23692f4c6206e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the command being tested. <br /></td></tr>
 <tr class="memitem:a3f876228661d8132ba80c33c3f6e3ee2" id="r_a3f876228661d8132ba80c33c3f6e3ee2"><td class="memItemLeft" align="right" valign="top"><a id="a3f876228661d8132ba80c33c3f6e3ee2" name="a3f876228661d8132ba80c33c3f6e3ee2"></a>
 std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>testDir</b></td></tr>
 <tr class="memdesc:a3f876228661d8132ba80c33c3f6e3ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the temporary test repository directory. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Google Test fixture for running integration tests against the <a class="el" href="classStatusCommand.html" title="Command for showing the current status of the repository.">StatusCommand</a>. </p>
+<div class="textblock"><p>Google Test fixture for running integration tests against the StatusCommand. </p>
 <p>This fixture provides the necessary infrastructure for integration tests:</p><ul>
 <li><b>SetUp/TearDown:</b> Manage a temporary SVCS repository directory.</li>
-<li><b>Core Components:</b> Instances of <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> (for event bus) and <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> (for core logic).</li>
+<li><b>Core Components:</b> Instances of <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> (for event bus) and RepositoryManager (for core logic).</li>
 <li><b>Helper Methods:</b> Simplify file creation, directory setup, staging, and verification of notifications. </li>
 </ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -155,7 +155,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
         <tr>
           <td class="memname">bool StatusCommandTest::containsMessage </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+          <td class="paramtype">const std::vector&lt; Event &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -194,7 +194,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
         <tr>
           <td class="memname">int StatusCommandTest::countMessages </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+          <td class="paramtype">const std::vector&lt; Event &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -343,7 +343,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 </table>
 </div><div class="memdoc">
 
-<p>Stages a list of files using the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging logic. </p>
+<p>Stages a list of files using the RepositoryManager's staging logic. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">files</td><td>A vector of file names to stage. </td></tr>

@@ -92,7 +92,7 @@ $(function(){initNavTree('classInitCommandIntegrationTest.html','','classInitCom
 </div><!--header-->
 <div class="contents">
 
-<p>Test fixture for <a class="el" href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS).">InitCommand</a> integration tests.  
+<p>Test fixture for InitCommand integration tests.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="InitCommandIntegrationTest_8hxx_source.html">InitCommandIntegrationTest.hxx</a>&gt;</code></p>
@@ -116,18 +116,18 @@ Protected Attributes</h2></td></tr>
 std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockEventBus</b></td></tr>
 <tr class="memdesc:a1c769369a95eff5e36169a8e7e68c148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock event bus for capturing system notifications. <br /></td></tr>
 <tr class="memitem:a8ceca12279b153978cc6bdb61ba6685d" id="r_a8ceca12279b153978cc6bdb61ba6685d"><td class="memItemLeft" align="right" valign="top"><a id="a8ceca12279b153978cc6bdb61ba6685d" name="a8ceca12279b153978cc6bdb61ba6685d"></a>
-std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
-<tr class="memdesc:a8ceca12279b153978cc6bdb61ba6685d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> instance under test. <br /></td></tr>
+std::shared_ptr&lt; RepositoryManager &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
+<tr class="memdesc:a8ceca12279b153978cc6bdb61ba6685d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real RepositoryManager instance under test. <br /></td></tr>
 <tr class="memitem:ab72da75169a3bdfeb154a50dd7bd79f5" id="r_ab72da75169a3bdfeb154a50dd7bd79f5"><td class="memItemLeft" align="right" valign="top"><a id="ab72da75169a3bdfeb154a50dd7bd79f5" name="ab72da75169a3bdfeb154a50dd7bd79f5"></a>
-std::unique_ptr&lt; <a class="el" href="classInitCommand.html">InitCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
-<tr class="memdesc:ab72da75169a3bdfeb154a50dd7bd79f5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS).">InitCommand</a> instance under test. <br /></td></tr>
+std::unique_ptr&lt; InitCommand &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+<tr class="memdesc:ab72da75169a3bdfeb154a50dd7bd79f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">InitCommand instance under test. <br /></td></tr>
 <tr class="memitem:ab37e8a5c4872e694ee852f880c2fbf39" id="r_ab37e8a5c4872e694ee852f880c2fbf39"><td class="memItemLeft" align="right" valign="top"><a id="ab37e8a5c4872e694ee852f880c2fbf39" name="ab37e8a5c4872e694ee852f880c2fbf39"></a>
 std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>testDir</b></td></tr>
 <tr class="memdesc:ab37e8a5c4872e694ee852f880c2fbf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the temporary directory created for the test. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Test fixture for <a class="el" href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS).">InitCommand</a> integration tests. </p>
-<p>Manages the setup and teardown of a temporary, isolated directory on the filesystem for each test case. It uses the real <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> to test actual repository creation logic and a <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> to verify event publications. </p>
+<div class="textblock"><p>Test fixture for InitCommand integration tests. </p>
+<p>Manages the setup and teardown of a temporary, isolated directory on the filesystem for each test case. It uses the real RepositoryManager to test actual repository creation logic and a <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> to verify event publications. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a45e0506b7ee57d813c135ca4474e867f" name="a45e0506b7ee57d813c135ca4474e867f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45e0506b7ee57d813c135ca4474e867f">&#9670;&#160;</a></span>SetUp()</h2>
@@ -153,7 +153,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 </div><div class="memdoc">
 
 <p>Sets up the test environment. </p>
-<p>Creates a unique temporary directory, changes the current path to it, and initializes the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> and <a class="el" href="classInitCommand.html" title="Implements the &quot;init&quot; command for the Version Control System (VCS).">InitCommand</a>. </p>
+<p>Creates a unique temporary directory, changes the current path to it, and initializes the RepositoryManager and InitCommand. </p>
 
 </div>
 </div>

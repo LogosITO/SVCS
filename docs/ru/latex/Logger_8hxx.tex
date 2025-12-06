@@ -2,7 +2,7 @@
 \hypertarget{Logger_8hxx}{}\label{Logger_8hxx}\index{services/logging/Logger.hxx@{services/logging/Logger.hxx}}
 
 
-Определяет класс \doxylink{classLogger}{Logger}, потокобезопасный Singleton, который действует как \doxylink{classIObserver}{IObserver}.  
+Определяет класс Logger, потокобезопасный Singleton, который действует как IObserver.  
 
 
 {\ttfamily \#include "{}../\+IObserver.\+hxx"{}}\newline
@@ -14,62 +14,31 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classLogger}{Logger}}
+class \mbox{\hyperlink{classsvcs_1_1services_1_1Logger}{svcs\+::services\+::\+Logger}}
 \begin{DoxyCompactList}\small\item\em Потокобезопасный Singleton класс, отвечающий за логирование системных событий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1services}{svcs\+::services}}
+\begin{DoxyCompactList}\small\item\em Компоненты сервисного слоя и инфраструктурные сервисы. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Перечисления}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \{ \newline
-\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15}{DEBUG}} = 0
-, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3}{INFO}} = 1
-, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277}{WARN}} = 2
-, \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}} = 3
+enum class \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{svcs\+::services\+::\+Log\+Level}} \{ \newline
+\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41adc30ec20708ef7b0f641ef78b7880a15}{svcs\+::services\+::\+DEBUG}} = 0
+, \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a551b723eafd6a31d444fcb2f5920fbd3}{svcs\+::services\+::\+INFO}} = 1
+, \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a32bd8a1db2275458673903bdb84cb277}{svcs\+::services\+::\+WARN}} = 2
+, \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41abb1ca97ec761fc37101737ba0aa2e7c5}{svcs\+::services\+::\+ERROR}} = 3
 , \newline
-\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc}{FATAL}} = 4
+\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a19da7170bea36556dde582519795f3fc}{svcs\+::services\+::\+FATAL}} = 4
  \}
 \begin{DoxyCompactList}\small\item\em Определяет уровни серьезности для лог-\/сообщений. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Определяет класс \doxylink{classLogger}{Logger}, потокобезопасный Singleton, который действует как \doxylink{classIObserver}{IObserver}. 
+Определяет класс Logger, потокобезопасный Singleton, который действует как IObserver. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classLogger}{Logger} централизует системное логирование, обрабатывает фильтрацию уровней логов и подписывается на шину событий для автоматической обработки системных событий. 
-
-\label{doc-enum-members}
-\Hypertarget{Logger_8hxx_doc-enum-members}
-\doxysubsection{Перечисления}
-\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}\index{Logger.hxx@{Logger.hxx}!LogLevel@{LogLevel}}
-\index{LogLevel@{LogLevel}!Logger.hxx@{Logger.hxx}}
-\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
-{\footnotesize\ttfamily \label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9} 
-enum class \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-
-
-Определяет уровни серьезности для лог-\/сообщений. 
-
-Используется для фильтрации вывода на основе настроенного уровня. \begin{DoxyEnumFields}[2]{Элементы перечислений}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG@{DEBUG}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!DEBUG@{DEBUG}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15} 
-DEBUG&Подробная информация для отладки. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!INFO@{INFO}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3} 
-INFO&Общая информация о потоке выполнения. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{WARN@{WARN}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!WARN@{WARN}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277} 
-WARN&Потенциально проблемные ситуации. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!ERROR@{ERROR}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5} 
-ERROR&События ошибок, которые могут позволить приложению продолжить работу. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{FATAL@{FATAL}!Logger.hxx@{Logger.hxx}}\index{Logger.hxx@{Logger.hxx}!FATAL@{FATAL}}}\Hypertarget{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc}\label{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc} 
-FATAL&Очень серьезные события ошибок, которые, вероятно, приведут к прерыванию работы приложения. \\
-\hline
-
-\end{DoxyEnumFields}
+Logger централизует системное логирование, обрабатывает фильтрацию уровней логов и подписывается на шину событий для автоматической обработки системных событий. 

@@ -28,6 +28,10 @@
 #include <iterator>
 #include <stdexcept>
 
+namespace svcs::core {
+
+using namespace svcs::services;
+
 namespace fs = std::filesystem;
 
 const size_t CHUNK_SIZE = 16384;
@@ -361,4 +365,6 @@ bool ObjectStorage::objectExists(const std::string& hash) const {
     } catch (const std::exception& e) {
         return false;
     }
+}
+
 }

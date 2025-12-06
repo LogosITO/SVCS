@@ -17,6 +17,11 @@
 #include <fstream>
 #include <utility>
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 UndoCommand::UndoCommand(std::shared_ptr<ISubject> subject,
                          std::shared_ptr<RepositoryManager> repoManager)
     : event_bus(std::move(subject)), repo_manager(std::move(repoManager)) {
@@ -291,4 +296,6 @@ void UndoCommand::showHelp() const {
                       "  svcs undo -c abc123 --force  # Force undo specific commit", "undo"});
     event_bus->notify({Event::HELP_MESSAGE, 
                       "  svcs undo --last -f          # Force undo last commit", "undo"});
+}
+
 }

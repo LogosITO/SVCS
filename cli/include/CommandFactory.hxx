@@ -24,6 +24,23 @@
 
 /**
  * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+using namespace svcs::core;
+
+/**
+ * @english
  * @brief Factory for creating ICommand objects by their string name.
  * @details The CommandFactory manages the lifecycle of commands, creating them dynamically
  * using creator functions registered under unique names. Commands are constructed
@@ -187,3 +204,5 @@ public:
      */
     std::vector<std::string> getRegisteredCommands() const;
 };
+
+}

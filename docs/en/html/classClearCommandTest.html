@@ -92,7 +92,7 @@ $(function(){initNavTree('classClearCommandTest.html','','classClearCommandTest-
 </div><!--header-->
 <div class="contents">
 
-<p>Test fixture for <a class="el" href="classClearCommand.html" title="Command for removing SVCS repository structure.">ClearCommand</a> integration tests.  
+<p>Test fixture for ClearCommand integration tests.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ClearCommandTest_8hxx_source.html">ClearCommandTest.hxx</a>&gt;</code></p>
@@ -124,11 +124,11 @@ Protected Attributes</h2></td></tr>
 std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockEventBus</b></td></tr>
 <tr class="memdesc:a1007b3a2a9211c18adf155701184ffb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock event bus for capturing system notifications. <br /></td></tr>
 <tr class="memitem:ae57088deacd4e80287b7d8045d4b9f6a" id="r_ae57088deacd4e80287b7d8045d4b9f6a"><td class="memItemLeft" align="right" valign="top"><a id="ae57088deacd4e80287b7d8045d4b9f6a" name="ae57088deacd4e80287b7d8045d4b9f6a"></a>
-std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
-<tr class="memdesc:ae57088deacd4e80287b7d8045d4b9f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> instance under test. <br /></td></tr>
+std::shared_ptr&lt; RepositoryManager &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
+<tr class="memdesc:ae57088deacd4e80287b7d8045d4b9f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real RepositoryManager instance under test. <br /></td></tr>
 <tr class="memitem:a5359c486c4aa7316d2d083b921b7d5f1" id="r_a5359c486c4aa7316d2d083b921b7d5f1"><td class="memItemLeft" align="right" valign="top"><a id="a5359c486c4aa7316d2d083b921b7d5f1" name="a5359c486c4aa7316d2d083b921b7d5f1"></a>
-std::unique_ptr&lt; <a class="el" href="classClearCommand.html">ClearCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
-<tr class="memdesc:a5359c486c4aa7316d2d083b921b7d5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClearCommand.html" title="Command for removing SVCS repository structure.">ClearCommand</a> instance under test. <br /></td></tr>
+std::unique_ptr&lt; ClearCommand &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+<tr class="memdesc:a5359c486c4aa7316d2d083b921b7d5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ClearCommand instance under test. <br /></td></tr>
 <tr class="memitem:a3aa96cd2c00623edcd42ccc1f76f4943" id="r_a3aa96cd2c00623edcd42ccc1f76f4943"><td class="memItemLeft" align="right" valign="top"><a id="a3aa96cd2c00623edcd42ccc1f76f4943" name="a3aa96cd2c00623edcd42ccc1f76f4943"></a>
 std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>testDir</b></td></tr>
 <tr class="memdesc:a3aa96cd2c00623edcd42ccc1f76f4943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the temporary directory used as the repository root. <br /></td></tr>
@@ -140,7 +140,7 @@ std::streambuf *&#160;</td><td class="memItemRight" valign="bottom"><b>originalC
 <tr class="memdesc:a849c79d660b8123e65698847fa4612da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the original buffer of std::cin, saved for restoration. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Test fixture for <a class="el" href="classClearCommand.html" title="Command for removing SVCS repository structure.">ClearCommand</a> integration tests. </p>
+<div class="textblock"><p>Test fixture for ClearCommand integration tests. </p>
 <p>Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create test files/directories and to simulate user input required for the 'clear' confirmation prompt. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a7c2a071223db041ffea0deb6ce274767" name="a7c2a071223db041ffea0deb6ce274767"></a>

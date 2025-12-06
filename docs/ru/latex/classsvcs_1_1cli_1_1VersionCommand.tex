@@ -1,0 +1,160 @@
+\doxysection{Класс svcs\+::cli\+::Version\+Command}
+\hypertarget{classsvcs_1_1cli_1_1VersionCommand}{}\label{classsvcs_1_1cli_1_1VersionCommand}\index{svcs::cli::VersionCommand@{svcs::cli::VersionCommand}}
+
+
+Команда для отображения информации о версии SVCS.  
+
+
+
+
+{\ttfamily \#include $<$Version\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::cli\+::Version\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1VersionCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_accca22c882aa7f4d61407fcb90f53ab0}{Version\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1cli_1_1VersionCommand}{Version\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_a06acd5dd74537b3d5f92fc6f91bef34b}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду version. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_aa2fde26f77b8d331f11bb3e03353e92a}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_aa6ce0c5f1b06f4d13fabdca31e3797b6}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_ae143bad9e7ab7877d41f980a22f6947f}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_a4079c01d8764cdc6a6a2268db4ebf3d9}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Показывает подробную справочную информацию для этой команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для отображения информации о версии SVCS. 
+
+\doxylink{classsvcs_1_1cli_1_1VersionCommand}{Version\+Command} показывает текущую версию, информацию о сборке и детали авторских прав. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1VersionCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1cli_1_1VersionCommand_accca22c882aa7f4d61407fcb90f53ab0}\index{svcs::cli::VersionCommand@{svcs::cli::VersionCommand}!VersionCommand@{VersionCommand}}
+\index{VersionCommand@{VersionCommand}!svcs::cli::VersionCommand@{svcs::cli::VersionCommand}}
+\doxysubsubsection{\texorpdfstring{VersionCommand()}{VersionCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1VersionCommand_accca22c882aa7f4d61407fcb90f53ab0} 
+svcs\+::cli\+::\+Version\+Command\+::\+Version\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструирует \doxylink{classsvcs_1_1cli_1_1VersionCommand}{Version\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Общий указатель на шину событий для уведомлений. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1VersionCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1cli_1_1VersionCommand_a06acd5dd74537b3d5f92fc6f91bef34b}\index{svcs::cli::VersionCommand@{svcs::cli::VersionCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::cli::VersionCommand@{svcs::cli::VersionCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1VersionCommand_a06acd5dd74537b3d5f92fc6f91bef34b} 
+bool svcs\+::cli\+::\+Version\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду version. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы команды (игнорируются для команды version). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true всегда, так как команда version не может завершиться неудачей. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1VersionCommand_aa6ce0c5f1b06f4d13fabdca31e3797b6}\index{svcs::cli::VersionCommand@{svcs::cli::VersionCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::VersionCommand@{svcs::cli::VersionCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1VersionCommand_aa6ce0c5f1b06f4d13fabdca31e3797b6} 
+std\+::string svcs\+::cli\+::\+Version\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}Показать информацию о версии"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1VersionCommand_aa2fde26f77b8d331f11bb3e03353e92a}\index{svcs::cli::VersionCommand@{svcs::cli::VersionCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::VersionCommand@{svcs::cli::VersionCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1VersionCommand_aa2fde26f77b8d331f11bb3e03353e92a} 
+std\+::string svcs\+::cli\+::\+Version\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}version"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1VersionCommand_ae143bad9e7ab7877d41f980a22f6947f}\index{svcs::cli::VersionCommand@{svcs::cli::VersionCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::VersionCommand@{svcs::cli::VersionCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1VersionCommand_ae143bad9e7ab7877d41f980a22f6947f} 
+std\+::string svcs\+::cli\+::\+Version\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}svcs version"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1VersionCommand_a4079c01d8764cdc6a6a2268db4ebf3d9}\index{svcs::cli::VersionCommand@{svcs::cli::VersionCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::VersionCommand@{svcs::cli::VersionCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1VersionCommand_a4079c01d8764cdc6a6a2268db4ebf3d9} 
+void svcs\+::cli\+::\+Version\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Показывает подробную справочную информацию для этой команды. 
+
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{VersionCommand_8hxx}{Version\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{VersionCommand_8cxx}{Version\+Command.\+cxx}}\end{DoxyCompactItemize}

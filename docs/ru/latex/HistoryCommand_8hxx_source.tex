@@ -13,39 +13,45 @@
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHistoryCommand_a91327f300a414761734016ebdc51c8e6}{HistoryCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
-\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00045\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00054\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classHistoryCommand_a91327f300a414761734016ebdc51c8e6}{HistoryCommand}}(std::shared\_ptr<ISubject>\ subject,}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHistoryCommand_a48844d2bcf6037cdac90a8672df62dbd}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}}\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a1aa10531baa97514fa7cc5796f1d3a39}{HistoryCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a1aa10531baa97514fa7cc5796f1d3a39}{HistoryCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00097\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHistoryCommand_a8334db6e45ef2aff5c6aab7e199f0e96}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}history"{}};\ \}}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00108\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHistoryCommand_abcd0ec4cd00950437d9a4e804e2d60a8}{getDescription}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00119\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHistoryCommand_a92cda98ffa5562e659c0addb3742005b}{getUsage}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistoryCommand_ab46337849e9e68730e844285327e4e2b}{showHelp}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ parseArguments(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args,}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\&\ showOneline,\ \textcolor{keywordtype}{int}\&\ limit,\ \textcolor{keywordtype}{bool}\&\ showFull)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00150\ }
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ showDefaultHistory(\textcolor{keyword}{const}\ std::vector<CommitInfo>\&\ entries)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00161\ }
-\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ showOnelineHistory(\textcolor{keyword}{const}\ std::vector<CommitInfo>\&\ entries)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ showDetailedHistory(\textcolor{keyword}{const}\ std::vector<CommitInfo>\&\ entries)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00183\ }
-\DoxyCodeLine{00195\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ formatTimestamp(\textcolor{keyword}{const}\ std::string\&\ timestamp);}
-\DoxyCodeLine{00196\ }
-\DoxyCodeLine{00210\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ truncateString(\textcolor{keyword}{const}\ std::string\&\ str,\ \textcolor{keywordtype}{size\_t}\ length);}
-\DoxyCodeLine{00211\ \};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_abfc9c53dfcc108abcb7d09e8eb3e266d}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00114\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a608e3bc61d3647dc51eefb632b993e97}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}history"{}};\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00125\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a243832e2e65b7a1a62a72b602ce49ca4}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00136\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a9f2afa7b244e7be1b7617e2d18677260}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a4420fbcd3bc173204770932bd61c88e0}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{bool}\ parseArguments(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\&\ showOneline,\ \textcolor{keywordtype}{int}\&\ limit,\ \textcolor{keywordtype}{bool}\&\ showFull)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ showDefaultHistory(\textcolor{keyword}{const}\ std::vector<CommitInfo>\&\ entries)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ showOnelineHistory(\textcolor{keyword}{const}\ std::vector<CommitInfo>\&\ entries)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ showDetailedHistory(\textcolor{keyword}{const}\ std::vector<CommitInfo>\&\ entries)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00212\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ formatTimestamp(\textcolor{keyword}{const}\ std::string\&\ timestamp);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00227\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ truncateString(\textcolor{keyword}{const}\ std::string\&\ str,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00228\ \};}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \}}
 
 \end{DoxyCode}

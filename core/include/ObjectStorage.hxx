@@ -27,6 +27,23 @@
 
 /**
  * @english
+ * @namespace svcs::core
+ * @brief Core VCS data structures and object model.
+ * @details Contains fundamental VCS object types like Blob, Tree, Commit
+ * that form the building blocks of the version control system.
+ *
+ * @russian
+ * @namespace svcs::core
+ * @brief Основные структуры данных СКВ и модель объектов.
+ * @details Содержит фундаментальные типы объектов СКВ, такие как Blob, Tree, Commit,
+ * которые формируют строительные блоки системы контроля версий.
+ */
+namespace svcs::core {
+
+using namespace svcs::services;
+
+/**
+ * @english
  * @class ObjectStorage
  * @brief Manages the version control object database, including persistence and object restoration.
  * @details Implements low-level file system operations (path generation, reading, writing),
@@ -212,3 +229,5 @@ public:
      */
     [[nodiscard]] bool objectExists(const std::string& hash) const;
 };
+
+}

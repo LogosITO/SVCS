@@ -2,7 +2,7 @@
 \hypertarget{EventBus_8hxx}{}\label{EventBus_8hxx}\index{services/EventBus.hxx@{services/EventBus.hxx}}
 
 
-Implementation of the central event bus (\doxylink{classEventBus}{Event\+Bus}), acting as the \doxylink{classISubject}{ISubject}.  
+Implementation of the central event bus (Event\+Bus), acting as the ISubject.  
 
 
 {\ttfamily \#include "{}Event.\+hxx"{}}\newline
@@ -15,80 +15,82 @@ Implementation of the central event bus (\doxylink{classEventBus}{Event\+Bus}), 
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classEventBus}{Event\+Bus}}
-\begin{DoxyCompactList}\small\item\em A thread-\/safe implementation of \doxylink{classISubject}{ISubject} for centralized event distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus}{svcs\+::services\+::\+Event\+Bus}}
+\begin{DoxyCompactList}\small\item\em A thread-\/safe implementation of \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} for centralized event distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1services}{svcs\+::services}}
+\begin{DoxyCompactList}\small\item\em Service layer components and infrastructure services. \end{DoxyCompactList}\item 
 namespace \mbox{\hyperlink{namespaceConsoleColor}{Console\+Color}}
 \begin{DoxyCompactList}\small\item\em Defines ANSI color codes for console output formatting. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{namespaceConsoleColor_a89fb64a08811c804a798a416e141ef6c}\label{namespaceConsoleColor_a89fb64a08811c804a798a416e141ef6c} 
-const std\+::string {\bfseries Console\+Color\+::\+RESET} = "{}\textbackslash{}033\mbox{[}0m"{}
+\Hypertarget{EventBus_8hxx_a0a58774c2f6037f9cca010ed390fa0f6}\label{EventBus_8hxx_a0a58774c2f6037f9cca010ed390fa0f6} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+RESET} = "{}\textbackslash{}033\mbox{[}0m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_adf17c4a84e1dab465d17a0f27c67e610}\label{namespaceConsoleColor_adf17c4a84e1dab465d17a0f27c67e610} 
-const std\+::string {\bfseries Console\+Color\+::\+BLACK} = "{}\textbackslash{}033\mbox{[}30m"{}
+\Hypertarget{EventBus_8hxx_add2817d613e4816226de207f4da6be78}\label{EventBus_8hxx_add2817d613e4816226de207f4da6be78} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BLACK} = "{}\textbackslash{}033\mbox{[}30m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a5f2c467ffed2ff3a8397ea57f053e748}\label{namespaceConsoleColor_a5f2c467ffed2ff3a8397ea57f053e748} 
-const std\+::string {\bfseries Console\+Color\+::\+RED} = "{}\textbackslash{}033\mbox{[}31m"{}
+\Hypertarget{EventBus_8hxx_ab0345dd978737ffecf196038cef10ad1}\label{EventBus_8hxx_ab0345dd978737ffecf196038cef10ad1} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+RED} = "{}\textbackslash{}033\mbox{[}31m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a1f4812679c4db5d085c187530fba6952}\label{namespaceConsoleColor_a1f4812679c4db5d085c187530fba6952} 
-const std\+::string {\bfseries Console\+Color\+::\+GREEN} = "{}\textbackslash{}033\mbox{[}32m"{}
+\Hypertarget{EventBus_8hxx_a6597d4cf49b92051bfc763b8303bc377}\label{EventBus_8hxx_a6597d4cf49b92051bfc763b8303bc377} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+GREEN} = "{}\textbackslash{}033\mbox{[}32m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a8a63c6ebe4ffb4681e13ee417d011218}\label{namespaceConsoleColor_a8a63c6ebe4ffb4681e13ee417d011218} 
-const std\+::string {\bfseries Console\+Color\+::\+YELLOW} = "{}\textbackslash{}033\mbox{[}33m"{}
+\Hypertarget{EventBus_8hxx_a6d27bb8226b88da941e7a12087b93c19}\label{EventBus_8hxx_a6d27bb8226b88da941e7a12087b93c19} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+YELLOW} = "{}\textbackslash{}033\mbox{[}33m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_adf21af787ff02c93bda02e48acb63215}\label{namespaceConsoleColor_adf21af787ff02c93bda02e48acb63215} 
-const std\+::string {\bfseries Console\+Color\+::\+BLUE} = "{}\textbackslash{}033\mbox{[}34m"{}
+\Hypertarget{EventBus_8hxx_aa2f649cb6aaf06cb24de188fca5b4c31}\label{EventBus_8hxx_aa2f649cb6aaf06cb24de188fca5b4c31} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BLUE} = "{}\textbackslash{}033\mbox{[}34m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a49254dd6a185d944511e1aaf005fba46}\label{namespaceConsoleColor_a49254dd6a185d944511e1aaf005fba46} 
-const std\+::string {\bfseries Console\+Color\+::\+MAGENTA} = "{}\textbackslash{}033\mbox{[}35m"{}
+\Hypertarget{EventBus_8hxx_a385529db1b2fa10b3cd4ca6603916456}\label{EventBus_8hxx_a385529db1b2fa10b3cd4ca6603916456} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+MAGENTA} = "{}\textbackslash{}033\mbox{[}35m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a183dc90b97d71ded19f30a686d936a9f}\label{namespaceConsoleColor_a183dc90b97d71ded19f30a686d936a9f} 
-const std\+::string {\bfseries Console\+Color\+::\+CYAN} = "{}\textbackslash{}033\mbox{[}36m"{}
+\Hypertarget{EventBus_8hxx_a6f75e03a0560a761c780784939fa8029}\label{EventBus_8hxx_a6f75e03a0560a761c780784939fa8029} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+CYAN} = "{}\textbackslash{}033\mbox{[}36m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a1ae1a1966b24e48acf324d00382bbd97}\label{namespaceConsoleColor_a1ae1a1966b24e48acf324d00382bbd97} 
-const std\+::string {\bfseries Console\+Color\+::\+WHITE} = "{}\textbackslash{}033\mbox{[}37m"{}
+\Hypertarget{EventBus_8hxx_a9eb24ae418ae0176ca4bd52b04b9e846}\label{EventBus_8hxx_a9eb24ae418ae0176ca4bd52b04b9e846} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+WHITE} = "{}\textbackslash{}033\mbox{[}37m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a0afa3f34dd9caf52a8ccfaf400ee52bc}\label{namespaceConsoleColor_a0afa3f34dd9caf52a8ccfaf400ee52bc} 
-const std\+::string {\bfseries Console\+Color\+::\+BRIGHT\+\_\+\+RED} = "{}\textbackslash{}033\mbox{[}91m"{}
+\Hypertarget{EventBus_8hxx_a1349d83986997ffaa50debfb682e8740}\label{EventBus_8hxx_a1349d83986997ffaa50debfb682e8740} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BRIGHT\+\_\+\+RED} = "{}\textbackslash{}033\mbox{[}91m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a62c13ceb62d100b247d0fcef96b8c6c2}\label{namespaceConsoleColor_a62c13ceb62d100b247d0fcef96b8c6c2} 
-const std\+::string {\bfseries Console\+Color\+::\+BRIGHT\+\_\+\+GREEN} = "{}\textbackslash{}033\mbox{[}92m"{}
+\Hypertarget{EventBus_8hxx_ac3d8ae5cc99e47c95a96714ff1351814}\label{EventBus_8hxx_ac3d8ae5cc99e47c95a96714ff1351814} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BRIGHT\+\_\+\+GREEN} = "{}\textbackslash{}033\mbox{[}92m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_ac0288a78b911cb60671a90fba0d940c0}\label{namespaceConsoleColor_ac0288a78b911cb60671a90fba0d940c0} 
-const std\+::string {\bfseries Console\+Color\+::\+BRIGHT\+\_\+\+YELLOW} = "{}\textbackslash{}033\mbox{[}93m"{}
+\Hypertarget{EventBus_8hxx_a579d699b25afe23cace582851fd6e130}\label{EventBus_8hxx_a579d699b25afe23cace582851fd6e130} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BRIGHT\+\_\+\+YELLOW} = "{}\textbackslash{}033\mbox{[}93m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a72fcca0718fd191ca9e2e803cbd3472d}\label{namespaceConsoleColor_a72fcca0718fd191ca9e2e803cbd3472d} 
-const std\+::string {\bfseries Console\+Color\+::\+BRIGHT\+\_\+\+BLUE} = "{}\textbackslash{}033\mbox{[}94m"{}
+\Hypertarget{EventBus_8hxx_a04772e4a3e1e2c0bcc3be4485bf3dc01}\label{EventBus_8hxx_a04772e4a3e1e2c0bcc3be4485bf3dc01} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BRIGHT\+\_\+\+BLUE} = "{}\textbackslash{}033\mbox{[}94m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a57adc24076cc0ab51eeeb783575855da}\label{namespaceConsoleColor_a57adc24076cc0ab51eeeb783575855da} 
-const std\+::string {\bfseries Console\+Color\+::\+BRIGHT\+\_\+\+MAGENTA} = "{}\textbackslash{}033\mbox{[}95m"{}
+\Hypertarget{EventBus_8hxx_acc89019048a584299c07454a9ed15839}\label{EventBus_8hxx_acc89019048a584299c07454a9ed15839} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BRIGHT\+\_\+\+MAGENTA} = "{}\textbackslash{}033\mbox{[}95m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_aae0f16f2eaeea83669010304f1c1c4be}\label{namespaceConsoleColor_aae0f16f2eaeea83669010304f1c1c4be} 
-const std\+::string {\bfseries Console\+Color\+::\+BRIGHT\+\_\+\+CYAN} = "{}\textbackslash{}033\mbox{[}96m"{}
+\Hypertarget{EventBus_8hxx_a166cce9c557e24e8ed318f9d56fedde8}\label{EventBus_8hxx_a166cce9c557e24e8ed318f9d56fedde8} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BRIGHT\+\_\+\+CYAN} = "{}\textbackslash{}033\mbox{[}96m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a616a4a6de901619a7ec63800d478321d}\label{namespaceConsoleColor_a616a4a6de901619a7ec63800d478321d} 
-const std\+::string {\bfseries Console\+Color\+::\+BRIGHT\+\_\+\+WHITE} = "{}\textbackslash{}033\mbox{[}97m"{}
+\Hypertarget{EventBus_8hxx_aee0eae8672a3449d9d9d51f8c40ba6a0}\label{EventBus_8hxx_aee0eae8672a3449d9d9d51f8c40ba6a0} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BRIGHT\+\_\+\+WHITE} = "{}\textbackslash{}033\mbox{[}97m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_a5394540c7599ac7e490453f564007cc3}\label{namespaceConsoleColor_a5394540c7599ac7e490453f564007cc3} 
-const std\+::string {\bfseries Console\+Color\+::\+BOLD} = "{}\textbackslash{}033\mbox{[}1m"{}
+\Hypertarget{EventBus_8hxx_af63a0154a8436365da72d794e84a75c9}\label{EventBus_8hxx_af63a0154a8436365da72d794e84a75c9} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+BOLD} = "{}\textbackslash{}033\mbox{[}1m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_ae55191ca4c375a20a290e65f1f22ad62}\label{namespaceConsoleColor_ae55191ca4c375a20a290e65f1f22ad62} 
-const std\+::string {\bfseries Console\+Color\+::\+DIM} = "{}\textbackslash{}033\mbox{[}2m"{}
+\Hypertarget{EventBus_8hxx_a5111b681c54e81a100af347640ebb892}\label{EventBus_8hxx_a5111b681c54e81a100af347640ebb892} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+DIM} = "{}\textbackslash{}033\mbox{[}2m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_af63426ecf732ab5aaa1884dea53593a2}\label{namespaceConsoleColor_af63426ecf732ab5aaa1884dea53593a2} 
-const std\+::string {\bfseries Console\+Color\+::\+ITALIC} = "{}\textbackslash{}033\mbox{[}3m"{}
+\Hypertarget{EventBus_8hxx_ab122303c8cae57a3f8f003a5c9358001}\label{EventBus_8hxx_ab122303c8cae57a3f8f003a5c9358001} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+ITALIC} = "{}\textbackslash{}033\mbox{[}3m"{}
 \item 
-\Hypertarget{namespaceConsoleColor_afd8b68c523710cb73e11ce7363769403}\label{namespaceConsoleColor_afd8b68c523710cb73e11ce7363769403} 
-const std\+::string {\bfseries Console\+Color\+::\+UNDERLINE} = "{}\textbackslash{}033\mbox{[}4m"{}
+\Hypertarget{EventBus_8hxx_a8be0db40faaaa41c7c47fd96c1264a48}\label{EventBus_8hxx_a8be0db40faaaa41c7c47fd96c1264a48} 
+const std\+::string {\bfseries svcs\+::services\+::\+Console\+Color\+::\+UNDERLINE} = "{}\textbackslash{}033\mbox{[}4m"{}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementation of the central event bus (\doxylink{classEventBus}{Event\+Bus}), acting as the \doxylink{classISubject}{ISubject}. 
+Implementation of the central event bus (Event\+Bus), acting as the ISubject. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License

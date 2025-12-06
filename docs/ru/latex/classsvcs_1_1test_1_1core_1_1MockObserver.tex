@@ -1,0 +1,93 @@
+\doxysection{Класс svcs\+::test\+::core\+::Mock\+Observer}
+\hypertarget{classsvcs_1_1test_1_1core_1_1MockObserver}{}\label{classsvcs_1_1test_1_1core_1_1MockObserver}\index{svcs::test::core::MockObserver@{svcs::test::core::MockObserver}}
+
+
+Mock observer for testing event notifications.  
+
+
+Граф наследования\+:svcs\+::test\+::core\+::Mock\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1core_1_1MockObserver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObserver_aa4b44ef9a76d800e24aeaca7c863f5e9}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Метод, вызываемый Subject для уведомления наблюдателя. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObserver_ae1ad93771d332f163df79d761ab5895c}{update}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Метод, вызываемый Subject для обновления наблюдателя. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1MockObserver_a6c7c214cabd6bbcd9f69a571679dbf37}\label{classsvcs_1_1test_1_1core_1_1MockObserver_a6c7c214cabd6bbcd9f69a571679dbf37} 
+size\+\_\+t {\bfseries get\+Event\+Count} () const
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1MockObserver_a3e50477e95bd783a1938488aff05ddc4}\label{classsvcs_1_1test_1_1core_1_1MockObserver_a3e50477e95bd783a1938488aff05ddc4} 
+bool {\bfseries contains\+Message} (const std\+::string \&text) const
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1MockObserver_a51305bfbadf92ede225c4f98c5810e8e}\label{classsvcs_1_1test_1_1core_1_1MockObserver_a51305bfbadf92ede225c4f98c5810e8e} 
+void {\bfseries clear} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор по умолчанию. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1MockObserver_a4c8a5f6b769a7a3c7aa2ced666fbdeac}\label{classsvcs_1_1test_1_1core_1_1MockObserver_a4c8a5f6b769a7a3c7aa2ced666fbdeac} 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ {\bfseries received\+\_\+events}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Mock observer for testing event notifications. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1core_1_1MockObserver_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1core_1_1MockObserver_aa4b44ef9a76d800e24aeaca7c863f5e9}\index{svcs::test::core::MockObserver@{svcs::test::core::MockObserver}!notify@{notify}}
+\index{notify@{notify}!svcs::test::core::MockObserver@{svcs::test::core::MockObserver}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1core_1_1MockObserver_aa4b44ef9a76d800e24aeaca7c863f5e9} 
+void svcs\+::test\+::core\+::\+Mock\+Observer\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Метод, вызываемый Subject для уведомления наблюдателя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event} & Структура \doxylink{structsvcs_1_1services_1_1Event}{Event}, содержащая информацию о произошедшем. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Уст.}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Уст.}}]Примечание\+: Этот метод кажется избыточным с \doxylink{classsvcs_1_1test_1_1core_1_1MockObserver_ae1ad93771d332f163df79d761ab5895c}{update(const Event\& event)}. \end{DoxyRefDesc}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6}{svcs\+::services\+::\+IObserver}}.
+
+\Hypertarget{classsvcs_1_1test_1_1core_1_1MockObserver_ae1ad93771d332f163df79d761ab5895c}\index{svcs::test::core::MockObserver@{svcs::test::core::MockObserver}!update@{update}}
+\index{update@{update}!svcs::test::core::MockObserver@{svcs::test::core::MockObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1core_1_1MockObserver_ae1ad93771d332f163df79d761ab5895c} 
+void svcs\+::test\+::core\+::\+Mock\+Observer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Метод, вызываемый Subject для обновления наблюдателя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event} & Структура \doxylink{structsvcs_1_1services_1_1Event}{Event}, содержащая информацию о произошедшем. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}{svcs\+::services\+::\+IObserver}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{RepoManagerTest_8cxx}{Repo\+Manager\+Test.\+cxx}}\end{DoxyCompactItemize}

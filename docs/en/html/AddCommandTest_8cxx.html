@@ -92,9 +92,9 @@ $(function(){initNavTree('AddCommandTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Tests for the 'add' command (<a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a>) using Google Test.  
+<p>Tests for the 'add' command (AddCommand) using Google Test.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="MockSubject_8hxx_source.html">mocks/MockSubject.hxx</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="cli_2mocks_2MockSubject_8hxx_source.html">mocks/MockSubject.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RepositoryManager_8hxx_source.html">../../core/include/RepositoryManager.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AddCommand_8hxx_source.html">../../cli/include/AddCommand.hxx</a>&quot;</code><br />
 <code>#include &quot;utils/IntAddCommandTest.hxx&quot;</code><br />
@@ -102,45 +102,50 @@ $(function(){initNavTree('AddCommandTest_8cxx.html','',''); });
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli" id="r_svcs_3A_3Atest_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli.html">svcs::test::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for command-line interface components. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2b1d60248b0a0f797d21d7488af70cea" id="r_a2b1d60248b0a0f797d21d7488af70cea"><td class="memItemLeft" align="right" valign="top"><a id="a2b1d60248b0a0f797d21d7488af70cea" name="a2b1d60248b0a0f797d21d7488af70cea"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Failure_NoRepository)</td></tr>
-<tr class="memitem:a42342116cb932b566a5c42f141185931" id="r_a42342116cb932b566a5c42f141185931"><td class="memItemLeft" align="right" valign="top"><a id="a42342116cb932b566a5c42f141185931" name="a42342116cb932b566a5c42f141185931"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_AddSingleFile)</td></tr>
-<tr class="memitem:abbec780da296af84dee550796d1ac3f6" id="r_abbec780da296af84dee550796d1ac3f6"><td class="memItemLeft" align="right" valign="top"><a id="abbec780da296af84dee550796d1ac3f6" name="abbec780da296af84dee550796d1ac3f6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_AddMultipleFiles)</td></tr>
-<tr class="memitem:a134eb879694c35919797af8dd526dd91" id="r_a134eb879694c35919797af8dd526dd91"><td class="memItemLeft" align="right" valign="top"><a id="a134eb879694c35919797af8dd526dd91" name="a134eb879694c35919797af8dd526dd91"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_AddAllFilesWithDot)</td></tr>
-<tr class="memitem:ac5db93f508fbeac33ae0f2da14294a10" id="r_ac5db93f508fbeac33ae0f2da14294a10"><td class="memItemLeft" align="right" valign="top"><a id="ac5db93f508fbeac33ae0f2da14294a10" name="ac5db93f508fbeac33ae0f2da14294a10"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_AddDirectory)</td></tr>
-<tr class="memitem:aa877e451b90964b4334318c5ed4f2185" id="r_aa877e451b90964b4334318c5ed4f2185"><td class="memItemLeft" align="right" valign="top"><a id="aa877e451b90964b4334318c5ed4f2185" name="aa877e451b90964b4334318c5ed4f2185"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Debug_FileNotFoundButContinue)</td></tr>
-<tr class="memitem:a407be0270fcc1885d8d4f5de37e33cf6" id="r_a407be0270fcc1885d8d4f5de37e33cf6"><td class="memItemLeft" align="right" valign="top"><a id="a407be0270fcc1885d8d4f5de37e33cf6" name="a407be0270fcc1885d8d4f5de37e33cf6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Warning_FileNotFoundButContinue)</td></tr>
-<tr class="memitem:a009c6c2e57f15c91f9ee8b8c3c892401" id="r_a009c6c2e57f15c91f9ee8b8c3c892401"><td class="memItemLeft" align="right" valign="top"><a id="a009c6c2e57f15c91f9ee8b8c3c892401" name="a009c6c2e57f15c91f9ee8b8c3c892401"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_NoValidFilesToAdd)</td></tr>
-<tr class="memitem:af5ef35dca0fae700ff1c100258818051" id="r_af5ef35dca0fae700ff1c100258818051"><td class="memItemLeft" align="right" valign="top"><a id="af5ef35dca0fae700ff1c100258818051" name="af5ef35dca0fae700ff1c100258818051"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_AllFilesNotFoundButNoError)</td></tr>
-<tr class="memitem:a05952e8e4725b573577c16f7c1e6a5cd" id="r_a05952e8e4725b573577c16f7c1e6a5cd"><td class="memItemLeft" align="right" valign="top"><a id="a05952e8e4725b573577c16f7c1e6a5cd" name="a05952e8e4725b573577c16f7c1e6a5cd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_DryRunMode)</td></tr>
-<tr class="memitem:af432e15bc225d8e82f9c67d0b7838e6f" id="r_af432e15bc225d8e82f9c67d0b7838e6f"><td class="memItemLeft" align="right" valign="top"><a id="af432e15bc225d8e82f9c67d0b7838e6f" name="af432e15bc225d8e82f9c67d0b7838e6f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_HelpFlag)</td></tr>
-<tr class="memitem:a706861736b855902d74154658f977ad9" id="r_a706861736b855902d74154658f977ad9"><td class="memItemLeft" align="right" valign="top"><a id="a706861736b855902d74154658f977ad9" name="a706861736b855902d74154658f977ad9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Failure_NoFilesSpecified)</td></tr>
-<tr class="memitem:a1f3a6e5fde03d4b9b10a70c07450c52f" id="r_a1f3a6e5fde03d4b9b10a70c07450c52f"><td class="memItemLeft" align="right" valign="top"><a id="a1f3a6e5fde03d4b9b10a70c07450c52f" name="a1f3a6e5fde03d4b9b10a70c07450c52f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_InteractiveModeBasic)</td></tr>
-<tr class="memitem:aefb3231998d4be57e6182ba7a945c53c" id="r_aefb3231998d4be57e6182ba7a945c53c"><td class="memItemLeft" align="right" valign="top"><a id="aefb3231998d4be57e6182ba7a945c53c" name="aefb3231998d4be57e6182ba7a945c53c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Warning_UnknownOption)</td></tr>
-<tr class="memitem:abc18dd0c50d9894724d36e17492b2b28" id="r_abc18dd0c50d9894724d36e17492b2b28"><td class="memItemLeft" align="right" valign="top"><a id="abc18dd0c50d9894724d36e17492b2b28" name="abc18dd0c50d9894724d36e17492b2b28"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_ExcludePattern)</td></tr>
-<tr class="memitem:aa1ad0683708caa990370dd2d8ca4e267" id="r_aa1ad0683708caa990370dd2d8ca4e267"><td class="memItemLeft" align="right" valign="top"><a id="aa1ad0683708caa990370dd2d8ca4e267" name="aa1ad0683708caa990370dd2d8ca4e267"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_IgnoreSvcsDirectory)</td></tr>
-<tr class="memitem:a7541ccb7dbc7d8ccb7317aad6fd38743" id="r_a7541ccb7dbc7d8ccb7317aad6fd38743"><td class="memItemLeft" align="right" valign="top"><a id="a7541ccb7dbc7d8ccb7317aad6fd38743" name="a7541ccb7dbc7d8ccb7317aad6fd38743"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classAddCommandTest.html">AddCommandTest</a>, Success_UpdateAndForceFlags)</td></tr>
+<tr class="memitem:a877268f94351a669c06b40a4611cb6f8" id="r_a877268f94351a669c06b40a4611cb6f8"><td class="memItemLeft" align="right" valign="top"><a id="a877268f94351a669c06b40a4611cb6f8" name="a877268f94351a669c06b40a4611cb6f8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Failure_NoRepository)</td></tr>
+<tr class="memitem:a29424fb195639d50b7ddd84548ddf788" id="r_a29424fb195639d50b7ddd84548ddf788"><td class="memItemLeft" align="right" valign="top"><a id="a29424fb195639d50b7ddd84548ddf788" name="a29424fb195639d50b7ddd84548ddf788"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_AddSingleFile)</td></tr>
+<tr class="memitem:a97426590852c1c5e636de345cad91097" id="r_a97426590852c1c5e636de345cad91097"><td class="memItemLeft" align="right" valign="top"><a id="a97426590852c1c5e636de345cad91097" name="a97426590852c1c5e636de345cad91097"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_AddMultipleFiles)</td></tr>
+<tr class="memitem:a02af1827641730c6f113c1595b82cdcc" id="r_a02af1827641730c6f113c1595b82cdcc"><td class="memItemLeft" align="right" valign="top"><a id="a02af1827641730c6f113c1595b82cdcc" name="a02af1827641730c6f113c1595b82cdcc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_AddAllFilesWithDot)</td></tr>
+<tr class="memitem:a9c264a9fd9ca9993f44d3c28632c2537" id="r_a9c264a9fd9ca9993f44d3c28632c2537"><td class="memItemLeft" align="right" valign="top"><a id="a9c264a9fd9ca9993f44d3c28632c2537" name="a9c264a9fd9ca9993f44d3c28632c2537"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_AddDirectory)</td></tr>
+<tr class="memitem:ae533f992ed4ec6ce8402855ab0cf0296" id="r_ae533f992ed4ec6ce8402855ab0cf0296"><td class="memItemLeft" align="right" valign="top"><a id="ae533f992ed4ec6ce8402855ab0cf0296" name="ae533f992ed4ec6ce8402855ab0cf0296"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Debug_FileNotFoundButContinue)</td></tr>
+<tr class="memitem:a8baeb95f2e57cc6cdb473ea2b30c1673" id="r_a8baeb95f2e57cc6cdb473ea2b30c1673"><td class="memItemLeft" align="right" valign="top"><a id="a8baeb95f2e57cc6cdb473ea2b30c1673" name="a8baeb95f2e57cc6cdb473ea2b30c1673"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Warning_FileNotFoundButContinue)</td></tr>
+<tr class="memitem:a541bfa333f31f3d1138a9202684c9360" id="r_a541bfa333f31f3d1138a9202684c9360"><td class="memItemLeft" align="right" valign="top"><a id="a541bfa333f31f3d1138a9202684c9360" name="a541bfa333f31f3d1138a9202684c9360"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_NoValidFilesToAdd)</td></tr>
+<tr class="memitem:a8a565eddd570e27b086e2d77851eae43" id="r_a8a565eddd570e27b086e2d77851eae43"><td class="memItemLeft" align="right" valign="top"><a id="a8a565eddd570e27b086e2d77851eae43" name="a8a565eddd570e27b086e2d77851eae43"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_AllFilesNotFoundButNoError)</td></tr>
+<tr class="memitem:a32784f965cfee6f86f188558faedc2b4" id="r_a32784f965cfee6f86f188558faedc2b4"><td class="memItemLeft" align="right" valign="top"><a id="a32784f965cfee6f86f188558faedc2b4" name="a32784f965cfee6f86f188558faedc2b4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_DryRunMode)</td></tr>
+<tr class="memitem:a40bbf335f8725fb74e3a4ef9dd485e38" id="r_a40bbf335f8725fb74e3a4ef9dd485e38"><td class="memItemLeft" align="right" valign="top"><a id="a40bbf335f8725fb74e3a4ef9dd485e38" name="a40bbf335f8725fb74e3a4ef9dd485e38"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_HelpFlag)</td></tr>
+<tr class="memitem:afb74aeb9acd8493c1b9ec6c731f3e254" id="r_afb74aeb9acd8493c1b9ec6c731f3e254"><td class="memItemLeft" align="right" valign="top"><a id="afb74aeb9acd8493c1b9ec6c731f3e254" name="afb74aeb9acd8493c1b9ec6c731f3e254"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Failure_NoFilesSpecified)</td></tr>
+<tr class="memitem:a6743c5e4885d005210ca066a9dd9d166" id="r_a6743c5e4885d005210ca066a9dd9d166"><td class="memItemLeft" align="right" valign="top"><a id="a6743c5e4885d005210ca066a9dd9d166" name="a6743c5e4885d005210ca066a9dd9d166"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_InteractiveModeBasic)</td></tr>
+<tr class="memitem:a2ebcc523908587d8c9501189f9164dd8" id="r_a2ebcc523908587d8c9501189f9164dd8"><td class="memItemLeft" align="right" valign="top"><a id="a2ebcc523908587d8c9501189f9164dd8" name="a2ebcc523908587d8c9501189f9164dd8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Warning_UnknownOption)</td></tr>
+<tr class="memitem:a5b870d6aafb84fa26bc9a27b7f85ad9a" id="r_a5b870d6aafb84fa26bc9a27b7f85ad9a"><td class="memItemLeft" align="right" valign="top"><a id="a5b870d6aafb84fa26bc9a27b7f85ad9a" name="a5b870d6aafb84fa26bc9a27b7f85ad9a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_ExcludePattern)</td></tr>
+<tr class="memitem:a9ece9ca571276efd1afa1475fd1505a2" id="r_a9ece9ca571276efd1afa1475fd1505a2"><td class="memItemLeft" align="right" valign="top"><a id="a9ece9ca571276efd1afa1475fd1505a2" name="a9ece9ca571276efd1afa1475fd1505a2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_IgnoreSvcsDirectory)</td></tr>
+<tr class="memitem:a8b1e262b8697029f18d7bb6c8eccf741" id="r_a8b1e262b8697029f18d7bb6c8eccf741"><td class="memItemLeft" align="right" valign="top"><a id="a8b1e262b8697029f18d7bb6c8eccf741" name="a8b1e262b8697029f18d7bb6c8eccf741"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html">AddCommandTest</a>, Success_UpdateAndForceFlags)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Tests for the 'add' command (<a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a>) using Google Test. </p>
+<div class="textblock"><p>Tests for the 'add' command (AddCommand) using Google Test. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

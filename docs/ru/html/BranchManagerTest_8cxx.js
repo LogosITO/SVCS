@@ -1,4 +1,4 @@
 var BranchManagerTest_8cxx =
 [
-    [ "BranchManagerTest", "classBranchManagerTest.html", null ]
+    [ "svcs::test::core::BranchManagerTest", "classsvcs_1_1test_1_1core_1_1BranchManagerTest.html", null ]
 ];

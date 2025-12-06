@@ -1,0 +1,75 @@
+\doxysection{svcs\+::test\+::cli\+::utils\+::Init\+Command\+Integration\+Test Class Reference}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}\index{svcs::test::cli::utils::InitCommandIntegrationTest@{svcs::test::cli::utils::InitCommandIntegrationTest}}
+
+
+Test fixture for \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command} integration tests.  
+
+
+
+
+{\ttfamily \#include $<$Init\+Command\+Integration\+Test.\+hxx$>$}
+
+Inheritance diagram for svcs\+::test\+::cli\+::utils\+::Init\+Command\+Integration\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a798b4d168e3cfa84eacef6e660de184f}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the test environment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a72efbe23e687aeab23354546af6ef4b8}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Tears down the test environment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a736dc63623a8b8f265bbaab9c10b14e0}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a736dc63623a8b8f265bbaab9c10b14e0} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Mock event bus for capturing system notifications. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a213626efa4df94245717c3e2ff2218cb}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a213626efa4df94245717c3e2ff2218cb} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Real \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} instance under test. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_af75c003344613da9b180727e68bd4b4a}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_af75c003344613da9b180727e68bd4b4a} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand}{Init\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command} instance under test. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a86413043141595a63dbf4c288fb04cde}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a86413043141595a63dbf4c288fb04cde} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Path to the temporary directory created for the test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test fixture for \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command} integration tests. 
+
+Manages the setup and teardown of a temporary, isolated directory on the filesystem for each test case. It uses the real \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} to test actual repository creation logic and a \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}{Mock\+Subject} to verify event publications. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a798b4d168e3cfa84eacef6e660de184f}\index{svcs::test::cli::utils::InitCommandIntegrationTest@{svcs::test::cli::utils::InitCommandIntegrationTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!svcs::test::cli::utils::InitCommandIntegrationTest@{svcs::test::cli::utils::InitCommandIntegrationTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a798b4d168e3cfa84eacef6e660de184f} 
+void svcs\+::test\+::cli\+::utils\+::\+Init\+Command\+Integration\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Sets up the test environment. 
+
+Creates a unique temporary directory, changes the current path to it, and initializes the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} and \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command}. \Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a72efbe23e687aeab23354546af6ef4b8}\index{svcs::test::cli::utils::InitCommandIntegrationTest@{svcs::test::cli::utils::InitCommandIntegrationTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!svcs::test::cli::utils::InitCommandIntegrationTest@{svcs::test::cli::utils::InitCommandIntegrationTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a72efbe23e687aeab23354546af6ef4b8} 
+void svcs\+::test\+::cli\+::utils\+::\+Init\+Command\+Integration\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Tears down the test environment. 
+
+Restores the original current path and recursively removes the temporary directory. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{InitCommandIntegrationTest_8hxx}{Init\+Command\+Integration\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{InitCommandIntegrationTest_8cxx}{Init\+Command\+Integration\+Test.\+cxx}}\end{DoxyCompactItemize}

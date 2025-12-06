@@ -1,0 +1,46 @@
+\doxysection{Класс svcs\+::test\+::server\+::Server\+Integration\+Test}
+\hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest}{}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest}\index{svcs::test::server::ServerIntegrationTest@{svcs::test::server::ServerIntegrationTest}}
+Граф наследования\+:svcs\+::test\+::server\+::Server\+Integration\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_a897946b7b7b0c80fcb1d2293ddc76f85}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_a897946b7b7b0c80fcb1d2293ddc76f85} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_a7599e827213c97b0e31f219d8034d0b1}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_a7599e827213c97b0e31f219d8034d0b1} 
+void {\bfseries Tear\+Down} () override
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_a8e78f6b6bcf4e355bc4cf769a0ba1db0}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_a8e78f6b6bcf4e355bc4cf769a0ba1db0} 
+unsigned short {\bfseries find\+Free\+Port} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_a8b5b2e71dd0b3f2ee56b2349160fdf60}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_a8b5b2e71dd0b3f2ee56b2349160fdf60} 
+std\+::filesystem\+::path {\bfseries test\+\_\+dir}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_aa82ba85d311c1945487fde7693f59e81}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_aa82ba85d311c1945487fde7693f59e81} 
+std\+::shared\+\_\+ptr$<$ boost\+::asio\+::io\+\_\+context $>$ {\bfseries io\+\_\+context}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_aa3fdee42dc491249527808aad97bd6e9}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_aa3fdee42dc491249527808aad97bd6e9} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1TestEventBus}{Test\+Event\+Bus}} $>$ {\bfseries event\+\_\+bus}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_afc92684aaa2a20cd55a735187d7d4f7b}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_afc92684aaa2a20cd55a735187d7d4f7b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs\+::core\+::\+Repository\+Manager}} $>$ {\bfseries repo\+\_\+manager}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_ae2fcf34a5c0efaf3659d016c69bbd016}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_ae2fcf34a5c0efaf3659d016c69bbd016} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1server_1_1Server}{svcs\+::server\+::\+Server}} $>$ {\bfseries server}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_ab807fb436d91884ee496b4a2a708c6a0}\label{classsvcs_1_1test_1_1server_1_1ServerIntegrationTest_ab807fb436d91884ee496b4a2a708c6a0} 
+unsigned short {\bfseries port}
+\end{DoxyCompactItemize}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+tests/server/Server\+Test.\+cxx\end{DoxyCompactItemize}

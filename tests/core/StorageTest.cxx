@@ -20,6 +20,25 @@
 #include <filesystem>
 #include <string>
 
+/**
+ * @english
+ * @namespace svcs::test::core
+ * @brief Unit tests for core components and data structures.
+ * @details Contains test cases for core VCS objects, repository management,
+ * and fundamental data structures. Tests in this namespace validate
+ * the basic functionality and integrity of the system core.
+ *
+ * @russian
+ * @namespace svcs::test::core
+ * @brief Модульные тесты для основных компонентов и структур данных.
+ * @details Содержит тест-кейсы для основных объектов СКВ, управления репозиториями
+ * и фундаментальных структур данных. Тесты в этом пространстве имен проверяют
+ * базовую функциональность и целостность ядра системы.
+ */
+namespace svcs::test::core {
+
+using namespace svcs::core;
+
 namespace fs = std::filesystem;
 
 const std::string DUMMY_HASH_FILE_A = "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2";
@@ -173,4 +192,6 @@ TEST_F(ObjectStorageTest, LoadRestoresOriginalCommit) {
 int main(int argc, char* argv[]) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
+}
+
 }

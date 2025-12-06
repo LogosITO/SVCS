@@ -101,50 +101,50 @@ $(function(){initNavTree('VersionCommand_8hxx_source.html','',''); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classVersionCommand.html">   25</a></span><span class="comment"> * @details The VersionCommand shows the current version, build information,</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * and copyright details.</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * @russian</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * @brief Команда для отображения информации о версии SVCS.</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> * @details VersionCommand показывает текущую версию, информацию о сборке</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * и детали авторских прав.</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">class </span><a class="code hl_function" href="classVersionCommand.html#a15785516f34561967419b9388fd557ad">VersionCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="classICommand.html">ICommand</a> {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classVersionCommand.html#a2caf6e6bce8782444a1a7383af55441e">   54</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classVersionCommand.html#a15785516f34561967419b9388fd557ad">VersionCommand</a>(std::shared_ptr&lt;ISubject&gt; subject);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classVersionCommand.html#a0f222db541460934284006830d4c6340">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    [[nodiscard]] std::string <a class="code hl_function" href="classVersionCommand.html#a2caf6e6bce8782444a1a7383af55441e">getName</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;version&quot;</span>; }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    [[nodiscard]] std::string <a class="code hl_function" href="classVersionCommand.html#a390348862cf0abd962ec2d5a58890526">getDescription</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesvcs_1_1cli.html">svcs::cli</a> {</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classsvcs_1_1cli_1_1VersionCommand.html">   36</a></span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacesvcs_1_1services.html">svcs::services</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">class </span><a class="code hl_function" href="classsvcs_1_1cli_1_1VersionCommand.html#accca22c882aa7f4d61407fcb90f53ab0">VersionCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="classsvcs_1_1cli_1_1ICommand.html">ICommand</a> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::shared_ptr&lt;ISubject&gt; eventBus_;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classsvcs_1_1cli_1_1VersionCommand.html#accca22c882aa7f4d61407fcb90f53ab0">VersionCommand</a>(std::shared_ptr&lt;ISubject&gt; subject);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsvcs_1_1cli_1_1VersionCommand.html#a06acd5dd74537b3d5f92fc6f91bef34b">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    [[nodiscard]] std::string <a class="code hl_function" href="classsvcs_1_1cli_1_1VersionCommand.html#aa2fde26f77b8d331f11bb3e03353e92a">getName</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;version&quot;</span>; }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    [[nodiscard]] std::string <a class="code hl_function" href="classsvcs_1_1cli_1_1VersionCommand.html#aa6ce0c5f1b06f4d13fabdca31e3797b6">getDescription</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
 </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    [[nodiscard]] std::string <a class="code hl_function" href="classVersionCommand.html#ae44c74cb5a13afe68f33b6fc0970ea07">getUsage</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVersionCommand.html#a937c22d552201effa893ab364a012096">showHelp</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    [[nodiscard]] <span class="keyword">static</span> std::string getVersionString();</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    [[nodiscard]] <span class="keyword">static</span> std::string getBuildInfo();</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    [[nodiscard]] <span class="keyword">static</span> std::string getCopyright();</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>};</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    [[nodiscard]] std::string <a class="code hl_function" href="classsvcs_1_1cli_1_1VersionCommand.html#ae143bad9e7ab7877d41f980a22f6947f">getUsage</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1cli_1_1VersionCommand.html#a4079c01d8764cdc6a6a2268db4ebf3d9">showHelp</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    [[nodiscard]] <span class="keyword">static</span> std::string getVersionString();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    [[nodiscard]] <span class="keyword">static</span> std::string getBuildInfo();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    [[nodiscard]] <span class="keyword">static</span> std::string getCopyright();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>}</div>
 <div class="ttc" id="aICommand_8hxx_html"><div class="ttname"><a href="ICommand_8hxx.html">ICommand.hxx</a></div><div class="ttdoc">Declaration of the ICommand interface for all executable CLI commands.</div></div>
 <div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Defines the interface for the Subject (Publisher) component of the Observer pattern.</div></div>
-<div class="ttc" id="aclassICommand_html"><div class="ttname"><a href="classICommand.html">ICommand</a></div><div class="ttdoc">Interface (abstract base class) for all commands executed via the CLI.</div><div class="ttdef"><b>Definition</b> ICommand.hxx:25</div></div>
-<div class="ttc" id="aclassVersionCommand_html_a0f222db541460934284006830d4c6340"><div class="ttname"><a href="classVersionCommand.html#a0f222db541460934284006830d4c6340">VersionCommand::execute</a></div><div class="ttdeci">bool execute(const std::vector&lt; std::string &gt; &amp;args) override</div><div class="ttdoc">Executes the version command.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:20</div></div>
-<div class="ttc" id="aclassVersionCommand_html_a15785516f34561967419b9388fd557ad"><div class="ttname"><a href="classVersionCommand.html#a15785516f34561967419b9388fd557ad">VersionCommand::VersionCommand</a></div><div class="ttdeci">VersionCommand(std::shared_ptr&lt; ISubject &gt; subject)</div><div class="ttdoc">Constructs the VersionCommand.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:16</div></div>
-<div class="ttc" id="aclassVersionCommand_html_a2caf6e6bce8782444a1a7383af55441e"><div class="ttname"><a href="classVersionCommand.html#a2caf6e6bce8782444a1a7383af55441e">VersionCommand::getName</a></div><div class="ttdeci">std::string getName() const override</div><div class="ttdoc">Gets the name of the command.</div><div class="ttdef"><b>Definition</b> VersionCommand.hxx:54</div></div>
-<div class="ttc" id="aclassVersionCommand_html_a390348862cf0abd962ec2d5a58890526"><div class="ttname"><a href="classVersionCommand.html#a390348862cf0abd962ec2d5a58890526">VersionCommand::getDescription</a></div><div class="ttdeci">std::string getDescription() const override</div><div class="ttdoc">Gets the description of the command.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:35</div></div>
-<div class="ttc" id="aclassVersionCommand_html_a937c22d552201effa893ab364a012096"><div class="ttname"><a href="classVersionCommand.html#a937c22d552201effa893ab364a012096">VersionCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Shows detailed help information for this command.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:43</div></div>
-<div class="ttc" id="aclassVersionCommand_html_ae44c74cb5a13afe68f33b6fc0970ea07"><div class="ttname"><a href="classVersionCommand.html#ae44c74cb5a13afe68f33b6fc0970ea07">VersionCommand::getUsage</a></div><div class="ttdeci">std::string getUsage() const override</div><div class="ttdoc">Gets the usage syntax of the command.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:39</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1ICommand_html"><div class="ttname"><a href="classsvcs_1_1cli_1_1ICommand.html">svcs::cli::ICommand</a></div><div class="ttdoc">Interface (abstract base class) for all commands executed via the CLI.</div><div class="ttdef"><b>Definition</b> ICommand.hxx:34</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1VersionCommand_html_a06acd5dd74537b3d5f92fc6f91bef34b"><div class="ttname"><a href="classsvcs_1_1cli_1_1VersionCommand.html#a06acd5dd74537b3d5f92fc6f91bef34b">svcs::cli::VersionCommand::execute</a></div><div class="ttdeci">bool execute(const std::vector&lt; std::string &gt; &amp;args) override</div><div class="ttdoc">Executes the version command.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:24</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1VersionCommand_html_a4079c01d8764cdc6a6a2268db4ebf3d9"><div class="ttname"><a href="classsvcs_1_1cli_1_1VersionCommand.html#a4079c01d8764cdc6a6a2268db4ebf3d9">svcs::cli::VersionCommand::showHelp</a></div><div class="ttdeci">void showHelp() const override</div><div class="ttdoc">Shows detailed help information for this command.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:47</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1VersionCommand_html_aa2fde26f77b8d331f11bb3e03353e92a"><div class="ttname"><a href="classsvcs_1_1cli_1_1VersionCommand.html#aa2fde26f77b8d331f11bb3e03353e92a">svcs::cli::VersionCommand::getName</a></div><div class="ttdeci">std::string getName() const override</div><div class="ttdoc">Gets the name of the command.</div><div class="ttdef"><b>Definition</b> VersionCommand.hxx:65</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1VersionCommand_html_aa6ce0c5f1b06f4d13fabdca31e3797b6"><div class="ttname"><a href="classsvcs_1_1cli_1_1VersionCommand.html#aa6ce0c5f1b06f4d13fabdca31e3797b6">svcs::cli::VersionCommand::getDescription</a></div><div class="ttdeci">std::string getDescription() const override</div><div class="ttdoc">Gets the description of the command.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:39</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1VersionCommand_html_accca22c882aa7f4d61407fcb90f53ab0"><div class="ttname"><a href="classsvcs_1_1cli_1_1VersionCommand.html#accca22c882aa7f4d61407fcb90f53ab0">svcs::cli::VersionCommand::VersionCommand</a></div><div class="ttdeci">VersionCommand(std::shared_ptr&lt; ISubject &gt; subject)</div><div class="ttdoc">Constructs the VersionCommand.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:20</div></div>
+<div class="ttc" id="aclasssvcs_1_1cli_1_1VersionCommand_html_ae143bad9e7ab7877d41f980a22f6947f"><div class="ttname"><a href="classsvcs_1_1cli_1_1VersionCommand.html#ae143bad9e7ab7877d41f980a22f6947f">svcs::cli::VersionCommand::getUsage</a></div><div class="ttdeci">std::string getUsage() const override</div><div class="ttdoc">Gets the usage syntax of the command.</div><div class="ttdef"><b>Definition</b> VersionCommand.cxx:43</div></div>
+<div class="ttc" id="anamespacesvcs_1_1cli_html"><div class="ttname"><a href="namespacesvcs_1_1cli.html">svcs::cli</a></div><div class="ttdoc">Command-line interface components and command implementations.</div></div>
+<div class="ttc" id="anamespacesvcs_1_1services_html"><div class="ttname"><a href="namespacesvcs_1_1services.html">svcs::services</a></div><div class="ttdoc">Service layer components and infrastructure services.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -2,18 +2,23 @@
 \hypertarget{BranchCommand_8cxx}{}\label{BranchCommand_8cxx}\index{cli/src/BranchCommand.cxx@{cli/src/BranchCommand.cxx}}
 
 
-Implementation of the \doxylink{classBranchCommand}{Branch\+Command} for managing branches.  
+Implementation of the Branch\+Command for managing branches.  
 
 
 {\ttfamily \#include "{}../include/\+Branch\+Command.\+hxx"{}}\newline
 {\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Command-\/line interface components and command implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementation of the \doxylink{classBranchCommand}{Branch\+Command} for managing branches. 
+Implementation of the Branch\+Command for managing branches. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-This command acts as the command-\/line interface for branch operations. It parses command-\/line arguments to determine the required action (list, create, delete, rename, switch, or show current) and calls the appropriate method on the core \doxylink{classBranchManager}{Branch\+Manager}. 
+This command acts as the command-\/line interface for branch operations. It parses command-\/line arguments to determine the required action (list, create, delete, rename, switch, or show current) and calls the appropriate method on the core Branch\+Manager. 

@@ -8,23 +8,32 @@
 \DoxyCodeLine{00019\ }
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../../core/include/RepositoryManager.hxx}}"{}}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InitCommand_8hxx}{../../../cli/include/InitCommand.hxx}}"{}}}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cli_2mocks_2MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInitCommandIntegrationTest}{InitCommandIntegrationTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
-\DoxyCodeLine{00044\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00052\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classInitCommandIntegrationTest_a1c769369a95eff5e36169a8e7e68c148}{mockEventBus}};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00061\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classInitCommandIntegrationTest_a8ceca12279b153978cc6bdb61ba6685d}{repoManager}};}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00070\ \ \ \ \ std::unique\_ptr<InitCommand>\ \mbox{\hyperlink{classInitCommandIntegrationTest_ab72da75169a3bdfeb154a50dd7bd79f5}{command}};}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00079\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classInitCommandIntegrationTest_ab37e8a5c4872e694ee852f880c2fbf39}{testDir}};}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInitCommandIntegrationTest_a45e0506b7ee57d813c135ca4474e867f}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs::test::cli::utils}}\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{using\ }svcs::services::Event;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{using\ }svcs::core::RepositoryManager;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand}{svcs::cli::InitCommand}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{svcs::test::cli::mocks::MockSubject}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{InitCommandIntegrationTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00066\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00074\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a736dc63623a8b8f265bbaab9c10b14e0}{mockEventBus}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a213626efa4df94245717c3e2ff2218cb}{repoManager}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::unique\_ptr<InitCommand>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_af75c003344613da9b180727e68bd4b4a}{command}};}
 \DoxyCodeLine{00093\ }
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInitCommandIntegrationTest_a1ab9e90df92fc32862f6321b36040df6}{TearDown}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00101\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a86413043141595a63dbf4c288fb04cde}{testDir}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a798b4d168e3cfa84eacef6e660de184f}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest_a72efbe23e687aeab23354546af6ef4b8}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \}}
 
 \end{DoxyCode}

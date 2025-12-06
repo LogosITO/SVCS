@@ -1,0 +1,98 @@
+\doxysection{svcs\+::test\+::core\+::Manual\+Mock\+Observer Class Reference}
+\hypertarget{classsvcs_1_1test_1_1core_1_1ManualMockObserver}{}\label{classsvcs_1_1test_1_1core_1_1ManualMockObserver}\index{svcs::test::core::ManualMockObserver@{svcs::test::core::ManualMockObserver}}
+
+
+Manual mock implementation of the \doxylink{classsvcs_1_1services_1_1IObserver}{IObserver} interface.  
+
+
+Inheritance diagram for svcs\+::test\+::core\+::Manual\+Mock\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1core_1_1ManualMockObserver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a0090d3db6b90405d3a295c7352212029}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to notify the observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a2cd4fd7c054db0fe54515ef16f952759}{update}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to update the observer. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a53ef0e946c60be1b6cf1927fe816e8af}\label{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a53ef0e946c60be1b6cf1927fe816e8af} 
+size\+\_\+t {\bfseries get\+\_\+event\+\_\+count} () const
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a47b520f97329d04ffe9d7ec0fb02dc5d}\label{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a47b520f97329d04ffe9d7ec0fb02dc5d} 
+bool {\bfseries contains\+\_\+event\+\_\+with\+\_\+text} (const std\+::string \&text) const
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a15331dc567d6e05d40c95663bec8713f}\label{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a15331dc567d6e05d40c95663bec8713f} 
+void {\bfseries clear\+\_\+events} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ManualMockObserver_ac250a1e9c416437605b80f0312b37a55}\label{classsvcs_1_1test_1_1core_1_1ManualMockObserver_ac250a1e9c416437605b80f0312b37a55} 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ {\bfseries received\+\_\+events}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manual mock implementation of the \doxylink{classsvcs_1_1services_1_1IObserver}{IObserver} interface. 
+
+
+\begin{DoxyItemize}
+\item This class records all events received via the \textquotesingle{}update\textquotesingle{} or \textquotesingle{}notify\textquotesingle{} methods, allowing test assertions on event content and count. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ManualMockObserver_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a0090d3db6b90405d3a295c7352212029}\index{svcs::test::core::ManualMockObserver@{svcs::test::core::ManualMockObserver}!notify@{notify}}
+\index{notify@{notify}!svcs::test::core::ManualMockObserver@{svcs::test::core::ManualMockObserver}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a0090d3db6b90405d3a295c7352212029} 
+void svcs\+::test\+::core\+::\+Manual\+Mock\+Observer\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method called by the Subject to notify the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structsvcs_1_1services_1_1Event}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Note\+: This method appears redundant with \doxylink{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a2cd4fd7c054db0fe54515ef16f952759}{update(const Event\& event)}.\end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6}{svcs\+::services\+::\+IObserver}}.
+
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a2cd4fd7c054db0fe54515ef16f952759}\index{svcs::test::core::ManualMockObserver@{svcs::test::core::ManualMockObserver}!update@{update}}
+\index{update@{update}!svcs::test::core::ManualMockObserver@{svcs::test::core::ManualMockObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a2cd4fd7c054db0fe54515ef16f952759} 
+void svcs\+::test\+::core\+::\+Manual\+Mock\+Observer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method called by the Subject to update the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structsvcs_1_1services_1_1Event}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}{svcs\+::services\+::\+IObserver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{RepositoryTest_8cxx}{Repository\+Test.\+cxx}}\end{DoxyCompactItemize}

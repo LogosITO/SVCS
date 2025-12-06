@@ -1,0 +1,217 @@
+\doxysection{svcs\+::test\+::cli\+::Undo\+Command\+Test Class Reference}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest}{}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+
+
+Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Undo\+Command\+Test.\+hxx$>$}
+
+Inheritance diagram for svcs\+::test\+::cli\+::Undo\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1UndoCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a53c5cb852211bccbc7a1e03feb642bd1}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the testing environment before each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_af0d8033860563fde4cc2dfcf27c0e84a}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Tears down the testing environment after each test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_afc9d9fbb2f627027862221f0dfcee525}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content) const
+\begin{DoxyCompactList}\small\item\em Creates a test file with specified content in the temporary directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a79efd2f2923c988ef24a72fc66a7e0d1}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aa17def28462c9dcfcdd97a93214d5de5}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Stages a list of files using the \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a40dc5b5a615dcd4aa8ca27fd232f3696}{create\+Test\+Commit}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Creates a new commit (save) with a specified message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a772a07002ec2f11a1249c7102ee69bc4}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a96bcf935bd4c8d4001c3989eb5f1c4c2}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Counts the occurrences of a specific message (substring) across all event notifications. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aceea988df9cf934a0015d32a0b61ef9a}{simulate\+User\+Input}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Simulates user input by pushing the string into the mock event bus\textquotesingle{}s input queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a4c0d3317b257c3bd547f613dc5769cc5}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a4c0d3317b257c3bd547f613dc5769cc5} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer/input simulator). \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a9dc8a95df9c3d737052cd592a43ef4a6}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a9dc8a95df9c3d737052cd592a43ef4a6} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a041b8944dd9d871b072fe7b39f64659a}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a041b8944dd9d871b072fe7b39f64659a} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_ac00e70930db747ce1199dfae3a3e03c8}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_ac00e70930db747ce1199dfae3a3e03c8} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Path to the temporary test repository directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}. 
+
+This fixture provides the necessary infrastructure for testing the undo command\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Manage a temporary SVCS repository directory.
+\item {\bfseries{Core Components\+:}} Instances of \doxylink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject} (for event bus/output/input simulation) and \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager} (for core logic).
+\item {\bfseries{Helper Methods\+:}} Simplify file manipulation, staging, committing, and verification of notifications. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a772a07002ec2f11a1249c7102ee69bc4}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a772a07002ec2f11a1249c7102ee69bc4} 
+bool svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Checks if a specific message (substring) exists in any event notification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the message is found in any notification, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a96bcf935bd4c8d4001c3989eb5f1c4c2}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!countMessages@{countMessages}}
+\index{countMessages@{countMessages}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a96bcf935bd4c8d4001c3989eb5f1c4c2} 
+int svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Counts the occurrences of a specific message (substring) across all event notifications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notifications} & The list of captured events. \\
+\hline
+{\em message} & The substring to count. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of events containing the substring. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a40dc5b5a615dcd4aa8ca27fd232f3696}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!createTestCommit@{createTestCommit}}
+\index{createTestCommit@{createTestCommit}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestCommit()}{createTestCommit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a40dc5b5a615dcd4aa8ca27fd232f3696} 
+bool svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::create\+Test\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a new commit (save) with a specified message. 
+
+Internally stages files (if needed) and calls the repository manager\textquotesingle{}s commit logic. 
+\begin{DoxyParams}{Parameters}
+{\em message} & The commit message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the commit was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a79efd2f2923c988ef24a72fc66a7e0d1}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a79efd2f2923c988ef24a72fc66a7e0d1} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test directory in the temporary location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & The relative path/name of the directory. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_afc9d9fbb2f627027862221f0dfcee525}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_afc9d9fbb2f627027862221f0dfcee525} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates a test file with specified content in the temporary directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The relative path/name of the file. \\
+\hline
+{\em content} & The content to write to the file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a53c5cb852211bccbc7a1e03feb642bd1}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a53c5cb852211bccbc7a1e03feb642bd1} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Sets up the testing environment before each test. 
+
+Initializes components, creates the temporary directory, and initializes the repository. \Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aceea988df9cf934a0015d32a0b61ef9a}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!simulateUserInput@{simulateUserInput}}
+\index{simulateUserInput@{simulateUserInput}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{simulateUserInput()}{simulateUserInput()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aceea988df9cf934a0015d32a0b61ef9a} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::simulate\+User\+Input (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Simulates user input by pushing the string into the mock event bus\textquotesingle{}s input queue. 
+
+This is crucial for testing the confirmation prompt in the \doxylink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}. 
+\begin{DoxyParams}{Parameters}
+{\em input} & The string to simulate as user input (e.\+g., "{}y\textbackslash{}n"{} or "{}n\textbackslash{}n"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aa17def28462c9dcfcdd97a93214d5de5}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aa17def28462c9dcfcdd97a93214d5de5} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stages a list of files using the \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & A vector of file names to stage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_af0d8033860563fde4cc2dfcf27c0e84a}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_af0d8033860563fde4cc2dfcf27c0e84a} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Tears down the testing environment after each test. 
+
+Cleans up the temporary directory and restores the working path. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntUndoCommandTest_8hxx}{Int\+Undo\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntUndoCommandTest_8cxx}{Int\+Undo\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

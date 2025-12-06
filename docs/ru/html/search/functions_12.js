@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vcsobject_0',['VcsObject',['../classVcsObject.html#a58691887a54d3d632038cacb36034075',1,'VcsObject::VcsObject()=default'],['../classVcsObject.html#af2840ade6006e4d64eb6bd9f15b37539',1,'VcsObject::VcsObject(const VcsObject &amp;other)=default']]],
-  ['versioncommand_1',['VersionCommand',['../classVersionCommand.html#a15785516f34561967419b9388fd557ad',1,'VersionCommand']]]
+  ['vcsobject_0',['VcsObject',['../classsvcs_1_1core_1_1VcsObject.html#a81c7e8a2c41dc070254c23dbc2d147e2',1,'svcs::core::VcsObject::VcsObject()=default'],['../classsvcs_1_1core_1_1VcsObject.html#ab66c27121f6c8bbbf427c30c020dfe6d',1,'svcs::core::VcsObject::VcsObject(const VcsObject &amp;other)=default']]],
+  ['versioncommand_1',['VersionCommand',['../classsvcs_1_1cli_1_1VersionCommand.html#accca22c882aa7f4d61407fcb90f53ab0',1,'svcs::cli::VersionCommand::VersionCommand()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand.html#accca22c882aa7f4d61407fcb90f53ab0',1,'svcs::test::cli::utils::VersionCommand::VersionCommand()']]]
 ];

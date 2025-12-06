@@ -1,4 +1,4 @@
 var IObserver_8hxx =
 [
-    [ "IObserver", "classIObserver.html", "classIObserver" ]
+    [ "svcs::services::IObserver", "classsvcs_1_1services_1_1IObserver.html", "classsvcs_1_1services_1_1IObserver" ]
 ];

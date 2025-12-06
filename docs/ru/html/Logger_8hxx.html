@@ -92,7 +92,7 @@ $(function(){initNavTree('Logger_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Определяет класс <a class="el" href="classLogger.html" title="Потокобезопасный Singleton класс, отвечающий за логирование системных событий.">Logger</a>, потокобезопасный Singleton, который действует как <a class="el" href="classIObserver.html" title="Интерфейс Observer (Абстрактный Базовый Класс).">IObserver</a>.  
+<p>Определяет класс Logger, потокобезопасный Singleton, который действует как IObserver.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="IObserver_8hxx_source.html">../IObserver.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Event_8hxx_source.html">../Event.hxx</a>&quot;</code><br />
@@ -105,65 +105,32 @@ $(function(){initNavTree('Logger_8hxx.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
-<tr class="memitem:Logger" id="r_Logger"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html">Logger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Потокобезопасный Singleton класс, отвечающий за логирование системных событий.  <a href="classLogger.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Aservices_3A_3ALogger" id="r_svcs_3A_3Aservices_3A_3ALogger"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1services_1_1Logger.html">svcs::services::Logger</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Потокобезопасный Singleton класс, отвечающий за логирование системных событий.  <a href="classsvcs_1_1services_1_1Logger.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:svcs_3A_3Aservices" id="r_svcs_3A_3Aservices"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1services.html">svcs::services</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1services"><td class="mdescLeft">&#160;</td><td class="mdescRight">Компоненты сервисного слоя и инфраструктурные сервисы. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Перечисления</h2></td></tr>
-<tr class="memitem:aca1fd1d8935433e6ba2e3918214e07f9" id="r_aca1fd1d8935433e6ba2e3918214e07f9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> { <br />
-&#160;&#160;<a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15">DEBUG</a> = 0
-, <a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">INFO</a> = 1
-, <a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277">WARN</a> = 2
-, <a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 3
+<tr class="memitem:a1adf1289a18b7825dd84dac55ccedc41" id="r_a1adf1289a18b7825dd84dac55ccedc41"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1services.html#a1adf1289a18b7825dd84dac55ccedc41">svcs::services::LogLevel</a> { <br />
+&#160;&#160;<a class="el" href="namespacesvcs_1_1services.html#a1adf1289a18b7825dd84dac55ccedc41adc30ec20708ef7b0f641ef78b7880a15">svcs::services::DEBUG</a> = 0
+, <a class="el" href="namespacesvcs_1_1services.html#a1adf1289a18b7825dd84dac55ccedc41a551b723eafd6a31d444fcb2f5920fbd3">svcs::services::INFO</a> = 1
+, <a class="el" href="namespacesvcs_1_1services.html#a1adf1289a18b7825dd84dac55ccedc41a32bd8a1db2275458673903bdb84cb277">svcs::services::WARN</a> = 2
+, <a class="el" href="namespacesvcs_1_1services.html#a1adf1289a18b7825dd84dac55ccedc41abb1ca97ec761fc37101737ba0aa2e7c5">svcs::services::ERROR</a> = 3
 , <br />
-&#160;&#160;<a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc">FATAL</a> = 4
+&#160;&#160;<a class="el" href="namespacesvcs_1_1services.html#a1adf1289a18b7825dd84dac55ccedc41a19da7170bea36556dde582519795f3fc">svcs::services::FATAL</a> = 4
 <br />
  }</td></tr>
-<tr class="memdesc:aca1fd1d8935433e6ba2e3918214e07f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет уровни серьезности для лог-сообщений.  <a href="#aca1fd1d8935433e6ba2e3918214e07f9">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:a1adf1289a18b7825dd84dac55ccedc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет уровни серьезности для лог-сообщений.  <a href="namespacesvcs_1_1services.html#a1adf1289a18b7825dd84dac55ccedc41">Подробнее...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Определяет класс <a class="el" href="classLogger.html" title="Потокобезопасный Singleton класс, отвечающий за логирование системных событий.">Logger</a>, потокобезопасный Singleton, который действует как <a class="el" href="classIObserver.html" title="Интерфейс Observer (Абстрактный Базовый Класс).">IObserver</a>. </p>
+<div class="textblock"><p>Определяет класс Logger, потокобезопасный Singleton, который действует как IObserver. </p>
 <dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p><a class="el" href="classLogger.html" title="Потокобезопасный Singleton класс, отвечающий за логирование системных событий.">Logger</a> централизует системное логирование, обрабатывает фильтрацию уровней логов и подписывается на шину событий для автоматической обработки системных событий. </p>
-</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Перечисления</h2>
-<a id="aca1fd1d8935433e6ba2e3918214e07f9" name="aca1fd1d8935433e6ba2e3918214e07f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca1fd1d8935433e6ba2e3918214e07f9">&#9670;&#160;</a></span>LogLevel</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Определяет уровни серьезности для лог-сообщений. </p>
-<p>Используется для фильтрации вывода на основе настроенного уровня. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15" name="aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15"></a>DEBUG&#160;</td><td class="fielddoc"><p>Подробная информация для отладки. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3" name="aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3"></a>INFO&#160;</td><td class="fielddoc"><p>Общая информация о потоке выполнения. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277" name="aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277"></a>WARN&#160;</td><td class="fielddoc"><p>Потенциально проблемные ситуации. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5" name="aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"><p>События ошибок, которые могут позволить приложению продолжить работу. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc" name="aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc"></a>FATAL&#160;</td><td class="fielddoc"><p>Очень серьезные события ошибок, которые, вероятно, приведут к прерыванию работы приложения. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>Logger централизует системное логирование, обрабатывает фильтрацию уровней логов и подписывается на шину событий для автоматической обработки системных событий. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

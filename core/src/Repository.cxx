@@ -22,6 +22,10 @@
 #include <fstream>
 #include <utility>
 
+namespace svcs::core {
+
+using namespace svcs::services;
+
 namespace fs = std::filesystem;
 
 Repository::~Repository() {
@@ -260,4 +264,6 @@ bool Repository::stageFile(const std::string& path) {
         notify({Event::RUNTIME_ERROR, "Failed to manage index file for " + path + ": " + e.what(), SOURCE});
         return false;
     }
+}
+
 }

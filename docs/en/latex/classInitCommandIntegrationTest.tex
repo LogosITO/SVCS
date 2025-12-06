@@ -2,7 +2,7 @@
 \hypertarget{classInitCommandIntegrationTest}{}\label{classInitCommandIntegrationTest}\index{InitCommandIntegrationTest@{InitCommandIntegrationTest}}
 
 
-Test fixture for \doxylink{classInitCommand}{Init\+Command} integration tests.  
+Test fixture for Init\+Command integration tests.  
 
 
 
@@ -29,20 +29,20 @@ void \mbox{\hyperlink{classInitCommandIntegrationTest_a1ab9e90df92fc32862f6321b3
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
 \begin{DoxyCompactList}\small\item\em Mock event bus for capturing system notifications. \end{DoxyCompactList}\item 
 \Hypertarget{classInitCommandIntegrationTest_a8ceca12279b153978cc6bdb61ba6685d}\label{classInitCommandIntegrationTest_a8ceca12279b153978cc6bdb61ba6685d} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
-\begin{DoxyCompactList}\small\item\em Real \doxylink{classRepositoryManager}{Repository\+Manager} instance under test. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ Repository\+Manager $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Real Repository\+Manager instance under test. \end{DoxyCompactList}\item 
 \Hypertarget{classInitCommandIntegrationTest_ab72da75169a3bdfeb154a50dd7bd79f5}\label{classInitCommandIntegrationTest_ab72da75169a3bdfeb154a50dd7bd79f5} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classInitCommand}{Init\+Command}} $>$ {\bfseries command}
-\begin{DoxyCompactList}\small\item\em \doxylink{classInitCommand}{Init\+Command} instance under test. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ Init\+Command $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Init\+Command instance under test. \end{DoxyCompactList}\item 
 \Hypertarget{classInitCommandIntegrationTest_ab37e8a5c4872e694ee852f880c2fbf39}\label{classInitCommandIntegrationTest_ab37e8a5c4872e694ee852f880c2fbf39} 
 std\+::filesystem\+::path {\bfseries test\+Dir}
 \begin{DoxyCompactList}\small\item\em Path to the temporary directory created for the test. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Test fixture for \doxylink{classInitCommand}{Init\+Command} integration tests. 
+Test fixture for Init\+Command integration tests. 
 
-Manages the setup and teardown of a temporary, isolated directory on the filesystem for each test case. It uses the real \doxylink{classRepositoryManager}{Repository\+Manager} to test actual repository creation logic and a \doxylink{classMockSubject}{Mock\+Subject} to verify event publications. 
+Manages the setup and teardown of a temporary, isolated directory on the filesystem for each test case. It uses the real Repository\+Manager to test actual repository creation logic and a \doxylink{classMockSubject}{Mock\+Subject} to verify event publications. 
 
 \label{doc-func-members}
 \Hypertarget{classInitCommandIntegrationTest_doc-func-members}
@@ -57,7 +57,7 @@ void Init\+Command\+Integration\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}
 
 Sets up the test environment. 
 
-Creates a unique temporary directory, changes the current path to it, and initializes the \doxylink{classRepositoryManager}{Repository\+Manager} and \doxylink{classInitCommand}{Init\+Command}. \Hypertarget{classInitCommandIntegrationTest_a1ab9e90df92fc32862f6321b36040df6}\index{InitCommandIntegrationTest@{InitCommandIntegrationTest}!TearDown@{TearDown}}
+Creates a unique temporary directory, changes the current path to it, and initializes the Repository\+Manager and Init\+Command. \Hypertarget{classInitCommandIntegrationTest_a1ab9e90df92fc32862f6321b36040df6}\index{InitCommandIntegrationTest@{InitCommandIntegrationTest}!TearDown@{TearDown}}
 \index{TearDown@{TearDown}!InitCommandIntegrationTest@{InitCommandIntegrationTest}}
 \doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
 {\footnotesize\ttfamily \label{classInitCommandIntegrationTest_a1ab9e90df92fc32862f6321b36040df6} 

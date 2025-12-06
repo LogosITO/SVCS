@@ -2,7 +2,7 @@
 \hypertarget{ICommand_8hxx}{}\label{ICommand_8hxx}\index{cli/include/ICommand.hxx@{cli/include/ICommand.hxx}}
 
 
-Объявление интерфейса \doxylink{classICommand}{ICommand} для всех исполняемых CLI команд.  
+Объявление интерфейса ICommand для всех исполняемых CLI команд.  
 
 
 {\ttfamily \#include $<$string$>$}\newline
@@ -10,14 +10,19 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classICommand}{ICommand}}
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}
 \begin{DoxyCompactList}\small\item\em Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Компоненты командной строки и реализации команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Объявление интерфейса \doxylink{classICommand}{ICommand} для всех исполняемых CLI команд. 
+Объявление интерфейса ICommand для всех исполняемых CLI команд. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classICommand}{ICommand} определяет базовый контракт, которому должна соответствовать любая команда в системе, обеспечивая единообразный способ получения метаданных (имя, описание, использование) и выполнения логики команды. 
+ICommand определяет базовый контракт, которому должна соответствовать любая команда в системе, обеспечивая единообразный способ получения метаданных (имя, описание, использование) и выполнения логики команды. 

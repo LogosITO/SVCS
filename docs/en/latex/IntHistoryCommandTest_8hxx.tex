@@ -2,7 +2,7 @@
 \hypertarget{IntHistoryCommandTest_8hxx}{}\label{IntHistoryCommandTest_8hxx}\index{tests/cli/utils/IntHistoryCommandTest.hxx@{tests/cli/utils/IntHistoryCommandTest.hxx}}
 
 
-Test fixture header for integration tests of the \doxylink{classHistoryCommand}{History\+Command} class.  
+Test fixture header for integration tests of the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command} class.  
 
 
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
@@ -15,14 +15,23 @@ Test fixture header for integration tests of the \doxylink{classHistoryCommand}{
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classHistoryCommandTest}{History\+Command\+Test}}
-\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classHistoryCommand}{History\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{svcs\+::test\+::cli\+::utils\+::\+History\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{svcs\+::test\+::cli\+::utils\+::\+History\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for viewing the history of saves (commits) in the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs\+::test\+::cli\+::utils}}
+\begin{DoxyCompactList}\small\item\em Utility classes and test fixtures for CLI command testing. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Unit tests for command-\/line interface components. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Test fixture header for integration tests of the \doxylink{classHistoryCommand}{History\+Command} class. 
+Test fixture header for integration tests of the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command} class. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Declares the \doxylink{classHistoryCommandTest}{History\+Command\+Test} fixture, which sets up a controlled environment for testing the \textquotesingle{}svcs history\textquotesingle{} command. This includes initializing mock and core components (\doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classRepositoryManager}{Repository\+Manager}) and providing helper functions for creating files, staging changes, and creating mock commits. 
+Declares the History\+Command\+Test fixture, which sets up a controlled environment for testing the \textquotesingle{}svcs history\textquotesingle{} command. This includes initializing mock and core components (Mock\+Subject, Repository\+Manager) and providing helper functions for creating files, staging changes, and creating mock commits. 

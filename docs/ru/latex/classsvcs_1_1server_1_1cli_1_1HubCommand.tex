@@ -1,0 +1,194 @@
+\doxysection{Класс svcs\+::server\+::cli\+::Hub\+Command}
+\hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand}{}\label{classsvcs_1_1server_1_1cli_1_1HubCommand}\index{svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}}
+
+
+Команда для создания центральных репозиториев-\/хабов для командного сотрудничества.  
+
+
+
+
+{\ttfamily \#include $<$Hub\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::server\+::cli\+::Hub\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsvcs_1_1server_1_1cli_1_1HubCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_ade9c141fe19411e9b430688231c81bb5}{Hub\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repository\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1server_1_1cli_1_1HubCommand}{Hub\+Command} с необходимыми зависимостями. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_a79388a41e050be5c95c65220ab53fd8e}\label{classsvcs_1_1server_1_1cli_1_1HubCommand_a79388a41e050be5c95c65220ab53fd8e} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Hub\+Command} () override=default
+\begin{DoxyCompactList}\small\item\em Деструктор по умолчанию. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a01080d10ab794600470670ec6a22633a}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a6c2b48168bc6f7fa8d857d54205117e6}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает краткое описание назначения команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a40341e753e4ccc73304ef82e6333c8c4}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования для команды. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a28c39200f05a5e4f7c94d05b573cbc18}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду hub с предоставленными аргументами. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a2ffa2320d34715820f92944c2ec44585}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает справочную информацию для команды hub. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_aa74199cd1feddb12fe2afd072c9053ed}{Server\+Base\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}{Server\+Base\+Command} с необходимыми зависимостями. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Server\+Base\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор для корректной очистки производных классов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Защищенные члены унаследованные от \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a894f4e32bab7afbe52cf3c00790e4aaa}{notify\+Info}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Отправляет информационное уведомление через шину событий. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ae442f184f015147219e511ae2f602f4d}{notify\+Error}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Отправляет уведомление об ошибке через шину событий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ {\bfseries event\+\_\+bus\+\_\+}
+\begin{DoxyCompactList}\small\item\em Общий указатель на шину событий для системных уведомлений. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+\_\+manager\+\_\+}
+\begin{DoxyCompactList}\small\item\em Общий указатель на менеджер репозиториев для операций с репозиториями. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для создания центральных репозиториев-\/хабов для командного сотрудничества. 
+
+Реализует функциональность \textquotesingle{}svcs hub\textquotesingle{} для инициализации голых репозиториев, которые действуют как центральные точки для отправки, получения и совместной работы над кодом. Эта команда необходима для настройки инфраструктуры удаленного сотрудничества. Наследуется от \doxylink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand}{Server\+Base\+Command} для общей функциональности серверных команд. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_ade9c141fe19411e9b430688231c81bb5}\index{svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}!HubCommand@{HubCommand}}
+\index{HubCommand@{HubCommand}!svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}}
+\doxysubsubsection{\texorpdfstring{HubCommand()}{HubCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1HubCommand_ade9c141fe19411e9b430688231c81bb5} 
+svcs\+::server\+::cli\+::\+Hub\+Command\+::\+Hub\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repository\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classsvcs_1_1server_1_1cli_1_1HubCommand}{Hub\+Command} с необходимыми зависимостями. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\+\_\+bus} & Шина событий для системы уведомлений, используется для обратной связи с пользователем. \\
+\hline
+{\em repository\+\_\+manager} & Менеджер репозитория для основных операций с репозиторием. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_a28c39200f05a5e4f7c94d05b573cbc18}\index{svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1HubCommand_a28c39200f05a5e4f7c94d05b573cbc18} 
+bool svcs\+::server\+::cli\+::\+Hub\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду hub с предоставленными аргументами. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы командной строки, переданные команде hub. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool True если команда выполнена успешно, false в противном случае. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::filesystem\+\_\+error} & Если операции файловой системы не удаются. \\
+\hline
+{\em std\+::runtime\+\_\+error} & Если инициализация репозитория не удается. \\
+\hline
+\end{DoxyExceptions}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad122598b6dfb0a065eb9fc3d5f0c0e7a}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}.
+
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_a6c2b48168bc6f7fa8d857d54205117e6}\index{svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1HubCommand_a6c2b48168bc6f7fa8d857d54205117e6} 
+std\+::string svcs\+::server\+::cli\+::\+Hub\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает краткое описание назначения команды. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Описание функциональности команды hub. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a2e6579f00f8c275f2d9028a4e0bc83f7}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}.
+
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_a01080d10ab794600470670ec6a22633a}\index{svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1HubCommand_a01080d10ab794600470670ec6a22633a} 
+std\+::string svcs\+::server\+::cli\+::\+Hub\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Имя команды "{}hub"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a3f1fd2baa51a5168b342ffe3d09b1119}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}.
+
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_a40341e753e4ccc73304ef82e6333c8c4}\index{svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1HubCommand_a40341e753e4ccc73304ef82e6333c8c4} 
+std\+::string svcs\+::server\+::cli\+::\+Hub\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования для команды. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Шаблон использования для команды hub. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a787cc093291b96dbb785692f7e145618}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}.
+
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1HubCommand_a2ffa2320d34715820f92944c2ec44585}\index{svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::server::cli::HubCommand@{svcs::server::cli::HubCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1HubCommand_a2ffa2320d34715820f92944c2ec44585} 
+void svcs\+::server\+::cli\+::\+Hub\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает справочную информацию для команды hub. 
+
+Показывает примеры использования, описания аргументов и назначение команды для помощи пользователям в правильном использовании команды. 
+
+Замещает \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a8ebf75fc2472e67519770c1e660e7f19}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{HubCommand_8hxx}{Hub\+Command.\+hxx}}\item 
+server/src/\mbox{\hyperlink{HubCommand_8cxx}{Hub\+Command.\+cxx}}\end{DoxyCompactItemize}

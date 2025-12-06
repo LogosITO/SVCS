@@ -1,0 +1,162 @@
+\doxysection{Класс svcs\+::cli\+::Clear\+Command}
+\hypertarget{classsvcs_1_1cli_1_1ClearCommand}{}\label{classsvcs_1_1cli_1_1ClearCommand}\index{svcs::cli::ClearCommand@{svcs::cli::ClearCommand}}
+
+
+Команда для удаления структуры репозитория SVCS.  
+
+
+
+
+{\ttfamily \#include $<$Clear\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::cli\+::Clear\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1ClearCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a87f3709eb1ed281225c05219fa21871c}{Clear\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a5cc1fbe242e0687f4ecb4f9f9a68458c}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду clear. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a1c8c0f8eb862b8bc56059f44cd7ebd9f}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a36f9ba3184372e8881737ff330839555}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_acb15c7e7cbf58b4133842dda9fcd573c}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a3f155e1cb9caf1b389d83344f059aff9}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Показывает подробную справочную информацию для этой команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для удаления структуры репозитория SVCS. 
+
+\doxylink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command} безопасно удаляет директорию .svcs и все данные репозитория. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1ClearCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1cli_1_1ClearCommand_a87f3709eb1ed281225c05219fa21871c}\index{svcs::cli::ClearCommand@{svcs::cli::ClearCommand}!ClearCommand@{ClearCommand}}
+\index{ClearCommand@{ClearCommand}!svcs::cli::ClearCommand@{svcs::cli::ClearCommand}}
+\doxysubsubsection{\texorpdfstring{ClearCommand()}{ClearCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ClearCommand_a87f3709eb1ed281225c05219fa21871c} 
+svcs\+::cli\+::\+Clear\+Command\+::\+Clear\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Общий указатель на шину событий для уведомлений. \\
+\hline
+{\em repo\+Manager} & Общий указатель на менеджер репозитория. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1ClearCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1cli_1_1ClearCommand_a5cc1fbe242e0687f4ecb4f9f9a68458c}\index{svcs::cli::ClearCommand@{svcs::cli::ClearCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::cli::ClearCommand@{svcs::cli::ClearCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ClearCommand_a5cc1fbe242e0687f4ecb4f9f9a68458c} 
+bool svcs\+::cli\+::\+Clear\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду clear. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы команды (--force для пропуска подтверждения). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если очистка успешна, false в противном случае. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1ClearCommand_a36f9ba3184372e8881737ff330839555}\index{svcs::cli::ClearCommand@{svcs::cli::ClearCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::ClearCommand@{svcs::cli::ClearCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ClearCommand_a36f9ba3184372e8881737ff330839555} 
+std\+::string svcs\+::cli\+::\+Clear\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}Удалить репозиторий SVCS из текущей директории"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1ClearCommand_a1c8c0f8eb862b8bc56059f44cd7ebd9f}\index{svcs::cli::ClearCommand@{svcs::cli::ClearCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::ClearCommand@{svcs::cli::ClearCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ClearCommand_a1c8c0f8eb862b8bc56059f44cd7ebd9f} 
+std\+::string svcs\+::cli\+::\+Clear\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}clear"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1ClearCommand_acb15c7e7cbf58b4133842dda9fcd573c}\index{svcs::cli::ClearCommand@{svcs::cli::ClearCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::ClearCommand@{svcs::cli::ClearCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ClearCommand_acb15c7e7cbf58b4133842dda9fcd573c} 
+std\+::string svcs\+::cli\+::\+Clear\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+"{}svcs clear \mbox{[}-\/-\/force\mbox{]}"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1ClearCommand_a3f155e1cb9caf1b389d83344f059aff9}\index{svcs::cli::ClearCommand@{svcs::cli::ClearCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::ClearCommand@{svcs::cli::ClearCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ClearCommand_a3f155e1cb9caf1b389d83344f059aff9} 
+void svcs\+::cli\+::\+Clear\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Показывает подробную справочную информацию для этой команды. 
+
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{ClearCommand_8hxx}{Clear\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{ClearCommand_8cxx}{Clear\+Command.\+cxx}}\end{DoxyCompactItemize}

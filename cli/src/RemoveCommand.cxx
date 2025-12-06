@@ -16,6 +16,11 @@
 #include <iostream>
 #include <utility>
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 RemoveCommand::RemoveCommand(std::shared_ptr<ISubject> subject,
                            std::shared_ptr<RepositoryManager> repoManager)
     : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
@@ -227,4 +232,6 @@ bool RemoveCommand::confirmRemoveAll() const {
     std::getline(std::cin, response);
     
     return (response == "y" || response == "Y" || response == "yes");
+}
+
 }

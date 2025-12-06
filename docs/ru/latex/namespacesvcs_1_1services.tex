@@ -1,0 +1,74 @@
+\doxysection{Пространство имен svcs\+::services}
+\hypertarget{namespacesvcs_1_1services}{}\label{namespacesvcs_1_1services}\index{svcs::services@{svcs::services}}
+
+
+Компоненты сервисного слоя и инфраструктурные сервисы.  
+
+
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}}
+\begin{DoxyCompactList}\small\item\em Структура, описывающая событие, опубликованное ядром VCS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus}{Event\+Bus}}
+\begin{DoxyCompactList}\small\item\em Потокобезопасная реализация \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} для централизованного распределения событий. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}}
+\begin{DoxyCompactList}\small\item\em Интерфейс Observer (Абстрактный Базовый Класс). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}}
+\begin{DoxyCompactList}\small\item\em Интерфейс Subject (Издатель) (Абстрактный Базовый Класс). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1services_1_1Logger}{Logger}}
+\begin{DoxyCompactList}\small\item\em Потокобезопасный Singleton класс, отвечающий за логирование системных событий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{Log\+Level}} \{ \newline
+\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41adc30ec20708ef7b0f641ef78b7880a15}{DEBUG}} = 0
+, \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a551b723eafd6a31d444fcb2f5920fbd3}{INFO}} = 1
+, \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a32bd8a1db2275458673903bdb84cb277}{WARN}} = 2
+, \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}} = 3
+, \newline
+\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a19da7170bea36556dde582519795f3fc}{FATAL}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Определяет уровни серьезности для лог-\/сообщений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Компоненты сервисного слоя и инфраструктурные сервисы. 
+
+Содержит основные инфраструктурные сервисы, включая систему событий, механизм уведомлений, реализацию шаблона Observer и другие сквозные задачи, которые поддерживают операции СКВ. 
+
+\label{doc-enum-members}
+\Hypertarget{namespacesvcs_1_1services_doc-enum-members}
+\doxysubsection{Перечисления}
+\Hypertarget{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}\index{svcs::services@{svcs::services}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!svcs::services@{svcs::services}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41} 
+enum class \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{svcs\+::services\+::\+Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Определяет уровни серьезности для лог-\/сообщений. 
+
+Используется для фильтрации вывода на основе настроенного уровня. \begin{DoxyEnumFields}[2]{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG@{DEBUG}!svcs::services@{svcs::services}}\index{svcs::services@{svcs::services}!DEBUG@{DEBUG}}}\Hypertarget{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41adc30ec20708ef7b0f641ef78b7880a15}\label{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41adc30ec20708ef7b0f641ef78b7880a15} 
+DEBUG&Подробная информация для отладки. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!svcs::services@{svcs::services}}\index{svcs::services@{svcs::services}!INFO@{INFO}}}\Hypertarget{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a551b723eafd6a31d444fcb2f5920fbd3}\label{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a551b723eafd6a31d444fcb2f5920fbd3} 
+INFO&Общая информация о потоке выполнения. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARN@{WARN}!svcs::services@{svcs::services}}\index{svcs::services@{svcs::services}!WARN@{WARN}}}\Hypertarget{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a32bd8a1db2275458673903bdb84cb277}\label{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a32bd8a1db2275458673903bdb84cb277} 
+WARN&Потенциально проблемные ситуации. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!svcs::services@{svcs::services}}\index{svcs::services@{svcs::services}!ERROR@{ERROR}}}\Hypertarget{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41abb1ca97ec761fc37101737ba0aa2e7c5}\label{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41abb1ca97ec761fc37101737ba0aa2e7c5} 
+ERROR&События ошибок, которые могут позволить приложению продолжить работу. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FATAL@{FATAL}!svcs::services@{svcs::services}}\index{svcs::services@{svcs::services}!FATAL@{FATAL}}}\Hypertarget{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a19da7170bea36556dde582519795f3fc}\label{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a19da7170bea36556dde582519795f3fc} 
+FATAL&Очень серьезные события ошибок, которые, вероятно, приведут к прерыванию работы приложения. \\
+\hline
+
+\end{DoxyEnumFields}

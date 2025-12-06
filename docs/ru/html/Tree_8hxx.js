@@ -1,6 +1,6 @@
 var Tree_8hxx =
 [
-    [ "TreeEntry", "structTreeEntry.html", "structTreeEntry" ],
-    [ "Tree", "classTree.html", "classTree" ],
-    [ "createEntry", "Tree_8hxx.html#a15d13a6036a062282a24e34a2fe7751f", null ]
+    [ "svcs::core::TreeEntry", "structsvcs_1_1core_1_1TreeEntry.html", "structsvcs_1_1core_1_1TreeEntry" ],
+    [ "svcs::core::Tree", "classsvcs_1_1core_1_1Tree.html", "classsvcs_1_1core_1_1Tree" ],
+    [ "svcs::core::createEntry", "namespacesvcs_1_1core.html#a0d0715b6f2a56f90b0f7fccbe3b2b1a9", null ]
 ];

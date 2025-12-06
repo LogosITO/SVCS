@@ -23,6 +23,21 @@
 
 /**
  * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+/**
+ * @english
  * @class ICommand
  * @brief Interface (abstract base class) for all commands executed via the CLI.
  * @details Every concrete command (e.g., InitCommand, CommitCommand) must inherit
@@ -102,3 +117,5 @@ public:
      */
     virtual void showHelp() const = 0;
 };
+
+}

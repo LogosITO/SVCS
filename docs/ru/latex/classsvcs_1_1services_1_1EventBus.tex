@@ -1,0 +1,112 @@
+\doxysection{Класс svcs\+::services\+::Event\+Bus}
+\hypertarget{classsvcs_1_1services_1_1EventBus}{}\label{classsvcs_1_1services_1_1EventBus}\index{svcs::services::EventBus@{svcs::services::EventBus}}
+
+
+Потокобезопасная реализация \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} для централизованного распределения событий.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Bus.\+hxx$>$}
+
+Граф наследования\+:svcs\+::services\+::Event\+Bus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1services_1_1EventBus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1services_1_1EventBus_a7dedabf652e6bc393538d4e2b207d535}\label{classsvcs_1_1services_1_1EventBus_a7dedabf652e6bc393538d4e2b207d535} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Event\+Bus} () override=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор по умолчанию. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus_a211117059f05ee5aa1f5256fc01df133}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Регистрирует нового Observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus_acfdd0f85f33cd8e6436c75abc9e4657c}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$ observer\+\_\+to\+\_\+remove) override
+\begin{DoxyCompactList}\small\item\em Отменяет регистрацию конкретного Observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus_a7be954fe49754b80a57e0a7386744a15}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) const override
+\begin{DoxyCompactList}\small\item\em Отправляет событие всем активным Observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a48d67b1462dce55e293c0614f59e1064}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Коллекция зарегистрированных наблюдателей. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Потокобезопасная реализация \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} для централизованного распределения событий. 
+
+Этот класс использует std\+::weak\+\_\+ptr для хранения наблюдателей, предотвращая циклические зависимости и обеспечивая автоматическую очистку уничтоженных наблюдателей. Он наследуется от std\+::enable\+\_\+shared\+\_\+from\+\_\+this, чтобы гарантировать, что валидные общие указатели на шину могут быть созданы даже внутри его функций-\/членов. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1services_1_1EventBus_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1services_1_1EventBus_a211117059f05ee5aa1f5256fc01df133}\index{svcs::services::EventBus@{svcs::services::EventBus}!attach@{attach}}
+\index{attach@{attach}!svcs::services::EventBus@{svcs::services::EventBus}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1EventBus_a211117059f05ee5aa1f5256fc01df133} 
+void svcs\+::services\+::\+Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Регистрирует нового Observer. 
+
+Общий указатель наблюдателя хранится как слабый указатель внутри. 
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Умный указатель на Observer для регистрации. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_ae47bfa148a3f12751f1aae86fcca3975}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1services_1_1EventBus_acfdd0f85f33cd8e6436c75abc9e4657c}\index{svcs::services::EventBus@{svcs::services::EventBus}!detach@{detach}}
+\index{detach@{detach}!svcs::services::EventBus@{svcs::services::EventBus}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1EventBus_acfdd0f85f33cd8e6436c75abc9e4657c} 
+void svcs\+::services\+::\+Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$}]{observer\+\_\+to\+\_\+remove}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отменяет регистрацию конкретного Observer. 
+
+Сравнивает предоставленный shared\+\_\+ptr со всеми хранимыми объектами weak\+\_\+ptr. 
+\begin{DoxyParams}{Аргументы}
+{\em observer\+\_\+to\+\_\+remove} & Умный указатель на Observer для удаления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a20e2f5095404c960d2b4f17789e74b28}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1services_1_1EventBus_a7be954fe49754b80a57e0a7386744a15}\index{svcs::services::EventBus@{svcs::services::EventBus}!notify@{notify}}
+\index{notify@{notify}!svcs::services::EventBus@{svcs::services::EventBus}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1EventBus_a7be954fe49754b80a57e0a7386744a15} 
+void svcs\+::services\+::\+Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отправляет событие всем активным Observers. 
+
+Перебирает список, безопасно блокируя каждый слабый указатель перед вызовом update(). Невалидные (истекшие) слабые указатели эффективно игнорируются. 
+\begin{DoxyParams}{Аргументы}
+{\em event} & Константная ссылка на событие для публикации. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_abd7c4e5d2729c0a3c83ce7b0f7b4e82a}{svcs\+::services\+::\+ISubject}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{EventBus_8hxx}{Event\+Bus.\+hxx}}\end{DoxyCompactItemize}

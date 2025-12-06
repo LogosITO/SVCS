@@ -1,0 +1,159 @@
+\doxysection{svcs\+::test\+::server\+::Simple\+Event\+Bus Class Reference}
+\hypertarget{classsvcs_1_1test_1_1server_1_1SimpleEventBus}{}\label{classsvcs_1_1test_1_1server_1_1SimpleEventBus}\index{svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}}
+Inheritance diagram for svcs\+::test\+::server\+::Simple\+Event\+Bus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1server_1_1SimpleEventBus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a88a7800cffeeb4cbe7edbe6ae5e05bae}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}} $>$) override
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a4a81641d3f9cb09777a16a19f4dd0a3b}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}} $>$) override
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a0c05f07d47ff47259c4634fb9f1323dd}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs\+::services\+::\+Event}} \&) const override
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers about an event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a88a7800cffeeb4cbe7edbe6ae5e05bae}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}} $>$) override
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a4a81641d3f9cb09777a16a19f4dd0a3b}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}} $>$) override
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a0c05f07d47ff47259c4634fb9f1323dd}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs\+::services\+::\+Event}} \&) const override
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers about an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a48d67b1462dce55e293c0614f59e1064}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Collection of registered observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1server_1_1SimpleEventBus_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a88a7800cffeeb4cbe7edbe6ae5e05bae}\index{svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}!attach@{attach}}
+\index{attach@{attach}!svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a88a7800cffeeb4cbe7edbe6ae5e05bae} 
+void svcs\+::test\+::server\+::\+Simple\+Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attaches an observer to the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A smart pointer to the observer object to attach. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_ae47bfa148a3f12751f1aae86fcca3975}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a88a7800cffeeb4cbe7edbe6ae5e05bae}\index{svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}!attach@{attach}}
+\index{attach@{attach}!svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a88a7800cffeeb4cbe7edbe6ae5e05bae} 
+void svcs\+::test\+::server\+::\+Simple\+Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attaches an observer to the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A smart pointer to the observer object to attach. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_ae47bfa148a3f12751f1aae86fcca3975}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a4a81641d3f9cb09777a16a19f4dd0a3b}\index{svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}!detach@{detach}}
+\index{detach@{detach}!svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a4a81641d3f9cb09777a16a19f4dd0a3b} 
+void svcs\+::test\+::server\+::\+Simple\+Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Detaches an observer from the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A smart pointer to the observer object to detach. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a20e2f5095404c960d2b4f17789e74b28}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a4a81641d3f9cb09777a16a19f4dd0a3b}\index{svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}!detach@{detach}}
+\index{detach@{detach}!svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a4a81641d3f9cb09777a16a19f4dd0a3b} 
+void svcs\+::test\+::server\+::\+Simple\+Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Detaches an observer from the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A smart pointer to the observer object to detach. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a20e2f5095404c960d2b4f17789e74b28}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a0c05f07d47ff47259c4634fb9f1323dd}\index{svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}!notify@{notify}}
+\index{notify@{notify}!svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a0c05f07d47ff47259c4634fb9f1323dd} 
+void svcs\+::test\+::server\+::\+Simple\+Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs\+::services\+::\+Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Notifies all attached observers about an event. 
+
+This method is made public so that component classes (like Object\+Storage) can publish events through the injected ISubject pointer. The method is declared as {\ttfamily const} because event notification is a logically non-\/mutating action on the Subject\textquotesingle{}s state. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The constant reference to the event structure to be sent. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_abd7c4e5d2729c0a3c83ce7b0f7b4e82a}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a0c05f07d47ff47259c4634fb9f1323dd}\index{svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}!notify@{notify}}
+\index{notify@{notify}!svcs::test::server::SimpleEventBus@{svcs::test::server::SimpleEventBus}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a0c05f07d47ff47259c4634fb9f1323dd} 
+void svcs\+::test\+::server\+::\+Simple\+Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs\+::services\+::\+Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Notifies all attached observers about an event. 
+
+This method is made public so that component classes (like Object\+Storage) can publish events through the injected ISubject pointer. The method is declared as {\ttfamily const} because event notification is a logically non-\/mutating action on the Subject\textquotesingle{}s state. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The constant reference to the event structure to be sent. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_abd7c4e5d2729c0a3c83ce7b0f7b4e82a}{svcs\+::services\+::\+ISubject}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/server/Hub\+Command\+Test.\+cxx\item 
+tests/server/Repo\+Command\+Test.\+cxx\end{DoxyCompactItemize}

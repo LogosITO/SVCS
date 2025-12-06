@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['hash_0',['hash',['../structCommitInfo.html#a17b73098845c08e071b05234db336fcd',1,'CommitInfo']]],
-  ['hash_5fid_1',['hash_id',['../structTreeEntry.html#a8236e8177bef9f2380f9893ee916cc77',1,'TreeEntry::hash_id'],['../classVcsObject.html#a6c9fd4ab39bb9781c5399da07305d28d',1,'VcsObject::hash_id']]],
-  ['head_5fcommit_2',['head_commit',['../structBranchManager_1_1Branch.html#a94b6bba7fbdaeec7576b86ce04fc07c8',1,'BranchManager::Branch']]]
+  ['hash_0',['hash',['../structsvcs_1_1core_1_1CommitInfo.html#a22c8de2ed22d1a26c86a75e7081f064e',1,'svcs::core::CommitInfo']]],
+  ['hash_5fid_1',['hash_id',['../structsvcs_1_1core_1_1TreeEntry.html#abb08a8c496ea42aa65227e4e37c96ef3',1,'svcs::core::TreeEntry::hash_id'],['../classsvcs_1_1core_1_1VcsObject.html#ab2ce43cace8e3bfd31cc3a293245394c',1,'svcs::core::VcsObject::hash_id']]],
+  ['head_5fcommit_2',['head_commit',['../structsvcs_1_1core_1_1BranchManager_1_1Branch.html#a396f878953ae6eb113a6c82e5e5a38ae',1,'svcs::core::BranchManager::Branch']]]
 ];

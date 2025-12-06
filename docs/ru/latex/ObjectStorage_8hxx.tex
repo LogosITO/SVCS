@@ -14,8 +14,13 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classObjectStorage}{Object\+Storage}}
+class \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{svcs\+::core\+::\+Object\+Storage}}
 \begin{DoxyCompactList}\small\item\em Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Основные структуры данных СКВ и модель объектов. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
@@ -24,4 +29,4 @@ class \mbox{\hyperlink{classObjectStorage}{Object\+Storage}}
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Этот класс обрабатывает построение путей к файлам, сериализацию, сжатие/распаковку Zlib и действует как фабрика для восстановления конкретных типов \doxylink{classVcsObject}{Vcs\+Object} (\doxylink{classBlob}{Blob}, \doxylink{classTree}{Tree}, \doxylink{classCommit}{Commit}). Использует внедренный \doxylink{classISubject}{ISubject} для внутреннего логирования событий. 
+Этот класс обрабатывает построение путей к файлам, сериализацию, сжатие/распаковку Zlib и действует как фабрика для восстановления конкретных типов Vcs\+Object (Blob, Tree, Commit). Использует внедренный ISubject для внутреннего логирования событий. 

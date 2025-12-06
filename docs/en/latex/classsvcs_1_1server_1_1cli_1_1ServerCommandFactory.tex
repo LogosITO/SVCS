@@ -1,0 +1,171 @@
+\doxysection{svcs\+::server\+::cli\+::Server\+Command\+Factory Class Reference}
+\hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory}{}\label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory}\index{svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}}
+
+
+Factory for creating server administration \doxylink{classsvcs_1_1cli_1_1ICommand}{ICommand} objects.  
+
+
+
+
+{\ttfamily \#include $<$Server\+Command\+Factory.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_aada9829f53b2f9fe36908ff12567be7c}{Server\+Command\+Factory}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory}{Server\+Command\+Factory}. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_ab182cee4189785bfd4c75f1dc9a828a6}\label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_ab182cee4189785bfd4c75f1dc9a828a6} 
+{\bfseries Server\+Command\+Factory} (const \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory}{Server\+Command\+Factory}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deletes the copy constructor. The \doxylink{classsvcs_1_1server_1_1Server}{Server} Factory should not be copied. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a718ed094896f4ef7d9fe2a63f3ebdef1}\label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a718ed094896f4ef7d9fe2a63f3ebdef1} 
+\mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory}{Server\+Command\+Factory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory}{Server\+Command\+Factory}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deletes the assignment operator. The \doxylink{classsvcs_1_1server_1_1Server}{Server} Factory should not be assigned. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_aec18ef434bd12596bedf40e2b7403c4b}{register\+Command}} (const std\+::string \&name, std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}} $>$(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$)$>$ creator)
+\begin{DoxyCompactList}\small\item\em Registers a creator function for a new server command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a74071d18d1674499a5a3758d625ebbb8}{get\+Command\+Description}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Retrieves the brief description for a registered server command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a47dc9ee836662de9b5f14f010358c005}{show\+Command\+Help}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Displays the detailed help and usage for a registered server command. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}} $>$ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_af30a0aa80515625482e51fa4fa27635a}{create\+Command}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a server command object by its name. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a5a10f4a9bd54e691050ac1a7121354b5}{get\+Registered\+Commands}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves a list of names for all currently registered server commands. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_af86344d3a999462603787c211a4acafd}{command\+Exists}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if a server command with the given name exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory for creating server administration \doxylink{classsvcs_1_1cli_1_1ICommand}{ICommand} objects. 
+
+The \doxylink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory}{Server\+Command\+Factory} manages the lifecycle of server-\/specific commands, creating them dynamically using creator functions registered under unique names. Commands are constructed with shared ownership of an event bus (\doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}) and a repository manager (\doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}). This factory is specifically designed for server administration commands that require repository management. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_aada9829f53b2f9fe36908ff12567be7c}\index{svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}!ServerCommandFactory@{ServerCommandFactory}}
+\index{ServerCommandFactory@{ServerCommandFactory}!svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}}
+\doxysubsubsection{\texorpdfstring{ServerCommandFactory()}{ServerCommandFactory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_aada9829f53b2f9fe36908ff12567be7c} 
+svcs\+::server\+::cli\+::\+Server\+Command\+Factory\+::\+Server\+Command\+Factory (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs the \doxylink{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory}{Server\+Command\+Factory}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bus} & A shared pointer to the event bus. \\
+\hline
+{\em repo\+Manager} & A shared pointer to the repository manager. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_af86344d3a999462603787c211a4acafd}\index{svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}!commandExists@{commandExists}}
+\index{commandExists@{commandExists}!svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}}
+\doxysubsubsection{\texorpdfstring{commandExists()}{commandExists()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_af86344d3a999462603787c211a4acafd} 
+bool svcs\+::server\+::cli\+::\+Server\+Command\+Factory\+::command\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a server command with the given name exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the server command to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command exists and can be created, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_af30a0aa80515625482e51fa4fa27635a}\index{svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}!createCommand@{createCommand}}
+\index{createCommand@{createCommand}!svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}}
+\doxysubsubsection{\texorpdfstring{createCommand()}{createCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_af30a0aa80515625482e51fa4fa27635a} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}} $>$ svcs\+::server\+::cli\+::\+Server\+Command\+Factory\+::create\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Creates and returns a server command object by its name. 
+
+Transfers ownership (via unique\+\_\+ptr) of the created object to the caller. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the server command (the key in the creators map). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+ICommand$>$ holding a new command object, or nullptr if the command is not registered. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a74071d18d1674499a5a3758d625ebbb8}\index{svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}!getCommandDescription@{getCommandDescription}}
+\index{getCommandDescription@{getCommandDescription}!svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}}
+\doxysubsubsection{\texorpdfstring{getCommandDescription()}{getCommandDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a74071d18d1674499a5a3758d625ebbb8} 
+std\+::string svcs\+::server\+::cli\+::\+Server\+Command\+Factory\+::get\+Command\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the brief description for a registered server command. 
+
+Creates a temporary instance of the command to retrieve its description. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the server command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The command\textquotesingle{}s description string, or an error message if the command is not registered. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a5a10f4a9bd54e691050ac1a7121354b5}\index{svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}!getRegisteredCommands@{getRegisteredCommands}}
+\index{getRegisteredCommands@{getRegisteredCommands}!svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}}
+\doxysubsubsection{\texorpdfstring{getRegisteredCommands()}{getRegisteredCommands()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a5a10f4a9bd54e691050ac1a7121354b5} 
+std\+::vector$<$ std\+::string $>$ svcs\+::server\+::cli\+::\+Server\+Command\+Factory\+::get\+Registered\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a list of names for all currently registered server commands. 
+
+\begin{DoxyReturn}{Returns}
+A vector of strings containing the names of all registered server commands. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_aec18ef434bd12596bedf40e2b7403c4b}\index{svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}!registerCommand@{registerCommand}}
+\index{registerCommand@{registerCommand}!svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}}
+\doxysubsubsection{\texorpdfstring{registerCommand()}{registerCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_aec18ef434bd12596bedf40e2b7403c4b} 
+void svcs\+::server\+::cli\+::\+Server\+Command\+Factory\+::register\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}} $>$(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$)$>$}]{creator}{}\end{DoxyParamCaption})}
+
+
+
+Registers a creator function for a new server command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The string name under which the server command will be callable. \\
+\hline
+{\em creator} & The function that creates and returns a new \doxylink{classsvcs_1_1cli_1_1ICommand}{ICommand} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a47dc9ee836662de9b5f14f010358c005}\index{svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}!showCommandHelp@{showCommandHelp}}
+\index{showCommandHelp@{showCommandHelp}!svcs::server::cli::ServerCommandFactory@{svcs::server::cli::ServerCommandFactory}}
+\doxysubsubsection{\texorpdfstring{showCommandHelp()}{showCommandHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1cli_1_1ServerCommandFactory_a47dc9ee836662de9b5f14f010358c005} 
+void svcs\+::server\+::cli\+::\+Server\+Command\+Factory\+::show\+Command\+Help (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Displays the detailed help and usage for a registered server command. 
+
+Creates a temporary command instance and calls its show\+Help method. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the server command. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{ServerCommandFactory_8hxx}{Server\+Command\+Factory.\+hxx}}\item 
+server/src/\mbox{\hyperlink{ServerCommandFactory_8cxx}{Server\+Command\+Factory.\+cxx}}\end{DoxyCompactItemize}

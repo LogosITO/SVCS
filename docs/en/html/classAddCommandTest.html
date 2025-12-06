@@ -92,7 +92,7 @@ $(function(){initNavTree('classAddCommandTest.html','','classAddCommandTest-memb
 </div><!--header-->
 <div class="contents">
 
-<p>Test fixture for <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a> integration tests.  
+<p>Test fixture for AddCommand integration tests.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IntAddCommandTest_8hxx_source.html">IntAddCommandTest.hxx</a>&gt;</code></p>
@@ -120,18 +120,18 @@ Protected Attributes</h2></td></tr>
 std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockEventBus</b></td></tr>
 <tr class="memdesc:a30d7485f01aa42c0a731b8d828be1713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock event bus for capturing system notifications. <br /></td></tr>
 <tr class="memitem:ac4684173d257891fa27639bf52fec49b" id="r_ac4684173d257891fa27639bf52fec49b"><td class="memItemLeft" align="right" valign="top"><a id="ac4684173d257891fa27639bf52fec49b" name="ac4684173d257891fa27639bf52fec49b"></a>
-std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
-<tr class="memdesc:ac4684173d257891fa27639bf52fec49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> instance under test. <br /></td></tr>
+std::shared_ptr&lt; RepositoryManager &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
+<tr class="memdesc:ac4684173d257891fa27639bf52fec49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real RepositoryManager instance under test. <br /></td></tr>
 <tr class="memitem:aad094493a7113576f3e89b236e08e0f1" id="r_aad094493a7113576f3e89b236e08e0f1"><td class="memItemLeft" align="right" valign="top"><a id="aad094493a7113576f3e89b236e08e0f1" name="aad094493a7113576f3e89b236e08e0f1"></a>
-std::unique_ptr&lt; <a class="el" href="classAddCommand.html">AddCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
-<tr class="memdesc:aad094493a7113576f3e89b236e08e0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a> instance under test. <br /></td></tr>
+std::unique_ptr&lt; AddCommand &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+<tr class="memdesc:aad094493a7113576f3e89b236e08e0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">AddCommand instance under test. <br /></td></tr>
 <tr class="memitem:acb1249def667faea85d6c64a1a3b3c72" id="r_acb1249def667faea85d6c64a1a3b3c72"><td class="memItemLeft" align="right" valign="top"><a id="acb1249def667faea85d6c64a1a3b3c72" name="acb1249def667faea85d6c64a1a3b3c72"></a>
 std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>testDir</b></td></tr>
 <tr class="memdesc:acb1249def667faea85d6c64a1a3b3c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the temporary directory used as the repository root. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Test fixture for <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a> integration tests. </p>
-<p>Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create various file system structures for testing the staging logic of the <a class="el" href="classAddCommand.html" title="Implements the &quot;add&quot; command for the Simple Version Control System (SVCS).">AddCommand</a>. </p>
+<div class="textblock"><p>Test fixture for AddCommand integration tests. </p>
+<p>Manages the setup and teardown of a temporary, initialized SVCS repository. Provides utility methods to create various file system structures for testing the staging logic of the AddCommand. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a69d865915925db599252868cdf058520" name="a69d865915925db599252868cdf058520"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69d865915925db599252868cdf058520">&#9670;&#160;</a></span>createTestDirectory()</h2>

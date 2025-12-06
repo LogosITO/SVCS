@@ -12,21 +12,29 @@
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00026\ }
 \DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VersionCommand_8hxx}{../../../cli/include/VersionCommand.hxx}}"{}}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cli_2mocks_2MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVersionCommandTest}{VersionCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
-\DoxyCodeLine{00050\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVersionCommandTest_aa1c45b84502742e866d49c66a626809c}{SetUp}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVersionCommandTest_ad7127cf990e521a44f3ce2830538ceba}{TearDown}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classVersionCommandTest_a738595ee329e516a065707b410b2d966}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classVersionCommandTest_a039d68276bd7252137dbfbeb8bb800e6}{containsExactMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00106\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classVersionCommandTest_a068600dc371791315262b93226ccbb14}{mockEventBus}};}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00115\ \ \ \ \ std::unique\_ptr<VersionCommand>\ \mbox{\hyperlink{classVersionCommandTest_ac151e54debae29644927cbc3573d0fc7}{command}};}
-\DoxyCodeLine{00116\ \};}
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs::test::cli::utils}}\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{using\ }svcs::services::Event;}
+\DoxyCodeLine{00048\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand}{svcs::cli::VersionCommand}};}
+\DoxyCodeLine{00049\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{svcs::test::cli::mocks::MockSubject}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{VersionCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00071\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a78461d3951cb3d664b0e2b7fb0fb82a2}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a7f9e4779224b0a7346e6726c053fedb5}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_ad73d0a3f7da64649fdc56c2870679d9e}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a1120a5efdb1e52159b089a6dc5a30371}{containsExactMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a0c99979c59a7b0035a942229e486c49e}{mockEventBus}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00136\ \ \ \ \ std::unique\_ptr<VersionCommand>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest_a7e6efe066332760ec5c24c1f5026dbf1}{command}};}
+\DoxyCodeLine{00137\ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \}}
 
 \end{DoxyCode}

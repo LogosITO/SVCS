@@ -1,0 +1,60 @@
+\doxysection{Структура svcs\+::server\+::Remote}
+\hypertarget{structsvcs_1_1server_1_1Remote}{}\label{structsvcs_1_1server_1_1Remote}\index{svcs::server::Remote@{svcs::server::Remote}}
+
+
+Представляет конфигурацию одного удаленного репозитория.  
+
+
+
+
+{\ttfamily \#include $<$Remote\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsvcs_1_1server_1_1Remote_a7cf16acef6f2171bcad580083796b195}{Remote}} (const std\+::string \&\mbox{\hyperlink{structsvcs_1_1server_1_1Remote_a8bc09a6495d842167dcc50150d04e246}{name}}, const std\+::string \&\mbox{\hyperlink{structsvcs_1_1server_1_1Remote_aa7571ac6fb5f3106bbe263c20a71f134}{url}})
+\begin{DoxyCompactList}\small\item\em Конструирует структуру \doxylink{structsvcs_1_1server_1_1Remote}{Remote}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structsvcs_1_1server_1_1Remote_a8bc09a6495d842167dcc50150d04e246}\label{structsvcs_1_1server_1_1Remote_a8bc09a6495d842167dcc50150d04e246} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Короткое имя удаленного репозитория (например, "{}origin"{}). \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1server_1_1Remote_aa7571ac6fb5f3106bbe263c20a71f134}\label{structsvcs_1_1server_1_1Remote_aa7571ac6fb5f3106bbe263c20a71f134} 
+std\+::string {\bfseries url}
+\begin{DoxyCompactList}\small\item\em URL (путь или сетевой адрес) удаленного репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1server_1_1Remote_aac0ee29382fc480d910d55b043ee8be7}\label{structsvcs_1_1server_1_1Remote_aac0ee29382fc480d910d55b043ee8be7} 
+std\+::string {\bfseries fetch\+\_\+spec}
+\begin{DoxyCompactList}\small\item\em Refspec, определяющий что извлекать (например, "{}+refs/heads/\texorpdfstring{$\ast$}{*}\+:refs/remotes/origin/\texorpdfstring{$\ast$}{*}"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Представляет конфигурацию одного удаленного репозитория. 
+
+Хранит имя, URL и спецификацию извлечения (refspec) для настроенного удаленного репозитория. Спецификация извлечения автоматически генерируется при создании. 
+
+\label{doc-constructors}
+\Hypertarget{structsvcs_1_1server_1_1Remote_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{structsvcs_1_1server_1_1Remote_a7cf16acef6f2171bcad580083796b195}\index{svcs::server::Remote@{svcs::server::Remote}!Remote@{Remote}}
+\index{Remote@{Remote}!svcs::server::Remote@{svcs::server::Remote}}
+\doxysubsubsection{\texorpdfstring{Remote()}{Remote()}}
+{\footnotesize\ttfamily \label{structsvcs_1_1server_1_1Remote_a7cf16acef6f2171bcad580083796b195} 
+svcs\+::server\+::\+Remote\+::\+Remote (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструирует структуру \doxylink{structsvcs_1_1server_1_1Remote}{Remote}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Короткое имя для удаленного репозитория. \\
+\hline
+{\em url} & URL для удаленного репозитория. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{RemoteManager_8hxx}{Remote\+Manager.\+hxx}}\end{DoxyCompactItemize}

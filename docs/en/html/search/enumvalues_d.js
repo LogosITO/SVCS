@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['unmodified_0',['UNMODIFIED',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8',1,'AddCommand.hxx']]],
-  ['untracked_1',['UNTRACKED',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2',1,'AddCommand.hxx']]]
+  ['unmodified_0',['UNMODIFIED',['../namespacesvcs_1_1cli.html#a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8',1,'svcs::cli']]],
+  ['untracked_1',['UNTRACKED',['../namespacesvcs_1_1cli.html#a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2',1,'svcs::cli']]]
 ];

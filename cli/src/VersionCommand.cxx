@@ -16,6 +16,10 @@
 #include "../include/VersionCommand.hxx"
 #include "../../services/ISubject.hxx"
 
+namespace svcs::cli {
+
+using namespace svcs::services;
+
 VersionCommand::VersionCommand(std::shared_ptr<ISubject> subject)
     : eventBus_(std::move(subject)) {
 }
@@ -92,4 +96,6 @@ std::string VersionCommand::getBuildInfo() {
 
 std::string VersionCommand::getCopyright() {
     return "Copyright (c) 2025 LogosITO. Licensed under MIT License.";
+}
+
 }

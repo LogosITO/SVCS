@@ -2,7 +2,7 @@
 \hypertarget{BaseCommand_8hxx}{}\label{BaseCommand_8hxx}\index{cli/include/BaseCommand.hxx@{cli/include/BaseCommand.hxx}}
 
 
-Declaration of the \doxylink{classBaseCommand}{Base\+Command} class for all commands in the system.  
+Declaration of the Base\+Command class for all commands in the system.  
 
 
 {\ttfamily \#include "{}ICommand.\+hxx"{}}\newline
@@ -13,14 +13,19 @@ Declaration of the \doxylink{classBaseCommand}{Base\+Command} class for all comm
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classBaseCommand}{Base\+Command}}
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand}{svcs\+::cli\+::\+Base\+Command}}
 \begin{DoxyCompactList}\small\item\em Base class for all CLI commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Command-\/line interface components and command implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaration of the \doxylink{classBaseCommand}{Base\+Command} class for all commands in the system. 
+Declaration of the Base\+Command class for all commands in the system. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classBaseCommand}{Base\+Command} implements the logic for interacting with the \doxylink{structEvent}{Event} Bus system, allowing all derived commands to easily generate informational, debug, and other messages that will be automatically processed by registered observers (e.\+g., \doxylink{classLogger}{Logger}). 
+Base\+Command implements the logic for interacting with the Event Bus system, allowing all derived commands to easily generate informational, debug, and other messages that will be automatically processed by registered observers (e.\+g., Logger). 

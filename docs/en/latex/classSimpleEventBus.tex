@@ -9,148 +9,24 @@ Inheritance diagram for Simple\+Event\+Bus\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$) override
-\begin{DoxyCompactList}\small\item\em Attaches an observer to the subject. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSimpleEventBus_a9b9a471480117937401986e38c059b66}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$) override
-\begin{DoxyCompactList}\small\item\em Detaches an observer from the subject. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&) const override
-\begin{DoxyCompactList}\small\item\em Notifies all attached observers about an event. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$) override
-\begin{DoxyCompactList}\small\item\em Attaches an observer to the subject. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSimpleEventBus_a9b9a471480117937401986e38c059b66}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$) override
-\begin{DoxyCompactList}\small\item\em Detaches an observer from the subject. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&) const override
-\begin{DoxyCompactList}\small\item\em Notifies all attached observers about an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classISubject}{ISubject}}}
-\begin{DoxyCompactItemize}
+\Hypertarget{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}\label{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798} 
+void {\bfseries attach} (std\+::shared\+\_\+ptr$<$ IObserver $>$) override
 \item 
-virtual \mbox{\hyperlink{classISubject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
-\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classISubject}{ISubject}}}
-\begin{DoxyCompactItemize}
+\Hypertarget{classSimpleEventBus_a9b9a471480117937401986e38c059b66}\label{classSimpleEventBus_a9b9a471480117937401986e38c059b66} 
+void {\bfseries detach} (std\+::shared\+\_\+ptr$<$ IObserver $>$) override
 \item 
-std\+::vector$<$ \mbox{\hyperlink{classIObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
-\begin{DoxyCompactList}\small\item\em Collection of registered observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\label{doc-func-members}
-\Hypertarget{classSimpleEventBus_doc-func-members}
-\doxysubsection{Member Function Documentation}
-\Hypertarget{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}\index{SimpleEventBus@{SimpleEventBus}!attach@{attach}}
-\index{attach@{attach}!SimpleEventBus@{SimpleEventBus}}
-\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798} 
-void Simple\+Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Attaches an observer to the subject. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em observer} & A smart pointer to the observer object to attach. \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{ISubject}}.
-
-\Hypertarget{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}\index{SimpleEventBus@{SimpleEventBus}!attach@{attach}}
-\index{attach@{attach}!SimpleEventBus@{SimpleEventBus}}
-\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798} 
-void Simple\+Event\+Bus\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Attaches an observer to the subject. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em observer} & A smart pointer to the observer object to attach. \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classISubject_a4f6d20c5e92b9b0a020e8661becf9ace}{ISubject}}.
-
-\Hypertarget{classSimpleEventBus_a9b9a471480117937401986e38c059b66}\index{SimpleEventBus@{SimpleEventBus}!detach@{detach}}
-\index{detach@{detach}!SimpleEventBus@{SimpleEventBus}}
-\doxysubsubsection{\texorpdfstring{detach()}{detach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{classSimpleEventBus_a9b9a471480117937401986e38c059b66} 
-void Simple\+Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Detaches an observer from the subject. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em observer} & A smart pointer to the observer object to detach. \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{ISubject}}.
-
-\Hypertarget{classSimpleEventBus_a9b9a471480117937401986e38c059b66}\index{SimpleEventBus@{SimpleEventBus}!detach@{detach}}
-\index{detach@{detach}!SimpleEventBus@{SimpleEventBus}}
-\doxysubsubsection{\texorpdfstring{detach()}{detach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{classSimpleEventBus_a9b9a471480117937401986e38c059b66} 
-void Simple\+Event\+Bus\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Detaches an observer from the subject. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em observer} & A smart pointer to the observer object to detach. \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classISubject_aad2217012b14bdd6c91eb240689e5a74}{ISubject}}.
-
-\Hypertarget{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}\index{SimpleEventBus@{SimpleEventBus}!notify@{notify}}
-\index{notify@{notify}!SimpleEventBus@{SimpleEventBus}}
-\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45} 
-void Simple\+Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Notifies all attached observers about an event. 
-
-This method is made public so that component classes (like \doxylink{classObjectStorage}{Object\+Storage}) can publish events through the injected \doxylink{classISubject}{ISubject} pointer. The method is declared as {\ttfamily const} because event notification is a logically non-\/mutating action on the Subject\textquotesingle{}s state. 
-\begin{DoxyParams}{Parameters}
-{\em event} & The constant reference to the event structure to be sent. \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{ISubject}}.
-
-\Hypertarget{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}\index{SimpleEventBus@{SimpleEventBus}!notify@{notify}}
-\index{notify@{notify}!SimpleEventBus@{SimpleEventBus}}
-\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45} 
-void Simple\+Event\+Bus\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Notifies all attached observers about an event. 
-
-This method is made public so that component classes (like \doxylink{classObjectStorage}{Object\+Storage}) can publish events through the injected \doxylink{classISubject}{ISubject} pointer. The method is declared as {\ttfamily const} because event notification is a logically non-\/mutating action on the Subject\textquotesingle{}s state. 
-\begin{DoxyParams}{Parameters}
-{\em event} & The constant reference to the event structure to be sent. \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classISubject_aa2da71c9f12ce1097f83bc8887fa0474}{ISubject}}.
-
+\Hypertarget{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}\label{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45} 
+void {\bfseries notify} (const Event \&) const override
+\item 
+\Hypertarget{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798}\label{classSimpleEventBus_a5fcddc87bc3be741486e445e401be798} 
+void {\bfseries attach} (std\+::shared\+\_\+ptr$<$ IObserver $>$) override
+\item 
+\Hypertarget{classSimpleEventBus_a9b9a471480117937401986e38c059b66}\label{classSimpleEventBus_a9b9a471480117937401986e38c059b66} 
+void {\bfseries detach} (std\+::shared\+\_\+ptr$<$ IObserver $>$) override
+\item 
+\Hypertarget{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45}\label{classSimpleEventBus_a1ec7288783b9f11ca62f85b2fe310e45} 
+void {\bfseries notify} (const Event \&) const override
+\end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\doxysection{svcs\+::test\+::core\+::Branch\+Manager\+Test Class Reference}
+\hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest}\index{svcs::test::core::BranchManagerTest@{svcs::test::core::BranchManagerTest}}
+Inheritance diagram for svcs\+::test\+::core\+::Branch\+Manager\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1core_1_1BranchManagerTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a8ca39013e3002e917e401fe19c0e4d2c}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a8ca39013e3002e917e401fe19c0e4d2c} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a3330a307597d55c93292650f22831778}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a3330a307597d55c93292650f22831778} 
+void {\bfseries Tear\+Down} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a0786886889678420d6aff901900de505}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a0786886889678420d6aff901900de505} 
+static void {\bfseries create\+Test\+Head\+File} (const std\+::string \&branch\+\_\+name)
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a5e5add83304d7bfa4bd53ac0f28b7cb5}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a5e5add83304d7bfa4bd53ac0f28b7cb5} 
+static void {\bfseries create\+Test\+Branch\+File} (const std\+::string \&branch\+\_\+name, const std\+::string \&commit\+\_\+hash)
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a45e712d95a75b9a54d72fb3a90b01b10}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a45e712d95a75b9a54d72fb3a90b01b10} 
+static std\+::string {\bfseries read\+Head\+File} ()
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a80d2bec77553d9ac365726a4a5a85926}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a80d2bec77553d9ac365726a4a5a85926} 
+static std\+::string {\bfseries read\+Branch\+File} (const std\+::string \&branch\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a8ac7075dd3dae3738d5054b033a898c2}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a8ac7075dd3dae3738d5054b033a898c2} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a3858a76c5be28ad548522a3b9795efdc}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a3858a76c5be28ad548522a3b9795efdc} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject}{mocks\+::\+Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a1d01bd9c3d38fef6d974482179750373}\label{classsvcs_1_1test_1_1core_1_1BranchManagerTest_a1d01bd9c3d38fef6d974482179750373} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1BranchManager}{svcs\+::core\+::\+Branch\+Manager}} $>$ {\bfseries branch\+Manager}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{BranchManagerTest_8cxx}{Branch\+Manager\+Test.\+cxx}}\end{DoxyCompactItemize}

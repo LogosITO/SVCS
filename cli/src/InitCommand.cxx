@@ -15,6 +15,11 @@
 
 #include "../include/InitCommand.hxx"
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 InitCommand::InitCommand(std::shared_ptr<ISubject> subject, 
                          std::shared_ptr<RepositoryManager> repoManager)
     : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
@@ -89,4 +94,6 @@ void InitCommand::showHelp() const {
                       "  --help, -h     Show this help", "init"});
     eventBus_->notify({Event::HELP_MESSAGE, 
                       "If no path is provided, uses current directory", "init"});
+}
+
 }

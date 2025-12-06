@@ -21,6 +21,8 @@
 #include "../include/HubCommand.hxx"
 #include "../include/RepoCommand.hxx"
 
+namespace svcs::server::cli {
+
 ServerCommandFactory::ServerCommandFactory(std::shared_ptr<ISubject> bus,
                                          std::shared_ptr<RepositoryManager> repoManager)
     : event_bus(std::move(bus))
@@ -82,4 +84,6 @@ std::vector<std::string> ServerCommandFactory::getRegisteredCommands() const {
 
 bool ServerCommandFactory::commandExists(const std::string& name) const {
     return creators.find(name) != creators.end();
+}
+
 }

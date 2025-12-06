@@ -2,59 +2,61 @@
 \hypertarget{RemoteProtocolTest_8cxx}{}\label{RemoteProtocolTest_8cxx}\index{tests/server/RemoteProtocolTest.cxx@{tests/server/RemoteProtocolTest.cxx}}
 
 
-Google Tests for \doxylink{classRemoteProtocol}{Remote\+Protocol} class.  
+Google Tests for Remote\+Protocol class.  
 
 
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
-{\ttfamily \#include "{}../../server/include/\+Remote\+Protocol.\+hxx"{}}\newline
-{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
-{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
-{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$filesystem$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}../../server/include/\+Remote\+Protocol.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+IObserver.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classMockEventBus}{Mock\+Event\+Bus}}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1MockEventBus}{svcs\+::test\+::server\+::\+Mock\+Event\+Bus}}
 \item 
-class \mbox{\hyperlink{classMockRepositoryManager}{Mock\+Repository\+Manager}}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1MockRepositoryManager}{svcs\+::test\+::server\+::\+Mock\+Repository\+Manager}}
 \item 
-class \mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolTest}{svcs\+::test\+::server\+::\+Remote\+Protocol\+Test}}
 \item 
-class \mbox{\hyperlink{classRemoteProtocolIntegrationTest}{Remote\+Protocol\+Integration\+Test}}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolIntegrationTest}{svcs\+::test\+::server\+::\+Remote\+Protocol\+Integration\+Test}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_ac916ca7911d6a99b0d85b3b8f2b2bc30}\label{RemoteProtocolTest_8cxx_ac916ca7911d6a99b0d85b3b8f2b2bc30} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Construction)
+\Hypertarget{RemoteProtocolTest_8cxx_a139a561ed40a7dd4d5ac4b5b9d469b0c}\label{RemoteProtocolTest_8cxx_a139a561ed40a7dd4d5ac4b5b9d469b0c} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolTest}{Remote\+Protocol\+Test}}, Construction)
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_ac7ece6386cd1a3d7fffed033a6f243c4}\label{RemoteProtocolTest_8cxx_ac7ece6386cd1a3d7fffed033a6f243c4} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Validation\+Methods)
+\Hypertarget{RemoteProtocolTest_8cxx_a8d67dad3d1a3834719392a9989b3e74e}\label{RemoteProtocolTest_8cxx_a8d67dad3d1a3834719392a9989b3e74e} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolTest}{Remote\+Protocol\+Test}}, Validation\+Methods)
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_a92b7107eb260ea6a2deed560854ce1ae}\label{RemoteProtocolTest_8cxx_a92b7107eb260ea6a2deed560854ce1ae} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Object\+Management)
+\Hypertarget{RemoteProtocolTest_8cxx_adbc0476d6bf8a65c01660ed2f0aafe21}\label{RemoteProtocolTest_8cxx_adbc0476d6bf8a65c01660ed2f0aafe21} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolTest}{Remote\+Protocol\+Test}}, Object\+Management)
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_a624189fb58f21ae998065d87c06a5aa4}\label{RemoteProtocolTest_8cxx_a624189fb58f21ae998065d87c06a5aa4} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Event\+Notifications)
+\Hypertarget{RemoteProtocolTest_8cxx_a3946a009e2c1fd73f90242d2657a918c}\label{RemoteProtocolTest_8cxx_a3946a009e2c1fd73f90242d2657a918c} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolTest}{Remote\+Protocol\+Test}}, Event\+Notifications)
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_a4e577dac6b42937bc803acd9bc421e32}\label{RemoteProtocolTest_8cxx_a4e577dac6b42937bc803acd9bc421e32} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolIntegrationTest}{Remote\+Protocol\+Integration\+Test}}, Simple\+Protocol\+Communication)
+\Hypertarget{RemoteProtocolTest_8cxx_ab0dc9ac06d75c0c1419ac209f7da2d92}\label{RemoteProtocolTest_8cxx_ab0dc9ac06d75c0c1419ac209f7da2d92} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolIntegrationTest}{Remote\+Protocol\+Integration\+Test}}, Simple\+Protocol\+Communication)
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_a456da1b56bdd41c735fe7c5504f44eeb}\label{RemoteProtocolTest_8cxx_a456da1b56bdd41c735fe7c5504f44eeb} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolIntegrationTest}{Remote\+Protocol\+Integration\+Test}}, Stream\+Error\+Conditions)
+\Hypertarget{RemoteProtocolTest_8cxx_a2747b75ce4fb74b4f178501d6a5e49b1}\label{RemoteProtocolTest_8cxx_a2747b75ce4fb74b4f178501d6a5e49b1} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolIntegrationTest}{Remote\+Protocol\+Integration\+Test}}, Stream\+Error\+Conditions)
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_a4c293ee182caf9f58b2eca068403112f}\label{RemoteProtocolTest_8cxx_a4c293ee182caf9f58b2eca068403112f} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Error\+Handling)
+\Hypertarget{RemoteProtocolTest_8cxx_a88f989df0e8c0c03753f80eb16c42b93}\label{RemoteProtocolTest_8cxx_a88f989df0e8c0c03753f80eb16c42b93} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolTest}{Remote\+Protocol\+Test}}, Error\+Handling)
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_a6d2f4c344853e5eb7ff198640a530561}\label{RemoteProtocolTest_8cxx_a6d2f4c344853e5eb7ff198640a530561} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Repository\+Validation)
+\Hypertarget{RemoteProtocolTest_8cxx_ae65669f58dfbed5e2bd6c9ee24cf5488}\label{RemoteProtocolTest_8cxx_ae65669f58dfbed5e2bd6c9ee24cf5488} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolTest}{Remote\+Protocol\+Test}}, Repository\+Validation)
 \item 
-\Hypertarget{RemoteProtocolTest_8cxx_a1af0d1ff52f722ea33cd63b3f8c42b88}\label{RemoteProtocolTest_8cxx_a1af0d1ff52f722ea33cd63b3f8c42b88} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classRemoteProtocolTest}{Remote\+Protocol\+Test}}, Validation\+Performance)
+\Hypertarget{RemoteProtocolTest_8cxx_a3562cdaaa8564767bfcfb5af70d346e9}\label{RemoteProtocolTest_8cxx_a3562cdaaa8564767bfcfb5af70d346e9} 
+{\bfseries svcs\+::test\+::server\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1RemoteProtocolTest}{Remote\+Protocol\+Test}}, Validation\+Performance)
 \item 
 \Hypertarget{RemoteProtocolTest_8cxx_a3c04138a5bfe5d72780bb7e82a18e627}\label{RemoteProtocolTest_8cxx_a3c04138a5bfe5d72780bb7e82a18e627} 
 int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
@@ -62,12 +64,12 @@ int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$
 
 
 \doxysubsection{Detailed Description}
-Google Tests for \doxylink{classRemoteProtocol}{Remote\+Protocol} class. 
+Google Tests for Remote\+Protocol class. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-This file contains comprehensive unit tests for the \doxylink{classRemoteProtocol}{Remote\+Protocol} class, verifying network communication, protocol message serialization/deserialization, error handling, and connection management with remote repositories.
+This file contains comprehensive unit tests for the Remote\+Protocol class, verifying network communication, protocol message serialization/deserialization, error handling, and connection management with remote repositories.
 
 The tests cover\+:
 \begin{DoxyItemize}

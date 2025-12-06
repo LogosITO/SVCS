@@ -1,0 +1,47 @@
+\doxysection{svcs\+::test\+::core\+::Object\+Storage\+Test Class Reference}
+\hypertarget{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{}\label{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}\index{svcs::test::core::ObjectStorageTest@{svcs::test::core::ObjectStorageTest}}
+
+
+Test fixture for the \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage} class.  
+
+
+Inheritance diagram for svcs\+::test\+::core\+::Object\+Storage\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_acb85a6a251fd0c7a6c0c302aebbf94f8}\label{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_acb85a6a251fd0c7a6c0c302aebbf94f8} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_a44d8c5b4cf1b8d52961f224b1ccf4824}\label{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_a44d8c5b4cf1b8d52961f224b1ccf4824} 
+void {\bfseries Tear\+Down} () override
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_a2ae9dc3a5d9b3eb61f5c8df7547761c7}\label{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_a2ae9dc3a5d9b3eb61f5c8df7547761c7} 
+bool {\bfseries file\+Exists\+On\+Disk} (const std\+::string \&hash) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_a0337ca9f327208463ec8ead50e5a4147}\label{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_a0337ca9f327208463ec8ead50e5a4147} 
+\mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}} \texorpdfstring{$\ast$}{*} {\bfseries storage} \{\}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_a92828c4c18aa2332c9f864f08244a826}\label{classsvcs_1_1test_1_1core_1_1ObjectStorageTest_a92828c4c18aa2332c9f864f08244a826} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+\_\+subject}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test fixture for the \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage} class. 
+
+
+\begin{DoxyItemize}
+\item Manages the setup and teardown of the necessary filesystem structure (the temporary object storage directory) for isolated testing. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/core/\mbox{\hyperlink{StorageTest_8cxx}{Storage\+Test.\+cxx}}\end{DoxyCompactItemize}

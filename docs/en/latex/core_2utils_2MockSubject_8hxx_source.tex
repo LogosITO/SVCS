@@ -1,0 +1,83 @@
+\doxysection{Mock\+Subject.\+hxx}
+\hypertarget{core_2utils_2MockSubject_8hxx_source}{}\label{core_2utils_2MockSubject_8hxx_source}\index{tests/core/utils/MockSubject.hxx@{tests/core/utils/MockSubject.hxx}}
+\mbox{\hyperlink{core_2utils_2MockSubject_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../../services/ISubject.hxx"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../../services/IObserver.hxx"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../../services/Event.hxx"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1test_1_1core_1_1mocks}{svcs::test::core::mocks}}\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }MockSubject\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs::services::ISubject}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject_1_1RecordedNotification}{RecordedNotification}}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs::services::Event}}\ event;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::shared\_ptr<svcs::services::IObserver>\ observer;}
+\DoxyCodeLine{00046\ \ \ \ \ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ MockSubject()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00049\ \ \ \ \ \string~MockSubject()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ attach(std::shared\_ptr<svcs::services::IObserver>\ observer)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ observers.push\_back(observer.get());}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ observer\_pointers.push\_back(observer);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ detach(std::shared\_ptr<svcs::services::IObserver>\ observer)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(observers.begin(),\ observers.end(),\ observer.get());}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ observers.end())\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ observers.erase(it);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ptr\_it\ =\ std::find(observer\_pointers.begin(),\ observer\_pointers.end(),\ observer);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ptr\_it\ !=\ observer\_pointers.end())\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ observer\_pointers.erase(ptr\_it);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject_a743580c0ca34a5ac14ce22f77a9d3b68}{notify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs::services::Event}}\&\ event)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ recorded\_notifications.push\_back(\{event,\ \textcolor{keyword}{nullptr}\});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ observer\ :\ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a5507ef6c358b0e3ad50d9eb1fce53693}{observers}})\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ observer-\/>update(event);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ recorded\_notifications.push\_back(\{event,\ \textcolor{keyword}{nullptr}\});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ clearNotifications()\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ recorded\_notifications.clear();}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getNotificationCount()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recorded\_notifications.size();}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<RecordedNotification>\&\ getNotifications()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recorded\_notifications;}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasNotification(\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}{svcs::services::Event::Type}}\ type)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ notification\ :\ recorded\_notifications)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (notification.event.type\ ==\ type)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00098\ \ \ \ \ std::vector<svcs::services::IObserver*>\ observers;}
+\DoxyCodeLine{00099\ \ \ \ \ std::vector<std::shared\_ptr<svcs::services::IObserver>>\ observer\_pointers;}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{mutable}\ std::vector<RecordedNotification>\ recorded\_notifications;}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \}}
+
+\end{DoxyCode}

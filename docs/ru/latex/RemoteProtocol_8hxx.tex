@@ -2,7 +2,7 @@
 \hypertarget{RemoteProtocol_8hxx}{}\label{RemoteProtocol_8hxx}\index{server/include/RemoteProtocol.hxx@{server/include/RemoteProtocol.hxx}}
 
 
-Объявление класса \doxylink{classRemoteProtocol}{Remote\+Protocol} для обработки протокола удаленной связи.  
+Объявление класса Remote\+Protocol для обработки протокола удаленной связи.  
 
 
 {\ttfamily \#include "{}../../services/\+ISubject.\+hxx"{}}\newline
@@ -15,14 +15,19 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classRemoteProtocol}{Remote\+Protocol}}
+class \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteProtocol}{svcs\+::server\+::\+Remote\+Protocol}}
 \begin{DoxyCompactList}\small\item\em Обрабатывает протокол удаленной связи для SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Серверные компоненты и команды администрирования. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Объявление класса \doxylink{classRemoteProtocol}{Remote\+Protocol} для обработки протокола удаленной связи. 
+Объявление класса Remote\+Protocol для обработки протокола удаленной связи. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-\doxylink{classRemoteProtocol}{Remote\+Protocol} реализует пользовательский протокол для операций push/pull между клиентами и серверами SVCS. Он обрабатывает согласование объектов, передачу и обновления ссылок через простой текстовый протокол по stdin/stdout. 
+Remote\+Protocol реализует пользовательский протокол для операций push/pull между клиентами и серверами SVCS. Он обрабатывает согласование объектов, передачу и обновления ссылок через простой текстовый протокол по stdin/stdout. 

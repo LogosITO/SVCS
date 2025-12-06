@@ -92,16 +92,22 @@ $(function(){initNavTree('RemoteManager_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the <a class="el" href="classRemoteManager.html" title="Manages the repository&#39;s remote configurations.">RemoteManager</a> class.  
+<p>Implementation of the RemoteManager class.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="RemoteManager_8hxx_source.html">../include/RemoteManager.hxx</a>&quot;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the <a class="el" href="classRemoteManager.html" title="Manages the repository&#39;s remote configurations.">RemoteManager</a> class. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Aserver" id="r_svcs_3A_3Aserver"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1server.html">svcs::server</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1server"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server-side components and administration commands. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the RemoteManager class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p>This file implements the methods for the <a class="el" href="classRemoteManager.html" title="Manages the repository&#39;s remote configurations.">RemoteManager</a> class. It handles the loading, saving, and in-memory management of remote repository configurations. Persistence is handled by reading from and writing to a dedicated 'remotes' file (e.g., /path/to/repo/remotes) in a Git-config-like format. </p><dl class="section note"><dt>Note</dt><dd>This implementation assumes the configuration is in a separate 'remotes' file at the root of the repository, <em>not</em> inside <span class="tt">.svcs/config</span>. </dd></dl>
+<p>This file implements the methods for the RemoteManager class. It handles the loading, saving, and in-memory management of remote repository configurations. Persistence is handled by reading from and writing to a dedicated 'remotes' file (e.g., /path/to/repo/remotes) in a Git-config-like format. </p><dl class="section note"><dt>Note</dt><dd>This implementation assumes the configuration is in a separate 'remotes' file at the root of the repository, <em>not</em> inside <span class="tt">.svcs/config</span>. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

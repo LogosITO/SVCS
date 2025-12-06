@@ -92,39 +92,44 @@ $(function(){initNavTree('BranchManagerTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Реализация модульных тестов для класса <a class="el" href="classBranchManager.html" title="Основной сервис для управления ветвями системы контроля версий (создание, удаление,...">BranchManager</a>.  
+<p>Реализация модульных тестов для класса BranchManager.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="BranchManager_8hxx_source.html">../../core/include/BranchManager.hxx</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MockSubject_8hxx_source.html">../cli/mocks/MockSubject.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="core_2utils_2MockSubject_8hxx_source.html">utils/MockSubject.hxx</a>&quot;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
-<tr class="memitem:BranchManagerTest" id="r_BranchManagerTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBranchManagerTest.html">BranchManagerTest</a></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acore_3A_3ABranchManagerTest" id="r_svcs_3A_3Atest_3A_3Acore_3A_3ABranchManagerTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">svcs::test::core::BranchManagerTest</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acore" id="r_svcs_3A_3Atest_3A_3Acore"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1core.html">svcs::test::core</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Модульные тесты для основных компонентов и структур данных. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:a413f2199710fd82c0dac53cd02e63d42" id="r_a413f2199710fd82c0dac53cd02e63d42"><td class="memItemLeft" align="right" valign="top"><a id="a413f2199710fd82c0dac53cd02e63d42" name="a413f2199710fd82c0dac53cd02e63d42"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, CreateDuplicateBranch)</td></tr>
-<tr class="memitem:ad2d394a7fec9999e602c7715b154d756" id="r_ad2d394a7fec9999e602c7715b154d756"><td class="memItemLeft" align="right" valign="top"><a id="ad2d394a7fec9999e602c7715b154d756" name="ad2d394a7fec9999e602c7715b154d756"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, CreateBranchWithInvalidName)</td></tr>
-<tr class="memitem:a3c54746a478466add7a814adac6fe10d" id="r_a3c54746a478466add7a814adac6fe10d"><td class="memItemLeft" align="right" valign="top"><a id="a3c54746a478466add7a814adac6fe10d" name="a3c54746a478466add7a814adac6fe10d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, DeleteNonExistentBranch)</td></tr>
-<tr class="memitem:ab1bbeca70e5bf740cfdf26117a2c5ca0" id="r_ab1bbeca70e5bf740cfdf26117a2c5ca0"><td class="memItemLeft" align="right" valign="top"><a id="ab1bbeca70e5bf740cfdf26117a2c5ca0" name="ab1bbeca70e5bf740cfdf26117a2c5ca0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, RenameBranch)</td></tr>
-<tr class="memitem:a2fb2ab7793ec446056df94331ab478ce" id="r_a2fb2ab7793ec446056df94331ab478ce"><td class="memItemLeft" align="right" valign="top"><a id="a2fb2ab7793ec446056df94331ab478ce" name="a2fb2ab7793ec446056df94331ab478ce"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, RenameToExistingBranch)</td></tr>
-<tr class="memitem:ad56c3d6ef7e9bae84579982b375cc0ab" id="r_ad56c3d6ef7e9bae84579982b375cc0ab"><td class="memItemLeft" align="right" valign="top"><a id="ad56c3d6ef7e9bae84579982b375cc0ab" name="ad56c3d6ef7e9bae84579982b375cc0ab"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, SwitchToNonExistentBranch)</td></tr>
-<tr class="memitem:a869a2d69730d62e12f3f706d8f9fa71f" id="r_a869a2d69730d62e12f3f706d8f9fa71f"><td class="memItemLeft" align="right" valign="top"><a id="a869a2d69730d62e12f3f706d8f9fa71f" name="a869a2d69730d62e12f3f706d8f9fa71f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, BranchNameValidation)</td></tr>
-<tr class="memitem:aa5f79283663f6d3632e3532c43a8b8c9" id="r_aa5f79283663f6d3632e3532c43a8b8c9"><td class="memItemLeft" align="right" valign="top"><a id="aa5f79283663f6d3632e3532c43a8b8c9" name="aa5f79283663f6d3632e3532c43a8b8c9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classBranchManagerTest.html">BranchManagerTest</a>, GetBranchHeadForNonExistentBranch)</td></tr>
+<tr class="memitem:addf336b392ee416fa089d2c566f6d887" id="r_addf336b392ee416fa089d2c566f6d887"><td class="memItemLeft" align="right" valign="top"><a id="addf336b392ee416fa089d2c566f6d887" name="addf336b392ee416fa089d2c566f6d887"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">BranchManagerTest</a>, CreateDuplicateBranch)</td></tr>
+<tr class="memitem:a20d84bf48189bfed94c9ff9f54e623c7" id="r_a20d84bf48189bfed94c9ff9f54e623c7"><td class="memItemLeft" align="right" valign="top"><a id="a20d84bf48189bfed94c9ff9f54e623c7" name="a20d84bf48189bfed94c9ff9f54e623c7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">BranchManagerTest</a>, CreateBranchWithInvalidName)</td></tr>
+<tr class="memitem:a61aa61a5c97e5908c47ea9704a48733b" id="r_a61aa61a5c97e5908c47ea9704a48733b"><td class="memItemLeft" align="right" valign="top"><a id="a61aa61a5c97e5908c47ea9704a48733b" name="a61aa61a5c97e5908c47ea9704a48733b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">BranchManagerTest</a>, DeleteNonExistentBranch)</td></tr>
+<tr class="memitem:a8fb9394ce727d4ce18d73e245aeecc6a" id="r_a8fb9394ce727d4ce18d73e245aeecc6a"><td class="memItemLeft" align="right" valign="top"><a id="a8fb9394ce727d4ce18d73e245aeecc6a" name="a8fb9394ce727d4ce18d73e245aeecc6a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">BranchManagerTest</a>, RenameBranch)</td></tr>
+<tr class="memitem:a6534c023637263f4fe1704a246341f78" id="r_a6534c023637263f4fe1704a246341f78"><td class="memItemLeft" align="right" valign="top"><a id="a6534c023637263f4fe1704a246341f78" name="a6534c023637263f4fe1704a246341f78"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">BranchManagerTest</a>, RenameToExistingBranch)</td></tr>
+<tr class="memitem:a003d2bcad2dc9ebbfd02d62a61c88213" id="r_a003d2bcad2dc9ebbfd02d62a61c88213"><td class="memItemLeft" align="right" valign="top"><a id="a003d2bcad2dc9ebbfd02d62a61c88213" name="a003d2bcad2dc9ebbfd02d62a61c88213"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">BranchManagerTest</a>, SwitchToNonExistentBranch)</td></tr>
+<tr class="memitem:adca3c96ced13291f514299afa4b586fd" id="r_adca3c96ced13291f514299afa4b586fd"><td class="memItemLeft" align="right" valign="top"><a id="adca3c96ced13291f514299afa4b586fd" name="adca3c96ced13291f514299afa4b586fd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">BranchManagerTest</a>, BranchNameValidation)</td></tr>
+<tr class="memitem:adba54191caa968b19a4ed1e68b6d0c55" id="r_adba54191caa968b19a4ed1e68b6d0c55"><td class="memItemLeft" align="right" valign="top"><a id="adba54191caa968b19a4ed1e68b6d0c55" name="adba54191caa968b19a4ed1e68b6d0c55"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1BranchManagerTest.html">BranchManagerTest</a>, GetBranchHeadForNonExistentBranch)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Реализация модульных тестов для класса <a class="el" href="classBranchManager.html" title="Основной сервис для управления ветвями системы контроля версий (создание, удаление,...">BranchManager</a>. </p>
+<div class="textblock"><p>Реализация модульных тестов для класса BranchManager. </p>
 <dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

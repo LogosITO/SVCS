@@ -1,0 +1,284 @@
+\doxysection{svcs\+::core\+::Repository Class Reference}
+\hypertarget{classsvcs_1_1core_1_1Repository}{}\label{classsvcs_1_1core_1_1Repository}\index{svcs::core::Repository@{svcs::core::Repository}}
+
+
+Manages the version control directory structure and core operations.  
+
+
+
+
+{\ttfamily \#include $<$Repository.\+hxx$>$}
+
+Inheritance diagram for svcs\+::core\+::Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1core_1_1Repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a001f20d23fb977c871e2490bb48197af}{\texorpdfstring{$\sim$}{\string~}\+Repository}} () override
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a46eed1b1fdb3429dcd0716d68b665356}{Repository}} (std\+::filesystem\+::path rpath)
+\begin{DoxyCompactList}\small\item\em Constructs the repository manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a399e069d8fa1451c098d0639b70e2e28}{initialize\+Dependencies}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the repository\textquotesingle{}s internal dependencies. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_acced24467375c7b671857711193af8a2}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the basic repository structure (.svcs, objects, refs) on the disk. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a95567efaa23eb010474834b9a0518dbe}{is\+\_\+initialized}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the repository structure is fully initialized and valid. \end{DoxyCompactList}\item 
+const std\+::filesystem\+::path \& \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a0e913666db598a42e93be4a768215801}{get\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Gets the root path of the repository. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a1d1ff08e5e7fa232a71750310fc38067}{get\+Object\+Storage}} () const
+\begin{DoxyCompactList}\small\item\em Gets the raw pointer to the managed \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage} instance for database interaction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_ac61e4f2ef07d032f9a9696e0a168ad62}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Attaches an observer to receive events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a090e19178c4294da6b085693c80b42cd}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Detaches a registered observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a2d97a46d492c6b5ce6157ace0a37cd90}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) const override
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers about an event. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a77322f95a149e06a4c4243755175d7c4}{stage\+File}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Stages a file by hashing its content, storing it in the object database, and updating the staging index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a48d67b1462dce55e293c0614f59e1064}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a89ea6b027ffc211985d7f852e239867a}{find\+Repository}} (const std\+::string \&start\+\_\+path="{}."{})
+\begin{DoxyCompactList}\small\item\em Statically searches for an existing repository starting from a given path and moving up. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_adcb46c2b0c4c7c07d94332d69b2eccda}{is\+Repository}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Statically checks if a given path is the root of an SVCS repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Collection of registered observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the version control directory structure and core operations. 
+
+Implements \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} to serve as an event publisher for the core VCS operations. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1Repository_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1core_1_1Repository_a001f20d23fb977c871e2490bb48197af}\index{svcs::core::Repository@{svcs::core::Repository}!````~Repository@{\texorpdfstring{$\sim$}{\string~}Repository}}
+\index{````~Repository@{\texorpdfstring{$\sim$}{\string~}Repository}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Repository()}{\string~Repository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a001f20d23fb977c871e2490bb48197af} 
+svcs\+::core\+::\+Repository\+::\texorpdfstring{$\sim$}{\string~}\+Repository (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Virtual destructor. 
+
+Ensures correct cleanup of managed resources (\doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}). \Hypertarget{classsvcs_1_1core_1_1Repository_a46eed1b1fdb3429dcd0716d68b665356}\index{svcs::core::Repository@{svcs::core::Repository}!Repository@{Repository}}
+\index{Repository@{Repository}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{Repository()}{Repository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a46eed1b1fdb3429dcd0716d68b665356} 
+svcs\+::core\+::\+Repository\+::\+Repository (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{rpath}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs the repository manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rpath} & The root directory of the repository. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1Repository_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1core_1_1Repository_ac61e4f2ef07d032f9a9696e0a168ad62}\index{svcs::core::Repository@{svcs::core::Repository}!attach@{attach}}
+\index{attach@{attach}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_ac61e4f2ef07d032f9a9696e0a168ad62} 
+void svcs\+::core\+::\+Repository\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attaches an observer to receive events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Shared pointer to the observer instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_ae47bfa148a3f12751f1aae86fcca3975}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1core_1_1Repository_a090e19178c4294da6b085693c80b42cd}\index{svcs::core::Repository@{svcs::core::Repository}!detach@{detach}}
+\index{detach@{detach}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a090e19178c4294da6b085693c80b42cd} 
+void svcs\+::core\+::\+Repository\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Detaches a registered observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Shared pointer to the observer instance to detach. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a20e2f5095404c960d2b4f17789e74b28}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1core_1_1Repository_a89ea6b027ffc211985d7f852e239867a}\index{svcs::core::Repository@{svcs::core::Repository}!findRepository@{findRepository}}
+\index{findRepository@{findRepository}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{findRepository()}{findRepository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a89ea6b027ffc211985d7f852e239867a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ svcs\+::core\+::\+Repository\+::find\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{start\+\_\+path}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Statically searches for an existing repository starting from a given path and moving up. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+path} & The directory path to begin the search from (defaults to "{}."{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to the found \doxylink{classsvcs_1_1core_1_1Repository}{Repository} instance, or nullptr if none is found. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Repository_a1d1ff08e5e7fa232a71750310fc38067}\index{svcs::core::Repository@{svcs::core::Repository}!getObjectStorage@{getObjectStorage}}
+\index{getObjectStorage@{getObjectStorage}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{getObjectStorage()}{getObjectStorage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a1d1ff08e5e7fa232a71750310fc38067} 
+\mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}} \texorpdfstring{$\ast$}{*} svcs\+::core\+::\+Repository\+::get\+Object\+Storage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the raw pointer to the managed \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage} instance for database interaction. 
+
+\begin{DoxyReturn}{Returns}
+Object\+Storage\texorpdfstring{$\ast$}{*} Pointer to the managed \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage} instance. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Repository_a0e913666db598a42e93be4a768215801}\index{svcs::core::Repository@{svcs::core::Repository}!getPath@{getPath}}
+\index{getPath@{getPath}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a0e913666db598a42e93be4a768215801} 
+const std\+::filesystem\+::path \& svcs\+::core\+::\+Repository\+::get\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the root path of the repository. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::filesystem\+::path\& The repository root path. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Repository_acced24467375c7b671857711193af8a2}\index{svcs::core::Repository@{svcs::core::Repository}!init@{init}}
+\index{init@{init}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_acced24467375c7b671857711193af8a2} 
+bool svcs\+::core\+::\+Repository\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the basic repository structure (.svcs, objects, refs) on the disk. 
+
+\begin{DoxyReturn}{Returns}
+bool True if initialization succeeded, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Repository_a399e069d8fa1451c098d0639b70e2e28}\index{svcs::core::Repository@{svcs::core::Repository}!initializeDependencies@{initializeDependencies}}
+\index{initializeDependencies@{initializeDependencies}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{initializeDependencies()}{initializeDependencies()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a399e069d8fa1451c098d0639b70e2e28} 
+void svcs\+::core\+::\+Repository\+::initialize\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the repository\textquotesingle{}s internal dependencies. 
+
+This typically involves instantiating and setting up internal components like \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. \Hypertarget{classsvcs_1_1core_1_1Repository_a95567efaa23eb010474834b9a0518dbe}\index{svcs::core::Repository@{svcs::core::Repository}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a95567efaa23eb010474834b9a0518dbe} 
+bool svcs\+::core\+::\+Repository\+::is\+\_\+initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Checks if the repository structure is fully initialized and valid. 
+
+\begin{DoxyReturn}{Returns}
+true if all necessary directories and files exist. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Repository_adcb46c2b0c4c7c07d94332d69b2eccda}\index{svcs::core::Repository@{svcs::core::Repository}!isRepository@{isRepository}}
+\index{isRepository@{isRepository}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{isRepository()}{isRepository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_adcb46c2b0c4c7c07d94332d69b2eccda} 
+bool svcs\+::core\+::\+Repository\+::is\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Statically checks if a given path is the root of an SVCS repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the path contains the required repository marker files/directories. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Repository_a2d97a46d492c6b5ce6157ace0a37cd90}\index{svcs::core::Repository@{svcs::core::Repository}!notify@{notify}}
+\index{notify@{notify}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a2d97a46d492c6b5ce6157ace0a37cd90} 
+void svcs\+::core\+::\+Repository\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Notifies all attached observers about an event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The constant reference to the event data structure. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_abd7c4e5d2729c0a3c83ce7b0f7b4e82a}{svcs\+::services\+::\+ISubject}}.
+
+\Hypertarget{classsvcs_1_1core_1_1Repository_a77322f95a149e06a4c4243755175d7c4}\index{svcs::core::Repository@{svcs::core::Repository}!stageFile@{stageFile}}
+\index{stageFile@{stageFile}!svcs::core::Repository@{svcs::core::Repository}}
+\doxysubsubsection{\texorpdfstring{stageFile()}{stageFile()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Repository_a77322f95a149e06a4c4243755175d7c4} 
+bool svcs\+::core\+::\+Repository\+::stage\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Stages a file by hashing its content, storing it in the object database, and updating the staging index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the file to be staged (relative to the repository root). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the file was successfully staged, false otherwise (e.\+g., file ignored, permission error). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if file system or object storage operations fail. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Repository_8hxx}{Repository.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Repository_8cxx}{Repository.\+cxx}}\end{DoxyCompactItemize}

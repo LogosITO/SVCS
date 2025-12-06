@@ -1,4 +1,4 @@
 var HelpService_8hxx =
 [
-    [ "HelpService", "classHelpService.html", "classHelpService" ]
+    [ "svcs::cli::HelpService", "classsvcs_1_1cli_1_1HelpService.html", "classsvcs_1_1cli_1_1HelpService" ]
 ];

@@ -1,0 +1,282 @@
+\doxysection{Класс svcs\+::services\+::Logger}
+\hypertarget{classsvcs_1_1services_1_1Logger}{}\label{classsvcs_1_1services_1_1Logger}\index{svcs::services::Logger@{svcs::services::Logger}}
+
+
+Потокобезопасный Singleton класс, отвечающий за логирование системных событий.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+hxx$>$}
+
+Граф наследования\+:svcs\+::services\+::Logger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1services_1_1Logger}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a16172905c0d200184b81b39dbf4fbd27}{Logger}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1services_1_1Logger_a66a61e706f968ee9d4b304a39fbb56da}\label{classsvcs_1_1services_1_1Logger_a66a61e706f968ee9d4b304a39fbb56da} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Logger} () override
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a53b2de68a56a7add166a652f16a91dc7}{update}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Метод, вызываемый Subject для уведомления наблюдателя событием. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a6847ba93d4e8ac32bee25acd6c7c3415}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) override
+\begin{DoxyCompactList}\small\item\em Метод, вызываемый subject для уведомления наблюдателя. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_ab6a16a19650fa9f43d19033ef99ecd4a}{debug}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне DEBUG. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_afe6f3727177b44096e12c6849ba47e4f}{info}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне INFO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a4cd9aeb84476382334e0525f93b92a39}{warn}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне WARN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_ac2da5329c40c21408d29e385c4b18e9b}{error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне ERROR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a5130a6cddcf96a93a312e779e3c79450}{fatal}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Логирует сообщение на уровне FATAL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_ace5755a3f094ddc4d8f4c4fa1463c624}{set\+Level}} (\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em Устанавливает минимальный уровень логов для этого экземпляра. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{Log\+Level}} \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_abd8d05ae3761e2827e85d0a707be1353}{get\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Получает текущий минимальный уровень логов. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_ab8e4ee0b0097b16253da9a66e4e6af9f}{set\+Pattern}} (const std\+::string \&pattern)
+\begin{DoxyCompactList}\small\item\em Устанавливает шаблон форматирования вывода для сообщений. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1services_1_1Logger_a1eb06f4d455ed1c811b16af55d4e5a6b}\label{classsvcs_1_1services_1_1Logger_a1eb06f4d455ed1c811b16af55d4e5a6b} 
+void {\bfseries flush} ()
+\begin{DoxyCompactList}\small\item\em Принудительно записывает весь буферизованный вывод логов немедленно (например, на диск). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{svcs\+::services\+::\+IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор по умолчанию. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger}{Logger}} $>$ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_abdf428736737303f0ba9d84ba0adbf5c}{get\+Instance}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Получает Singleton экземпляр \doxylink{classsvcs_1_1services_1_1Logger}{Logger} для заданного имени. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a42cb6e74c728ec85bad246c9b201a44b}{clear\+Instances}} ()
+\begin{DoxyCompactList}\small\item\em Очищает все зарегистрированные Singleton экземпляры. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Потокобезопасный Singleton класс, отвечающий за логирование системных событий. 
+
+Реализует интерфейс \doxylink{classsvcs_1_1services_1_1IObserver}{IObserver} для автоматического получения и обработки событий, сгенерированных командами и основными компонентами. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1services_1_1Logger_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1services_1_1Logger_a16172905c0d200184b81b39dbf4fbd27}\index{svcs::services::Logger@{svcs::services::Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_a16172905c0d200184b81b39dbf4fbd27} 
+svcs\+::services\+::\+Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Приватный/защищенный доступ обычно обеспечивается в файле реализации Singleton. 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Уникальное имя для этого экземпляра логгера. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1services_1_1Logger_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1services_1_1Logger_a42cb6e74c728ec85bad246c9b201a44b}\index{svcs::services::Logger@{svcs::services::Logger}!clearInstances@{clearInstances}}
+\index{clearInstances@{clearInstances}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{clearInstances()}{clearInstances()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_a42cb6e74c728ec85bad246c9b201a44b} 
+void svcs\+::services\+::\+Logger\+::clear\+Instances (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Очищает все зарегистрированные Singleton экземпляры. 
+
+Используется в основном для очистки в тестовых средах. \Hypertarget{classsvcs_1_1services_1_1Logger_ab6a16a19650fa9f43d19033ef99ecd4a}\index{svcs::services::Logger@{svcs::services::Logger}!debug@{debug}}
+\index{debug@{debug}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_ab6a16a19650fa9f43d19033ef99ecd4a} 
+void svcs\+::services\+::\+Logger\+::debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне DEBUG. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1services_1_1Logger_ac2da5329c40c21408d29e385c4b18e9b}\index{svcs::services::Logger@{svcs::services::Logger}!error@{error}}
+\index{error@{error}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_ac2da5329c40c21408d29e385c4b18e9b} 
+void svcs\+::services\+::\+Logger\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне ERROR. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1services_1_1Logger_a5130a6cddcf96a93a312e779e3c79450}\index{svcs::services::Logger@{svcs::services::Logger}!fatal@{fatal}}
+\index{fatal@{fatal}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{fatal()}{fatal()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_a5130a6cddcf96a93a312e779e3c79450} 
+void svcs\+::services\+::\+Logger\+::fatal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне FATAL. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1services_1_1Logger_abdf428736737303f0ba9d84ba0adbf5c}\index{svcs::services::Logger@{svcs::services::Logger}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_abdf428736737303f0ba9d84ba0adbf5c} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger}{Logger}} $>$ svcs\+::services\+::\+Logger\+::get\+Instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Получает Singleton экземпляр \doxylink{classsvcs_1_1services_1_1Logger}{Logger} для заданного имени. 
+
+Создает и регистрирует новый экземпляр, если он еще не существует. 
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя желаемого экземпляра логгера. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Общий указатель на экземпляр \doxylink{classsvcs_1_1services_1_1Logger}{Logger}. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1services_1_1Logger_abd8d05ae3761e2827e85d0a707be1353}\index{svcs::services::Logger@{svcs::services::Logger}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_abd8d05ae3761e2827e85d0a707be1353} 
+\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{Log\+Level}} svcs\+::services\+::\+Logger\+::get\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Получает текущий минимальный уровень логов. 
+
+\begin{DoxyReturn}{Возвращает}
+Текущий \doxylink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{Log\+Level}. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1services_1_1Logger_afe6f3727177b44096e12c6849ba47e4f}\index{svcs::services::Logger@{svcs::services::Logger}!info@{info}}
+\index{info@{info}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_afe6f3727177b44096e12c6849ba47e4f} 
+void svcs\+::services\+::\+Logger\+::info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне INFO. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1services_1_1Logger_a6847ba93d4e8ac32bee25acd6c7c3415}\index{svcs::services::Logger@{svcs::services::Logger}!notify@{notify}}
+\index{notify@{notify}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_a6847ba93d4e8ac32bee25acd6c7c3415} 
+void svcs\+::services\+::\+Logger\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Метод, вызываемый subject для уведомления наблюдателя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event} & Структура \doxylink{structsvcs_1_1services_1_1Event}{Event}, содержащая данные уведомления. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Уст.}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Уст.}}]Примечание\+: Этот метод, вероятно, избыточен с \doxylink{classsvcs_1_1services_1_1Logger_a53b2de68a56a7add166a652f16a91dc7}{update(const Event\& event)} на основе определения \doxylink{classsvcs_1_1services_1_1IObserver}{IObserver}. В идеале он должен соответствовать той же логике, что и {\ttfamily update}. \end{DoxyRefDesc}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6}{svcs\+::services\+::\+IObserver}}.
+
+\Hypertarget{classsvcs_1_1services_1_1Logger_ace5755a3f094ddc4d8f4c4fa1463c624}\index{svcs::services::Logger@{svcs::services::Logger}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{setLevel()}{setLevel()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_ace5755a3f094ddc4d8f4c4fa1463c624} 
+void svcs\+::services\+::\+Logger\+::set\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{Log\+Level}}}]{level}{}\end{DoxyParamCaption})}
+
+
+
+Устанавливает минимальный уровень логов для этого экземпляра. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em level} & Новый \doxylink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{Log\+Level}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1services_1_1Logger_ab8e4ee0b0097b16253da9a66e4e6af9f}\index{svcs::services::Logger@{svcs::services::Logger}!setPattern@{setPattern}}
+\index{setPattern@{setPattern}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{setPattern()}{setPattern()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_ab8e4ee0b0097b16253da9a66e4e6af9f} 
+void svcs\+::services\+::\+Logger\+::set\+Pattern (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pattern}{}\end{DoxyParamCaption})}
+
+
+
+Устанавливает шаблон форматирования вывода для сообщений. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em pattern} & Новая строка формата (детали реализации зависят от синтаксиса шаблона). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1services_1_1Logger_a53b2de68a56a7add166a652f16a91dc7}\index{svcs::services::Logger@{svcs::services::Logger}!update@{update}}
+\index{update@{update}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_a53b2de68a56a7add166a652f16a91dc7} 
+void svcs\+::services\+::\+Logger\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Метод, вызываемый Subject для уведомления наблюдателя событием. 
+
+Сопоставляет \doxylink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}{Event\+::\+Type} с \doxylink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{Log\+Level} и обрабатывает сообщение. 
+\begin{DoxyParams}{Аргументы}
+{\em event} & Структура \doxylink{structsvcs_1_1services_1_1Event}{Event}, содержащая данные уведомления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}{svcs\+::services\+::\+IObserver}}.
+
+\Hypertarget{classsvcs_1_1services_1_1Logger_a4cd9aeb84476382334e0525f93b92a39}\index{svcs::services::Logger@{svcs::services::Logger}!warn@{warn}}
+\index{warn@{warn}!svcs::services::Logger@{svcs::services::Logger}}
+\doxysubsubsection{\texorpdfstring{warn()}{warn()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1Logger_a4cd9aeb84476382334e0525f93b92a39} 
+void svcs\+::services\+::\+Logger\+::warn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Логирует сообщение на уровне WARN. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Содержимое лог-\/сообщения. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+services/logging/\mbox{\hyperlink{Logger_8hxx}{Logger.\+hxx}}\item 
+services/logging/\mbox{\hyperlink{Logger_8cxx}{Logger.\+cxx}}\end{DoxyCompactItemize}

@@ -105,13 +105,18 @@ $(function(){initNavTree('ObjectStorage_8hxx.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
-<tr class="memitem:ObjectStorage" id="r_ObjectStorage"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectStorage.html">ObjectStorage</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов.  <a href="classObjectStorage.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Acore_3A_3AObjectStorage" id="r_svcs_3A_3Acore_3A_3AObjectStorage"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1core_1_1ObjectStorage.html">svcs::core::ObjectStorage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов.  <a href="classsvcs_1_1core_1_1ObjectStorage.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:svcs_3A_3Acore" id="r_svcs_3A_3Acore"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1core.html">svcs::core</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основные структуры данных СКВ и модель объектов. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Управляет чтением, записью и жизненным циклом объектов СКВ на диске с использованием формата Git. </p>
 <dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p>Этот класс обрабатывает построение путей к файлам, сериализацию, сжатие/распаковку Zlib и действует как фабрика для восстановления конкретных типов <a class="el" href="classVcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a> (<a class="el" href="classBlob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a>, <a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a>, <a class="el" href="classCommit.html" title="Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория.">Commit</a>). Использует внедренный <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> для внутреннего логирования событий. </p>
+<p>Этот класс обрабатывает построение путей к файлам, сериализацию, сжатие/распаковку Zlib и действует как фабрика для восстановления конкретных типов VcsObject (Blob, Tree, Commit). Использует внедренный ISubject для внутреннего логирования событий. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

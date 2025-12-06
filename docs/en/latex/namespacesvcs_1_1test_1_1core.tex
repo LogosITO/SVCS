@@ -1,0 +1,260 @@
+\doxysection{svcs\+::test\+::core Namespace Reference}
+\hypertarget{namespacesvcs_1_1test_1_1core}{}\label{namespacesvcs_1_1test_1_1core}\index{svcs::test::core@{svcs::test::core}}
+
+
+Unit tests for core components and data structures.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1core_1_1mocks}{mocks}}
+\begin{DoxyCompactList}\small\item\em Mock objects and test doubles for core component testing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ManualMockObserver}{Manual\+Mock\+Observer}}
+\begin{DoxyCompactList}\small\item\em Manual mock implementation of the \doxylink{classsvcs_1_1services_1_1IObserver}{IObserver} interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObjectStorage}{Mock\+Object\+Storage}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of Object\+Storage. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObserver}{Mock\+Observer}}
+\begin{DoxyCompactList}\small\item\em Mock observer for testing event notifications. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject}{Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (\doxylink{structsvcs_1_1services_1_1Event}{Event} Bus). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1NullObserver}{Null\+Observer}}
+\begin{DoxyCompactList}\small\item\em Null implementation of \doxylink{classsvcs_1_1services_1_1IObserver}{IObserver}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for the \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{Repository\+Manager\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager} tests. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryTest}{Repository\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classsvcs_1_1core_1_1Repository}{Repository} class unit tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_adfac56af84831831d4ec0d841fb393fe}\label{namespacesvcs_1_1test_1_1core_adfac56af84831831d4ec0d841fb393fe} 
+{\bfseries TEST} (Blob\+Test, Hash\+Is\+Calculated\+On\+Creation)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a63549c453e5b8aa24572c50adb823759}\label{namespacesvcs_1_1test_1_1core_a63549c453e5b8aa24572c50adb823759} 
+{\bfseries TEST} (Blob\+Test, Hash\+Is\+Consistent)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a08952479124381e82f0c907ad05c3851}\label{namespacesvcs_1_1test_1_1core_a08952479124381e82f0c907ad05c3851} 
+{\bfseries TEST} (Blob\+Test, Hash\+Changes\+With\+Content\+Modification)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a55d2ddbd20d9ba6143cca2958338c77c}\label{namespacesvcs_1_1test_1_1core_a55d2ddbd20d9ba6143cca2958338c77c} 
+{\bfseries TEST} (Blob\+Test, Handling\+Empty\+Content)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_addf336b392ee416fa089d2c566f6d887}\label{namespacesvcs_1_1test_1_1core_addf336b392ee416fa089d2c566f6d887} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Create\+Duplicate\+Branch)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a20d84bf48189bfed94c9ff9f54e623c7}\label{namespacesvcs_1_1test_1_1core_a20d84bf48189bfed94c9ff9f54e623c7} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Create\+Branch\+With\+Invalid\+Name)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a61aa61a5c97e5908c47ea9704a48733b}\label{namespacesvcs_1_1test_1_1core_a61aa61a5c97e5908c47ea9704a48733b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Delete\+Non\+Existent\+Branch)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a8fb9394ce727d4ce18d73e245aeecc6a}\label{namespacesvcs_1_1test_1_1core_a8fb9394ce727d4ce18d73e245aeecc6a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Rename\+Branch)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a6534c023637263f4fe1704a246341f78}\label{namespacesvcs_1_1test_1_1core_a6534c023637263f4fe1704a246341f78} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Rename\+To\+Existing\+Branch)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a003d2bcad2dc9ebbfd02d62a61c88213}\label{namespacesvcs_1_1test_1_1core_a003d2bcad2dc9ebbfd02d62a61c88213} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Switch\+To\+Non\+Existent\+Branch)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_adca3c96ced13291f514299afa4b586fd}\label{namespacesvcs_1_1test_1_1core_adca3c96ced13291f514299afa4b586fd} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Branch\+Name\+Validation)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_adba54191caa968b19a4ed1e68b6d0c55}\label{namespacesvcs_1_1test_1_1core_adba54191caa968b19a4ed1e68b6d0c55} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1BranchManagerTest}{Branch\+Manager\+Test}}, Get\+Branch\+Head\+For\+Non\+Existent\+Branch)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a4fb8ff6caf118bcecfc1eac5e7f4f4e2}\label{namespacesvcs_1_1test_1_1core_a4fb8ff6caf118bcecfc1eac5e7f4f4e2} 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Commit}{Commit}} {\bfseries create\+Test\+Commit} (const std\+::string \&tree\+\_\+hash, const std\+::vector$<$ std\+::string $>$ \&parents, const std\+::string \&message, std\+::time\+\_\+t timestamp=1600000000)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a4f982b5800598d469dc3ea9685844b7c}\label{namespacesvcs_1_1test_1_1core_a4f982b5800598d469dc3ea9685844b7c} 
+{\bfseries TEST} (Commit\+Test, Basic\+Initial\+Commit)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a0f7e4fd13d6062bb22f96cb2951a81b6}\label{namespacesvcs_1_1test_1_1core_a0f7e4fd13d6062bb22f96cb2951a81b6} 
+{\bfseries TEST} (Commit\+Test, Hash\+Is\+Stable\+Regardless\+Of\+Parent\+Order)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_adce82e1d3746b5390ca553ab0f74149a}\label{namespacesvcs_1_1test_1_1core_adce82e1d3746b5390ca553ab0f74149a} 
+{\bfseries TEST} (Commit\+Test, Hash\+Changes\+With\+Different\+Message)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa40536aac1767e718ea82600d293ab2e}\label{namespacesvcs_1_1test_1_1core_aa40536aac1767e718ea82600d293ab2e} 
+{\bfseries TEST} (Commit\+Test, Serialization\+Deserialization\+Round\+Trip)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad6e3cd496071cbcbe1a6a9184e6774db}\label{namespacesvcs_1_1test_1_1core_ad6e3cd496071cbcbe1a6a9184e6774db} 
+void {\bfseries create\+\_\+test\+\_\+file} (const fs\+::path \&path, const std\+::string \&content)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a00e85cb909bea1da62f0bab74656e473}\label{namespacesvcs_1_1test_1_1core_a00e85cb909bea1da62f0bab74656e473} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Basic\+File\+Operations)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad004091ebfbd31fa9b8dc0a4adfd4f8b}\label{namespacesvcs_1_1test_1_1core_ad004091ebfbd31fa9b8dc0a4adfd4f8b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Stage\+New\+File\+\_\+\+Adds\+Correct\+Entry)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa6b7fb97bb432f96216cb2e64680591a}\label{namespacesvcs_1_1test_1_1core_aa6b7fb97bb432f96216cb2e64680591a} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Stage\+File\+\_\+\+Throws\+On\+Non\+Existent\+File)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a9de2fe1aadfdb9657bf52fe0883122af}\label{namespacesvcs_1_1test_1_1core_a9de2fe1aadfdb9657bf52fe0883122af} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+False\+\_\+\+When\+No\+Change)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a458c105055272e2f9fff30fbf87a1034}\label{namespacesvcs_1_1test_1_1core_a458c105055272e2f9fff30fbf87a1034} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+Size\+Changes)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa6f2e88eeea2e35df0f13b005a8d68c9}\label{namespacesvcs_1_1test_1_1core_aa6f2e88eeea2e35df0f13b005a8d68c9} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+File\+Deleted)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a1f62b31323b57e1d6b3ca806accd318b}\label{namespacesvcs_1_1test_1_1core_a1f62b31323b57e1d6b3ca806accd318b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+Untracked\+Exists)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a318d90b86c7b661d66323109213bb29d}\label{namespacesvcs_1_1test_1_1core_a318d90b86c7b661d66323109213bb29d} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Persistence\+\_\+\+Save\+And\+Load)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ae2ca4c3b5b9f293e76a3c3af53a37f38}\label{namespacesvcs_1_1test_1_1core_ae2ca4c3b5b9f293e76a3c3af53a37f38} 
+{\bfseries TEST} (Vsc\+Object\+Hash\+Test, Creating\+Hash)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a52ef9146d7403e79776e7c0277667a43}\label{namespacesvcs_1_1test_1_1core_a52ef9146d7403e79776e7c0277667a43} 
+{\bfseries TEST} (Vsc\+Object\+Hash\+Test, Hash\+Is\+Unique\+By\+Type)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad172630f047364a4aa0c07d796e10c36}\label{namespacesvcs_1_1test_1_1core_ad172630f047364a4aa0c07d796e10c36} 
+{\bfseries TEST} (Vcs\+Object\+Hash\+Test, Hash\+Is\+Consistent)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aae178917751e6c55fbe99eb4a5ae7101}\label{namespacesvcs_1_1test_1_1core_aae178917751e6c55fbe99eb4a5ae7101} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{Repository\+Manager\+Test}}, Initialize\+Repository\+Creates\+Structure)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a2b808f9d97a1c99989d6058ea343574b}\label{namespacesvcs_1_1test_1_1core_a2b808f9d97a1c99989d6058ea343574b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{Repository\+Manager\+Test}}, Add\+File\+To\+Staging\+Adds\+To\+Index)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a1e017550ae8fa96f5299969e861cc58f}\label{namespacesvcs_1_1test_1_1core_a1e017550ae8fa96f5299969e861cc58f} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{Repository\+Manager\+Test}}, Stage\+Multiple\+Files)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad5730a4624b3089ea3cf380f9752a2ca}\label{namespacesvcs_1_1test_1_1core_ad5730a4624b3089ea3cf380f9752a2ca} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{Repository\+Manager\+Test}}, Repository\+State\+Persists\+Between\+Instances)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a4f6c48a6c0289902743a7e5aee89dec2}\label{namespacesvcs_1_1test_1_1core_a4f6c48a6c0289902743a7e5aee89dec2} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{Repository\+Manager\+Test}}, Add\+File\+With\+Relative\+Path)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a496b135971bbd5b2b4724d79e417c727}\label{namespacesvcs_1_1test_1_1core_a496b135971bbd5b2b4724d79e417c727} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{Repository\+Manager\+Test}}, Add\+Duplicate\+File)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ae8665e180e35270420c31526cf1966ec}\label{namespacesvcs_1_1test_1_1core_ae8665e180e35270420c31526cf1966ec} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryManagerTest}{Repository\+Manager\+Test}}, Basic\+Repository\+Operations)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a666a9ff45695e8b53eac95a780c52848}\label{namespacesvcs_1_1test_1_1core_a666a9ff45695e8b53eac95a780c52848} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryTest}{Repository\+Test}}, Init\+Creates\+Necessary\+Directories)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa94b475eabce2b9c05e4101c3ea06f83}\label{namespacesvcs_1_1test_1_1core_aa94b475eabce2b9c05e4101c3ea06f83} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryTest}{Repository\+Test}}, Init\+Returns\+True\+If\+Directories\+Already\+Exist)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a0baf50a2b5311efd56d340695dc38dd8}\label{namespacesvcs_1_1test_1_1core_a0baf50a2b5311efd56d340695dc38dd8} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryTest}{Repository\+Test}}, Attach\+And\+Init\+Notify\+Observer\+Correctly)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad863b9408bacaf4c3fc0a650d145f62d}\label{namespacesvcs_1_1test_1_1core_ad863b9408bacaf4c3fc0a650d145f62d} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryTest}{Repository\+Test}}, Detach\+Removes\+Observer)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a6c2ef512c4fd27918f08d081a26d3359}\label{namespacesvcs_1_1test_1_1core_a6c2ef512c4fd27918f08d081a26d3359} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1RepositoryTest}{Repository\+Test}}, Notify\+Sends\+Event\+To\+All\+Observers)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a47ad619962717854bea4cb8974bac5ec}\label{namespacesvcs_1_1test_1_1core_a47ad619962717854bea4cb8974bac5ec} 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Blob}{Blob}} {\bfseries create\+\_\+blob} (const std\+::string \&content)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ac5ef8ebbe07af649fa1f9b96be551ce0}\label{namespacesvcs_1_1test_1_1core_ac5ef8ebbe07af649fa1f9b96be551ce0} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Saves\+Object\+To\+Correct\+Path)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ac7c5deb565ca0e0eac56813447d4c9a6}\label{namespacesvcs_1_1test_1_1core_ac7c5deb565ca0e0eac56813447d4c9a6} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Blob)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a73a233f1a4c07809bdd59147b798bab6}\label{namespacesvcs_1_1test_1_1core_a73a233f1a4c07809bdd59147b798bab6} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Load\+Throws\+Exception\+If\+Not\+Found)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a7e71bfef5749a1567726f9ff404a07e4}\label{namespacesvcs_1_1test_1_1core_a7e71bfef5749a1567726f9ff404a07e4} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Tree)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a5107cd967906f2015b66b6258bf4addd}\label{namespacesvcs_1_1test_1_1core_a5107cd967906f2015b66b6258bf4addd} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ObjectStorageTest}{Object\+Storage\+Test}}, Load\+Restores\+Original\+Commit)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a0ebdfc2bd61e5694f60c7083b04c2fdc}\label{namespacesvcs_1_1test_1_1core_a0ebdfc2bd61e5694f60c7083b04c2fdc} 
+int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a65150faacc694237df4d90efb41ccb1a}\label{namespacesvcs_1_1test_1_1core_a65150faacc694237df4d90efb41ccb1a} 
+{\bfseries TEST} (Tree\+Test, Hash\+Is\+Calculated\+And\+Type\+Is\+Correct)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ae9b328921984ac6a04ecc642beddf771}\label{namespacesvcs_1_1test_1_1core_ae9b328921984ac6a04ecc642beddf771} 
+{\bfseries TEST} (Tree\+Test, Hash\+Is\+Consistent\+Regardless\+Of\+Initial\+Order)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_acbb759a34a7d1dfd872a3ea2dcede356}\label{namespacesvcs_1_1test_1_1core_acbb759a34a7d1dfd872a3ea2dcede356} 
+{\bfseries TEST} (Tree\+Test, Hash\+Changes\+When\+Child\+Hash\+Changes)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a2bb88575254f78d531650b2c53b1ae17}\label{namespacesvcs_1_1test_1_1core_a2bb88575254f78d531650b2c53b1ae17} 
+{\bfseries TEST} (Tree\+Test, Add\+And\+Update\+Entry)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a21d1bca4a14153e95017f553190e1db8}\label{namespacesvcs_1_1test_1_1core_a21d1bca4a14153e95017f553190e1db8} 
+{\bfseries TEST} (Tree\+Test, Remove\+Entry)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad3edbef3324de01bddf5b4db1cdd4a34}\label{namespacesvcs_1_1test_1_1core_ad3edbef3324de01bddf5b4db1cdd4a34} 
+{\bfseries TEST} (Tree\+Test, Find\+Entry)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a6d6d78feaa7436d70aab048ea70f4e21}\label{namespacesvcs_1_1test_1_1core_a6d6d78feaa7436d70aab048ea70f4e21} 
+{\bfseries TEST} (Tree\+Test, Serialization\+And\+Deserialization\+Round\+Trip)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a67af790154c075f144af8c559437dc2b}\label{namespacesvcs_1_1test_1_1core_a67af790154c075f144af8c559437dc2b} 
+const std\+::string {\bfseries HASH\+\_\+\+TREE\+\_\+\+EMPTY} = "{}4b825dc642cb6eb9a060e54bf8d69288fbee4904a0a0a0a0a0a0a0a0a0a0a0a"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a85c7818229ade6c61ea942679a507c8b}\label{namespacesvcs_1_1test_1_1core_a85c7818229ade6c61ea942679a507c8b} 
+const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+A} = "{}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ae2c3b5ed217c5dadad2145c743d4ff33}\label{namespacesvcs_1_1test_1_1core_ae2c3b5ed217c5dadad2145c743d4ff33} 
+const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+B} = "{}bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aced91404e2e9d33ee5f68384857e0e4a}\label{namespacesvcs_1_1test_1_1core_aced91404e2e9d33ee5f68384857e0e4a} 
+const std\+::string {\bfseries HASH\+\_\+\+TREE\+\_\+\+NEW} = "{}c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a1d4bda334e97c04c2f4ac8f825f133da}\label{namespacesvcs_1_1test_1_1core_a1d4bda334e97c04c2f4ac8f825f133da} 
+const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+\+P1} = "{}d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a99fe0d19e41efa399d3441adfe30297a}\label{namespacesvcs_1_1test_1_1core_a99fe0d19e41efa399d3441adfe30297a} 
+const std\+::string {\bfseries HASH\+\_\+\+PARENT\+\_\+\+P2} = "{}e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a327505f9d0b5a5e1540708a11e4b2d70}\label{namespacesvcs_1_1test_1_1core_a327505f9d0b5a5e1540708a11e4b2d70} 
+const std\+::string {\bfseries DUMMY\+\_\+\+HASH\+\_\+\+FILE\+\_\+A} = "{}a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a6ce36ffa712db84437643035349f87b6}\label{namespacesvcs_1_1test_1_1core_a6ce36ffa712db84437643035349f87b6} 
+const std\+::string {\bfseries DUMMY\+\_\+\+HASH\+\_\+\+PARENT\+\_\+1} = "{}p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a2644de2903e56b2a7c22780c9b780282}\label{namespacesvcs_1_1test_1_1core_a2644de2903e56b2a7c22780c9b780282} 
+const std\+::string {\bfseries DUMMY\+\_\+\+HASH\+\_\+\+PARENT\+\_\+2} = "{}p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aeb0c5c6fd7f3afe444fdfb7e1fbcec57}\label{namespacesvcs_1_1test_1_1core_aeb0c5c6fd7f3afe444fdfb7e1fbcec57} 
+const std\+::string {\bfseries DUMMY\+\_\+\+HASH\+\_\+\+TREE\+\_\+\+ROOT} = "{}t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a04b12c125d82b681c4443d82be899726}\label{namespacesvcs_1_1test_1_1core_a04b12c125d82b681c4443d82be899726} 
+const std\+::string {\bfseries TEST\+\_\+\+ROOT} = "{}test\+\_\+repo\+\_\+root"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad996eb03dc694413efb22e6ce991e5fc}\label{namespacesvcs_1_1test_1_1core_ad996eb03dc694413efb22e6ce991e5fc} 
+const std\+::string {\bfseries OBJECTS\+\_\+\+DIR} = TEST\+\_\+\+ROOT + "{}/.svcs/objects"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a648eb0f3cd1db32c6ac3313319fa565c}\label{namespacesvcs_1_1test_1_1core_a648eb0f3cd1db32c6ac3313319fa565c} 
+const std\+::string {\bfseries HASH\+\_\+A} = "{}a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_a48a6a6ff857512967f0192df28fcedc8}\label{namespacesvcs_1_1test_1_1core_a48a6a6ff857512967f0192df28fcedc8} 
+const std\+::string {\bfseries HASH\+\_\+B} = "{}b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa9f0d1c467c6216dc74f00e40dbe2d34}\label{namespacesvcs_1_1test_1_1core_aa9f0d1c467c6216dc74f00e40dbe2d34} 
+const std\+::string {\bfseries HASH\+\_\+C} = "{}c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2"{}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa91e3251258987513e67a5014a5529c9}\label{namespacesvcs_1_1test_1_1core_aa91e3251258987513e67a5014a5529c9} 
+const std\+::string {\bfseries HASH\+\_\+D} = "{}d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit tests for core components and data structures. 
+
+Contains test cases for core VCS objects, repository management, and fundamental data structures. Tests in this namespace validate the basic functionality and integrity of the system core. 

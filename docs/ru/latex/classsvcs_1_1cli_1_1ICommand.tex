@@ -1,0 +1,149 @@
+\doxysection{Класс svcs\+::cli\+::ICommand}
+\hypertarget{classsvcs_1_1cli_1_1ICommand}{}\label{classsvcs_1_1cli_1_1ICommand}\index{svcs::cli::ICommand@{svcs::cli::ICommand}}
+
+
+Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI.  
+
+
+
+
+{\ttfamily \#include $<$ICommand.\+hxx$>$}
+
+Граф наследования\+:svcs\+::cli\+::ICommand\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classsvcs_1_1cli_1_1ICommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Получает уникальное имя команды (например, "{}init"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{get\+Description}} () const =0
+\begin{DoxyCompactList}\small\item\em Получает краткое описание того, что делает команда. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{get\+Usage}} () const =0
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args)=0
+\begin{DoxyCompactList}\small\item\em Выполняет основную логику команды. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{show\+Help}} () const =0
+\begin{DoxyCompactList}\small\item\em Отображает подробную справочную информацию о команде (использование и описание). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI. 
+
+Каждая конкретная команда (например, \doxylink{classsvcs_1_1cli_1_1InitCommand}{Init\+Command}, Commit\+Command) должна наследовать этот интерфейс и реализовывать все его чисто виртуальные методы. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1ICommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}\index{svcs::cli::ICommand@{svcs::cli::ICommand}!````~ICommand@{\texorpdfstring{$\sim$}{\string~}ICommand}}
+\index{````~ICommand@{\texorpdfstring{$\sim$}{\string~}ICommand}!svcs::cli::ICommand@{svcs::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ICommand()}{\string~ICommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c} 
+virtual svcs\+::cli\+::\+ICommand\+::\texorpdfstring{$\sim$}{\string~}\+ICommand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Виртуальный деструктор. 
+
+Обеспечивает корректную очистку производных классов через указатель на базовый класс. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1ICommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}\index{svcs::cli::ICommand@{svcs::cli::ICommand}!execute@{execute}}
+\index{execute@{execute}!svcs::cli::ICommand@{svcs::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639} 
+virtual bool svcs\+::cli\+::\+ICommand\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Выполняет основную логику команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Вектор строковых аргументов, переданных команде (исключая само имя команды). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если выполнение команды было успешным; false при ошибке. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a15e28cdfea0015ba33d0c22abfe48889}{svcs\+::cli\+::\+Add\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_aa9efb129b1ddf1d3730b141b2afc678d}{svcs\+::cli\+::\+Branch\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a5cc1fbe242e0687f4ecb4f9f9a68458c}{svcs\+::cli\+::\+Clear\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a52b3d59f5e7d2a1a813f51de285ba821}{svcs\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_abfc9c53dfcc108abcb7d09e8eb3e266d}{svcs\+::cli\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a993c86956e71217c1720c57cfc1090e4}{svcs\+::cli\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a4c8aec40cf39347db013c8bccbcdb48b}{svcs\+::cli\+::\+Merge\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1RemoveCommand_a2bb886849d062d5ded28d78c399d2141}{svcs\+::cli\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1SaveCommand_ae70493712868eecdf217655eb2e0dc05}{svcs\+::cli\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_ae42c61328680bcfbcdbd324161d9a4fe}{svcs\+::cli\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand_a65f763bfdb91c62d404da6d676dc2975}{svcs\+::cli\+::\+Undo\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_a06acd5dd74537b3d5f92fc6f91bef34b}{svcs\+::cli\+::\+Version\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a28c39200f05a5e4f7c94d05b573cbc18}{svcs\+::server\+::cli\+::\+Hub\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a4f83b29c700622c57f341a6605d6b53e}{svcs\+::server\+::cli\+::\+Repo\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad122598b6dfb0a065eb9fc3d5f0c0e7a}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1HelpCommand_a52b3d59f5e7d2a1a813f51de285ba821}{svcs\+::test\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand_a52b3d59f5e7d2a1a813f51de285ba821}{svcs\+::test\+::cli\+::utils\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_abfc9c53dfcc108abcb7d09e8eb3e266d}{svcs\+::test\+::cli\+::utils\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand_a993c86956e71217c1720c57cfc1090e4}{svcs\+::test\+::cli\+::utils\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a2bb886849d062d5ded28d78c399d2141}{svcs\+::test\+::cli\+::utils\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand_ae70493712868eecdf217655eb2e0dc05}{svcs\+::test\+::cli\+::utils\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_ae42c61328680bcfbcdbd324161d9a4fe}{svcs\+::test\+::cli\+::utils\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a65f763bfdb91c62d404da6d676dc2975}{svcs\+::test\+::cli\+::utils\+::\+Undo\+Command}} и \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand_a06acd5dd74537b3d5f92fc6f91bef34b}{svcs\+::test\+::cli\+::utils\+::\+Version\+Command}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}\index{svcs::cli::ICommand@{svcs::cli::ICommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::ICommand@{svcs::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6} 
+virtual std\+::string svcs\+::cli\+::\+ICommand\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Получает краткое описание того, что делает команда. 
+
+\begin{DoxyReturn}{Возвращает}
+Описание команды. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_ad5a561fba4db64d2351fce3882cac592}{svcs\+::cli\+::\+Add\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3}{svcs\+::cli\+::\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_a979cfdacbf0e91c565ff650478da0e8f}{svcs\+::cli\+::\+Branch\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a36f9ba3184372e8881737ff330839555}{svcs\+::cli\+::\+Clear\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a1b4bc5373f8ce27b7dd37d709771900c}{svcs\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a243832e2e65b7a1a62a72b602ce49ca4}{svcs\+::cli\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a45eefc9d0ddfc577595615b7b000cbaa}{svcs\+::cli\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a71572214e70b667eb735016c1cf0c4b9}{svcs\+::cli\+::\+Merge\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1RemoveCommand_a7c6fefbbc15bbcb3ced866943ac895b9}{svcs\+::cli\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1SaveCommand_aeb3f25a8980ab8a0d63e7575df210f96}{svcs\+::cli\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a708acf0ea6691310043a5dba697ec0aa}{svcs\+::cli\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand_a5c05636d8a23ad40c317b69520641766}{svcs\+::cli\+::\+Undo\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_aa6ce0c5f1b06f4d13fabdca31e3797b6}{svcs\+::cli\+::\+Version\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a6c2b48168bc6f7fa8d857d54205117e6}{svcs\+::server\+::cli\+::\+Hub\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a65def35aa0abe8f3e65ec0dae0364134}{svcs\+::server\+::cli\+::\+Repo\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a2e6579f00f8c275f2d9028a4e0bc83f7}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1HelpCommand_a1b4bc5373f8ce27b7dd37d709771900c}{svcs\+::test\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand_a1b4bc5373f8ce27b7dd37d709771900c}{svcs\+::test\+::cli\+::utils\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a243832e2e65b7a1a62a72b602ce49ca4}{svcs\+::test\+::cli\+::utils\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand_a45eefc9d0ddfc577595615b7b000cbaa}{svcs\+::test\+::cli\+::utils\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a7c6fefbbc15bbcb3ced866943ac895b9}{svcs\+::test\+::cli\+::utils\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand_aeb3f25a8980ab8a0d63e7575df210f96}{svcs\+::test\+::cli\+::utils\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a708acf0ea6691310043a5dba697ec0aa}{svcs\+::test\+::cli\+::utils\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a5c05636d8a23ad40c317b69520641766}{svcs\+::test\+::cli\+::utils\+::\+Undo\+Command}} и \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand_aa6ce0c5f1b06f4d13fabdca31e3797b6}{svcs\+::test\+::cli\+::utils\+::\+Version\+Command}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}\index{svcs::cli::ICommand@{svcs::cli::ICommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::ICommand@{svcs::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2} 
+virtual std\+::string svcs\+::cli\+::\+ICommand\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Получает уникальное имя команды (например, "{}init"{}). 
+
+\begin{DoxyReturn}{Возвращает}
+Имя команды в виде строки. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a1a2d6f366905ca9ec8a49bf92dcd6f73}{svcs\+::cli\+::\+Add\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{svcs\+::cli\+::\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_a62ba60346b5d484429aabc147efc85f9}{svcs\+::cli\+::\+Branch\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a1c8c0f8eb862b8bc56059f44cd7ebd9f}{svcs\+::cli\+::\+Clear\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a8af5d006b893f386c9dd0cbdbbe77d93}{svcs\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a608e3bc61d3647dc51eefb632b993e97}{svcs\+::cli\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a867b27d397625ad19ea168ac43117f1a}{svcs\+::cli\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a52321172f1c88da0b9965c2b32d17923}{svcs\+::cli\+::\+Merge\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1RemoveCommand_a3ad04f2f0aac567cbc186a7ad341f4c6}{svcs\+::cli\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1SaveCommand_a604d6cb09fd548bb595ba34881c3c5aa}{svcs\+::cli\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a22c7b92531d7be0f48401f097d8c3e6b}{svcs\+::cli\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand_a03e3e9e4ee2bc1caa12c34a7c0707a4a}{svcs\+::cli\+::\+Undo\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_aa2fde26f77b8d331f11bb3e03353e92a}{svcs\+::cli\+::\+Version\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a01080d10ab794600470670ec6a22633a}{svcs\+::server\+::cli\+::\+Hub\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a51aca9eee57888cbb3c57f30a673c616}{svcs\+::server\+::cli\+::\+Repo\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a3f1fd2baa51a5168b342ffe3d09b1119}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1HelpCommand_a8af5d006b893f386c9dd0cbdbbe77d93}{svcs\+::test\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand_a8af5d006b893f386c9dd0cbdbbe77d93}{svcs\+::test\+::cli\+::utils\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a608e3bc61d3647dc51eefb632b993e97}{svcs\+::test\+::cli\+::utils\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand_a867b27d397625ad19ea168ac43117f1a}{svcs\+::test\+::cli\+::utils\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a3ad04f2f0aac567cbc186a7ad341f4c6}{svcs\+::test\+::cli\+::utils\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand_a604d6cb09fd548bb595ba34881c3c5aa}{svcs\+::test\+::cli\+::utils\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a22c7b92531d7be0f48401f097d8c3e6b}{svcs\+::test\+::cli\+::utils\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a03e3e9e4ee2bc1caa12c34a7c0707a4a}{svcs\+::test\+::cli\+::utils\+::\+Undo\+Command}} и \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand_aa2fde26f77b8d331f11bb3e03353e92a}{svcs\+::test\+::cli\+::utils\+::\+Version\+Command}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}\index{svcs::cli::ICommand@{svcs::cli::ICommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::ICommand@{svcs::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3} 
+virtual std\+::string svcs\+::cli\+::\+ICommand\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка с синтаксисом (например, "{}vcs commit $<$message$>$"{}). 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_abdaa56b756ede64e3e5fde754a48e3c7}{svcs\+::cli\+::\+Add\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1}{svcs\+::cli\+::\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_a2d0e39ec374060454ede383a52804bd6}{svcs\+::cli\+::\+Branch\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_acb15c7e7cbf58b4133842dda9fcd573c}{svcs\+::cli\+::\+Clear\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a04b5a097d88ac3f5f7168e8974e091c9}{svcs\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a9f2afa7b244e7be1b7617e2d18677260}{svcs\+::cli\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_ab892966e19c23a19ce5c4661bc881dd4}{svcs\+::cli\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a913526199045aeb571b4ca5764729772}{svcs\+::cli\+::\+Merge\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1RemoveCommand_a134896ccaaa85d63f2cc73f274df4a65}{svcs\+::cli\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1SaveCommand_aaf2153e02f35b59fef2f1129d0c9d2b5}{svcs\+::cli\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a0a42903ddeb04167bc1c83bd4980ce82}{svcs\+::cli\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand_a7f782beed5f93bf617d6db9449ddbc52}{svcs\+::cli\+::\+Undo\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_ae143bad9e7ab7877d41f980a22f6947f}{svcs\+::cli\+::\+Version\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a40341e753e4ccc73304ef82e6333c8c4}{svcs\+::server\+::cli\+::\+Hub\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_af5c769f4820e2a1b1445817284fab5ae}{svcs\+::server\+::cli\+::\+Repo\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a787cc093291b96dbb785692f7e145618}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1HelpCommand_a04b5a097d88ac3f5f7168e8974e091c9}{svcs\+::test\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand_a04b5a097d88ac3f5f7168e8974e091c9}{svcs\+::test\+::cli\+::utils\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a9f2afa7b244e7be1b7617e2d18677260}{svcs\+::test\+::cli\+::utils\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand_ab892966e19c23a19ce5c4661bc881dd4}{svcs\+::test\+::cli\+::utils\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a134896ccaaa85d63f2cc73f274df4a65}{svcs\+::test\+::cli\+::utils\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand_aaf2153e02f35b59fef2f1129d0c9d2b5}{svcs\+::test\+::cli\+::utils\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a0a42903ddeb04167bc1c83bd4980ce82}{svcs\+::test\+::cli\+::utils\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a7f782beed5f93bf617d6db9449ddbc52}{svcs\+::test\+::cli\+::utils\+::\+Undo\+Command}} и \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand_ae143bad9e7ab7877d41f980a22f6947f}{svcs\+::test\+::cli\+::utils\+::\+Version\+Command}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}\index{svcs::cli::ICommand@{svcs::cli::ICommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::ICommand@{svcs::cli::ICommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97} 
+virtual void svcs\+::cli\+::\+ICommand\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Отображает подробную справочную информацию о команде (использование и описание). 
+
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand_a08697e340b45e17e6b767dca9476bdb3}{svcs\+::cli\+::\+Add\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a9312eba108d0af67c5048ae8831f109c}{svcs\+::cli\+::\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_aefe4842018b0d1ad860742f56f0a8508}{svcs\+::cli\+::\+Branch\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand_a3f155e1cb9caf1b389d83344f059aff9}{svcs\+::cli\+::\+Clear\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a3f9e2f116424e6d9359252ff7de41d76}{svcs\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand_a4420fbcd3bc173204770932bd61c88e0}{svcs\+::cli\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a365b83ad89e13155a87b2c6205182acc}{svcs\+::cli\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a84846769b86f50b4fefb5d35f7a329e4}{svcs\+::cli\+::\+Merge\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1RemoveCommand_a87ec4c8a9b544ed88e33120f3ef7af45}{svcs\+::cli\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1SaveCommand_aa0d4c3807d82dca53c3a1345cdb2702a}{svcs\+::cli\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a00343d92cea91b347157868d2810fd46}{svcs\+::cli\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand_a27d298de178093d4bc9908b8b38e1fa9}{svcs\+::cli\+::\+Undo\+Command}}, \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand_a4079c01d8764cdc6a6a2268db4ebf3d9}{svcs\+::cli\+::\+Version\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a2ffa2320d34715820f92944c2ec44585}{svcs\+::server\+::cli\+::\+Hub\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a88715174ee9758ee721368ef9a7aeb84}{svcs\+::server\+::cli\+::\+Repo\+Command}}, \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a8ebf75fc2472e67519770c1e660e7f19}{svcs\+::server\+::cli\+::\+Server\+Base\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1HelpCommand_a3f9e2f116424e6d9359252ff7de41d76}{svcs\+::test\+::cli\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand_a3f9e2f116424e6d9359252ff7de41d76}{svcs\+::test\+::cli\+::utils\+::\+Help\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand_a4420fbcd3bc173204770932bd61c88e0}{svcs\+::test\+::cli\+::utils\+::\+History\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand_a365b83ad89e13155a87b2c6205182acc}{svcs\+::test\+::cli\+::utils\+::\+Init\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand_a87ec4c8a9b544ed88e33120f3ef7af45}{svcs\+::test\+::cli\+::utils\+::\+Remove\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand_aa0d4c3807d82dca53c3a1345cdb2702a}{svcs\+::test\+::cli\+::utils\+::\+Save\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a00343d92cea91b347157868d2810fd46}{svcs\+::test\+::cli\+::utils\+::\+Status\+Command}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a27d298de178093d4bc9908b8b38e1fa9}{svcs\+::test\+::cli\+::utils\+::\+Undo\+Command}} и \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand_a4079c01d8764cdc6a6a2268db4ebf3d9}{svcs\+::test\+::cli\+::utils\+::\+Version\+Command}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{ICommand_8hxx}{ICommand.\+hxx}}\end{DoxyCompactItemize}

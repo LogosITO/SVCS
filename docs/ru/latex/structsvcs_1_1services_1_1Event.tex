@@ -1,0 +1,185 @@
+\doxysection{Структура svcs\+::services\+::Event}
+\hypertarget{structsvcs_1_1services_1_1Event}{}\label{structsvcs_1_1services_1_1Event}\index{svcs::services::Event@{svcs::services::Event}}
+
+
+Структура, описывающая событие, опубликованное ядром VCS.  
+
+
+
+
+{\ttfamily \#include $<$Event.\+hxx$>$}
+
+\doxysubsubsection*{Открытые типы}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}{Type}} \{ \newline
+\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ac64d847d245494ad9c523d44833afe6b}{FATAL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a5bd981c0e8597d2a525aed272a99b5f3}{RUNTIME\+\_\+\+ERROR}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ad3a3dd10960f2ac488ce55bef8bc3d3e}{REPOSITORY\+\_\+\+INIT\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a0a8956ed9793effa788ec7241cae6b4a}{STAGE\+\_\+\+SUCCESS}}
+, \newline
+\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a796855262a01de65f012e6a40008caf7}{SAVE\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a6cfa83bbd4798cde6c5ead8945d198b6}{OBJECT\+\_\+\+WRITE\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a79a1f809dd29875fe576169bd7258ef0}{OBJECT\+\_\+\+READ\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a3d816618ae36f6da1a21a8fc6aefe5a6}{INDEX\+\_\+\+UPDATE}}
+, \newline
+\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a6827e02397f1c41d06295d14a60cd45a}{COMMIT\+\_\+\+CREATED}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a753e1e5a8c8a667cc6213648e4c73b85}{GENERAL\+\_\+\+INFO}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ad865dd2df62e532ca9677696ff53ceaa}{HELP\+\_\+\+MESSAGE}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df}{DEBUG\+\_\+\+MESSAGE}}
+, \newline
+\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a767626e42cab6c4ba7facd03240206ca}{ERROR\+\_\+\+MESSAGE}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5abc467eceff5c70c06b45b97a12ce3796}{WARNING\+\_\+\+MESSAGE}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a66dbe3c5f1d82d65d8a96394d2dc869d}{PROTOCOL\+\_\+\+START}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea}{PROTOCOL\+\_\+\+SUCCESS}}
+, \newline
+\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a60f872fca6be57904f4f82da1d1f0e5d}{PROTOCOL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a11ffd766199ab9a36c79efd1bf18a5c6}{NETWORK\+\_\+\+SEND}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5af74283bd78571e120281ea81e3987f41}{NETWORK\+\_\+\+RECEIVE}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a4cfc298114c7f71206b90093f7b7c856}{OBJECT\+\_\+\+TRANSFER}}
+, \newline
+\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a69c60096a45b6f55e93256de30bf3d00}{REFERENCE\+\_\+\+UPDATE}}
+, \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ac5e067842a5f70e0556a437a4d3eed7c}{NEGOTIATION\+\_\+\+PHASE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Типы событий, которые могут быть опубликованы. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structsvcs_1_1services_1_1Event_ae80aa49e0553e08f27869fc37d240a1a}\label{structsvcs_1_1services_1_1Event_ae80aa49e0553e08f27869fc37d240a1a} 
+\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}{Type}} {\bfseries type}
+\begin{DoxyCompactList}\small\item\em Тип произошедшего события. \end{DoxyCompactList}\item 
+\Hypertarget{structsvcs_1_1services_1_1Event_acb2891a12db8133cc18e781bacbbeab4}\label{structsvcs_1_1services_1_1Event_acb2891a12db8133cc18e781bacbbeab4} 
+std\+::string {\bfseries details}
+\begin{DoxyCompactList}\small\item\em Подробное описание или полезная нагрузка (например, хеш объекта). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a58efdff2e19ac5f81b8d987549580984}{source\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Источник события (например, "{}main"{}, "{}\+Init\+Command"{}, "{}\+Repository"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура, описывающая событие, опубликованное ядром VCS. 
+
+Это "{}сообщение"{}, которое Subject (Издатель, например, Repository) отправляет всем своим Observers. 
+
+\label{doc-enum-members}
+\Hypertarget{structsvcs_1_1services_1_1Event_doc-enum-members}
+\doxysubsection{Перечисления}
+\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}\index{svcs::services::Event@{svcs::services::Event}!Type@{Type}}
+\index{Type@{Type}!svcs::services::Event@{svcs::services::Event}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5} 
+enum \mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5}{svcs\+::services\+::\+Event\+::\+Type}}}
+
+
+
+Типы событий, которые могут быть опубликованы. 
+
+\begin{DoxyEnumFields}[2]{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FATAL\_ERROR@{FATAL\_ERROR}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!FATAL\_ERROR@{FATAL\_ERROR}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ac64d847d245494ad9c523d44833afe6b}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ac64d847d245494ad9c523d44833afe6b} 
+FATAL\+\_\+\+ERROR&Фатальная ошибка, вызывающая завершение приложения. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUNTIME\_ERROR@{RUNTIME\_ERROR}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!RUNTIME\_ERROR@{RUNTIME\_ERROR}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a5bd981c0e8597d2a525aed272a99b5f3}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a5bd981c0e8597d2a525aed272a99b5f3} 
+RUNTIME\+\_\+\+ERROR&Ошибка выполнения, которая может позволить продолжить выполнение. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REPOSITORY\_INIT\_SUCCESS@{REPOSITORY\_INIT\_SUCCESS}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!REPOSITORY\_INIT\_SUCCESS@{REPOSITORY\_INIT\_SUCCESS}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ad3a3dd10960f2ac488ce55bef8bc3d3e}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ad3a3dd10960f2ac488ce55bef8bc3d3e} 
+REPOSITORY\+\_\+\+INIT\+\_\+\+SUCCESS&Инициализация репозитория успешно завершена. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAGE\_SUCCESS@{STAGE\_SUCCESS}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!STAGE\_SUCCESS@{STAGE\_SUCCESS}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a0a8956ed9793effa788ec7241cae6b4a}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a0a8956ed9793effa788ec7241cae6b4a} 
+STAGE\+\_\+\+SUCCESS&Операция подготовки файлов успешно завершена. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAVE\_SUCCESS@{SAVE\_SUCCESS}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!SAVE\_SUCCESS@{SAVE\_SUCCESS}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a796855262a01de65f012e6a40008caf7}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a796855262a01de65f012e6a40008caf7} 
+SAVE\+\_\+\+SUCCESS&Операция сохранения (коммита) успешно завершена. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBJECT\_WRITE\_SUCCESS@{OBJECT\_WRITE\_SUCCESS}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!OBJECT\_WRITE\_SUCCESS@{OBJECT\_WRITE\_SUCCESS}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a6cfa83bbd4798cde6c5ead8945d198b6}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a6cfa83bbd4798cde6c5ead8945d198b6} 
+OBJECT\+\_\+\+WRITE\+\_\+\+SUCCESS&Операция записи объекта успешно завершена. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBJECT\_READ\_SUCCESS@{OBJECT\_READ\_SUCCESS}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!OBJECT\_READ\_SUCCESS@{OBJECT\_READ\_SUCCESS}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a79a1f809dd29875fe576169bd7258ef0}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a79a1f809dd29875fe576169bd7258ef0} 
+OBJECT\+\_\+\+READ\+\_\+\+SUCCESS&Операция чтения объекта успешно завершена. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INDEX\_UPDATE@{INDEX\_UPDATE}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!INDEX\_UPDATE@{INDEX\_UPDATE}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a3d816618ae36f6da1a21a8fc6aefe5a6}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a3d816618ae36f6da1a21a8fc6aefe5a6} 
+INDEX\+\_\+\+UPDATE&Индекс был обновлен. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMMIT\_CREATED@{COMMIT\_CREATED}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!COMMIT\_CREATED@{COMMIT\_CREATED}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a6827e02397f1c41d06295d14a60cd45a}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a6827e02397f1c41d06295d14a60cd45a} 
+COMMIT\+\_\+\+CREATED&Создан новый коммит. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GENERAL\_INFO@{GENERAL\_INFO}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!GENERAL\_INFO@{GENERAL\_INFO}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a753e1e5a8c8a667cc6213648e4c73b85}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a753e1e5a8c8a667cc6213648e4c73b85} 
+GENERAL\+\_\+\+INFO&Общее информационное сообщение. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HELP\_MESSAGE@{HELP\_MESSAGE}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!HELP\_MESSAGE@{HELP\_MESSAGE}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ad865dd2df62e532ca9677696ff53ceaa}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ad865dd2df62e532ca9677696ff53ceaa} 
+HELP\+\_\+\+MESSAGE&Справочное сообщение для помощи пользователю. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG\_MESSAGE@{DEBUG\_MESSAGE}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!DEBUG\_MESSAGE@{DEBUG\_MESSAGE}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df} 
+DEBUG\+\_\+\+MESSAGE&Отладочное сообщение для целей разработки. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR\_MESSAGE@{ERROR\_MESSAGE}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!ERROR\_MESSAGE@{ERROR\_MESSAGE}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a767626e42cab6c4ba7facd03240206ca}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a767626e42cab6c4ba7facd03240206ca} 
+ERROR\+\_\+\+MESSAGE&Сообщение об ошибке для уведомления пользователя. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARNING\_MESSAGE@{WARNING\_MESSAGE}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!WARNING\_MESSAGE@{WARNING\_MESSAGE}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5abc467eceff5c70c06b45b97a12ce3796}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5abc467eceff5c70c06b45b97a12ce3796} 
+WARNING\+\_\+\+MESSAGE&Предупреждающее сообщение о потенциальных проблемах. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROTOCOL\_START@{PROTOCOL\_START}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!PROTOCOL\_START@{PROTOCOL\_START}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a66dbe3c5f1d82d65d8a96394d2dc869d}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a66dbe3c5f1d82d65d8a96394d2dc869d} 
+PROTOCOL\+\_\+\+START&Операция протокола началась. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROTOCOL\_SUCCESS@{PROTOCOL\_SUCCESS}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!PROTOCOL\_SUCCESS@{PROTOCOL\_SUCCESS}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea} 
+PROTOCOL\+\_\+\+SUCCESS&Операция протокола успешно завершена. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROTOCOL\_ERROR@{PROTOCOL\_ERROR}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!PROTOCOL\_ERROR@{PROTOCOL\_ERROR}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a60f872fca6be57904f4f82da1d1f0e5d}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a60f872fca6be57904f4f82da1d1f0e5d} 
+PROTOCOL\+\_\+\+ERROR&В операции протокола произошла ошибка. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NETWORK\_SEND@{NETWORK\_SEND}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!NETWORK\_SEND@{NETWORK\_SEND}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a11ffd766199ab9a36c79efd1bf18a5c6}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a11ffd766199ab9a36c79efd1bf18a5c6} 
+NETWORK\+\_\+\+SEND&Данные были отправлены по сети. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NETWORK\_RECEIVE@{NETWORK\_RECEIVE}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!NETWORK\_RECEIVE@{NETWORK\_RECEIVE}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5af74283bd78571e120281ea81e3987f41}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5af74283bd78571e120281ea81e3987f41} 
+NETWORK\+\_\+\+RECEIVE&Данные были получены по сети. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBJECT\_TRANSFER@{OBJECT\_TRANSFER}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!OBJECT\_TRANSFER@{OBJECT\_TRANSFER}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a4cfc298114c7f71206b90093f7b7c856}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a4cfc298114c7f71206b90093f7b7c856} 
+OBJECT\+\_\+\+TRANSFER&Выполняется передача объекта. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFERENCE\_UPDATE@{REFERENCE\_UPDATE}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!REFERENCE\_UPDATE@{REFERENCE\_UPDATE}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a69c60096a45b6f55e93256de30bf3d00}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a69c60096a45b6f55e93256de30bf3d00} 
+REFERENCE\+\_\+\+UPDATE&Ссылка (ветка/тег) была обновлена. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGOTIATION\_PHASE@{NEGOTIATION\_PHASE}!svcs::services::Event@{svcs::services::Event}}\index{svcs::services::Event@{svcs::services::Event}!NEGOTIATION\_PHASE@{NEGOTIATION\_PHASE}}}\Hypertarget{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ac5e067842a5f70e0556a437a4d3eed7c}\label{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5ac5e067842a5f70e0556a437a4d3eed7c} 
+NEGOTIATION\+\_\+\+PHASE&Выполняется фаза согласования протокола. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-variable-members}
+\Hypertarget{structsvcs_1_1services_1_1Event_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{structsvcs_1_1services_1_1Event_a58efdff2e19ac5f81b8d987549580984}\index{svcs::services::Event@{svcs::services::Event}!source\_name@{source\_name}}
+\index{source\_name@{source\_name}!svcs::services::Event@{svcs::services::Event}}
+\doxysubsubsection{\texorpdfstring{source\_name}{source\_name}}
+{\footnotesize\ttfamily \label{structsvcs_1_1services_1_1Event_a58efdff2e19ac5f81b8d987549580984} 
+std\+::string svcs\+::services\+::\+Event\+::source\+\_\+name}
+
+
+
+Источник события (например, "{}main"{}, "{}\+Init\+Command"{}, "{}\+Repository"{}). 
+
+Добавлено для поддержки агрегатной инициализации с тремя аргументами в вызовах notify(). 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{Event_8hxx}{Event.\+hxx}}\end{DoxyCompactItemize}

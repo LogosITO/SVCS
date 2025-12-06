@@ -1,0 +1,163 @@
+\doxysection{Класс svcs\+::cli\+::Merge\+Command}
+\hypertarget{classsvcs_1_1cli_1_1MergeCommand}{}\label{classsvcs_1_1cli_1_1MergeCommand}\index{svcs::cli::MergeCommand@{svcs::cli::MergeCommand}}
+
+
+Команда для слияния веток в системе контроля версий.  
+
+
+
+
+{\ttfamily \#include $<$Merge\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::cli\+::Merge\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1MergeCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a7b500b4a318434c0590345c38e5a25bd}{Merge\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1cli_1_1MergeCommand}{Merge\+Command} с шиной событий и менеджером репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_a898e80500d7c900c0754fcf661aefa0d}\label{classsvcs_1_1cli_1_1MergeCommand_a898e80500d7c900c0754fcf661aefa0d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Merge\+Command} () override=default
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a52321172f1c88da0b9965c2b32d17923}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a71572214e70b667eb735016c1cf0c4b9}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a913526199045aeb571b4ca5764729772}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a4c8aec40cf39347db013c8bccbcdb48b}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду merge с заданными аргументами. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand_a84846769b86f50b4fefb5d35f7a329e4}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает справочную информацию для команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для слияния веток в системе контроля версий. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_a7b500b4a318434c0590345c38e5a25bd}\index{svcs::cli::MergeCommand@{svcs::cli::MergeCommand}!MergeCommand@{MergeCommand}}
+\index{MergeCommand@{MergeCommand}!svcs::cli::MergeCommand@{svcs::cli::MergeCommand}}
+\doxysubsubsection{\texorpdfstring{MergeCommand()}{MergeCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1MergeCommand_a7b500b4a318434c0590345c38e5a25bd} 
+svcs\+::cli\+::\+Merge\+Command\+::\+Merge\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classsvcs_1_1cli_1_1MergeCommand}{Merge\+Command} с шиной событий и менеджером репозитория. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\+\_\+bus} & Шина событий для уведомлений \\
+\hline
+{\em repo\+\_\+manager} & Менеджер репозитория для операций слияния \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_a4c8aec40cf39347db013c8bccbcdb48b}\index{svcs::cli::MergeCommand@{svcs::cli::MergeCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::cli::MergeCommand@{svcs::cli::MergeCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1MergeCommand_a4c8aec40cf39347db013c8bccbcdb48b} 
+bool svcs\+::cli\+::\+Merge\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду merge с заданными аргументами. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы командной строки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если выполнение успешно, false в противном случае 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_a71572214e70b667eb735016c1cf0c4b9}\index{svcs::cli::MergeCommand@{svcs::cli::MergeCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::MergeCommand@{svcs::cli::MergeCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1MergeCommand_a71572214e70b667eb735016c1cf0c4b9} 
+std\+::string svcs\+::cli\+::\+Merge\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Краткое описание команды 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_a52321172f1c88da0b9965c2b32d17923}\index{svcs::cli::MergeCommand@{svcs::cli::MergeCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::MergeCommand@{svcs::cli::MergeCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1MergeCommand_a52321172f1c88da0b9965c2b32d17923} 
+std\+::string svcs\+::cli\+::\+Merge\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя команды "{}merge"{} 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_a913526199045aeb571b4ca5764729772}\index{svcs::cli::MergeCommand@{svcs::cli::MergeCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::MergeCommand@{svcs::cli::MergeCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1MergeCommand_a913526199045aeb571b4ca5764729772} 
+std\+::string svcs\+::cli\+::\+Merge\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка синтаксиса использования 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1MergeCommand_a84846769b86f50b4fefb5d35f7a329e4}\index{svcs::cli::MergeCommand@{svcs::cli::MergeCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::MergeCommand@{svcs::cli::MergeCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1MergeCommand_a84846769b86f50b4fefb5d35f7a329e4} 
+void svcs\+::cli\+::\+Merge\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает справочную информацию для команды. 
+
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{MergeCommand_8hxx}{Merge\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{MergeCommand_8cxx}{Merge\+Command.\+cxx}}\end{DoxyCompactItemize}

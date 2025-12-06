@@ -19,6 +19,8 @@
 #include <fstream>
 #include <algorithm>
 
+namespace svcs::server {
+
 namespace fs = std::filesystem;
 
 RemoteProtocol::RemoteProtocol(std::shared_ptr<ISubject> event_bus,
@@ -410,4 +412,6 @@ void RemoteProtocol::notifyError(const std::string& message) const {
     if (event_bus_) {
         event_bus_->notify({Event::Type::ERROR_MESSAGE, "[Protocol] " + message});
     }
+}
+
 }

@@ -24,6 +24,8 @@
 #include <fstream>
 #include <algorithm>
 
+namespace svcs::test::cli::utils {
+
 void RemoveCommandTest::SetUp() {
     this->mockEventBus = std::make_shared<MockSubject>();
     this->repoManager = std::make_shared<RepositoryManager>(this->mockEventBus);
@@ -74,4 +76,6 @@ bool RemoveCommandTest::containsMessage(const std::vector<Event>& notifications,
         [&message](const Event& event) {
             return event.details.find(message) != std::string::npos;
         });
+}
+
 }

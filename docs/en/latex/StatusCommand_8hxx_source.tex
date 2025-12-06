@@ -14,48 +14,55 @@
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <filesystem>}}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classStatusCommand_accc3fc5aaec6e577f370a01ebb4bd64f}{StatusCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
-\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00052\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00061\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classStatusCommand_accc3fc5aaec6e577f370a01ebb4bd64f}{StatusCommand}}(std::shared\_ptr<ISubject>\ subject,}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStatusCommand_afae0046daf1753424c5edc41da5dd471}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00100\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classStatusCommand_aaf279d68d3c32ef4485ea6bed4e8d74e}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}status"{}};\ \}}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00111\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classStatusCommand_a2219bfd5d22ec03748578794d7bd11d1}{getDescription}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00122\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classStatusCommand_a9b28c176b2739fd29325f6ffa87ca2b3}{getUsage}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStatusCommand_af033d933495d50bf7e76df821d5ff18f}{showHelp}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00143\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ showFullStatus()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00156\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ showFileStatus(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ showBranchInfo()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00166\ }
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ showStagedChanges()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}}\ \{}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{using\ namespace\ }svcs::core;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{using\ namespace\ }svcs::services;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a79828b6c391d05869f75f5c84a88bc1f}{StatusCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00062\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a79828b6c391d05869f75f5c84a88bc1f}{StatusCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_ae42c61328680bcfbcdbd324161d9a4fe}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00118\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a22c7b92531d7be0f48401f097d8c3e6b}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}status"{}};\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00129\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a708acf0ea6691310043a5dba697ec0aa}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00140\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a0a42903ddeb04167bc1c83bd4980ce82}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand_a00343d92cea91b347157868d2810fd46}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00161\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ showFullStatus()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00174\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ showFileStatus(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00175\ }
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ showUnstagedChanges()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ showBranchInfo()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00184\ }
-\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ showUntrackedFiles()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ showStagedChanges()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00193\ }
-\DoxyCodeLine{00203\ \ \ \ \ [[nodiscard]]\ std::string\ getCurrentBranch()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00204\ }
-\DoxyCodeLine{00216\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isFileModified(\textcolor{keyword}{const}\ std::filesystem::path\&\ filePath)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00217\ }
-\DoxyCodeLine{00227\ \ \ \ \ [[nodiscard]]\ std::vector<std::filesystem::path>\ findUntrackedFiles()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00228\ }
-\DoxyCodeLine{00242\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ formatFileStatus(\textcolor{keywordtype}{char}\ status,\ \textcolor{keyword}{const}\ std::string\&\ filePath);}
-\DoxyCodeLine{00243\ }
-\DoxyCodeLine{00255\ \ \ \ \ [[nodiscard]]\ std::pair<char,\ std::string>\ getFileStatus(\textcolor{keyword}{const}\ std::string\&\ filePath)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00256\ \};}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ showUnstagedChanges()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{void}\ showUntrackedFiles()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00221\ \ \ \ \ [[nodiscard]]\ std::string\ getCurrentBranch()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00234\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isFileModified(\textcolor{keyword}{const}\ std::filesystem::path\&\ filePath)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00245\ \ \ \ \ [[nodiscard]]\ std::vector<std::filesystem::path>\ findUntrackedFiles()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00260\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ formatFileStatus(\textcolor{keywordtype}{char}\ status,\ \textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00273\ \ \ \ \ [[nodiscard]]\ std::pair<char,\ std::string>\ getFileStatus(\textcolor{keyword}{const}\ std::string\&\ filePath)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00274\ \};}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \}}
 
 \end{DoxyCode}

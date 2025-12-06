@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Исходный файл tests/cli/mocks/MockSubject.hxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('cli_2mocks_2MockSubject_8hxx_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MockSubject.hxx</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="cli_2mocks_2MockSubject_8hxx.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="ISubject_8hxx.html">../../../services/ISubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;gmock/gmock.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html">   40</a></span><span class="comment"> * Эти моки предоставляют контролируемые ответы команд и возможности</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * верификации для модульных тестов CLI команд.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesvcs_1_1test_1_1cli_1_1mocks.html">svcs::test::cli::mocks</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">   45</a></span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacesvcs_1_1services.html">svcs::services</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#abfc5bfa7fe007eca3e7e8dd8d84e1d9c">   65</a></span><span class="comment"> */</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">class </span><a class="code hl_class" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html">MockSubject</a> : <span class="keyword">public</span> <a class="code hl_class" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">public</span>:</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a9a7613259015868f3b9d2725a714f0de">   72</a></span><span class="comment">     * @russian</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">     * @brief Хранит историю всех событий, полученных через метод notify(), для проверки утверждений.</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">     */</span></div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    std::vector&lt;Event&gt; <a class="code hl_variable" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">notifications</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a7c66c01a5895b3e2bba2647868270cd9">   81</a></span><span class="comment">     *</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">     * @russian</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">     * @brief Выполняет требования интерфейса ISubject, но не выполняет никаких операций.</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">     * @param observer Наблюдатель для присоединения (не используется в mock).</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc836d74e84b6379f78a2e10ed116665">attach</a>(std::shared_ptr&lt;IObserver&gt; observer)<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0fb53dcfb9b83322eae1e259de0813a7">   95</a></span><span class="comment">     * @param observer Наблюдатель для отсоединения (не используется в mock).</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a1c46d6e5b260b76d18a638f3668e97af">detach</a>(std::shared_ptr&lt;IObserver&gt; observer)<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0899f6d7dd77c329e9a899d65fda7910">  108</a></span><span class="comment">     * @details Это основная тестовая функция, позволяющая тестовым случаям проверять,</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">     * что были опубликованы правильные события.</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">     * @param event Константная ссылка на структуру события для захвата.</span></div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#abfc5bfa7fe007eca3e7e8dd8d84e1d9c">notify</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structsvcs_1_1services_1_1Event.html">Event</a>&amp; event)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html">MockSubject</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_variable" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">notifications</a>.push_back(event);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a6230e6c7a870e15dc3a2cf44d59efc23">  115</a></span></div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a5526783874872235386bf757a8ff64fb">  123</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a9a7613259015868f3b9d2725a714f0de">clear</a>() {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <a class="code hl_variable" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">notifications</a>.clear();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a7c66c01a5895b3e2bba2647868270cd9">containsMessage</a>(<span class="keyword">const</span> std::string&amp; message)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; notification : <a class="code hl_variable" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">notifications</a>) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordflow">if</span> (notification.details.find(message) != std::string::npos) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0fb53dcfb9b83322eae1e259de0813a7">containsEventType</a>(<a class="code hl_enumeration" href="structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5">Event::Type</a> type)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; notification : <a class="code hl_variable" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">notifications</a>) {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">if</span> (notification.type == type) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0899f6d7dd77c329e9a899d65fda7910">storeNotification</a>(<span class="keyword">const</span> Event&amp; event) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <a class="code hl_variable" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">notifications</a>.push_back(event);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a6230e6c7a870e15dc3a2cf44d59efc23">clearNotifications</a>() {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <a class="code hl_variable" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">notifications</a>.clear();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    [[nodiscard]] <span class="keyword">const</span> std::vector&lt;Event&gt;&amp; <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a5526783874872235386bf757a8ff64fb">getNotifications</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">notifications</a>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>};</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>}</div>
+<div class="ttc" id="aISubject_8hxx_html"><div class="ttname"><a href="ISubject_8hxx.html">ISubject.hxx</a></div><div class="ttdoc">Определяет интерфейс для компонента Subject (Издатель) шаблона Observer.</div></div>
+<div class="ttc" id="aclasssvcs_1_1services_1_1ISubject_html"><div class="ttname"><a href="classsvcs_1_1services_1_1ISubject.html">svcs::services::ISubject</a></div><div class="ttdoc">Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).</div><div class="ttdef"><b>Определения</b> ISubject.hxx:35</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html">svcs::test::cli::mocks::MockSubject</a></div><div class="ttdoc">Mock реализация ISubject для тестирования событийно-ориентированных компонентов.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:40</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_a0899f6d7dd77c329e9a899d65fda7910"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0899f6d7dd77c329e9a899d65fda7910">svcs::test::cli::mocks::MockSubject::storeNotification</a></div><div class="ttdeci">void storeNotification(const Event &amp;event)</div><div class="ttdoc">Сохраняет уведомление во внутреннем векторе (псевдоним для функциональности notify).</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:108</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_a0fb53dcfb9b83322eae1e259de0813a7"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0fb53dcfb9b83322eae1e259de0813a7">svcs::test::cli::mocks::MockSubject::containsEventType</a></div><div class="ttdeci">bool containsEventType(Event::Type type) const</div><div class="ttdoc">Проверяет, соответствует ли какое-либо захваченное уведомление указанному типу события.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:95</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_a1c46d6e5b260b76d18a638f3668e97af"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a1c46d6e5b260b76d18a638f3668e97af">svcs::test::cli::mocks::MockSubject::detach</a></div><div class="ttdeci">void detach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Выполняет требования интерфейса ISubject, но не выполняет никаких операций.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:57</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_a5526783874872235386bf757a8ff64fb"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a5526783874872235386bf757a8ff64fb">svcs::test::cli::mocks::MockSubject::getNotifications</a></div><div class="ttdeci">const std::vector&lt; Event &gt; &amp; getNotifications() const</div><div class="ttdoc">Возвращает константную ссылку на вектор уведомлений для проверки.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:123</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_a6230e6c7a870e15dc3a2cf44d59efc23"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a6230e6c7a870e15dc3a2cf44d59efc23">svcs::test::cli::mocks::MockSubject::clearNotifications</a></div><div class="ttdeci">void clearNotifications()</div><div class="ttdoc">Очищает все уведомления из внутреннего хранилища.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:115</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_a7c66c01a5895b3e2bba2647868270cd9"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a7c66c01a5895b3e2bba2647868270cd9">svcs::test::cli::mocks::MockSubject::containsMessage</a></div><div class="ttdeci">bool containsMessage(const std::string &amp;message) const</div><div class="ttdoc">Проверяет, содержат ли детали любого захваченного уведомления указанную подстроку сообщения.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:81</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_a9a7613259015868f3b9d2725a714f0de"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a9a7613259015868f3b9d2725a714f0de">svcs::test::cli::mocks::MockSubject::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Очищает все захваченные уведомления.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:72</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_abfc5bfa7fe007eca3e7e8dd8d84e1d9c"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#abfc5bfa7fe007eca3e7e8dd8d84e1d9c">svcs::test::cli::mocks::MockSubject::notify</a></div><div class="ttdeci">void notify(const Event &amp;event) const override</div><div class="ttdoc">Захватывает событие во внутренний вектор уведомлений.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:65</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_adc637e3e7975e060621501b08f1e7d13"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc637e3e7975e060621501b08f1e7d13">svcs::test::cli::mocks::MockSubject::notifications</a></div><div class="ttdeci">std::vector&lt; Event &gt; notifications</div><div class="ttdoc">Хранит историю всех событий, полученных через метод notify(), для проверки утверждений.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:45</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_html_adc836d74e84b6379f78a2e10ed116665"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#adc836d74e84b6379f78a2e10ed116665">svcs::test::cli::mocks::MockSubject::attach</a></div><div class="ttdeci">void attach(std::shared_ptr&lt; IObserver &gt; observer) override</div><div class="ttdoc">Выполняет требования интерфейса ISubject, но не выполняет никаких операций.</div><div class="ttdef"><b>Определения</b> MockSubject.hxx:51</div></div>
+<div class="ttc" id="anamespacesvcs_1_1services_html"><div class="ttname"><a href="namespacesvcs_1_1services.html">svcs::services</a></div><div class="ttdoc">Компоненты сервисного слоя и инфраструктурные сервисы.</div></div>
+<div class="ttc" id="anamespacesvcs_1_1test_1_1cli_1_1mocks_html"><div class="ttname"><a href="namespacesvcs_1_1test_1_1cli_1_1mocks.html">svcs::test::cli::mocks</a></div><div class="ttdoc">Mock объекты и тестовые дубли для тестирования CLI команд.</div></div>
+<div class="ttc" id="astructsvcs_1_1services_1_1Event_html"><div class="ttname"><a href="structsvcs_1_1services_1_1Event.html">svcs::services::Event</a></div><div class="ttdoc">Структура, описывающая событие, опубликованное ядром VCS.</div><div class="ttdef"><b>Определения</b> Event.hxx:27</div></div>
+<div class="ttc" id="astructsvcs_1_1services_1_1Event_html_a398a548bdd41d5e1f9820d74962700b5"><div class="ttname"><a href="structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5">svcs::services::Event::Type</a></div><div class="ttdeci">Type</div><div class="ttdoc">Типы событий, которые могут быть опубликованы.</div><div class="ttdef"><b>Определения</b> Event.hxx:31</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a href="dir_10f909bea03e4b54473bf8b174380ada.html">cli</a></li><li class="navelem"><a href="dir_40a6c997b3d7922f7b6bda8b4b18a507.html">mocks</a></li><li class="navelem"><a href="cli_2mocks_2MockSubject_8hxx.html">MockSubject.hxx</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

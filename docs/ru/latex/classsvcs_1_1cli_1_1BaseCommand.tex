@@ -1,0 +1,292 @@
+\doxysection{Класс svcs\+::cli\+::Base\+Command}
+\hypertarget{classsvcs_1_1cli_1_1BaseCommand}{}\label{classsvcs_1_1cli_1_1BaseCommand}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+
+
+Базовый класс для всех CLI команд.  
+
+
+
+
+{\ttfamily \#include $<$Base\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::cli\+::Base\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1BaseCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a143ac6f12e29d7a64165e786dff1ddaf}{Base\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_aff9c257d0a8a818fdc1c108b2097dbbf}{\texorpdfstring{$\sim$}{\string~}\+Base\+Command}} () override=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{get\+Name}} () const override=0
+\begin{DoxyCompactList}\small\item\em Получает имя команды (например, "{}init"{}, "{}commit"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3}{get\+Description}} () const override=0
+\begin{DoxyCompactList}\small\item\em Получает краткое описание команды. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1}{get\+Usage}} () const override=0
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a9312eba108d0af67c5048ae8831f109c}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает справку по команде (использование и описание). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a6826e962dcc1821867657181ad75a951}{log\+Debug}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Генерирует событие отладочной информации (DEBUG\+\_\+\+MESSAGE). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a924d330958eebb1a55d19448e7743b07}{log\+Info}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Генерирует общее информационное событие (GENERAL\+\_\+\+INFO). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a9fedd48541f6e0742088b87ebae2031b}{log\+Error}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Генерирует событие ошибки выполнения (RUNTIME\+\_\+\+ERROR). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a23cef7adcdd61aa970db00a8962f0106}{log\+Success}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Генерирует событие успешного выполнения (GENERAL\+\_\+\+INFO с префиксом SUCCESS). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_af547d2c947a8d7a8d171cd2a8a3d4c3e}{log\+Warning}} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Генерирует событие предупреждения (RUNTIME\+\_\+\+ERROR с префиксом WARNING). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args)=0
+\begin{DoxyCompactList}\small\item\em Выполняет основную логику команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ab0450a3435cdf9647d26cde0d0631dc2}{find\+Repository}} ()
+\begin{DoxyCompactList}\small\item\em Находит существующий репозиторий в текущей или родительских директориях. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a22e18e67d0a61988f8085430d8769bdc}{create\+Repository}} (const std\+::string \&path="{}."{})
+\begin{DoxyCompactList}\small\item\em Создает новый экземпляр репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{event\+Subject\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Экземпляр субъекта событий (шины событий). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Базовый класс для всех CLI команд. 
+
+Предоставляет общую инфраструктуру для взаимодействия с системой шины событий (\doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}) и служебные методы для работы с репозиторием. Отвечает за логирование через шину событий. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a143ac6f12e29d7a64165e786dff1ddaf}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!BaseCommand@{BaseCommand}}
+\index{BaseCommand@{BaseCommand}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{BaseCommand()}{BaseCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a143ac6f12e29d7a64165e786dff1ddaf} 
+svcs\+::cli\+::\+Base\+Command\+::\+Base\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Экземпляр \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (шины событий), который будет использоваться для генерации событий и логов. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_aff9c257d0a8a818fdc1c108b2097dbbf}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!````~BaseCommand@{\texorpdfstring{$\sim$}{\string~}BaseCommand}}
+\index{````~BaseCommand@{\texorpdfstring{$\sim$}{\string~}BaseCommand}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BaseCommand()}{\string~BaseCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_aff9c257d0a8a818fdc1c108b2097dbbf} 
+svcs\+::cli\+::\+Base\+Command\+::\texorpdfstring{$\sim$}{\string~}\+Base\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Виртуальный деструктор. 
+
+Обеспечивает корректную очистку производных классов. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a22e18e67d0a61988f8085430d8769bdc}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!createRepository@{createRepository}}
+\index{createRepository@{createRepository}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{createRepository()}{createRepository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a22e18e67d0a61988f8085430d8769bdc} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ svcs\+::cli\+::\+Base\+Command\+::create\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Создает новый экземпляр репозитория. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь, где должен быть создан репозиторий (по умолчанию \textquotesingle{}.\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Умный указатель на новый \doxylink{classsvcs_1_1core_1_1Repository}{Repository}. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_ab0450a3435cdf9647d26cde0d0631dc2}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!findRepository@{findRepository}}
+\index{findRepository@{findRepository}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{findRepository()}{findRepository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_ab0450a3435cdf9647d26cde0d0631dc2} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}} $>$ svcs\+::cli\+::\+Base\+Command\+::find\+Repository (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Находит существующий репозиторий в текущей или родительских директориях. 
+
+\begin{DoxyReturn}{Возвращает}
+Умный указатель на найденный \doxylink{classsvcs_1_1core_1_1Repository}{Repository} или nullptr если репозиторий не найден. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3} 
+virtual std\+::string svcs\+::cli\+::\+Base\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Получает краткое описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Описание команды. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d} 
+virtual std\+::string svcs\+::cli\+::\+Base\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Получает имя команды (например, "{}init"{}, "{}commit"{}). 
+
+\begin{DoxyReturn}{Возвращает}
+Имя команды в виде строки. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1} 
+virtual std\+::string svcs\+::cli\+::\+Base\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка с синтаксисом (например, "{}vcs init $<$path$>$"{}). 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a6826e962dcc1821867657181ad75a951}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logDebug@{logDebug}}
+\index{logDebug@{logDebug}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logDebug()}{logDebug()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a6826e962dcc1821867657181ad75a951} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерирует событие отладочной информации (DEBUG\+\_\+\+MESSAGE). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Текст отладочного сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a9fedd48541f6e0742088b87ebae2031b}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logError@{logError}}
+\index{logError@{logError}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a9fedd48541f6e0742088b87ebae2031b} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерирует событие ошибки выполнения (RUNTIME\+\_\+\+ERROR). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Текст сообщения об ошибке. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a924d330958eebb1a55d19448e7743b07}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logInfo@{logInfo}}
+\index{logInfo@{logInfo}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logInfo()}{logInfo()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a924d330958eebb1a55d19448e7743b07} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерирует общее информационное событие (GENERAL\+\_\+\+INFO). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Текст информационного сообщения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a23cef7adcdd61aa970db00a8962f0106}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logSuccess@{logSuccess}}
+\index{logSuccess@{logSuccess}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logSuccess()}{logSuccess()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a23cef7adcdd61aa970db00a8962f0106} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Success (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерирует событие успешного выполнения (GENERAL\+\_\+\+INFO с префиксом SUCCESS). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Текст сообщения об успешном выполнении. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_af547d2c947a8d7a8d171cd2a8a3d4c3e}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!logWarning@{logWarning}}
+\index{logWarning@{logWarning}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{logWarning()}{logWarning()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_af547d2c947a8d7a8d171cd2a8a3d4c3e} 
+void svcs\+::cli\+::\+Base\+Command\+::log\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерирует событие предупреждения (RUNTIME\+\_\+\+ERROR с префиксом WARNING). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Текст сообщения-\/предупреждения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_a9312eba108d0af67c5048ae8831f109c}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_a9312eba108d0af67c5048ae8831f109c} 
+void svcs\+::cli\+::\+Base\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает справку по команде (использование и описание). 
+
+Этот метод выводит информацию непосредственно в стандартный поток вывода (stdout). 
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}\index{svcs::cli::BaseCommand@{svcs::cli::BaseCommand}!eventSubject\_@{eventSubject\_}}
+\index{eventSubject\_@{eventSubject\_}!svcs::cli::BaseCommand@{svcs::cli::BaseCommand}}
+\doxysubsubsection{\texorpdfstring{eventSubject\_}{eventSubject\_}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4} 
+std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}}$>$ svcs\+::cli\+::\+Base\+Command\+::event\+Subject\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Экземпляр субъекта событий (шины событий). 
+
+Используется для генерации событий (логов), которые будут получены наблюдателями, такими как \doxylink{classsvcs_1_1services_1_1Logger}{Logger}. 
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{BaseCommand_8hxx}{Base\+Command.\+hxx}}\end{DoxyCompactItemize}

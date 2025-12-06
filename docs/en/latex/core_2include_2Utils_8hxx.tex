@@ -7,16 +7,21 @@ Defines utility functions for core of SVCS.
 
 {\ttfamily \#include $<$filesystem$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Core VCS data structures and object model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \mbox{\hyperlink{core_2include_2Utils_8hxx_aee4ae6af295150b8d2daa18f1b1b1a01}{read\+\_\+file\+\_\+to\+\_\+string}} (const fs\+::path \&full\+\_\+path)
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a4568847d1748de37af94b13137664561}{svcs\+::core\+::read\+\_\+file\+\_\+to\+\_\+string}} (const fs\+::path \&full\+\_\+path)
 \begin{DoxyCompactList}\small\item\em Reads the entire content of a file into a single std\+::string. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{core_2include_2Utils_8hxx_a3c03f3592ffa57a1f2ad8be7ddab13f4}{binary\+\_\+to\+\_\+hex\+\_\+string}} (const unsigned char \texorpdfstring{$\ast$}{*}binary\+\_\+data, size\+\_\+t length)
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_ae4589d250a2f03780b3dc5e4323a5d8d}{svcs\+::core\+::binary\+\_\+to\+\_\+hex\+\_\+string}} (const unsigned char \texorpdfstring{$\ast$}{*}binary\+\_\+data, size\+\_\+t length)
 \begin{DoxyCompactList}\small\item\em Converts a binary buffer (e.\+g., a raw SHA-\/1 hash) into its hexadecimal string representation. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{core_2include_2Utils_8hxx_a7fc89ff4883c714ee7a53698eb485ec3}{hex\+\_\+to\+\_\+binary\+\_\+string}} (const std\+::string \&hex\+\_\+string)
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a66002a699a8af234d86db96941733398}{svcs\+::core\+::hex\+\_\+to\+\_\+binary\+\_\+string}} (const std\+::string \&hex\+\_\+string)
 \begin{DoxyCompactList}\small\item\em Converts a hexadecimal string (e.\+g., 40 chars) into its raw binary byte representation (e.\+g., 20 bytes). \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{core_2include_2Utils_8hxx_a98673c362b0d36f58739502e3a21e96f}{compute\+\_\+sha256}} (const std\+::string \&input)
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a1cabf85fbe47a7f75139b05f045d4a86}{svcs\+::core\+::compute\+\_\+sha256}} (const std\+::string \&input)
 \begin{DoxyCompactList}\small\item\em Computes the SHA-\/256 hash of the given input data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -26,92 +31,3 @@ Defines utility functions for core of SVCS.
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-
-
-\label{doc-func-members}
-\Hypertarget{core_2include_2Utils_8hxx_doc-func-members}
-\doxysubsection{Function Documentation}
-\Hypertarget{core_2include_2Utils_8hxx_a3c03f3592ffa57a1f2ad8be7ddab13f4}\index{Utils.hxx@{Utils.hxx}!binary\_to\_hex\_string@{binary\_to\_hex\_string}}
-\index{binary\_to\_hex\_string@{binary\_to\_hex\_string}!Utils.hxx@{Utils.hxx}}
-\doxysubsubsection{\texorpdfstring{binary\_to\_hex\_string()}{binary\_to\_hex\_string()}}
-{\footnotesize\ttfamily \label{core_2include_2Utils_8hxx_a3c03f3592ffa57a1f2ad8be7ddab13f4} 
-std\+::string binary\+\_\+to\+\_\+hex\+\_\+string (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{binary\+\_\+data}{, }\item[{size\+\_\+t}]{length}{}\end{DoxyParamCaption})}
-
-
-
-Converts a binary buffer (e.\+g., a raw SHA-\/1 hash) into its hexadecimal string representation. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em binary\+\_\+data} & Pointer to the raw binary data. \\
-\hline
-{\em length} & The length of the binary data in bytes (e.\+g., 20 for SHA-\/1). \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A std\+::string containing the hexadecimal representation (e.\+g., 40 characters for SHA-\/1). 
-\end{DoxyReturn}
-\Hypertarget{core_2include_2Utils_8hxx_a98673c362b0d36f58739502e3a21e96f}\index{Utils.hxx@{Utils.hxx}!compute\_sha256@{compute\_sha256}}
-\index{compute\_sha256@{compute\_sha256}!Utils.hxx@{Utils.hxx}}
-\doxysubsubsection{\texorpdfstring{compute\_sha256()}{compute\_sha256()}}
-{\footnotesize\ttfamily \label{core_2include_2Utils_8hxx_a98673c362b0d36f58739502e3a21e96f} 
-std\+::string compute\+\_\+sha256 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})}
-
-
-
-Computes the SHA-\/256 hash of the given input data. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em input} & The input data to hash. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-std\+::string The SHA-\/256 hash as a hexadecimal string. 
-\end{DoxyReturn}
-\Hypertarget{core_2include_2Utils_8hxx_a7fc89ff4883c714ee7a53698eb485ec3}\index{Utils.hxx@{Utils.hxx}!hex\_to\_binary\_string@{hex\_to\_binary\_string}}
-\index{hex\_to\_binary\_string@{hex\_to\_binary\_string}!Utils.hxx@{Utils.hxx}}
-\doxysubsubsection{\texorpdfstring{hex\_to\_binary\_string()}{hex\_to\_binary\_string()}}
-{\footnotesize\ttfamily \label{core_2include_2Utils_8hxx_a7fc89ff4883c714ee7a53698eb485ec3} 
-std\+::string hex\+\_\+to\+\_\+binary\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hex\+\_\+string}{}\end{DoxyParamCaption})}
-
-
-
-Converts a hexadecimal string (e.\+g., 40 chars) into its raw binary byte representation (e.\+g., 20 bytes). 
-
-
-\begin{DoxyParams}{Parameters}
-{\em hex\+\_\+string} & The input hexadecimal string. Must have an even length. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A std\+::string containing the raw binary bytes. 
-\end{DoxyReturn}
-
-\begin{DoxyExceptions}{Exceptions}
-{\em std\+::runtime\+\_\+error} & if the input string has an odd length or contains invalid hex characters. \\
-\hline
-\end{DoxyExceptions}
-\Hypertarget{core_2include_2Utils_8hxx_aee4ae6af295150b8d2daa18f1b1b1a01}\index{Utils.hxx@{Utils.hxx}!read\_file\_to\_string@{read\_file\_to\_string}}
-\index{read\_file\_to\_string@{read\_file\_to\_string}!Utils.hxx@{Utils.hxx}}
-\doxysubsubsection{\texorpdfstring{read\_file\_to\_string()}{read\_file\_to\_string()}}
-{\footnotesize\ttfamily \label{core_2include_2Utils_8hxx_aee4ae6af295150b8d2daa18f1b1b1a01} 
-std\+::string read\+\_\+file\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{full\+\_\+path}{}\end{DoxyParamCaption})}
-
-
-
-Reads the entire content of a file into a single std\+::string. 
-
-This utility function is designed for reading small to medium-\/sized files and is crucial for creating \doxylink{classVcsObject}{Vcs\+Object} contents (e.\+g., Blobs). It opens the file in binary mode to ensure all characters are read correctly across platforms. 
-\begin{DoxyParams}{Parameters}
-{\em full\+\_\+path} & The full, absolute path to the file on disk. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The entire content of the file as a single std\+::string. 
-\end{DoxyReturn}
-
-\begin{DoxyExceptions}{Exceptions}
-{\em std\+::runtime\+\_\+error} & If the file cannot be opened for reading. \\
-\hline
-\end{DoxyExceptions}

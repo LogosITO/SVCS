@@ -2,7 +2,7 @@
 \hypertarget{CommandFactory_8cxx}{}\label{CommandFactory_8cxx}\index{cli/src/CommandFactory.cxx@{cli/src/CommandFactory.cxx}}
 
 
-Реализация класса \doxylink{classCommandFactory}{Command\+Factory}, который отвечает за динамическое создание объектов \doxylink{classICommand}{ICommand} и управление их жизненным циклом и зависимостями.  
+Реализация класса Command\+Factory, который отвечает за динамическое создание объектов ICommand и управление их жизненным циклом и зависимостями.  
 
 
 {\ttfamily \#include "{}../include/\+Utils.\+hxx"{}}\newline
@@ -25,10 +25,15 @@
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
 {\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Компоненты командной строки и реализации команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация класса \doxylink{classCommandFactory}{Command\+Factory}, который отвечает за динамическое создание объектов \doxylink{classICommand}{ICommand} и управление их жизненным циклом и зависимостями. 
+Реализация класса Command\+Factory, который отвечает за динамическое создание объектов ICommand и управление их жизненным циклом и зависимостями. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License 

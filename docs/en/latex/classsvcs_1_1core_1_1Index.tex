@@ -1,0 +1,209 @@
+\doxysection{svcs\+::core\+::Index Class Reference}
+\hypertarget{classsvcs_1_1core_1_1Index}{}\label{classsvcs_1_1core_1_1Index}\index{svcs::core::Index@{svcs::core::Index}}
+
+
+Manages the Staging Area (\doxylink{classsvcs_1_1core_1_1Index}{Index}) of the VCS repository.  
+
+
+
+
+{\ttfamily \#include $<$Index.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Index_a920e69911a8617367d5f609a4277eb6b}{Index}} (const fs\+::path \&vcs\+\_\+root\+\_\+path, fs\+::path repo\+\_\+root\+\_\+path, \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}} \&storage)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classsvcs_1_1core_1_1Index}{Index} manager, setting up paths and loading the index. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1core_1_1Index_ab54d5d68e1c78c1e10a628441cb12ba2}\label{classsvcs_1_1core_1_1Index_ab54d5d68e1c78c1e10a628441cb12ba2} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Index} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Index_aa9f812d5c3398bee8d88e97aa326070d}{add\+Entry}} (const \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}} \&entry)
+\begin{DoxyCompactList}\small\item\em Adds or updates an entry in the staging area. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a99d3bfb0d32b68f0cb5f1078b278a88b}{get\+Entry}} (const fs\+::path \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Retrieves an entry from the index by its relative file path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Index_afddc8e6ce0c5b84c65b29f929ffc9369}{load}} ()
+\begin{DoxyCompactList}\small\item\em Loads the index entries from the index file on disk (temporary text format). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a91deed3cc258bcc09e02d2ab3ffbade4}{save}} () const
+\begin{DoxyCompactList}\small\item\em Saves the current state of the index entries to the index file (temporary text format). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1Index_ae1b806d543dc61e0a0b36f14e521618b}{write}} () const
+\begin{DoxyCompactList}\small\item\em Another saving function (like load) but returns bool. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a1b1ade074d4de8c11b055e7568395937}{is\+File\+Modified}} (const fs\+::path \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Checks if a file in the working directory has been modified since it was last staged. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a6190e5a2227df88c30b4c620c6b058c3}{stage\+\_\+file}} (const fs\+::path \&relative\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Stages a file by creating a \doxylink{classsvcs_1_1core_1_1Blob}{Blob} object, saving it to storage, and updating the \doxylink{classsvcs_1_1core_1_1Index}{Index} entry (Core logic of \textquotesingle{}svcs add\textquotesingle{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1Index_a55c5d4ac4ccd15dcb16b288b09833d6d}{create\+Tree\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Creates the hierarchical \doxylink{classsvcs_1_1core_1_1Tree}{Tree} structure based on the current staged entries and saves the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} objects to \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the Staging Area (\doxylink{classsvcs_1_1core_1_1Index}{Index}) of the VCS repository. 
+
+The \doxylink{classsvcs_1_1core_1_1Index}{Index} class is responsible for reading and writing the list of staged files to the index file (.svcs/index), managing the \textquotesingle{}svcs add\textquotesingle{} operation, and providing the necessary structure for commit creation. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1Index_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1core_1_1Index_a920e69911a8617367d5f609a4277eb6b}\index{svcs::core::Index@{svcs::core::Index}!Index@{Index}}
+\index{Index@{Index}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a920e69911a8617367d5f609a4277eb6b} 
+svcs\+::core\+::\+Index\+::\+Index (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{vcs\+\_\+root\+\_\+path}{, }\item[{fs\+::path}]{repo\+\_\+root\+\_\+path}{, }\item[{\mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}} \&}]{storage}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{classsvcs_1_1core_1_1Index}{Index} manager, setting up paths and loading the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vcs\+\_\+root\+\_\+path} & The path to the VCS control directory (e.\+g., .svcs). \\
+\hline
+{\em repo\+\_\+root\+\_\+path} & The path to the repository\textquotesingle{}s working directory root. \\
+\hline
+{\em storage} & Reference to the \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage} instance. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1Index_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1core_1_1Index_aa9f812d5c3398bee8d88e97aa326070d}\index{svcs::core::Index@{svcs::core::Index}!addEntry@{addEntry}}
+\index{addEntry@{addEntry}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{addEntry()}{addEntry()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_aa9f812d5c3398bee8d88e97aa326070d} 
+void svcs\+::core\+::\+Index\+::add\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}} \&}]{entry}{}\end{DoxyParamCaption})}
+
+
+
+Adds or updates an entry in the staging area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The \doxylink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry} object to be added or updated. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1Index_a55c5d4ac4ccd15dcb16b288b09833d6d}\index{svcs::core::Index@{svcs::core::Index}!createTreeObject@{createTreeObject}}
+\index{createTreeObject@{createTreeObject}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{createTreeObject()}{createTreeObject()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a55c5d4ac4ccd15dcb16b288b09833d6d} 
+std\+::string svcs\+::core\+::\+Index\+::create\+Tree\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates the hierarchical \doxylink{classsvcs_1_1core_1_1Tree}{Tree} structure based on the current staged entries and saves the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} objects to \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. 
+
+\begin{DoxyReturn}{Returns}
+The SHA-\/1 hash (ID) of the final root \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the index is empty or tree creation fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classsvcs_1_1core_1_1Index_a99d3bfb0d32b68f0cb5f1078b278a88b}\index{svcs::core::Index@{svcs::core::Index}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{getEntry()}{getEntry()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a99d3bfb0d32b68f0cb5f1078b278a88b} 
+const \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}} \texorpdfstring{$\ast$}{*} svcs\+::core\+::\+Index\+::get\+Entry (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Retrieves an entry from the index by its relative file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & The relative path of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the constant \doxylink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Index_a1b1ade074d4de8c11b055e7568395937}\index{svcs::core::Index@{svcs::core::Index}!isFileModified@{isFileModified}}
+\index{isFileModified@{isFileModified}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{isFileModified()}{isFileModified()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a1b1ade074d4de8c11b055e7568395937} 
+bool svcs\+::core\+::\+Index\+::is\+File\+Modified (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Checks if a file in the working directory has been modified since it was last staged. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & The relative path of the file to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the file is modified, deleted, or untracked; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Index_afddc8e6ce0c5b84c65b29f929ffc9369}\index{svcs::core::Index@{svcs::core::Index}!load@{load}}
+\index{load@{load}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_afddc8e6ce0c5b84c65b29f929ffc9369} 
+void svcs\+::core\+::\+Index\+::load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Loads the index entries from the index file on disk (temporary text format). 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the index file cannot be read. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classsvcs_1_1core_1_1Index_a91deed3cc258bcc09e02d2ab3ffbade4}\index{svcs::core::Index@{svcs::core::Index}!save@{save}}
+\index{save@{save}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a91deed3cc258bcc09e02d2ab3ffbade4} 
+void svcs\+::core\+::\+Index\+::save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Saves the current state of the index entries to the index file (temporary text format). 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the index file cannot be written. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classsvcs_1_1core_1_1Index_a6190e5a2227df88c30b4c620c6b058c3}\index{svcs::core::Index@{svcs::core::Index}!stage\_file@{stage\_file}}
+\index{stage\_file@{stage\_file}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{stage\_file()}{stage\_file()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_a6190e5a2227df88c30b4c620c6b058c3} 
+void svcs\+::core\+::\+Index\+::stage\+\_\+file (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{relative\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Stages a file by creating a \doxylink{classsvcs_1_1core_1_1Blob}{Blob} object, saving it to storage, and updating the \doxylink{classsvcs_1_1core_1_1Index}{Index} entry (Core logic of \textquotesingle{}svcs add\textquotesingle{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & The path to the file, relative to the repository\textquotesingle{}s root directory. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the path is invalid or if read/write operations fail. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classsvcs_1_1core_1_1Index_ae1b806d543dc61e0a0b36f14e521618b}\index{svcs::core::Index@{svcs::core::Index}!write@{write}}
+\index{write@{write}!svcs::core::Index@{svcs::core::Index}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Index_ae1b806d543dc61e0a0b36f14e521618b} 
+bool svcs\+::core\+::\+Index\+::write (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Another saving function (like load) but returns bool. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the index file cannot be written. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Index_8hxx}{Index.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Index_8cxx}{Index.\+cxx}}\end{DoxyCompactItemize}

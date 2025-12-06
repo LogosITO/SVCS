@@ -2,18 +2,25 @@
 \hypertarget{IntStatusCommandTest_8cxx}{}\label{IntStatusCommandTest_8cxx}\index{tests/cli/utils/IntStatusCommandTest.cxx@{tests/cli/utils/IntStatusCommandTest.cxx}}
 
 
-Реализация интеграционных тестов для класса \doxylink{classStatusCommand}{Status\+Command}.  
+Реализация интеграционных тестов для класса Status\+Command.  
 
 
 {\ttfamily \#include "{}Int\+Status\+Command\+Test.\+hxx"{}}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Модульные тесты для компонентов интерфейса командной строки. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs\+::test\+::cli\+::utils}}
+\begin{DoxyCompactList}\small\item\em Служебные классы и тестовые фикстуры для тестирования CLI команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация интеграционных тестов для класса \doxylink{classStatusCommand}{Status\+Command}. 
+Реализация интеграционных тестов для класса Status\+Command. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Этот файл предоставляет конкретную реализацию для фикстура \doxylink{classStatusCommandTest}{Status\+Command\+Test}. Он настраивает временный репозиторий SVCS с начальными неотслеживаемыми файлами и включает вспомогательные функции для создания файлов, директорий и индексации изменений. Фикстур предназначен для тестирования способности команды {\ttfamily svcs status} точно отчитываться о состоянии рабочего дерева. 
+Этот файл предоставляет конкретную реализацию для фикстура Status\+Command\+Test. Он настраивает временный репозиторий SVCS с начальными неотслеживаемыми файлами и включает вспомогательные функции для создания файлов, директорий и индексации изменений. Фикстур предназначен для тестирования способности команды {\ttfamily svcs status} точно отчитываться о состоянии рабочего дерева. 

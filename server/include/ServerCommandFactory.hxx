@@ -28,6 +28,29 @@
 
 /**
  * @english
+ * @namespace svcs::server::cli
+ * @brief Server administration command-line interface components.
+ * @details Contains CLI commands specifically for server administration and management,
+ * including hub repository creation, user management, and server configuration.
+ * These commands are used by administrators to set up and maintain SVCS server instances.
+ * This namespace bridges the server functionality with the command-line interface.
+ *
+ * @russian
+ * @namespace svcs::server::cli
+ * @brief Компоненты командной строки для администрирования сервера.
+ * @details Содержит CLI команды, специально предназначенные для администрирования и управления сервером,
+ * включая создание репозиториев-хабов, управление пользователями и конфигурацию сервера.
+ * Эти команды используются администраторами для настройки и обслуживания экземпляров сервера SVCS.
+ * Это пространство имен связывает серверную функциональность с интерфейсом командной строки.
+ */
+namespace svcs::server::cli {
+
+using namespace svcs::core;
+using namespace svcs::cli;
+using namespace svcs::services;
+
+/**
+ * @english
  * @brief Factory for creating server administration ICommand objects.
  * @details The ServerCommandFactory manages the lifecycle of server-specific commands,
  * creating them dynamically using creator functions registered under unique names.
@@ -208,3 +231,5 @@ public:
      */
     bool commandExists(const std::string& name) const;
 };
+
+}

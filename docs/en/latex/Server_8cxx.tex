@@ -2,7 +2,7 @@
 \hypertarget{Server_8cxx}{}\label{Server_8cxx}\index{server/src/Server.cxx@{server/src/Server.cxx}}
 
 
-Implementation of the \doxylink{classServer}{Server} class for SVCS remote operations.  
+Implementation of the Server class for SVCS remote operations.  
 
 
 {\ttfamily \#include "{}Server.\+hxx"{}}\newline
@@ -10,12 +10,17 @@ Implementation of the \doxylink{classServer}{Server} class for SVCS remote opera
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$thread$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Server-\/side components and administration commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementation of the \doxylink{classServer}{Server} class for SVCS remote operations. 
+Implementation of the Server class for SVCS remote operations. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Provides TCP server functionality for handling Git protocol connections and delegating to \doxylink{classRemoteProtocol}{Remote\+Protocol} for actual push/pull operations. 
+Provides TCP server functionality for handling Git protocol connections and delegating to Remote\+Protocol for actual push/pull operations. 

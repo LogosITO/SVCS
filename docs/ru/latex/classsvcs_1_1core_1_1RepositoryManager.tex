@@ -1,0 +1,582 @@
+\doxysection{Класс svcs\+::core\+::Repository\+Manager}
+\hypertarget{classsvcs_1_1core_1_1RepositoryManager}{}\label{classsvcs_1_1core_1_1RepositoryManager}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+
+
+Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS.  
+
+
+
+
+{\ttfamily \#include $<$Repository\+Manager.\+hxx$>$}
+
+Граф наследования\+:svcs\+::core\+::Repository\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1core_1_1RepositoryManager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a94770300269bc08cd10f32991ce501d2}{Repository\+Manager}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ bus)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ac0d42424f59a33af3f2964c7eddcd192}{update\+Head}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет ссылку HEAD. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ad003b3bfb496804283a939224a78c566}{initialize\+Repository}} (const std\+::string \&path, bool force=false)
+\begin{DoxyCompactList}\small\item\em Инициализирует новый репозиторий SVCS по указанному пути. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a529c5a70cc13ab92989e55f7db9f7882}{is\+Repository\+Initialized}} (const std\+::string \&path="{}."{})
+\begin{DoxyCompactList}\small\item\em Проверяет, инициализирован ли репозиторий SVCS по заданному пути или его родителям. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a0938228acbd111de2b8a6c230d61fdf2}{update\+Branch\+Reference}} (const std\+::string \&branch\+Name, const std\+::string \&commit\+Hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет файл ссылки ветви хешем коммита. \end{DoxyCompactList}\item 
+std\+::filesystem\+::path \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a27171d33fc901388a54e811d892458ba}{get\+Repository\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает определенный корневой путь текущего активного репозитория. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_acdb90f4f22c89514d2429730b5a3623d}{add\+File\+To\+Staging}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Пытается добавить файл в область подготовки (индекс). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a0036b6bb88ccb15b43e4bebfa073c823}{get\+Head\+Commit}} () const
+\begin{DoxyCompactList}\small\item\em Извлекает хеш текущего коммита HEAD в репозитории. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a65705c1b91ea0c8878446856ced2ea59}{create\+Commit}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Создает коммит из текущих подготовленных файлов. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a34e211523257152d66477f6e9fa5d6ab}{update\+Commit\+References}} (const std\+::string \&removed\+Commit\+Hash, const std\+::string \&new\+Parent\+Hash) const
+\begin{DoxyCompactList}\small\item\em Обновляет ссылки коммитов при удалении коммита. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae159d5e092b0e945c17ba74e5f5af61e}{revert\+Commit}} (const std\+::string \&commit\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Откатывает состояние репозитория к предыдущему коммиту. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae0706f73124ce12640a1a21fa3309398}{get\+Commit\+By\+Hash}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Извлекает структуру \doxylink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info} для заданного хеша коммита. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a1f8b1488fb9d9b1343b35abcc0184464}{get\+Parent\+Commit\+Hash}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Извлекает хеш родительского коммита для заданного коммита. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a543e43dc2b2ebd12605824064ee4cd8b}{restore\+Files\+From\+Commit}} (const \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} \&commit) const
+\begin{DoxyCompactList}\small\item\em Восстанавливает файлы рабочей директории до состояния, записанного в конкретном коммите. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_aa1b198ef75b6c571dfd4ace68ecc0f89}{clear\+Staging\+Area}} ()
+\begin{DoxyCompactList}\small\item\em Очищает содержимое области подготовки (индекса). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a303ff113df6c3fd0dbe0df7e98cfbc29}{save\+Staged\+Changes}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Создает коммит из подготовленных изменений. (Удобный метод, часто используемый Save\+Command). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a002f7a416459e5c17de748fd527a67bc}{get\+Staged\+Files}} ()
+\begin{DoxyCompactList}\small\item\em Извлекает список всех файлов, в настоящее время помеченных как подготовленные (индексированные). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a3c522df200bd216339feaac08ad45c03}{get\+Commit\+History}} () const
+\begin{DoxyCompactList}\small\item\em Извлекает полную историю коммитов для текущей ветви. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae6c18516f1a61af3cdd8b978b5989fe3}{get\+Branch\+History}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Извлекает историю коммитов для конкретной ветви. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a1a4b3f81b30778c851f0db4accf5f2d8}{get\+Current\+Branch}} () const
+\begin{DoxyCompactList}\small\item\em Получает имя текущей ветви. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_adba9e0953fb91a855f593be9de1408e9}{remove\+Repository}} (const std\+::filesystem\+::path \&path) const
+\begin{DoxyCompactList}\small\item\em Пытается рекурсивно удалить всю структуру репозитория SVCS (например, директорию .svcs) и ее содержимое. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ad84b0f67d4e6e2e60082497b4e1899a3}{branch\+Exists}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли ветвь. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a2562058c0a617d0ded24030dc8682251}{get\+Branch\+Head}} (const std\+::string \&branch\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Получает головной коммит ветви. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ae565a1db180819ff2e0840ed601beadc}{get\+File\+Content\+At\+Commit}} (const std\+::string \&commit\+\_\+hash, const std\+::string \&file\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Получает содержимое файла в конкретном коммите. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_aa45d786e39da7deb33648147efbcd739}{get\+Commit\+Files}} (const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Получает все файлы, измененные в коммите. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a2c18c663d76a842f4999df20b17e4687}{set\+Merge\+State}} (const std\+::string \&branch\+\_\+name, const std\+::string \&commit\+\_\+hash) const
+\begin{DoxyCompactList}\small\item\em Устанавливает состояние слияния (для разрешения конфликтов). \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a83533e5ffa7ea687981e4611e1e4a9ac}\label{classsvcs_1_1core_1_1RepositoryManager_a83533e5ffa7ea687981e4611e1e4a9ac} 
+void {\bfseries clear\+Merge\+State} () const
+\begin{DoxyCompactList}\small\item\em Очищает состояние слияния (после завершения/прерывания слияния). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a45a6a691304ae0c2cad9fe10bfbca607}{is\+Merge\+In\+Progress}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, выполняется ли слияние. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_a7c790d31b20b710b6512c0703030fe7a}{get\+Merge\+Branch}} () const
+\begin{DoxyCompactList}\small\item\em Получает ветвь, которая сливается. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager_ac7de58f0405dc440d4de884fd2782e64}{generate\+Commit\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Генерирует хеш коммита из содержимого. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS. 
+
+\doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager} -\/ это основной уровень, отвечающий за прямое взаимодействие с файловой системой для таких задач, как инициализация, управление путями, подготовка, коммиты и логирование. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a94770300269bc08cd10f32991ce501d2}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!RepositoryManager@{RepositoryManager}}
+\index{RepositoryManager@{RepositoryManager}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{RepositoryManager()}{RepositoryManager()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a94770300269bc08cd10f32991ce501d2} 
+svcs\+::core\+::\+Repository\+Manager\+::\+Repository\+Manager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{bus}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструирует \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bus} & Общий указатель на шину событий (\doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}) для связи. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_acdb90f4f22c89514d2429730b5a3623d}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!addFileToStaging@{addFileToStaging}}
+\index{addFileToStaging@{addFileToStaging}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{addFileToStaging()}{addFileToStaging()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_acdb90f4f22c89514d2429730b5a3623d} 
+bool svcs\+::core\+::\+Repository\+Manager\+::add\+File\+To\+Staging (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Пытается добавить файл в область подготовки (индекс). 
+
+Обычно это включает чтение файла и обновление состояния индекса. 
+\begin{DoxyParams}{Аргументы}
+{\em file\+Path} & Путь к файлу для подготовки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если файл успешно добавлен, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_ad84b0f67d4e6e2e60082497b4e1899a3}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!branchExists@{branchExists}}
+\index{branchExists@{branchExists}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{branchExists()}{branchExists()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_ad84b0f67d4e6e2e60082497b4e1899a3} 
+bool svcs\+::core\+::\+Repository\+Manager\+::branch\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, существует ли ветвь. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Имя ветви для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если ветвь существует, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_aa1b198ef75b6c571dfd4ace68ecc0f89}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!clearStagingArea@{clearStagingArea}}
+\index{clearStagingArea@{clearStagingArea}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{clearStagingArea()}{clearStagingArea()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_aa1b198ef75b6c571dfd4ace68ecc0f89} 
+bool svcs\+::core\+::\+Repository\+Manager\+::clear\+Staging\+Area (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Очищает содержимое области подготовки (индекса). 
+
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если область подготовки успешно очищена, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a65705c1b91ea0c8878446856ced2ea59}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!createCommit@{createCommit}}
+\index{createCommit@{createCommit}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{createCommit()}{createCommit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a65705c1b91ea0c8878446856ced2ea59} 
+std\+::string svcs\+::core\+::\+Repository\+Manager\+::create\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Создает коммит из текущих подготовленных файлов. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение коммита, предоставленное пользователем. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хеш вновь созданного коммита при успехе, пустая строка в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_ac7de58f0405dc440d4de884fd2782e64}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!generateCommitHash@{generateCommitHash}}
+\index{generateCommitHash@{generateCommitHash}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{generateCommitHash()}{generateCommitHash()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_ac7de58f0405dc440d4de884fd2782e64} 
+std\+::string svcs\+::core\+::\+Repository\+Manager\+::generate\+Commit\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Генерирует хеш коммита из содержимого. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em content} & Содержимое для хеширования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Сгенерированный хеш коммита. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a2562058c0a617d0ded24030dc8682251}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getBranchHead@{getBranchHead}}
+\index{getBranchHead@{getBranchHead}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getBranchHead()}{getBranchHead()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a2562058c0a617d0ded24030dc8682251} 
+std\+::string svcs\+::core\+::\+Repository\+Manager\+::get\+Branch\+Head (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает головной коммит ветви. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Имя ветви. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хеш коммита головы ветви. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_ae6c18516f1a61af3cdd8b978b5989fe3}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getBranchHistory@{getBranchHistory}}
+\index{getBranchHistory@{getBranchHistory}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getBranchHistory()}{getBranchHistory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_ae6c18516f1a61af3cdd8b978b5989fe3} 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ svcs\+::core\+::\+Repository\+Manager\+::get\+Branch\+History (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает историю коммитов для конкретной ветви. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Имя ветви. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Вектор объектов \doxylink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info} для ветви. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_ae0706f73124ce12640a1a21fa3309398}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getCommitByHash@{getCommitByHash}}
+\index{getCommitByHash@{getCommitByHash}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getCommitByHash()}{getCommitByHash()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_ae0706f73124ce12640a1a21fa3309398} 
+std\+::optional$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ svcs\+::core\+::\+Repository\+Manager\+::get\+Commit\+By\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает структуру \doxylink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info} для заданного хеша коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита для извлечения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Опциональный объект, содержащий \doxylink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}, если найден, или std\+::nullopt в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_aa45d786e39da7deb33648147efbcd739}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getCommitFiles@{getCommitFiles}}
+\index{getCommitFiles@{getCommitFiles}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getCommitFiles()}{getCommitFiles()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_aa45d786e39da7deb33648147efbcd739} 
+std\+::vector$<$ std\+::string $>$ svcs\+::core\+::\+Repository\+Manager\+::get\+Commit\+Files (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает все файлы, измененные в коммите. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Вектор путей к файлам. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a3c522df200bd216339feaac08ad45c03}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getCommitHistory@{getCommitHistory}}
+\index{getCommitHistory@{getCommitHistory}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getCommitHistory()}{getCommitHistory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a3c522df200bd216339feaac08ad45c03} 
+std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} $>$ svcs\+::core\+::\+Repository\+Manager\+::get\+Commit\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает полную историю коммитов для текущей ветви. 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор объектов \doxylink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}, представляющих историю коммитов, обычно от самых новых к старым. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a1a4b3f81b30778c851f0db4accf5f2d8}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getCurrentBranch@{getCurrentBranch}}
+\index{getCurrentBranch@{getCurrentBranch}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentBranch()}{getCurrentBranch()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a1a4b3f81b30778c851f0db4accf5f2d8} 
+std\+::string svcs\+::core\+::\+Repository\+Manager\+::get\+Current\+Branch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает имя текущей ветви. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя текущей ветви. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_ae565a1db180819ff2e0840ed601beadc}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getFileContentAtCommit@{getFileContentAtCommit}}
+\index{getFileContentAtCommit@{getFileContentAtCommit}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getFileContentAtCommit()}{getFileContentAtCommit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_ae565a1db180819ff2e0840ed601beadc} 
+std\+::string svcs\+::core\+::\+Repository\+Manager\+::get\+File\+Content\+At\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{, }\item[{const std\+::string \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает содержимое файла в конкретном коммите. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита. \\
+\hline
+{\em file\+\_\+path} & Путь к файлу. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Содержимое файла. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a0036b6bb88ccb15b43e4bebfa073c823}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getHeadCommit@{getHeadCommit}}
+\index{getHeadCommit@{getHeadCommit}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getHeadCommit()}{getHeadCommit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a0036b6bb88ccb15b43e4bebfa073c823} 
+std\+::string svcs\+::core\+::\+Repository\+Manager\+::get\+Head\+Commit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает хеш текущего коммита HEAD в репозитории. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка хеша коммита. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a7c790d31b20b710b6512c0703030fe7a}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getMergeBranch@{getMergeBranch}}
+\index{getMergeBranch@{getMergeBranch}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getMergeBranch()}{getMergeBranch()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a7c790d31b20b710b6512c0703030fe7a} 
+std\+::string svcs\+::core\+::\+Repository\+Manager\+::get\+Merge\+Branch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает ветвь, которая сливается. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя ветви, если слияние выполняется, пустая строка в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a1f8b1488fb9d9b1343b35abcc0184464}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getParentCommitHash@{getParentCommitHash}}
+\index{getParentCommitHash@{getParentCommitHash}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getParentCommitHash()}{getParentCommitHash()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a1f8b1488fb9d9b1343b35abcc0184464} 
+std\+::string svcs\+::core\+::\+Repository\+Manager\+::get\+Parent\+Commit\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Извлекает хеш родительского коммита для заданного коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш дочернего коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка хеша родительского коммита (пустая, если это начальный коммит). 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a27171d33fc901388a54e811d892458ba}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getRepositoryPath@{getRepositoryPath}}
+\index{getRepositoryPath@{getRepositoryPath}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getRepositoryPath()}{getRepositoryPath()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a27171d33fc901388a54e811d892458ba} 
+std\+::filesystem\+::path svcs\+::core\+::\+Repository\+Manager\+::get\+Repository\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Возвращает определенный корневой путь текущего активного репозитория. 
+
+\begin{DoxyReturn}{Возвращает}
+Строковый путь к корню репозитория. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a002f7a416459e5c17de748fd527a67bc}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!getStagedFiles@{getStagedFiles}}
+\index{getStagedFiles@{getStagedFiles}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{getStagedFiles()}{getStagedFiles()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a002f7a416459e5c17de748fd527a67bc} 
+std\+::vector$<$ std\+::string $>$ svcs\+::core\+::\+Repository\+Manager\+::get\+Staged\+Files (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Извлекает список всех файлов, в настоящее время помеченных как подготовленные (индексированные). 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор строк, содержащий пути к файлам в области подготовки. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_ad003b3bfb496804283a939224a78c566}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!initializeRepository@{initializeRepository}}
+\index{initializeRepository@{initializeRepository}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{initializeRepository()}{initializeRepository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_ad003b3bfb496804283a939224a78c566} 
+bool svcs\+::core\+::\+Repository\+Manager\+::initialize\+Repository (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{, }\item[{bool}]{force}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Инициализирует новый репозиторий SVCS по указанному пути. 
+
+Создает необходимые внутренние директории и файлы (например, .svcs/). 
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь директории, где должен быть создан репозиторий. \\
+\hline
+{\em force} & Если true, принудительно инициализирует, даже если директория существует (зависит от реализации). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если инициализация прошла успешно, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a45a6a691304ae0c2cad9fe10bfbca607}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!isMergeInProgress@{isMergeInProgress}}
+\index{isMergeInProgress@{isMergeInProgress}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{isMergeInProgress()}{isMergeInProgress()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a45a6a691304ae0c2cad9fe10bfbca607} 
+bool svcs\+::core\+::\+Repository\+Manager\+::is\+Merge\+In\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, выполняется ли слияние. 
+
+\begin{DoxyReturn}{Возвращает}
+true, если слияние выполняется, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a529c5a70cc13ab92989e55f7db9f7882}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!isRepositoryInitialized@{isRepositoryInitialized}}
+\index{isRepositoryInitialized@{isRepositoryInitialized}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{isRepositoryInitialized()}{isRepositoryInitialized()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a529c5a70cc13ab92989e55f7db9f7882} 
+bool svcs\+::core\+::\+Repository\+Manager\+::is\+Repository\+Initialized (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})}
+
+
+
+Проверяет, инициализирован ли репозиторий SVCS по заданному пути или его родителям. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь, с которого начинать поиск (по умолчанию текущая директория "{}."{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если найдена структура репозитория, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_adba9e0953fb91a855f593be9de1408e9}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!removeRepository@{removeRepository}}
+\index{removeRepository@{removeRepository}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{removeRepository()}{removeRepository()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_adba9e0953fb91a855f593be9de1408e9} 
+bool svcs\+::core\+::\+Repository\+Manager\+::remove\+Repository (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Пытается рекурсивно удалить всю структуру репозитория SVCS (например, директорию .svcs) и ее содержимое. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Корневой путь удаляемого репозитория. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если удаление прошло успешно, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a543e43dc2b2ebd12605824064ee4cd8b}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!restoreFilesFromCommit@{restoreFilesFromCommit}}
+\index{restoreFilesFromCommit@{restoreFilesFromCommit}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{restoreFilesFromCommit()}{restoreFilesFromCommit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a543e43dc2b2ebd12605824064ee4cd8b} 
+bool svcs\+::core\+::\+Repository\+Manager\+::restore\+Files\+From\+Commit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}} \&}]{commit}{}\end{DoxyParamCaption}) const}
+
+
+
+Восстанавливает файлы рабочей директории до состояния, записанного в конкретном коммите. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit} & Структура \doxylink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}, представляющая целевое состояние. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если файлы успешно восстановлены, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_ae159d5e092b0e945c17ba74e5f5af61e}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!revertCommit@{revertCommit}}
+\index{revertCommit@{revertCommit}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{revertCommit()}{revertCommit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_ae159d5e092b0e945c17ba74e5f5af61e} 
+bool svcs\+::core\+::\+Repository\+Manager\+::revert\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption})}
+
+
+
+Откатывает состояние репозитория к предыдущему коммиту. 
+
+Обычно используется для отмены эффектов предыдущего \textquotesingle{}save\textquotesingle{} (коммита). 
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита, к которому нужно откатиться (или коммита перед тем, который нужно отменить). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если откат прошел успешно, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a303ff113df6c3fd0dbe0df7e98cfbc29}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!saveStagedChanges@{saveStagedChanges}}
+\index{saveStagedChanges@{saveStagedChanges}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{saveStagedChanges()}{saveStagedChanges()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a303ff113df6c3fd0dbe0df7e98cfbc29} 
+bool svcs\+::core\+::\+Repository\+Manager\+::save\+Staged\+Changes (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Создает коммит из подготовленных изменений. (Удобный метод, часто используемый Save\+Command). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true}, если сохранение (коммит) прошло успешно, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a2c18c663d76a842f4999df20b17e4687}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!setMergeState@{setMergeState}}
+\index{setMergeState@{setMergeState}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{setMergeState()}{setMergeState()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a2c18c663d76a842f4999df20b17e4687} 
+void svcs\+::core\+::\+Repository\+Manager\+::set\+Merge\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+\_\+name}{, }\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Устанавливает состояние слияния (для разрешения конфликтов). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+\_\+name} & Ветвь, которая сливается. \\
+\hline
+{\em commit\+\_\+hash} & Коммит, который сливается. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a0938228acbd111de2b8a6c230d61fdf2}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!updateBranchReference@{updateBranchReference}}
+\index{updateBranchReference@{updateBranchReference}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{updateBranchReference()}{updateBranchReference()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a0938228acbd111de2b8a6c230d61fdf2} 
+void svcs\+::core\+::\+Repository\+Manager\+::update\+Branch\+Reference (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{branch\+Name}{, }\item[{const std\+::string \&}]{commit\+Hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Обновляет файл ссылки ветви хешем коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em branch\+Name} & Имя ветви для обновления. \\
+\hline
+{\em commit\+Hash} & Хеш коммита для установки в качестве головы ветви. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_a34e211523257152d66477f6e9fa5d6ab}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!updateCommitReferences@{updateCommitReferences}}
+\index{updateCommitReferences@{updateCommitReferences}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{updateCommitReferences()}{updateCommitReferences()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_a34e211523257152d66477f6e9fa5d6ab} 
+void svcs\+::core\+::\+Repository\+Manager\+::update\+Commit\+References (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{removed\+Commit\+Hash}{, }\item[{const std\+::string \&}]{new\+Parent\+Hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Обновляет ссылки коммитов при удалении коммита. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em removed\+Commit\+Hash} & Хеш удаляемого коммита. \\
+\hline
+{\em new\+Parent\+Hash} & Новый хеш родителя для зависимых коммитов. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1RepositoryManager_ac0d42424f59a33af3f2964c7eddcd192}\index{svcs::core::RepositoryManager@{svcs::core::RepositoryManager}!updateHead@{updateHead}}
+\index{updateHead@{updateHead}!svcs::core::RepositoryManager@{svcs::core::RepositoryManager}}
+\doxysubsubsection{\texorpdfstring{updateHead()}{updateHead()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1RepositoryManager_ac0d42424f59a33af3f2964c7eddcd192} 
+void svcs\+::core\+::\+Repository\+Manager\+::update\+Head (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{commit\+\_\+hash}{}\end{DoxyParamCaption}) const}
+
+
+
+Обновляет ссылку HEAD. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em commit\+\_\+hash} & Хеш коммита для установки в качестве HEAD. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{RepositoryManager_8hxx}{Repository\+Manager.\+hxx}}\item 
+core/src/\mbox{\hyperlink{RepositoryManager_8cxx}{Repository\+Manager.\+cxx}}\end{DoxyCompactItemize}

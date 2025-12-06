@@ -1,5 +1,5 @@
 var RepositoryManager_8hxx =
 [
-    [ "CommitInfo", "structCommitInfo.html", "structCommitInfo" ],
-    [ "RepositoryManager", "classRepositoryManager.html", "classRepositoryManager" ]
+    [ "svcs::core::CommitInfo", "structsvcs_1_1core_1_1CommitInfo.html", "structsvcs_1_1core_1_1CommitInfo" ],
+    [ "svcs::core::RepositoryManager", "classsvcs_1_1core_1_1RepositoryManager.html", "classsvcs_1_1core_1_1RepositoryManager" ]
 ];

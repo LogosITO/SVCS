@@ -1,0 +1,87 @@
+\doxysection{Класс svcs\+::server\+::Remote\+Protocol}
+\hypertarget{classsvcs_1_1server_1_1RemoteProtocol}{}\label{classsvcs_1_1server_1_1RemoteProtocol}\index{svcs::server::RemoteProtocol@{svcs::server::RemoteProtocol}}
+
+
+Обрабатывает протокол удаленной связи для SVCS.  
+
+
+
+
+{\ttfamily \#include $<$Remote\+Protocol.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1server_1_1RemoteProtocol_a48c7eccea0dcfbd3f38ebaacc890716c}{Remote\+Protocol}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repository\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1server_1_1RemoteProtocol}{Remote\+Protocol} с необходимыми зависимостями. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1RemoteProtocol_a82e9f15545647e6f9f6a67fd4e2c7c85}\label{classsvcs_1_1server_1_1RemoteProtocol_a82e9f15545647e6f9f6a67fd4e2c7c85} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Remote\+Protocol} ()=default
+\begin{DoxyCompactList}\small\item\em Деструктор по умолчанию. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteProtocol_ac59264cdc26ec33dc6699c6d745c2433}{handle\+Receive\+Pack}} ()
+\begin{DoxyCompactList}\small\item\em Обрабатывает протокол \textquotesingle{}receive-\/pack\textquotesingle{} для операций {\bfseries{push}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteProtocol_ab6ad22411376351076b3e58c5d5d2e6a}{handle\+Upload\+Pack}} ()
+\begin{DoxyCompactList}\small\item\em Обрабатывает протокол \textquotesingle{}upload-\/pack\textquotesingle{} для операций {\bfseries{pull}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Обрабатывает протокол удаленной связи для SVCS. 
+
+Управляет пользовательским протоколом для операций {\bfseries{push}} и {\bfseries{pull}}, включая согласование объектов, передачу данных и обновления ссылок между клиентом и сервером. Протокол представляет собой простой текстовый обмен через стандартный ввод/вывод. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1server_1_1RemoteProtocol_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1server_1_1RemoteProtocol_a48c7eccea0dcfbd3f38ebaacc890716c}\index{svcs::server::RemoteProtocol@{svcs::server::RemoteProtocol}!RemoteProtocol@{RemoteProtocol}}
+\index{RemoteProtocol@{RemoteProtocol}!svcs::server::RemoteProtocol@{svcs::server::RemoteProtocol}}
+\doxysubsubsection{\texorpdfstring{RemoteProtocol()}{RemoteProtocol()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteProtocol_a48c7eccea0dcfbd3f38ebaacc890716c} 
+svcs\+::server\+::\+Remote\+Protocol\+::\+Remote\+Protocol (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repository\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classsvcs_1_1server_1_1RemoteProtocol}{Remote\+Protocol} с необходимыми зависимостями. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\+\_\+bus} & Общий указатель на шину событий для системы уведомлений (\doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}). \\
+\hline
+{\em repository\+\_\+manager} & Общий указатель на менеджер репозитория для операций с репозиторием (\doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1server_1_1RemoteProtocol_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1server_1_1RemoteProtocol_ac59264cdc26ec33dc6699c6d745c2433}\index{svcs::server::RemoteProtocol@{svcs::server::RemoteProtocol}!handleReceivePack@{handleReceivePack}}
+\index{handleReceivePack@{handleReceivePack}!svcs::server::RemoteProtocol@{svcs::server::RemoteProtocol}}
+\doxysubsubsection{\texorpdfstring{handleReceivePack()}{handleReceivePack()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteProtocol_ac59264cdc26ec33dc6699c6d745c2433} 
+bool svcs\+::server\+::\+Remote\+Protocol\+::handle\+Receive\+Pack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает протокол \textquotesingle{}receive-\/pack\textquotesingle{} для операций {\bfseries{push}}. 
+
+\begin{DoxyReturn}{Возвращает}
+bool True если протокол завершен успешно (все объекты получены и ссылки обновлены), false в противном случае.
+\end{DoxyReturn}
+Эта функция обрабатывает запросы push от клиента. Она управляет согласованием объектов, получает недостающие данные объектов от клиента и, наконец, пытается применить запрошенные обновления ссылок (например, обновление веток). \Hypertarget{classsvcs_1_1server_1_1RemoteProtocol_ab6ad22411376351076b3e58c5d5d2e6a}\index{svcs::server::RemoteProtocol@{svcs::server::RemoteProtocol}!handleUploadPack@{handleUploadPack}}
+\index{handleUploadPack@{handleUploadPack}!svcs::server::RemoteProtocol@{svcs::server::RemoteProtocol}}
+\doxysubsubsection{\texorpdfstring{handleUploadPack()}{handleUploadPack()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteProtocol_ab6ad22411376351076b3e58c5d5d2e6a} 
+bool svcs\+::server\+::\+Remote\+Protocol\+::handle\+Upload\+Pack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает протокол \textquotesingle{}upload-\/pack\textquotesingle{} для операций {\bfseries{pull}}. 
+
+\begin{DoxyReturn}{Возвращает}
+bool True если протокол завершен успешно (объекты согласованы и отправлены), false в противном случае.
+\end{DoxyReturn}
+Эта функция обрабатывает запросы pull от клиента. Она выполняет согласование объектов путем определения, каких объектов не хватает клиенту на основе его списка \textquotesingle{}have\textquotesingle{}, а затем упаковывает и отправляет недостающие данные объектов клиенту. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{RemoteProtocol_8hxx}{Remote\+Protocol.\+hxx}}\item 
+server/src/\mbox{\hyperlink{RemoteProtocol_8cxx}{Remote\+Protocol.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,133 @@
+\doxysection{Класс svcs\+::server\+::Server}
+\hypertarget{classsvcs_1_1server_1_1Server}{}\label{classsvcs_1_1server_1_1Server}\index{svcs::server::Server@{svcs::server::Server}}
+
+
+Основной TCP-\/сервер для удаленных операций SVCS.  
+
+
+
+
+{\ttfamily \#include $<$Server.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1server_1_1Server_a9d492a8428f99b2dff54f2187c8e0b31}{Server}} (boost\+::asio\+::io\+\_\+context \&io\+\_\+context, unsigned short port, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+\_\+manager, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ event\+\_\+bus)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1server_1_1Server}{Server} с указанными зависимостями. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1Server_a1f2f56eea71047aa92720231a86eff82}\label{classsvcs_1_1server_1_1Server_a1f2f56eea71047aa92720231a86eff82} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Server} ()
+\begin{DoxyCompactList}\small\item\em Деструктор -\/ останавливает сервер и освобождает ресурсы. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a417bbdb237deca6638c5cf7d9481907d}{start}} ()
+\begin{DoxyCompactList}\small\item\em Запускает сервер и начинает принимать соединения. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a252bf24c9940ca31498bc66969548f07}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Останавливает сервер корректно. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a25b1443769dcceef091b11611cce6600}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, запущен ли сервер в данный момент. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classsvcs_1_1server_1_1Server_af580ac58d1c8eab5af462e7401346812}{get\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Получает номер порта, который прослушивает сервер. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classsvcs_1_1server_1_1Server_a77b63f3cabc921e87659d7174b8d7dfb}{get\+Active\+Connections}} () const
+\begin{DoxyCompactList}\small\item\em Получает количество текущих активных клиентских соединений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Основной TCP-\/сервер для удаленных операций SVCS. 
+
+Прослушивает указанный порт, принимает клиентские соединения и запускает экземпляры \doxylink{classsvcs_1_1server_1_1RemoteProtocol}{Remote\+Protocol} для обработки операций push/pull. Поддерживает несколько параллельных клиентов через пул потоков. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1server_1_1Server_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1server_1_1Server_a9d492a8428f99b2dff54f2187c8e0b31}\index{svcs::server::Server@{svcs::server::Server}!Server@{Server}}
+\index{Server@{Server}!svcs::server::Server@{svcs::server::Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1Server_a9d492a8428f99b2dff54f2187c8e0b31} 
+svcs\+::server\+::\+Server\+::\+Server (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+context \&}]{io\+\_\+context}{, }\item[{unsigned short}]{port}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+\_\+manager}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{event\+\_\+bus}{}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classsvcs_1_1server_1_1Server}{Server} с указанными зависимостями. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em io\+\_\+context} & ASIO I/O контекст для асинхронных операций. \\
+\hline
+{\em port} & TCP-\/порт для прослушивания (по умолчанию\+: 9418 -\/ порт Git протокола). \\
+\hline
+{\em repo\+\_\+manager} & Общий указатель на менеджер репозиториев. \\
+\hline
+{\em event\+\_\+bus} & Общий указатель на шину событий для уведомлений. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1server_1_1Server_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1server_1_1Server_a77b63f3cabc921e87659d7174b8d7dfb}\index{svcs::server::Server@{svcs::server::Server}!getActiveConnections@{getActiveConnections}}
+\index{getActiveConnections@{getActiveConnections}!svcs::server::Server@{svcs::server::Server}}
+\doxysubsubsection{\texorpdfstring{getActiveConnections()}{getActiveConnections()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1Server_a77b63f3cabc921e87659d7174b8d7dfb} 
+size\+\_\+t svcs\+::server\+::\+Server\+::get\+Active\+Connections (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает количество текущих активных клиентских соединений. 
+
+\begin{DoxyReturn}{Возвращает}
+size\+\_\+t Количество активных соединений. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1Server_af580ac58d1c8eab5af462e7401346812}\index{svcs::server::Server@{svcs::server::Server}!getPort@{getPort}}
+\index{getPort@{getPort}!svcs::server::Server@{svcs::server::Server}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1Server_af580ac58d1c8eab5af462e7401346812} 
+unsigned short svcs\+::server\+::\+Server\+::get\+Port (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Получает номер порта, который прослушивает сервер. 
+
+\begin{DoxyReturn}{Возвращает}
+unsigned short Номер порта. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1Server_a25b1443769dcceef091b11611cce6600}\index{svcs::server::Server@{svcs::server::Server}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!svcs::server::Server@{svcs::server::Server}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1Server_a25b1443769dcceef091b11611cce6600} 
+bool svcs\+::server\+::\+Server\+::is\+Running (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, запущен ли сервер в данный момент. 
+
+\begin{DoxyReturn}{Возвращает}
+bool True если сервер запущен, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1Server_a417bbdb237deca6638c5cf7d9481907d}\index{svcs::server::Server@{svcs::server::Server}!start@{start}}
+\index{start@{start}!svcs::server::Server@{svcs::server::Server}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1Server_a417bbdb237deca6638c5cf7d9481907d} 
+bool svcs\+::server\+::\+Server\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Запускает сервер и начинает принимать соединения. 
+
+\begin{DoxyReturn}{Возвращает}
+bool True если сервер запущен успешно, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1Server_a252bf24c9940ca31498bc66969548f07}\index{svcs::server::Server@{svcs::server::Server}!stop@{stop}}
+\index{stop@{stop}!svcs::server::Server@{svcs::server::Server}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1Server_a252bf24c9940ca31498bc66969548f07} 
+void svcs\+::server\+::\+Server\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Останавливает сервер корректно. 
+
+Прекращает прием новых соединений и позволяет существующим соединениям завершиться. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{Server_8hxx}{Server.\+hxx}}\item 
+server/src/\mbox{\hyperlink{Server_8cxx}{Server.\+cxx}}\end{DoxyCompactItemize}

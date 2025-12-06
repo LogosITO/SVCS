@@ -23,6 +23,21 @@
 
 /**
  * @english
+ * @namespace svcs::core
+ * @brief Core VCS data structures and object model.
+ * @details Contains fundamental VCS object types like Blob, Tree, Commit
+ * that form the building blocks of the version control system.
+ *
+ * @russian
+ * @namespace svcs::core
+ * @brief Основные структуры данных СКВ и модель объектов.
+ * @details Содержит фундаментальные типы объектов СКВ, такие как Blob, Tree, Commit,
+ * которые формируют строительные блоки системы контроля версий.
+ */
+namespace svcs::core {
+
+/**
+ * @english
  * @struct TreeEntry
  * @brief Represents a single item (file or subdirectory) within a Tree object.
  * @details This structure links a name and file mode to the hash ID of another VCS object.
@@ -227,3 +242,5 @@ public:
      */
     [[nodiscard]] const std::vector<TreeEntry>& getEntries() const;
 };
+
+}

@@ -1,0 +1,224 @@
+\doxysection{svcs\+::core\+::Tree Class Reference}
+\hypertarget{classsvcs_1_1core_1_1Tree}{}\label{classsvcs_1_1core_1_1Tree}\index{svcs::core::Tree@{svcs::core::Tree}}
+
+
+Represents the state of a directory in the VCS, implementing the \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} contract.  
+
+
+
+
+{\ttfamily \#include $<$Tree.\+hxx$>$}
+
+Inheritance diagram for svcs\+::core\+::Tree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1core_1_1Tree}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Tree_a1b9ef98c3e4a0c1c45512edc65572f9b}{Tree}} (std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} $>$ entries)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_a763fd95420bb17e80e5005d875fe9e82}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the VCS object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_aefbdb38f50792902571b200c98004de0}{serialize}} () const override
+\begin{DoxyCompactList}\small\item\em Serializes the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} content into a standardized string format for hashing and storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_a01b5d88a8d80726cd9d997a00935b7e3}{add\+Entry}} (const \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} \&entry)
+\begin{DoxyCompactList}\small\item\em Adds a new entry to the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} or updates an existing entry if the name matches. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_a40502f35e3795496d054715fe1115404}{remove\+Entry}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Removes an entry (file or subdirectory) from the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} by name. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_a85cf98fe6fc3487e1e1396e460c5845e}{find\+Entry}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Searches for a specific entry within the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} by name. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} $>$ \& \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_a222149cda2001e166eb26c11ea836ac6}{get\+Entries}} () const
+\begin{DoxyCompactList}\small\item\em Returns the list of entries stored in the \doxylink{classsvcs_1_1core_1_1Tree}{Tree}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. Required for derived classes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_ab66c27121f6c8bbbf427c30c020dfe6d}{Vcs\+Object}} (const \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. Required for derived classes to correctly copy the hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_aa293cbc989a083b31c42f5505469f6c1}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a5910a71613b0b31a9d046d2b71d7644e}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Returns the unique hash identifier of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsvcs_1_1core_1_1Tree}{Tree}} \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_ae22b9ae91de0d77d4836a4a9f5ac57d6}{deserialize}} (const std\+::string \&raw\+\_\+content)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object from a serialized string read from the object database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_aa5f3a482b7c45bbce8814bf2d6f325ad}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Calculates SHA-\/256 hash for given canonical content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a776323941cf6d9f2923b67cf9cc95ec5}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Computes the cryptographic hash ID for the object\textquotesingle{}s content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_ab2ce43cace8e3bfd31cc3a293245394c}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em The unique cryptographic hash identifier (e.\+g., SHA-\/256) for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the state of a directory in the VCS, implementing the \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} contract. 
+
+Stores a collection of \doxylink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry} objects, effectively mapping names to hash pointers. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1Tree_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1core_1_1Tree_a1b9ef98c3e4a0c1c45512edc65572f9b}\index{svcs::core::Tree@{svcs::core::Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!svcs::core::Tree@{svcs::core::Tree}}
+\doxysubsubsection{\texorpdfstring{Tree()}{Tree()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Tree_a1b9ef98c3e4a0c1c45512edc65572f9b} 
+svcs\+::core\+::\+Tree\+::\+Tree (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} $>$}]{entries}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. 
+
+The constructor must internally sort the entries before calling \doxylink{classsvcs_1_1core_1_1VcsObject_a776323941cf6d9f2923b67cf9cc95ec5}{compute\+Hash()}. 
+\begin{DoxyParams}{Parameters}
+{\em entries} & A collection of \doxylink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry} structures representing the directory content. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1Tree_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1core_1_1Tree_a01b5d88a8d80726cd9d997a00935b7e3}\index{svcs::core::Tree@{svcs::core::Tree}!addEntry@{addEntry}}
+\index{addEntry@{addEntry}!svcs::core::Tree@{svcs::core::Tree}}
+\doxysubsubsection{\texorpdfstring{addEntry()}{addEntry()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Tree_a01b5d88a8d80726cd9d997a00935b7e3} 
+void svcs\+::core\+::\+Tree\+::add\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} \&}]{entry}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new entry to the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} or updates an existing entry if the name matches. 
+
+If the entries list is modified, the \doxylink{classsvcs_1_1core_1_1Tree}{Tree}\textquotesingle{}s hash becomes invalid and must be recomputed before saving. 
+\begin{DoxyParams}{Parameters}
+{\em entry} & The \doxylink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry} to add or update. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1Tree_ae22b9ae91de0d77d4836a4a9f5ac57d6}\index{svcs::core::Tree@{svcs::core::Tree}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!svcs::core::Tree@{svcs::core::Tree}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Tree_ae22b9ae91de0d77d4836a4a9f5ac57d6} 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Tree}{Tree}} svcs\+::core\+::\+Tree\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+\_\+content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object from a serialized string read from the object database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+content} & The serialized string data, typically read from a decompressed object file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classsvcs_1_1core_1_1Tree}{Tree} A fully reconstructed \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Tree_a85cf98fe6fc3487e1e1396e460c5845e}\index{svcs::core::Tree@{svcs::core::Tree}!findEntry@{findEntry}}
+\index{findEntry@{findEntry}!svcs::core::Tree@{svcs::core::Tree}}
+\doxysubsubsection{\texorpdfstring{findEntry()}{findEntry()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Tree_a85cf98fe6fc3487e1e1396e460c5845e} 
+std\+::optional$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} $>$ svcs\+::core\+::\+Tree\+::find\+Entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Searches for a specific entry within the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the entry to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$\+Tree\+Entry$>$ An optional containing the entry if found, otherwise empty. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Tree_a222149cda2001e166eb26c11ea836ac6}\index{svcs::core::Tree@{svcs::core::Tree}!getEntries@{getEntries}}
+\index{getEntries@{getEntries}!svcs::core::Tree@{svcs::core::Tree}}
+\doxysubsubsection{\texorpdfstring{getEntries()}{getEntries()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Tree_a222149cda2001e166eb26c11ea836ac6} 
+const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} $>$ \& svcs\+::core\+::\+Tree\+::get\+Entries (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the list of entries stored in the \doxylink{classsvcs_1_1core_1_1Tree}{Tree}. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Tree\+Entry$>$\& A constant reference to the internal vector of entries. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Tree_a763fd95420bb17e80e5005d875fe9e82}\index{svcs::core::Tree@{svcs::core::Tree}!getType@{getType}}
+\index{getType@{getType}!svcs::core::Tree@{svcs::core::Tree}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Tree_a763fd95420bb17e80e5005d875fe9e82} 
+std\+::string svcs\+::core\+::\+Tree\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the VCS object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Always returns "{}tree"{}.   Pure virtual method to get the type of the VCS object.   
+\end{DoxyReturn}
+This is crucial for object storage and reconstruction (e.\+g., "{}commit"{}, "{}blob"{}, "{}tree"{}). \begin{DoxyReturn}{Returns}
+std\+::string The type identifier of the object.    
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a2c2a2d4b120a95b5163ff706d9804180}{svcs\+::core\+::\+Vcs\+Object}}.
+
+\Hypertarget{classsvcs_1_1core_1_1Tree_a40502f35e3795496d054715fe1115404}\index{svcs::core::Tree@{svcs::core::Tree}!removeEntry@{removeEntry}}
+\index{removeEntry@{removeEntry}!svcs::core::Tree@{svcs::core::Tree}}
+\doxysubsubsection{\texorpdfstring{removeEntry()}{removeEntry()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Tree_a40502f35e3795496d054715fe1115404} 
+bool svcs\+::core\+::\+Tree\+::remove\+Entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Removes an entry (file or subdirectory) from the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the entry to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the entry was found and removed, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Tree_aefbdb38f50792902571b200c98004de0}\index{svcs::core::Tree@{svcs::core::Tree}!serialize@{serialize}}
+\index{serialize@{serialize}!svcs::core::Tree@{svcs::core::Tree}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Tree_aefbdb38f50792902571b200c98004de0} 
+std\+::string svcs\+::core\+::\+Tree\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serializes the \doxylink{classsvcs_1_1core_1_1Tree}{Tree} content into a standardized string format for hashing and storage. 
+
+The serialization must ensure the entries are sorted to guarantee hash consistency. \begin{DoxyReturn}{Returns}
+std\+::string The standardized, serialized directory structure.   Pure virtual method to serialize the object\textquotesingle{}s core data.   
+\end{DoxyReturn}
+The returned string content is what will be hashed and stored in the database. \begin{DoxyReturn}{Returns}
+std\+::string The standardized, serialized data of the object.    
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a6fc1786a23d7b60655d4d34704b184b6}{svcs\+::core\+::\+Vcs\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Tree_8hxx}{Tree.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Tree_8cxx}{Tree.\+cxx}}\end{DoxyCompactItemize}

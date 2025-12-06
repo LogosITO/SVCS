@@ -92,7 +92,7 @@ $(function(){initNavTree('classUndoCommandTest.html','','classUndoCommandTest-me
 </div><!--header-->
 <div class="contents">
 
-<p>Google Test fixture for running integration tests against the <a class="el" href="classUndoCommand.html" title="Command to revert the repository state to a previous commit.">UndoCommand</a>.  
+<p>Google Test fixture for running integration tests against the UndoCommand.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IntUndoCommandTest_8hxx_source.html">IntUndoCommandTest.hxx</a>&gt;</code></p>
@@ -114,15 +114,15 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a84b1211ba7256902f112b9f6f7726b65" id="r_a84b1211ba7256902f112b9f6f7726b65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84b1211ba7256902f112b9f6f7726b65">createTestDirectory</a> (const std::string &amp;dirname) const</td></tr>
 <tr class="memdesc:a84b1211ba7256902f112b9f6f7726b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory in the temporary location.  <br /></td></tr>
 <tr class="memitem:a0040c7c506fa9026c0b9c1bdbd7dfa54" id="r_a0040c7c506fa9026c0b9c1bdbd7dfa54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0040c7c506fa9026c0b9c1bdbd7dfa54">stageFiles</a> (const std::vector&lt; std::string &gt; &amp;files)</td></tr>
-<tr class="memdesc:a0040c7c506fa9026c0b9c1bdbd7dfa54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files using the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging logic.  <br /></td></tr>
+<tr class="memdesc:a0040c7c506fa9026c0b9c1bdbd7dfa54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files using the RepositoryManager's staging logic.  <br /></td></tr>
 <tr class="memitem:a1106d4d824964caf50800ca487355328" id="r_a1106d4d824964caf50800ca487355328"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1106d4d824964caf50800ca487355328">createTestCommit</a> (const std::string &amp;message)</td></tr>
 <tr class="memdesc:a1106d4d824964caf50800ca487355328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new commit (save) with a specified message.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a274ab1a49b83056b359ae465a27cdddc" id="r_a274ab1a49b83056b359ae465a27cdddc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274ab1a49b83056b359ae465a27cdddc">containsMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memitem:a274ab1a49b83056b359ae465a27cdddc" id="r_a274ab1a49b83056b359ae465a27cdddc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274ab1a49b83056b359ae465a27cdddc">containsMessage</a> (const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</td></tr>
 <tr class="memdesc:a274ab1a49b83056b359ae465a27cdddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific message (substring) exists in any event notification.  <br /></td></tr>
-<tr class="memitem:a19ae731837894936b259f6c12e948f0d" id="r_a19ae731837894936b259f6c12e948f0d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19ae731837894936b259f6c12e948f0d">countMessages</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memitem:a19ae731837894936b259f6c12e948f0d" id="r_a19ae731837894936b259f6c12e948f0d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19ae731837894936b259f6c12e948f0d">countMessages</a> (const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</td></tr>
 <tr class="memdesc:a19ae731837894936b259f6c12e948f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the occurrences of a specific message (substring) across all event notifications.  <br /></td></tr>
 <tr class="memitem:ab2616fda4df38dac96a12716f353595f" id="r_ab2616fda4df38dac96a12716f353595f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2616fda4df38dac96a12716f353595f">simulateUserInput</a> (const std::string &amp;input)</td></tr>
 <tr class="memdesc:ab2616fda4df38dac96a12716f353595f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates user input by pushing the string into the mock event bus's input queue.  <br /></td></tr>
@@ -133,20 +133,20 @@ Protected Attributes</h2></td></tr>
 std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockEventBus</b></td></tr>
 <tr class="memdesc:aaab6fd7b2ac1845cea035509a4b27fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the mock event bus (observer/input simulator). <br /></td></tr>
 <tr class="memitem:a953ba8563850b1f59d347f0394db5a4f" id="r_a953ba8563850b1f59d347f0394db5a4f"><td class="memItemLeft" align="right" valign="top"><a id="a953ba8563850b1f59d347f0394db5a4f" name="a953ba8563850b1f59d347f0394db5a4f"></a>
-std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
+std::shared_ptr&lt; RepositoryManager &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
 <tr class="memdesc:a953ba8563850b1f59d347f0394db5a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the repository core logic component. <br /></td></tr>
 <tr class="memitem:ae35ccb30eb05bba1da30fcdf7278478a" id="r_ae35ccb30eb05bba1da30fcdf7278478a"><td class="memItemLeft" align="right" valign="top"><a id="ae35ccb30eb05bba1da30fcdf7278478a" name="ae35ccb30eb05bba1da30fcdf7278478a"></a>
-std::unique_ptr&lt; <a class="el" href="classUndoCommand.html">UndoCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+std::unique_ptr&lt; UndoCommand &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
 <tr class="memdesc:ae35ccb30eb05bba1da30fcdf7278478a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the command being tested. <br /></td></tr>
 <tr class="memitem:a6ada7d6a933f4e447ad01bb6ae17bb27" id="r_a6ada7d6a933f4e447ad01bb6ae17bb27"><td class="memItemLeft" align="right" valign="top"><a id="a6ada7d6a933f4e447ad01bb6ae17bb27" name="a6ada7d6a933f4e447ad01bb6ae17bb27"></a>
 std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>testDir</b></td></tr>
 <tr class="memdesc:a6ada7d6a933f4e447ad01bb6ae17bb27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the temporary test repository directory. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Google Test fixture for running integration tests against the <a class="el" href="classUndoCommand.html" title="Command to revert the repository state to a previous commit.">UndoCommand</a>. </p>
+<div class="textblock"><p>Google Test fixture for running integration tests against the UndoCommand. </p>
 <p>This fixture provides the necessary infrastructure for testing the undo command:</p><ul>
 <li><b>SetUp/TearDown:</b> Manage a temporary SVCS repository directory.</li>
-<li><b>Core Components:</b> Instances of <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> (for event bus/output/input simulation) and <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a> (for core logic).</li>
+<li><b>Core Components:</b> Instances of <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a> (for event bus/output/input simulation) and RepositoryManager (for core logic).</li>
 <li><b>Helper Methods:</b> Simplify file manipulation, staging, committing, and verification of notifications. </li>
 </ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -162,7 +162,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
         <tr>
           <td class="memname">bool UndoCommandTest::containsMessage </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+          <td class="paramtype">const std::vector&lt; Event &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -201,7 +201,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
         <tr>
           <td class="memname">int UndoCommandTest::countMessages </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+          <td class="paramtype">const std::vector&lt; Event &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -385,7 +385,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 </div><div class="memdoc">
 
 <p>Simulates user input by pushing the string into the mock event bus's input queue. </p>
-<p>This is crucial for testing the confirmation prompt in the <a class="el" href="classUndoCommand.html" title="Command to revert the repository state to a previous commit.">UndoCommand</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This is crucial for testing the confirmation prompt in the UndoCommand. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">input</td><td>The string to simulate as user input (e.g., "y\n" or "n\n"). </td></tr>
   </table>
@@ -417,7 +417,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 </table>
 </div><div class="memdoc">
 
-<p>Stages a list of files using the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging logic. </p>
+<p>Stages a list of files using the RepositoryManager's staging logic. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">files</td><td>A vector of file names to stage. </td></tr>

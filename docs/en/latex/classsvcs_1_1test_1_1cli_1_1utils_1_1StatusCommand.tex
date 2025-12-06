@@ -1,0 +1,169 @@
+\doxysection{svcs\+::test\+::cli\+::utils\+::Status\+Command Class Reference}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}\index{svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}}
+
+
+Command for showing the current status of the repository.  
+
+
+
+
+{\ttfamily \#include $<$Status\+Command.\+hxx$>$}
+
+Inheritance diagram for svcs\+::test\+::cli\+::utils\+::Status\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a79828b6c391d05869f75f5c84a88bc1f}{Status\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}{Status\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_ae42c61328680bcfbcdbd324161d9a4fe}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Executes the status command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a22c7b92531d7be0f48401f097d8c3e6b}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a708acf0ea6691310043a5dba697ec0aa}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the description of the command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a0a42903ddeb04167bc1c83bd4980ce82}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the usage syntax of the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a00343d92cea91b347157868d2810fd46}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Shows detailed help information for this command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command for showing the current status of the repository. 
+
+The \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}{Status\+Command} displays\+:
+\begin{DoxyItemize}
+\item Current branch
+\item Staged changes (ready to save)
+\item Unstaged changes (not yet added)
+\item Untracked files (new files)
+\item Status of specific files when provided as arguments 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a79828b6c391d05869f75f5c84a88bc1f}\index{svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}!StatusCommand@{StatusCommand}}
+\index{StatusCommand@{StatusCommand}!svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}}
+\doxysubsubsection{\texorpdfstring{StatusCommand()}{StatusCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a79828b6c391d05869f75f5c84a88bc1f} 
+svcs\+::cli\+::\+Status\+Command\+::\+Status\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}{Status\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & Shared pointer to the event bus for notifications. \\
+\hline
+{\em repo\+Manager} & Shared pointer to the repository manager. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_ae42c61328680bcfbcdbd324161d9a4fe}\index{svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_ae42c61328680bcfbcdbd324161d9a4fe} 
+bool svcs\+::cli\+::\+Status\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the status command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Command arguments -\/ if provided, shows status for specific files. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true always, as status command cannot fail. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a708acf0ea6691310043a5dba697ec0aa}\index{svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a708acf0ea6691310043a5dba697ec0aa} 
+std\+::string svcs\+::cli\+::\+Status\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the description of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Show the working tree status"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a22c7b92531d7be0f48401f097d8c3e6b}\index{svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a22c7b92531d7be0f48401f097d8c3e6b} 
+std\+::string svcs\+::cli\+::\+Status\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}status"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a0a42903ddeb04167bc1c83bd4980ce82}\index{svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a0a42903ddeb04167bc1c83bd4980ce82} 
+std\+::string svcs\+::cli\+::\+Status\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the usage syntax of the command. 
+
+\begin{DoxyReturn}{Returns}
+"{}svcs status \mbox{[}file1 file2 ...\mbox{]}"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a00343d92cea91b347157868d2810fd46}\index{svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::test::cli::utils::StatusCommand@{svcs::test::cli::utils::StatusCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand_a00343d92cea91b347157868d2810fd46} 
+void svcs\+::cli\+::\+Status\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Shows detailed help information for this command. 
+
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{StatusCommand_8hxx}{Status\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{StatusCommand_8cxx}{Status\+Command.\+cxx}}\end{DoxyCompactItemize}

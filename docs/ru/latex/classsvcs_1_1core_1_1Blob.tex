@@ -1,0 +1,138 @@
+\doxysection{Класс svcs\+::core\+::Blob}
+\hypertarget{classsvcs_1_1core_1_1Blob}{}\label{classsvcs_1_1core_1_1Blob}\index{svcs::core::Blob@{svcs::core::Blob}}
+
+
+Представляет содержимое файла (Binary Large Object).  
+
+
+
+
+{\ttfamily \#include $<$Blob.\+hxx$>$}
+
+Граф наследования\+:svcs\+::core\+::Blob\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1core_1_1Blob}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Blob_a2c3ec55aaf556ee40a9bb37edd917dd2}{Blob}} (std\+::string raw\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Конструктор для объекта \doxylink{classsvcs_1_1core_1_1Blob}{Blob}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1Blob_ad5d32bd67a9279ea0b1db716a0cea74c}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Возвращает тип объекта СКВ. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1Blob_a05f40a892e496b95cf6a0bb2fe501d67}{serialize}} () const override
+\begin{DoxyCompactList}\small\item\em Сериализует основные данные объекта для хеширования и хранения. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classsvcs_1_1core_1_1Blob_a78187678109dd93835892889d1b318cf}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает необработанное содержимое данных, хранящееся в \doxylink{classsvcs_1_1core_1_1Blob}{Blob}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию. Требуется для производных классов. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_ab66c27121f6c8bbbf427c30c020dfe6d}{Vcs\+Object}} (const \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Конструктор копирования. Требуется для производных классов для корректного копирования hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_aa293cbc989a083b31c42f5505469f6c1}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a5910a71613b0b31a9d046d2b71d7644e}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает уникальный хеш-\/идентификатор объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Открытые статические члены унаследованные от \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_aa5f3a482b7c45bbce8814bf2d6f325ad}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Вычисляет SHA-\/256 хеш для заданного канонического содержимого. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные члены унаследованные от \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a776323941cf6d9f2923b67cf9cc95ec5}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Вычисляет криптографический хеш-\/идентификатор для содержимого объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_ab2ce43cace8e3bfd31cc3a293245394c}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Уникальный криптографический хеш-\/идентификатор (например, SHA-\/256) для этого объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Представляет содержимое файла (Binary Large Object). 
+
+Это объект самого низкого уровня в СКВ, хранящий только необработанные байты файла. Объект \doxylink{classsvcs_1_1core_1_1Blob}{Blob} является неизменяемым; его хеш зависит исключительно от его содержимого. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1Blob_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1core_1_1Blob_a2c3ec55aaf556ee40a9bb37edd917dd2}\index{svcs::core::Blob@{svcs::core::Blob}!Blob@{Blob}}
+\index{Blob@{Blob}!svcs::core::Blob@{svcs::core::Blob}}
+\doxysubsubsection{\texorpdfstring{Blob()}{Blob()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Blob_a2c3ec55aaf556ee40a9bb37edd917dd2} 
+svcs\+::core\+::\+Blob\+::\+Blob (\begin{DoxyParamCaption}\item[{std\+::string}]{raw\+\_\+data}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор для объекта \doxylink{classsvcs_1_1core_1_1Blob}{Blob}. 
+
+Инициализирует объект и немедленно вычисляет его хеш ID на основе raw\+\_\+data. 
+\begin{DoxyParams}{Аргументы}
+{\em raw\+\_\+data} & Необработанное содержимое файла, которое будет сохранено и хешировано. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1Blob_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1core_1_1Blob_a78187678109dd93835892889d1b318cf}\index{svcs::core::Blob@{svcs::core::Blob}!getData@{getData}}
+\index{getData@{getData}!svcs::core::Blob@{svcs::core::Blob}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Blob_a78187678109dd93835892889d1b318cf} 
+const std\+::string \& svcs\+::core\+::\+Blob\+::get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Возвращает необработанное содержимое данных, хранящееся в \doxylink{classsvcs_1_1core_1_1Blob}{Blob}. 
+
+\begin{DoxyReturn}{Возвращает}
+const std\+::string\& Константная ссылка на содержимое файла. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Blob_ad5d32bd67a9279ea0b1db716a0cea74c}\index{svcs::core::Blob@{svcs::core::Blob}!getType@{getType}}
+\index{getType@{getType}!svcs::core::Blob@{svcs::core::Blob}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Blob_ad5d32bd67a9279ea0b1db716a0cea74c} 
+std\+::string svcs\+::core\+::\+Blob\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Возвращает тип объекта СКВ. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Всегда возвращает "{}blob"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a2c2a2d4b120a95b5163ff706d9804180}{svcs\+::core\+::\+Vcs\+Object}}.
+
+\Hypertarget{classsvcs_1_1core_1_1Blob_a05f40a892e496b95cf6a0bb2fe501d67}\index{svcs::core::Blob@{svcs::core::Blob}!serialize@{serialize}}
+\index{serialize@{serialize}!svcs::core::Blob@{svcs::core::Blob}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Blob_a05f40a892e496b95cf6a0bb2fe501d67} 
+std\+::string svcs\+::core\+::\+Blob\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Сериализует основные данные объекта для хеширования и хранения. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Возвращает само необработанное содержимое файла (data). 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a6fc1786a23d7b60655d4d34704b184b6}{svcs\+::core\+::\+Vcs\+Object}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Blob_8hxx}{Blob.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Blob_8cxx}{Blob.\+cxx}}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 var InitCommand_8hxx =
 [
-    [ "InitCommand", "classInitCommand.html", "classInitCommand" ]
+    [ "svcs::cli::InitCommand", "classsvcs_1_1cli_1_1InitCommand.html", "classsvcs_1_1cli_1_1InitCommand" ]
 ];

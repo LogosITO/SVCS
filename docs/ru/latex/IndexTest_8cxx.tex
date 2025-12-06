@@ -2,7 +2,7 @@
 \hypertarget{IndexTest_8cxx}{}\label{IndexTest_8cxx}\index{tests/core/IndexTest.cxx@{tests/core/IndexTest.cxx}}
 
 
-Модульные тесты для класса \doxylink{classIndex}{Index}, проверяющие управление областью индексации, отслеживание изменений файлов и сохранение индекса.  
+Модульные тесты для класса Index, проверяющие управление областью индексации, отслеживание изменений файлов и сохранение индекса.  
 
 
 {\ttfamily \#include "{}../../core/include/\+Index.\+hxx"{}}\newline
@@ -18,46 +18,51 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classMockSubject}{Mock\+Subject}}
-\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classISubject}{ISubject} (\doxylink{structEvent}{Event} Bus). \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classMockObjectStorage}{Mock\+Object\+Storage}}
-\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classIndexTest}{Index\+Test}}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject}{svcs\+::test\+::core\+::\+Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (\doxylink{structsvcs_1_1services_1_1Event}{Event} Bus). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObjectStorage}{svcs\+::test\+::core\+::\+Mock\+Object\+Storage}}
+\begin{DoxyCompactList}\small\item\em Mock implementation of Object\+Storage. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{svcs\+::test\+::core\+::\+Index\+Test}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1core}{svcs\+::test\+::core}}
+\begin{DoxyCompactList}\small\item\em Модульные тесты для основных компонентов и структур данных. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Функции}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{IndexTest_8cxx_a67dac0eb78bdb674669d65a339f668ab}\label{IndexTest_8cxx_a67dac0eb78bdb674669d65a339f668ab} 
-void {\bfseries create\+\_\+test\+\_\+file} (const fs\+::path \&path, const std\+::string \&content)
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad6e3cd496071cbcbe1a6a9184e6774db}\label{namespacesvcs_1_1test_1_1core_ad6e3cd496071cbcbe1a6a9184e6774db} 
+void {\bfseries svcs\+::test\+::core\+::create\+\_\+test\+\_\+file} (const fs\+::path \&path, const std\+::string \&content)
 \item 
-\Hypertarget{IndexTest_8cxx_a2fd71617f1205cb97d16142b7f2d532b}\label{IndexTest_8cxx_a2fd71617f1205cb97d16142b7f2d532b} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Basic\+File\+Operations)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a00e85cb909bea1da62f0bab74656e473}\label{namespacesvcs_1_1test_1_1core_a00e85cb909bea1da62f0bab74656e473} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Basic\+File\+Operations)
 \item 
-\Hypertarget{IndexTest_8cxx_afecfa5c45e3b3efef0e4f0b2ad873963}\label{IndexTest_8cxx_afecfa5c45e3b3efef0e4f0b2ad873963} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Stage\+New\+File\+\_\+\+Adds\+Correct\+Entry)
+\Hypertarget{namespacesvcs_1_1test_1_1core_ad004091ebfbd31fa9b8dc0a4adfd4f8b}\label{namespacesvcs_1_1test_1_1core_ad004091ebfbd31fa9b8dc0a4adfd4f8b} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Stage\+New\+File\+\_\+\+Adds\+Correct\+Entry)
 \item 
-\Hypertarget{IndexTest_8cxx_abb7ef29f8eb1024642a7682f2949df7f}\label{IndexTest_8cxx_abb7ef29f8eb1024642a7682f2949df7f} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Stage\+File\+\_\+\+Throws\+On\+Non\+Existent\+File)
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa6b7fb97bb432f96216cb2e64680591a}\label{namespacesvcs_1_1test_1_1core_aa6b7fb97bb432f96216cb2e64680591a} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Stage\+File\+\_\+\+Throws\+On\+Non\+Existent\+File)
 \item 
-\Hypertarget{IndexTest_8cxx_a3b622ddd43bc94ed35fa5356903b9660}\label{IndexTest_8cxx_a3b622ddd43bc94ed35fa5356903b9660} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+False\+\_\+\+When\+No\+Change)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a9de2fe1aadfdb9657bf52fe0883122af}\label{namespacesvcs_1_1test_1_1core_a9de2fe1aadfdb9657bf52fe0883122af} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+False\+\_\+\+When\+No\+Change)
 \item 
-\Hypertarget{IndexTest_8cxx_ac9476d8cef2b1a98dbbf17d06610603b}\label{IndexTest_8cxx_ac9476d8cef2b1a98dbbf17d06610603b} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+Size\+Changes)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a458c105055272e2f9fff30fbf87a1034}\label{namespacesvcs_1_1test_1_1core_a458c105055272e2f9fff30fbf87a1034} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+Size\+Changes)
 \item 
-\Hypertarget{IndexTest_8cxx_a9add58ac0562dcde1b7a85131fe35f32}\label{IndexTest_8cxx_a9add58ac0562dcde1b7a85131fe35f32} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+File\+Deleted)
+\Hypertarget{namespacesvcs_1_1test_1_1core_aa6f2e88eeea2e35df0f13b005a8d68c9}\label{namespacesvcs_1_1test_1_1core_aa6f2e88eeea2e35df0f13b005a8d68c9} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+File\+Deleted)
 \item 
-\Hypertarget{IndexTest_8cxx_a34250156caa94989fa1a5f942f6ce8ab}\label{IndexTest_8cxx_a34250156caa94989fa1a5f942f6ce8ab} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+Untracked\+Exists)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a1f62b31323b57e1d6b3ca806accd318b}\label{namespacesvcs_1_1test_1_1core_a1f62b31323b57e1d6b3ca806accd318b} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Is\+File\+Modified\+\_\+\+True\+\_\+\+When\+Untracked\+Exists)
 \item 
-\Hypertarget{IndexTest_8cxx_a2cf7df6db081df9db187b6eee911d519}\label{IndexTest_8cxx_a2cf7df6db081df9db187b6eee911d519} 
-{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classIndexTest}{Index\+Test}}, Persistence\+\_\+\+Save\+And\+Load)
+\Hypertarget{namespacesvcs_1_1test_1_1core_a318d90b86c7b661d66323109213bb29d}\label{namespacesvcs_1_1test_1_1core_a318d90b86c7b661d66323109213bb29d} 
+{\bfseries svcs\+::test\+::core\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1IndexTest}{Index\+Test}}, Persistence\+\_\+\+Save\+And\+Load)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Модульные тесты для класса \doxylink{classIndex}{Index}, проверяющие управление областью индексации, отслеживание изменений файлов и сохранение индекса. 
+Модульные тесты для класса Index, проверяющие управление областью индексации, отслеживание изменений файлов и сохранение индекса. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License 

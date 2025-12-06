@@ -1,0 +1,114 @@
+\doxysection{Пространство имен svcs\+::cli}
+\hypertarget{namespacesvcs_1_1cli}{}\label{namespacesvcs_1_1cli}\index{svcs::cli@{svcs::cli}}
+
+
+Компоненты командной строки и реализации команд.  
+
+
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}}
+\begin{DoxyCompactList}\small\item\em Реализует команду "{}add"{} для Simple Version Control System (SVCS). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand}{Base\+Command}}
+\begin{DoxyCompactList}\small\item\em Базовый класс для всех CLI команд. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand}{Branch\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для управления ветками в системе контроля версий. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для удаления структуры репозитория SVCS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory}{Command\+Factory}}
+\begin{DoxyCompactList}\small\item\em Фабрика для создания объектов \doxylink{classsvcs_1_1cli_1_1ICommand}{ICommand} по их строковому имени. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand}{Help\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для отображения справочной информации о других командах. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService}{Help\+Service}}
+\begin{DoxyCompactList}\small\item\em Сервис, предоставляющий справочную информацию для команд. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand}{History\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для просмотра истории сохранений (коммитов) в репозитории. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}
+\begin{DoxyCompactList}\small\item\em Интерфейс (абстрактный базовый класс) для всех команд, выполняемых через CLI. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand}{Init\+Command}}
+\begin{DoxyCompactList}\small\item\em Реализует команду "{}init"{} для системы контроля версий (VCS). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand}{Merge\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для слияния веток в системе контроля версий. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1RemoveCommand}{Remove\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для удаления файлов из области подготовки. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1SaveCommand}{Save\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для сохранения (коммита) подготовленных изменений в репозиторий. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand}{Status\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для отображения текущего статуса репозитория. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для возврата состояния репозитория к предыдущему коммиту. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand}{Version\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для отображения информации о версии SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae}{File\+Status}} \{ \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2}{UNTRACKED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065}{MODIFIED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea63c2867fdcae0e8e8413d7ac21b69b59}{DELETED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8}{UNMODIFIED}}
+ \}
+\begin{DoxyCompactList}\small\item\em Определяет статус файла в SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacesvcs_1_1cli_a7836bbfca1be26e7686be6b4463ccb78}{print\+Debug}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Условно выводит отладочное сообщение в стандартный вывод. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Компоненты командной строки и реализации команд. 
+
+Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую, включая \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}, Commit\+Command, \doxylink{classsvcs_1_1cli_1_1StatusCommand}{Status\+Command} и другие. 
+
+\label{doc-enum-members}
+\Hypertarget{namespacesvcs_1_1cli_doc-enum-members}
+\doxysubsection{Перечисления}
+\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae}\index{svcs::cli@{svcs::cli}!FileStatus@{FileStatus}}
+\index{FileStatus@{FileStatus}!svcs::cli@{svcs::cli}}
+\doxysubsubsection{\texorpdfstring{FileStatus}{FileStatus}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae} 
+enum class \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae}{svcs\+::cli\+::\+File\+Status}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Определяет статус файла в SVCS. 
+
+\begin{DoxyEnumFields}[2]{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNTRACKED@{UNTRACKED}!svcs::cli@{svcs::cli}}\index{svcs::cli@{svcs::cli}!UNTRACKED@{UNTRACKED}}}\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2}\label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2} 
+UNTRACKED&Файл присутствует, но не отслеживается SVCS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODIFIED@{MODIFIED}!svcs::cli@{svcs::cli}}\index{svcs::cli@{svcs::cli}!MODIFIED@{MODIFIED}}}\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065}\label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065} 
+MODIFIED&Файл отслеживается и был изменен с последнего коммита. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DELETED@{DELETED}!svcs::cli@{svcs::cli}}\index{svcs::cli@{svcs::cli}!DELETED@{DELETED}}}\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea63c2867fdcae0e8e8413d7ac21b69b59}\label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea63c2867fdcae0e8e8413d7ac21b69b59} 
+DELETED&Файл отслеживается, но был удален из рабочей директории. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNMODIFIED@{UNMODIFIED}!svcs::cli@{svcs::cli}}\index{svcs::cli@{svcs::cli}!UNMODIFIED@{UNMODIFIED}}}\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8}\label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8} 
+UNMODIFIED&Файл отслеживается и не имеет изменений с последнего коммита. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{namespacesvcs_1_1cli_doc-func-members}
+\doxysubsection{Функции}
+\Hypertarget{namespacesvcs_1_1cli_a7836bbfca1be26e7686be6b4463ccb78}\index{svcs::cli@{svcs::cli}!printDebug@{printDebug}}
+\index{printDebug@{printDebug}!svcs::cli@{svcs::cli}}
+\doxysubsubsection{\texorpdfstring{printDebug()}{printDebug()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1cli_a7836bbfca1be26e7686be6b4463ccb78} 
+void svcs\+::cli\+::print\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Условно выводит отладочное сообщение в стандартный вывод. 
+
+Сообщение выводится только если макрос DEBUG\+\_\+\+MODE определен во время компиляции. Функция помечена как {\ttfamily inline}, чтобы предложить встраивание компилятором, и компилируется в пустую операцию, когда DEBUG\+\_\+\+MODE не определен, что приводит к нулевым накладным расходам во время выполнения в релизных сборках. 
+\begin{DoxyParams}{Аргументы}
+{\em message} & Строковое сообщение для вывода, с префиксом "{}\+DEBUG\+: "{}. \\
+\hline
+\end{DoxyParams}

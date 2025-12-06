@@ -2,7 +2,7 @@
 \hypertarget{classHelpCommandTest}{}\label{classHelpCommandTest}\index{HelpCommandTest@{HelpCommandTest}}
 
 
-Google Test fixture for running unit/integration tests against the \doxylink{classHelpCommand}{Help\+Command}.  
+Google Test fixture for running unit/integration tests against the Help\+Command.  
 
 
 
@@ -22,12 +22,12 @@ void \mbox{\hyperlink{classHelpCommandTest_aaacf9ab18d10a23809bb743993ed1960}{Se
 \begin{DoxyCompactList}\small\item\em Sets up the testing environment before each test. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classHelpCommandTest_ae9ba25cb1f7ac4cab80820ae167dd582}{Tear\+Down}} () override
 \begin{DoxyCompactList}\small\item\em Tears down the testing environment after each test. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classHelpCommandTest_a1ad9fd0189edb0eac480032be0c842ed}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+int \mbox{\hyperlink{classHelpCommandTest_a1ad9fd0189edb0eac480032be0c842ed}{count\+Messages}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Counts the occurrences of a specific message (substring) across all event notifications. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{classHelpCommandTest_a1030123741ad553f0114c700cf6db1e7}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+static bool \mbox{\hyperlink{classHelpCommandTest_a1030123741ad553f0114c700cf6db1e7}{contains\+Message}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -39,14 +39,14 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockHelpService}{Mock\+Help\+Service}} $>$ {\bfseries mock\+Help\+Service}
 \begin{DoxyCompactList}\small\item\em Shared pointer to the mock help service, used to control help data and verify calls. \end{DoxyCompactList}\item 
 \Hypertarget{classHelpCommandTest_a9105686746356bf0e8e1f2331089abde}\label{classHelpCommandTest_a9105686746356bf0e8e1f2331089abde} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHelpCommand}{Help\+Command}} $>$ {\bfseries command}
+std\+::unique\+\_\+ptr$<$ Help\+Command $>$ {\bfseries command}
 \begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Google Test fixture for running unit/integration tests against the \doxylink{classHelpCommand}{Help\+Command}. 
+Google Test fixture for running unit/integration tests against the Help\+Command. 
 
-This fixture is crucial for isolating the \doxylink{classHelpCommand}{Help\+Command}\textquotesingle{}s logic, ensuring it correctly delegates help requests to the {\bfseries{\doxylink{classMockHelpService}{Mock\+Help\+Service}}} and reports the resulting output via the {\bfseries{\doxylink{classMockSubject}{Mock\+Subject}}} (event bus). 
+This fixture is crucial for isolating the Help\+Command\textquotesingle{}s logic, ensuring it correctly delegates help requests to the {\bfseries{\doxylink{classMockHelpService}{Mock\+Help\+Service}}} and reports the resulting output via the {\bfseries{\doxylink{classMockSubject}{Mock\+Subject}}} (event bus). 
 
 \label{doc-func-members}
 \Hypertarget{classHelpCommandTest_doc-func-members}
@@ -55,7 +55,7 @@ This fixture is crucial for isolating the \doxylink{classHelpCommand}{Help\+Comm
 \index{containsMessage@{containsMessage}!HelpCommandTest@{HelpCommandTest}}
 \doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
 {\footnotesize\ttfamily \label{classHelpCommandTest_a1030123741ad553f0114c700cf6db1e7} 
-bool Help\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+bool Help\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
 
 
@@ -75,7 +75,7 @@ true if the message is found, false otherwise.
 \index{countMessages@{countMessages}!HelpCommandTest@{HelpCommandTest}}
 \doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
 {\footnotesize\ttfamily \label{classHelpCommandTest_a1ad9fd0189edb0eac480032be0c842ed} 
-int Help\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+int Help\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -101,7 +101,7 @@ void Help\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyPara
 
 Sets up the testing environment before each test. 
 
-Initializes the \doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classMockHelpService}{Mock\+Help\+Service}, and the \doxylink{classHelpCommand}{Help\+Command} instance. \Hypertarget{classHelpCommandTest_ae9ba25cb1f7ac4cab80820ae167dd582}\index{HelpCommandTest@{HelpCommandTest}!TearDown@{TearDown}}
+Initializes the \doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classMockHelpService}{Mock\+Help\+Service}, and the Help\+Command instance. \Hypertarget{classHelpCommandTest_ae9ba25cb1f7ac4cab80820ae167dd582}\index{HelpCommandTest@{HelpCommandTest}!TearDown@{TearDown}}
 \index{TearDown@{TearDown}!HelpCommandTest@{HelpCommandTest}}
 \doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
 {\footnotesize\ttfamily \label{classHelpCommandTest_ae9ba25cb1f7ac4cab80820ae167dd582} 

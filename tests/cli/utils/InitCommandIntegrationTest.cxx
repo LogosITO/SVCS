@@ -16,6 +16,8 @@
 
 #include <memory>
 
+namespace svcs::test::cli::utils {
+
 void InitCommandIntegrationTest::TearDown() {
     std::filesystem::current_path(std::filesystem::temp_directory_path());
     std::filesystem::remove_all(testDir);
@@ -30,4 +32,6 @@ void InitCommandIntegrationTest::SetUp() {
     std::filesystem::remove_all(this->testDir);
     std::filesystem::create_directories(this->testDir);
     std::filesystem::current_path(this->testDir);
+}
+
 }

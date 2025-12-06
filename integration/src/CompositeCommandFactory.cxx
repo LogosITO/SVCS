@@ -25,6 +25,10 @@
 #include <unordered_set>
 #include <algorithm>
 
+namespace svcs::integration {
+
+using namespace svcs::server::cli;
+
 CompositeCommandFactory::CompositeCommandFactory(std::shared_ptr<ISubject> event_bus,
                                                std::shared_ptr<RepositoryManager> repo_manager)
     : event_bus_(std::move(event_bus))
@@ -112,4 +116,6 @@ bool CompositeCommandFactory::commandExists(const std::string& name) const {
 
 size_t CompositeCommandFactory::getFactoryCount() const {
     return factories_.size();
+}
+
 }

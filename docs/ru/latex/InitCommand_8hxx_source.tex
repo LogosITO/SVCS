@@ -13,25 +13,32 @@
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInitCommand_a484eda89d41a65ec3a9849b381577dfc}{InitCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
-\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00051\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00060\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classInitCommand_a484eda89d41a65ec3a9849b381577dfc}{InitCommand}}(std::shared\_ptr<ISubject>\ subject,}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInitCommand_a208ebec427828e140dd44c105416423f}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00103\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classInitCommand_a06925047a45d9ad66cf429613809bade}{getName}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00114\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classInitCommand_a20154938353ae33f1dbd753df40cf273}{getDescription}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00125\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classInitCommand_a158528947482d476f4e687740296b0a5}{getUsage}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInitCommand_a73f3ea39174694f150375f01cbff53eb}{showHelp}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}}\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{using\ namespace\ }svcs::core;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1services}{svcs::services}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a0dc7c08945be6b2d281c5b2a7b7322e6}{InitCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager\_;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a0dc7c08945be6b2d281c5b2a7b7322e6}{InitCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repoManager);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a993c86956e71217c1720c57cfc1090e4}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00121\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a867b27d397625ad19ea168ac43117f1a}{getName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00132\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a45eefc9d0ddfc577595615b7b000cbaa}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00143\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_ab892966e19c23a19ce5c4661bc881dd4}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand_a365b83ad89e13155a87b2c6205182acc}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \}}
 
 \end{DoxyCode}

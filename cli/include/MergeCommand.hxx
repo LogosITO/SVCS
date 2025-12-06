@@ -22,6 +22,24 @@
 
 /**
  * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
+/**
+ * @english
  * @class MergeCommand
  * @brief Command for merging branches in the version control system.
  *
@@ -234,3 +252,5 @@ private:
      */
     std::shared_ptr<RepositoryManager> repo_manager_;
 };
+
+}

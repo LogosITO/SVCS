@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loglevel_0',['LogLevel',['../Logger_8hxx.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'Logger.hxx']]]
+  ['loglevel_0',['LogLevel',['../namespacesvcs_1_1services.html#a1adf1289a18b7825dd84dac55ccedc41',1,'svcs::services']]]
 ];

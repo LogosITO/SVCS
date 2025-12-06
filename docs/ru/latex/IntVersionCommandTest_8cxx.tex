@@ -2,17 +2,24 @@
 \hypertarget{IntVersionCommandTest_8cxx}{}\label{IntVersionCommandTest_8cxx}\index{tests/cli/utils/IntVersionCommandTest.cxx@{tests/cli/utils/IntVersionCommandTest.cxx}}
 
 
-Реализация интеграционных тестов для класса \doxylink{classVersionCommand}{Version\+Command}.  
+Реализация интеграционных тестов для класса Version\+Command.  
 
 
 {\ttfamily \#include "{}Int\+Version\+Command\+Test.\+hxx"{}}\newline
 {\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Модульные тесты для компонентов интерфейса командной строки. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs\+::test\+::cli\+::utils}}
+\begin{DoxyCompactList}\small\item\em Служебные классы и тестовые фикстуры для тестирования CLI команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация интеграционных тестов для класса \doxylink{classVersionCommand}{Version\+Command}. 
+Реализация интеграционных тестов для класса Version\+Command. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Этот файл предоставляет конкретную реализацию для фикстура \doxylink{classVersionCommandTest}{Version\+Command\+Test}. Поскольку команда {\ttfamily svcs version} не имеет состояния и не взаимодействует с репозиторием, настройка сосредоточена на инициализации \doxylink{classMockSubject}{Mock\+Subject} (шины событий) для захвата вывода и самого экземпляра команды. Предоставлены вспомогательные методы для проверки точного содержимого уведомлений команды. 
+Этот файл предоставляет конкретную реализацию для фикстура Version\+Command\+Test. Поскольку команда {\ttfamily svcs version} не имеет состояния и не взаимодействует с репозиторием, настройка сосредоточена на инициализации Mock\+Subject (шины событий) для захвата вывода и самого экземпляра команды. Предоставлены вспомогательные методы для проверки точного содержимого уведомлений команды. 

@@ -2,7 +2,7 @@
 \hypertarget{classNullObserver}{}\label{classNullObserver}\index{NullObserver@{NullObserver}}
 
 
-Null implementation of \doxylink{classIObserver}{IObserver}.  
+Null implementation of IObserver.  
 
 
 Inheritance diagram for Null\+Observer\+:\begin{figure}[H]
@@ -14,69 +14,21 @@ Inheritance diagram for Null\+Observer\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classNullObserver_a8866a842843f40e6a1a92b27e7148ef7}{update}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) override
-\begin{DoxyCompactList}\small\item\em Method called by the Subject to update the observer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classNullObserver_aeb635126b1e4270cb50229b157525270}{notify}} (const \mbox{\hyperlink{structEvent}{Event}} \&event) override
-\begin{DoxyCompactList}\small\item\em Method called by the Subject to notify the observer. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObserver}{IObserver}}}
-\begin{DoxyCompactItemize}
+\Hypertarget{classNullObserver_a8866a842843f40e6a1a92b27e7148ef7}\label{classNullObserver_a8866a842843f40e6a1a92b27e7148ef7} 
+void {\bfseries update} (const Event \&event) override
 \item 
-virtual \mbox{\hyperlink{classIObserver_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
-\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{classNullObserver_aeb635126b1e4270cb50229b157525270}\label{classNullObserver_aeb635126b1e4270cb50229b157525270} 
+void {\bfseries notify} (const Event \&event) override
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Null implementation of \doxylink{classIObserver}{IObserver}. 
+Null implementation of IObserver. 
 
 
 \begin{DoxyItemize}
-\item Used primarily to satisfy the \doxylink{classIObserver}{IObserver} interface requirements if needed by other components, but not directly used for checking events in these \doxylink{classObjectStorage}{Object\+Storage} tests. 
+\item Used primarily to satisfy the IObserver interface requirements if needed by other components, but not directly used for checking events in these Object\+Storage tests. 
 \end{DoxyItemize}
-
-\label{doc-func-members}
-\Hypertarget{classNullObserver_doc-func-members}
-\doxysubsection{Member Function Documentation}
-\Hypertarget{classNullObserver_aeb635126b1e4270cb50229b157525270}\index{NullObserver@{NullObserver}!notify@{notify}}
-\index{notify@{notify}!NullObserver@{NullObserver}}
-\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
-{\footnotesize\ttfamily \label{classNullObserver_aeb635126b1e4270cb50229b157525270} 
-void Null\+Observer\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Method called by the Subject to notify the observer. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em event} & The \doxylink{structEvent}{Event} structure containing information about the occurrence. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Note\+: This method appears redundant with \doxylink{classNullObserver_a8866a842843f40e6a1a92b27e7148ef7}{update(const Event\& event)}.\end{DoxyRefDesc}
-
-
-Implements \mbox{\hyperlink{classIObserver_a325451b0d0100feaad6f683850a616dc}{IObserver}}.
-
-\Hypertarget{classNullObserver_a8866a842843f40e6a1a92b27e7148ef7}\index{NullObserver@{NullObserver}!update@{update}}
-\index{update@{update}!NullObserver@{NullObserver}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily \label{classNullObserver_a8866a842843f40e6a1a92b27e7148ef7} 
-void Null\+Observer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Method called by the Subject to update the observer. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em event} & The \doxylink{structEvent}{Event} structure containing information about the occurrence. \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classIObserver_af15fbd52637f4bf0225fde86051d8354}{IObserver}}.
-
-
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

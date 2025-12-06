@@ -1,0 +1,953 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Класс svcs::test::cli::utils::RepositoryManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html','','classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс svcs::test::cli::utils::RepositoryManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="RepositoryManager_8hxx_source.html">RepositoryManager.hxx</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:svcs::test::cli::utils::RepositoryManager:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.png" usemap="#svcs_3A_3Atest_3A_3Acli_3A_3Autils_3A_3ARepositoryManager_map" alt=""/>
+  <map id="svcs_3A_3Atest_3A_3Acli_3A_3Autils_3A_3ARepositoryManager_map" name="svcs_3A_3Atest_3A_3Acli_3A_3Autils_3A_3ARepositoryManager_map">
+<area href="classsvcs_1_1test_1_1server_1_1MockRepositoryManager.html" alt="svcs::test::server::MockRepositoryManager" shape="rect" coords="0,56,254,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a94770300269bc08cd10f32991ce501d2" id="r_a94770300269bc08cd10f32991ce501d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94770300269bc08cd10f32991ce501d2">RepositoryManager</a> (std::shared_ptr&lt; <a class="el" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> &gt; bus)</td></tr>
+<tr class="memdesc:a94770300269bc08cd10f32991ce501d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует <a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html" title="Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS.">RepositoryManager</a>.  <br /></td></tr>
+<tr class="memitem:ac0d42424f59a33af3f2964c7eddcd192" id="r_ac0d42424f59a33af3f2964c7eddcd192"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0d42424f59a33af3f2964c7eddcd192">updateHead</a> (const std::string &amp;commit_hash) const</td></tr>
+<tr class="memdesc:ac0d42424f59a33af3f2964c7eddcd192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет ссылку HEAD.  <br /></td></tr>
+<tr class="memitem:ad003b3bfb496804283a939224a78c566" id="r_ad003b3bfb496804283a939224a78c566"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad003b3bfb496804283a939224a78c566">initializeRepository</a> (const std::string &amp;path, bool force=false)</td></tr>
+<tr class="memdesc:ad003b3bfb496804283a939224a78c566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует новый репозиторий SVCS по указанному пути.  <br /></td></tr>
+<tr class="memitem:a529c5a70cc13ab92989e55f7db9f7882" id="r_a529c5a70cc13ab92989e55f7db9f7882"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a529c5a70cc13ab92989e55f7db9f7882">isRepositoryInitialized</a> (const std::string &amp;path=&quot;.&quot;)</td></tr>
+<tr class="memdesc:a529c5a70cc13ab92989e55f7db9f7882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, инициализирован ли репозиторий SVCS по заданному пути или его родителям.  <br /></td></tr>
+<tr class="memitem:a0938228acbd111de2b8a6c230d61fdf2" id="r_a0938228acbd111de2b8a6c230d61fdf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0938228acbd111de2b8a6c230d61fdf2">updateBranchReference</a> (const std::string &amp;branchName, const std::string &amp;commitHash) const</td></tr>
+<tr class="memdesc:a0938228acbd111de2b8a6c230d61fdf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет файл ссылки ветви хешем коммита.  <br /></td></tr>
+<tr class="memitem:a27171d33fc901388a54e811d892458ba" id="r_a27171d33fc901388a54e811d892458ba"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27171d33fc901388a54e811d892458ba">getRepositoryPath</a> () const</td></tr>
+<tr class="memdesc:a27171d33fc901388a54e811d892458ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает определенный корневой путь текущего активного репозитория.  <br /></td></tr>
+<tr class="memitem:acdb90f4f22c89514d2429730b5a3623d" id="r_acdb90f4f22c89514d2429730b5a3623d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdb90f4f22c89514d2429730b5a3623d">addFileToStaging</a> (const std::string &amp;filePath)</td></tr>
+<tr class="memdesc:acdb90f4f22c89514d2429730b5a3623d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Пытается добавить файл в область подготовки (индекс).  <br /></td></tr>
+<tr class="memitem:a0036b6bb88ccb15b43e4bebfa073c823" id="r_a0036b6bb88ccb15b43e4bebfa073c823"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0036b6bb88ccb15b43e4bebfa073c823">getHeadCommit</a> () const</td></tr>
+<tr class="memdesc:a0036b6bb88ccb15b43e4bebfa073c823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлекает хеш текущего коммита HEAD в репозитории.  <br /></td></tr>
+<tr class="memitem:a65705c1b91ea0c8878446856ced2ea59" id="r_a65705c1b91ea0c8878446856ced2ea59"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65705c1b91ea0c8878446856ced2ea59">createCommit</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:a65705c1b91ea0c8878446856ced2ea59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает коммит из текущих подготовленных файлов.  <br /></td></tr>
+<tr class="memitem:a34e211523257152d66477f6e9fa5d6ab" id="r_a34e211523257152d66477f6e9fa5d6ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34e211523257152d66477f6e9fa5d6ab">updateCommitReferences</a> (const std::string &amp;removedCommitHash, const std::string &amp;newParentHash) const</td></tr>
+<tr class="memdesc:a34e211523257152d66477f6e9fa5d6ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет ссылки коммитов при удалении коммита.  <br /></td></tr>
+<tr class="memitem:ae159d5e092b0e945c17ba74e5f5af61e" id="r_ae159d5e092b0e945c17ba74e5f5af61e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae159d5e092b0e945c17ba74e5f5af61e">revertCommit</a> (const std::string &amp;commit_hash)</td></tr>
+<tr class="memdesc:ae159d5e092b0e945c17ba74e5f5af61e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Откатывает состояние репозитория к предыдущему коммиту.  <br /></td></tr>
+<tr class="memitem:ae0706f73124ce12640a1a21fa3309398" id="r_ae0706f73124ce12640a1a21fa3309398"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html">CommitInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0706f73124ce12640a1a21fa3309398">getCommitByHash</a> (const std::string &amp;commit_hash) const</td></tr>
+<tr class="memdesc:ae0706f73124ce12640a1a21fa3309398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлекает структуру <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html" title="Структура, содержащая основные метаданные для одного коммита.">CommitInfo</a> для заданного хеша коммита.  <br /></td></tr>
+<tr class="memitem:a1f8b1488fb9d9b1343b35abcc0184464" id="r_a1f8b1488fb9d9b1343b35abcc0184464"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f8b1488fb9d9b1343b35abcc0184464">getParentCommitHash</a> (const std::string &amp;commit_hash) const</td></tr>
+<tr class="memdesc:a1f8b1488fb9d9b1343b35abcc0184464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлекает хеш родительского коммита для заданного коммита.  <br /></td></tr>
+<tr class="memitem:a543e43dc2b2ebd12605824064ee4cd8b" id="r_a543e43dc2b2ebd12605824064ee4cd8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a543e43dc2b2ebd12605824064ee4cd8b">restoreFilesFromCommit</a> (const <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html">CommitInfo</a> &amp;commit) const</td></tr>
+<tr class="memdesc:a543e43dc2b2ebd12605824064ee4cd8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Восстанавливает файлы рабочей директории до состояния, записанного в конкретном коммите.  <br /></td></tr>
+<tr class="memitem:aa1b198ef75b6c571dfd4ace68ecc0f89" id="r_aa1b198ef75b6c571dfd4ace68ecc0f89"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1b198ef75b6c571dfd4ace68ecc0f89">clearStagingArea</a> ()</td></tr>
+<tr class="memdesc:aa1b198ef75b6c571dfd4ace68ecc0f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает содержимое области подготовки (индекса).  <br /></td></tr>
+<tr class="memitem:a303ff113df6c3fd0dbe0df7e98cfbc29" id="r_a303ff113df6c3fd0dbe0df7e98cfbc29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a303ff113df6c3fd0dbe0df7e98cfbc29">saveStagedChanges</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:a303ff113df6c3fd0dbe0df7e98cfbc29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает коммит из подготовленных изменений. (Удобный метод, часто используемый <a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand.html" title="Команда для сохранения (коммита) подготовленных изменений в репозиторий.">SaveCommand</a>).  <br /></td></tr>
+<tr class="memitem:a002f7a416459e5c17de748fd527a67bc" id="r_a002f7a416459e5c17de748fd527a67bc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a002f7a416459e5c17de748fd527a67bc">getStagedFiles</a> ()</td></tr>
+<tr class="memdesc:a002f7a416459e5c17de748fd527a67bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлекает список всех файлов, в настоящее время помеченных как подготовленные (индексированные).  <br /></td></tr>
+<tr class="memitem:a3c522df200bd216339feaac08ad45c03" id="r_a3c522df200bd216339feaac08ad45c03"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html">CommitInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c522df200bd216339feaac08ad45c03">getCommitHistory</a> () const</td></tr>
+<tr class="memdesc:a3c522df200bd216339feaac08ad45c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлекает полную историю коммитов для текущей ветви.  <br /></td></tr>
+<tr class="memitem:ae6c18516f1a61af3cdd8b978b5989fe3" id="r_ae6c18516f1a61af3cdd8b978b5989fe3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html">CommitInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6c18516f1a61af3cdd8b978b5989fe3">getBranchHistory</a> (const std::string &amp;branch_name) const</td></tr>
+<tr class="memdesc:ae6c18516f1a61af3cdd8b978b5989fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлекает историю коммитов для конкретной ветви.  <br /></td></tr>
+<tr class="memitem:a1a4b3f81b30778c851f0db4accf5f2d8" id="r_a1a4b3f81b30778c851f0db4accf5f2d8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a4b3f81b30778c851f0db4accf5f2d8">getCurrentBranch</a> () const</td></tr>
+<tr class="memdesc:a1a4b3f81b30778c851f0db4accf5f2d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает имя текущей ветви.  <br /></td></tr>
+<tr class="memitem:adba9e0953fb91a855f593be9de1408e9" id="r_adba9e0953fb91a855f593be9de1408e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adba9e0953fb91a855f593be9de1408e9">removeRepository</a> (const std::filesystem::path &amp;path) const</td></tr>
+<tr class="memdesc:adba9e0953fb91a855f593be9de1408e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Пытается рекурсивно удалить всю структуру репозитория SVCS (например, директорию .svcs) и ее содержимое.  <br /></td></tr>
+<tr class="memitem:ad84b0f67d4e6e2e60082497b4e1899a3" id="r_ad84b0f67d4e6e2e60082497b4e1899a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad84b0f67d4e6e2e60082497b4e1899a3">branchExists</a> (const std::string &amp;branch_name) const</td></tr>
+<tr class="memdesc:ad84b0f67d4e6e2e60082497b4e1899a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, существует ли ветвь.  <br /></td></tr>
+<tr class="memitem:a2562058c0a617d0ded24030dc8682251" id="r_a2562058c0a617d0ded24030dc8682251"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2562058c0a617d0ded24030dc8682251">getBranchHead</a> (const std::string &amp;branch_name) const</td></tr>
+<tr class="memdesc:a2562058c0a617d0ded24030dc8682251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает головной коммит ветви.  <br /></td></tr>
+<tr class="memitem:ae565a1db180819ff2e0840ed601beadc" id="r_ae565a1db180819ff2e0840ed601beadc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae565a1db180819ff2e0840ed601beadc">getFileContentAtCommit</a> (const std::string &amp;commit_hash, const std::string &amp;file_path) const</td></tr>
+<tr class="memdesc:ae565a1db180819ff2e0840ed601beadc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает содержимое файла в конкретном коммите.  <br /></td></tr>
+<tr class="memitem:aa45d786e39da7deb33648147efbcd739" id="r_aa45d786e39da7deb33648147efbcd739"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa45d786e39da7deb33648147efbcd739">getCommitFiles</a> (const std::string &amp;commit_hash) const</td></tr>
+<tr class="memdesc:aa45d786e39da7deb33648147efbcd739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает все файлы, измененные в коммите.  <br /></td></tr>
+<tr class="memitem:a2c18c663d76a842f4999df20b17e4687" id="r_a2c18c663d76a842f4999df20b17e4687"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c18c663d76a842f4999df20b17e4687">setMergeState</a> (const std::string &amp;branch_name, const std::string &amp;commit_hash) const</td></tr>
+<tr class="memdesc:a2c18c663d76a842f4999df20b17e4687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает состояние слияния (для разрешения конфликтов).  <br /></td></tr>
+<tr class="memitem:a83533e5ffa7ea687981e4611e1e4a9ac" id="r_a83533e5ffa7ea687981e4611e1e4a9ac"><td class="memItemLeft" align="right" valign="top"><a id="a83533e5ffa7ea687981e4611e1e4a9ac" name="a83533e5ffa7ea687981e4611e1e4a9ac"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearMergeState</b> () const</td></tr>
+<tr class="memdesc:a83533e5ffa7ea687981e4611e1e4a9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает состояние слияния (после завершения/прерывания слияния). <br /></td></tr>
+<tr class="memitem:a45a6a691304ae0c2cad9fe10bfbca607" id="r_a45a6a691304ae0c2cad9fe10bfbca607"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45a6a691304ae0c2cad9fe10bfbca607">isMergeInProgress</a> () const</td></tr>
+<tr class="memdesc:a45a6a691304ae0c2cad9fe10bfbca607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, выполняется ли слияние.  <br /></td></tr>
+<tr class="memitem:a7c790d31b20b710b6512c0703030fe7a" id="r_a7c790d31b20b710b6512c0703030fe7a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c790d31b20b710b6512c0703030fe7a">getMergeBranch</a> () const</td></tr>
+<tr class="memdesc:a7c790d31b20b710b6512c0703030fe7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает ветвь, которая сливается.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:ac7de58f0405dc440d4de884fd2782e64" id="r_ac7de58f0405dc440d4de884fd2782e64"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7de58f0405dc440d4de884fd2782e64">generateCommitHash</a> (const std::string &amp;content)</td></tr>
+<tr class="memdesc:ac7de58f0405dc440d4de884fd2782e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Генерирует хеш коммита из содержимого.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS. </p>
+<p><a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html" title="Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS.">RepositoryManager</a> - это основной уровень, отвечающий за прямое взаимодействие с файловой системой для таких задач, как инициализация, управление путями, подготовка, коммиты и логирование. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a94770300269bc08cd10f32991ce501d2" name="a94770300269bc08cd10f32991ce501d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94770300269bc08cd10f32991ce501d2">&#9670;&#160;</a></span>RepositoryManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">svcs::core::RepositoryManager::RepositoryManager </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classsvcs_1_1services_1_1ISubject.html">ISubject</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>bus</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструирует <a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html" title="Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS.">RepositoryManager</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bus</td><td>Общий указатель на шину событий (<a class="el" href="classsvcs_1_1services_1_1ISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a>) для связи. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="acdb90f4f22c89514d2429730b5a3623d" name="acdb90f4f22c89514d2429730b5a3623d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdb90f4f22c89514d2429730b5a3623d">&#9670;&#160;</a></span>addFileToStaging()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::addFileToStaging </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Пытается добавить файл в область подготовки (индекс). </p>
+<p>Обычно это включает чтение файла и обновление состояния индекса. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Путь к файлу для подготовки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если файл успешно добавлен, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="ad84b0f67d4e6e2e60082497b4e1899a3" name="ad84b0f67d4e6e2e60082497b4e1899a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84b0f67d4e6e2e60082497b4e1899a3">&#9670;&#160;</a></span>branchExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::branchExists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branch_name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, существует ли ветвь. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branch_name</td><td>Имя ветви для проверки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если ветвь существует, false в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="aa1b198ef75b6c571dfd4ace68ecc0f89" name="aa1b198ef75b6c571dfd4ace68ecc0f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b198ef75b6c571dfd4ace68ecc0f89">&#9670;&#160;</a></span>clearStagingArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::clearStagingArea </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Очищает содержимое области подготовки (индекса). </p>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если область подготовки успешно очищена, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a65705c1b91ea0c8878446856ced2ea59" name="a65705c1b91ea0c8878446856ced2ea59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65705c1b91ea0c8878446856ced2ea59">&#9670;&#160;</a></span>createCommit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::RepositoryManager::createCommit </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создает коммит из текущих подготовленных файлов. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Сообщение коммита, предоставленное пользователем. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Хеш вновь созданного коммита при успехе, пустая строка в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="ac7de58f0405dc440d4de884fd2782e64" name="ac7de58f0405dc440d4de884fd2782e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7de58f0405dc440d4de884fd2782e64">&#9670;&#160;</a></span>generateCommitHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::RepositoryManager::generateCommitHash </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Генерирует хеш коммита из содержимого. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td>Содержимое для хеширования. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Сгенерированный хеш коммита. </dd></dl>
+
+</div>
+</div>
+<a id="a2562058c0a617d0ded24030dc8682251" name="a2562058c0a617d0ded24030dc8682251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2562058c0a617d0ded24030dc8682251">&#9670;&#160;</a></span>getBranchHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::RepositoryManager::getBranchHead </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branch_name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получает головной коммит ветви. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branch_name</td><td>Имя ветви. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Хеш коммита головы ветви. </dd></dl>
+
+</div>
+</div>
+<a id="ae6c18516f1a61af3cdd8b978b5989fe3" name="ae6c18516f1a61af3cdd8b978b5989fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c18516f1a61af3cdd8b978b5989fe3">&#9670;&#160;</a></span>getBranchHistory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html">CommitInfo</a> &gt; svcs::core::RepositoryManager::getBranchHistory </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branch_name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Извлекает историю коммитов для конкретной ветви. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branch_name</td><td>Имя ветви. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Вектор объектов <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html" title="Структура, содержащая основные метаданные для одного коммита.">CommitInfo</a> для ветви. </dd></dl>
+
+</div>
+</div>
+<a id="ae0706f73124ce12640a1a21fa3309398" name="ae0706f73124ce12640a1a21fa3309398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0706f73124ce12640a1a21fa3309398">&#9670;&#160;</a></span>getCommitByHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html">CommitInfo</a> &gt; svcs::core::RepositoryManager::getCommitByHash </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Извлекает структуру <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html" title="Структура, содержащая основные метаданные для одного коммита.">CommitInfo</a> для заданного хеша коммита. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>Хеш коммита для извлечения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Опциональный объект, содержащий <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html" title="Структура, содержащая основные метаданные для одного коммита.">CommitInfo</a>, если найден, или std::nullopt в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="aa45d786e39da7deb33648147efbcd739" name="aa45d786e39da7deb33648147efbcd739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45d786e39da7deb33648147efbcd739">&#9670;&#160;</a></span>getCommitFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; svcs::core::RepositoryManager::getCommitFiles </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получает все файлы, измененные в коммите. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>Хеш коммита. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Вектор путей к файлам. </dd></dl>
+
+</div>
+</div>
+<a id="a3c522df200bd216339feaac08ad45c03" name="a3c522df200bd216339feaac08ad45c03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c522df200bd216339feaac08ad45c03">&#9670;&#160;</a></span>getCommitHistory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html">CommitInfo</a> &gt; svcs::core::RepositoryManager::getCommitHistory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Извлекает полную историю коммитов для текущей ветви. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Вектор объектов <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html" title="Структура, содержащая основные метаданные для одного коммита.">CommitInfo</a>, представляющих историю коммитов, обычно от самых новых к старым. </dd></dl>
+
+</div>
+</div>
+<a id="a1a4b3f81b30778c851f0db4accf5f2d8" name="a1a4b3f81b30778c851f0db4accf5f2d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a4b3f81b30778c851f0db4accf5f2d8">&#9670;&#160;</a></span>getCurrentBranch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::RepositoryManager::getCurrentBranch </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получает имя текущей ветви. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Имя текущей ветви. </dd></dl>
+
+</div>
+</div>
+<a id="ae565a1db180819ff2e0840ed601beadc" name="ae565a1db180819ff2e0840ed601beadc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae565a1db180819ff2e0840ed601beadc">&#9670;&#160;</a></span>getFileContentAtCommit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::RepositoryManager::getFileContentAtCommit </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>file_path</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получает содержимое файла в конкретном коммите. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>Хеш коммита. </td></tr>
+    <tr><td class="paramname">file_path</td><td>Путь к файлу. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Содержимое файла. </dd></dl>
+
+</div>
+</div>
+<a id="a0036b6bb88ccb15b43e4bebfa073c823" name="a0036b6bb88ccb15b43e4bebfa073c823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0036b6bb88ccb15b43e4bebfa073c823">&#9670;&#160;</a></span>getHeadCommit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::RepositoryManager::getHeadCommit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Извлекает хеш текущего коммита HEAD в репозитории. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка хеша коммита. </dd></dl>
+
+</div>
+</div>
+<a id="a7c790d31b20b710b6512c0703030fe7a" name="a7c790d31b20b710b6512c0703030fe7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c790d31b20b710b6512c0703030fe7a">&#9670;&#160;</a></span>getMergeBranch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::RepositoryManager::getMergeBranch </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получает ветвь, которая сливается. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Имя ветви, если слияние выполняется, пустая строка в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a1f8b1488fb9d9b1343b35abcc0184464" name="a1f8b1488fb9d9b1343b35abcc0184464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f8b1488fb9d9b1343b35abcc0184464">&#9670;&#160;</a></span>getParentCommitHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::core::RepositoryManager::getParentCommitHash </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Извлекает хеш родительского коммита для заданного коммита. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>Хеш дочернего коммита. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка хеша родительского коммита (пустая, если это начальный коммит). </dd></dl>
+
+</div>
+</div>
+<a id="a27171d33fc901388a54e811d892458ba" name="a27171d33fc901388a54e811d892458ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27171d33fc901388a54e811d892458ba">&#9670;&#160;</a></span>getRepositoryPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::filesystem::path svcs::core::RepositoryManager::getRepositoryPath </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает определенный корневой путь текущего активного репозитория. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строковый путь к корню репозитория. </dd></dl>
+
+</div>
+</div>
+<a id="a002f7a416459e5c17de748fd527a67bc" name="a002f7a416459e5c17de748fd527a67bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a002f7a416459e5c17de748fd527a67bc">&#9670;&#160;</a></span>getStagedFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; svcs::core::RepositoryManager::getStagedFiles </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Извлекает список всех файлов, в настоящее время помеченных как подготовленные (индексированные). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Вектор строк, содержащий пути к файлам в области подготовки. </dd></dl>
+
+</div>
+</div>
+<a id="ad003b3bfb496804283a939224a78c566" name="ad003b3bfb496804283a939224a78c566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad003b3bfb496804283a939224a78c566">&#9670;&#160;</a></span>initializeRepository()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::initializeRepository </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализирует новый репозиторий SVCS по указанному пути. </p>
+<p>Создает необходимые внутренние директории и файлы (например, .svcs/). </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь директории, где должен быть создан репозиторий. </td></tr>
+    <tr><td class="paramname">force</td><td>Если true, принудительно инициализирует, даже если директория существует (зависит от реализации). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если инициализация прошла успешно, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a45a6a691304ae0c2cad9fe10bfbca607" name="a45a6a691304ae0c2cad9fe10bfbca607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45a6a691304ae0c2cad9fe10bfbca607">&#9670;&#160;</a></span>isMergeInProgress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::isMergeInProgress </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, выполняется ли слияние. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если слияние выполняется, false в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a529c5a70cc13ab92989e55f7db9f7882" name="a529c5a70cc13ab92989e55f7db9f7882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529c5a70cc13ab92989e55f7db9f7882">&#9670;&#160;</a></span>isRepositoryInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::isRepositoryInitialized </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;.&quot;</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, инициализирован ли репозиторий SVCS по заданному пути или его родителям. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь, с которого начинать поиск (по умолчанию текущая директория "."). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если найдена структура репозитория, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="adba9e0953fb91a855f593be9de1408e9" name="adba9e0953fb91a855f593be9de1408e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba9e0953fb91a855f593be9de1408e9">&#9670;&#160;</a></span>removeRepository()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::removeRepository </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Пытается рекурсивно удалить всю структуру репозитория SVCS (например, директорию .svcs) и ее содержимое. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Корневой путь удаляемого репозитория. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если удаление прошло успешно, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a543e43dc2b2ebd12605824064ee4cd8b" name="a543e43dc2b2ebd12605824064ee4cd8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a543e43dc2b2ebd12605824064ee4cd8b">&#9670;&#160;</a></span>restoreFilesFromCommit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::restoreFilesFromCommit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html">CommitInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>commit</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Восстанавливает файлы рабочей директории до состояния, записанного в конкретном коммите. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit</td><td>Структура <a class="el" href="structsvcs_1_1core_1_1CommitInfo.html" title="Структура, содержащая основные метаданные для одного коммита.">CommitInfo</a>, представляющая целевое состояние. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если файлы успешно восстановлены, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="ae159d5e092b0e945c17ba74e5f5af61e" name="ae159d5e092b0e945c17ba74e5f5af61e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae159d5e092b0e945c17ba74e5f5af61e">&#9670;&#160;</a></span>revertCommit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::revertCommit </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Откатывает состояние репозитория к предыдущему коммиту. </p>
+<p>Обычно используется для отмены эффектов предыдущего 'save' (коммита). </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>Хеш коммита, к которому нужно откатиться (или коммита перед тем, который нужно отменить). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если откат прошел успешно, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a303ff113df6c3fd0dbe0df7e98cfbc29" name="a303ff113df6c3fd0dbe0df7e98cfbc29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a303ff113df6c3fd0dbe0df7e98cfbc29">&#9670;&#160;</a></span>saveStagedChanges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool svcs::core::RepositoryManager::saveStagedChanges </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создает коммит из подготовленных изменений. (Удобный метод, часто используемый <a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand.html" title="Команда для сохранения (коммита) подготовленных изменений в репозиторий.">SaveCommand</a>). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Сообщение коммита. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если сохранение (коммит) прошло успешно, <code>false</code> в противном случае. </dd></dl>
+
+</div>
+</div>
+<a id="a2c18c663d76a842f4999df20b17e4687" name="a2c18c663d76a842f4999df20b17e4687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c18c663d76a842f4999df20b17e4687">&#9670;&#160;</a></span>setMergeState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void svcs::core::RepositoryManager::setMergeState </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branch_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает состояние слияния (для разрешения конфликтов). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branch_name</td><td>Ветвь, которая сливается. </td></tr>
+    <tr><td class="paramname">commit_hash</td><td>Коммит, который сливается. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0938228acbd111de2b8a6c230d61fdf2" name="a0938228acbd111de2b8a6c230d61fdf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0938228acbd111de2b8a6c230d61fdf2">&#9670;&#160;</a></span>updateBranchReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void svcs::core::RepositoryManager::updateBranchReference </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>branchName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commitHash</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновляет файл ссылки ветви хешем коммита. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">branchName</td><td>Имя ветви для обновления. </td></tr>
+    <tr><td class="paramname">commitHash</td><td>Хеш коммита для установки в качестве головы ветви. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a34e211523257152d66477f6e9fa5d6ab" name="a34e211523257152d66477f6e9fa5d6ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e211523257152d66477f6e9fa5d6ab">&#9670;&#160;</a></span>updateCommitReferences()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void svcs::core::RepositoryManager::updateCommitReferences </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>removedCommitHash</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>newParentHash</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновляет ссылки коммитов при удалении коммита. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">removedCommitHash</td><td>Хеш удаляемого коммита. </td></tr>
+    <tr><td class="paramname">newParentHash</td><td>Новый хеш родителя для зависимых коммитов. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac0d42424f59a33af3f2964c7eddcd192" name="ac0d42424f59a33af3f2964c7eddcd192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0d42424f59a33af3f2964c7eddcd192">&#9670;&#160;</a></span>updateHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void svcs::core::RepositoryManager::updateHead </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>commit_hash</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновляет ссылку HEAD. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit_hash</td><td>Хеш коммита для установки в качестве HEAD. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>core/include/<a class="el" href="RepositoryManager_8hxx_source.html">RepositoryManager.hxx</a></li>
+<li>core/src/<a class="el" href="RepositoryManager_8cxx.html">RepositoryManager.cxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>svcs</b></li><li class="navelem"><b>test</b></li><li class="navelem"><a href="namespacesvcs_1_1test_1_1cli.html">cli</a></li><li class="navelem"><a href="namespacesvcs_1_1test_1_1cli_1_1utils.html">utils</a></li><li class="navelem"><a href="classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html">RepositoryManager</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

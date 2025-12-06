@@ -2,24 +2,31 @@
 \hypertarget{RepoCommand_8cxx}{}\label{RepoCommand_8cxx}\index{server/src/RepoCommand.cxx@{server/src/RepoCommand.cxx}}
 
 
-Реализация класса \doxylink{classRepoCommand}{Repo\+Command} для управления конфигурациями удаленных репозиториев.  
+Реализация класса Repo\+Command для управления конфигурациями удаленных репозиториев.  
 
 
 {\ttfamily \#include "{}../include/\+Repo\+Command.\+hxx"{}}\newline
 {\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Серверные компоненты и команды администрирования. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server_1_1cli}{svcs\+::server\+::cli}}
+\begin{DoxyCompactList}\small\item\em Компоненты командной строки для администрирования сервера. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация класса \doxylink{classRepoCommand}{Repo\+Command} для управления конфигурациями удаленных репозиториев. 
+Реализация класса Repo\+Command для управления конфигурациями удаленных репозиториев. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Этот файл реализует конкретную логику для команды "{}svcs repo"{}. Он в основном делегирует свою основную функциональность—добавление, удаление, переименование и перечисление удаленных репозиториев— классу \doxylink{classRemoteManager}{Remote\+Manager}. Реализация включает\+:
+Этот файл реализует конкретную логику для команды "{}svcs repo"{}. Он в основном делегирует свою основную функциональность—добавление, удаление, переименование и перечисление удаленных репозиториев— классу Remote\+Manager. Реализация включает\+:
 \begin{DoxyEnumerate}
 \item {\bfseries{Проверку контекста репозитория}}\+: Обеспечивает выполнение команды внутри инициализированного репозитория SVCS.
 \item {\bfseries{Диспетчеризацию подкоманд}}\+: Разбирает первый аргумент для определения, какой обработчик ({\ttfamily handle\+Add}, {\ttfamily handle\+Remove} и т.\+д.) вызвать.
 \item {\bfseries{Проверку аргументов}}\+: Выполняет проверки количества аргументов для каждой подкоманды.
-\item {\bfseries{Вывод пользователю}}\+: Напрямую выводит сообщения подтверждения ({\ttfamily std\+::cout}) или использует шину событий \doxylink{classISubject}{ISubject} для ошибок и информационных сообщений. 
+\item {\bfseries{Вывод пользователю}}\+: Напрямую выводит сообщения подтверждения ({\ttfamily std\+::cout}) или использует шину событий ISubject для ошибок и информационных сообщений. 
 \end{DoxyEnumerate}

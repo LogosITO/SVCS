@@ -1,0 +1,66 @@
+\doxysection{svcs\+::test\+::cli\+::utils Namespace Reference}
+\hypertarget{namespacesvcs_1_1test_1_1cli_1_1utils}{}\label{namespacesvcs_1_1test_1_1cli_1_1utils}\index{svcs::test::cli::utils@{svcs::test::cli::utils}}
+
+
+Utility classes and test fixtures for CLI command testing.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{Add\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command} integration tests. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest}{Clear\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command} integration tests. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1test_1_1cli_1_1utils_1_1Event}{Event}}
+\begin{DoxyCompactList}\small\item\em Structure describing an event published by the VCS core. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand}{Help\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for displaying help information about other commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest}{Help\+Command\+Test}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for viewing the history of saves (commits) in the repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{History\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommand}{History\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command}}
+\begin{DoxyCompactList}\small\item\em Implements the "{}init"{} command for the Version Control System (VCS). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest}{Init\+Command\+Integration\+Test}}
+\begin{DoxyCompactList}\small\item\em Test fixture for \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommand}{Init\+Command} integration tests. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockHelpService}{Mock\+Help\+Service}}
+\begin{DoxyCompactList}\small\item\em A mock implementation of the \doxylink{classsvcs_1_1cli_1_1HelpService}{Help\+Service} for testing the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommand}{Help\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject}{Mock\+Subject}}
+\begin{DoxyCompactList}\small\item\em A mock implementation of \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} for testing event-\/driven components. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}{Remove\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for removing files from the staging area. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommandTest}{Remove\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RemoveCommand}{Remove\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages all physical file and directory operations within the SVCS repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand}{Save\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for saving (committing) staged changes to the repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommandTest}{Save\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1SaveCommand}{Save\+Command} (commit). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}{Status\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for showing the current status of the repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest}{Status\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand}{Status\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}}
+\begin{DoxyCompactList}\small\item\em Command to revert the repository state to a previous commit. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{Undo\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running integration tests against the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for displaying version information about SVCS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommandTest}{Version\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test fixture for running unit/integration tests against the \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1VersionCommand}{Version\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1cli_1_1utils_ad7a196684a6b9a814521785cf7ebc5d7}\label{namespacesvcs_1_1test_1_1cli_1_1utils_ad7a196684a6b9a814521785cf7ebc5d7} 
+using {\bfseries Event} = \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs\+::services\+::\+Event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility classes and test fixtures for CLI command testing. 
+
+Contains test fixtures, helper classes, and utility functions that support the testing of CLI commands. These components provide common setup, teardown, and testing patterns for command integration tests. 

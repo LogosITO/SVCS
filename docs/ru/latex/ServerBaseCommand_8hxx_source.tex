@@ -14,31 +14,39 @@
 \DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServerBaseCommand_aa0fe8087dbffaa6c93362945281eb787}{ServerBaseCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
-\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classServerBaseCommand_aa0fe8087dbffaa6c93362945281eb787}{ServerBaseCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager);}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classServerBaseCommand_a45b57a38f34b7cd65a7cc4aaafc4edc7}{\string~ServerBaseCommand}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00083\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classServerBaseCommand_add79d0005e090d5286957ccd6aa8d69c}{getName}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00096\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classServerBaseCommand_a48b3a6c094aec2535cde2db7a9b393d7}{getDescription}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00109\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classServerBaseCommand_a58279f395219e9ac6c88034fe01aec71}{getUsage}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServerBaseCommand_aed2de55dae7433e8654afd772dab2789}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override}\ =\ 0;}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServerBaseCommand_a9d57c3fed1b5ba2ce53844818f32bca9}{showHelp}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00137\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServerBaseCommand_ab946376a525068e444ceb8f2e5bbf2bd}{notifyInfo}}(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00150\ }
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServerBaseCommand_a67bfad4d62fdd7097e0a6d3679a27ffb}{notifyError}}(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00171\ \ \ \ \ std::shared\_ptr<ISubject>\ \mbox{\hyperlink{classServerBaseCommand_abc66722d1aa70cf927b02560c6022735}{event\_bus\_}};}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00180\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classServerBaseCommand_a43340ed56980959183df8cf722c0db7e}{repo\_manager\_}};}
-\DoxyCodeLine{00181\ \};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1server_1_1cli}{svcs::server::cli}}\ \{}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}};}
+\DoxyCodeLine{00050\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}};}
+\DoxyCodeLine{00051\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1services}{svcs::services}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_aa74199cd1feddb12fe2afd072c9053ed}{ServerBaseCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_aa74199cd1feddb12fe2afd072c9053ed}{ServerBaseCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a374ba5faf54c31d80ffb397568060e21}{\string~ServerBaseCommand}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00106\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a3f1fd2baa51a5168b342ffe3d09b1119}{getName}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00119\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a2e6579f00f8c275f2d9028a4e0bc83f7}{getDescription}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00132\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a787cc093291b96dbb785692f7e145618}{getUsage}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad122598b6dfb0a065eb9fc3d5f0c0e7a}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override}\ =\ 0;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a8ebf75fc2472e67519770c1e660e7f19}{showHelp}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a894f4e32bab7afbe52cf3c00790e4aaa}{notifyInfo}}(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ae442f184f015147219e511ae2f602f4d}{notifyError}}(\textcolor{keyword}{const}\ std::string\&\ message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00194\ \ \ \ \ std::shared\_ptr<ISubject>\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_a5643c9d9426f1813507672bcff2ca701}{event\_bus\_}};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00203\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_ad815bf55e3b761845f3b611d5c75d212}{repo\_manager\_}};}
+\DoxyCodeLine{00204\ \};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \}}
 
 \end{DoxyCode}

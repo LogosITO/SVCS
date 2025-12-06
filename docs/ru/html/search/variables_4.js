@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['event_5fbus_5f_0',['event_bus_',['../classServerBaseCommand.html#abc66722d1aa70cf927b02560c6022735',1,'ServerBaseCommand']]],
-  ['eventsubject_5f_1',['eventSubject_',['../classBaseCommand.html#ad58c272b34bdd6fbfbf294d3f01fbfb8',1,'BaseCommand']]]
+  ['event_5fbus_5f_0',['event_bus_',['../classsvcs_1_1server_1_1cli_1_1ServerBaseCommand.html#a5643c9d9426f1813507672bcff2ca701',1,'svcs::server::cli::ServerBaseCommand']]],
+  ['eventsubject_5f_1',['eventSubject_',['../classsvcs_1_1cli_1_1BaseCommand.html#ad34e1b4ae11898bed0f01e72aff194b4',1,'svcs::cli::BaseCommand']]]
 ];

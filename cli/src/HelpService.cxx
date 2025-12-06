@@ -13,9 +13,14 @@
 
 #include "../include/HelpService.hxx"
 #include "../../services/ISubject.hxx"
+#include "../../services/Event.hxx"
 
 #include <algorithm>
 #include <utility>
+
+namespace svcs::cli {
+
+using namespace svcs::services;
 
 HelpService::HelpService(std::shared_ptr<ISubject> bus,
                          std::function<std::vector<std::string>()> getCommands,
@@ -47,7 +52,7 @@ void HelpService::showCommandHelp(const std::string& commandName) const {
     if (showHelpCallback_) {
         showHelpCallback_(commandName);
     } else if (eventBus_) {
-        eventBus_->notify({Event::ERROR_MESSAGE, 
+        eventBus_->notify({Event::ERROR_MESSAGE,
                           "Help service not properly initialized", "HelpService"});
     }
 }
@@ -61,12 +66,14 @@ std::string HelpService::getCommandUsage(const std::string& commandName) const {
     if (getUsageCallback_) {
         return getUsageCallback_(commandName);
     }
-    
+
     // Fallback: try to get usage from description if available
     std::string description = getCommandDescription(commandName);
     if (description != "Unknown command" && description != "Help service not properly initialized") {
         return "svcs " + commandName + " [arguments]";
     }
-    
+
     return "";
+}
+
 }

@@ -4,10 +4,10 @@ var dir_10f909bea03e4b54473bf8b174380ada =
     [ "utils", "dir_9e946f7a5f8556904eb56e5e3625f070.html", "dir_9e946f7a5f8556904eb56e5e3625f070" ],
     [ "AddCommandTest.cxx", "AddCommandTest_8cxx.html", null ],
     [ "ClearCommandTest.cxx", "ClearCommandTest_8cxx.html", null ],
-    [ "HelpCommandTest.cxx", "HelpCommandTest_8cxx.html", null ],
+    [ "HelpCommandTest.cxx", "HelpCommandTest_8cxx.html", "HelpCommandTest_8cxx" ],
     [ "HistoryCommandTest.cxx", "HistoryCommandTest_8cxx.html", null ],
     [ "InitCommandTest.cxx", "InitCommandTest_8cxx.html", null ],
-    [ "SaveCommandTest.cxx", "SaveCommandTest_8cxx.html", null ],
-    [ "StatusCommandTest.cxx", "StatusCommandTest_8cxx.html", null ],
-    [ "VersionCommandTest.cxx", "VersionCommandTest_8cxx.html", null ]
+    [ "SaveCommandTest.cxx", "SaveCommandTest_8cxx.html", "SaveCommandTest_8cxx" ],
+    [ "StatusCommandTest.cxx", "StatusCommandTest_8cxx.html", "StatusCommandTest_8cxx" ],
+    [ "VersionCommandTest.cxx", "VersionCommandTest_8cxx.html", "VersionCommandTest_8cxx" ]
 ];

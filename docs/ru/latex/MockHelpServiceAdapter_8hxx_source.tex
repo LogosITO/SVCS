@@ -1,0 +1,55 @@
+\doxysection{Mock\+Help\+Service\+Adapter.\+hxx}
+\hypertarget{MockHelpServiceAdapter_8hxx_source}{}\label{MockHelpServiceAdapter_8hxx_source}\index{tests/cli/mocks/MockHelpServiceAdapter.hxx@{tests/cli/mocks/MockHelpServiceAdapter.hxx}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Event_8hxx}{../../../services/Event.hxx}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{HelpService_8hxx}{../../../cli/include/HelpService.hxx}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockHelpService_8hxx}{MockHelpService.hxx}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1mocks}{svcs::test::cli::mocks}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }MockHelpServiceAdapter\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService}{svcs::cli::HelpService}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::shared\_ptr<MockHelpService>\ mockHelpService\_;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ MockHelpServiceAdapter(std::shared\_ptr<MockHelpService>\ mockHelpService)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a48e82d071c038c517266aacb36f5b98a}{HelpService}}(}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1.\ bus\ -\/\ nullptr,\ так\ как\ MockHelpService\ сам\ отправляет\ события}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ Коллбэк\ для\ получения\ доступных\ команд}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}]()\ -\/>\ std::vector<std::string>\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mockHelpService\_-\/>getAvailableCommands();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ Коллбэк\ для\ получения\ описания\ команды}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ std::string\&\ commandName)\ -\/>\ std::string\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mockHelpService\_-\/>getCommandDescription(commandName);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4.\ Коллбэк\ для\ показа\ справки\ по\ команде}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ std::string\&\ commandName)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mockHelpService\_-\/>showCommandHelp(commandName);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 5.\ Коллбэк\ для\ получения\ использования\ команды}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ std::string\&\ commandName)\ -\/>\ std::string\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Простая\ реализация\ или\ делегируем\ mock}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Usage:\ svcs\ "{}}\ +\ commandName\ +\ \textcolor{stringliteral}{"{}\ [options]"{}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ mockHelpService\_(mockHelpService)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Методы\ доступа\ к\ mock\ для\ тестов}}
+\DoxyCodeLine{00047\ \ \ \ \ std::shared\_ptr<MockHelpService>\ getMock()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mockHelpService\_;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \}\ \textcolor{comment}{//\ namespace\ svcs::test::cli::mocks}}
+
+\end{DoxyCode}

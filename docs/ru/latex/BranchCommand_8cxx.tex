@@ -2,18 +2,23 @@
 \hypertarget{BranchCommand_8cxx}{}\label{BranchCommand_8cxx}\index{cli/src/BranchCommand.cxx@{cli/src/BranchCommand.cxx}}
 
 
-Реализация \doxylink{classBranchCommand}{Branch\+Command} для управления ветками.  
+Реализация Branch\+Command для управления ветками.  
 
 
 {\ttfamily \#include "{}../include/\+Branch\+Command.\+hxx"{}}\newline
 {\ttfamily \#include "{}../../services/\+Event.\+hxx"{}}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Компоненты командной строки и реализации команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация \doxylink{classBranchCommand}{Branch\+Command} для управления ветками. 
+Реализация Branch\+Command для управления ветками. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Эта команда действует как интерфейс командной строки для операций с ветками. Она разбирает аргументы командной строки для определения требуемого действия (список, создание, удаление, переименование, переключение или показ текущей) и вызывает соответствующий метод в основном \doxylink{classBranchManager}{Branch\+Manager}. 
+Эта команда действует как интерфейс командной строки для операций с ветками. Она разбирает аргументы командной строки для определения требуемого действия (список, создание, удаление, переименование, переключение или показ текущей) и вызывает соответствующий метод в основном Branch\+Manager. 

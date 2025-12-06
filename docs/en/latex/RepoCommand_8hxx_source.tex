@@ -11,31 +11,37 @@
 \DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRepoCommand_a4d548a346d0b59339661502c9df8b5bf}{RepoCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classServerBaseCommand_aa0fe8087dbffaa6c93362945281eb787}{ServerBaseCommand}}\ \{}
-\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classRepoCommand_a4d548a346d0b59339661502c9df8b5bf}{RepoCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager);}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00075\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepoCommand_af6d30490f0692b302c71cc7f4526a91b}{getName}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00086\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepoCommand_a580fadfb3d9f278c300e047e2e5af999}{getDescription}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00097\ \ \ \ \ std::string\ \mbox{\hyperlink{classRepoCommand_acb1b0c594bc5ff13da81126a1baddc73}{getUsage}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepoCommand_a8e4992a1384b8ffc8ed954060bf76e7b}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00113\ }
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepoCommand_a1d59c5c0f8a4f8a9297605a0001b1a8c}{showHelp}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Subcommand\ Handlers\ -\/-\/-\/}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleAdd(\mbox{\hyperlink{classRemoteManager}{RemoteManager}}\&\ remote\_manager,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ args);}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleRemove(\mbox{\hyperlink{classRemoteManager}{RemoteManager}}\&\ remote\_manager,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ args);}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleList(\mbox{\hyperlink{classRemoteManager}{RemoteManager}}\&\ remote\_manager);}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleRename(\mbox{\hyperlink{classRemoteManager}{RemoteManager}}\&\ remote\_manager,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ args);}
-\DoxyCodeLine{00187\ \};}
+\DoxyCodeLine{00052\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1server_1_1cli}{svcs::server::cli}}\ \{}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_accf12f213d71f1331012dab9522fac0f}{RepoCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_aa74199cd1feddb12fe2afd072c9053ed}{ServerBaseCommand}}\ \{}
+\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_accf12f213d71f1331012dab9522fac0f}{RepoCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repo\_manager);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00096\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a51aca9eee57888cbb3c57f30a673c616}{getName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00107\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a65def35aa0abe8f3e65ec0dae0364134}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00118\ \ \ \ \ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_af5c769f4820e2a1b1445817284fab5ae}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a4f83b29c700622c57f341a6605d6b53e}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1RepoCommand_a88715174ee9758ee721368ef9a7aeb84}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Subcommand\ Handlers\ -\/-\/-\/}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleAdd(\mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager}{RemoteManager}}\&\ remote\_manager,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ args);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleRemove(\mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager}{RemoteManager}}\&\ remote\_manager,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ args);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleList(\mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager}{RemoteManager}}\&\ remote\_manager);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleRename(\mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager}{RemoteManager}}\&\ remote\_manager,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ args);}
+\DoxyCodeLine{00208\ \};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \}}
 
 \end{DoxyCode}

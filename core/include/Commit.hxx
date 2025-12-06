@@ -24,6 +24,21 @@
 
 /**
  * @english
+ * @namespace svcs::core
+ * @brief Core VCS data structures and object model.
+ * @details Contains fundamental VCS object types like Blob, Tree, Commit
+ * that form the building blocks of the version control system.
+ *
+ * @russian
+ * @namespace svcs::core
+ * @brief Основные структуры данных СКВ и модель объектов.
+ * @details Содержит фундаментальные типы объектов СКВ, такие как Blob, Tree, Commit,
+ * которые формируют строительные блоки системы контроля версий.
+ */
+namespace svcs::core {
+
+/**
+ * @english
  * @class Commit
  * @brief Represents a single, immutable historical point (snapshot) in the repository's history.
  * @details This object binds the content structure (Tree hash) with the metadata (author, message, parent history).
@@ -257,3 +272,5 @@ public:
      */
     void setParent(const std::string& parent);
 };
+
+}

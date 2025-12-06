@@ -1,0 +1,121 @@
+\doxysection{Класс svcs\+::services\+::ISubject}
+\hypertarget{classsvcs_1_1services_1_1ISubject}{}\label{classsvcs_1_1services_1_1ISubject}\index{svcs::services::ISubject@{svcs::services::ISubject}}
+
+
+Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).  
+
+
+
+
+{\ttfamily \#include $<$ISubject.\+hxx$>$}
+
+Граф наследования\+:svcs\+::services\+::ISubject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=11.000000cm]{classsvcs_1_1services_1_1ISubject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a48d67b1462dce55e293c0614f59e1064}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_ae47bfa148a3f12751f1aae86fcca3975}{attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$ observer)=0
+\begin{DoxyCompactList}\small\item\em Прикрепляет наблюдателя к субъекту. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_a20e2f5095404c960d2b4f17789e74b28}{detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$ observer)=0
+\begin{DoxyCompactList}\small\item\em Открепляет наблюдателя от субъекта. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject_abd7c4e5d2729c0a3c83ce7b0f7b4e82a}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event) const =0
+\begin{DoxyCompactList}\small\item\em Уведомляет всех прикрепленных наблюдателей о событии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1services_1_1ISubject_a5507ef6c358b0e3ad50d9eb1fce53693}\label{classsvcs_1_1services_1_1ISubject_a5507ef6c358b0e3ad50d9eb1fce53693} 
+std\+::vector$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em Коллекция зарегистрированных наблюдателей. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Интерфейс Subject (Издатель) (Абстрактный Базовый Класс). 
+
+Основные классы (например, Repository, \doxylink{classsvcs_1_1services_1_1EventBus}{Event\+Bus}) реализуют этот интерфейс, чтобы позволить наблюдателям подписываться на события. Контракт требует, чтобы все функции управления ({\ttfamily attach}, {\ttfamily detach}) обрабатывали {\ttfamily std\+::shared\+\_\+ptr\texorpdfstring{$<$}{<}\doxylink{classsvcs_1_1services_1_1IObserver}{IObserver}\texorpdfstring{$>$}{>}}. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1services_1_1ISubject_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1services_1_1ISubject_a48d67b1462dce55e293c0614f59e1064}\index{svcs::services::ISubject@{svcs::services::ISubject}!````~ISubject@{\texorpdfstring{$\sim$}{\string~}ISubject}}
+\index{````~ISubject@{\texorpdfstring{$\sim$}{\string~}ISubject}!svcs::services::ISubject@{svcs::services::ISubject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ISubject()}{\string~ISubject()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1ISubject_a48d67b1462dce55e293c0614f59e1064} 
+virtual svcs\+::services\+::\+ISubject\+::\texorpdfstring{$\sim$}{\string~}\+ISubject (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Виртуальный деструктор. 
+
+Обеспечивает корректную очистку производных классов субъектов. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1services_1_1ISubject_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1services_1_1ISubject_ae47bfa148a3f12751f1aae86fcca3975}\index{svcs::services::ISubject@{svcs::services::ISubject}!attach@{attach}}
+\index{attach@{attach}!svcs::services::ISubject@{svcs::services::ISubject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1ISubject_ae47bfa148a3f12751f1aae86fcca3975} 
+virtual void svcs\+::services\+::\+ISubject\+::attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Прикрепляет наблюдателя к субъекту. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Умный указатель на объект наблюдателя для прикрепления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_ac61e4f2ef07d032f9a9696e0a168ad62}{svcs\+::core\+::\+Repository}}, \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus_a211117059f05ee5aa1f5256fc01df133}{svcs\+::services\+::\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_adc836d74e84b6379f78a2e10ed116665}{svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_adc836d74e84b6379f78a2e10ed116665}{svcs\+::test\+::cli\+::utils\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject_ac1fccfc4c3320b4aef1eb92126163e7e}{svcs\+::test\+::core\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject_ac1fccfc4c3320b4aef1eb92126163e7e}{svcs\+::test\+::core\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1MockEventBus_a770d9a53717f46cb91292dbeed2e4426}{svcs\+::test\+::server\+::\+Mock\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a88a7800cffeeb4cbe7edbe6ae5e05bae}{svcs\+::test\+::server\+::\+Simple\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a88a7800cffeeb4cbe7edbe6ae5e05bae}{svcs\+::test\+::server\+::\+Simple\+Event\+Bus}} и \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1TestEventBus_aecb22c1e0d2e5faf94300efdcc49c38a}{svcs\+::test\+::server\+::\+Test\+Event\+Bus}}.
+
+\Hypertarget{classsvcs_1_1services_1_1ISubject_a20e2f5095404c960d2b4f17789e74b28}\index{svcs::services::ISubject@{svcs::services::ISubject}!detach@{detach}}
+\index{detach@{detach}!svcs::services::ISubject@{svcs::services::ISubject}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1ISubject_a20e2f5095404c960d2b4f17789e74b28} 
+virtual void svcs\+::services\+::\+ISubject\+::detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Открепляет наблюдателя от субъекта. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em observer} & Умный указатель на объект наблюдателя для открепления. \\
+\hline
+\end{DoxyParams}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a090e19178c4294da6b085693c80b42cd}{svcs\+::core\+::\+Repository}}, \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus_acfdd0f85f33cd8e6436c75abc9e4657c}{svcs\+::services\+::\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_a1c46d6e5b260b76d18a638f3668e97af}{svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_a1c46d6e5b260b76d18a638f3668e97af}{svcs\+::test\+::cli\+::utils\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject_aa36560f8fb34036342a103f66f823ff6}{svcs\+::test\+::core\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject_aa36560f8fb34036342a103f66f823ff6}{svcs\+::test\+::core\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1MockEventBus_adc179fffa057e2dc2c7adb97ebe12446}{svcs\+::test\+::server\+::\+Mock\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a4a81641d3f9cb09777a16a19f4dd0a3b}{svcs\+::test\+::server\+::\+Simple\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a4a81641d3f9cb09777a16a19f4dd0a3b}{svcs\+::test\+::server\+::\+Simple\+Event\+Bus}} и \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1TestEventBus_ae03529e37d350c51d212f15c4efc7b3d}{svcs\+::test\+::server\+::\+Test\+Event\+Bus}}.
+
+\Hypertarget{classsvcs_1_1services_1_1ISubject_abd7c4e5d2729c0a3c83ce7b0f7b4e82a}\index{svcs::services::ISubject@{svcs::services::ISubject}!notify@{notify}}
+\index{notify@{notify}!svcs::services::ISubject@{svcs::services::ISubject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1ISubject_abd7c4e5d2729c0a3c83ce7b0f7b4e82a} 
+virtual void svcs\+::services\+::\+ISubject\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Уведомляет всех прикрепленных наблюдателей о событии. 
+
+Этот метод сделан публичным, чтобы классы компонентов (как Object\+Storage) могли публиковать события через внедренный указатель \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject}. Метод объявлен как {\ttfamily const}, потому что уведомление о событии является логически неизменяющим действием над состоянием Subject. 
+\begin{DoxyParams}{Аргументы}
+{\em event} & Константная ссылка на структуру события для отправки. \\
+\hline
+\end{DoxyParams}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a2d97a46d492c6b5ce6157ace0a37cd90}{svcs\+::core\+::\+Repository}}, \mbox{\hyperlink{classsvcs_1_1services_1_1EventBus_a7be954fe49754b80a57e0a7386744a15}{svcs\+::services\+::\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject_abfc5bfa7fe007eca3e7e8dd8d84e1d9c}{svcs\+::test\+::cli\+::mocks\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject_abfc5bfa7fe007eca3e7e8dd8d84e1d9c}{svcs\+::test\+::cli\+::utils\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject_a743580c0ca34a5ac14ce22f77a9d3b68}{svcs\+::test\+::core\+::mocks\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject_a4f228d425a2bfa98254cc525b08bbe66}{svcs\+::test\+::core\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockSubject_a4f228d425a2bfa98254cc525b08bbe66}{svcs\+::test\+::core\+::\+Mock\+Subject}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1MockEventBus_a22dffcb1a6891a7c00debd8923cff72a}{svcs\+::test\+::server\+::\+Mock\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a0c05f07d47ff47259c4634fb9f1323dd}{svcs\+::test\+::server\+::\+Simple\+Event\+Bus}}, \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1SimpleEventBus_a0c05f07d47ff47259c4634fb9f1323dd}{svcs\+::test\+::server\+::\+Simple\+Event\+Bus}} и \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1TestEventBus_a3b0c6912557f78d82659588f9b1106fb}{svcs\+::test\+::server\+::\+Test\+Event\+Bus}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{ISubject_8hxx}{ISubject.\+hxx}}\end{DoxyCompactItemize}

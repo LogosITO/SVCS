@@ -6,19 +6,17 @@
  *
  * @english
  * @brief Mock implementation of the HelpService interface for unit testing purposes.
- * @details This class inherits from HelpService and overrides its abstract methods
- * (`getAvailableCommands`, `getCommandDescription`, `showCommandHelp`) with controlled
- * implementations. It includes utility methods (`setAvailableCommands`, `wasCommandHelpCalled`, etc.)
- * to allow tests to configure the mock's behavior and inspect its interactions.
+ * @details This class provides a mock implementation with the same interface as HelpService
+ * but with controlled behavior for testing. It includes utility methods (`setAvailableCommands`,
+ * `wasCommandHelpCalled`, etc.) to allow tests to configure the mock's behavior and inspect its interactions.
  * This mock is essential for unit testing the **HelpCommand** without depending
  * on the actual implementation of the CLI command registration system.
  *
  * @russian
  * @brief Mock реализация интерфейса HelpService для целей модульного тестирования.
- * @details Этот класс наследуется от HelpService и переопределяет его абстрактные методы
- * (`getAvailableCommands`, `getCommandDescription`, `showCommandHelp`) контролируемыми
- * реализациями. Он включает служебные методы (`setAvailableCommands`, `wasCommandHelpCalled` и т.д.)
- * чтобы позволить тестам настраивать поведение mock'а и проверять его взаимодействия.
+ * @details Этот класс предоставляет mock реализацию с тем же интерфейсом, что и HelpService,
+ * но с контролируемым поведением для тестирования. Он включает служебные методы (`setAvailableCommands`,
+ * `wasCommandHelpCalled` и т.д.) чтобы позволить тестам настраивать поведение mock'а и проверять его взаимодействия.
  * Этот mock необходим для модульного тестирования **HelpCommand** без зависимости
  * от фактической реализации системы регистрации CLI команд.
  */
@@ -30,11 +28,29 @@
 #include <set>
 #include <functional>
 #include <memory>
-#include "../../../cli/include/HelpService.hxx"
 #include "MockSubject.hxx"
+#include "../../../services/Event.hxx"
 
-// Forward declaration if necessary, but included headers should suffice
-// struct Event;
+/**
+ * @english
+ * @namespace svcs::test::cli::mocks
+ * @brief Mock objects and test doubles for CLI command testing.
+ * @details Contains mock implementations of CLI-related interfaces used
+ * for testing command behavior, help systems, and user interactions.
+ * These mocks provide controlled command responses and verification
+ * capabilities for CLI command unit tests.
+ *
+ * @russian
+ * @namespace svcs::test::cli::mocks
+ * @brief Mock объекты и тестовые дубли для тестирования CLI команд.
+ * @details Содержит mock реализации CLI-интерфейсов, используемых
+ * для тестирования поведения команд, систем справки и взаимодействий с пользователем.
+ * Эти моки предоставляют контролируемые ответы команд и возможности
+ * верификации для модульных тестов CLI команд.
+ */
+namespace svcs::test::cli::mocks {
+
+using svcs::services::Event;
 
 /**
  * @english
@@ -55,7 +71,7 @@
  * 3. **Проверять**, справка какой команды была запрошена `HelpCommand`.
  * 4. Использовать предоставленный MockSubject для вывода отладочной информации во время тестирования.
  */
-class MockHelpService : public HelpService {
+class MockHelpService {
 private:
     /**
      * @english
@@ -93,32 +109,30 @@ private:
      */
     std::shared_ptr<MockSubject> mockEventBus_;
 
+    /**
+     * @english
+     * @brief Tracks if general help was shown.
+     *
+     * @russian
+     * @brief Отслеживает, была ли показана общая справка.
+     */
+    bool wasGeneralHelpCalled_ = false;
+
 public:
     /**
      * @english
      * @brief Constructor for MockHelpService.
-     * @details Initializes the base HelpService with lambda functions that delegate
-     * to the mock's own control methods, and stores the mock event bus.
      * @param mockEventBus The shared pointer to the MockSubject used for notifications.
      *
      * @russian
      * @brief Конструктор для MockHelpService.
-     * @details Инициализирует базовый HelpService с лямбда-функциями, которые делегируют
-     * собственным методам управления mock'а, и сохраняет mock шину событий.
      * @param mockEventBus Общий указатель на MockSubject, используемый для уведомлений.
      */
     explicit MockHelpService(const std::shared_ptr<MockSubject>& mockEventBus)
-        : HelpService(
-            mockEventBus, // bus
-            [this]() { return this->getAvailableCommands(); }, // commandsFunc
-            [this](const std::string& cmd) { return this->getCommandDescription(cmd); }, // descriptionFunc
-            [this](const std::string& cmd) { this->showCommandHelp(cmd); }, // helpFunc
-            [](const std::string& cmd) { return "Usage for " + cmd; } // usageFunc - simplified usage for mock
-          ),
-          mockEventBus_(mockEventBus) {
+        : mockEventBus_(mockEventBus) {
     }
 
-    // --- Implementations of HelpService Abstract Methods ---
+    // --- Mock Methods Matching HelpService Interface ---
 
     /**
      * @english
@@ -166,8 +180,33 @@ public:
     void showCommandHelp(const std::string& commandName) {
         calledCommandHelp_.insert(commandName);
         if (mockEventBus_) {
-            mockEventBus_->notify({Event::DEBUG_MESSAGE,
-                                  "MockHelpService: Showing help for " + commandName, "help"});
+            // Создаем объект Event правильно - используем поле details
+            Event event;
+            event.type = Event::DEBUG_MESSAGE;
+            event.details = "MockHelpService: Showing help for " + commandName;
+            event.source_name = "help";
+            mockEventBus_->notify(event);
+        }
+    }
+
+    /**
+     * @english
+     * @brief Records that general help was requested.
+     * @details Also emits a debug message to the mock event bus.
+     *
+     * @russian
+     * @brief Записывает, что была запрошена общая справка.
+     * @details Также отправляет отладочное сообщение в mock шину событий.
+     */
+    void showGeneralHelp() {
+        wasGeneralHelpCalled_ = true;
+        if (mockEventBus_) {
+            // Создаем объект Event правильно - используем поле details
+            Event event;
+            event.type = Event::DEBUG_MESSAGE;
+            event.details = "MockHelpService: Showing general help";
+            event.source_name = "help";
+            mockEventBus_->notify(event);
         }
     }
 
@@ -218,6 +257,19 @@ public:
 
     /**
      * @english
+     * @brief Checks if showGeneralHelp() was called.
+     * @return true if showGeneralHelp() was called, false otherwise.
+     *
+     * @russian
+     * @brief Проверяет, был ли вызван showGeneralHelp().
+     * @return true если showGeneralHelp() был вызван, false в противном случае.
+     */
+    [[nodiscard]] bool wasGeneralHelpCalled() const {
+        return wasGeneralHelpCalled_;
+    }
+
+    /**
+     * @english
      * @brief Resets the mock's internal state (called commands, lists, and descriptions).
      *
      * @russian
@@ -227,5 +279,8 @@ public:
         calledCommandHelp_.clear();
         availableCommands_.clear();
         commandDescriptions_.clear();
+        wasGeneralHelpCalled_ = false;
     }
 };
+
+} // namespace svcs::test::cli::mocks

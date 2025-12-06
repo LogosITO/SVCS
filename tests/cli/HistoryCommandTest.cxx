@@ -25,6 +25,10 @@
 
 #include "utils/IntHistoryCommandTest.hxx"
 
+namespace svcs::test::cli {
+
+using namespace svcs::test::cli::utils;
+
 TEST_F(HistoryCommandTest, DebugCommitHistory) {
     // Create test commits
     createTestCommit("First commit");
@@ -280,4 +284,6 @@ TEST_F(HistoryCommandTest, HistoryFullDetails) {
     EXPECT_TRUE(containsMessage(notifications, "Hash:"));
     EXPECT_TRUE(containsMessage(notifications, "Message: Detailed commit message"));
     EXPECT_TRUE(containsMessage(notifications, "Files:"));
+}
+
 }

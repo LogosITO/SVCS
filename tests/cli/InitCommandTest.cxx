@@ -12,10 +12,15 @@
  */
 
 #include "utils/InitCommandIntegrationTest.hxx"
+#include "mocks/MockSubject.hxx"
 
 #include <gtest/gtest.h>
 #include <filesystem>
 #include <memory>
+
+namespace svcs::test::cli {
+
+using namespace svcs::test::cli::utils;
 
 TEST_F(InitCommandIntegrationTest, Success_InitInEmptyDirectory) {
     bool result = command->execute({});
@@ -70,4 +75,6 @@ TEST_F(InitCommandIntegrationTest, HelpFlagShowsHelp) {
         }
     }
     EXPECT_TRUE(foundHelp);
+}
+
 }

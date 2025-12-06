@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['fatal_0',['fatal',['../classLogger.html#ab934865d3713793d0353271a475eaf4b',1,'Logger']]],
-  ['findentry_1',['findEntry',['../classTree.html#a944fe0075293396036606f6a999643f4',1,'Tree']]],
-  ['findrepository_2',['findRepository',['../classBaseCommand.html#aeda1ecf978bfb02f534a15f99520065a',1,'BaseCommand::findRepository()'],['../classRepository.html#acffdc3fb1a22f69018a4037e9b4feabb',1,'Repository::findRepository()']]],
-  ['flush_3',['flush',['../classLogger.html#a5cc08473729523bb4bde48459f2ac468',1,'Logger']]]
+  ['fatal_0',['fatal',['../classsvcs_1_1services_1_1Logger.html#a5130a6cddcf96a93a312e779e3c79450',1,'svcs::services::Logger']]],
+  ['findentry_1',['findEntry',['../classsvcs_1_1core_1_1Tree.html#a85cf98fe6fc3487e1e1396e460c5845e',1,'svcs::core::Tree']]],
+  ['findrepository_2',['findRepository',['../classsvcs_1_1cli_1_1BaseCommand.html#ab0450a3435cdf9647d26cde0d0631dc2',1,'svcs::cli::BaseCommand::findRepository()'],['../classsvcs_1_1core_1_1Repository.html#a89ea6b027ffc211985d7f852e239867a',1,'svcs::core::Repository::findRepository()']]],
+  ['flush_3',['flush',['../classsvcs_1_1services_1_1Logger.html#a1eb06f4d455ed1c811b16af55d4e5a6b',1,'svcs::services::Logger']]]
 ];

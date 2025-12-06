@@ -16,6 +16,11 @@
 #include <algorithm>
 #include <utility>
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 ClearCommand::ClearCommand(std::shared_ptr<ISubject> subject,
                            std::shared_ptr<RepositoryManager> repoManager)
     : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
@@ -146,4 +151,6 @@ bool ClearCommand::removeRepository() const {
                           "Error removing repository: " + std::string(e.what()), "clear"});
         return false;
     }
+}
+
 }

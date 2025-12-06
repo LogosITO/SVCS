@@ -20,6 +20,29 @@
 #include <filesystem>
 #include <memory>
 
+/**
+ * @english
+ * @namespace svcs::test::cli
+ * @brief Unit tests for command-line interface components.
+ * @details Contains test cases for CLI commands, command parsing,
+ * and user interaction scenarios. Tests in this namespace validate
+ * the behavior and correctness of all user-facing commands.
+ *
+ * @russian
+ * @namespace svcs::test::cli
+ * @brief Модульные тесты для компонентов интерфейса командной строки.
+ * @details Содержит тест-кейсы для CLI команд, парсинга команд
+ * и сценариев взаимодействия с пользователем. Тесты в этом пространстве имен
+ * проверяют поведение и корректность всех пользовательских команд.
+ */
+namespace svcs::test::cli {
+
+using namespace svcs::test::cli::mocks;
+using namespace svcs::test::cli::utils;
+
+using namespace svcs::core;
+using namespace svcs::cli;
+
 TEST_F(AddCommandTest, Failure_NoRepository) {
     // Тестируем случай когда репозиторий не инициализирован
     // Создаем новый command без инициализированного репозитория
@@ -384,4 +407,6 @@ TEST_F(AddCommandTest, Success_UpdateAndForceFlags) {
     // Тестируем --force флаг
     bool resultForce = command->execute({"--force", "ignored.txt"});
     EXPECT_TRUE(resultForce);
+}
+
 }

@@ -1,0 +1,189 @@
+\doxysection{Класс svcs\+::core\+::Vcs\+Object}
+\hypertarget{classsvcs_1_1core_1_1VcsObject}{}\label{classsvcs_1_1core_1_1VcsObject}\index{svcs::core::VcsObject@{svcs::core::VcsObject}}
+
+
+Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.  
+
+
+
+
+{\ttfamily \#include $<$Vcs\+Object.\+hxx$>$}
+
+Граф наследования\+:svcs\+::core\+::Vcs\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.666667cm]{classsvcs_1_1core_1_1VcsObject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_a81c7e8a2c41dc070254c23dbc2d147e2}\label{classsvcs_1_1core_1_1VcsObject_a81c7e8a2c41dc070254c23dbc2d147e2} 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию. Требуется для производных классов. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_ab66c27121f6c8bbbf427c30c020dfe6d}{Vcs\+Object}} (const \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Конструктор копирования. Требуется для производных классов для корректного копирования hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_aa293cbc989a083b31c42f5505469f6c1}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a6fc1786a23d7b60655d4d34704b184b6}{serialize}} () const =0
+\begin{DoxyCompactList}\small\item\em Чисто виртуальный метод для сериализации основных данных объекта. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a2c2a2d4b120a95b5163ff706d9804180}{get\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Чисто виртуальный метод для получения типа объекта СКВ. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a5910a71613b0b31a9d046d2b71d7644e}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает уникальный хеш-\/идентификатор объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_aa5f3a482b7c45bbce8814bf2d6f325ad}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Вычисляет SHA-\/256 хеш для заданного канонического содержимого. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a776323941cf6d9f2923b67cf9cc95ec5}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Вычисляет криптографический хеш-\/идентификатор для содержимого объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_ab2ce43cace8e3bfd31cc3a293245394c}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Уникальный криптографический хеш-\/идентификатор (например, SHA-\/256) для этого объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ. 
+
+\doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} обеспечивает обязательное наличие хеш-\/идентификатора, логики сериализации и идентификации типа для всех производных классов. Он служит основной доменной сущностью для базы данных объектов. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_ab66c27121f6c8bbbf427c30c020dfe6d}\index{svcs::core::VcsObject@{svcs::core::VcsObject}!VcsObject@{VcsObject}}
+\index{VcsObject@{VcsObject}!svcs::core::VcsObject@{svcs::core::VcsObject}}
+\doxysubsubsection{\texorpdfstring{VcsObject()}{VcsObject()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1VcsObject_ab66c27121f6c8bbbf427c30c020dfe6d} 
+svcs\+::core\+::\+Vcs\+Object\+::\+Vcs\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Конструктор копирования. Требуется для производных классов для корректного копирования hash\+\_\+id. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em other} & Объект \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} для копирования. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_aa293cbc989a083b31c42f5505469f6c1}\index{svcs::core::VcsObject@{svcs::core::VcsObject}!````~VcsObject@{\texorpdfstring{$\sim$}{\string~}VcsObject}}
+\index{````~VcsObject@{\texorpdfstring{$\sim$}{\string~}VcsObject}!svcs::core::VcsObject@{svcs::core::VcsObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VcsObject()}{\string~VcsObject()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1VcsObject_aa293cbc989a083b31c42f5505469f6c1} 
+virtual svcs\+::core\+::\+Vcs\+Object\+::\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Виртуальный деструктор. 
+
+Обеспечивает правильную очистку при удалении производных объектов через указатель на базовый класс. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_aa5f3a482b7c45bbce8814bf2d6f325ad}\index{svcs::core::VcsObject@{svcs::core::VcsObject}!calculateHash@{calculateHash}}
+\index{calculateHash@{calculateHash}!svcs::core::VcsObject@{svcs::core::VcsObject}}
+\doxysubsubsection{\texorpdfstring{calculateHash()}{calculateHash()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1VcsObject_aa5f3a482b7c45bbce8814bf2d6f325ad} 
+std\+::string svcs\+::core\+::\+Vcs\+Object\+::calculate\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Вычисляет SHA-\/256 хеш для заданного канонического содержимого. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em content} & Содержимое объекта Git-\/формата (header + raw\+\_\+data). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::string Вычисленный 64-\/символьный хеш. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_a776323941cf6d9f2923b67cf9cc95ec5}\index{svcs::core::VcsObject@{svcs::core::VcsObject}!computeHash@{computeHash}}
+\index{computeHash@{computeHash}!svcs::core::VcsObject@{svcs::core::VcsObject}}
+\doxysubsubsection{\texorpdfstring{computeHash()}{computeHash()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1VcsObject_a776323941cf6d9f2923b67cf9cc95ec5} 
+void svcs\+::core\+::\+Vcs\+Object\+::compute\+Hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Вычисляет криптографический хеш-\/идентификатор для содержимого объекта. 
+
+Этот метод должен добавлять тип объекта и длину содержимого (в стиле Git) перед хешированием полного содержимого и установкой внутреннего hash\+\_\+id. 
+\begin{DoxyParams}{Аргументы}
+{\em content} & Сериализованные строковые данные объекта (обычно возвращаемые \doxylink{classsvcs_1_1core_1_1VcsObject_a6fc1786a23d7b60655d4d34704b184b6}{serialize()}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_a5910a71613b0b31a9d046d2b71d7644e}\index{svcs::core::VcsObject@{svcs::core::VcsObject}!getHashId@{getHashId}}
+\index{getHashId@{getHashId}!svcs::core::VcsObject@{svcs::core::VcsObject}}
+\doxysubsubsection{\texorpdfstring{getHashId()}{getHashId()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1VcsObject_a5910a71613b0b31a9d046d2b71d7644e} 
+std\+::string svcs\+::core\+::\+Vcs\+Object\+::get\+Hash\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Возвращает уникальный хеш-\/идентификатор объекта. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::string Криптографический хеш-\/идентификатор. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_a2c2a2d4b120a95b5163ff706d9804180}\index{svcs::core::VcsObject@{svcs::core::VcsObject}!getType@{getType}}
+\index{getType@{getType}!svcs::core::VcsObject@{svcs::core::VcsObject}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1VcsObject_a2c2a2d4b120a95b5163ff706d9804180} 
+virtual std\+::string svcs\+::core\+::\+Vcs\+Object\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Чисто виртуальный метод для получения типа объекта СКВ. 
+
+Это критически важно для хранения объектов и их восстановления (например, "{}commit"{}, "{}blob"{}, "{}tree"{}). \begin{DoxyReturn}{Возвращает}
+std\+::string Идентификатор типа объекта. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1core_1_1Blob_ad5d32bd67a9279ea0b1db716a0cea74c}{svcs\+::core\+::\+Blob}}, \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a24ebda092f26d97c3718f50964bc4772}{svcs\+::core\+::\+Commit}}, \mbox{\hyperlink{classsvcs_1_1core_1_1TestableObject_a96c95dfeefbcc41ee99c30b3f2783fba}{svcs\+::core\+::\+Testable\+Object}} и \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_a763fd95420bb17e80e5005d875fe9e82}{svcs\+::core\+::\+Tree}}.
+
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_a6fc1786a23d7b60655d4d34704b184b6}\index{svcs::core::VcsObject@{svcs::core::VcsObject}!serialize@{serialize}}
+\index{serialize@{serialize}!svcs::core::VcsObject@{svcs::core::VcsObject}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1VcsObject_a6fc1786a23d7b60655d4d34704b184b6} 
+virtual std\+::string svcs\+::core\+::\+Vcs\+Object\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Чисто виртуальный метод для сериализации основных данных объекта. 
+
+Возвращаемое строковое содержимое будет хешировано и сохранено в базе данных. \begin{DoxyReturn}{Возвращает}
+std\+::string Стандартизированные, сериализованные данные объекта. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1core_1_1Blob_a05f40a892e496b95cf6a0bb2fe501d67}{svcs\+::core\+::\+Blob}}, \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a66ef1b680e874cfe5e9856ae95529c86}{svcs\+::core\+::\+Commit}}, \mbox{\hyperlink{classsvcs_1_1core_1_1TestableObject_a2c50034ff10f7815d650b63ae14f979b}{svcs\+::core\+::\+Testable\+Object}} и \mbox{\hyperlink{classsvcs_1_1core_1_1Tree_aefbdb38f50792902571b200c98004de0}{svcs\+::core\+::\+Tree}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{classsvcs_1_1core_1_1VcsObject_ab2ce43cace8e3bfd31cc3a293245394c}\index{svcs::core::VcsObject@{svcs::core::VcsObject}!hash\_id@{hash\_id}}
+\index{hash\_id@{hash\_id}!svcs::core::VcsObject@{svcs::core::VcsObject}}
+\doxysubsubsection{\texorpdfstring{hash\_id}{hash\_id}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1VcsObject_ab2ce43cace8e3bfd31cc3a293245394c} 
+std\+::string svcs\+::core\+::\+Vcs\+Object\+::hash\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Уникальный криптографический хеш-\/идентификатор (например, SHA-\/256) для этого объекта. 
+
+Защищенный, чтобы разрешить внутреннюю установку через \doxylink{classsvcs_1_1core_1_1VcsObject_a776323941cf6d9f2923b67cf9cc95ec5}{compute\+Hash()}, но предотвратить внешнее изменение. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{VcsObject_8hxx}{Vcs\+Object.\+hxx}}\item 
+core/src/Vcs\+Object.\+cxx\end{DoxyCompactItemize}

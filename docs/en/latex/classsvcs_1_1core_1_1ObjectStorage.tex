@@ -1,0 +1,178 @@
+\doxysection{svcs\+::core\+::Object\+Storage Class Reference}
+\hypertarget{classsvcs_1_1core_1_1ObjectStorage}{}\label{classsvcs_1_1core_1_1ObjectStorage}\index{svcs::core::ObjectStorage@{svcs::core::ObjectStorage}}
+
+
+Manages the version control object database, including persistence and object restoration.  
+
+
+
+
+{\ttfamily \#include $<$Object\+Storage.\+hxx$>$}
+
+Inheritance diagram for svcs\+::core\+::Object\+Storage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1core_1_1ObjectStorage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_a080fa691f97a255abe1d65962c16b0e0}{Object\+Storage}} (const std\+::string \&root\+\_\+path, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ \&subject=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_ab6ceb81115dacf56d6a99f5721e30c78}\label{classsvcs_1_1core_1_1ObjectStorage_ab6ceb81115dacf56d6a99f5721e30c78} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Object\+Storage} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_a1af2a8c7d75e55827cd1c88a3370beec}{set\+Subject}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subj)
+\begin{DoxyCompactList}\small\item\em Sets or replaces the event subject used by the \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_acf98d1402cbc3bb112bca7a19a3400f3}{get\+Object\+Path}} (const std\+::string \&hash) const
+\begin{DoxyCompactList}\small\item\em Forms the full filesystem path for an object based on its hash. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_afcd2404560b69f9aa502d7ddc67de225}{save\+Object}} (const \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} \&obj) const
+\begin{DoxyCompactList}\small\item\em Saves a \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} to the object database. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} $>$ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_a6f5c0cacdeb8b319358ef9e3cce2bd9f}{load\+Object}} (const std\+::string \&hash) const
+\begin{DoxyCompactList}\small\item\em Loads an object from the disk by its hash ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_aceaa59aa102d6f79aae8ed17765b4f6e}{object\+Exists}} (const std\+::string \&hash) const
+\begin{DoxyCompactList}\small\item\em Checks if an object with the given hash exists on disk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the version control object database, including persistence and object restoration. 
+
+Implements low-\/level file system operations (path generation, reading, writing), compression, decompression, and object deserialization. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_a080fa691f97a255abe1d65962c16b0e0}\index{svcs::core::ObjectStorage@{svcs::core::ObjectStorage}!ObjectStorage@{ObjectStorage}}
+\index{ObjectStorage@{ObjectStorage}!svcs::core::ObjectStorage@{svcs::core::ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{ObjectStorage()}{ObjectStorage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1ObjectStorage_a080fa691f97a255abe1d65962c16b0e0} 
+svcs\+::core\+::\+Object\+Storage\+::\+Object\+Storage (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{root\+\_\+path}{, }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ \&}]{subject}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\+\_\+path} & The root path of the repository (e.\+g., the directory containing "{}.\+svcs"{}). \\
+\hline
+{\em subject} & Shared pointer to the \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} interface for event logging. Defaults to nullptr if logging is not required yet. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_acf98d1402cbc3bb112bca7a19a3400f3}\index{svcs::core::ObjectStorage@{svcs::core::ObjectStorage}!getObjectPath@{getObjectPath}}
+\index{getObjectPath@{getObjectPath}!svcs::core::ObjectStorage@{svcs::core::ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{getObjectPath()}{getObjectPath()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1ObjectStorage_acf98d1402cbc3bb112bca7a19a3400f3} 
+std\+::string svcs\+::core\+::\+Object\+Storage\+::get\+Object\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Forms the full filesystem path for an object based on its hash. 
+
+Uses the first two characters of the hash for the subdirectory name and the remaining 38 characters for the filename. 
+\begin{DoxyParams}{Parameters}
+{\em hash} & The full 40-\/character SHA-\/1 hash ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string The full, platform-\/agnostic file path. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_a6f5c0cacdeb8b319358ef9e3cce2bd9f}\index{svcs::core::ObjectStorage@{svcs::core::ObjectStorage}!loadObject@{loadObject}}
+\index{loadObject@{loadObject}!svcs::core::ObjectStorage@{svcs::core::ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{loadObject()}{loadObject()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1ObjectStorage_a6f5c0cacdeb8b319358ef9e3cce2bd9f} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} $>$ svcs\+::core\+::\+Object\+Storage\+::load\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [virtual]}}
+
+
+
+Loads an object from the disk by its hash ID. 
+
+Reads the compressed file, decompresses it, performs integrity checks, and deserializes the object using the internal factory method. 
+\begin{DoxyParams}{Parameters}
+{\em hash} & The hash ID of the object to load. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Vcs\+Object$>$ The restored object instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the object is not found, corrupted, or invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObjectStorage_a1cc049df93020cc42fdbaa81ad799b40}{svcs\+::test\+::core\+::\+Mock\+Object\+Storage}}.
+
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_aceaa59aa102d6f79aae8ed17765b4f6e}\index{svcs::core::ObjectStorage@{svcs::core::ObjectStorage}!objectExists@{objectExists}}
+\index{objectExists@{objectExists}!svcs::core::ObjectStorage@{svcs::core::ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{objectExists()}{objectExists()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1ObjectStorage_aceaa59aa102d6f79aae8ed17765b4f6e} 
+bool svcs\+::core\+::\+Object\+Storage\+::object\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hash}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Checks if an object with the given hash exists on disk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & The hash ID to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the object file exists. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_afcd2404560b69f9aa502d7ddc67de225}\index{svcs::core::ObjectStorage@{svcs::core::ObjectStorage}!saveObject@{saveObject}}
+\index{saveObject@{saveObject}!svcs::core::ObjectStorage@{svcs::core::ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{saveObject()}{saveObject()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1ObjectStorage_afcd2404560b69f9aa502d7ddc67de225} 
+bool svcs\+::core\+::\+Object\+Storage\+::save\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} \&}]{obj}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [virtual]}}
+
+
+
+Saves a \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} to the object database. 
+
+Serializes the object, prefixes it with a header, compresses it, and writes it to a file. Publishes events on success/failure. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & The \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} to save. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if saving was successful. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if hash is invalid or file IO fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObjectStorage_a3bfbf6c9ca8c6298b49cb5ba4a6c20f8}{svcs\+::test\+::core\+::\+Mock\+Object\+Storage}}.
+
+\Hypertarget{classsvcs_1_1core_1_1ObjectStorage_a1af2a8c7d75e55827cd1c88a3370beec}\index{svcs::core::ObjectStorage@{svcs::core::ObjectStorage}!setSubject@{setSubject}}
+\index{setSubject@{setSubject}!svcs::core::ObjectStorage@{svcs::core::ObjectStorage}}
+\doxysubsubsection{\texorpdfstring{setSubject()}{setSubject()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1ObjectStorage_a1af2a8c7d75e55827cd1c88a3370beec} 
+void svcs\+::core\+::\+Object\+Storage\+::set\+Subject (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets or replaces the event subject used by the \doxylink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subj} & The new \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} pointer to use for publishing events. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{ObjectStorage_8hxx}{Object\+Storage.\+hxx}}\item 
+core/src/\mbox{\hyperlink{ObjectStorage_8cxx}{Object\+Storage.\+cxx}}\end{DoxyCompactItemize}

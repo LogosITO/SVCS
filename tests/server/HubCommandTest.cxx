@@ -68,37 +68,41 @@
  */
 
 #include <gtest/gtest.h>
-#include "../../server/include/HubCommand.hxx"
-#include "../../services/Event.hxx"
-#include "../../services/EventBus.hxx"
-#include "../../core/include/RepositoryManager.hxx"
-#include "../../services/ISubject.hxx"
-
 #include <filesystem>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <memory>
 
 namespace fs = std::filesystem;
 
-class SimpleEventBus : public ISubject {
+#include "../../server/include/HubCommand.hxx"
+#include "../../services/Event.hxx"
+#include "../../services/ISubject.hxx"
+#include "../../services/IObserver.hxx"
+#include "../../core/include/RepositoryManager.hxx"
+
+namespace svcs::test::server {
+
+// Простая реализация ISubject для тестов
+class SimpleEventBus : public svcs::services::ISubject {
 public:
-    void attach(std::shared_ptr<IObserver>) override {}
-    void detach(std::shared_ptr<IObserver>) override {}
-    void notify(const Event&) const override {}
+    void attach(std::shared_ptr<svcs::services::IObserver>) override {}
+    void detach(std::shared_ptr<svcs::services::IObserver>) override {}
+    void notify(const svcs::services::Event&) const override {}
 };
 
 class HubCommandTest : public ::testing::Test {
 protected:
     std::shared_ptr<SimpleEventBus> event_bus;
-    std::shared_ptr<RepositoryManager> repo_manager;
-    std::unique_ptr<HubCommand> command;
+    std::shared_ptr<svcs::core::RepositoryManager> repo_manager;
+    std::unique_ptr<svcs::server::cli::HubCommand> command;
     fs::path temp_dir;
 
     void SetUp() override {
         event_bus = std::make_shared<SimpleEventBus>();
-        repo_manager = std::make_shared<RepositoryManager>(event_bus);
-        command = std::make_unique<HubCommand>(event_bus, repo_manager);
+        repo_manager = std::make_shared<svcs::core::RepositoryManager>(event_bus);
+        command = std::make_unique<svcs::server::cli::HubCommand>(event_bus, repo_manager);
         temp_dir = fs::temp_directory_path() / "hub_command_test";
         fs::remove_all(temp_dir);
         fs::create_directories(temp_dir);
@@ -202,4 +206,6 @@ TEST_F(HubCommandTest, HeadFileContent) {
                         std::istreambuf_iterator<char>());
 
     EXPECT_TRUE(content.find("ref: refs/heads/main") != std::string::npos);
+}
+
 }

@@ -12,35 +12,41 @@
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <utility>}}
 \DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classObjectStorage_a97cd1089e57caec02d91e9d5177f2607}{ObjectStorage}}\ \{}
-\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ objects\_dir;}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00059\ \ \ \ \ std::shared\_ptr<ISubject>\ subject;}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00074\ \ \ \ \ [[nodiscard]]\ std::string\ compress(\textcolor{keyword}{const}\ std::string\&\ data)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00089\ \ \ \ \ [[nodiscard]]\ std::string\ decompress(\textcolor{keyword}{const}\ std::string\&\ compressed\_data)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00108\ \ \ \ \ [[nodiscard]]\ std::unique\_ptr<VcsObject>\ createObjectFromContent(}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ type,}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ content}
-\DoxyCodeLine{00111\ \ \ \ \ )\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classObjectStorage_a97cd1089e57caec02d91e9d5177f2607}{ObjectStorage}}(\textcolor{keyword}{const}\ std::string\&\ root\_path,\ \textcolor{keyword}{const}\ std::shared\_ptr<ISubject>\&\ subject\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classObjectStorage_a84986af89788ac235900ee9278e681d1}{\string~ObjectStorage}}();}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObjectStorage_a0dc7bb15cb48b9795149e3572c4c7c3c}{setSubject}}(std::shared\_ptr<ISubject>\ subj)\ \{\ subject\ =\ std::move(subj);\ \};}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00162\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classObjectStorage_a3bdb2110012cbe733cdeb4d438b583d0}{getObjectPath}}(\textcolor{keyword}{const}\ std::string\&\ hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}}\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1services}{svcs::services}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_a080fa691f97a255abe1d65962c16b0e0}{ObjectStorage}}\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ objects\_dir;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::shared\_ptr<ISubject>\ subject;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00091\ \ \ \ \ [[nodiscard]]\ std::string\ compress(\textcolor{keyword}{const}\ std::string\&\ data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00106\ \ \ \ \ [[nodiscard]]\ std::string\ decompress(\textcolor{keyword}{const}\ std::string\&\ compressed\_data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00125\ \ \ \ \ [[nodiscard]]\ std::unique\_ptr<VcsObject>\ createObjectFromContent(}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ type,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ content}
+\DoxyCodeLine{00128\ \ \ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_a080fa691f97a255abe1d65962c16b0e0}{ObjectStorage}}(\textcolor{keyword}{const}\ std::string\&\ root\_path,\ \textcolor{keyword}{const}\ std::shared\_ptr<ISubject>\&\ subject\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_ab6ceb81115dacf56d6a99f5721e30c78}{\string~ObjectStorage}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_a1af2a8c7d75e55827cd1c88a3370beec}{setSubject}}(std::shared\_ptr<ISubject>\ subj)\ \{\ subject\ =\ std::move(subj);\ \};}
 \DoxyCodeLine{00163\ }
-\DoxyCodeLine{00181\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classObjectStorage_acab6226c60b2979078001d539f56de3b}{saveObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVcsObject}{VcsObject}}\&\ obj)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00200\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::unique\_ptr<VcsObject>\ \mbox{\hyperlink{classObjectStorage_ad287a079892332b3a6d71b10275b925f}{loadObject}}(\textcolor{keyword}{const}\ std::string\&\ hash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00201\ }
-\DoxyCodeLine{00213\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classObjectStorage_abbc8d8426ae0f500aa7a6dba213e0bed}{objectExists}}(\textcolor{keyword}{const}\ std::string\&\ hash)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00214\ \};}
+\DoxyCodeLine{00179\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_acf98d1402cbc3bb112bca7a19a3400f3}{getObjectPath}}(\textcolor{keyword}{const}\ std::string\&\ hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00198\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_afcd2404560b69f9aa502d7ddc67de225}{saveObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{VcsObject}}\&\ obj)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00217\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::unique\_ptr<VcsObject>\ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_a6f5c0cacdeb8b319358ef9e3cce2bd9f}{loadObject}}(\textcolor{keyword}{const}\ std::string\&\ hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00230\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage_aceaa59aa102d6f79aae8ed17765b4f6e}{objectExists}}(\textcolor{keyword}{const}\ std::string\&\ hash)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00231\ \};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \}}
 
 \end{DoxyCode}

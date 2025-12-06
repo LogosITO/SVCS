@@ -1,4 +1,4 @@
 var HubCommand_8hxx =
 [
-    [ "HubCommand", "classHubCommand.html", "classHubCommand" ]
+    [ "svcs::server::cli::HubCommand", "classsvcs_1_1server_1_1cli_1_1HubCommand.html", "classsvcs_1_1server_1_1cli_1_1HubCommand" ]
 ];

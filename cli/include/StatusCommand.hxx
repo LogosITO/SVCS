@@ -23,6 +23,24 @@
 
 /**
  * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
+/**
+ * @english
  * @brief Command for showing the current status of the repository.
  * @details The StatusCommand displays:
  * - Current branch
@@ -254,3 +272,5 @@ private:
      */
     [[nodiscard]] std::pair<char, std::string> getFileStatus(const std::string& filePath) const;
 };
+
+}

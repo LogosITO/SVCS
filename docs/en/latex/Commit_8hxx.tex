@@ -2,7 +2,7 @@
 \hypertarget{Commit_8hxx}{}\label{Commit_8hxx}\index{core/include/Commit.hxx@{core/include/Commit.hxx}}
 
 
-Defines the \doxylink{classCommit}{Commit} class, representing a permanent snapshot in the VCS history.  
+Defines the Commit class, representing a permanent snapshot in the VCS history.  
 
 
 {\ttfamily \#include "{}Vcs\+Object.\+hxx"{}}\newline
@@ -12,14 +12,19 @@ Defines the \doxylink{classCommit}{Commit} class, representing a permanent snaps
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classCommit}{Commit}}
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Commit}{svcs\+::core\+::\+Commit}}
 \begin{DoxyCompactList}\small\item\em Represents a single, immutable historical point (snapshot) in the repository\textquotesingle{}s history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Core VCS data structures and object model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Defines the \doxylink{classCommit}{Commit} class, representing a permanent snapshot in the VCS history. 
+Defines the Commit class, representing a permanent snapshot in the VCS history. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-A \doxylink{classCommit}{Commit} object links a \doxylink{classTree}{Tree} object (the repository state) with parent commits and essential metadata like author, timestamp, and the commit message, forming the basis of the project\textquotesingle{}s history. 
+A Commit object links a Tree object (the repository state) with parent commits and essential metadata like author, timestamp, and the commit message, forming the basis of the project\textquotesingle{}s history. 

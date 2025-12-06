@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['author_0',['author',['../structCommitInfo.html#ade2668c2ddc4785889792a443f88cc4a',1,'CommitInfo']]]
+  ['author_0',['author',['../structsvcs_1_1core_1_1CommitInfo.html#a70e66fd024ae0753086976570f9d37ac',1,'svcs::core::CommitInfo']]]
 ];

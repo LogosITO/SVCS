@@ -30,6 +30,29 @@
 
 /**
  * @english
+ * @namespace svcs::integration
+ * @brief System integration components and cross-cutting concerns.
+ * @details Contains components that integrate different subsystems of the SVCS,
+ * including command factory integration, service orchestration, and cross-layer
+ * coordination. This namespace bridges the gap between CLI, server, core, and
+ * service layers to provide a unified application experience.
+ *
+ * @russian
+ * @namespace svcs::integration
+ * @brief Компоненты интеграции системы и сквозные задачи.
+ * @details Содержит компоненты, которые интегрируют различные подсистемы SVCS,
+ * включая интеграцию фабрик команд, оркестрацию сервисов и межслоевое
+ * взаимодействие. Это пространство имен служит мостом между CLI, сервером, ядром и
+ * сервисными слоями для обеспечения единого пользовательского опыта приложения.
+ */
+namespace svcs::integration {
+
+using namespace svcs::core;
+using namespace svcs::cli;
+using namespace svcs::services;
+
+/**
+ * @english
  * @class CompositeCommandFactory
  * @brief Integration component for combining multiple command factories.
  * @details Serves as a bridge between different command subsystems (CLI, Server).
@@ -223,3 +246,5 @@ private:
      */
     std::vector<std::function<std::unique_ptr<ICommand>(const std::string&)>> factories_;
 };
+
+}

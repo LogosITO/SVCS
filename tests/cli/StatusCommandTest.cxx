@@ -13,6 +13,10 @@
 
 #include "utils/IntStatusCommandTest.hxx"
 
+namespace svcs::test::cli {
+
+using svcs::test::cli::utils::StatusCommandTest;
+
 // Test full status with no staged files
 TEST_F(StatusCommandTest, FullStatusNoStagedFiles) {
     std::vector<std::string> args = {};
@@ -186,4 +190,6 @@ TEST_F(StatusCommandTest, StatusShowsCorrectFileStates) {
     
     // Should show usage instructions
     EXPECT_TRUE(containsMessage(notifications, "Use 'svcs add <file>' to stage changes"));
+}
+
 }

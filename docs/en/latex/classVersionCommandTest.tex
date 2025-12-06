@@ -2,7 +2,7 @@
 \hypertarget{classVersionCommandTest}{}\label{classVersionCommandTest}\index{VersionCommandTest@{VersionCommandTest}}
 
 
-Google Test fixture for running unit/integration tests against the \doxylink{classVersionCommand}{Version\+Command}.  
+Google Test fixture for running unit/integration tests against the Version\+Command.  
 
 
 
@@ -24,9 +24,9 @@ void {\bfseries Set\+Up} () override
 \Hypertarget{classVersionCommandTest_ad7127cf990e521a44f3ce2830538ceba}\label{classVersionCommandTest_ad7127cf990e521a44f3ce2830538ceba} 
 void {\bfseries Tear\+Down} () override
 \begin{DoxyCompactList}\small\item\em Tears down the testing environment after each test. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classVersionCommandTest_a738595ee329e516a065707b410b2d966}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+bool \mbox{\hyperlink{classVersionCommandTest_a738595ee329e516a065707b410b2d966}{contains\+Message}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classVersionCommandTest_a039d68276bd7252137dbfbeb8bb800e6}{contains\+Exact\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+bool \mbox{\hyperlink{classVersionCommandTest_a039d68276bd7252137dbfbeb8bb800e6}{contains\+Exact\+Message}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Checks if any event notification contains the exact specified message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -35,17 +35,17 @@ bool \mbox{\hyperlink{classVersionCommandTest_a039d68276bd7252137dbfbeb8bb800e6}
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
 \begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus for capturing command output. \end{DoxyCompactList}\item 
 \Hypertarget{classVersionCommandTest_ac151e54debae29644927cbc3573d0fc7}\label{classVersionCommandTest_ac151e54debae29644927cbc3573d0fc7} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classVersionCommand}{Version\+Command}} $>$ {\bfseries command}
+std\+::unique\+\_\+ptr$<$ Version\+Command $>$ {\bfseries command}
 \begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Google Test fixture for running unit/integration tests against the \doxylink{classVersionCommand}{Version\+Command}. 
+Google Test fixture for running unit/integration tests against the Version\+Command. 
 
-This fixture provides the necessary infrastructure for testing the \doxylink{classVersionCommand}{Version\+Command}\+:
+This fixture provides the necessary infrastructure for testing the Version\+Command\+:
 \begin{DoxyItemize}
 \item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Initialize and clean up the mock event bus and the command object.
-\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for capturing output) and the \doxylink{classVersionCommand}{Version\+Command} itself.
+\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for capturing output) and the Version\+Command itself.
 \item {\bfseries{Helper Methods\+:}} Simplify checking the captured event notifications for specific content. 
 \end{DoxyItemize}
 
@@ -56,7 +56,7 @@ This fixture provides the necessary infrastructure for testing the \doxylink{cla
 \index{containsExactMessage@{containsExactMessage}!VersionCommandTest@{VersionCommandTest}}
 \doxysubsubsection{\texorpdfstring{containsExactMessage()}{containsExactMessage()}}
 {\footnotesize\ttfamily \label{classVersionCommandTest_a039d68276bd7252137dbfbeb8bb800e6} 
-bool Version\+Command\+Test\+::contains\+Exact\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+bool Version\+Command\+Test\+::contains\+Exact\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -76,7 +76,7 @@ true if an exact match is found, false otherwise.
 \index{containsMessage@{containsMessage}!VersionCommandTest@{VersionCommandTest}}
 \doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
 {\footnotesize\ttfamily \label{classVersionCommandTest_a738595ee329e516a065707b410b2d966} 
-bool Version\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+bool Version\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Структура svcs::services::Event</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('structsvcs_1_1services_1_1Event.html','','structsvcs_1_1services_1_1Event-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Структура svcs::services::Event</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Структура, описывающая событие, опубликованное ядром VCS.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Event_8hxx_source.html">Event.hxx</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a398a548bdd41d5e1f9820d74962700b5" id="r_a398a548bdd41d5e1f9820d74962700b5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a398a548bdd41d5e1f9820d74962700b5">Type</a> { <br />
+&#160;&#160;<a class="el" href="#a398a548bdd41d5e1f9820d74962700b5ac64d847d245494ad9c523d44833afe6b">FATAL_ERROR</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a5bd981c0e8597d2a525aed272a99b5f3">RUNTIME_ERROR</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5ad3a3dd10960f2ac488ce55bef8bc3d3e">REPOSITORY_INIT_SUCCESS</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a0a8956ed9793effa788ec7241cae6b4a">STAGE_SUCCESS</a>
+, <br />
+&#160;&#160;<a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a796855262a01de65f012e6a40008caf7">SAVE_SUCCESS</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a6cfa83bbd4798cde6c5ead8945d198b6">OBJECT_WRITE_SUCCESS</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a79a1f809dd29875fe576169bd7258ef0">OBJECT_READ_SUCCESS</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a3d816618ae36f6da1a21a8fc6aefe5a6">INDEX_UPDATE</a>
+, <br />
+&#160;&#160;<a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a6827e02397f1c41d06295d14a60cd45a">COMMIT_CREATED</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a753e1e5a8c8a667cc6213648e4c73b85">GENERAL_INFO</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5ad865dd2df62e532ca9677696ff53ceaa">HELP_MESSAGE</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df">DEBUG_MESSAGE</a>
+, <br />
+&#160;&#160;<a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a767626e42cab6c4ba7facd03240206ca">ERROR_MESSAGE</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5abc467eceff5c70c06b45b97a12ce3796">WARNING_MESSAGE</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a66dbe3c5f1d82d65d8a96394d2dc869d">PROTOCOL_START</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea">PROTOCOL_SUCCESS</a>
+, <br />
+&#160;&#160;<a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a60f872fca6be57904f4f82da1d1f0e5d">PROTOCOL_ERROR</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a11ffd766199ab9a36c79efd1bf18a5c6">NETWORK_SEND</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5af74283bd78571e120281ea81e3987f41">NETWORK_RECEIVE</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a4cfc298114c7f71206b90093f7b7c856">OBJECT_TRANSFER</a>
+, <br />
+&#160;&#160;<a class="el" href="#a398a548bdd41d5e1f9820d74962700b5a69c60096a45b6f55e93256de30bf3d00">REFERENCE_UPDATE</a>
+, <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5ac5e067842a5f70e0556a437a4d3eed7c">NEGOTIATION_PHASE</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a398a548bdd41d5e1f9820d74962700b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Типы событий, которые могут быть опубликованы.  <a href="#a398a548bdd41d5e1f9820d74962700b5">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:ae80aa49e0553e08f27869fc37d240a1a" id="r_ae80aa49e0553e08f27869fc37d240a1a"><td class="memItemLeft" align="right" valign="top"><a id="ae80aa49e0553e08f27869fc37d240a1a" name="ae80aa49e0553e08f27869fc37d240a1a"></a>
+<a class="el" href="#a398a548bdd41d5e1f9820d74962700b5">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="memdesc:ae80aa49e0553e08f27869fc37d240a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип произошедшего события. <br /></td></tr>
+<tr class="memitem:acb2891a12db8133cc18e781bacbbeab4" id="r_acb2891a12db8133cc18e781bacbbeab4"><td class="memItemLeft" align="right" valign="top"><a id="acb2891a12db8133cc18e781bacbbeab4" name="acb2891a12db8133cc18e781bacbbeab4"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>details</b></td></tr>
+<tr class="memdesc:acb2891a12db8133cc18e781bacbbeab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подробное описание или полезная нагрузка (например, хеш объекта). <br /></td></tr>
+<tr class="memitem:a58efdff2e19ac5f81b8d987549580984" id="r_a58efdff2e19ac5f81b8d987549580984"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58efdff2e19ac5f81b8d987549580984">source_name</a></td></tr>
+<tr class="memdesc:a58efdff2e19ac5f81b8d987549580984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Источник события (например, "main", "InitCommand", "Repository").  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Структура, описывающая событие, опубликованное ядром VCS. </p>
+<p>Это "сообщение", которое Subject (Издатель, например, Repository) отправляет всем своим Observers. </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Перечисления</h2>
+<a id="a398a548bdd41d5e1f9820d74962700b5" name="a398a548bdd41d5e1f9820d74962700b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a398a548bdd41d5e1f9820d74962700b5">&#9670;&#160;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a398a548bdd41d5e1f9820d74962700b5">svcs::services::Event::Type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Типы событий, которые могут быть опубликованы. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5ac64d847d245494ad9c523d44833afe6b" name="a398a548bdd41d5e1f9820d74962700b5ac64d847d245494ad9c523d44833afe6b"></a>FATAL_ERROR&#160;</td><td class="fielddoc"><p>Фатальная ошибка, вызывающая завершение приложения. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a5bd981c0e8597d2a525aed272a99b5f3" name="a398a548bdd41d5e1f9820d74962700b5a5bd981c0e8597d2a525aed272a99b5f3"></a>RUNTIME_ERROR&#160;</td><td class="fielddoc"><p>Ошибка выполнения, которая может позволить продолжить выполнение. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5ad3a3dd10960f2ac488ce55bef8bc3d3e" name="a398a548bdd41d5e1f9820d74962700b5ad3a3dd10960f2ac488ce55bef8bc3d3e"></a>REPOSITORY_INIT_SUCCESS&#160;</td><td class="fielddoc"><p>Инициализация репозитория успешно завершена. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a0a8956ed9793effa788ec7241cae6b4a" name="a398a548bdd41d5e1f9820d74962700b5a0a8956ed9793effa788ec7241cae6b4a"></a>STAGE_SUCCESS&#160;</td><td class="fielddoc"><p>Операция подготовки файлов успешно завершена. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a796855262a01de65f012e6a40008caf7" name="a398a548bdd41d5e1f9820d74962700b5a796855262a01de65f012e6a40008caf7"></a>SAVE_SUCCESS&#160;</td><td class="fielddoc"><p>Операция сохранения (коммита) успешно завершена. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a6cfa83bbd4798cde6c5ead8945d198b6" name="a398a548bdd41d5e1f9820d74962700b5a6cfa83bbd4798cde6c5ead8945d198b6"></a>OBJECT_WRITE_SUCCESS&#160;</td><td class="fielddoc"><p>Операция записи объекта успешно завершена. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a79a1f809dd29875fe576169bd7258ef0" name="a398a548bdd41d5e1f9820d74962700b5a79a1f809dd29875fe576169bd7258ef0"></a>OBJECT_READ_SUCCESS&#160;</td><td class="fielddoc"><p>Операция чтения объекта успешно завершена. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a3d816618ae36f6da1a21a8fc6aefe5a6" name="a398a548bdd41d5e1f9820d74962700b5a3d816618ae36f6da1a21a8fc6aefe5a6"></a>INDEX_UPDATE&#160;</td><td class="fielddoc"><p>Индекс был обновлен. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a6827e02397f1c41d06295d14a60cd45a" name="a398a548bdd41d5e1f9820d74962700b5a6827e02397f1c41d06295d14a60cd45a"></a>COMMIT_CREATED&#160;</td><td class="fielddoc"><p>Создан новый коммит. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a753e1e5a8c8a667cc6213648e4c73b85" name="a398a548bdd41d5e1f9820d74962700b5a753e1e5a8c8a667cc6213648e4c73b85"></a>GENERAL_INFO&#160;</td><td class="fielddoc"><p>Общее информационное сообщение. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5ad865dd2df62e532ca9677696ff53ceaa" name="a398a548bdd41d5e1f9820d74962700b5ad865dd2df62e532ca9677696ff53ceaa"></a>HELP_MESSAGE&#160;</td><td class="fielddoc"><p>Справочное сообщение для помощи пользователю. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df" name="a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df"></a>DEBUG_MESSAGE&#160;</td><td class="fielddoc"><p>Отладочное сообщение для целей разработки. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a767626e42cab6c4ba7facd03240206ca" name="a398a548bdd41d5e1f9820d74962700b5a767626e42cab6c4ba7facd03240206ca"></a>ERROR_MESSAGE&#160;</td><td class="fielddoc"><p>Сообщение об ошибке для уведомления пользователя. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5abc467eceff5c70c06b45b97a12ce3796" name="a398a548bdd41d5e1f9820d74962700b5abc467eceff5c70c06b45b97a12ce3796"></a>WARNING_MESSAGE&#160;</td><td class="fielddoc"><p>Предупреждающее сообщение о потенциальных проблемах. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a66dbe3c5f1d82d65d8a96394d2dc869d" name="a398a548bdd41d5e1f9820d74962700b5a66dbe3c5f1d82d65d8a96394d2dc869d"></a>PROTOCOL_START&#160;</td><td class="fielddoc"><p>Операция протокола началась. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea" name="a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea"></a>PROTOCOL_SUCCESS&#160;</td><td class="fielddoc"><p>Операция протокола успешно завершена. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a60f872fca6be57904f4f82da1d1f0e5d" name="a398a548bdd41d5e1f9820d74962700b5a60f872fca6be57904f4f82da1d1f0e5d"></a>PROTOCOL_ERROR&#160;</td><td class="fielddoc"><p>В операции протокола произошла ошибка. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a11ffd766199ab9a36c79efd1bf18a5c6" name="a398a548bdd41d5e1f9820d74962700b5a11ffd766199ab9a36c79efd1bf18a5c6"></a>NETWORK_SEND&#160;</td><td class="fielddoc"><p>Данные были отправлены по сети. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5af74283bd78571e120281ea81e3987f41" name="a398a548bdd41d5e1f9820d74962700b5af74283bd78571e120281ea81e3987f41"></a>NETWORK_RECEIVE&#160;</td><td class="fielddoc"><p>Данные были получены по сети. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a4cfc298114c7f71206b90093f7b7c856" name="a398a548bdd41d5e1f9820d74962700b5a4cfc298114c7f71206b90093f7b7c856"></a>OBJECT_TRANSFER&#160;</td><td class="fielddoc"><p>Выполняется передача объекта. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5a69c60096a45b6f55e93256de30bf3d00" name="a398a548bdd41d5e1f9820d74962700b5a69c60096a45b6f55e93256de30bf3d00"></a>REFERENCE_UPDATE&#160;</td><td class="fielddoc"><p>Ссылка (ветка/тег) была обновлена. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a398a548bdd41d5e1f9820d74962700b5ac5e067842a5f70e0556a437a4d3eed7c" name="a398a548bdd41d5e1f9820d74962700b5ac5e067842a5f70e0556a437a4d3eed7c"></a>NEGOTIATION_PHASE&#160;</td><td class="fielddoc"><p>Выполняется фаза согласования протокола. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a58efdff2e19ac5f81b8d987549580984" name="a58efdff2e19ac5f81b8d987549580984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58efdff2e19ac5f81b8d987549580984">&#9670;&#160;</a></span>source_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string svcs::services::Event::source_name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Источник события (например, "main", "InitCommand", "Repository"). </p>
+<p>Добавлено для поддержки агрегатной инициализации с тремя аргументами в вызовах notify(). </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>services/<a class="el" href="Event_8hxx_source.html">Event.hxx</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>svcs</b></li><li class="navelem"><a href="namespacesvcs_1_1services.html">services</a></li><li class="navelem"><a href="structsvcs_1_1services_1_1Event.html">Event</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -22,6 +22,25 @@
 #include <fstream>
 #include <iostream>
 
+/**
+ * @english
+ * @namespace svcs::test::core
+ * @brief Unit tests for core components and data structures.
+ * @details Contains test cases for core VCS objects, repository management,
+ * and fundamental data structures. Tests in this namespace validate
+ * the basic functionality and integrity of the system core.
+ *
+ * @russian
+ * @namespace svcs::test::core
+ * @brief Модульные тесты для основных компонентов и структур данных.
+ * @details Содержит тест-кейсы для основных объектов СКВ, управления репозиториями
+ * и фундаментальных структур данных. Тесты в этом пространстве имен проверяют
+ * базовую функциональность и целостность ядра системы.
+ */
+namespace svcs::test::core {
+
+using namespace svcs::core;
+
 namespace fs = std::filesystem;
 
 /**
@@ -338,4 +357,6 @@ TEST_F(RepositoryManagerTest, BasicRepositoryOperations) {
     EXPECT_TRUE(staged_files.empty()) << "New repository should have no staged files";
     
     std::cout << "Basic operations - ALL PASSED" << std::endl;
+}
+
 }

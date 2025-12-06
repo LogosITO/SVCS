@@ -18,6 +18,8 @@
 #include <iomanip>
 #include <utility>
 
+namespace svcs::core {
+
 void VcsObject::computeHash(const std::string& content) {
     unsigned char hash[SHA256_DIGEST_LENGTH];
     
@@ -62,4 +64,6 @@ std::string TestableObject::serialize() const {
 
 std::string TestableObject::getType() const {
     return type_name;
+}
+
 }

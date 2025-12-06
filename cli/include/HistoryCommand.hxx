@@ -22,6 +22,23 @@
 
 /**
  * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+using namespace svcs::core;
+
+/**
+ * @english
  * @brief Command for viewing the history of saves (commits) in the repository.
  * @details The **HistoryCommand** displays the chronological history of all saves
  * with their messages, authors, timestamps, and unique identifiers. It supports
@@ -209,3 +226,5 @@ private:
      */
     [[nodiscard]] static std::string truncateString(const std::string& str, size_t length);
 };
+
+}

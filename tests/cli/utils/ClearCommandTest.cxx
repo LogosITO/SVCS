@@ -17,6 +17,8 @@
 #include <stdexcept>
 #include <fstream>
 
+namespace svcs::test::cli::utils {
+
 void ClearCommandTest::SetUp() {
     mockEventBus = std::make_shared<MockSubject>();
     repoManager = std::make_shared<RepositoryManager>(mockEventBus);
@@ -70,4 +72,6 @@ void ClearCommandTest::simulateUserInput(const std::string& input) {
 
 bool ClearCommandTest::repositoryExists() const {
     return std::filesystem::exists(testDir / ".svcs");
+}
+
 }

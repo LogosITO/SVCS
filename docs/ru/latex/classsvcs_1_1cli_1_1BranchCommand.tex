@@ -1,0 +1,165 @@
+\doxysection{Класс svcs\+::cli\+::Branch\+Command}
+\hypertarget{classsvcs_1_1cli_1_1BranchCommand}{}\label{classsvcs_1_1cli_1_1BranchCommand}\index{svcs::cli::BranchCommand@{svcs::cli::BranchCommand}}
+
+
+Команда для управления ветками в системе контроля версий.  
+
+
+
+
+{\ttfamily \#include $<$Branch\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::cli\+::Branch\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1BranchCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_aa9ca6bbc03d3de764c9ac64d52e9f004}{Branch\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ event\+\_\+bus, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1BranchManager}{Branch\+Manager}} $>$ branch\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Конструктор для \doxylink{classsvcs_1_1cli_1_1BranchCommand}{Branch\+Command}. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_a476934ab15c443f1980dc2bc2cb0db5e}\label{classsvcs_1_1cli_1_1BranchCommand_a476934ab15c443f1980dc2bc2cb0db5e} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Branch\+Command} () override=default
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_a62ba60346b5d484429aabc147efc85f9}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_a979cfdacbf0e91c565ff650478da0e8f}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_a2d0e39ec374060454ede383a52804bd6}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_aa9efb129b1ddf1d3730b141b2afc678d}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду branch с заданными аргументами. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand_aefe4842018b0d1ad860742f56f0a8508}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает справочную информацию для команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для управления ветками в системе контроля версий. 
+
+Реализует функциональность \textquotesingle{}svcs branch\textquotesingle{}, предоставляя интерфейс для взаимодействия пользователя со структурой веток репозитория. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_aa9ca6bbc03d3de764c9ac64d52e9f004}\index{svcs::cli::BranchCommand@{svcs::cli::BranchCommand}!BranchCommand@{BranchCommand}}
+\index{BranchCommand@{BranchCommand}!svcs::cli::BranchCommand@{svcs::cli::BranchCommand}}
+\doxysubsubsection{\texorpdfstring{BranchCommand()}{BranchCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BranchCommand_aa9ca6bbc03d3de764c9ac64d52e9f004} 
+svcs\+::cli\+::\+Branch\+Command\+::\+Branch\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{event\+\_\+bus}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1BranchManager}{Branch\+Manager}} $>$}]{branch\+\_\+manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор для \doxylink{classsvcs_1_1cli_1_1BranchCommand}{Branch\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\+\_\+bus} & Шина событий для общения с пользователем. \\
+\hline
+{\em branch\+\_\+manager} & Менеджер веток для основных операций. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_aa9efb129b1ddf1d3730b141b2afc678d}\index{svcs::cli::BranchCommand@{svcs::cli::BranchCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::cli::BranchCommand@{svcs::cli::BranchCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BranchCommand_aa9efb129b1ddf1d3730b141b2afc678d} 
+bool svcs\+::cli\+::\+Branch\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду branch с заданными аргументами. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы командной строки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если выполнение успешно, false в противном случае. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_a979cfdacbf0e91c565ff650478da0e8f}\index{svcs::cli::BranchCommand@{svcs::cli::BranchCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::cli::BranchCommand@{svcs::cli::BranchCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BranchCommand_a979cfdacbf0e91c565ff650478da0e8f} 
+std\+::string svcs\+::cli\+::\+Branch\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Краткое описание команды. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_a62ba60346b5d484429aabc147efc85f9}\index{svcs::cli::BranchCommand@{svcs::cli::BranchCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::cli::BranchCommand@{svcs::cli::BranchCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BranchCommand_a62ba60346b5d484429aabc147efc85f9} 
+std\+::string svcs\+::cli\+::\+Branch\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя команды "{}branch"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_a2d0e39ec374060454ede383a52804bd6}\index{svcs::cli::BranchCommand@{svcs::cli::BranchCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::cli::BranchCommand@{svcs::cli::BranchCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BranchCommand_a2d0e39ec374060454ede383a52804bd6} 
+std\+::string svcs\+::cli\+::\+Branch\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка синтаксиса использования. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1cli_1_1BranchCommand_aefe4842018b0d1ad860742f56f0a8508}\index{svcs::cli::BranchCommand@{svcs::cli::BranchCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::cli::BranchCommand@{svcs::cli::BranchCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1BranchCommand_aefe4842018b0d1ad860742f56f0a8508} 
+void svcs\+::cli\+::\+Branch\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает справочную информацию для команды. 
+
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{BranchCommand_8hxx}{Branch\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{BranchCommand_8cxx}{Branch\+Command.\+cxx}}\end{DoxyCompactItemize}

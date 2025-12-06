@@ -1,18 +1,18 @@
 var searchData=
 [
   ['understand_20version_20control_20better_0',['⭐ &lt;b&gt;Star this repo if SVCS helped you understand version control better!&lt;/b&gt;',['../md_README.html#autotoc_md28',1,'']]],
-  ['undocommand_1',['UndoCommand',['../classUndoCommand.html',1,'UndoCommand'],['../classUndoCommand.html#ad5190e679bde05b7a487a54acc55c022',1,'UndoCommand::UndoCommand()']]],
+  ['undocommand_1',['UndoCommand',['../classsvcs_1_1cli_1_1UndoCommand.html',1,'svcs::cli::UndoCommand'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand.html',1,'svcs::test::cli::utils::UndoCommand'],['../classsvcs_1_1cli_1_1UndoCommand.html#af2f729484bb8814fc821a1decfc5944c',1,'svcs::cli::UndoCommand::UndoCommand()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand.html#af2f729484bb8814fc821a1decfc5944c',1,'svcs::test::cli::utils::UndoCommand::UndoCommand()']]],
   ['undocommand_2ecxx_2',['UndoCommand.cxx',['../UndoCommand_8cxx.html',1,'']]],
   ['undocommand_2ehxx_3',['UndoCommand.hxx',['../UndoCommand_8hxx.html',1,'']]],
-  ['undocommandtest_4',['UndoCommandTest',['../classUndoCommandTest.html',1,'']]],
-  ['unmodified_5',['UNMODIFIED',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40ca96647297a746161887ea49cb0c764cf8',1,'AddCommand.hxx']]],
-  ['untracked_6',['UNTRACKED',['../AddCommand_8hxx.html#a0a785734a2e4d29ff32532d92a03b40caa6aa7aaab436d05e461fafcada25aaa2',1,'AddCommand.hxx']]],
-  ['update_7',['update',['../classIObserver.html#af15fbd52637f4bf0225fde86051d8354',1,'IObserver::update()'],['../classLogger.html#a2053c71402fe93a43ea3170ed67807d5',1,'Logger::update()'],['../classMockObserver.html#ab453d08d096802df88465bebe3af0615',1,'MockObserver::update()'],['../classManualMockObserver.html#a69920f02d27bbea5a79566d616d844fd',1,'ManualMockObserver::update()'],['../classNullObserver.html#a8866a842843f40e6a1a92b27e7148ef7',1,'NullObserver::update()']]],
-  ['updatebranchhead_8',['updateBranchHead',['../classBranchManager.html#a0cdd864c1c3ed12af16e77bf932e63ce',1,'BranchManager']]],
-  ['updatebranchreference_9',['updateBranchReference',['../classRepositoryManager.html#a887e56ac86447c2735597e2ea88c33bb',1,'RepositoryManager']]],
-  ['updatecommitreferences_10',['updateCommitReferences',['../classRepositoryManager.html#a7b5d52f3d9d35ee3b19e3de95381b97f',1,'RepositoryManager']]],
-  ['updatehead_11',['updateHead',['../classRepositoryManager.html#a65eba6d28cbf99fd3fbad48845a2cd34',1,'RepositoryManager']]],
-  ['url_12',['url',['../structRemote.html#a810f7afd25db68a519088944f1cc8945',1,'Remote']]],
+  ['undocommandtest_4',['UndoCommandTest',['../classsvcs_1_1test_1_1cli_1_1UndoCommandTest.html',1,'svcs::test::cli::UndoCommandTest'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest.html',1,'svcs::test::cli::utils::UndoCommandTest']]],
+  ['unmodified_5',['UNMODIFIED',['../namespacesvcs_1_1cli.html#a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8',1,'svcs::cli']]],
+  ['untracked_6',['UNTRACKED',['../namespacesvcs_1_1cli.html#a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2',1,'svcs::cli']]],
+  ['update_7',['update',['../classsvcs_1_1services_1_1IObserver.html#ad1b1f2d1d12ffb179b3e56dc9f5050ff',1,'svcs::services::IObserver::update()'],['../classsvcs_1_1services_1_1Logger.html#a53b2de68a56a7add166a652f16a91dc7',1,'svcs::services::Logger::update()'],['../classsvcs_1_1test_1_1core_1_1MockObserver.html#ae1ad93771d332f163df79d761ab5895c',1,'svcs::test::core::MockObserver::update()'],['../classsvcs_1_1test_1_1core_1_1ManualMockObserver.html#a2cd4fd7c054db0fe54515ef16f952759',1,'svcs::test::core::ManualMockObserver::update()'],['../classsvcs_1_1test_1_1core_1_1NullObserver.html#a58d2e700fcb98a96aadff953e9e75d2b',1,'svcs::test::core::NullObserver::update()']]],
+  ['updatebranchhead_8',['updateBranchHead',['../classsvcs_1_1core_1_1BranchManager.html#afa41aa01cba721676eb21df2c3e6eb48',1,'svcs::core::BranchManager']]],
+  ['updatebranchreference_9',['updateBranchReference',['../classsvcs_1_1core_1_1RepositoryManager.html#a0938228acbd111de2b8a6c230d61fdf2',1,'svcs::core::RepositoryManager::updateBranchReference()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a0938228acbd111de2b8a6c230d61fdf2',1,'svcs::test::cli::utils::RepositoryManager::updateBranchReference()']]],
+  ['updatecommitreferences_10',['updateCommitReferences',['../classsvcs_1_1core_1_1RepositoryManager.html#a34e211523257152d66477f6e9fa5d6ab',1,'svcs::core::RepositoryManager::updateCommitReferences()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a34e211523257152d66477f6e9fa5d6ab',1,'svcs::test::cli::utils::RepositoryManager::updateCommitReferences()']]],
+  ['updatehead_11',['updateHead',['../classsvcs_1_1core_1_1RepositoryManager.html#ac0d42424f59a33af3f2964c7eddcd192',1,'svcs::core::RepositoryManager::updateHead()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#ac0d42424f59a33af3f2964c7eddcd192',1,'svcs::test::cli::utils::RepositoryManager::updateHead()']]],
+  ['url_12',['url',['../structsvcs_1_1server_1_1Remote.html#aa7571ac6fb5f3106bbe263c20a71f134',1,'svcs::server::Remote']]],
   ['utils_2ecxx_13',['Utils.cxx',['../Utils_8cxx.html',1,'']]],
   ['utils_2ehxx_14',['Utils.hxx',['../cli_2include_2Utils_8hxx.html',1,'(Глобальное пространство имён)'],['../core_2include_2Utils_8hxx.html',1,'(Глобальное пространство имён)']]]
 ];

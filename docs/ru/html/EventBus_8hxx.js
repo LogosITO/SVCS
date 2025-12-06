@@ -1,4 +1,4 @@
 var EventBus_8hxx =
 [
-    [ "EventBus", "classEventBus.html", "classEventBus" ]
+    [ "svcs::services::EventBus", "classsvcs_1_1services_1_1EventBus.html", "classsvcs_1_1services_1_1EventBus" ]
 ];

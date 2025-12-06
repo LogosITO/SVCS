@@ -2,7 +2,7 @@
 \hypertarget{IntUndoCommandTest_8hxx}{}\label{IntUndoCommandTest_8hxx}\index{tests/cli/utils/IntUndoCommandTest.hxx@{tests/cli/utils/IntUndoCommandTest.hxx}}
 
 
-Заголовок тестового фикстура для интеграционных тестов класса \doxylink{classUndoCommand}{Undo\+Command}.  
+Заголовок тестового фикстура для интеграционных тестов класса \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}.  
 
 
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
@@ -15,14 +15,23 @@
 \doxysubsubsection*{Классы}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classUndoCommandTest}{Undo\+Command\+Test}}
-\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classUndoCommand}{Undo\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test}}
+\begin{DoxyCompactList}\small\item\em Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{svcs\+::test\+::cli\+::utils\+::\+Undo\+Command}}
+\begin{DoxyCompactList}\small\item\em Команда для возврата состояния репозитория к предыдущему коммиту. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs\+::test\+::cli\+::utils}}
+\begin{DoxyCompactList}\small\item\em Служебные классы и тестовые фикстуры для тестирования CLI команд. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Модульные тесты для компонентов интерфейса командной строки. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Заголовок тестового фикстура для интеграционных тестов класса \doxylink{classUndoCommand}{Undo\+Command}. 
+Заголовок тестового фикстура для интеграционных тестов класса \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Объявляет фикстур \doxylink{classUndoCommandTest}{Undo\+Command\+Test}, который настраивает контролируемое окружение для тестирования команды \textquotesingle{}svcs undo\textquotesingle{}. Это включает инициализацию mock и основных компонентов (\doxylink{classMockSubject}{Mock\+Subject}, \doxylink{classRepositoryManager}{Repository\+Manager}) и предоставление вспомогательных функций для манипуляции файлами, индексации, коммитов и имитации пользовательского ввода для подтверждающих запросов. 
+Объявляет фикстур Undo\+Command\+Test, который настраивает контролируемое окружение для тестирования команды \textquotesingle{}svcs undo\textquotesingle{}. Это включает инициализацию mock и основных компонентов (Mock\+Subject, Repository\+Manager) и предоставление вспомогательных функций для манипуляции файлами, индексации, коммитов и имитации пользовательского ввода для подтверждающих запросов. 

@@ -33,6 +33,8 @@
 #include "../../services/Event.hxx"
 #include <iostream>
 
+namespace svcs::server::cli {
+
 RepoCommand::RepoCommand(std::shared_ptr<ISubject> event_bus,
                        std::shared_ptr<RepositoryManager> repo_manager)
     : ServerBaseCommand(std::move(event_bus), std::move(repo_manager))
@@ -184,4 +186,6 @@ void RepoCommand::showHelp() const {
               << "  svcs repo remove backup\n"
               << "  svcs repo list\n"
               << std::endl;
+}
+
 }

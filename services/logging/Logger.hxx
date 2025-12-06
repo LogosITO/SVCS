@@ -26,6 +26,23 @@
 
 /**
  * @english
+ * @namespace svcs::services
+ * @brief Service layer components and infrastructure services.
+ * @details Contains core infrastructure services including event system,
+ * notification mechanism, observer pattern implementation, and other
+ * cross-cutting concerns that support the VCS operations.
+ *
+ * @russian
+ * @namespace svcs::services
+ * @brief Компоненты сервисного слоя и инфраструктурные сервисы.
+ * @details Содержит основные инфраструктурные сервисы, включая систему событий,
+ * механизм уведомлений, реализацию шаблона Observer и другие сквозные задачи,
+ * которые поддерживают операции СКВ.
+ */
+namespace svcs::services {
+
+/**
+ * @english
  * @enum LogLevel
  * @brief Defines the severity levels for log messages.
  * @details Used for filtering output based on the configured level.
@@ -374,3 +391,5 @@ private:
      */
     std::string levelToString(LogLevel level);
 };
+
+}

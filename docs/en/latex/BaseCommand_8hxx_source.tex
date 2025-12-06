@@ -7,73 +7,77 @@
 \DoxyCodeLine{00022\ }
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICommand_8hxx}{ICommand.hxx}}"{}}}
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Repository_8hxx}{../../core/include/Repository.hxx}}"{}}}
-\DoxyCodeLine{00025\ \textcolor{comment}{//\ Note:\ Assumes\ ISubject,\ IObserver,\ and\ Event\ are\ available\ via\ other\ includes.}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{comment}{//\ Forward\ declaration\ of\ ISubject\ is\ necessary\ if\ not\ already\ included}}
-\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classISubject}{ISubject}};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBaseCommand_a6ada486a8ab81d0283181fd8cd5274e1}{BaseCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
-\DoxyCodeLine{00050\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00060\ \ \ \ \ std::shared\_ptr<ISubject>\ \mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}};}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Repository>\ \mbox{\hyperlink{classBaseCommand_aeda1ecf978bfb02f534a15f99520065a}{findRepository}}()\ \{}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRepository_acffdc3fb1a22f69018a4037e9b4feabb}{Repository::findRepository}}();}
-\DoxyCodeLine{00073\ \ \ \ \ \}}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Repository>\ \mbox{\hyperlink{classBaseCommand_ab92d070ecff1669467aa64dffb9b616a}{createRepository}}(\textcolor{keyword}{const}\ std::string\&\ path\ =\ \textcolor{stringliteral}{"{}."{}})\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_shared<Repository>(path);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}}\ \{}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a143ac6f12e29d7a64165e786dff1ddaf}{BaseCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00065\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00075\ \ \ \ \ std::shared\_ptr<ISubject>\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Repository>\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ab0450a3435cdf9647d26cde0d0631dc2}{findRepository}}()\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a89ea6b027ffc211985d7f852e239867a}{Repository::findRepository}}();}
 \DoxyCodeLine{00088\ \ \ \ \ \}}
 \DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classBaseCommand_a6ada486a8ab81d0283181fd8cd5274e1}{BaseCommand}}(std::shared\_ptr<ISubject>\ subject)\ :\ \mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}}(std::move(subject))\ \{\}}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classBaseCommand_a4ea5517949503ae27c8eec05c3107995}{\string~BaseCommand}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4}{getName}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classBaseCommand_aa9c4557d17068a2f3abe2dee8c0c5198}{getDescription}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classBaseCommand_aea8d2b5cbe3c773db9f2477f3d38aa8b}{getUsage}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
-\DoxyCodeLine{00145\ }
-\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBaseCommand_a98e0e914f24383408fc7e8fc977baccb}{showHelp}}()\textcolor{keyword}{\ const\ override\ }\{}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Usage:\ "{}}\ <<\ \mbox{\hyperlink{classBaseCommand_aea8d2b5cbe3c773db9f2477f3d38aa8b}{getUsage}}()\ <<\ std::endl;}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Description:\ "{}}\ <<\ \mbox{\hyperlink{classBaseCommand_aa9c4557d17068a2f3abe2dee8c0c5198}{getDescription}}()\ <<\ std::endl;}
-\DoxyCodeLine{00158\ \ \ \ \ \}}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBaseCommand_af8ad2f422a83cffbb07da49675443c43}{logDebug}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}})\ \{}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ Assuming\ Event\ takes\ (Type,\ Message,\ Source/Command\ Name)}}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5}{Event::DEBUG\_MESSAGE}},\ message,\ \mbox{\hyperlink{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4}{getName}}()\});}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00174\ \ \ \ \ \}}
-\DoxyCodeLine{00175\ }
-\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBaseCommand_aca2b7d7a6526b60b5ee16a0e25541b62}{logInfo}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}})\ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7}{Event::GENERAL\_INFO}},\ message,\ \mbox{\hyperlink{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4}{getName}}()\});}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Repository>\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a22e18e67d0a61988f8085430d8769bdc}{createRepository}}(\textcolor{keyword}{const}\ std::string\&\ path\ =\ \textcolor{stringliteral}{"{}."{}})\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_shared<Repository>(path);}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a143ac6f12e29d7a64165e786dff1ddaf}{BaseCommand}}(std::shared\_ptr<ISubject>\ subject)\ :\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}}(std::move(subject))\ \{\}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_aff9c257d0a8a818fdc1c108b2097dbbf}{\string~BaseCommand}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{getName}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3}{getDescription}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1}{getUsage}}()\ \textcolor{keyword}{const\ override}\ =\ 0;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a9312eba108d0af67c5048ae8831f109c}{showHelp}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Usage:\ "{}}\ <<\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a33a5d6a5df49f5010314cf538df980e1}{getUsage}}()\ <<\ std::endl;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Description:\ "{}}\ <<\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a49082bc5acf6b97ea57ce6571eef4cc3}{getDescription}}()\ <<\ std::endl;}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a6826e962dcc1821867657181ad75a951}{logDebug}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}})\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ Assuming\ Event\ takes\ (Type,\ Message,\ Source/Command\ Name)}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df}{Event::DEBUG\_MESSAGE}},\ message,\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{getName}}()\});}
 \DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00189\ \ \ \ \ \}}
 \DoxyCodeLine{00190\ }
-\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBaseCommand_aa5b4cd9ea94779c697ffb03e5671e3e3}{logError}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}})\ \{}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c}{Event::RUNTIME\_ERROR}},\ message,\ \mbox{\hyperlink{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4}{getName}}()\});}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a924d330958eebb1a55d19448e7743b07}{logInfo}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}})\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a753e1e5a8c8a667cc6213648e4c73b85}{Event::GENERAL\_INFO}},\ message,\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{getName}}()\});}
 \DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00204\ \ \ \ \ \}}
 \DoxyCodeLine{00205\ }
-\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBaseCommand_a6ffa98742c320a9e9d709d4b6a3b98af}{logSuccess}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}})\ \{}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058ad965f026029f0e21947efd59608dffe7}{Event::GENERAL\_INFO}},\ \textcolor{stringliteral}{"{}SUCCESS:\ "{}}\ +\ message,\ \mbox{\hyperlink{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4}{getName}}()\});}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a9fedd48541f6e0742088b87ebae2031b}{logError}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}})\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a5bd981c0e8597d2a525aed272a99b5f3}{Event::RUNTIME\_ERROR}},\ message,\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{getName}}()\});}
 \DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00219\ \ \ \ \ \}}
 \DoxyCodeLine{00220\ }
-\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBaseCommand_a6437203ec5207483f41e89a4cad4f7fb}{logWarning}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}})\ \{}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaseCommand_ad58c272b34bdd6fbfbf294d3f01fbfb8}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structEvent_a2abf13b5be49315e9e362af02029f058a986a6dd747403bb7218d70b98089e23c}{Event::RUNTIME\_ERROR}},\ \textcolor{stringliteral}{"{}WARNING:\ "{}}\ +\ message,\ \mbox{\hyperlink{classBaseCommand_a381d6ef985b2460dbbd831b3bbad56a4}{getName}}()\});}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a23cef7adcdd61aa970db00a8962f0106}{logSuccess}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}})\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a753e1e5a8c8a667cc6213648e4c73b85}{Event::GENERAL\_INFO}},\ \textcolor{stringliteral}{"{}SUCCESS:\ "{}}\ +\ message,\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{getName}}()\});}
 \DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00234\ \ \ \ \ \}}
-\DoxyCodeLine{00235\ \};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_af547d2c947a8d7a8d171cd2a8a3d4c3e}{logWarning}}(\textcolor{keyword}{const}\ std::string\&\ message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}})\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_ad34e1b4ae11898bed0f01e72aff194b4}{eventSubject\_}}-\/>notify(\{\mbox{\hyperlink{structsvcs_1_1services_1_1Event_a398a548bdd41d5e1f9820d74962700b5a5bd981c0e8597d2a525aed272a99b5f3}{Event::RUNTIME\_ERROR}},\ \textcolor{stringliteral}{"{}WARNING:\ "{}}\ +\ message,\ \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand_a582eb2df6589ff1f9fa150c0270d362d}{getName}}()\});}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \}}
+\DoxyCodeLine{00250\ \};}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \}}
 
 \end{DoxyCode}

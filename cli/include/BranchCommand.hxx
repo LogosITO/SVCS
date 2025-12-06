@@ -30,6 +30,23 @@
 
 /**
  * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+using namespace svcs::core;
+
+/**
+ * @english
  * @class BranchCommand
  * @brief Command for managing branches in the version control system.
  * @details Implements the 'svcs branch' functionality, providing an interface
@@ -273,3 +290,5 @@ private:
      */
     std::shared_ptr<BranchManager> branch_manager_;
 };
+
+}

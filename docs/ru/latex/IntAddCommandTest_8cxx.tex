@@ -2,7 +2,7 @@
 \hypertarget{IntAddCommandTest_8cxx}{}\label{IntAddCommandTest_8cxx}\index{tests/cli/utils/IntAddCommandTest.cxx@{tests/cli/utils/IntAddCommandTest.cxx}}
 
 
-Реализация интеграционного тестового фикстура \doxylink{classAddCommandTest}{Add\+Command\+Test}.  
+Реализация интеграционного тестового фикстура Add\+Command\+Test.  
 
 
 {\ttfamily \#include "{}Int\+Add\+Command\+Test.\+hxx"{}}\newline
@@ -10,17 +10,24 @@
 {\ttfamily \#include "{}../../../core/include/\+Repository\+Manager.\+hxx"{}}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Модульные тесты для компонентов интерфейса командной строки. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs\+::test\+::cli\+::utils}}
+\begin{DoxyCompactList}\small\item\em Служебные классы и тестовые фикстуры для тестирования CLI команд. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация интеграционного тестового фикстура \doxylink{classAddCommandTest}{Add\+Command\+Test}. 
+Реализация интеграционного тестового фикстура Add\+Command\+Test. 
 
 \begin{DoxyCopyright}{Авторство}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-Этот файл определяет процедуры {\ttfamily Set\+Up} и {\ttfamily Tear\+Down}, а также вспомогательные методы, необходимые для тестирования {\ttfamily \doxylink{classAddCommand}{Add\+Command}}. Настройка включает\+:
+Этот файл определяет процедуры {\ttfamily Set\+Up} и {\ttfamily Tear\+Down}, а также вспомогательные методы, необходимые для тестирования {\ttfamily Add\+Command}. Настройка включает\+:
 \begin{DoxyEnumerate}
-\item Инициализацию mock-\/компонентов (\doxylink{classMockSubject}{Mock\+Subject}).
-\item Инициализацию основных компонентов (\doxylink{classRepositoryManager}{Repository\+Manager}, \doxylink{classAddCommand}{Add\+Command}).
+\item Инициализацию mock-\/компонентов (Mock\+Subject).
+\item Инициализацию основных компонентов (Repository\+Manager, Add\+Command).
 \item Управление временной изолированной директорией репозитория SVCS. 
 \end{DoxyEnumerate}

@@ -1,0 +1,188 @@
+\doxysection{svcs\+::server\+::Remote\+Manager Class Reference}
+\hypertarget{classsvcs_1_1server_1_1RemoteManager}{}\label{classsvcs_1_1server_1_1RemoteManager}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+
+
+Manages the repository\textquotesingle{}s remote configurations.  
+
+
+
+
+{\ttfamily \#include $<$Remote\+Manager.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_a16be867c2d261b1f0a13395f5a44f6b9}{Remote\+Manager}} (const fs\+::path \&repo\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classsvcs_1_1server_1_1RemoteManager}{Remote\+Manager} and loads existing remotes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_ab170b45f3571c771615013fd95d0b27e}{add\+Remote}} (const std\+::string \&name, const std\+::string \&url)
+\begin{DoxyCompactList}\small\item\em Adds a new remote configuration. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_aa29d5df8328e89da1a92282c4a34fc3f}{remove\+Remote}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Removes a remote configuration by name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_a1f6e82907e84766fc0c986fc6b5783e6}{has\+Remote}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Checks if a remote with the given name exists. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_a214785d48788459c493acf98355379cc}{get\+Remote\+Url}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Gets the URL of a configured remote. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_a64345742f48f43a1fbfed49989afba77}{list\+Remotes}} () const
+\begin{DoxyCompactList}\small\item\em Lists the names of all configured remotes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_a0934e96b046d6690cd667c4959afea08}{save}} () const
+\begin{DoxyCompactList}\small\item\em Saves the current remote configurations back to the config file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_a6f5436594d3f1328e91c7d18a15e7454}{load}} ()
+\begin{DoxyCompactList}\small\item\em Loads (or reloads) the remote configurations from the config file. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classsvcs_1_1server_1_1RemoteManager_a950667f83ba8e3c1a07fe19b8606fba2}{count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of configured remotes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the repository\textquotesingle{}s remote configurations. 
+
+This class provides an interface to manage remote repositories. It handles adding, removing, and listing remotes, as well as persisting these configurations to and from the repository\textquotesingle{}s {\ttfamily .svcs/config} file. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_a16be867c2d261b1f0a13395f5a44f6b9}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!RemoteManager@{RemoteManager}}
+\index{RemoteManager@{RemoteManager}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{RemoteManager()}{RemoteManager()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_a16be867c2d261b1f0a13395f5a44f6b9} 
+svcs\+::server\+::\+Remote\+Manager\+::\+Remote\+Manager (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{repo\+\_\+path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classsvcs_1_1server_1_1RemoteManager}{Remote\+Manager} and loads existing remotes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em repo\+\_\+path} & The root path of the repository (e.\+g., "{}/path/to/my-\/project"{}), {\itshape not} the .svcs directory.\\
+\hline
+\end{DoxyParams}
+The constructor sets the path to the config file (repo\+\_\+path / "{}.\+svcs"{} / "{}config"{}) and automatically calls {\ttfamily \doxylink{classsvcs_1_1server_1_1RemoteManager_a6f5436594d3f1328e91c7d18a15e7454}{load()}} to populate the remotes list. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_ab170b45f3571c771615013fd95d0b27e}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!addRemote@{addRemote}}
+\index{addRemote@{addRemote}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{addRemote()}{addRemote()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_ab170b45f3571c771615013fd95d0b27e} 
+bool svcs\+::server\+::\+Remote\+Manager\+::add\+Remote (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new remote configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The shortname for the new remote (e.\+g., "{}origin"{}). \\
+\hline
+{\em url} & The URL for the new remote. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the remote was added successfully, false if a remote with that name already exists. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_a950667f83ba8e3c1a07fe19b8606fba2}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!count@{count}}
+\index{count@{count}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_a950667f83ba8e3c1a07fe19b8606fba2} 
+size\+\_\+t svcs\+::server\+::\+Remote\+Manager\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the number of configured remotes. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t The count of remotes. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_a214785d48788459c493acf98355379cc}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!getRemoteUrl@{getRemoteUrl}}
+\index{getRemoteUrl@{getRemoteUrl}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{getRemoteUrl()}{getRemoteUrl()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_a214785d48788459c493acf98355379cc} 
+std\+::string svcs\+::server\+::\+Remote\+Manager\+::get\+Remote\+Url (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the URL of a configured remote. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the remote. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string The URL if the remote is found, otherwise an empty string. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_a1f6e82907e84766fc0c986fc6b5783e6}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!hasRemote@{hasRemote}}
+\index{hasRemote@{hasRemote}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{hasRemote()}{hasRemote()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_a1f6e82907e84766fc0c986fc6b5783e6} 
+bool svcs\+::server\+::\+Remote\+Manager\+::has\+Remote (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a remote with the given name exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the remote to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the remote exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_a64345742f48f43a1fbfed49989afba77}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!listRemotes@{listRemotes}}
+\index{listRemotes@{listRemotes}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{listRemotes()}{listRemotes()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_a64345742f48f43a1fbfed49989afba77} 
+std\+::vector$<$ std\+::string $>$ svcs\+::server\+::\+Remote\+Manager\+::list\+Remotes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Lists the names of all configured remotes. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ A vector containing the names of all remotes. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_a6f5436594d3f1328e91c7d18a15e7454}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!load@{load}}
+\index{load@{load}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_a6f5436594d3f1328e91c7d18a15e7454} 
+void svcs\+::server\+::\+Remote\+Manager\+::load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Loads (or reloads) the remote configurations from the config file. 
+
+This method clears the current in-\/memory cache and parses the config file to populate it. \Hypertarget{classsvcs_1_1server_1_1RemoteManager_aa29d5df8328e89da1a92282c4a34fc3f}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!removeRemote@{removeRemote}}
+\index{removeRemote@{removeRemote}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{removeRemote()}{removeRemote()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_aa29d5df8328e89da1a92282c4a34fc3f} 
+bool svcs\+::server\+::\+Remote\+Manager\+::remove\+Remote (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Removes a remote configuration by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The shortname of the remote to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the remote was found and removed, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1RemoteManager_a0934e96b046d6690cd667c4959afea08}\index{svcs::server::RemoteManager@{svcs::server::RemoteManager}!save@{save}}
+\index{save@{save}!svcs::server::RemoteManager@{svcs::server::RemoteManager}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1RemoteManager_a0934e96b046d6690cd667c4959afea08} 
+void svcs\+::server\+::\+Remote\+Manager\+::save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Saves the current remote configurations back to the config file. 
+
+This method overwrites the remote sections of the config file with the current in-\/memory state. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{RemoteManager_8hxx}{Remote\+Manager.\+hxx}}\item 
+server/src/\mbox{\hyperlink{RemoteManager_8cxx}{Remote\+Manager.\+cxx}}\end{DoxyCompactItemize}

@@ -14,42 +14,46 @@
 \DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <filesystem>}}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRepository_a1df4810f68ebca61adfbbad3e079b2f1}{Repository}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classISubject}{ISubject}}\ \{}
-\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ root\_path;}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00061\ \ \ \ \ std::unique\_ptr<ObjectStorage>\ objects;}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00072\ \ \ \ \ std::vector<std::weak\_ptr<IObserver>>\ observers;}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00081\ \ \ \ \ std::unique\_ptr<Index>\ index;}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classRepository_a64de863b90dcce47cad8389326d5d0f7}{\string~Repository}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classRepository_a1df4810f68ebca61adfbbad3e079b2f1}{Repository}}(std::filesystem::path\ \ rpath);}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepository_a58a23eff67b9a24c3a8916fd8dfacc9a}{initializeDependencies}}();}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepository_aff14558f8e382efc3e5e53263b85e312}{init}}();}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00137\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepository_ae29372147e4b9dbb7ad3efdd32c1c42e}{is\_initialized}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00148\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::filesystem::path\&\ \mbox{\hyperlink{classRepository_a74b5a052c07a886d428e42aaaeebeeb5}{getPath}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ root\_path;\ \}}
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00159\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classObjectStorage}{ObjectStorage}}*\ \mbox{\hyperlink{classRepository_a9c1153091e3ffa2d5aaf65e900a41c40}{getObjectStorage}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ objects.get();\ \}}
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepository_a250a9e24514ca3a4f8c6d954ad4dcefc}{attach}}(std::shared\_ptr<IObserver>\ observer)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepository_a1e421ee99132cf3dcaac6fc54ba0ab7d}{detach}}(std::shared\_ptr<IObserver>\ observer)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRepository_a7ce8792d0a1493d98986fb2732b95c4c}{notify}}(\textcolor{keyword}{const}\ Event\&\ event)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00193\ }
-\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Repository>\ \mbox{\hyperlink{classRepository_acffdc3fb1a22f69018a4037e9b4feabb}{findRepository}}(\textcolor{keyword}{const}\ std::string\&\ start\_path\ =\ \textcolor{stringliteral}{"{}."{}});}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepository_aed550b2bede1ebe31d4dc4ac42026ba6}{isRepository}}(\textcolor{keyword}{const}\ std::string\&\ path);}
-\DoxyCodeLine{00219\ }
-\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRepository_ae75a20286b79919005724ab4dfa80717}{stageFile}}(\textcolor{keyword}{const}\ std::string\&\ path);\ }
-\DoxyCodeLine{00236\ \};}
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1core}{svcs::core}}\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a46eed1b1fdb3429dcd0716d68b665356}{Repository}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}}\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ root\_path;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::unique\_ptr<ObjectStorage>\ objects;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00087\ \ \ \ \ std::vector<std::weak\_ptr<IObserver>>\ observers;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ \ \ \ \ std::unique\_ptr<Index>\ index;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a001f20d23fb977c871e2490bb48197af}{\string~Repository}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a46eed1b1fdb3429dcd0716d68b665356}{Repository}}(std::filesystem::path\ \ rpath);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a399e069d8fa1451c098d0639b70e2e28}{initializeDependencies}}();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_acced24467375c7b671857711193af8a2}{init}}();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00152\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a95567efaa23eb010474834b9a0518dbe}{is\_initialized}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00163\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::filesystem::path\&\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a0e913666db598a42e93be4a768215801}{getPath}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ root\_path;\ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00174\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{ObjectStorage}}*\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a1d1ff08e5e7fa232a71750310fc38067}{getObjectStorage}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ objects.get();\ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_ac61e4f2ef07d032f9a9696e0a168ad62}{attach}}(std::shared\_ptr<IObserver>\ observer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a090e19178c4294da6b085693c80b42cd}{detach}}(std::shared\_ptr<IObserver>\ observer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a2d97a46d492c6b5ce6157ace0a37cd90}{notify}}(\textcolor{keyword}{const}\ Event\&\ event)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Repository>\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a89ea6b027ffc211985d7f852e239867a}{findRepository}}(\textcolor{keyword}{const}\ std::string\&\ start\_path\ =\ \textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_adcb46c2b0c4c7c07d94332d69b2eccda}{isRepository}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1core_1_1Repository_a77322f95a149e06a4c4243755175d7c4}{stageFile}}(\textcolor{keyword}{const}\ std::string\&\ path);\ }
+\DoxyCodeLine{00251\ \};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \}}
 
 \end{DoxyCode}

@@ -2,7 +2,7 @@
 \hypertarget{Tree_8hxx}{}\label{Tree_8hxx}\index{core/include/Tree.hxx@{core/include/Tree.hxx}}
 
 
-Defines the \doxylink{classTree}{Tree} class, which represents the hierarchical structure (directory state) of a VCS repository.  
+Defines the Tree class, which represents the hierarchical structure (directory state) of a VCS repository.  
 
 
 {\ttfamily \#include "{}Vcs\+Object.\+hxx"{}}\newline
@@ -12,45 +12,26 @@ Defines the \doxylink{classTree}{Tree} class, which represents the hierarchical 
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structTreeEntry}{Tree\+Entry}}
-\begin{DoxyCompactList}\small\item\em Represents a single item (file or subdirectory) within a \doxylink{classTree}{Tree} object. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classTree}{Tree}}
-\begin{DoxyCompactList}\small\item\em Represents the state of a directory in the VCS, implementing the \doxylink{classVcsObject}{Vcs\+Object} contract. \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{svcs\+::core\+::\+Tree\+Entry}}
+\begin{DoxyCompactList}\small\item\em Represents a single item (file or subdirectory) within a \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Tree}{svcs\+::core\+::\+Tree}}
+\begin{DoxyCompactList}\small\item\em Represents the state of a directory in the VCS, implementing the \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} contract. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Core VCS data structures and object model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} \mbox{\hyperlink{Tree_8hxx_a15d13a6036a062282a24e34a2fe7751f}{create\+Entry}} (std\+::string name, std\+::string hash\+\_\+id)
+\mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} \mbox{\hyperlink{namespacesvcs_1_1core_a0d0715b6f2a56f90b0f7fccbe3b2b1a9}{svcs\+::core\+::create\+Entry}} (std\+::string name, std\+::string hash\+\_\+id)
 \begin{DoxyCompactList}\small\item\em Creating tree entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Defines the \doxylink{classTree}{Tree} class, which represents the hierarchical structure (directory state) of a VCS repository. 
+Defines the Tree class, which represents the hierarchical structure (directory state) of a VCS repository. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-The \doxylink{classTree}{Tree} object stores a list of \doxylink{structTreeEntry}{Tree\+Entry} structures, linking file names and modes to the hash IDs of \doxylink{classBlob}{Blob} or other \doxylink{classTree}{Tree} objects. Its hash depends critically on the sorted content of these entries. 
-
-\label{doc-func-members}
-\Hypertarget{Tree_8hxx_doc-func-members}
-\doxysubsection{Function Documentation}
-\Hypertarget{Tree_8hxx_a15d13a6036a062282a24e34a2fe7751f}\index{Tree.hxx@{Tree.hxx}!createEntry@{createEntry}}
-\index{createEntry@{createEntry}!Tree.hxx@{Tree.hxx}}
-\doxysubsubsection{\texorpdfstring{createEntry()}{createEntry()}}
-{\footnotesize\ttfamily \label{Tree_8hxx_a15d13a6036a062282a24e34a2fe7751f} 
-\mbox{\hyperlink{structTreeEntry}{Tree\+Entry}} create\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{hash\+\_\+id}{}\end{DoxyParamCaption})}
-
-
-
-Creating tree entry. 
-
-\begin{DoxyReturn}{Returns}
-Returns finished \doxylink{structTreeEntry}{Tree\+Entry}. 
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of file or subdirectory. \\
-\hline
-{\em hash\+\_\+id} & The hash ID (SHA-\/256). \\
-\hline
-\end{DoxyParams}
+The Tree object stores a list of Tree\+Entry structures, linking file names and modes to the hash IDs of Blob or other Tree objects. Its hash depends critically on the sorted content of these entries. 

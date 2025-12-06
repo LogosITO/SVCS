@@ -17,12 +17,6 @@
  * Использует реальный экземпляр RepositoryManager с временными тестовыми директориями.
  */
 
-#include "../../server/include/Server.hxx"
-#include "../../services/ISubject.hxx"
-#include "../../services/Event.hxx"
-#include "../../core/include/RepositoryManager.hxx"
-
-#include <boost/asio.hpp>
 #include <gtest/gtest.h>
 #include <memory>
 #include <thread>
@@ -30,17 +24,27 @@
 #include <optional>
 #include <filesystem>
 
+#include <boost/asio.hpp>
+
+#include "../../server/include/Server.hxx"
+#include "../../services/ISubject.hxx"
+#include "../../services/IObserver.hxx"
+#include "../../services/Event.hxx"
+#include "../../core/include/RepositoryManager.hxx"
+
 using namespace std::chrono_literals;
 
-class TestEventBus : public ISubject {
+namespace svcs::test::server {
+
+class TestEventBus : public svcs::services::ISubject {
 public:
-    void attach(std::shared_ptr<IObserver> observer) override {}
-    void detach(std::shared_ptr<IObserver> observer) override {}
-    void notify(const Event& event) const override {
+    void attach(std::shared_ptr<svcs::services::IObserver> observer) override {}
+    void detach(std::shared_ptr<svcs::services::IObserver> observer) override {}
+    void notify(const svcs::services::Event& event) const override {
         last_event = event;
     }
 
-    mutable std::optional<Event> last_event;
+    mutable std::optional<svcs::services::Event> last_event;
 };
 
 class ServerIntegrationTest : public ::testing::Test {
@@ -51,7 +55,7 @@ protected:
 
         io_context = std::make_shared<boost::asio::io_context>();
         event_bus = std::make_shared<TestEventBus>();
-        repo_manager = std::make_shared<RepositoryManager>(event_bus);
+        repo_manager = std::make_shared<svcs::core::RepositoryManager>(event_bus);
         repo_manager->initializeRepository(test_dir.string());
 
         port = findFreePort();
@@ -80,14 +84,14 @@ protected:
     std::filesystem::path test_dir;
     std::shared_ptr<boost::asio::io_context> io_context;
     std::shared_ptr<TestEventBus> event_bus;
-    std::shared_ptr<RepositoryManager> repo_manager;
-    std::shared_ptr<Server> server;
+    std::shared_ptr<svcs::core::RepositoryManager> repo_manager;
+    std::shared_ptr<svcs::server::Server> server;
     unsigned short port;
 };
 
 TEST_F(ServerIntegrationTest, ConstructorInitializesCorrectly) {
     EXPECT_NO_THROW({
-        server = std::make_shared<Server>(*io_context, port, repo_manager, event_bus);
+        server = std::make_shared<svcs::server::Server>(*io_context, port, repo_manager, event_bus);
     });
 
     EXPECT_NE(server, nullptr);
@@ -97,7 +101,7 @@ TEST_F(ServerIntegrationTest, ConstructorInitializesCorrectly) {
 }
 
 TEST_F(ServerIntegrationTest, StartAndStopServer) {
-    server = std::make_shared<Server>(*io_context, port, repo_manager, event_bus);
+    server = std::make_shared<svcs::server::Server>(*io_context, port, repo_manager, event_bus);
 
     bool start_result = server->start();
     EXPECT_TRUE(start_result);
@@ -110,13 +114,13 @@ TEST_F(ServerIntegrationTest, StartAndStopServer) {
 
 TEST_F(ServerIntegrationTest, ServerPortConfiguration) {
     unsigned short test_port = 9420;
-    server = std::make_shared<Server>(*io_context, test_port, repo_manager, event_bus);
+    server = std::make_shared<svcs::server::Server>(*io_context, test_port, repo_manager, event_bus);
 
     EXPECT_EQ(server->getPort(), test_port);
 }
 
 TEST_F(ServerIntegrationTest, ServerStateManagement) {
-    server = std::make_shared<Server>(*io_context, port, repo_manager, event_bus);
+    server = std::make_shared<svcs::server::Server>(*io_context, port, repo_manager, event_bus);
 
     EXPECT_FALSE(server->isRunning());
     EXPECT_EQ(server->getActiveConnections(), 0);
@@ -129,7 +133,7 @@ TEST_F(ServerIntegrationTest, ServerStateManagement) {
 }
 
 TEST_F(ServerIntegrationTest, EventBusCommunication) {
-    server = std::make_shared<Server>(*io_context, port, repo_manager, event_bus);
+    server = std::make_shared<svcs::server::Server>(*io_context, port, repo_manager, event_bus);
 
     server->start();
     std::this_thread::sleep_for(50ms);
@@ -138,7 +142,7 @@ TEST_F(ServerIntegrationTest, EventBusCommunication) {
 }
 
 TEST_F(ServerIntegrationTest, StartAlreadyRunningServer) {
-    server = std::make_shared<Server>(*io_context, port, repo_manager, event_bus);
+    server = std::make_shared<svcs::server::Server>(*io_context, port, repo_manager, event_bus);
 
     bool first_start = server->start();
     EXPECT_TRUE(first_start);
@@ -151,7 +155,7 @@ TEST_F(ServerIntegrationTest, StartAlreadyRunningServer) {
 }
 
 TEST_F(ServerIntegrationTest, StopNotRunningServer) {
-    server = std::make_shared<Server>(*io_context, port, repo_manager, event_bus);
+    server = std::make_shared<svcs::server::Server>(*io_context, port, repo_manager, event_bus);
 
     EXPECT_NO_THROW({
         server->stop();
@@ -161,8 +165,8 @@ TEST_F(ServerIntegrationTest, StopNotRunningServer) {
 }
 
 TEST_F(ServerIntegrationTest, ServerWithDifferentPorts) {
-    auto server1 = std::make_shared<Server>(*io_context, port, repo_manager, event_bus);
-    auto server2 = std::make_shared<Server>(*io_context, port + 1, repo_manager, event_bus);
+    auto server1 = std::make_shared<svcs::server::Server>(*io_context, port, repo_manager, event_bus);
+    auto server2 = std::make_shared<svcs::server::Server>(*io_context, port + 1, repo_manager, event_bus);
 
     bool start1 = server1->start();
     bool start2 = server2->start();
@@ -172,4 +176,6 @@ TEST_F(ServerIntegrationTest, ServerWithDifferentPorts) {
 
     if (start1) server1->stop();
     if (start2) server2->stop();
+}
+
 }

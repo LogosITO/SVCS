@@ -5,45 +5,49 @@
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <functional>}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{comment}{//\ Forward\ declarations}}
-\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classISubject}{ISubject}};}
-\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEvent}{Event}};}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHelpService_ac380002930a510d355fe11cf11e946ce}{HelpService}}\ \{}
-\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00048\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Callback\ functions\ instead\ of\ direct\ CommandFactory\ dependency}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00059\ \ \ \ \ std::function<std::vector<std::string>()>\ getCommandsCallback\_;}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00068\ \ \ \ \ std::function<std::string(\textcolor{keyword}{const}\ std::string\&)>\ getDescriptionCallback\_;}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00077\ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ std::string\&)>\ showHelpCallback\_;}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00086\ \ \ \ \ std::function<std::string(\textcolor{keyword}{const}\ std::string\&)>\ getUsageCallback\_;}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classHelpService_ac380002930a510d355fe11cf11e946ce}{HelpService}}(std::shared\_ptr<ISubject>\ bus,}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<std::vector<std::string>()>\ getCommands,}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<std::string(\textcolor{keyword}{const}\ std::string\&)>\ getDescription,}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ std::string\&)>\ showHelp,}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<std::string(\textcolor{keyword}{const}\ std::string\&)>\ getUsage\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00111\ }
-\DoxyCodeLine{00121\ \ \ \ \ [[nodiscard]]\ std::vector<std::string>\ \mbox{\hyperlink{classHelpService_a3e101dee42668c57dd56669a3939d335}{getAvailableCommands}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00134\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHelpService_acc76b5372129d61b894efb2fa25349c2}{getCommandDescription}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHelpService_a1ea55dca8e2d594c97ce5dc3efca8053}{showCommandHelp}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00158\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHelpService_a71d1aba53c9ac3d40b16af8890bcac95}{commandExists}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00171\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHelpService_a6e1869acb698c4c37d1b15d19b92ce9c}{getCommandUsage}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00172\ \};}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}}\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacesvcs_1_1services}{svcs::services}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a48e82d071c038c517266aacb36f5b98a}{HelpService}}\ \{}
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Callback\ functions\ instead\ of\ direct\ CommandFactory\ dependency}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ std::function<std::vector<std::string>()>\ getCommandsCallback\_;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ std::function<std::string(\textcolor{keyword}{const}\ std::string\&)>\ getDescriptionCallback\_;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ std::string\&)>\ showHelpCallback\_;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ std::function<std::string(\textcolor{keyword}{const}\ std::string\&)>\ getUsageCallback\_;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a48e82d071c038c517266aacb36f5b98a}{HelpService}}(std::shared\_ptr<ISubject>\ bus,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<std::vector<std::string>()>\ getCommands,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<std::string(\textcolor{keyword}{const}\ std::string\&)>\ getDescription,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ std::string\&)>\ showHelp,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<std::string(\textcolor{keyword}{const}\ std::string\&)>\ getUsage\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00136\ \ \ \ \ [[nodiscard]]\ std::vector<std::string>\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a51fc45e41c002a70d477cc30dc3d52a0}{getAvailableCommands}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00149\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_aea2600a15351225caa966c1f3f6a3420}{getCommandDescription}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a9d635c88b8b370658e7ebe6722225046}{showCommandHelp}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00173\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a9ed3ffc25e641718af84cadc815dfdd4}{commandExists}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00186\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_ae013b91f186ea3cdebfbe72fec3442e8}{getCommandUsage}}(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ \};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \}}
 
 \end{DoxyCode}

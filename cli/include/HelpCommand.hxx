@@ -22,6 +22,21 @@
 
 /**
  * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+/**
+ * @english
  * @brief Command for displaying help information about other commands.
  * @details The **HelpCommand** is the application's built-in help utility. It can show a general
  * list of all available commands or display detailed usage and descriptions for a specific
@@ -152,3 +167,5 @@ private:
      */
     void showCommandHelp(const std::string& commandName) const;
 };
+
+}

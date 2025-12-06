@@ -92,26 +92,32 @@ $(function(){initNavTree('InitCommandTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the <a class="el" href="classInitCommandIntegrationTest.html" title="Test fixture for InitCommand integration tests.">InitCommandIntegrationTest</a> fixture methods.  
+<p>Implementation of the InitCommandIntegrationTest fixture methods.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="InitCommandIntegrationTest_8hxx_source.html">utils/InitCommandIntegrationTest.hxx</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cli_2mocks_2MockSubject_8hxx_source.html">mocks/MockSubject.hxx</a>&quot;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli" id="r_svcs_3A_3Atest_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli.html">svcs::test::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for command-line interface components. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a09912c95a0d569ce9de7ec2ecd0208ea" id="r_a09912c95a0d569ce9de7ec2ecd0208ea"><td class="memItemLeft" align="right" valign="top"><a id="a09912c95a0d569ce9de7ec2ecd0208ea" name="a09912c95a0d569ce9de7ec2ecd0208ea"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classInitCommandIntegrationTest.html">InitCommandIntegrationTest</a>, Success_InitInEmptyDirectory)</td></tr>
-<tr class="memitem:a31c026803a9dcfd7712c4cc3efae3621" id="r_a31c026803a9dcfd7712c4cc3efae3621"><td class="memItemLeft" align="right" valign="top"><a id="a31c026803a9dcfd7712c4cc3efae3621" name="a31c026803a9dcfd7712c4cc3efae3621"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classInitCommandIntegrationTest.html">InitCommandIntegrationTest</a>, Success_WithForceFlag)</td></tr>
-<tr class="memitem:ae6bea44929c57212f91c175b9017e649" id="r_ae6bea44929c57212f91c175b9017e649"><td class="memItemLeft" align="right" valign="top"><a id="ae6bea44929c57212f91c175b9017e649" name="ae6bea44929c57212f91c175b9017e649"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classInitCommandIntegrationTest.html">InitCommandIntegrationTest</a>, Success_WithCustomPath)</td></tr>
-<tr class="memitem:a02e2fbb2130fcefcc0da2a1fc049f24a" id="r_a02e2fbb2130fcefcc0da2a1fc049f24a"><td class="memItemLeft" align="right" valign="top"><a id="a02e2fbb2130fcefcc0da2a1fc049f24a" name="a02e2fbb2130fcefcc0da2a1fc049f24a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classInitCommandIntegrationTest.html">InitCommandIntegrationTest</a>, HelpFlagShowsHelp)</td></tr>
+<tr class="memitem:ad7d5415064c966a9278a0f4be52c2b96" id="r_ad7d5415064c966a9278a0f4be52c2b96"><td class="memItemLeft" align="right" valign="top"><a id="ad7d5415064c966a9278a0f4be52c2b96" name="ad7d5415064c966a9278a0f4be52c2b96"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest.html">InitCommandIntegrationTest</a>, Success_InitInEmptyDirectory)</td></tr>
+<tr class="memitem:ac93320b9611d82aac4ebf80e4ee0eb09" id="r_ac93320b9611d82aac4ebf80e4ee0eb09"><td class="memItemLeft" align="right" valign="top"><a id="ac93320b9611d82aac4ebf80e4ee0eb09" name="ac93320b9611d82aac4ebf80e4ee0eb09"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest.html">InitCommandIntegrationTest</a>, Success_WithForceFlag)</td></tr>
+<tr class="memitem:a73fbdd8a812946ca47cd7c3b4c34caef" id="r_a73fbdd8a812946ca47cd7c3b4c34caef"><td class="memItemLeft" align="right" valign="top"><a id="a73fbdd8a812946ca47cd7c3b4c34caef" name="a73fbdd8a812946ca47cd7c3b4c34caef"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest.html">InitCommandIntegrationTest</a>, Success_WithCustomPath)</td></tr>
+<tr class="memitem:a458eb2944ccbe04f9954f8a6d0132379" id="r_a458eb2944ccbe04f9954f8a6d0132379"><td class="memItemLeft" align="right" valign="top"><a id="a458eb2944ccbe04f9954f8a6d0132379" name="a458eb2944ccbe04f9954f8a6d0132379"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1InitCommandIntegrationTest.html">InitCommandIntegrationTest</a>, HelpFlagShowsHelp)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the <a class="el" href="classInitCommandIntegrationTest.html" title="Test fixture for InitCommand integration tests.">InitCommandIntegrationTest</a> fixture methods. </p>
+<div class="textblock"><p>Implementation of the InitCommandIntegrationTest fixture methods. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

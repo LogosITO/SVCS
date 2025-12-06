@@ -14,8 +14,13 @@ Manages the reading, writing, and lifecycle of VCS objects on the disk using the
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classObjectStorage}{Object\+Storage}}
+class \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{svcs\+::core\+::\+Object\+Storage}}
 \begin{DoxyCompactList}\small\item\em Manages the version control object database, including persistence and object restoration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1core}{svcs\+::core}}
+\begin{DoxyCompactList}\small\item\em Core VCS data structures and object model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -24,4 +29,4 @@ Manages the reading, writing, and lifecycle of VCS objects on the disk using the
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-This class handles file path construction, serialization, Zlib compression/decompression, and acts as a factory for restoring concrete \doxylink{classVcsObject}{Vcs\+Object} types (\doxylink{classBlob}{Blob}, \doxylink{classTree}{Tree}, \doxylink{classCommit}{Commit}). It uses an injected \doxylink{classISubject}{ISubject} for internal event logging. 
+This class handles file path construction, serialization, Zlib compression/decompression, and acts as a factory for restoring concrete Vcs\+Object types (Blob, Tree, Commit). It uses an injected ISubject for internal event logging. 

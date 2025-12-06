@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['basecommand_0',['BaseCommand',['../classBaseCommand.html#a6ada486a8ab81d0283181fd8cd5274e1',1,'BaseCommand']]],
-  ['binary_5fto_5fhex_5fstring_1',['binary_to_hex_string',['../core_2include_2Utils_8hxx.html#a3c03f3592ffa57a1f2ad8be7ddab13f4',1,'binary_to_hex_string(const unsigned char *binary_data, size_t length):&#160;Utils.cxx'],['../Utils_8cxx.html#ab217ef02a1053f512a96c2e9002e8ebe',1,'binary_to_hex_string(const unsigned char *data, size_t length):&#160;Utils.cxx']]],
-  ['blob_2',['Blob',['../classBlob.html#ae99377ce893ac26195a4c4578167f976',1,'Blob']]],
-  ['branch_3',['Branch',['../structBranchManager_1_1Branch.html#a3fdd98d5cdfe9166c7a95e65e0771c50',1,'BranchManager::Branch::Branch()'],['../structBranchManager_1_1Branch.html#a6fd8961395157dd30c5d2ce2ab8da6bc',1,'BranchManager::Branch::Branch(std::string name, std::string head_commit, bool is_current=false)']]],
-  ['branchcommand_4',['BranchCommand',['../classBranchCommand.html#a4eaa697694eb6ff5f25638bd57cad585',1,'BranchCommand']]],
-  ['branchexists_5',['branchExists',['../classBranchManager.html#a6d9226441cbc178c6afe0b957b50d406',1,'BranchManager::branchExists()'],['../classRepositoryManager.html#ad3b43df94ac6ede014b7e9874cc78b0b',1,'RepositoryManager::branchExists()']]],
-  ['branchmanager_6',['BranchManager',['../classBranchManager.html#a4f034befce006a84693d8ce6673805dc',1,'BranchManager']]]
+  ['basecommand_0',['BaseCommand',['../classsvcs_1_1cli_1_1BaseCommand.html#a143ac6f12e29d7a64165e786dff1ddaf',1,'svcs::cli::BaseCommand']]],
+  ['binary_5fto_5fhex_5fstring_1',['binary_to_hex_string',['../namespacesvcs_1_1core.html#ae4589d250a2f03780b3dc5e4323a5d8d',1,'svcs::core']]],
+  ['blob_2',['Blob',['../classsvcs_1_1core_1_1Blob.html#a2c3ec55aaf556ee40a9bb37edd917dd2',1,'svcs::core::Blob']]],
+  ['branch_3',['Branch',['../structsvcs_1_1core_1_1BranchManager_1_1Branch.html#a2282c523dbd4b3f9fac16eb6e42bd112',1,'svcs::core::BranchManager::Branch::Branch()'],['../structsvcs_1_1core_1_1BranchManager_1_1Branch.html#a94c13d01a2a371c52884ef6b63320e81',1,'svcs::core::BranchManager::Branch::Branch(std::string name, std::string head_commit, bool is_current=false)']]],
+  ['branchcommand_4',['BranchCommand',['../classsvcs_1_1cli_1_1BranchCommand.html#aa9ca6bbc03d3de764c9ac64d52e9f004',1,'svcs::cli::BranchCommand']]],
+  ['branchexists_5',['branchExists',['../classsvcs_1_1core_1_1BranchManager.html#a8403698a8623b827cdc8f1bbe361ef57',1,'svcs::core::BranchManager::branchExists()'],['../classsvcs_1_1core_1_1RepositoryManager.html#ad84b0f67d4e6e2e60082497b4e1899a3',1,'svcs::core::RepositoryManager::branchExists()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#ad84b0f67d4e6e2e60082497b4e1899a3',1,'svcs::test::cli::utils::RepositoryManager::branchExists()']]],
+  ['branchmanager_6',['BranchManager',['../classsvcs_1_1core_1_1BranchManager.html#a1186561ba3c5062928760c378c1a5127',1,'svcs::core::BranchManager']]]
 ];

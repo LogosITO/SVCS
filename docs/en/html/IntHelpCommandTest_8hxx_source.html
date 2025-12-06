@@ -91,73 +91,55 @@ $(function(){initNavTree('IntHelpCommandTest_8hxx_source.html','',''); });
   <div class="headertitle"><div class="title">IntHelpCommandTest.hxx</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="IntHelpCommandTest_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="Event_8hxx.html">../../../services/Event.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="HelpCommand_8hxx.html">../../../cli/include/HelpCommand.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="cli_2mocks_2MockSubject_8hxx.html">../mocks/MockSubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="MockHelpService_8hxx.html">../mocks/MockHelpService.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesvcs_1_1test_1_1cli_1_1utils.html">svcs::test::cli::utils</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using </span><a class="code hl_struct" href="structsvcs_1_1services_1_1Event.html">Event</a> = svcs::services::Event;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using </span>svcs::cli::HelpCommand;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span>svcs::test::cli::mocks::MockSubject;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span>svcs::test::cli::mocks::MockHelpService;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="HelpCommand_8hxx.html">../../../cli/include/HelpCommand.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="MockSubject_8hxx.html">../mocks/MockSubject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="MockHelpService_8hxx.html">../mocks/MockHelpService.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// Forward declaration for the Event structure used in helpers</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">struct </span><a class="code hl_struct" href="structEvent.html">Event</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classHelpCommandTest.html">   37</a></span><span class="comment"> * @brief Google Test fixture for running unit/integration tests against the HelpCommand.</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * @details This fixture is crucial for isolating the HelpCommand&#39;s logic, ensuring</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * it correctly delegates help requests to the **MockHelpService** and reports</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * the resulting output via the **MockSubject** (event bus).</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * @ingroup UnitTests</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * @russian</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * @class HelpCommandTest</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> * @brief Google Test фикстур для запуска модульных/интеграционных тестов HelpCommand.</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> * @details Этот фикстур критически важен для изоляции логики HelpCommand, обеспечивая</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * правильное делегирование запросов справки в **MockHelpService** и отчетность</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> * о результатах через **MockSubject** (шину событий).</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * @ingroup UnitTests</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">class </span><a class="code hl_class" href="classHelpCommandTest.html">HelpCommandTest</a> : <span class="keyword">public</span> ::testing::Test {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classHelpCommandTest.html#aaacf9ab18d10a23809bb743993ed1960">SetUp</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classHelpCommandTest.html#ae9ba25cb1f7ac4cab80820ae167dd582">TearDown</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classHelpCommandTest.html#a1030123741ad553f0114c700cf6db1e7">containsMessage</a>(<span class="keyword">const</span> std::vector&lt;Event&gt;&amp; notifications, <span class="keyword">const</span> std::string&amp; message);</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a> : <span class="keyword">public</span> ::testing::Test {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> SetUp() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> TearDown() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> containsMessage(<span class="keyword">const</span> std::vector&lt;Event&gt;&amp; notifications, <span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">int</span> countMessages(<span class="keyword">const</span> std::vector&lt;Event&gt;&amp; notifications, <span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::shared_ptr&lt;MockSubject&gt; mockEventBus;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::shared_ptr&lt;MockHelpService&gt; mockHelpService;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::unique_ptr&lt;HelpCommand&gt; command;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classHelpCommandTest.html#a1ad9fd0189edb0eac480032be0c842ed">countMessages</a>(<span class="keyword">const</span> std::vector&lt;Event&gt;&amp; notifications, <span class="keyword">const</span> std::string&amp; message);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    std::shared_ptr&lt;MockSubject&gt; <a class="code hl_variable" href="classHelpCommandTest.html#a0aa84578503c1750bcb64267718c01e6">mockEventBus</a>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    std::shared_ptr&lt;MockHelpService&gt; <a class="code hl_variable" href="classHelpCommandTest.html#a3dcdc65f33f359240348f5990f6f635b">mockHelpService</a>;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    std::unique_ptr&lt;HelpCommand&gt; <a class="code hl_variable" href="classHelpCommandTest.html#a9105686746356bf0e8e1f2331089abde">command</a>;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="ttc" id="aEvent_8hxx_html"><div class="ttname"><a href="Event_8hxx.html">Event.hxx</a></div><div class="ttdoc">Defines the event structure used for the Observer pattern notifications.</div></div>
 <div class="ttc" id="aHelpCommand_8hxx_html"><div class="ttname"><a href="HelpCommand_8hxx.html">HelpCommand.hxx</a></div><div class="ttdoc">Declaration of the HelpCommand class for displaying command help information.</div></div>
 <div class="ttc" id="aMockHelpService_8hxx_html"><div class="ttname"><a href="MockHelpService_8hxx.html">MockHelpService.hxx</a></div><div class="ttdoc">Mock implementation of the HelpService interface for unit testing purposes.</div></div>
-<div class="ttc" id="aMockSubject_8hxx_html"><div class="ttname"><a href="MockSubject_8hxx.html">MockSubject.hxx</a></div><div class="ttdoc">Mock implementation of the ISubject interface for unit testing purposes.</div></div>
-<div class="ttc" id="aclassHelpCommandTest_html"><div class="ttname"><a href="classHelpCommandTest.html">HelpCommandTest</a></div><div class="ttdoc">Google Test fixture for running unit/integration tests against the HelpCommand.</div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.hxx:37</div></div>
-<div class="ttc" id="aclassHelpCommandTest_html_a0aa84578503c1750bcb64267718c01e6"><div class="ttname"><a href="classHelpCommandTest.html#a0aa84578503c1750bcb64267718c01e6">HelpCommandTest::mockEventBus</a></div><div class="ttdeci">std::shared_ptr&lt; MockSubject &gt; mockEventBus</div><div class="ttdoc">Shared pointer to the mock event bus (observer) used to capture command output.</div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.hxx:75</div></div>
-<div class="ttc" id="aclassHelpCommandTest_html_a1030123741ad553f0114c700cf6db1e7"><div class="ttname"><a href="classHelpCommandTest.html#a1030123741ad553f0114c700cf6db1e7">HelpCommandTest::containsMessage</a></div><div class="ttdeci">static bool containsMessage(const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</div><div class="ttdoc">Checks if a specific message (substring) exists in any event notification.</div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.cxx:31</div></div>
-<div class="ttc" id="aclassHelpCommandTest_html_a1ad9fd0189edb0eac480032be0c842ed"><div class="ttname"><a href="classHelpCommandTest.html#a1ad9fd0189edb0eac480032be0c842ed">HelpCommandTest::countMessages</a></div><div class="ttdeci">int countMessages(const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</div><div class="ttdoc">Counts the occurrences of a specific message (substring) across all event notifications.</div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.cxx:38</div></div>
-<div class="ttc" id="aclassHelpCommandTest_html_a3dcdc65f33f359240348f5990f6f635b"><div class="ttname"><a href="classHelpCommandTest.html#a3dcdc65f33f359240348f5990f6f635b">HelpCommandTest::mockHelpService</a></div><div class="ttdeci">std::shared_ptr&lt; MockHelpService &gt; mockHelpService</div><div class="ttdoc">Shared pointer to the mock help service, used to control help data and verify calls.</div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.hxx:81</div></div>
-<div class="ttc" id="aclassHelpCommandTest_html_a9105686746356bf0e8e1f2331089abde"><div class="ttname"><a href="classHelpCommandTest.html#a9105686746356bf0e8e1f2331089abde">HelpCommandTest::command</a></div><div class="ttdeci">std::unique_ptr&lt; HelpCommand &gt; command</div><div class="ttdoc">Unique pointer to the command being tested.</div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.hxx:87</div></div>
-<div class="ttc" id="aclassHelpCommandTest_html_aaacf9ab18d10a23809bb743993ed1960"><div class="ttname"><a href="classHelpCommandTest.html#aaacf9ab18d10a23809bb743993ed1960">HelpCommandTest::SetUp</a></div><div class="ttdeci">void SetUp() override</div><div class="ttdoc">Sets up the testing environment before each test.</div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.cxx:19</div></div>
-<div class="ttc" id="aclassHelpCommandTest_html_ae9ba25cb1f7ac4cab80820ae167dd582"><div class="ttname"><a href="classHelpCommandTest.html#ae9ba25cb1f7ac4cab80820ae167dd582">HelpCommandTest::TearDown</a></div><div class="ttdeci">void TearDown() override</div><div class="ttdoc">Tears down the testing environment after each test.</div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.cxx:26</div></div>
-<div class="ttc" id="astructEvent_html"><div class="ttname"><a href="structEvent.html">Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:20</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest_html"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">svcs::test::cli::utils::HelpCommandTest</a></div><div class="ttdef"><b>Definition</b> IntHelpCommandTest.hxx:20</div></div>
+<div class="ttc" id="acli_2mocks_2MockSubject_8hxx_html"><div class="ttname"><a href="cli_2mocks_2MockSubject_8hxx.html">MockSubject.hxx</a></div><div class="ttdoc">Mock implementation of the ISubject interface for unit testing purposes.</div></div>
+<div class="ttc" id="anamespacesvcs_1_1test_1_1cli_1_1utils_html"><div class="ttname"><a href="namespacesvcs_1_1test_1_1cli_1_1utils.html">svcs::test::cli::utils</a></div><div class="ttdoc">Utility classes and test fixtures for CLI command testing.</div><div class="ttdef"><b>Definition</b> ClearCommandTest.cxx:17</div></div>
+<div class="ttc" id="astructsvcs_1_1services_1_1Event_html"><div class="ttname"><a href="structsvcs_1_1services_1_1Event.html">svcs::services::Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a href="dir_10f909bea03e4b54473bf8b174380ada.html">cli</a></li><li class="navelem"><a href="dir_9e946f7a5f8556904eb56e5e3625f070.html">utils</a></li><li class="navelem"><a href="IntHelpCommandTest_8hxx.html">IntHelpCommandTest.hxx</a></li>
+    <li class="navelem"><a href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a href="dir_10f909bea03e4b54473bf8b174380ada.html">cli</a></li><li class="navelem"><a href="dir_9e946f7a5f8556904eb56e5e3625f070.html">utils</a></li><li class="navelem"><b>IntHelpCommandTest.hxx</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

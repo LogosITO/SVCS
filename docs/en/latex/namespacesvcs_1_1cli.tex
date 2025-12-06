@@ -1,0 +1,114 @@
+\doxysection{svcs\+::cli Namespace Reference}
+\hypertarget{namespacesvcs_1_1cli}{}\label{namespacesvcs_1_1cli}\index{svcs::cli@{svcs::cli}}
+
+
+Command-\/line interface components and command implementations.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}}
+\begin{DoxyCompactList}\small\item\em Implements the "{}add"{} command for the Simple Version Control System (SVCS). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1BaseCommand}{Base\+Command}}
+\begin{DoxyCompactList}\small\item\em Base class for all CLI commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1BranchCommand}{Branch\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for managing branches in the version control system. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1ClearCommand}{Clear\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for removing SVCS repository structure. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1CommandFactory}{Command\+Factory}}
+\begin{DoxyCompactList}\small\item\em Factory for creating \doxylink{classsvcs_1_1cli_1_1ICommand}{ICommand} objects by their string name. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand}{Help\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for displaying help information about other commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService}{Help\+Service}}
+\begin{DoxyCompactList}\small\item\em Service that provides help information for commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1HistoryCommand}{History\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for viewing the history of saves (commits) in the repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}
+\begin{DoxyCompactList}\small\item\em Interface (abstract base class) for all commands executed via the CLI. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1InitCommand}{Init\+Command}}
+\begin{DoxyCompactList}\small\item\em Implements the "{}init"{} command for the Version Control System (VCS). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1MergeCommand}{Merge\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for merging branches in the version control system. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1RemoveCommand}{Remove\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for removing files from the staging area. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1SaveCommand}{Save\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for saving (committing) staged changes to the repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1StatusCommand}{Status\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for showing the current status of the repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}}
+\begin{DoxyCompactList}\small\item\em Command to revert the repository state to a previous commit. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1cli_1_1VersionCommand}{Version\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for displaying version information about SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae}{File\+Status}} \{ \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2}{UNTRACKED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065}{MODIFIED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea63c2867fdcae0e8e8413d7ac21b69b59}{DELETED}}
+, \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8}{UNMODIFIED}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the status of a file within the SVCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacesvcs_1_1cli_a7836bbfca1be26e7686be6b4463ccb78}{print\+Debug}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Conditionally prints a debug message to standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command-\/line interface components and command implementations. 
+
+Contains all CLI commands that users interact with directly, including \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}, Commit\+Command, \doxylink{classsvcs_1_1cli_1_1StatusCommand}{Status\+Command}, etc. 
+
+\label{doc-enum-members}
+\Hypertarget{namespacesvcs_1_1cli_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae}\index{svcs::cli@{svcs::cli}!FileStatus@{FileStatus}}
+\index{FileStatus@{FileStatus}!svcs::cli@{svcs::cli}}
+\doxysubsubsection{\texorpdfstring{FileStatus}{FileStatus}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae} 
+enum class \mbox{\hyperlink{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683ae}{svcs\+::cli\+::\+File\+Status}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines the status of a file within the SVCS. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNTRACKED@{UNTRACKED}!svcs::cli@{svcs::cli}}\index{svcs::cli@{svcs::cli}!UNTRACKED@{UNTRACKED}}}\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2}\label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aeaa6aa7aaab436d05e461fafcada25aaa2} 
+UNTRACKED&File is present but not tracked by SVCS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODIFIED@{MODIFIED}!svcs::cli@{svcs::cli}}\index{svcs::cli@{svcs::cli}!MODIFIED@{MODIFIED}}}\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065}\label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065} 
+MODIFIED&File is tracked and has been modified since the last commit. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DELETED@{DELETED}!svcs::cli@{svcs::cli}}\index{svcs::cli@{svcs::cli}!DELETED@{DELETED}}}\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea63c2867fdcae0e8e8413d7ac21b69b59}\label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea63c2867fdcae0e8e8413d7ac21b69b59} 
+DELETED&File is tracked but has been deleted from the working directory. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNMODIFIED@{UNMODIFIED}!svcs::cli@{svcs::cli}}\index{svcs::cli@{svcs::cli}!UNMODIFIED@{UNMODIFIED}}}\Hypertarget{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8}\label{namespacesvcs_1_1cli_a42ce5643bd50b22be108e21e46f683aea96647297a746161887ea49cb0c764cf8} 
+UNMODIFIED&File is tracked and has no changes since the last commit. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{namespacesvcs_1_1cli_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesvcs_1_1cli_a7836bbfca1be26e7686be6b4463ccb78}\index{svcs::cli@{svcs::cli}!printDebug@{printDebug}}
+\index{printDebug@{printDebug}!svcs::cli@{svcs::cli}}
+\doxysubsubsection{\texorpdfstring{printDebug()}{printDebug()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1cli_a7836bbfca1be26e7686be6b4463ccb78} 
+void svcs\+::cli\+::print\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Conditionally prints a debug message to standard output. 
+
+The message is only printed if the DEBUG\+\_\+\+MODE macro is defined at the time of compilation. The function is marked as {\ttfamily inline} to suggest inlining by the compiler, and is compiled to a no-\/op when DEBUG\+\_\+\+MODE is not defined, resulting in zero runtime overhead in release builds. 
+\begin{DoxyParams}{Parameters}
+{\em message} & The string message to output, prefixed with "{}\+DEBUG\+: "{}. \\
+\hline
+\end{DoxyParams}

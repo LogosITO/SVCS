@@ -1,0 +1,111 @@
+\doxysection{Класс svcs\+::test\+::cli\+::utils\+::Add\+Command\+Test}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}\index{svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}}
+
+
+Тестовый фикстур для интеграционных тестов \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Add\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::utils\+::Add\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a6480b03e4147fc35200a4a609a5d29c8}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a6e2062329d764abe377582cbbf9e80ff}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a14e479610b05269f44da5be2228b6f5e}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content="{}test content"{}) const
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл внутри тестовой директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a3c5f76d1293287f6e98ecb3054fe2c0b}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию внутри тестовой директории. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a0978af8841ea48683758f81fb02eb5af}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a0978af8841ea48683758f81fb02eb5af} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Mock шина событий для захвата системных уведомлений. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a6c74ea0a607e5d7cca8d071141c0ef94}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a6c74ea0a607e5d7cca8d071141c0ef94} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Реальный экземпляр \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} под тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a7d13ad09760ec47b1b6a42525eba864d}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a7d13ad09760ec47b1b6a42525eba864d} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Экземпляр \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command} под тестом. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a11c62e0edde4ba55cc6aec21060f103a}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a11c62e0edde4ba55cc6aec21060f103a} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной директории, используемой как корень репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Тестовый фикстур для интеграционных тестов \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}. 
+
+Управляет настройкой и очисткой временного инициализированного репозитория SVCS. Предоставляет служебные методы для создания различных структур файловой системы для тестирования логики добавления в индекс команды \doxylink{classsvcs_1_1cli_1_1AddCommand}{Add\+Command}. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a3c5f76d1293287f6e98ecb3054fe2c0b}\index{svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a3c5f76d1293287f6e98ecb3054fe2c0b} 
+void svcs\+::test\+::cli\+::utils\+::\+Add\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию внутри тестовой директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Имя создаваемой директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a14e479610b05269f44da5be2228b6f5e}\index{svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a14e479610b05269f44da5be2228b6f5e} 
+void svcs\+::test\+::cli\+::utils\+::\+Add\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{ = {\ttfamily "{}test~content"{}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл внутри тестовой директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Имя создаваемого файла. \\
+\hline
+{\em content} & Содержимое файла (по умолчанию "{}test content"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a6480b03e4147fc35200a4a609a5d29c8}\index{svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a6480b03e4147fc35200a4a609a5d29c8} 
+void svcs\+::test\+::cli\+::utils\+::\+Add\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение. 
+
+Создает уникальную временную директорию, изменяет текущий путь на нее, инициализирует репозиторий и очищает начальные события. \Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a6e2062329d764abe377582cbbf9e80ff}\index{svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!svcs::test::cli::utils::AddCommandTest@{svcs::test::cli::utils::AddCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest_a6e2062329d764abe377582cbbf9e80ff} 
+void svcs\+::test\+::cli\+::utils\+::\+Add\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение. 
+
+Восстанавливает оригинальный текущий путь и рекурсивно удаляет временную директорию. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/Int\+Add\+Command\+Test.\+hxx\item 
+tests/cli/utils/\mbox{\hyperlink{IntAddCommandTest_8cxx}{Int\+Add\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

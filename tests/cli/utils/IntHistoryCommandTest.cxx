@@ -24,6 +24,8 @@
 #include <fstream>
 #include <algorithm>
 
+namespace svcs::test::cli::utils {
+
 void HistoryCommandTest::SetUp() {
     this->mockEventBus = std::make_shared<MockSubject>();
     this->repoManager = std::make_shared<RepositoryManager>(this->mockEventBus);
@@ -85,4 +87,6 @@ int HistoryCommandTest::countMessages(const std::vector<Event>& notifications, c
         [&message](const Event& event) {
             return event.details.find(message) != std::string::npos;
         });
+}
+
 }

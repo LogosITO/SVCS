@@ -22,13 +22,28 @@
 
 #include "ICommand.hxx"
 #include "../../core/include/Repository.hxx"
-// Note: Assumes ISubject, IObserver, and Event are available via other includes.
 
 #include <memory>
 #include <string>
 #include <iostream>
 
-// Forward declaration of ISubject is necessary if not already included
+/**
+ * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+using namespace svcs::core;
+
 class ISubject;
 
 /**
@@ -233,3 +248,5 @@ public:
         }
     }
 };
+
+}

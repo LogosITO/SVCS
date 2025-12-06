@@ -17,6 +17,8 @@
 #include <algorithm>
 #include <chrono>
 
+namespace svcs::core {
+
 Commit::Commit(
     std::string thash,
     std::vector<std::string> phashes,
@@ -196,4 +198,6 @@ void Commit::setTimestampNow() {
 
 void Commit::setParent(const std::string& parent) { 
     parent_hashes.push_back(parent); 
+}
+
 }

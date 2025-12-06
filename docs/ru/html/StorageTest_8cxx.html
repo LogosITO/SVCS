@@ -92,7 +92,7 @@ $(function(){initNavTree('StorageTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Модульные тесты для класса <a class="el" href="classObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a>, проверяющие сохранение, генерацию путей файлов, сжатие и целостность загрузки объектов для всех типов <a class="el" href="classVcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a> (<a class="el" href="classBlob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a>, <a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a>, <a class="el" href="classCommit.html" title="Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория.">Commit</a>).  
+<p>Модульные тесты для класса ObjectStorage, проверяющие сохранение, генерацию путей файлов, сжатие и целостность загрузки объектов для всех типов VcsObject (Blob, Tree, Commit).  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ObjectStorage_8hxx_source.html">../../core/include/ObjectStorage.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Blob_8hxx_source.html">../../core/include/Blob.hxx</a>&quot;</code><br />
@@ -104,47 +104,52 @@ $(function(){initNavTree('StorageTest_8cxx.html','',''); });
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
-<tr class="memitem:MockSubject" id="r_MockSubject"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockSubject.html">MockSubject</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock implementation of <a class="el" href="classISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> (<a class="el" href="structEvent.html" title="Структура, описывающая событие, опубликованное ядром VCS.">Event</a> Bus).  <a href="classMockSubject.html#details">Подробнее...</a><br /></td></tr>
-<tr class="memitem:NullObserver" id="r_NullObserver"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullObserver.html">NullObserver</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Null implementation of <a class="el" href="classIObserver.html" title="Интерфейс Observer (Абстрактный Базовый Класс).">IObserver</a>.  <a href="classNullObserver.html#details">Подробнее...</a><br /></td></tr>
-<tr class="memitem:ObjectStorageTest" id="r_ObjectStorageTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectStorageTest.html">ObjectStorageTest</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test fixture for the <a class="el" href="classObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a> class.  <a href="classObjectStorageTest.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acore_3A_3AMockSubject" id="r_svcs_3A_3Atest_3A_3Acore_3A_3AMockSubject"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1core_1_1MockSubject.html">svcs::test::core::MockSubject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock implementation of <a class="el" href="classsvcs_1_1services_1_1ISubject.html" title="Интерфейс Subject (Издатель) (Абстрактный Базовый Класс).">ISubject</a> (<a class="el" href="structsvcs_1_1services_1_1Event.html" title="Структура, описывающая событие, опубликованное ядром VCS.">Event</a> Bus).  <a href="classsvcs_1_1test_1_1core_1_1MockSubject.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acore_3A_3ANullObserver" id="r_svcs_3A_3Atest_3A_3Acore_3A_3ANullObserver"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1core_1_1NullObserver.html">svcs::test::core::NullObserver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Null implementation of <a class="el" href="classsvcs_1_1services_1_1IObserver.html" title="Интерфейс Observer (Абстрактный Базовый Класс).">IObserver</a>.  <a href="classsvcs_1_1test_1_1core_1_1NullObserver.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acore_3A_3AObjectStorageTest" id="r_svcs_3A_3Atest_3A_3Acore_3A_3AObjectStorageTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1core_1_1ObjectStorageTest.html">svcs::test::core::ObjectStorageTest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test fixture for the <a class="el" href="classsvcs_1_1core_1_1ObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a> class.  <a href="classsvcs_1_1test_1_1core_1_1ObjectStorageTest.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acore" id="r_svcs_3A_3Atest_3A_3Acore"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1core.html">svcs::test::core</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Модульные тесты для основных компонентов и структур данных. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:a1c7bb5745a29e268f7d6c358443b568c" id="r_a1c7bb5745a29e268f7d6c358443b568c"><td class="memItemLeft" align="right" valign="top"><a id="a1c7bb5745a29e268f7d6c358443b568c" name="a1c7bb5745a29e268f7d6c358443b568c"></a>
-<a class="el" href="classBlob.html">Blob</a>&#160;</td><td class="memItemRight" valign="bottom"><b>create_blob</b> (const std::string &amp;content)</td></tr>
-<tr class="memitem:ad58e386c02e574eb1386c69a19ac83dd" id="r_ad58e386c02e574eb1386c69a19ac83dd"><td class="memItemLeft" align="right" valign="top"><a id="ad58e386c02e574eb1386c69a19ac83dd" name="ad58e386c02e574eb1386c69a19ac83dd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classObjectStorageTest.html">ObjectStorageTest</a>, SavesObjectToCorrectPath)</td></tr>
-<tr class="memitem:a891adf06cc81a568383d613a4f5362c6" id="r_a891adf06cc81a568383d613a4f5362c6"><td class="memItemLeft" align="right" valign="top"><a id="a891adf06cc81a568383d613a4f5362c6" name="a891adf06cc81a568383d613a4f5362c6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classObjectStorageTest.html">ObjectStorageTest</a>, LoadRestoresOriginalBlob)</td></tr>
-<tr class="memitem:af8cdac7f6a3cfc21518205e7071228f9" id="r_af8cdac7f6a3cfc21518205e7071228f9"><td class="memItemLeft" align="right" valign="top"><a id="af8cdac7f6a3cfc21518205e7071228f9" name="af8cdac7f6a3cfc21518205e7071228f9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classObjectStorageTest.html">ObjectStorageTest</a>, LoadThrowsExceptionIfNotFound)</td></tr>
-<tr class="memitem:a3a7aa8fd239bebb720e7bf2c552e1b02" id="r_a3a7aa8fd239bebb720e7bf2c552e1b02"><td class="memItemLeft" align="right" valign="top"><a id="a3a7aa8fd239bebb720e7bf2c552e1b02" name="a3a7aa8fd239bebb720e7bf2c552e1b02"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classObjectStorageTest.html">ObjectStorageTest</a>, LoadRestoresOriginalTree)</td></tr>
-<tr class="memitem:a5e77111fe353ef7d68c217d636b514ee" id="r_a5e77111fe353ef7d68c217d636b514ee"><td class="memItemLeft" align="right" valign="top"><a id="a5e77111fe353ef7d68c217d636b514ee" name="a5e77111fe353ef7d68c217d636b514ee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classObjectStorageTest.html">ObjectStorageTest</a>, LoadRestoresOriginalCommit)</td></tr>
-<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
+<tr class="memitem:a47ad619962717854bea4cb8974bac5ec" id="r_a47ad619962717854bea4cb8974bac5ec"><td class="memItemLeft" align="right" valign="top"><a id="a47ad619962717854bea4cb8974bac5ec" name="a47ad619962717854bea4cb8974bac5ec"></a>
+<a class="el" href="classsvcs_1_1core_1_1Blob.html">Blob</a>&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::create_blob</b> (const std::string &amp;content)</td></tr>
+<tr class="memitem:ac5ef8ebbe07af649fa1f9b96be551ce0" id="r_ac5ef8ebbe07af649fa1f9b96be551ce0"><td class="memItemLeft" align="right" valign="top"><a id="ac5ef8ebbe07af649fa1f9b96be551ce0" name="ac5ef8ebbe07af649fa1f9b96be551ce0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1ObjectStorageTest.html">ObjectStorageTest</a>, SavesObjectToCorrectPath)</td></tr>
+<tr class="memitem:ac7c5deb565ca0e0eac56813447d4c9a6" id="r_ac7c5deb565ca0e0eac56813447d4c9a6"><td class="memItemLeft" align="right" valign="top"><a id="ac7c5deb565ca0e0eac56813447d4c9a6" name="ac7c5deb565ca0e0eac56813447d4c9a6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1ObjectStorageTest.html">ObjectStorageTest</a>, LoadRestoresOriginalBlob)</td></tr>
+<tr class="memitem:a73a233f1a4c07809bdd59147b798bab6" id="r_a73a233f1a4c07809bdd59147b798bab6"><td class="memItemLeft" align="right" valign="top"><a id="a73a233f1a4c07809bdd59147b798bab6" name="a73a233f1a4c07809bdd59147b798bab6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1ObjectStorageTest.html">ObjectStorageTest</a>, LoadThrowsExceptionIfNotFound)</td></tr>
+<tr class="memitem:a7e71bfef5749a1567726f9ff404a07e4" id="r_a7e71bfef5749a1567726f9ff404a07e4"><td class="memItemLeft" align="right" valign="top"><a id="a7e71bfef5749a1567726f9ff404a07e4" name="a7e71bfef5749a1567726f9ff404a07e4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1ObjectStorageTest.html">ObjectStorageTest</a>, LoadRestoresOriginalTree)</td></tr>
+<tr class="memitem:a5107cd967906f2015b66b6258bf4addd" id="r_a5107cd967906f2015b66b6258bf4addd"><td class="memItemLeft" align="right" valign="top"><a id="a5107cd967906f2015b66b6258bf4addd" name="a5107cd967906f2015b66b6258bf4addd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1core_1_1ObjectStorageTest.html">ObjectStorageTest</a>, LoadRestoresOriginalCommit)</td></tr>
+<tr class="memitem:a0ebdfc2bd61e5694f60c7083b04c2fdc" id="r_a0ebdfc2bd61e5694f60c7083b04c2fdc"><td class="memItemLeft" align="right" valign="top"><a id="a0ebdfc2bd61e5694f60c7083b04c2fdc" name="a0ebdfc2bd61e5694f60c7083b04c2fdc"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::main</b> (int argc, char *argv[])</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Переменные</h2></td></tr>
-<tr class="memitem:a6a3ba985a41728716e4f2a88674c075a" id="r_a6a3ba985a41728716e4f2a88674c075a"><td class="memItemLeft" align="right" valign="top"><a id="a6a3ba985a41728716e4f2a88674c075a" name="a6a3ba985a41728716e4f2a88674c075a"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>DUMMY_HASH_FILE_A</b> = &quot;a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2&quot;</td></tr>
-<tr class="memitem:aad7c34d224c2deff4279184cfe5b68d5" id="r_aad7c34d224c2deff4279184cfe5b68d5"><td class="memItemLeft" align="right" valign="top"><a id="aad7c34d224c2deff4279184cfe5b68d5" name="aad7c34d224c2deff4279184cfe5b68d5"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>DUMMY_HASH_PARENT_1</b> = &quot;p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1&quot;</td></tr>
-<tr class="memitem:ac5fda568bef49ac5e987031c0219799d" id="r_ac5fda568bef49ac5e987031c0219799d"><td class="memItemLeft" align="right" valign="top"><a id="ac5fda568bef49ac5e987031c0219799d" name="ac5fda568bef49ac5e987031c0219799d"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>DUMMY_HASH_PARENT_2</b> = &quot;p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2&quot;</td></tr>
-<tr class="memitem:aa16a50df78b0fb924d16a8a8f889047b" id="r_aa16a50df78b0fb924d16a8a8f889047b"><td class="memItemLeft" align="right" valign="top"><a id="aa16a50df78b0fb924d16a8a8f889047b" name="aa16a50df78b0fb924d16a8a8f889047b"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>DUMMY_HASH_TREE_ROOT</b> = &quot;t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0&quot;</td></tr>
-<tr class="memitem:a9e50995a188d02778aca90ad04acb317" id="r_a9e50995a188d02778aca90ad04acb317"><td class="memItemLeft" align="right" valign="top"><a id="a9e50995a188d02778aca90ad04acb317" name="a9e50995a188d02778aca90ad04acb317"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_ROOT</b> = &quot;test_repo_root&quot;</td></tr>
-<tr class="memitem:a159e114e9669f9f933983b572ea63d9f" id="r_a159e114e9669f9f933983b572ea63d9f"><td class="memItemLeft" align="right" valign="top"><a id="a159e114e9669f9f933983b572ea63d9f" name="a159e114e9669f9f933983b572ea63d9f"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>OBJECTS_DIR</b> = TEST_ROOT + &quot;/.svcs/objects&quot;</td></tr>
+<tr class="memitem:a327505f9d0b5a5e1540708a11e4b2d70" id="r_a327505f9d0b5a5e1540708a11e4b2d70"><td class="memItemLeft" align="right" valign="top"><a id="a327505f9d0b5a5e1540708a11e4b2d70" name="a327505f9d0b5a5e1540708a11e4b2d70"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::DUMMY_HASH_FILE_A</b> = &quot;a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2&quot;</td></tr>
+<tr class="memitem:a6ce36ffa712db84437643035349f87b6" id="r_a6ce36ffa712db84437643035349f87b6"><td class="memItemLeft" align="right" valign="top"><a id="a6ce36ffa712db84437643035349f87b6" name="a6ce36ffa712db84437643035349f87b6"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::DUMMY_HASH_PARENT_1</b> = &quot;p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1p1&quot;</td></tr>
+<tr class="memitem:a2644de2903e56b2a7c22780c9b780282" id="r_a2644de2903e56b2a7c22780c9b780282"><td class="memItemLeft" align="right" valign="top"><a id="a2644de2903e56b2a7c22780c9b780282" name="a2644de2903e56b2a7c22780c9b780282"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::DUMMY_HASH_PARENT_2</b> = &quot;p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2p2&quot;</td></tr>
+<tr class="memitem:aeb0c5c6fd7f3afe444fdfb7e1fbcec57" id="r_aeb0c5c6fd7f3afe444fdfb7e1fbcec57"><td class="memItemLeft" align="right" valign="top"><a id="aeb0c5c6fd7f3afe444fdfb7e1fbcec57" name="aeb0c5c6fd7f3afe444fdfb7e1fbcec57"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::DUMMY_HASH_TREE_ROOT</b> = &quot;t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0&quot;</td></tr>
+<tr class="memitem:a04b12c125d82b681c4443d82be899726" id="r_a04b12c125d82b681c4443d82be899726"><td class="memItemLeft" align="right" valign="top"><a id="a04b12c125d82b681c4443d82be899726" name="a04b12c125d82b681c4443d82be899726"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::TEST_ROOT</b> = &quot;test_repo_root&quot;</td></tr>
+<tr class="memitem:ad996eb03dc694413efb22e6ce991e5fc" id="r_ad996eb03dc694413efb22e6ce991e5fc"><td class="memItemLeft" align="right" valign="top"><a id="ad996eb03dc694413efb22e6ce991e5fc" name="ad996eb03dc694413efb22e6ce991e5fc"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::core::OBJECTS_DIR</b> = TEST_ROOT + &quot;/.svcs/objects&quot;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Модульные тесты для класса <a class="el" href="classObjectStorage.html" title="Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов...">ObjectStorage</a>, проверяющие сохранение, генерацию путей файлов, сжатие и целостность загрузки объектов для всех типов <a class="el" href="classVcsObject.html" title="Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ.">VcsObject</a> (<a class="el" href="classBlob.html" title="Представляет содержимое файла (Binary Large Object).">Blob</a>, <a class="el" href="classTree.html" title="Представляет состояние директории в СКВ, реализуя контракт VcsObject.">Tree</a>, <a class="el" href="classCommit.html" title="Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория.">Commit</a>). </p>
+<div class="textblock"><p>Модульные тесты для класса ObjectStorage, проверяющие сохранение, генерацию путей файлов, сжатие и целостность загрузки объектов для всех типов VcsObject (Blob, Tree, Commit). </p>
 <dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

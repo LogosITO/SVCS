@@ -92,48 +92,53 @@ $(function(){initNavTree('HistoryCommandTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Integration tests for the <a class="el" href="classHistoryCommand.html" title="Command for viewing the history of saves (commits) in the repository.">HistoryCommand</a> class, covering core functionality, format options, limit handling, and argument validation.  
+<p>Integration tests for the HistoryCommand class, covering core functionality, format options, limit handling, and argument validation.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="IntHistoryCommandTest_8hxx_source.html">utils/IntHistoryCommandTest.hxx</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli" id="r_svcs_3A_3Atest_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli.html">svcs::test::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for command-line interface components. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae016d068b13e43383cc1dceabd5b8dea" id="r_ae016d068b13e43383cc1dceabd5b8dea"><td class="memItemLeft" align="right" valign="top"><a id="ae016d068b13e43383cc1dceabd5b8dea" name="ae016d068b13e43383cc1dceabd5b8dea"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, DebugCommitHistory)</td></tr>
-<tr class="memitem:ad08849bbc1510600fd6bce3077a044dc" id="r_ad08849bbc1510600fd6bce3077a044dc"><td class="memItemLeft" align="right" valign="top"><a id="ad08849bbc1510600fd6bce3077a044dc" name="ad08849bbc1510600fd6bce3077a044dc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, HistoryNoCommits)</td></tr>
-<tr class="memitem:aa8c014f535a8189b11159ec27d3bd51d" id="r_aa8c014f535a8189b11159ec27d3bd51d"><td class="memItemLeft" align="right" valign="top"><a id="aa8c014f535a8189b11159ec27d3bd51d" name="aa8c014f535a8189b11159ec27d3bd51d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, HistoryWithCommits)</td></tr>
-<tr class="memitem:a7cc2fb502987e173a91a59bd6569f99a" id="r_a7cc2fb502987e173a91a59bd6569f99a"><td class="memItemLeft" align="right" valign="top"><a id="a7cc2fb502987e173a91a59bd6569f99a" name="a7cc2fb502987e173a91a59bd6569f99a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, HistoryOnelineFormat)</td></tr>
-<tr class="memitem:ace9b312aa404f28d82e67765beaeffc6" id="r_ace9b312aa404f28d82e67765beaeffc6"><td class="memItemLeft" align="right" valign="top"><a id="ace9b312aa404f28d82e67765beaeffc6" name="ace9b312aa404f28d82e67765beaeffc6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, DebugLastNCommitsDetailed)</td></tr>
-<tr class="memitem:a8fc9d79222925fc8c0f076f7fdf4934f" id="r_a8fc9d79222925fc8c0f076f7fdf4934f"><td class="memItemLeft" align="right" valign="top"><a id="a8fc9d79222925fc8c0f076f7fdf4934f" name="a8fc9d79222925fc8c0f076f7fdf4934f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, HistoryLastNWithOneline)</td></tr>
-<tr class="memitem:afdc44f8c4ae481b918a1a322da47cb87" id="r_afdc44f8c4ae481b918a1a322da47cb87"><td class="memItemLeft" align="right" valign="top"><a id="afdc44f8c4ae481b918a1a322da47cb87" name="afdc44f8c4ae481b918a1a322da47cb87"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, ErrorWhenNoRepository)</td></tr>
-<tr class="memitem:a8359966d60931f1d6e702df6148ec9da" id="r_a8359966d60931f1d6e702df6148ec9da"><td class="memItemLeft" align="right" valign="top"><a id="a8359966d60931f1d6e702df6148ec9da" name="a8359966d60931f1d6e702df6148ec9da"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, ShowHelp)</td></tr>
-<tr class="memitem:acae3eb413aae9e9296e67231d0f5e2bb" id="r_acae3eb413aae9e9296e67231d0f5e2bb"><td class="memItemLeft" align="right" valign="top"><a id="acae3eb413aae9e9296e67231d0f5e2bb" name="acae3eb413aae9e9296e67231d0f5e2bb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, ErrorMissingLimitValue)</td></tr>
-<tr class="memitem:af447292b757fb35b3408024c28120814" id="r_af447292b757fb35b3408024c28120814"><td class="memItemLeft" align="right" valign="top"><a id="af447292b757fb35b3408024c28120814" name="af447292b757fb35b3408024c28120814"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, ErrorInvalidLimitValue)</td></tr>
-<tr class="memitem:af72abe0c5c34a1ebede329ba58cd70d9" id="r_af72abe0c5c34a1ebede329ba58cd70d9"><td class="memItemLeft" align="right" valign="top"><a id="af72abe0c5c34a1ebede329ba58cd70d9" name="af72abe0c5c34a1ebede329ba58cd70d9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, ErrorNegativeLimit)</td></tr>
-<tr class="memitem:a40800a10621b8cb0b80977f37a87a525" id="r_a40800a10621b8cb0b80977f37a87a525"><td class="memItemLeft" align="right" valign="top"><a id="a40800a10621b8cb0b80977f37a87a525" name="a40800a10621b8cb0b80977f37a87a525"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, ErrorZeroLimit)</td></tr>
-<tr class="memitem:a2073587b2b9e602c7112858f584496c5" id="r_a2073587b2b9e602c7112858f584496c5"><td class="memItemLeft" align="right" valign="top"><a id="a2073587b2b9e602c7112858f584496c5" name="a2073587b2b9e602c7112858f584496c5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, ErrorUnknownOption)</td></tr>
-<tr class="memitem:a7f7689024c4f1ccd206363c18cbc87ee" id="r_a7f7689024c4f1ccd206363c18cbc87ee"><td class="memItemLeft" align="right" valign="top"><a id="a7f7689024c4f1ccd206363c18cbc87ee" name="a7f7689024c4f1ccd206363c18cbc87ee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, ErrorMutuallyExclusiveOptions)</td></tr>
-<tr class="memitem:a2e3594552e4a2fa135956ebc19dbbc44" id="r_a2e3594552e4a2fa135956ebc19dbbc44"><td class="memItemLeft" align="right" valign="top"><a id="a2e3594552e4a2fa135956ebc19dbbc44" name="a2e3594552e4a2fa135956ebc19dbbc44"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHistoryCommandTest.html">HistoryCommandTest</a>, HistoryFullDetails)</td></tr>
+<tr class="memitem:a16c89e8a8e899f15be3224d3c9c6dc69" id="r_a16c89e8a8e899f15be3224d3c9c6dc69"><td class="memItemLeft" align="right" valign="top"><a id="a16c89e8a8e899f15be3224d3c9c6dc69" name="a16c89e8a8e899f15be3224d3c9c6dc69"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, DebugCommitHistory)</td></tr>
+<tr class="memitem:a403664cf0d9701a91a6e9b28aea1d2c0" id="r_a403664cf0d9701a91a6e9b28aea1d2c0"><td class="memItemLeft" align="right" valign="top"><a id="a403664cf0d9701a91a6e9b28aea1d2c0" name="a403664cf0d9701a91a6e9b28aea1d2c0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, HistoryNoCommits)</td></tr>
+<tr class="memitem:a1c12d48233c8ad591880c3187b9824ea" id="r_a1c12d48233c8ad591880c3187b9824ea"><td class="memItemLeft" align="right" valign="top"><a id="a1c12d48233c8ad591880c3187b9824ea" name="a1c12d48233c8ad591880c3187b9824ea"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, HistoryWithCommits)</td></tr>
+<tr class="memitem:a163afa85a49d78ec87411cb01dfdb7e4" id="r_a163afa85a49d78ec87411cb01dfdb7e4"><td class="memItemLeft" align="right" valign="top"><a id="a163afa85a49d78ec87411cb01dfdb7e4" name="a163afa85a49d78ec87411cb01dfdb7e4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, HistoryOnelineFormat)</td></tr>
+<tr class="memitem:afebc408df6f7d63b86e0b248d17f29ce" id="r_afebc408df6f7d63b86e0b248d17f29ce"><td class="memItemLeft" align="right" valign="top"><a id="afebc408df6f7d63b86e0b248d17f29ce" name="afebc408df6f7d63b86e0b248d17f29ce"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, DebugLastNCommitsDetailed)</td></tr>
+<tr class="memitem:ae90652b81d7eeb1f73c2eced44f7f55b" id="r_ae90652b81d7eeb1f73c2eced44f7f55b"><td class="memItemLeft" align="right" valign="top"><a id="ae90652b81d7eeb1f73c2eced44f7f55b" name="ae90652b81d7eeb1f73c2eced44f7f55b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, HistoryLastNWithOneline)</td></tr>
+<tr class="memitem:a9f83d2c6b2d80c0df61eea5ec42f7fff" id="r_a9f83d2c6b2d80c0df61eea5ec42f7fff"><td class="memItemLeft" align="right" valign="top"><a id="a9f83d2c6b2d80c0df61eea5ec42f7fff" name="a9f83d2c6b2d80c0df61eea5ec42f7fff"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, ErrorWhenNoRepository)</td></tr>
+<tr class="memitem:ad3c7312c078aa11966407a6a96fed181" id="r_ad3c7312c078aa11966407a6a96fed181"><td class="memItemLeft" align="right" valign="top"><a id="ad3c7312c078aa11966407a6a96fed181" name="ad3c7312c078aa11966407a6a96fed181"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, ShowHelp)</td></tr>
+<tr class="memitem:a2b488ffb730c16805a5d4ea64ad46255" id="r_a2b488ffb730c16805a5d4ea64ad46255"><td class="memItemLeft" align="right" valign="top"><a id="a2b488ffb730c16805a5d4ea64ad46255" name="a2b488ffb730c16805a5d4ea64ad46255"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, ErrorMissingLimitValue)</td></tr>
+<tr class="memitem:ab37e407a7d3c63a96cbcbd27d0b5d533" id="r_ab37e407a7d3c63a96cbcbd27d0b5d533"><td class="memItemLeft" align="right" valign="top"><a id="ab37e407a7d3c63a96cbcbd27d0b5d533" name="ab37e407a7d3c63a96cbcbd27d0b5d533"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, ErrorInvalidLimitValue)</td></tr>
+<tr class="memitem:a24414224b7a8cd799e0a9c22204c0240" id="r_a24414224b7a8cd799e0a9c22204c0240"><td class="memItemLeft" align="right" valign="top"><a id="a24414224b7a8cd799e0a9c22204c0240" name="a24414224b7a8cd799e0a9c22204c0240"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, ErrorNegativeLimit)</td></tr>
+<tr class="memitem:a024c2e344232d2619696bbc739826353" id="r_a024c2e344232d2619696bbc739826353"><td class="memItemLeft" align="right" valign="top"><a id="a024c2e344232d2619696bbc739826353" name="a024c2e344232d2619696bbc739826353"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, ErrorZeroLimit)</td></tr>
+<tr class="memitem:a0b85d4590cecc5421cc962be27da1e14" id="r_a0b85d4590cecc5421cc962be27da1e14"><td class="memItemLeft" align="right" valign="top"><a id="a0b85d4590cecc5421cc962be27da1e14" name="a0b85d4590cecc5421cc962be27da1e14"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, ErrorUnknownOption)</td></tr>
+<tr class="memitem:ac8917713d05ba34aa2bc008c9f851bfb" id="r_ac8917713d05ba34aa2bc008c9f851bfb"><td class="memItemLeft" align="right" valign="top"><a id="ac8917713d05ba34aa2bc008c9f851bfb" name="ac8917713d05ba34aa2bc008c9f851bfb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, ErrorMutuallyExclusiveOptions)</td></tr>
+<tr class="memitem:adb080ce71aa36efc152dae176cdf9e99" id="r_adb080ce71aa36efc152dae176cdf9e99"><td class="memItemLeft" align="right" valign="top"><a id="adb080ce71aa36efc152dae176cdf9e99" name="adb080ce71aa36efc152dae176cdf9e99"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest.html">HistoryCommandTest</a>, HistoryFullDetails)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Integration tests for the <a class="el" href="classHistoryCommand.html" title="Command for viewing the history of saves (commits) in the repository.">HistoryCommand</a> class, covering core functionality, format options, limit handling, and argument validation. </p>
-<p>Integration tests for the <a class="el" href="classHistoryCommand.html" title="Command for viewing the history of saves (commits) in the repository.">HistoryCommand</a> class, covering history display, options (&ndash;oneline, &ndash;last N, &ndash;full), and argument validation.</p>
+<div class="textblock"><p>Integration tests for the HistoryCommand class, covering core functionality, format options, limit handling, and argument validation. </p>
+<p>Integration tests for the HistoryCommand class, covering history display, options (&ndash;oneline, &ndash;last N, &ndash;full), and argument validation.</p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p>This file implements the test cases for the <a class="el" href="classHistoryCommandTest.html" title="Google Test fixture for running integration tests against the HistoryCommand.">HistoryCommandTest</a> fixture. It verifies the command's behavior in various repository states and rigorously checks argument parsing and error reporting for all supported flags. Two tests include verbose debugging output to <span class="tt">std::cout</span> to assist in tracing the internal state of the repository manager and the event notifications.</p>
+<p>This file implements the test cases for the HistoryCommandTest fixture. It verifies the command's behavior in various repository states and rigorously checks argument parsing and error reporting for all supported flags. Two tests include verbose debugging output to <span class="tt">std::cout</span> to assist in tracing the internal state of the repository manager and the event notifications.</p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

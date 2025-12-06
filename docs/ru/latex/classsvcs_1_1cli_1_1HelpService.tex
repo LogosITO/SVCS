@@ -1,0 +1,158 @@
+\doxysection{Класс svcs\+::cli\+::Help\+Service}
+\hypertarget{classsvcs_1_1cli_1_1HelpService}{}\label{classsvcs_1_1cli_1_1HelpService}\index{svcs::cli::HelpService@{svcs::cli::HelpService}}
+
+
+Сервис, предоставляющий справочную информацию для команд.  
+
+
+
+
+{\ttfamily \#include $<$Help\+Service.\+hxx$>$}
+
+Граф наследования\+:svcs\+::cli\+::Help\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1cli_1_1HelpService}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a48e82d071c038c517266aacb36f5b98a}{Help\+Service}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ bus, std\+::function$<$ std\+::vector$<$ std\+::string $>$()$>$ get\+Commands, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Description, std\+::function$<$ void(const std\+::string \&)$>$ show\+Help, std\+::function$<$ std\+::string(const std\+::string \&)$>$ get\+Usage=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструирует \doxylink{classsvcs_1_1cli_1_1HelpService}{Help\+Service} путем внедрения необходимых зависимостей в виде обратных вызовов. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a51fc45e41c002a70d477cc30dc3d52a0}{get\+Available\+Commands}} () const
+\begin{DoxyCompactList}\small\item\em Выполняет {\ttfamily get\+Commands\+Callback\+\_\+} для получения списка всех доступных имен команд. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_aea2600a15351225caa966c1f3f6a3420}{get\+Command\+Description}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Выполняет {\ttfamily get\+Description\+Callback\+\_\+} для получения краткого описания конкретной команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a9d635c88b8b370658e7ebe6722225046}{show\+Command\+Help}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Выполняет {\ttfamily show\+Help\+Callback\+\_\+} для запуска отображения подробной справки для конкретной команды. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_a9ed3ffc25e641718af84cadc815dfdd4}{command\+Exists}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Проверяет существование команды путем сравнения со списком, возвращенным {\ttfamily get\+Available\+Commands}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpService_ae013b91f186ea3cdebfbe72fec3442e8}{get\+Command\+Usage}} (const std\+::string \&command\+Name) const
+\begin{DoxyCompactList}\small\item\em Выполняет {\ttfamily get\+Usage\+Callback\+\_\+} для получения синтаксиса использования конкретной команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Сервис, предоставляющий справочную информацию для команд. 
+
+Этот сервис реализует логику приложения для отображения справки. Он использует набор {\bfseries{функций обратного вызова}} ({\ttfamily std\+::function}) для получения данных команд (имена, описания, использование) и отображения конкретной справки. Этот выбор дизайна предотвращает прямую зависимость от \doxylink{classsvcs_1_1cli_1_1CommandFactory}{Command\+Factory}, тем самым разрывая потенциальную {\bfseries{циклическую зависимость}}. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1cli_1_1HelpService_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1cli_1_1HelpService_a48e82d071c038c517266aacb36f5b98a}\index{svcs::cli::HelpService@{svcs::cli::HelpService}!HelpService@{HelpService}}
+\index{HelpService@{HelpService}!svcs::cli::HelpService@{svcs::cli::HelpService}}
+\doxysubsubsection{\texorpdfstring{HelpService()}{HelpService()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpService_a48e82d071c038c517266aacb36f5b98a} 
+svcs\+::cli\+::\+Help\+Service\+::\+Help\+Service (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{bus}{, }\item[{std\+::function$<$ std\+::vector$<$ std\+::string $>$()$>$}]{get\+Commands}{, }\item[{std\+::function$<$ std\+::string(const std\+::string \&)$>$}]{get\+Description}{, }\item[{std\+::function$<$ void(const std\+::string \&)$>$}]{show\+Help}{, }\item[{std\+::function$<$ std\+::string(const std\+::string \&)$>$}]{get\+Usage}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Конструирует \doxylink{classsvcs_1_1cli_1_1HelpService}{Help\+Service} путем внедрения необходимых зависимостей в виде обратных вызовов. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bus} & Общий указатель на шину событий для уведомлений. \\
+\hline
+{\em get\+Commands} & Функция (обратный вызов), которая возвращает список доступных имен команд. \\
+\hline
+{\em get\+Description} & Функция (обратный вызов), которая возвращает краткое описание команды. \\
+\hline
+{\em show\+Help} & Функция (обратный вызов), которая запускает полное отображение справки для команды. \\
+\hline
+{\em get\+Usage} & Функция (обратный вызов), которая возвращает синтаксис использования команды (по умолчанию nullptr, если не требуется строго). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1cli_1_1HelpService_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1cli_1_1HelpService_a9ed3ffc25e641718af84cadc815dfdd4}\index{svcs::cli::HelpService@{svcs::cli::HelpService}!commandExists@{commandExists}}
+\index{commandExists@{commandExists}!svcs::cli::HelpService@{svcs::cli::HelpService}}
+\doxysubsubsection{\texorpdfstring{commandExists()}{commandExists()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpService_a9ed3ffc25e641718af84cadc815dfdd4} 
+bool svcs\+::cli\+::\+Help\+Service\+::command\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Проверяет существование команды путем сравнения со списком, возвращенным {\ttfamily get\+Available\+Commands}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em command\+Name} & Имя команды для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily true} если команда зарегистрирована, {\ttfamily false} в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1HelpService_a51fc45e41c002a70d477cc30dc3d52a0}\index{svcs::cli::HelpService@{svcs::cli::HelpService}!getAvailableCommands@{getAvailableCommands}}
+\index{getAvailableCommands@{getAvailableCommands}!svcs::cli::HelpService@{svcs::cli::HelpService}}
+\doxysubsubsection{\texorpdfstring{getAvailableCommands()}{getAvailableCommands()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpService_a51fc45e41c002a70d477cc30dc3d52a0} 
+std\+::vector$<$ std\+::string $>$ svcs\+::cli\+::\+Help\+Service\+::get\+Available\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Выполняет {\ttfamily get\+Commands\+Callback\+\_\+} для получения списка всех доступных имен команд. 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор строк, содержащий имена всех зарегистрированных команд. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1HelpService_aea2600a15351225caa966c1f3f6a3420}\index{svcs::cli::HelpService@{svcs::cli::HelpService}!getCommandDescription@{getCommandDescription}}
+\index{getCommandDescription@{getCommandDescription}!svcs::cli::HelpService@{svcs::cli::HelpService}}
+\doxysubsubsection{\texorpdfstring{getCommandDescription()}{getCommandDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpService_aea2600a15351225caa966c1f3f6a3420} 
+std\+::string svcs\+::cli\+::\+Help\+Service\+::get\+Command\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Выполняет {\ttfamily get\+Description\+Callback\+\_\+} для получения краткого описания конкретной команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em command\+Name} & Имя команды. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Описание команды или "{}Неизвестная команда"{}, если имя команды недействительно или обратный вызов не сработал. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1HelpService_ae013b91f186ea3cdebfbe72fec3442e8}\index{svcs::cli::HelpService@{svcs::cli::HelpService}!getCommandUsage@{getCommandUsage}}
+\index{getCommandUsage@{getCommandUsage}!svcs::cli::HelpService@{svcs::cli::HelpService}}
+\doxysubsubsection{\texorpdfstring{getCommandUsage()}{getCommandUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpService_ae013b91f186ea3cdebfbe72fec3442e8} 
+std\+::string svcs\+::cli\+::\+Help\+Service\+::get\+Command\+Usage (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Выполняет {\ttfamily get\+Usage\+Callback\+\_\+} для получения синтаксиса использования конкретной команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em command\+Name} & Имя команды. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка использования команды или пустая строка, если команда не найдена или обратный вызов не установлен. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1cli_1_1HelpService_a9d635c88b8b370658e7ebe6722225046}\index{svcs::cli::HelpService@{svcs::cli::HelpService}!showCommandHelp@{showCommandHelp}}
+\index{showCommandHelp@{showCommandHelp}!svcs::cli::HelpService@{svcs::cli::HelpService}}
+\doxysubsubsection{\texorpdfstring{showCommandHelp()}{showCommandHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1cli_1_1HelpService_a9d635c88b8b370658e7ebe6722225046} 
+void svcs\+::cli\+::\+Help\+Service\+::show\+Command\+Help (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command\+Name}{}\end{DoxyParamCaption}) const}
+
+
+
+Выполняет {\ttfamily show\+Help\+Callback\+\_\+} для запуска отображения подробной справки для конкретной команды. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em command\+Name} & Имя команды, для которой показывается справка. \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{HelpService_8hxx}{Help\+Service.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{HelpService_8cxx}{Help\+Service.\+cxx}}\end{DoxyCompactItemize}

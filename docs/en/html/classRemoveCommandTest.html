@@ -92,7 +92,7 @@ $(function(){initNavTree('classRemoveCommandTest.html','','classRemoveCommandTes
 </div><!--header-->
 <div class="contents">
 
-<p>Google Test fixture for running integration tests against the <a class="el" href="classRemoveCommand.html" title="Command for removing files from the staging area.">RemoveCommand</a>.  
+<p>Google Test fixture for running integration tests against the RemoveCommand.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IntRemoveCommandTest_8hxx_source.html">IntRemoveCommandTest.hxx</a>&gt;</code></p>
@@ -114,8 +114,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a90e4479ea9547df7885ea31f7ae08be5" id="r_a90e4479ea9547df7885ea31f7ae08be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90e4479ea9547df7885ea31f7ae08be5">createTestDirectory</a> (const std::string &amp;dirname)</td></tr>
 <tr class="memdesc:a90e4479ea9547df7885ea31f7ae08be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a test directory in the temporary location.  <br /></td></tr>
 <tr class="memitem:a2b86efc078f51d495d09353cb94251e5" id="r_a2b86efc078f51d495d09353cb94251e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b86efc078f51d495d09353cb94251e5">stageFiles</a> (const std::vector&lt; std::string &gt; &amp;files)</td></tr>
-<tr class="memdesc:a2b86efc078f51d495d09353cb94251e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files (using the add command logic for convenience) in the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging area.  <br /></td></tr>
-<tr class="memitem:aea5058104cb64f2573de6ec9acc24f51" id="r_aea5058104cb64f2573de6ec9acc24f51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea5058104cb64f2573de6ec9acc24f51">containsMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memdesc:a2b86efc078f51d495d09353cb94251e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stages a list of files (using the add command logic for convenience) in the RepositoryManager's staging area.  <br /></td></tr>
+<tr class="memitem:aea5058104cb64f2573de6ec9acc24f51" id="r_aea5058104cb64f2573de6ec9acc24f51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea5058104cb64f2573de6ec9acc24f51">containsMessage</a> (const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</td></tr>
 <tr class="memdesc:aea5058104cb64f2573de6ec9acc24f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific message (substring) exists in any event notification.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -124,17 +124,17 @@ Protected Attributes</h2></td></tr>
 std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockEventBus</b></td></tr>
 <tr class="memdesc:aaa1ab8e6182258023a2d9162dc4c089f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the mock event bus (observer). <br /></td></tr>
 <tr class="memitem:a15568c85580d2f6515c679fdadef3df8" id="r_a15568c85580d2f6515c679fdadef3df8"><td class="memItemLeft" align="right" valign="top"><a id="a15568c85580d2f6515c679fdadef3df8" name="a15568c85580d2f6515c679fdadef3df8"></a>
-std::shared_ptr&lt; <a class="el" href="classRepositoryManager.html">RepositoryManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
+std::shared_ptr&lt; RepositoryManager &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>repoManager</b></td></tr>
 <tr class="memdesc:a15568c85580d2f6515c679fdadef3df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the repository core logic component. <br /></td></tr>
 <tr class="memitem:a3f82597bc8ae4cb6d8e96f9e097bb1df" id="r_a3f82597bc8ae4cb6d8e96f9e097bb1df"><td class="memItemLeft" align="right" valign="top"><a id="a3f82597bc8ae4cb6d8e96f9e097bb1df" name="a3f82597bc8ae4cb6d8e96f9e097bb1df"></a>
-std::unique_ptr&lt; <a class="el" href="classRemoveCommand.html">RemoveCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+std::unique_ptr&lt; RemoveCommand &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
 <tr class="memdesc:a3f82597bc8ae4cb6d8e96f9e097bb1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the command being tested. <br /></td></tr>
 <tr class="memitem:afaa2df2092f0992a12d69cd988a38f9f" id="r_afaa2df2092f0992a12d69cd988a38f9f"><td class="memItemLeft" align="right" valign="top"><a id="afaa2df2092f0992a12d69cd988a38f9f" name="afaa2df2092f0992a12d69cd988a38f9f"></a>
 std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>testDir</b></td></tr>
 <tr class="memdesc:afaa2df2092f0992a12d69cd988a38f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the temporary test repository directory. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Google Test fixture for running integration tests against the <a class="el" href="classRemoveCommand.html" title="Command for removing files from the staging area.">RemoveCommand</a>. </p>
+<div class="textblock"><p>Google Test fixture for running integration tests against the RemoveCommand. </p>
 <p>This fixture provides the necessary infrastructure for testing the file removal command, ensuring it correctly stages files for removal from the repository, handles errors, and respects command line options. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aea5058104cb64f2573de6ec9acc24f51" name="aea5058104cb64f2573de6ec9acc24f51"></a>
@@ -149,7 +149,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
         <tr>
           <td class="memname">bool RemoveCommandTest::containsMessage </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+          <td class="paramtype">const std::vector&lt; Event &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -298,7 +298,7 @@ std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>test
 </table>
 </div><div class="memdoc">
 
-<p>Stages a list of files (using the add command logic for convenience) in the <a class="el" href="classRepositoryManager.html" title="Manages all physical file and directory operations within the SVCS repository.">RepositoryManager</a>'s staging area. </p>
+<p>Stages a list of files (using the add command logic for convenience) in the RepositoryManager's staging area. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">files</td><td>A vector of file names to stage. </td></tr>

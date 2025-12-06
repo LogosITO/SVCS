@@ -99,50 +99,21 @@ $(function(){initNavTree('cli_2include_2Utils_8hxx.html','',''); });
 </div>
 <p><a href="cli_2include_2Utils_8hxx_source.html">См. исходные тексты.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:svcs_3A_3Acli" id="r_svcs_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1cli.html">svcs::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Компоненты командной строки и реализации команд. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:a4b171a7d705ca7ae2910200e76bd96e2" id="r_a4b171a7d705ca7ae2910200e76bd96e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b171a7d705ca7ae2910200e76bd96e2">printDebug</a> (const std::string &amp;message)</td></tr>
-<tr class="memdesc:a4b171a7d705ca7ae2910200e76bd96e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Условно выводит отладочное сообщение в стандартный вывод.  <br /></td></tr>
+<tr class="memitem:a7836bbfca1be26e7686be6b4463ccb78" id="r_a7836bbfca1be26e7686be6b4463ccb78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1cli.html#a7836bbfca1be26e7686be6b4463ccb78">svcs::cli::printDebug</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:a7836bbfca1be26e7686be6b4463ccb78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Условно выводит отладочное сообщение в стандартный вывод.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Служебные функции для условного вывода отладки. </p>
 <dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 <p>Этот заголовок определяет функцию <span class="tt">printDebug</span>, которая предоставляет простой механизм для логирования отладочных сообщений в стандартный вывод только тогда, когда определен макрос препроцессора <span class="tt">DEBUG_MODE</span>. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
-<a id="a4b171a7d705ca7ae2910200e76bd96e2" name="a4b171a7d705ca7ae2910200e76bd96e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b171a7d705ca7ae2910200e76bd96e2">&#9670;&#160;</a></span>printDebug()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void printDebug </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Условно выводит отладочное сообщение в стандартный вывод. </p>
-<p>Сообщение выводится только если макрос DEBUG_MODE определен во время компиляции. Функция помечена как <span class="tt">inline</span>, чтобы предложить встраивание компилятором, и компилируется в пустую операцию, когда DEBUG_MODE не определен, что приводит к нулевым накладным расходам во время выполнения в релизных сборках. </p><dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>Строковое сообщение для вывода, с префиксом "DEBUG: ". </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

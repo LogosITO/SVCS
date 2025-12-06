@@ -20,6 +20,21 @@
 
 /**
  * @english
+ * @namespace svcs::core
+ * @brief Core VCS data structures and object model.
+ * @details Contains fundamental VCS object types like Blob, Tree, Commit
+ * that form the building blocks of the version control system.
+ *
+ * @russian
+ * @namespace svcs::core
+ * @brief Основные структуры данных СКВ и модель объектов.
+ * @details Содержит фундаментальные типы объектов СКВ, такие как Blob, Tree, Commit,
+ * которые формируют строительные блоки системы контроля версий.
+ */
+namespace svcs::core {
+
+/**
+ * @english
  * @class VcsObject
  * @brief Abstract base class representing any storable, addressable object within the VCS.
  * @details VcsObject enforces the mandatory presence of a hash ID, serialization logic,
@@ -214,3 +229,5 @@ public:
      */
     [[nodiscard]] std::string getType() const override;
 };
+
+}

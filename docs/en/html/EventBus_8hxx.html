@@ -92,7 +92,7 @@ $(function(){initNavTree('EventBus_8hxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the central event bus (<a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>), acting as the <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a>.  
+<p>Implementation of the central event bus (EventBus), acting as the ISubject.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Event_8hxx_source.html">Event.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="IObserver_8hxx_source.html">IObserver.hxx</a>&quot;</code><br />
@@ -106,59 +106,61 @@ $(function(){initNavTree('EventBus_8hxx.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:EventBus" id="r_EventBus"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventBus.html">EventBus</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A thread-safe implementation of <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> for centralized event distribution.  <a href="classEventBus.html#details">More...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Aservices_3A_3AEventBus" id="r_svcs_3A_3Aservices_3A_3AEventBus"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1services_1_1EventBus.html">svcs::services::EventBus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A thread-safe implementation of <a class="el" href="classsvcs_1_1services_1_1ISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a> for centralized event distribution.  <a href="classsvcs_1_1services_1_1EventBus.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Aservices" id="r_svcs_3A_3Aservices"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1services.html">svcs::services</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1services"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service layer components and infrastructure services. <br /></td></tr>
 <tr class="memitem:ConsoleColor" id="r_ConsoleColor"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceConsoleColor.html">ConsoleColor</a></td></tr>
 <tr class="memdesc:namespaceConsoleColor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines ANSI color codes for console output formatting. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a89fb64a08811c804a798a416e141ef6c" id="r_a89fb64a08811c804a798a416e141ef6c"><td class="memItemLeft" align="right" valign="top"><a id="a89fb64a08811c804a798a416e141ef6c" name="a89fb64a08811c804a798a416e141ef6c"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::RESET</b> = &quot;\033[0m&quot;</td></tr>
-<tr class="memitem:adf17c4a84e1dab465d17a0f27c67e610" id="r_adf17c4a84e1dab465d17a0f27c67e610"><td class="memItemLeft" align="right" valign="top"><a id="adf17c4a84e1dab465d17a0f27c67e610" name="adf17c4a84e1dab465d17a0f27c67e610"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BLACK</b> = &quot;\033[30m&quot;</td></tr>
-<tr class="memitem:a5f2c467ffed2ff3a8397ea57f053e748" id="r_a5f2c467ffed2ff3a8397ea57f053e748"><td class="memItemLeft" align="right" valign="top"><a id="a5f2c467ffed2ff3a8397ea57f053e748" name="a5f2c467ffed2ff3a8397ea57f053e748"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::RED</b> = &quot;\033[31m&quot;</td></tr>
-<tr class="memitem:a1f4812679c4db5d085c187530fba6952" id="r_a1f4812679c4db5d085c187530fba6952"><td class="memItemLeft" align="right" valign="top"><a id="a1f4812679c4db5d085c187530fba6952" name="a1f4812679c4db5d085c187530fba6952"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::GREEN</b> = &quot;\033[32m&quot;</td></tr>
-<tr class="memitem:a8a63c6ebe4ffb4681e13ee417d011218" id="r_a8a63c6ebe4ffb4681e13ee417d011218"><td class="memItemLeft" align="right" valign="top"><a id="a8a63c6ebe4ffb4681e13ee417d011218" name="a8a63c6ebe4ffb4681e13ee417d011218"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::YELLOW</b> = &quot;\033[33m&quot;</td></tr>
-<tr class="memitem:adf21af787ff02c93bda02e48acb63215" id="r_adf21af787ff02c93bda02e48acb63215"><td class="memItemLeft" align="right" valign="top"><a id="adf21af787ff02c93bda02e48acb63215" name="adf21af787ff02c93bda02e48acb63215"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BLUE</b> = &quot;\033[34m&quot;</td></tr>
-<tr class="memitem:a49254dd6a185d944511e1aaf005fba46" id="r_a49254dd6a185d944511e1aaf005fba46"><td class="memItemLeft" align="right" valign="top"><a id="a49254dd6a185d944511e1aaf005fba46" name="a49254dd6a185d944511e1aaf005fba46"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::MAGENTA</b> = &quot;\033[35m&quot;</td></tr>
-<tr class="memitem:a183dc90b97d71ded19f30a686d936a9f" id="r_a183dc90b97d71ded19f30a686d936a9f"><td class="memItemLeft" align="right" valign="top"><a id="a183dc90b97d71ded19f30a686d936a9f" name="a183dc90b97d71ded19f30a686d936a9f"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::CYAN</b> = &quot;\033[36m&quot;</td></tr>
-<tr class="memitem:a1ae1a1966b24e48acf324d00382bbd97" id="r_a1ae1a1966b24e48acf324d00382bbd97"><td class="memItemLeft" align="right" valign="top"><a id="a1ae1a1966b24e48acf324d00382bbd97" name="a1ae1a1966b24e48acf324d00382bbd97"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::WHITE</b> = &quot;\033[37m&quot;</td></tr>
-<tr class="memitem:a0afa3f34dd9caf52a8ccfaf400ee52bc" id="r_a0afa3f34dd9caf52a8ccfaf400ee52bc"><td class="memItemLeft" align="right" valign="top"><a id="a0afa3f34dd9caf52a8ccfaf400ee52bc" name="a0afa3f34dd9caf52a8ccfaf400ee52bc"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BRIGHT_RED</b> = &quot;\033[91m&quot;</td></tr>
-<tr class="memitem:a62c13ceb62d100b247d0fcef96b8c6c2" id="r_a62c13ceb62d100b247d0fcef96b8c6c2"><td class="memItemLeft" align="right" valign="top"><a id="a62c13ceb62d100b247d0fcef96b8c6c2" name="a62c13ceb62d100b247d0fcef96b8c6c2"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BRIGHT_GREEN</b> = &quot;\033[92m&quot;</td></tr>
-<tr class="memitem:ac0288a78b911cb60671a90fba0d940c0" id="r_ac0288a78b911cb60671a90fba0d940c0"><td class="memItemLeft" align="right" valign="top"><a id="ac0288a78b911cb60671a90fba0d940c0" name="ac0288a78b911cb60671a90fba0d940c0"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BRIGHT_YELLOW</b> = &quot;\033[93m&quot;</td></tr>
-<tr class="memitem:a72fcca0718fd191ca9e2e803cbd3472d" id="r_a72fcca0718fd191ca9e2e803cbd3472d"><td class="memItemLeft" align="right" valign="top"><a id="a72fcca0718fd191ca9e2e803cbd3472d" name="a72fcca0718fd191ca9e2e803cbd3472d"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BRIGHT_BLUE</b> = &quot;\033[94m&quot;</td></tr>
-<tr class="memitem:a57adc24076cc0ab51eeeb783575855da" id="r_a57adc24076cc0ab51eeeb783575855da"><td class="memItemLeft" align="right" valign="top"><a id="a57adc24076cc0ab51eeeb783575855da" name="a57adc24076cc0ab51eeeb783575855da"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BRIGHT_MAGENTA</b> = &quot;\033[95m&quot;</td></tr>
-<tr class="memitem:aae0f16f2eaeea83669010304f1c1c4be" id="r_aae0f16f2eaeea83669010304f1c1c4be"><td class="memItemLeft" align="right" valign="top"><a id="aae0f16f2eaeea83669010304f1c1c4be" name="aae0f16f2eaeea83669010304f1c1c4be"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BRIGHT_CYAN</b> = &quot;\033[96m&quot;</td></tr>
-<tr class="memitem:a616a4a6de901619a7ec63800d478321d" id="r_a616a4a6de901619a7ec63800d478321d"><td class="memItemLeft" align="right" valign="top"><a id="a616a4a6de901619a7ec63800d478321d" name="a616a4a6de901619a7ec63800d478321d"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BRIGHT_WHITE</b> = &quot;\033[97m&quot;</td></tr>
-<tr class="memitem:a5394540c7599ac7e490453f564007cc3" id="r_a5394540c7599ac7e490453f564007cc3"><td class="memItemLeft" align="right" valign="top"><a id="a5394540c7599ac7e490453f564007cc3" name="a5394540c7599ac7e490453f564007cc3"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::BOLD</b> = &quot;\033[1m&quot;</td></tr>
-<tr class="memitem:ae55191ca4c375a20a290e65f1f22ad62" id="r_ae55191ca4c375a20a290e65f1f22ad62"><td class="memItemLeft" align="right" valign="top"><a id="ae55191ca4c375a20a290e65f1f22ad62" name="ae55191ca4c375a20a290e65f1f22ad62"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::DIM</b> = &quot;\033[2m&quot;</td></tr>
-<tr class="memitem:af63426ecf732ab5aaa1884dea53593a2" id="r_af63426ecf732ab5aaa1884dea53593a2"><td class="memItemLeft" align="right" valign="top"><a id="af63426ecf732ab5aaa1884dea53593a2" name="af63426ecf732ab5aaa1884dea53593a2"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::ITALIC</b> = &quot;\033[3m&quot;</td></tr>
-<tr class="memitem:afd8b68c523710cb73e11ce7363769403" id="r_afd8b68c523710cb73e11ce7363769403"><td class="memItemLeft" align="right" valign="top"><a id="afd8b68c523710cb73e11ce7363769403" name="afd8b68c523710cb73e11ce7363769403"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ConsoleColor::UNDERLINE</b> = &quot;\033[4m&quot;</td></tr>
+<tr class="memitem:a0a58774c2f6037f9cca010ed390fa0f6" id="r_a0a58774c2f6037f9cca010ed390fa0f6"><td class="memItemLeft" align="right" valign="top"><a id="a0a58774c2f6037f9cca010ed390fa0f6" name="a0a58774c2f6037f9cca010ed390fa0f6"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::RESET</b> = &quot;\033[0m&quot;</td></tr>
+<tr class="memitem:add2817d613e4816226de207f4da6be78" id="r_add2817d613e4816226de207f4da6be78"><td class="memItemLeft" align="right" valign="top"><a id="add2817d613e4816226de207f4da6be78" name="add2817d613e4816226de207f4da6be78"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BLACK</b> = &quot;\033[30m&quot;</td></tr>
+<tr class="memitem:ab0345dd978737ffecf196038cef10ad1" id="r_ab0345dd978737ffecf196038cef10ad1"><td class="memItemLeft" align="right" valign="top"><a id="ab0345dd978737ffecf196038cef10ad1" name="ab0345dd978737ffecf196038cef10ad1"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::RED</b> = &quot;\033[31m&quot;</td></tr>
+<tr class="memitem:a6597d4cf49b92051bfc763b8303bc377" id="r_a6597d4cf49b92051bfc763b8303bc377"><td class="memItemLeft" align="right" valign="top"><a id="a6597d4cf49b92051bfc763b8303bc377" name="a6597d4cf49b92051bfc763b8303bc377"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::GREEN</b> = &quot;\033[32m&quot;</td></tr>
+<tr class="memitem:a6d27bb8226b88da941e7a12087b93c19" id="r_a6d27bb8226b88da941e7a12087b93c19"><td class="memItemLeft" align="right" valign="top"><a id="a6d27bb8226b88da941e7a12087b93c19" name="a6d27bb8226b88da941e7a12087b93c19"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::YELLOW</b> = &quot;\033[33m&quot;</td></tr>
+<tr class="memitem:aa2f649cb6aaf06cb24de188fca5b4c31" id="r_aa2f649cb6aaf06cb24de188fca5b4c31"><td class="memItemLeft" align="right" valign="top"><a id="aa2f649cb6aaf06cb24de188fca5b4c31" name="aa2f649cb6aaf06cb24de188fca5b4c31"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BLUE</b> = &quot;\033[34m&quot;</td></tr>
+<tr class="memitem:a385529db1b2fa10b3cd4ca6603916456" id="r_a385529db1b2fa10b3cd4ca6603916456"><td class="memItemLeft" align="right" valign="top"><a id="a385529db1b2fa10b3cd4ca6603916456" name="a385529db1b2fa10b3cd4ca6603916456"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::MAGENTA</b> = &quot;\033[35m&quot;</td></tr>
+<tr class="memitem:a6f75e03a0560a761c780784939fa8029" id="r_a6f75e03a0560a761c780784939fa8029"><td class="memItemLeft" align="right" valign="top"><a id="a6f75e03a0560a761c780784939fa8029" name="a6f75e03a0560a761c780784939fa8029"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::CYAN</b> = &quot;\033[36m&quot;</td></tr>
+<tr class="memitem:a9eb24ae418ae0176ca4bd52b04b9e846" id="r_a9eb24ae418ae0176ca4bd52b04b9e846"><td class="memItemLeft" align="right" valign="top"><a id="a9eb24ae418ae0176ca4bd52b04b9e846" name="a9eb24ae418ae0176ca4bd52b04b9e846"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::WHITE</b> = &quot;\033[37m&quot;</td></tr>
+<tr class="memitem:a1349d83986997ffaa50debfb682e8740" id="r_a1349d83986997ffaa50debfb682e8740"><td class="memItemLeft" align="right" valign="top"><a id="a1349d83986997ffaa50debfb682e8740" name="a1349d83986997ffaa50debfb682e8740"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BRIGHT_RED</b> = &quot;\033[91m&quot;</td></tr>
+<tr class="memitem:ac3d8ae5cc99e47c95a96714ff1351814" id="r_ac3d8ae5cc99e47c95a96714ff1351814"><td class="memItemLeft" align="right" valign="top"><a id="ac3d8ae5cc99e47c95a96714ff1351814" name="ac3d8ae5cc99e47c95a96714ff1351814"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BRIGHT_GREEN</b> = &quot;\033[92m&quot;</td></tr>
+<tr class="memitem:a579d699b25afe23cace582851fd6e130" id="r_a579d699b25afe23cace582851fd6e130"><td class="memItemLeft" align="right" valign="top"><a id="a579d699b25afe23cace582851fd6e130" name="a579d699b25afe23cace582851fd6e130"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BRIGHT_YELLOW</b> = &quot;\033[93m&quot;</td></tr>
+<tr class="memitem:a04772e4a3e1e2c0bcc3be4485bf3dc01" id="r_a04772e4a3e1e2c0bcc3be4485bf3dc01"><td class="memItemLeft" align="right" valign="top"><a id="a04772e4a3e1e2c0bcc3be4485bf3dc01" name="a04772e4a3e1e2c0bcc3be4485bf3dc01"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BRIGHT_BLUE</b> = &quot;\033[94m&quot;</td></tr>
+<tr class="memitem:acc89019048a584299c07454a9ed15839" id="r_acc89019048a584299c07454a9ed15839"><td class="memItemLeft" align="right" valign="top"><a id="acc89019048a584299c07454a9ed15839" name="acc89019048a584299c07454a9ed15839"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BRIGHT_MAGENTA</b> = &quot;\033[95m&quot;</td></tr>
+<tr class="memitem:a166cce9c557e24e8ed318f9d56fedde8" id="r_a166cce9c557e24e8ed318f9d56fedde8"><td class="memItemLeft" align="right" valign="top"><a id="a166cce9c557e24e8ed318f9d56fedde8" name="a166cce9c557e24e8ed318f9d56fedde8"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BRIGHT_CYAN</b> = &quot;\033[96m&quot;</td></tr>
+<tr class="memitem:aee0eae8672a3449d9d9d51f8c40ba6a0" id="r_aee0eae8672a3449d9d9d51f8c40ba6a0"><td class="memItemLeft" align="right" valign="top"><a id="aee0eae8672a3449d9d9d51f8c40ba6a0" name="aee0eae8672a3449d9d9d51f8c40ba6a0"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BRIGHT_WHITE</b> = &quot;\033[97m&quot;</td></tr>
+<tr class="memitem:af63a0154a8436365da72d794e84a75c9" id="r_af63a0154a8436365da72d794e84a75c9"><td class="memItemLeft" align="right" valign="top"><a id="af63a0154a8436365da72d794e84a75c9" name="af63a0154a8436365da72d794e84a75c9"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::BOLD</b> = &quot;\033[1m&quot;</td></tr>
+<tr class="memitem:a5111b681c54e81a100af347640ebb892" id="r_a5111b681c54e81a100af347640ebb892"><td class="memItemLeft" align="right" valign="top"><a id="a5111b681c54e81a100af347640ebb892" name="a5111b681c54e81a100af347640ebb892"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::DIM</b> = &quot;\033[2m&quot;</td></tr>
+<tr class="memitem:ab122303c8cae57a3f8f003a5c9358001" id="r_ab122303c8cae57a3f8f003a5c9358001"><td class="memItemLeft" align="right" valign="top"><a id="ab122303c8cae57a3f8f003a5c9358001" name="ab122303c8cae57a3f8f003a5c9358001"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::ITALIC</b> = &quot;\033[3m&quot;</td></tr>
+<tr class="memitem:a8be0db40faaaa41c7c47fd96c1264a48" id="r_a8be0db40faaaa41c7c47fd96c1264a48"><td class="memItemLeft" align="right" valign="top"><a id="a8be0db40faaaa41c7c47fd96c1264a48" name="a8be0db40faaaa41c7c47fd96c1264a48"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::services::ConsoleColor::UNDERLINE</b> = &quot;\033[4m&quot;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the central event bus (<a class="el" href="classEventBus.html" title="A thread-safe implementation of ISubject for centralized event distribution.">EventBus</a>), acting as the <a class="el" href="classISubject.html" title="The Subject (Publisher) Interface (Abstract Base Class).">ISubject</a>. </p>
+<div class="textblock"><p>Implementation of the central event bus (EventBus), acting as the ISubject. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
 <p>This implementation provides a thread-safe Subject capable of managing observers using smart pointers to prevent circular dependencies. </p>
 </div></div><!-- contents -->

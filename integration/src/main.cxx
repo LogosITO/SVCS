@@ -11,6 +11,10 @@
 #include "../../services/EventBus.hxx"
 #include "../../core/include/RepositoryManager.hxx"
 
+using namespace svcs::services;
+using namespace svcs::core;
+using namespace svcs::integration;
+
 void showGeneralHelp(const CompositeCommandFactory& factory) {
     std::cout << "SVCS - Simple Version Control System\n";
     std::cout << "Version 1.0\n\n";
@@ -97,3 +101,4 @@ int main(int argc, char* argv[]) {
     bool success = command->execute(args);
     return success ? 0 : 1;
 }
+

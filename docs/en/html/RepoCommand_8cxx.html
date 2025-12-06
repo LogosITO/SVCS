@@ -92,19 +92,27 @@ $(function(){initNavTree('RepoCommand_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> class for managing remote configurations.  
+<p>Implementation of the RepoCommand class for managing remote configurations.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="RepoCommand_8hxx_source.html">../include/RepoCommand.hxx</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Event_8hxx_source.html">../../services/Event.hxx</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the <a class="el" href="classRepoCommand.html" title="Command handler for managing repository remotes and configurations.">RepoCommand</a> class for managing remote configurations. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Aserver" id="r_svcs_3A_3Aserver"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1server.html">svcs::server</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1server"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server-side components and administration commands. <br /></td></tr>
+<tr class="memitem:svcs_3A_3Aserver_3A_3Acli" id="r_svcs_3A_3Aserver_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1server_1_1cli.html">svcs::server::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1server_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsvcs_1_1server_1_1Server.html" title="Main TCP server for SVCS remote operations.">Server</a> administration command-line interface components. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the RepoCommand class for managing remote configurations. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p>This file implements the concrete logic for the "svcs repo" command. It primarily delegates its core functionality—adding, removing, renaming, and listing remotes— to the <a class="el" href="classRemoteManager.html">RemoteManager</a> class. The implementation includes:</p><ol type="1">
-<li><b><a class="el" href="classRepository.html" title="Manages the version control directory structure and core operations.">Repository</a> Context Check</b>: Ensures the command is run inside an initialized SVCS repository.</li>
+<p>This file implements the concrete logic for the "svcs repo" command. It primarily delegates its core functionality—adding, removing, renaming, and listing remotes— to the RemoteManager class. The implementation includes:</p><ol type="1">
+<li><b>Repository Context Check</b>: Ensures the command is run inside an initialized SVCS repository.</li>
 <li><b>Subcommand Dispatch</b>: Parses the first argument to determine which handler (<span class="tt">handleAdd</span>, <span class="tt">handleRemove</span>, etc.) to call.</li>
 <li><b>Argument Validation</b>: Performs specific argument count checks for each subcommand.</li>
-<li><b>User Output</b>: Directly prints confirmation messages (<span class="tt">std::cout</span>) or uses the <a class="el" href="classISubject.html">ISubject</a> event bus for errors and informational messages. </li>
+<li><b>User Output</b>: Directly prints confirmation messages (<span class="tt">std::cout</span>) or uses the ISubject event bus for errors and informational messages. </li>
 </ol>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

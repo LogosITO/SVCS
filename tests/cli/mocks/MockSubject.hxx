@@ -25,6 +25,27 @@
 
 /**
  * @english
+ * @namespace svcs::test::cli::mocks
+ * @brief Mock objects and test doubles for CLI command testing.
+ * @details Contains mock implementations of CLI-related interfaces used
+ * for testing command behavior, help systems, and user interactions.
+ * These mocks provide controlled command responses and verification
+ * capabilities for CLI command unit tests.
+ *
+ * @russian
+ * @namespace svcs::test::cli::mocks
+ * @brief Mock объекты и тестовые дубли для тестирования CLI команд.
+ * @details Содержит mock реализации CLI-интерфейсов, используемых
+ * для тестирования поведения команд, систем справки и взаимодействий с пользователем.
+ * Эти моки предоставляют контролируемые ответы команд и возможности
+ * верификации для модульных тестов CLI команд.
+ */
+namespace svcs::test::cli::mocks {
+
+using namespace svcs::services;
+
+/**
+ * @english
  * @class MockSubject
  * @brief A mock implementation of ISubject for testing event-driven components.
  * @details This mock allows test cases to:
@@ -180,3 +201,5 @@ public:
         return notifications;
     }
 };
+
+}

@@ -2,7 +2,7 @@
 \hypertarget{classStatusCommandTest}{}\label{classStatusCommandTest}\index{StatusCommandTest@{StatusCommandTest}}
 
 
-Google Test fixture for running integration tests against the \doxylink{classStatusCommand}{Status\+Command}.  
+Google Test fixture for running integration tests against the Status\+Command.  
 
 
 
@@ -27,10 +27,10 @@ void \mbox{\hyperlink{classStatusCommandTest_a8587508fb0b6d664f65104295a92e427}{
 void \mbox{\hyperlink{classStatusCommandTest_ae506c0d397d564d8a6251daf19e40343}{create\+Test\+Directory}} (const std\+::string \&dirname)
 \begin{DoxyCompactList}\small\item\em Creates a test directory in the temporary location. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStatusCommandTest_a84af63358f1e67af9e3793c76ea9c63c}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
-\begin{DoxyCompactList}\small\item\em Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classStatusCommandTest_a2d962d5ecae575783a8f43e377650430}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Stages a list of files using the Repository\+Manager\textquotesingle{}s staging logic. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusCommandTest_a2d962d5ecae575783a8f43e377650430}{contains\+Message}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Checks if a specific message (substring) exists in any event notification. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classStatusCommandTest_ab7d44e5852460b81086e8d060d919d84}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&notifications, const std\+::string \&message)
+int \mbox{\hyperlink{classStatusCommandTest_ab7d44e5852460b81086e8d060d919d84}{count\+Messages}} (const std\+::vector$<$ Event $>$ \&notifications, const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em Counts the occurrences of a specific message (substring) across all event notifications. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -39,10 +39,10 @@ int \mbox{\hyperlink{classStatusCommandTest_ab7d44e5852460b81086e8d060d919d84}{c
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
 \begin{DoxyCompactList}\small\item\em Shared pointer to the mock event bus (observer). \end{DoxyCompactList}\item 
 \Hypertarget{classStatusCommandTest_a6d57f14451cbb38043fd453dd955d4c5}\label{classStatusCommandTest_a6d57f14451cbb38043fd453dd955d4c5} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+std\+::shared\+\_\+ptr$<$ Repository\+Manager $>$ {\bfseries repo\+Manager}
 \begin{DoxyCompactList}\small\item\em Shared pointer to the repository core logic component. \end{DoxyCompactList}\item 
 \Hypertarget{classStatusCommandTest_ac58a7bbee391eeee2d23692f4c6206e9}\label{classStatusCommandTest_ac58a7bbee391eeee2d23692f4c6206e9} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classStatusCommand}{Status\+Command}} $>$ {\bfseries command}
+std\+::unique\+\_\+ptr$<$ Status\+Command $>$ {\bfseries command}
 \begin{DoxyCompactList}\small\item\em Unique pointer to the command being tested. \end{DoxyCompactList}\item 
 \Hypertarget{classStatusCommandTest_a3f876228661d8132ba80c33c3f6e3ee2}\label{classStatusCommandTest_a3f876228661d8132ba80c33c3f6e3ee2} 
 std\+::filesystem\+::path {\bfseries test\+Dir}
@@ -50,12 +50,12 @@ std\+::filesystem\+::path {\bfseries test\+Dir}
 
 
 \doxysubsection{Detailed Description}
-Google Test fixture for running integration tests against the \doxylink{classStatusCommand}{Status\+Command}. 
+Google Test fixture for running integration tests against the Status\+Command. 
 
 This fixture provides the necessary infrastructure for integration tests\+:
 \begin{DoxyItemize}
 \item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Manage a temporary SVCS repository directory.
-\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for event bus) and \doxylink{classRepositoryManager}{Repository\+Manager} (for core logic).
+\item {\bfseries{Core Components\+:}} Instances of \doxylink{classMockSubject}{Mock\+Subject} (for event bus) and Repository\+Manager (for core logic).
 \item {\bfseries{Helper Methods\+:}} Simplify file creation, directory setup, staging, and verification of notifications. 
 \end{DoxyItemize}
 
@@ -66,7 +66,7 @@ This fixture provides the necessary infrastructure for integration tests\+:
 \index{containsMessage@{containsMessage}!StatusCommandTest@{StatusCommandTest}}
 \doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
 {\footnotesize\ttfamily \label{classStatusCommandTest_a2d962d5ecae575783a8f43e377650430} 
-bool Status\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+bool Status\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -86,7 +86,7 @@ true if the message is found, false otherwise.
 \index{countMessages@{countMessages}!StatusCommandTest@{StatusCommandTest}}
 \doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
 {\footnotesize\ttfamily \label{classStatusCommandTest_ab7d44e5852460b81086e8d060d919d84} 
-int Status\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structEvent}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+int Status\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Event $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -152,7 +152,7 @@ void Status\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const
 
 
 
-Stages a list of files using the \doxylink{classRepositoryManager}{Repository\+Manager}\textquotesingle{}s staging logic. 
+Stages a list of files using the Repository\+Manager\textquotesingle{}s staging logic. 
 
 
 \begin{DoxyParams}{Parameters}

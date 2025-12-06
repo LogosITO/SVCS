@@ -25,6 +25,8 @@
 
 #include <algorithm>
 
+namespace svcs::test::cli::utils {
+
 void VersionCommandTest::SetUp() {
     this->mockEventBus = std::make_shared<MockSubject>();
     this->command = std::make_unique<VersionCommand>(this->mockEventBus);
@@ -47,4 +49,6 @@ bool VersionCommandTest::containsExactMessage(const std::vector<Event>& notifica
         [&message](const Event& event) {
             return event.details == message;
         });
+}
+
 }

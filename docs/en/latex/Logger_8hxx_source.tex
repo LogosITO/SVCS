@@ -13,83 +13,87 @@
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <mutex>}}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00038\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ \{}
-\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9adc30ec20708ef7b0f641ef78b7880a15}{DEBUG}}\ =\ 0,}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3}{INFO}}\ =\ 1,}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a32bd8a1db2275458673903bdb84cb277}{WARN}}\ =\ 2,}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}}\ =\ 3,}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9a19da7170bea36556dde582519795f3fc}{FATAL}}\ =\ 4}
-\DoxyCodeLine{00083\ \};}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLogger}{Logger}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIObserver}{IObserver}}\ \{}
-\DoxyCodeLine{00099\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00107\ \ \ \ \ std::string\ name\_;}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ log\_level\_;}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00125\ \ \ \ \ std::string\ pattern\_;}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ std::shared\_ptr<Logger>>\ instances\_;}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ instances\_mutex\_;}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00145\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classLogger_a46f0bc190af0631a7cacfc63dc0e35fa}{Logger}}(\textcolor{keyword}{const}\ std::string\&\ name);}
-\DoxyCodeLine{00158\ }
-\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{classLogger_afee741267f0de25da55208a6424eb84f}{\string~Logger}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ IObserver\ Methods}}
-\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a2053c71402fe93a43ea3170ed67807d5}{update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structEvent}{Event}}\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1services}{svcs::services}}\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{LogLevel}}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41adc30ec20708ef7b0f641ef78b7880a15}{DEBUG}}\ =\ 0,}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a551b723eafd6a31d444fcb2f5920fbd3}{INFO}}\ =\ 1,}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a32bd8a1db2275458673903bdb84cb277}{WARN}}\ =\ 2,}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}}\ =\ 3,}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41a19da7170bea36556dde582519795f3fc}{FATAL}}\ =\ 4}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1services_1_1Logger}{Logger}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver}{IObserver}}\ \{}
+\DoxyCodeLine{00116\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{LogLevel}}\ log\_level\_;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00142\ \ \ \ \ std::string\ pattern\_;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ std::shared\_ptr<Logger>>\ instances\_;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ instances\_mutex\_;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a16172905c0d200184b81b39dbf4fbd27}{Logger}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a66a61e706f968ee9d4b304a39fbb56da}{\string~Logger}}()\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00184\ }
-\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a96a2b88ee6d81d3ecf0fed3a6291c9a2}{notify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structEvent}{Event}}\&\ event)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00199\ }
-\DoxyCodeLine{00200\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00201\ \ \ \ \ \textcolor{comment}{//\ Static\ Singleton\ Access\ Methods}}
-\DoxyCodeLine{00202\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00203\ }
-\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Logger>\ \mbox{\hyperlink{classLogger_ae89f7f2e31ba586b76734c1e23581504}{getInstance}}(\textcolor{keyword}{const}\ std::string\&\ name);}
-\DoxyCodeLine{00218\ }
-\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_af473e558d8af4804863bfec0426433d0}{clearInstances}}();}
-\DoxyCodeLine{00229\ }
-\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00231\ \ \ \ \ \textcolor{comment}{//\ Direct\ Logging\ Methods}}
-\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00233\ }
-\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a38b544d566463a65d0dbf4ff7f867962}{debug}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00244\ }
-\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_ab4c4d86279176eb0ede726bc5b4d5ddb}{info}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00255\ }
-\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a24b519e0f53e73937f93edd2da37ea76}{warn}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00266\ }
-\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_ab6042fdfcbb14026098e0df9d6b32f27}{error}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00277\ }
-\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_ab934865d3713793d0353271a475eaf4b}{fatal}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00288\ }
-\DoxyCodeLine{00289\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00290\ \ \ \ \ \textcolor{comment}{//\ Configuration\ \&\ Utility}}
-\DoxyCodeLine{00291\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00292\ }
-\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_ab8a7575ce3865917922563c88ab4f876}{setLevel}}(\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level);}
-\DoxyCodeLine{00303\ }
-\DoxyCodeLine{00313\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ \mbox{\hyperlink{classLogger_af4490985642cdb388e65741ca5815851}{getLevel}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00314\ }
-\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a8925c4a17c3ec533a548ea01b3608d01}{setPattern}}(\textcolor{keyword}{const}\ std::string\&\ pattern);}
-\DoxyCodeLine{00325\ }
-\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a5cc08473729523bb4bde48459f2ac468}{flush}}();}
-\DoxyCodeLine{00334\ }
-\DoxyCodeLine{00335\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordtype}{void}\ log(\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00348\ }
-\DoxyCodeLine{00362\ \ \ \ \ std::string\ formatMessage(\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00363\ }
-\DoxyCodeLine{00375\ \ \ \ \ std::string\ levelToString(\mbox{\hyperlink{Logger_8hxx_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level);}
-\DoxyCodeLine{00376\ \};}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//\ IObserver\ Methods}}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a53b2de68a56a7add166a652f16a91dc7}{update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}}\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a6847ba93d4e8ac32bee25acd6c7c3415}{notify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}}\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{comment}{//\ Static\ Singleton\ Access\ Methods}}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Logger>\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_abdf428736737303f0ba9d84ba0adbf5c}{getInstance}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a42cb6e74c728ec85bad246c9b201a44b}{clearInstances}}();}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{comment}{//\ Direct\ Logging\ Methods}}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_ab6a16a19650fa9f43d19033ef99ecd4a}{debug}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_afe6f3727177b44096e12c6849ba47e4f}{info}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a4cd9aeb84476382334e0525f93b92a39}{warn}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_ac2da5329c40c21408d29e385c4b18e9b}{error}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a5130a6cddcf96a93a312e779e3c79450}{fatal}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{comment}{//\ Configuration\ \&\ Utility}}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_ace5755a3f094ddc4d8f4c4fa1463c624}{setLevel}}(\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{LogLevel}}\ level);}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00330\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{LogLevel}}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_abd8d05ae3761e2827e85d0a707be1353}{getLevel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_ab8e4ee0b0097b16253da9a66e4e6af9f}{setPattern}}(\textcolor{keyword}{const}\ std::string\&\ pattern);}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a1eb06f4d455ed1c811b16af55d4e5a6b}{flush}}();}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordtype}{void}\ log(\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00379\ \ \ \ \ std::string\ formatMessage(\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00392\ \ \ \ \ std::string\ levelToString(\mbox{\hyperlink{namespacesvcs_1_1services_a1adf1289a18b7825dd84dac55ccedc41}{LogLevel}}\ level);}
+\DoxyCodeLine{00393\ \};}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \}}
 
 \end{DoxyCode}

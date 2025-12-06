@@ -8,35 +8,39 @@
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ServerBaseCommand_8hxx}{ServerBaseCommand.hxx}}"{}}}
 \DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <filesystem>}}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHubCommand_a40546b1910267e729a3a82bd4d9e33e2}{HubCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classServerBaseCommand_aa0fe8087dbffaa6c93362945281eb787}{ServerBaseCommand}}\ \{}
-\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classHubCommand_a40546b1910267e729a3a82bd4d9e33e2}{HubCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repository\_manager);}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classHubCommand_a863f57c733961ddd5a89da1e510fcd81}{\string~HubCommand}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00079\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHubCommand_a701eb297ef49001ddd918608275de0e1}{getName}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00090\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHubCommand_a1dba268b5ef60af5ddc4115da540b560}{getDescription}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00101\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHubCommand_a6236c37f7e57f1267eeea4f6335ff31d}{getUsage}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHubCommand_a326681c2b0577b7871c6a5a2f5be16a5}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHubCommand_a2a331abe87c7c5b028ce276557cf5177}{showHelp}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ initializeHubRepository(\textcolor{keyword}{const}\ std::filesystem::path\&\ repo\_path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00150\ }
-\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubDirectoryStructure(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubConfigFile(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubHEADFile(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00197\ }
-\DoxyCodeLine{00211\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isValidHubPath(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00212\ }
-\DoxyCodeLine{00226\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isPathAvailable(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00227\ \};}
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1server_1_1cli}{svcs::server::cli}}\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_ade9c141fe19411e9b430688231c81bb5}{HubCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1ServerBaseCommand_aa74199cd1feddb12fe2afd072c9053ed}{ServerBaseCommand}}\ \{}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_ade9c141fe19411e9b430688231c81bb5}{HubCommand}}(std::shared\_ptr<ISubject>\ event\_bus,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RepositoryManager>\ repository\_manager);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a79388a41e050be5c95c65220ab53fd8e}{\string~HubCommand}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00098\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a01080d10ab794600470670ec6a22633a}{getName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00109\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a6c2b48168bc6f7fa8d857d54205117e6}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00120\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a40341e753e4ccc73304ef82e6333c8c4}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a28c39200f05a5e4f7c94d05b573cbc18}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1cli_1_1HubCommand_a2ffa2320d34715820f92944c2ec44585}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{bool}\ initializeHubRepository(\textcolor{keyword}{const}\ std::filesystem::path\&\ repo\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubDirectoryStructure(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubConfigFile(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{bool}\ createHubHEADFile(\textcolor{keyword}{const}\ std::filesystem::path\&\ svcs\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00230\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isValidHubPath(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00245\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isPathAvailable(\textcolor{keyword}{const}\ std::filesystem::path\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00246\ \};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \}}
 
 \end{DoxyCode}

@@ -92,106 +92,28 @@ $(function(){initNavTree('classNullObserver.html','','classNullObserver-members'
 </div><!--header-->
 <div class="contents">
 
-<p>Null implementation of <a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a>.  
+<p>Null implementation of IObserver.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for NullObserver:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classNullObserver.png" usemap="#NullObserver_map" alt=""/>
-  <map id="NullObserver_map" name="NullObserver_map">
-<area href="classIObserver.html" title="The Observer Interface (Abstract Base Class)." alt="IObserver" shape="rect" coords="0,0,88,24"/>
-  </map>
-</div></div>
+  <img src="classNullObserver.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8866a842843f40e6a1a92b27e7148ef7" id="r_a8866a842843f40e6a1a92b27e7148ef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8866a842843f40e6a1a92b27e7148ef7">update</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) override</td></tr>
-<tr class="memdesc:a8866a842843f40e6a1a92b27e7148ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called by the Subject to update the observer.  <br /></td></tr>
-<tr class="memitem:aeb635126b1e4270cb50229b157525270" id="r_aeb635126b1e4270cb50229b157525270"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb635126b1e4270cb50229b157525270">notify</a> (const <a class="el" href="structEvent.html">Event</a> &amp;event) override</td></tr>
-<tr class="memdesc:aeb635126b1e4270cb50229b157525270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called by the Subject to notify the observer.  <br /></td></tr>
-<tr class="inherit_header pub_methods_classIObserver"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classIObserver')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classIObserver.html">IObserver</a></td></tr>
-<tr class="memitem:a1306da2dbaf55620130af5586e3a0373 inherit pub_methods_classIObserver" id="r_a1306da2dbaf55620130af5586e3a0373"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIObserver.html#a1306da2dbaf55620130af5586e3a0373">~IObserver</a> ()=default</td></tr>
-<tr class="memdesc:a1306da2dbaf55620130af5586e3a0373 inherit pub_methods_classIObserver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default virtual destructor.  <br /></td></tr>
+<tr class="memitem:a8866a842843f40e6a1a92b27e7148ef7" id="r_a8866a842843f40e6a1a92b27e7148ef7"><td class="memItemLeft" align="right" valign="top"><a id="a8866a842843f40e6a1a92b27e7148ef7" name="a8866a842843f40e6a1a92b27e7148ef7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const Event &amp;event) override</td></tr>
+<tr class="memitem:aeb635126b1e4270cb50229b157525270" id="r_aeb635126b1e4270cb50229b157525270"><td class="memItemLeft" align="right" valign="top"><a id="aeb635126b1e4270cb50229b157525270" name="aeb635126b1e4270cb50229b157525270"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (const Event &amp;event) override</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Null implementation of <a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a>. </p>
+<div class="textblock"><p>Null implementation of IObserver. </p>
 <ul>
-<li>Used primarily to satisfy the <a class="el" href="classIObserver.html" title="The Observer Interface (Abstract Base Class).">IObserver</a> interface requirements if needed by other components, but not directly used for checking events in these <a class="el" href="classObjectStorage.html" title="Manages the version control object database, including persistence and object restoration.">ObjectStorage</a> tests. </li>
+<li>Used primarily to satisfy the IObserver interface requirements if needed by other components, but not directly used for checking events in these ObjectStorage tests. </li>
 </ul>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aeb635126b1e4270cb50229b157525270" name="aeb635126b1e4270cb50229b157525270"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb635126b1e4270cb50229b157525270">&#9670;&#160;</a></span>notify()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void NullObserver::notify </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structEvent.html">Event</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Method called by the Subject to notify the observer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>The <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> structure containing information about the occurrence. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>Note: This method appears redundant with <a class="el" href="#a8866a842843f40e6a1a92b27e7148ef7" title="Method called by the Subject to update the observer.">update(const Event&amp; event)</a>.</dd></dl>
-
-<p>Implements <a class="el" href="classIObserver.html#a325451b0d0100feaad6f683850a616dc">IObserver</a>.</p>
-
-</div>
-</div>
-<a id="a8866a842843f40e6a1a92b27e7148ef7" name="a8866a842843f40e6a1a92b27e7148ef7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8866a842843f40e6a1a92b27e7148ef7">&#9670;&#160;</a></span>update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void NullObserver::update </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structEvent.html">Event</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Method called by the Subject to update the observer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>The <a class="el" href="structEvent.html" title="Structure describing an event published by the VCS core.">Event</a> structure containing information about the occurrence. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="classIObserver.html#af15fbd52637f4bf0225fde86051d8354">IObserver</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>tests/core/<a class="el" href="StorageTest_8cxx.html">StorageTest.cxx</a></li>
 </ul>
 </div><!-- contents -->

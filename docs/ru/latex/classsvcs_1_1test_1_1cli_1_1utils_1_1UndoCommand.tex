@@ -1,0 +1,162 @@
+\doxysection{Класс svcs\+::test\+::cli\+::utils\+::Undo\+Command}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{}\label{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}\index{svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}}
+
+
+Команда для возврата состояния репозитория к предыдущему коммиту.  
+
+
+
+
+{\ttfamily \#include $<$Undo\+Command.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::utils\+::Undo\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_af2f729484bb8814fc821a1decfc5944c}{Undo\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$ subject, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ repo\+Manager)
+\begin{DoxyCompactList}\small\item\em Конструктор для \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a65f763bfdb91c62d404da6d676dc2975}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\begin{DoxyCompactList}\small\item\em Выполняет команду undo на основе предоставленных аргументов. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a03e3e9e4ee2bc1caa12c34a7c0707a4a}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Получает основное имя команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a5c05636d8a23ad40c317b69520641766}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Получает краткое описание команды. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a7f782beed5f93bf617d6db9449ddbc52}{get\+Usage}} () const override
+\begin{DoxyCompactList}\small\item\em Получает синтаксис использования команды. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a27d298de178093d4bc9908b8b38e1fa9}{show\+Help}} () const override
+\begin{DoxyCompactList}\small\item\em Отображает подробную справочную информацию для команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{svcs\+::cli\+::\+ICommand}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_abf89c434d1d5cde29103e56bdfe5c83c}{\texorpdfstring{$\sim$}{\string~}\+ICommand}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Команда для возврата состояния репозитория к предыдущему коммиту. 
+
+Реализует функциональность \textquotesingle{}svcs undo\textquotesingle{}. Он использует \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} для выполнения фактических манипуляций с историей и рабочей директорией. Он использует \doxylink{classsvcs_1_1services_1_1ISubject}{ISubject} (шину событий) для вывода пользователю и запросов подтверждения. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_af2f729484bb8814fc821a1decfc5944c}\index{svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}!UndoCommand@{UndoCommand}}
+\index{UndoCommand@{UndoCommand}!svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}}
+\doxysubsubsection{\texorpdfstring{UndoCommand()}{UndoCommand()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_af2f729484bb8814fc821a1decfc5944c} 
+svcs\+::cli\+::\+Undo\+Command\+::\+Undo\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{ISubject}} $>$}]{subject}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$}]{repo\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор для \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand}{Undo\+Command}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em subject} & Общий указатель на шину событий для связи (вывод, запросы). \\
+\hline
+{\em repo\+Manager} & Общий указатель на \doxylink{classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager}{Repository\+Manager} для основных операций с репозиторием. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a65f763bfdb91c62d404da6d676dc2975}\index{svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}!execute@{execute}}
+\index{execute@{execute}!svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a65f763bfdb91c62d404da6d676dc2975} 
+bool svcs\+::cli\+::\+Undo\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выполняет команду undo на основе предоставленных аргументов. 
+
+Разбирает аргументы для конкретного хеша коммита или флага {\ttfamily -\/-\/force}. Если хеш не предоставлен, пытается отменить последний коммит. 
+\begin{DoxyParams}{Аргументы}
+{\em args} & Аргументы командной строки (например, хеш коммита, --force). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true при успешном выполнении (или если показана справка), false при ошибке. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a7f4c7a3a1397954508609aaa764de639}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a5c05636d8a23ad40c317b69520641766}\index{svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a5c05636d8a23ad40c317b69520641766} 
+std\+::string svcs\+::cli\+::\+Undo\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает краткое описание команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, описывающая функцию команды. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a52bf72e12e92fb785fb137a36dfe4eb6}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a03e3e9e4ee2bc1caa12c34a7c0707a4a}\index{svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}!getName@{getName}}
+\index{getName@{getName}!svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a03e3e9e4ee2bc1caa12c34a7c0707a4a} 
+std\+::string svcs\+::cli\+::\+Undo\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает основное имя команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка "{}undo"{}. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_a4a1f2f64ba045572fa44e0b7975cdcb2}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a7f782beed5f93bf617d6db9449ddbc52}\index{svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a7f782beed5f93bf617d6db9449ddbc52} 
+std\+::string svcs\+::cli\+::\+Undo\+Command\+::get\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получает синтаксис использования команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, детализирующая как используется команда. 
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_add1b75c43f29876e3527d3b956cfb9e3}{svcs\+::cli\+::\+ICommand}}.
+
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a27d298de178093d4bc9908b8b38e1fa9}\index{svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}!showHelp@{showHelp}}
+\index{showHelp@{showHelp}!svcs::test::cli::utils::UndoCommand@{svcs::test::cli::utils::UndoCommand}}
+\doxysubsubsection{\texorpdfstring{showHelp()}{showHelp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommand_a27d298de178093d4bc9908b8b38e1fa9} 
+void svcs\+::cli\+::\+Undo\+Command\+::show\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает подробную справочную информацию для команды. 
+
+
+
+Замещает \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand_aa95bd814b8dae98001b59c355a8aca97}{svcs\+::cli\+::\+ICommand}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+cli/include/\mbox{\hyperlink{UndoCommand_8hxx}{Undo\+Command.\+hxx}}\item 
+cli/src/\mbox{\hyperlink{UndoCommand_8cxx}{Undo\+Command.\+cxx}}\end{DoxyCompactItemize}

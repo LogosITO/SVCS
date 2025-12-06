@@ -2,7 +2,7 @@
 \hypertarget{HubCommand_8cxx}{}\label{HubCommand_8cxx}\index{server/src/HubCommand.cxx@{server/src/HubCommand.cxx}}
 
 
-Implementation of the \doxylink{classHubCommand}{Hub\+Command} class for creating bare repositories.  
+Implementation of the Hub\+Command class for creating bare repositories.  
 
 
 {\ttfamily \#include "{}../include/\+Hub\+Command.\+hxx"{}}\newline
@@ -10,19 +10,26 @@ Implementation of the \doxylink{classHubCommand}{Hub\+Command} class for creatin
 {\ttfamily \#include $<$filesystem$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server}{svcs\+::server}}
+\begin{DoxyCompactList}\small\item\em Server-\/side components and administration commands. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1server_1_1cli}{svcs\+::server\+::cli}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classsvcs_1_1server_1_1Server}{Server} administration command-\/line interface components. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementation of the \doxylink{classHubCommand}{Hub\+Command} class for creating bare repositories. 
+Implementation of the Hub\+Command class for creating bare repositories. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-This file provides the concrete implementation for the \doxylink{classHubCommand}{Hub\+Command} class. The {\ttfamily execute} method handles the logic for\+:
+This file provides the concrete implementation for the Hub\+Command class. The {\ttfamily execute} method handles the logic for\+:
 \begin{DoxyEnumerate}
 \item {\bfseries{Argument Validation}}\+: Ensures exactly one valid path is provided.
 \item {\bfseries{Filesystem Checks}}\+: Verifies that a repository doesn\textquotesingle{}t already exist at the target location.
 \item {\bfseries{Directory Creation}}\+: Creates the target directory and the full {\ttfamily .svcs} "{}bare"{} repository structure (objects, refs, hooks, etc.).
 \item {\bfseries{File Seeding}}\+: Writes the initial {\ttfamily config}, {\ttfamily HEAD}, and {\ttfamily description} files.
-\item {\bfseries{Notifications}}\+: Uses the \doxylink{classISubject}{ISubject} event bus to report success, info, or error messages. This command uses the {\ttfamily \doxylink{classRepositoryManager}{Repository\+Manager}} dependency indirectly, as the logic is simple enough to be self-\/contained filesystem operations, but it relies on the manager\textquotesingle{}s path conventions. 
+\item {\bfseries{Notifications}}\+: Uses the ISubject event bus to report success, info, or error messages. This command uses the {\ttfamily Repository\+Manager} dependency indirectly, as the logic is simple enough to be self-\/contained filesystem operations, but it relies on the manager\textquotesingle{}s path conventions. 
 \end{DoxyEnumerate}

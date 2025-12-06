@@ -26,6 +26,25 @@
 #include <filesystem>
 #include <functional>
 
+/**
+ * @english
+ * @namespace svcs::server
+ * @brief Server-side components and administration commands.
+ * @details Contains server management functionality including hub repository creation,
+ * remote protocol handling, user management, and server administration commands.
+ * This namespace encapsulates all server-specific operations that enable
+ * multi-user collaboration and remote repository hosting.
+ *
+ * @russian
+ * @namespace svcs::server
+ * @brief Серверные компоненты и команды администрирования.
+ * @details Содержит функциональность управления сервером, включая создание репозиториев-хабов,
+ * обработку удаленных протоколов, управление пользователями и команды администрирования сервера.
+ * Это пространство имен инкапсулирует все серверные операции, которые обеспечивают
+ * многопользовательское сотрудничество и хостинг удаленных репозиториев.
+ */
+namespace svcs::server {
+
 namespace fs = std::filesystem;
 
 /**
@@ -241,3 +260,5 @@ public:
      */
     size_t count() const { return remotes_.size(); }
 };
+
+}

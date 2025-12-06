@@ -1,0 +1,292 @@
+\doxysection{svcs\+::core\+::Commit Class Reference}
+\hypertarget{classsvcs_1_1core_1_1Commit}{}\label{classsvcs_1_1core_1_1Commit}\index{svcs::core::Commit@{svcs::core::Commit}}
+
+
+Represents a single, immutable historical point (snapshot) in the repository\textquotesingle{}s history.  
+
+
+
+
+{\ttfamily \#include $<$Commit.\+hxx$>$}
+
+Inheritance diagram for svcs\+::core\+::Commit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1core_1_1Commit}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1core_1_1Commit_aed3bc376ecf9922c8227c930e13ef540}\label{classsvcs_1_1core_1_1Commit_aed3bc376ecf9922c8227c930e13ef540} 
+{\bfseries Commit} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a67fefc498bd2f9a21534c735fe2c6906}{Commit}} (std\+::string thash, std\+::vector$<$ std\+::string $>$ phashes, std\+::string auth, std\+::string msg, std\+::time\+\_\+t tstamp=std\+::time(nullptr))
+\begin{DoxyCompactList}\small\item\em Main constructor for the \doxylink{classsvcs_1_1core_1_1Commit}{Commit} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a24ebda092f26d97c3718f50964bc4772}{get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the VCS object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a66ef1b680e874cfe5e9856ae95529c86}{serialize}} () const override
+\begin{DoxyCompactList}\small\item\em Serializes the \doxylink{classsvcs_1_1core_1_1Commit}{Commit} metadata into a standardized, canonical format for hashing and storage. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a96b3a47b8ede31d43c55f20129a803fc}{get\+Tree\+Hash}} () const
+\begin{DoxyCompactList}\small\item\em Returns the hash ID of the associated root \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_ad1340a78e2b643c6f8c768a913a99251}{get\+Parent\+Hashes}} () const
+\begin{DoxyCompactList}\small\item\em Returns the hash IDs of the parent commits. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_af6ba640c481e2f0fe6f6a75eea6dc392}{get\+Author}} () const
+\begin{DoxyCompactList}\small\item\em Returns the author and email string for the commit. \end{DoxyCompactList}\item 
+std\+::time\+\_\+t \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a23607a74173a2e166741c63b8341190d}{get\+Timestamp}} () const
+\begin{DoxyCompactList}\small\item\em Returns the UNIX timestamp of the commit creation. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a8ca96fcc0b4881dd6dbf50d964a8d9ee}{get\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Returns the user-\/defined commit message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_ab785acd64fff45d3552b0736b68f9cb7}{set\+Message}} (const std\+::string \&msg)
+\begin{DoxyCompactList}\small\item\em Sets the commit message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_a9c98b1350d9cf4591f81eb3a1f916f9a}{set\+Timestamp}} (std\+::time\+\_\+t tstamp)
+\begin{DoxyCompactList}\small\item\em Sets the commit timestamp. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1core_1_1Commit_ae9b18937b3c3f03763c29c2a169c98f4}\label{classsvcs_1_1core_1_1Commit_ae9b18937b3c3f03763c29c2a169c98f4} 
+void {\bfseries set\+Timestamp\+Now} ()
+\begin{DoxyCompactList}\small\item\em Sets the commit timestamp to the current time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_aeb4ac65c27689eeb12adf161736da682}{set\+Parent}} (const std\+::string \&parent)
+\begin{DoxyCompactList}\small\item\em Sets a parent commit hash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Vcs\+Object} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. Required for derived classes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_ab66c27121f6c8bbbf427c30c020dfe6d}{Vcs\+Object}} (const \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. Required for derived classes to correctly copy the hash\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_aa293cbc989a083b31c42f5505469f6c1}{\texorpdfstring{$\sim$}{\string~}\+Vcs\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a5910a71613b0b31a9d046d2b71d7644e}{get\+Hash\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Returns the unique hash identifier of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsvcs_1_1core_1_1Commit}{Commit}} \mbox{\hyperlink{classsvcs_1_1core_1_1Commit_adcd3adafe91449688f5ad02eae9dfad3}{deserialize}} (const std\+::string \&raw\+\_\+content)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classsvcs_1_1core_1_1Commit}{Commit} object from a serialized string read from the object database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_aa5f3a482b7c45bbce8814bf2d6f325ad}{calculate\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Calculates SHA-\/256 hash for given canonical content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a776323941cf6d9f2923b67cf9cc95ec5}{compute\+Hash}} (const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Computes the cryptographic hash ID for the object\textquotesingle{}s content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{svcs\+::core\+::\+Vcs\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_ab2ce43cace8e3bfd31cc3a293245394c}{hash\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em The unique cryptographic hash identifier (e.\+g., SHA-\/256) for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single, immutable historical point (snapshot) in the repository\textquotesingle{}s history. 
+
+This object binds the content structure (\doxylink{classsvcs_1_1core_1_1Tree}{Tree} hash) with the metadata (author, message, parent history). 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1core_1_1Commit_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1core_1_1Commit_a67fefc498bd2f9a21534c735fe2c6906}\index{svcs::core::Commit@{svcs::core::Commit}!Commit@{Commit}}
+\index{Commit@{Commit}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{Commit()}{Commit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_a67fefc498bd2f9a21534c735fe2c6906} 
+svcs\+::core\+::\+Commit\+::\+Commit (\begin{DoxyParamCaption}\item[{std\+::string}]{thash}{, }\item[{std\+::vector$<$ std\+::string $>$}]{phashes}{, }\item[{std\+::string}]{auth}{, }\item[{std\+::string}]{msg}{, }\item[{std\+::time\+\_\+t}]{tstamp}{ = {\ttfamily std\+:\+:time(nullptr)}}\end{DoxyParamCaption})}
+
+
+
+Main constructor for the \doxylink{classsvcs_1_1core_1_1Commit}{Commit} object. 
+
+Initializes the metadata fields, sorts the parent hashes for consistency, and immediately computes the object\textquotesingle{}s hash ID. 
+\begin{DoxyParams}{Parameters}
+{\em thash} & Hash of the root \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. \\
+\hline
+{\em phashes} & Hashes of the immediate parent commit(s). \\
+\hline
+{\em auth} & Author and email string. \\
+\hline
+{\em msg} & User-\/defined commit message. \\
+\hline
+{\em tstamp} & Time when the commit was created (default is current time). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1core_1_1Commit_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1core_1_1Commit_adcd3adafe91449688f5ad02eae9dfad3}\index{svcs::core::Commit@{svcs::core::Commit}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_adcd3adafe91449688f5ad02eae9dfad3} 
+\mbox{\hyperlink{classsvcs_1_1core_1_1Commit}{Commit}} svcs\+::core\+::\+Commit\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+\_\+content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a \doxylink{classsvcs_1_1core_1_1Commit}{Commit} object from a serialized string read from the object database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+content} & The serialized string data, typically read from a decompressed object file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classsvcs_1_1core_1_1Commit}{Commit} A fully reconstructed \doxylink{classsvcs_1_1core_1_1Commit}{Commit} object. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Commit_af6ba640c481e2f0fe6f6a75eea6dc392}\index{svcs::core::Commit@{svcs::core::Commit}!getAuthor@{getAuthor}}
+\index{getAuthor@{getAuthor}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{getAuthor()}{getAuthor()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_af6ba640c481e2f0fe6f6a75eea6dc392} 
+const std\+::string \& svcs\+::core\+::\+Commit\+::get\+Author (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the author and email string for the commit. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::string\& The author string. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Commit_a8ca96fcc0b4881dd6dbf50d964a8d9ee}\index{svcs::core::Commit@{svcs::core::Commit}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_a8ca96fcc0b4881dd6dbf50d964a8d9ee} 
+const std\+::string \& svcs\+::core\+::\+Commit\+::get\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the user-\/defined commit message. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::string\& The commit message. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Commit_ad1340a78e2b643c6f8c768a913a99251}\index{svcs::core::Commit@{svcs::core::Commit}!getParentHashes@{getParentHashes}}
+\index{getParentHashes@{getParentHashes}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{getParentHashes()}{getParentHashes()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_ad1340a78e2b643c6f8c768a913a99251} 
+const std\+::vector$<$ std\+::string $>$ \& svcs\+::core\+::\+Commit\+::get\+Parent\+Hashes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the hash IDs of the parent commits. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::vector$<$std\+::string$>$\& The list of parent hashes (sorted). 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Commit_a23607a74173a2e166741c63b8341190d}\index{svcs::core::Commit@{svcs::core::Commit}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_a23607a74173a2e166741c63b8341190d} 
+std\+::time\+\_\+t svcs\+::core\+::\+Commit\+::get\+Timestamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the UNIX timestamp of the commit creation. 
+
+\begin{DoxyReturn}{Returns}
+std\+::time\+\_\+t The timestamp value. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Commit_a96b3a47b8ede31d43c55f20129a803fc}\index{svcs::core::Commit@{svcs::core::Commit}!getTreeHash@{getTreeHash}}
+\index{getTreeHash@{getTreeHash}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{getTreeHash()}{getTreeHash()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_a96b3a47b8ede31d43c55f20129a803fc} 
+const std\+::string \& svcs\+::core\+::\+Commit\+::get\+Tree\+Hash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the hash ID of the associated root \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::string\& The tree hash. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1core_1_1Commit_a24ebda092f26d97c3718f50964bc4772}\index{svcs::core::Commit@{svcs::core::Commit}!getType@{getType}}
+\index{getType@{getType}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_a24ebda092f26d97c3718f50964bc4772} 
+std\+::string svcs\+::core\+::\+Commit\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the VCS object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Always returns "{}commit"{}.   Pure virtual method to get the type of the VCS object.   
+\end{DoxyReturn}
+This is crucial for object storage and reconstruction (e.\+g., "{}commit"{}, "{}blob"{}, "{}tree"{}). \begin{DoxyReturn}{Returns}
+std\+::string The type identifier of the object.    
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a2c2a2d4b120a95b5163ff706d9804180}{svcs\+::core\+::\+Vcs\+Object}}.
+
+\Hypertarget{classsvcs_1_1core_1_1Commit_a66ef1b680e874cfe5e9856ae95529c86}\index{svcs::core::Commit@{svcs::core::Commit}!serialize@{serialize}}
+\index{serialize@{serialize}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_a66ef1b680e874cfe5e9856ae95529c86} 
+std\+::string svcs\+::core\+::\+Commit\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serializes the \doxylink{classsvcs_1_1core_1_1Commit}{Commit} metadata into a standardized, canonical format for hashing and storage. 
+
+The serialized format includes key/value pairs (tree, parent, author) followed by the message. \begin{DoxyReturn}{Returns}
+std\+::string The standardized, serialized commit data.   Pure virtual method to serialize the object\textquotesingle{}s core data.   
+\end{DoxyReturn}
+The returned string content is what will be hashed and stored in the database. \begin{DoxyReturn}{Returns}
+std\+::string The standardized, serialized data of the object.    
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject_a6fc1786a23d7b60655d4d34704b184b6}{svcs\+::core\+::\+Vcs\+Object}}.
+
+\Hypertarget{classsvcs_1_1core_1_1Commit_ab785acd64fff45d3552b0736b68f9cb7}\index{svcs::core::Commit@{svcs::core::Commit}!setMessage@{setMessage}}
+\index{setMessage@{setMessage}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{setMessage()}{setMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_ab785acd64fff45d3552b0736b68f9cb7} 
+void svcs\+::core\+::\+Commit\+::set\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Sets the commit message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The new commit message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1Commit_aeb4ac65c27689eeb12adf161736da682}\index{svcs::core::Commit@{svcs::core::Commit}!setParent@{setParent}}
+\index{setParent@{setParent}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_aeb4ac65c27689eeb12adf161736da682} 
+void svcs\+::core\+::\+Commit\+::set\+Parent (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Sets a parent commit hash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent commit hash. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1core_1_1Commit_a9c98b1350d9cf4591f81eb3a1f916f9a}\index{svcs::core::Commit@{svcs::core::Commit}!setTimestamp@{setTimestamp}}
+\index{setTimestamp@{setTimestamp}!svcs::core::Commit@{svcs::core::Commit}}
+\doxysubsubsection{\texorpdfstring{setTimestamp()}{setTimestamp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1core_1_1Commit_a9c98b1350d9cf4591f81eb3a1f916f9a} 
+void svcs\+::core\+::\+Commit\+::set\+Timestamp (\begin{DoxyParamCaption}\item[{std\+::time\+\_\+t}]{tstamp}{}\end{DoxyParamCaption})}
+
+
+
+Sets the commit timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tstamp} & The new timestamp value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/include/\mbox{\hyperlink{Commit_8hxx}{Commit.\+hxx}}\item 
+core/src/\mbox{\hyperlink{Commit_8cxx}{Commit.\+cxx}}\end{DoxyCompactItemize}

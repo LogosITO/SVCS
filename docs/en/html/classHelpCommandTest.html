@@ -92,7 +92,7 @@ $(function(){initNavTree('classHelpCommandTest.html','','classHelpCommandTest-me
 </div><!--header-->
 <div class="contents">
 
-<p>Google Test fixture for running unit/integration tests against the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a>.  
+<p>Google Test fixture for running unit/integration tests against the HelpCommand.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="IntHelpCommandTest_8hxx_source.html">IntHelpCommandTest.hxx</a>&gt;</code></p>
@@ -109,12 +109,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:aaacf9ab18d10a23809bb743993ed1960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the testing environment before each test.  <br /></td></tr>
 <tr class="memitem:ae9ba25cb1f7ac4cab80820ae167dd582" id="r_ae9ba25cb1f7ac4cab80820ae167dd582"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9ba25cb1f7ac4cab80820ae167dd582">TearDown</a> () override</td></tr>
 <tr class="memdesc:ae9ba25cb1f7ac4cab80820ae167dd582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tears down the testing environment after each test.  <br /></td></tr>
-<tr class="memitem:a1ad9fd0189edb0eac480032be0c842ed" id="r_a1ad9fd0189edb0eac480032be0c842ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ad9fd0189edb0eac480032be0c842ed">countMessages</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memitem:a1ad9fd0189edb0eac480032be0c842ed" id="r_a1ad9fd0189edb0eac480032be0c842ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ad9fd0189edb0eac480032be0c842ed">countMessages</a> (const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</td></tr>
 <tr class="memdesc:a1ad9fd0189edb0eac480032be0c842ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the occurrences of a specific message (substring) across all event notifications.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a1030123741ad553f0114c700cf6db1e7" id="r_a1030123741ad553f0114c700cf6db1e7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1030123741ad553f0114c700cf6db1e7">containsMessage</a> (const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;notifications, const std::string &amp;message)</td></tr>
+<tr class="memitem:a1030123741ad553f0114c700cf6db1e7" id="r_a1030123741ad553f0114c700cf6db1e7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1030123741ad553f0114c700cf6db1e7">containsMessage</a> (const std::vector&lt; Event &gt; &amp;notifications, const std::string &amp;message)</td></tr>
 <tr class="memdesc:a1030123741ad553f0114c700cf6db1e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific message (substring) exists in any event notification.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -126,12 +126,12 @@ std::shared_ptr&lt; <a class="el" href="classMockSubject.html">MockSubject</a> &
 std::shared_ptr&lt; <a class="el" href="classMockHelpService.html">MockHelpService</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mockHelpService</b></td></tr>
 <tr class="memdesc:a3dcdc65f33f359240348f5990f6f635b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the mock help service, used to control help data and verify calls. <br /></td></tr>
 <tr class="memitem:a9105686746356bf0e8e1f2331089abde" id="r_a9105686746356bf0e8e1f2331089abde"><td class="memItemLeft" align="right" valign="top"><a id="a9105686746356bf0e8e1f2331089abde" name="a9105686746356bf0e8e1f2331089abde"></a>
-std::unique_ptr&lt; <a class="el" href="classHelpCommand.html">HelpCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+std::unique_ptr&lt; HelpCommand &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
 <tr class="memdesc:a9105686746356bf0e8e1f2331089abde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the command being tested. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Google Test fixture for running unit/integration tests against the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a>. </p>
-<p>This fixture is crucial for isolating the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a>'s logic, ensuring it correctly delegates help requests to the <b><a class="el" href="classMockHelpService.html" title="A mock implementation of the HelpService for testing the HelpCommand.">MockHelpService</a></b> and reports the resulting output via the <b><a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a></b> (event bus). </p>
+<div class="textblock"><p>Google Test fixture for running unit/integration tests against the HelpCommand. </p>
+<p>This fixture is crucial for isolating the HelpCommand's logic, ensuring it correctly delegates help requests to the <b><a class="el" href="classMockHelpService.html" title="A mock implementation of the HelpService for testing the HelpCommand.">MockHelpService</a></b> and reports the resulting output via the <b><a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a></b> (event bus). </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a1030123741ad553f0114c700cf6db1e7" name="a1030123741ad553f0114c700cf6db1e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1030123741ad553f0114c700cf6db1e7">&#9670;&#160;</a></span>containsMessage()</h2>
@@ -145,7 +145,7 @@ std::unique_ptr&lt; <a class="el" href="classHelpCommand.html">HelpCommand</a> &
         <tr>
           <td class="memname">bool HelpCommandTest::containsMessage </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+          <td class="paramtype">const std::vector&lt; Event &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -184,7 +184,7 @@ std::unique_ptr&lt; <a class="el" href="classHelpCommand.html">HelpCommand</a> &
         <tr>
           <td class="memname">int HelpCommandTest::countMessages </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structEvent.html">Event</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
+          <td class="paramtype">const std::vector&lt; Event &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>notifications</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -235,7 +235,7 @@ std::unique_ptr&lt; <a class="el" href="classHelpCommand.html">HelpCommand</a> &
 </div><div class="memdoc">
 
 <p>Sets up the testing environment before each test. </p>
-<p>Initializes the <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a>, <a class="el" href="classMockHelpService.html" title="A mock implementation of the HelpService for testing the HelpCommand.">MockHelpService</a>, and the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a> instance. </p>
+<p>Initializes the <a class="el" href="classMockSubject.html" title="Mock implementation of ISubject (Event Bus).">MockSubject</a>, <a class="el" href="classMockHelpService.html" title="A mock implementation of the HelpService for testing the HelpCommand.">MockHelpService</a>, and the HelpCommand instance. </p>
 
 </div>
 </div>

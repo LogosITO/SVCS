@@ -13,37 +13,46 @@
 \DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <filesystem>}}
 \DoxyCodeLine{00029\ }
 \DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{HistoryCommand_8hxx}{../../../cli/include/HistoryCommand.hxx}}"{}}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cli_2mocks_2MockSubject_8hxx}{../mocks/MockSubject.hxx}}"{}}}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{comment}{//\ Forward\ declarations\ for\ core\ components\ used\ in\ fixture}}
-\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRepositoryManager}{RepositoryManager}};}
-\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEvent}{Event}};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHistoryCommandTest}{HistoryCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
-\DoxyCodeLine{00061\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistoryCommandTest_ae7cc70b3a65c5f492f481ae5025fd0db}{SetUp}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistoryCommandTest_a68b08b434d26d652810d2134fad13dda}{TearDown}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistoryCommandTest_aee81d82c5a6de6a481500176887a62c1}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistoryCommandTest_ac77c319893cf38e27e04c1f2a1b78ec4}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHistoryCommandTest_a25c60bf368d89fcbef0c2403f7df8cdf}{stageFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs::test::cli::utils}}\ \{}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{using\ }svcs::services::Event;}
+\DoxyCodeLine{00051\ \textcolor{keyword}{using\ }svcs::core::RepositoryManager;}
+\DoxyCodeLine{00052\ \textcolor{keyword}{using\ }svcs::cli::HistoryCommand;}
+\DoxyCodeLine{00053\ \textcolor{keyword}{using\ }svcs::test::cli::mocks::MockSubject;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ Forward\ declarations\ for\ core\ components\ used\ in\ fixture}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{RepositoryManager}};}
+\DoxyCodeLine{00057\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest}{HistoryCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00083\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a4d5cb5af56568d8e4ff54af439b7ebbd}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ad277ae842437fd846cdbc1701bfd4844}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ac06926adb1f5a115a56b38bd7734da71}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00118\ }
-\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHistoryCommandTest_a2dd0c94ab6f27bbc313407531e4a8524}{createTestCommit}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHistoryCommandTest_a77e801070bf0f2f32aef24ec99967070}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHistoryCommandTest_a8147f4e97007f6aaa9041b79b0529c9a}{countMessages}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00171\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classHistoryCommandTest_ac9e0d365b69a714c99241c990d8c9ab7}{mockEventBus}};}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00180\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classHistoryCommandTest_a5c6bffbcccef609a56591bec4809fe3e}{repoManager}};}
-\DoxyCodeLine{00181\ }
-\DoxyCodeLine{00189\ \ \ \ \ std::unique\_ptr<HistoryCommand>\ \mbox{\hyperlink{classHistoryCommandTest_a7fcbb04d7737880377af966ea51aef41}{command}};}
-\DoxyCodeLine{00190\ }
-\DoxyCodeLine{00198\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classHistoryCommandTest_af0ebb15be2d12ffe092e5cc160067e87}{testDir}};}
-\DoxyCodeLine{00199\ \};}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a3340384b08c07fd14d93418a4c3266e8}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a808f84de4a7c9cb8413c54c2a7b7a6ee}{stageFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a3c10d3cee6d8197e8901f01e910bb090}{createTestCommit}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a88534c0896fd6a68fb7eb4eecc8cd283}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_ad0fdfc41bc5102132584069c8bf606d5}{countMessages}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00193\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a68c6e98a4570360b56fbef448edcd0f4}{mockEventBus}};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00202\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a37e0a982519e902c291112bfcb4b4632}{repoManager}};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00211\ \ \ \ \ std::unique\_ptr<HistoryCommand>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_a8457103ad641422081ac2ce50b003e3a}{command}};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00220\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1HistoryCommandTest_adf596a52c9a90335640aa4cf5aacae05}{testDir}};}
+\DoxyCodeLine{00221\ \};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \}}
 
 \end{DoxyCode}

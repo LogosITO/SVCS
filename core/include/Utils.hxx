@@ -15,6 +15,21 @@
 #include <filesystem>
 #include <string>
 
+/**
+ * @english
+ * @namespace svcs::core
+ * @brief Core VCS data structures and object model.
+ * @details Contains fundamental VCS object types like Blob, Tree, Commit
+ * that form the building blocks of the version control system.
+ *
+ * @russian
+ * @namespace svcs::core
+ * @brief Основные структуры данных СКВ и модель объектов.
+ * @details Содержит фундаментальные типы объектов СКВ, такие как Blob, Tree, Commit,
+ * которые формируют строительные блоки системы контроля версий.
+ */
+namespace svcs::core {
+
 namespace fs = std::filesystem;
 
 /**
@@ -80,3 +95,5 @@ std::string hex_to_binary_string(const std::string& hex_string);
  * @return std::string Хеш SHA-256 в виде шестнадцатеричной строки.
  */
 std::string compute_sha256(const std::string& input);
+
+}

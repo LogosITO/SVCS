@@ -1,0 +1,172 @@
+\doxysection{Пространство имен svcs\+::core}
+\hypertarget{namespacesvcs_1_1core}{}\label{namespacesvcs_1_1core}\index{svcs::core@{svcs::core}}
+
+
+Основные структуры данных СКВ и модель объектов.  
+
+
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Blob}{Blob}}
+\begin{DoxyCompactList}\small\item\em Представляет содержимое файла (Binary Large Object). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1BranchManager}{Branch\+Manager}}
+\begin{DoxyCompactList}\small\item\em Основной сервис для управления ветвями системы контроля версий (создание, удаление, переключение). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Commit}{Commit}}
+\begin{DoxyCompactList}\small\item\em Представляет единую, неизменяемую историческую точку (снимок) в истории репозитория. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}}
+\begin{DoxyCompactList}\small\item\em Структура, содержащая основные метаданные для одного коммита. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Index}{Index}}
+\begin{DoxyCompactList}\small\item\em Управляет областью подготовки (\doxylink{classsvcs_1_1core_1_1Index}{Index}) репозитория СКВ. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}}
+\begin{DoxyCompactList}\small\item\em Представляет одну запись файла в области подготовки (\doxylink{classsvcs_1_1core_1_1Index}{Index}). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}}
+\begin{DoxyCompactList}\small\item\em Управляет базой данных объектов системы контроля версий, включая сохранение и восстановление объектов. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}}
+\begin{DoxyCompactList}\small\item\em Управляет структурой директорий системы контроля версий и основными операциями. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}}
+\begin{DoxyCompactList}\small\item\em Управляет всеми физическими операциями с файлами и директориями в репозитории SVCS. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1TestableObject}{Testable\+Object}}
+\begin{DoxyCompactList}\small\item\em Вспомогательный класс для тестирования неабстрактных методов \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Tree}{Tree}}
+\begin{DoxyCompactList}\small\item\em Представляет состояние директории в СКВ, реализуя контракт \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}}
+\begin{DoxyCompactList}\small\item\em Представляет отдельный элемент (файл или поддиректорию) внутри объекта \doxylink{classsvcs_1_1core_1_1Tree}{Tree}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}}
+\begin{DoxyCompactList}\small\item\em Абстрактный базовый класс, представляющий любой сохраняемый, адресуемый объект в СКВ. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} \mbox{\hyperlink{namespacesvcs_1_1core_a0d0715b6f2a56f90b0f7fccbe3b2b1a9}{create\+Entry}} (std\+::string name, std\+::string hash\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Создание записи дерева. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a4568847d1748de37af94b13137664561}{read\+\_\+file\+\_\+to\+\_\+string}} (const fs\+::path \&full\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Читает всё содержимое файла в одну строку std\+::string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_ae4589d250a2f03780b3dc5e4323a5d8d}{binary\+\_\+to\+\_\+hex\+\_\+string}} (const unsigned char \texorpdfstring{$\ast$}{*}binary\+\_\+data, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Преобразует бинарный буфер (например, сырой хеш SHA-\/1) в его шестнадцатеричное строковое представление. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a66002a699a8af234d86db96941733398}{hex\+\_\+to\+\_\+binary\+\_\+string}} (const std\+::string \&hex\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Преобразует шестнадцатеричную строку (например, 40 символов) в её сырое бинарное байтовое представление (например, 20 байт). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a1cabf85fbe47a7f75139b05f045d4a86}{compute\+\_\+sha256}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Вычисляет хеш SHA-\/256 для заданных входных данных. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1core_a3a52be639bc44bbaf19b81cd17a7ee90}\label{namespacesvcs_1_1core_a3a52be639bc44bbaf19b81cd17a7ee90} 
+const size\+\_\+t {\bfseries CHUNK\+\_\+\+SIZE} = 16384
+\item 
+\Hypertarget{namespacesvcs_1_1core_a6c61f3309e13612b39fe80837500710c}\label{namespacesvcs_1_1core_a6c61f3309e13612b39fe80837500710c} 
+constexpr size\+\_\+t {\bfseries HASH\+\_\+\+BYTE\+\_\+\+SIZE} = 32
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Основные структуры данных СКВ и модель объектов. 
+
+Содержит фундаментальные типы объектов СКВ, такие как \doxylink{classsvcs_1_1core_1_1Blob}{Blob}, \doxylink{classsvcs_1_1core_1_1Tree}{Tree}, \doxylink{classsvcs_1_1core_1_1Commit}{Commit}, которые формируют строительные блоки системы контроля версий. 
+
+\label{doc-func-members}
+\Hypertarget{namespacesvcs_1_1core_doc-func-members}
+\doxysubsection{Функции}
+\Hypertarget{namespacesvcs_1_1core_ae4589d250a2f03780b3dc5e4323a5d8d}\index{svcs::core@{svcs::core}!binary\_to\_hex\_string@{binary\_to\_hex\_string}}
+\index{binary\_to\_hex\_string@{binary\_to\_hex\_string}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{binary\_to\_hex\_string()}{binary\_to\_hex\_string()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_ae4589d250a2f03780b3dc5e4323a5d8d} 
+std\+::string svcs\+::core\+::binary\+\_\+to\+\_\+hex\+\_\+string (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{binary\+\_\+data}{, }\item[{size\+\_\+t}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Преобразует бинарный буфер (например, сырой хеш SHA-\/1) в его шестнадцатеричное строковое представление. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em binary\+\_\+data} & Указатель на сырые бинарные данные. \\
+\hline
+{\em length} & Длина бинарных данных в байтах (например, 20 для SHA-\/1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка std\+::string, содержащая шестнадцатеричное представление (например, 40 символов для SHA-\/1). 
+\end{DoxyReturn}
+\Hypertarget{namespacesvcs_1_1core_a1cabf85fbe47a7f75139b05f045d4a86}\index{svcs::core@{svcs::core}!compute\_sha256@{compute\_sha256}}
+\index{compute\_sha256@{compute\_sha256}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{compute\_sha256()}{compute\_sha256()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_a1cabf85fbe47a7f75139b05f045d4a86} 
+std\+::string svcs\+::core\+::compute\+\_\+sha256 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})}
+
+
+
+Вычисляет хеш SHA-\/256 для заданных входных данных. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em input} & Входные данные для хеширования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::string Хеш SHA-\/256 в виде шестнадцатеричной строки. 
+\end{DoxyReturn}
+\Hypertarget{namespacesvcs_1_1core_a0d0715b6f2a56f90b0f7fccbe3b2b1a9}\index{svcs::core@{svcs::core}!createEntry@{createEntry}}
+\index{createEntry@{createEntry}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{createEntry()}{createEntry()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_a0d0715b6f2a56f90b0f7fccbe3b2b1a9} 
+\mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} svcs\+::core\+::create\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{hash\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Создание записи дерева. 
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает готовую запись \doxylink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя файла или поддиректории. \\
+\hline
+{\em hash\+\_\+id} & Хеш-\/идентификатор (SHA-\/256). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacesvcs_1_1core_a66002a699a8af234d86db96941733398}\index{svcs::core@{svcs::core}!hex\_to\_binary\_string@{hex\_to\_binary\_string}}
+\index{hex\_to\_binary\_string@{hex\_to\_binary\_string}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{hex\_to\_binary\_string()}{hex\_to\_binary\_string()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_a66002a699a8af234d86db96941733398} 
+std\+::string svcs\+::core\+::hex\+\_\+to\+\_\+binary\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hex\+\_\+string}{}\end{DoxyParamCaption})}
+
+
+
+Преобразует шестнадцатеричную строку (например, 40 символов) в её сырое бинарное байтовое представление (например, 20 байт). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em hex\+\_\+string} & Входная шестнадцатеричная строка. Должна иметь чётную длину. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка std\+::string, содержащая сырые бинарные байты. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & если входная строка имеет нечётную длину или содержит недопустимые шестнадцатеричные символы. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{namespacesvcs_1_1core_a4568847d1748de37af94b13137664561}\index{svcs::core@{svcs::core}!read\_file\_to\_string@{read\_file\_to\_string}}
+\index{read\_file\_to\_string@{read\_file\_to\_string}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{read\_file\_to\_string()}{read\_file\_to\_string()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_a4568847d1748de37af94b13137664561} 
+std\+::string svcs\+::core\+::read\+\_\+file\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{full\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Читает всё содержимое файла в одну строку std\+::string. 
+
+Эта служебная функция предназначена для чтения файлов малого и среднего размера и является критически важной для создания содержимого \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} (например, Blobs). Она открывает файл в бинарном режиме, чтобы гарантировать корректное чтение всех символов на всех платформах. 
+\begin{DoxyParams}{Аргументы}
+{\em full\+\_\+path} & Полный, абсолютный путь к файлу на диске. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Всё содержимое файла в виде одной строки std\+::string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если файл не может быть открыт для чтения. \\
+\hline
+\end{DoxyExceptions}

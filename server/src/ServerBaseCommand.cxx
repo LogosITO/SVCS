@@ -17,6 +17,8 @@
 
 #include "../include/ServerBaseCommand.hxx"
 
+namespace svcs::server::cli {
+
 ServerBaseCommand::ServerBaseCommand(std::shared_ptr<ISubject> event_bus,
                                      std::shared_ptr<RepositoryManager> repo_manager)
     : event_bus_(std::move(event_bus))
@@ -36,4 +38,6 @@ void ServerBaseCommand::notifyError(const std::string& message) const
     if (event_bus_) {
         event_bus_->notify(Event{Event::ERROR_MESSAGE, message, "ServerCommand"});
     }
+}
+
 }

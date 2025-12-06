@@ -24,6 +24,11 @@
 
 #include <sstream>
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 BranchCommand::BranchCommand(std::shared_ptr<ISubject> event_bus,
                            std::shared_ptr<BranchManager> branch_manager)
     : event_bus_(std::move(event_bus))
@@ -409,4 +414,6 @@ bool BranchCommand::isValidBranchName(const std::string& name) {
 
 bool BranchCommand::branchExists(const std::string& name) const {
     return branch_manager_->branchExists(name);
+}
+
 }

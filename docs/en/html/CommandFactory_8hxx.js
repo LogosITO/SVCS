@@ -1,4 +1,4 @@
 var CommandFactory_8hxx =
 [
-    [ "CommandFactory", "classCommandFactory.html", "classCommandFactory" ]
+    [ "svcs::cli::CommandFactory", "classsvcs_1_1cli_1_1CommandFactory.html", "classsvcs_1_1cli_1_1CommandFactory" ]
 ];

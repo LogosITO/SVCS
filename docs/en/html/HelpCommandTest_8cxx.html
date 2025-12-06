@@ -92,39 +92,52 @@ $(function(){initNavTree('HelpCommandTest_8cxx.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Unit tests for the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a> class.  
+<p>Unit tests for the <a class="el" href="classsvcs_1_1test_1_1cli_1_1HelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a> class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="IntHelpCommandTest_8hxx_source.html">utils/IntHelpCommandTest.hxx</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;utils/IntHelpCommandTest.hxx&quot;</code><br />
+<code>#include &quot;mocks/MockHelpServiceAdapter.hxx&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3AHelpCommand" id="r_svcs_3A_3Atest_3A_3Acli_3A_3AHelpCommand"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1cli_1_1HelpCommand.html">svcs::test::cli::HelpCommand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command for displaying help information about other commands.  <a href="classsvcs_1_1test_1_1cli_1_1HelpCommand.html#details">More...</a><br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli_3A_3AEvent" id="r_svcs_3A_3Atest_3A_3Acli_3A_3AEvent"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsvcs_1_1test_1_1cli_1_1Event.html">svcs::test::cli::Event</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure describing an event published by the VCS core.  <a href="structsvcs_1_1test_1_1cli_1_1Event.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Acli" id="r_svcs_3A_3Atest_3A_3Acli"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1cli.html">svcs::test::cli</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit tests for command-line interface components. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a07d0fce9c9979557ee1423070c9eebdd" id="r_a07d0fce9c9979557ee1423070c9eebdd"><td class="memItemLeft" align="right" valign="top"><a id="a07d0fce9c9979557ee1423070c9eebdd" name="a07d0fce9c9979557ee1423070c9eebdd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, ShowGeneralHelp)</td></tr>
-<tr class="memitem:a63cfb8ca5b07ab2121064bd0f4af6cd4" id="r_a63cfb8ca5b07ab2121064bd0f4af6cd4"><td class="memItemLeft" align="right" valign="top"><a id="a63cfb8ca5b07ab2121064bd0f4af6cd4" name="a63cfb8ca5b07ab2121064bd0f4af6cd4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, ShowCommandHelp)</td></tr>
-<tr class="memitem:a1998e06c100eaa1f06be2ba9370a2867" id="r_a1998e06c100eaa1f06be2ba9370a2867"><td class="memItemLeft" align="right" valign="top"><a id="a1998e06c100eaa1f06be2ba9370a2867" name="a1998e06c100eaa1f06be2ba9370a2867"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, ShowCommandHelpMultipleArgs)</td></tr>
-<tr class="memitem:abcad235d74ed983d1901bf59e2f11433" id="r_abcad235d74ed983d1901bf59e2f11433"><td class="memItemLeft" align="right" valign="top"><a id="abcad235d74ed983d1901bf59e2f11433" name="abcad235d74ed983d1901bf59e2f11433"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, ShowHelpCommandHelp)</td></tr>
-<tr class="memitem:a3f7ebb4e38c1bb11d473c34272f61f49" id="r_a3f7ebb4e38c1bb11d473c34272f61f49"><td class="memItemLeft" align="right" valign="top"><a id="a3f7ebb4e38c1bb11d473c34272f61f49" name="a3f7ebb4e38c1bb11d473c34272f61f49"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, ErrorWhenHelpServiceNotAvailableGeneral)</td></tr>
-<tr class="memitem:ac429862f3111d82920191c98c49eee77" id="r_ac429862f3111d82920191c98c49eee77"><td class="memItemLeft" align="right" valign="top"><a id="ac429862f3111d82920191c98c49eee77" name="ac429862f3111d82920191c98c49eee77"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, ErrorWhenHelpServiceNotAvailableCommand)</td></tr>
-<tr class="memitem:af006a45cc5319cbed85ae1a9f8bccb42" id="r_af006a45cc5319cbed85ae1a9f8bccb42"><td class="memItemLeft" align="right" valign="top"><a id="af006a45cc5319cbed85ae1a9f8bccb42" name="af006a45cc5319cbed85ae1a9f8bccb42"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, CommandDescriptionAndUsage)</td></tr>
-<tr class="memitem:a4702bf9d760c5a0ea436b2f185cf55e8" id="r_a4702bf9d760c5a0ea436b2f185cf55e8"><td class="memItemLeft" align="right" valign="top"><a id="a4702bf9d760c5a0ea436b2f185cf55e8" name="a4702bf9d760c5a0ea436b2f185cf55e8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, CorrectSource)</td></tr>
-<tr class="memitem:a3f99619d6f99c4ccf0a293c38b8b7bcc" id="r_a3f99619d6f99c4ccf0a293c38b8b7bcc"><td class="memItemLeft" align="right" valign="top"><a id="a3f99619d6f99c4ccf0a293c38b8b7bcc" name="a3f99619d6f99c4ccf0a293c38b8b7bcc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, EmptyCommandList)</td></tr>
-<tr class="memitem:aa88f0fe445d5f30ed23a8765e884dd26" id="r_aa88f0fe445d5f30ed23a8765e884dd26"><td class="memItemLeft" align="right" valign="top"><a id="aa88f0fe445d5f30ed23a8765e884dd26" name="aa88f0fe445d5f30ed23a8765e884dd26"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, HelpForNonExistentCommand)</td></tr>
-<tr class="memitem:ada28f3df5326264c17990abb012d42a2" id="r_ada28f3df5326264c17990abb012d42a2"><td class="memItemLeft" align="right" valign="top"><a id="ada28f3df5326264c17990abb012d42a2" name="ada28f3df5326264c17990abb012d42a2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="classHelpCommandTest.html">HelpCommandTest</a>, MultipleHelpCommands)</td></tr>
+<tr class="memitem:ae0edd48f24928f83502c14ecbe9f5fd1" id="r_ae0edd48f24928f83502c14ecbe9f5fd1"><td class="memItemLeft" align="right" valign="top"><a id="ae0edd48f24928f83502c14ecbe9f5fd1" name="ae0edd48f24928f83502c14ecbe9f5fd1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, ShowGeneralHelp)</td></tr>
+<tr class="memitem:a77094bcc4d5426ff4f89c085408c76f2" id="r_a77094bcc4d5426ff4f89c085408c76f2"><td class="memItemLeft" align="right" valign="top"><a id="a77094bcc4d5426ff4f89c085408c76f2" name="a77094bcc4d5426ff4f89c085408c76f2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, ShowCommandHelp)</td></tr>
+<tr class="memitem:ab5085121f47b04c49aef9c13b60f3147" id="r_ab5085121f47b04c49aef9c13b60f3147"><td class="memItemLeft" align="right" valign="top"><a id="ab5085121f47b04c49aef9c13b60f3147" name="ab5085121f47b04c49aef9c13b60f3147"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, ShowCommandHelpMultipleArgs)</td></tr>
+<tr class="memitem:ac79dd7d51125e8e1dcff08786d070e53" id="r_ac79dd7d51125e8e1dcff08786d070e53"><td class="memItemLeft" align="right" valign="top"><a id="ac79dd7d51125e8e1dcff08786d070e53" name="ac79dd7d51125e8e1dcff08786d070e53"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, ShowHelpCommandHelp)</td></tr>
+<tr class="memitem:afa0e163590a760247bdcf7427ecc1949" id="r_afa0e163590a760247bdcf7427ecc1949"><td class="memItemLeft" align="right" valign="top"><a id="afa0e163590a760247bdcf7427ecc1949" name="afa0e163590a760247bdcf7427ecc1949"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, ErrorWhenHelpServiceNotAvailableGeneral)</td></tr>
+<tr class="memitem:ab91104b3f2de40eb09de91cd8e68ee55" id="r_ab91104b3f2de40eb09de91cd8e68ee55"><td class="memItemLeft" align="right" valign="top"><a id="ab91104b3f2de40eb09de91cd8e68ee55" name="ab91104b3f2de40eb09de91cd8e68ee55"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, ErrorWhenHelpServiceNotAvailableCommand)</td></tr>
+<tr class="memitem:a8ef945f7164f996701901c773a27b1a5" id="r_a8ef945f7164f996701901c773a27b1a5"><td class="memItemLeft" align="right" valign="top"><a id="a8ef945f7164f996701901c773a27b1a5" name="a8ef945f7164f996701901c773a27b1a5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, CommandDescriptionAndUsage)</td></tr>
+<tr class="memitem:a4a797568670c27cd69d7b89b25c5a9d5" id="r_a4a797568670c27cd69d7b89b25c5a9d5"><td class="memItemLeft" align="right" valign="top"><a id="a4a797568670c27cd69d7b89b25c5a9d5" name="a4a797568670c27cd69d7b89b25c5a9d5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, CorrectSource)</td></tr>
+<tr class="memitem:a5ccefed550b0b100b7d9fc726bc504f9" id="r_a5ccefed550b0b100b7d9fc726bc504f9"><td class="memItemLeft" align="right" valign="top"><a id="a5ccefed550b0b100b7d9fc726bc504f9" name="a5ccefed550b0b100b7d9fc726bc504f9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, EmptyCommandList)</td></tr>
+<tr class="memitem:a96cc65c0b7fad1f35110eead89169664" id="r_a96cc65c0b7fad1f35110eead89169664"><td class="memItemLeft" align="right" valign="top"><a id="a96cc65c0b7fad1f35110eead89169664" name="a96cc65c0b7fad1f35110eead89169664"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, HelpForNonExistentCommand)</td></tr>
+<tr class="memitem:a9ed881f0e6c56f7825dc4a111afecff2" id="r_a9ed881f0e6c56f7825dc4a111afecff2"><td class="memItemLeft" align="right" valign="top"><a id="a9ed881f0e6c56f7825dc4a111afecff2" name="a9ed881f0e6c56f7825dc4a111afecff2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::cli::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1cli_1_1utils_1_1HelpCommandTest.html">HelpCommandTest</a>, MultipleHelpCommands)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Unit tests for the <a class="el" href="classHelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a> class. </p>
+<div class="textblock"><p>Unit tests for the <a class="el" href="classsvcs_1_1test_1_1cli_1_1HelpCommand.html" title="Command for displaying help information about other commands.">HelpCommand</a> class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
-<p>This file implements test cases for the <a class="el" href="classHelpCommandTest.html" title="Google Test fixture for running unit/integration tests against the HelpCommand.">HelpCommandTest</a> fixture, focusing on ensuring the command correctly interacts with the mock help service to provide general help, specific command help, and handles various edge cases like multiple arguments, missing help service dependency, and non-existent commands. </p>
+<p>This file implements test cases for the HelpCommandTest fixture, focusing on ensuring the command correctly interacts with the mock help service to provide general help, specific command help, and handles various edge cases like multiple arguments, missing help service dependency, and non-existent commands. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

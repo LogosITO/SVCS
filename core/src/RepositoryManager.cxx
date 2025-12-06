@@ -24,6 +24,10 @@
 #include <iomanip>
 #include <utility>
 
+namespace svcs::core {
+
+using namespace svcs::services;
+
 RepositoryManager::RepositoryManager(std::shared_ptr<ISubject> bus) 
     : eventBus(std::move(bus)) {
 }
@@ -1080,4 +1084,6 @@ std::filesystem::path RepositoryManager::getRepositoryPath() const {
     }
     
     return std::filesystem::current_path();
+}
+
 }

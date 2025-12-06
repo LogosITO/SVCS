@@ -16,6 +16,11 @@
 #include "../include/SaveCommand.hxx"
 #include "../../services/ISubject.hxx"
 
+namespace svcs::cli {
+
+using namespace svcs::core;
+using namespace svcs::services;
+
 SaveCommand::SaveCommand(std::shared_ptr<ISubject> subject,
                          std::shared_ptr<RepositoryManager> repoManager)
     : eventBus_(std::move(subject)), repoManager_(std::move(repoManager)) {
@@ -148,4 +153,6 @@ bool SaveCommand::createSavePoint(const std::string& message) const {
                           "Error creating save point: " + std::string(e.what()), "save"});
         return false;
     }
+}
+
 }

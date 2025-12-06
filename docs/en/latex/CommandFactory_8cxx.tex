@@ -2,7 +2,7 @@
 \hypertarget{CommandFactory_8cxx}{}\label{CommandFactory_8cxx}\index{cli/src/CommandFactory.cxx@{cli/src/CommandFactory.cxx}}
 
 
-Implementation of the \doxylink{classCommandFactory}{Command\+Factory} class, which is responsible for dynamically creating \doxylink{classICommand}{ICommand} objects and managing their lifecycle and dependencies.  
+Implementation of the Command\+Factory class, which is responsible for dynamically creating ICommand objects and managing their lifecycle and dependencies.  
 
 
 {\ttfamily \#include "{}../include/\+Utils.\+hxx"{}}\newline
@@ -25,10 +25,15 @@ Implementation of the \doxylink{classCommandFactory}{Command\+Factory} class, wh
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
 {\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1cli}{svcs\+::cli}}
+\begin{DoxyCompactList}\small\item\em Command-\/line interface components and command implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implementation of the \doxylink{classCommandFactory}{Command\+Factory} class, which is responsible for dynamically creating \doxylink{classICommand}{ICommand} objects and managing their lifecycle and dependencies. 
+Implementation of the Command\+Factory class, which is responsible for dynamically creating ICommand objects and managing their lifecycle and dependencies. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License

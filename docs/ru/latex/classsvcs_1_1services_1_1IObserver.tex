@@ -1,0 +1,96 @@
+\doxysection{Класс svcs\+::services\+::IObserver}
+\hypertarget{classsvcs_1_1services_1_1IObserver}{}\label{classsvcs_1_1services_1_1IObserver}\index{svcs::services::IObserver@{svcs::services::IObserver}}
+
+
+Интерфейс Observer (Абстрактный Базовый Класс).  
+
+
+
+
+{\ttfamily \#include $<$IObserver.\+hxx$>$}
+
+Граф наследования\+:svcs\+::services\+::IObserver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.186441cm]{classsvcs_1_1services_1_1IObserver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Виртуальный деструктор по умолчанию. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event)=0
+\begin{DoxyCompactList}\small\item\em Метод, вызываемый Subject для уведомления наблюдателя. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}{update}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event)=0
+\begin{DoxyCompactList}\small\item\em Метод, вызываемый Subject для обновления наблюдателя. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Интерфейс Observer (Абстрактный Базовый Класс). 
+
+Любой класс, который хочет получать уведомления от ядра системы (например, Repository, Command), должен реализовать этот интерфейс для регистрации в Subject. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1services_1_1IObserver_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e}\index{svcs::services::IObserver@{svcs::services::IObserver}!````~IObserver@{\texorpdfstring{$\sim$}{\string~}IObserver}}
+\index{````~IObserver@{\texorpdfstring{$\sim$}{\string~}IObserver}!svcs::services::IObserver@{svcs::services::IObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IObserver()}{\string~IObserver()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e} 
+virtual svcs\+::services\+::\+IObserver\+::\texorpdfstring{$\sim$}{\string~}\+IObserver (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Виртуальный деструктор по умолчанию. 
+
+Обеспечивает корректную очистку производных классов наблюдателей через указатель на базовый класс. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1services_1_1IObserver_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6}\index{svcs::services::IObserver@{svcs::services::IObserver}!notify@{notify}}
+\index{notify@{notify}!svcs::services::IObserver@{svcs::services::IObserver}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6} 
+virtual void svcs\+::services\+::\+IObserver\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Метод, вызываемый Subject для уведомления наблюдателя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event} & Структура \doxylink{structsvcs_1_1services_1_1Event}{Event}, содержащая информацию о произошедшем. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Уст.}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Уст.}}]Примечание\+: Этот метод кажется избыточным с \doxylink{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}{update(const Event\& event)}. \end{DoxyRefDesc}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a6847ba93d4e8ac32bee25acd6c7c3415}{svcs\+::services\+::\+Logger}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a0090d3db6b90405d3a295c7352212029}{svcs\+::test\+::core\+::\+Manual\+Mock\+Observer}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObserver_aa4b44ef9a76d800e24aeaca7c863f5e9}{svcs\+::test\+::core\+::\+Mock\+Observer}} и \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1NullObserver_a2109aadb31d3df95bc79eb9851863014}{svcs\+::test\+::core\+::\+Null\+Observer}}.
+
+\Hypertarget{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}\index{svcs::services::IObserver@{svcs::services::IObserver}!update@{update}}
+\index{update@{update}!svcs::services::IObserver@{svcs::services::IObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff} 
+virtual void svcs\+::services\+::\+IObserver\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Метод, вызываемый Subject для обновления наблюдателя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event} & Структура \doxylink{structsvcs_1_1services_1_1Event}{Event}, содержащая информацию о произошедшем. \\
+\hline
+\end{DoxyParams}
+
+
+Замещается в \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a53b2de68a56a7add166a652f16a91dc7}{svcs\+::services\+::\+Logger}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a2cd4fd7c054db0fe54515ef16f952759}{svcs\+::test\+::core\+::\+Manual\+Mock\+Observer}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObserver_ae1ad93771d332f163df79d761ab5895c}{svcs\+::test\+::core\+::\+Mock\+Observer}} и \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1NullObserver_a58d2e700fcb98a96aadff953e9e75d2b}{svcs\+::test\+::core\+::\+Null\+Observer}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{IObserver_8hxx}{IObserver.\+hxx}}\end{DoxyCompactItemize}

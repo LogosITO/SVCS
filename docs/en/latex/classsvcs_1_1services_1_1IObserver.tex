@@ -1,0 +1,96 @@
+\doxysection{svcs\+::services\+::IObserver Class Reference}
+\hypertarget{classsvcs_1_1services_1_1IObserver}{}\label{classsvcs_1_1services_1_1IObserver}\index{svcs::services::IObserver@{svcs::services::IObserver}}
+
+
+The Observer Interface (Abstract Base Class).  
+
+
+
+
+{\ttfamily \#include $<$IObserver.\+hxx$>$}
+
+Inheritance diagram for svcs\+::services\+::IObserver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.186441cm]{classsvcs_1_1services_1_1IObserver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6}{notify}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event)=0
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to notify the observer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}{update}} (const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&event)=0
+\begin{DoxyCompactList}\small\item\em Method called by the Subject to update the observer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Observer Interface (Abstract Base Class). 
+
+Any class that wants to receive notifications from the system core (e.\+g., Repository, Command) must implement this interface to be registered with a Subject. 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1services_1_1IObserver_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e}\index{svcs::services::IObserver@{svcs::services::IObserver}!````~IObserver@{\texorpdfstring{$\sim$}{\string~}IObserver}}
+\index{````~IObserver@{\texorpdfstring{$\sim$}{\string~}IObserver}!svcs::services::IObserver@{svcs::services::IObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IObserver()}{\string~IObserver()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1IObserver_a2aaa75f2e60826f2af3ceaa517b11e3e} 
+virtual svcs\+::services\+::\+IObserver\+::\texorpdfstring{$\sim$}{\string~}\+IObserver (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default virtual destructor. 
+
+Ensures correct cleanup of derived observer classes via a base class pointer. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1services_1_1IObserver_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6}\index{svcs::services::IObserver@{svcs::services::IObserver}!notify@{notify}}
+\index{notify@{notify}!svcs::services::IObserver@{svcs::services::IObserver}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1IObserver_ac4a70f3e0348858f76d73fa634fdf9f6} 
+virtual void svcs\+::services\+::\+IObserver\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Method called by the Subject to notify the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structsvcs_1_1services_1_1Event}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Note\+: This method appears redundant with \doxylink{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}{update(const Event\& event)}.\end{DoxyRefDesc}
+
+
+Implemented in \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a6847ba93d4e8ac32bee25acd6c7c3415}{svcs\+::services\+::\+Logger}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a0090d3db6b90405d3a295c7352212029}{svcs\+::test\+::core\+::\+Manual\+Mock\+Observer}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObserver_aa4b44ef9a76d800e24aeaca7c863f5e9}{svcs\+::test\+::core\+::\+Mock\+Observer}}, and \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1NullObserver_a2109aadb31d3df95bc79eb9851863014}{svcs\+::test\+::core\+::\+Null\+Observer}}.
+
+\Hypertarget{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff}\index{svcs::services::IObserver@{svcs::services::IObserver}!update@{update}}
+\index{update@{update}!svcs::services::IObserver@{svcs::services::IObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1services_1_1IObserver_ad1b1f2d1d12ffb179b3e56dc9f5050ff} 
+virtual void svcs\+::services\+::\+IObserver\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Method called by the Subject to update the observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{structsvcs_1_1services_1_1Event}{Event} structure containing information about the occurrence. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classsvcs_1_1services_1_1Logger_a53b2de68a56a7add166a652f16a91dc7}{svcs\+::services\+::\+Logger}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1ManualMockObserver_a2cd4fd7c054db0fe54515ef16f952759}{svcs\+::test\+::core\+::\+Manual\+Mock\+Observer}}, \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1MockObserver_ae1ad93771d332f163df79d761ab5895c}{svcs\+::test\+::core\+::\+Mock\+Observer}}, and \mbox{\hyperlink{classsvcs_1_1test_1_1core_1_1NullObserver_a58d2e700fcb98a96aadff953e9e75d2b}{svcs\+::test\+::core\+::\+Null\+Observer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+services/\mbox{\hyperlink{IObserver_8hxx}{IObserver.\+hxx}}\end{DoxyCompactItemize}

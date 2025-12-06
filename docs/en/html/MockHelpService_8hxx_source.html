@@ -92,160 +92,183 @@ $(function(){initNavTree('MockHelpService_8hxx_source.html','',''); });
 </div><!--header-->
 <div class="contents">
 <a href="MockHelpService_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;set&gt;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="HelpService_8hxx.html">../../../cli/include/HelpService.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="MockSubject_8hxx.html">MockSubject.hxx</a>&quot;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// Forward declaration if necessary, but included headers should suffice</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// struct Event;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classMockHelpService.html">   40</a></span><span class="comment"> * @english</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * @class MockHelpService</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * @brief A mock implementation of the HelpService for testing the HelpCommand.</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * @details This mock allows test cases to:</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * 1. **Configure** the list of available commands.</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> * 2. **Configure** the descriptions for specific commands.</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> * 3. **Verify** which command&#39;s help was requested by the `HelpCommand`.</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * 4. Use the provided MockSubject for emitting debug information during testing.</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * @russian</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> * @class MockHelpService</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> * @brief Mock реализация HelpService для тестирования HelpCommand.</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> * @details Этот mock позволяет тестовым случаям:</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> * 1. **Настраивать** список доступных команд.</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> * 2. **Настраивать** описания для конкретных команд.</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> * 3. **Проверять**, справка какой команды была запрошена `HelpCommand`.</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> * 4. Использовать предоставленный MockSubject для вывода отладочной информации во время тестирования.</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">class </span><a class="code hl_function" href="classMockHelpService.html#ac1c8570640107c6dd75b357a5bde10d3">MockHelpService</a> : <span class="keyword">public</span> <a class="code hl_function" href="classHelpService.html#ac380002930a510d355fe11cf11e946ce">HelpService</a> {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    std::vector&lt;std::string&gt; availableCommands_;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
-<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classMockHelpService.html#ac1c8570640107c6dd75b357a5bde10d3">   74</a></span><span class="comment">     * @brief Хранилище для предварительно настроенных описаний команд.</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    std::map&lt;std::string, std::string&gt; commandDescriptions_;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespacesvcs_1_1test_1_1cli_1_1mocks.html">   27</a></span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="cli_2mocks_2MockSubject_8hxx.html">MockSubject.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="Event_8hxx.html">../../../services/Event.hxx</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html">   49</a></span><span class="comment"> * верификации для модульных тестов CLI команд.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesvcs_1_1test_1_1cli_1_1mocks.html">svcs::test::cli::mocks</a> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">using </span><a class="code hl_struct" href="structsvcs_1_1services_1_1Event.html">svcs::services::Event</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">class </span><a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#aea3d4e965231bcbd0192a21cafa727b5">MockHelpService</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    std::vector&lt;std::string&gt; availableCommands_;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    std::set&lt;std::string&gt; calledCommandHelp_;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
-<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classMockHelpService.html#a48d91142003d63d20ca19b3215e2a5d2">   92</a></span><span class="comment">     * @brief Mock шина событий, используемая для опционального отладочного вывода.</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    std::shared_ptr&lt;MockSubject&gt; mockEventBus_;</div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#aea3d4e965231bcbd0192a21cafa727b5">   87</a></span><span class="comment">     * @brief Storage for pre-configured command descriptions.</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">     *</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">     * @russian</span></div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classMockHelpService.html#acd98a15f199035212c810e95aa496a62">  102</a></span><span class="comment">     * @param mockEventBus The shared pointer to the MockSubject used for notifications.</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">     *</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">     * @russian</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">     * @brief Конструктор для MockHelpService.</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">     * @details Инициализирует базовый HelpService с лямбда-функциями, которые делегируют</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">     * собственным методам управления mock&#39;а, и сохраняет mock шину событий.</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">     * @param mockEventBus Общий указатель на MockSubject, используемый для уведомлений.</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">     * @brief Хранилище для предварительно настроенных описаний команд.</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    std::map&lt;std::string, std::string&gt; commandDescriptions_;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a7937d3fd7e2a22e3e7302f272cdcd16e">   98</a></span><span class="comment">     * @russian</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">     * @brief Записывает имена команд, для которых была запрошена справка через showCommandHelp.</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">     */</span></div>
 </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    std::set&lt;std::string&gt; calledCommandHelp_;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a7ce43b5a6c833311b3eff06df2155384">  108</a></span><span class="comment">     * @brief Mock шина событий, используемая для опционального отладочного вывода.</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classMockHelpService.html#ac1c8570640107c6dd75b357a5bde10d3">MockHelpService</a>(<span class="keyword">const</span> std::shared_ptr&lt;MockSubject&gt;&amp; mockEventBus)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        : <a class="code hl_function" href="classHelpService.html#ac380002930a510d355fe11cf11e946ce">HelpService</a>(</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            mockEventBus, <span class="comment">// bus</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            [this]() { <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classMockHelpService.html#a48d91142003d63d20ca19b3215e2a5d2">getAvailableCommands</a>(); }, <span class="comment">// commandsFunc</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            [<span class="keyword">this</span>](<span class="keyword">const</span> std::string&amp; cmd) { <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classMockHelpService.html#acd98a15f199035212c810e95aa496a62">getCommandDescription</a>(cmd); }, <span class="comment">// descriptionFunc</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            [<span class="keyword">this</span>](<span class="keyword">const</span> std::string&amp; cmd) { this-&gt;<a class="code hl_function" href="classMockHelpService.html#aa94f1b9dc36e19b7df936b93ff248a7d">showCommandHelp</a>(cmd); }, <span class="comment">// helpFunc</span></div>
-<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classMockHelpService.html#aa94f1b9dc36e19b7df936b93ff248a7d">  116</a></span>            [](<span class="keyword">const</span> std::string&amp; cmd) { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Usage for &quot;</span> + cmd; } <span class="comment">// usageFunc - simplified usage for mock</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>          ),</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>          mockEventBus_(mockEventBus) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    std::shared_ptr&lt;MockSubject&gt; mockEventBus_;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">bool</span> wasGeneralHelpCalled_ = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">// --- Implementations of HelpService Abstract Methods ---</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a56a8ccf6fe0827c935c6e3ee81972841">  122</a></span><span class="comment">    /**</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">     * @english</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">     * @brief Constructor for MockHelpService.</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">     * @param mockEventBus The shared pointer to the MockSubject used for notifications.</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">     *</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">     * @russian</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">     * @brief Конструктор для MockHelpService.</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">     * @param mockEventBus Общий указатель на MockSubject, используемый для уведомлений.</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#aea3d4e965231bcbd0192a21cafa727b5">MockHelpService</a>(<span class="keyword">const</span> std::shared_ptr&lt;MockSubject&gt;&amp; mockEventBus)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        : mockEventBus_(mockEventBus) {</div>
 </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
-<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classMockHelpService.html#a8b572032f59990e31da0835fbebda594">  131</a></span><span class="comment">     */</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    [[nodiscard]] std::vector&lt;std::string&gt; <a class="code hl_function" href="classMockHelpService.html#a48d91142003d63d20ca19b3215e2a5d2">getAvailableCommands</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> availableCommands_;</div>
-</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
-<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="classMockHelpService.html#ac0649bf36f4f4c90a5f59e6fa59d987b">  141</a></span><span class="comment">     *</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="comment">// --- Mock Methods Matching HelpService Interface ---</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a73471ad850ff48bb09a3a68383519f75">  139</a></span><span class="comment">     * @brief Returns the pre-configured list of available commands.</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">     * @return A vector of command names.</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">     *</span></div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">     * @russian</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">     * @brief Возвращает предварительно настроенное описание для заданной команды.</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">     * @brief Возвращает предварительно настроенный список доступных команд.</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">     * @return Вектор имен команд.</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    [[nodiscard]] std::vector&lt;std::string&gt; <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a7937d3fd7e2a22e3e7302f272cdcd16e">getAvailableCommands</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> availableCommands_;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
 </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">     * @param commandName Имя команды.</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">     * @return Настроенное описание или &quot;No description available&quot;, если не установлено.</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    [[nodiscard]] std::string <a class="code hl_function" href="classMockHelpService.html#acd98a15f199035212c810e95aa496a62">getCommandDescription</a>(<span class="keyword">const</span> std::string&amp; commandName)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keyword">auto</span> it = commandDescriptions_.find(commandName);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">if</span> (it != commandDescriptions_.end()) {</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            <span class="keywordflow">return</span> it-&gt;second;</div>
-<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classMockHelpService.html#a75eea5375c564e93e597b8ccdb3181d8">  151</a></span>        }</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;No description available&quot;</span>;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a29cfe1f86467c07e88b9c738af90b85d">  158</a></span><span class="comment">     * @param commandName Имя команды.</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">     * @return Настроенное описание или &quot;No description available&quot;, если не установлено.</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment">     */</span></div>
 </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
-<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classMockHelpService.html#a1e5c10b1ef3a05be719dcaece9c8855e">  159</a></span><span class="comment">     * @param commandName The name of the command whose help is requested.</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment">     *</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">     * @russian</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">     * @brief Записывает, что справка была запрошена для заданной команды.</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">     * @details Также отправляет отладочное сообщение в mock шину событий.</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    [[nodiscard]] std::string <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a7ce43b5a6c833311b3eff06df2155384">getCommandDescription</a>(<span class="keyword">const</span> std::string&amp; commandName)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keyword">auto</span> it = commandDescriptions_.find(commandName);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">if</span> (it != commandDescriptions_.end()) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;No description available&quot;</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="foldopen" id="foldopen00168" data-start="{" data-end="}">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#aa0a2290e2ce38092aee0e996ff281336">  168</a></span></div>
 </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">     * @param commandName Имя команды, для которой запрашивается справка.</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1dc6236f99eefa3b1767c0f9e56cc576">  178</a></span><span class="comment">     * @param commandName Имя команды, для которой запрашивается справка.</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a56a8ccf6fe0827c935c6e3ee81972841">showCommandHelp</a>(<span class="keyword">const</span> std::string&amp; commandName) {</div>
 </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMockHelpService.html#aa94f1b9dc36e19b7df936b93ff248a7d">showCommandHelp</a>(<span class="keyword">const</span> std::string&amp; commandName) {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        calledCommandHelp_.insert(commandName);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordflow">if</span> (mockEventBus_) {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            mockEventBus_-&gt;notify({<a class="code hl_enumvalue" href="structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5">Event::DEBUG_MESSAGE</a>,</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                                  <span class="stringliteral">&quot;MockHelpService: Showing help for &quot;</span> + commandName, <span class="stringliteral">&quot;help&quot;</span>});</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        }</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="comment">// --- Test Control Methods ---</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMockHelpService.html#a8b572032f59990e31da0835fbebda594">setAvailableCommands</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; commands) {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        availableCommands_ = commands;</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMockHelpService.html#ac0649bf36f4f4c90a5f59e6fa59d987b">setCommandDescription</a>(<span class="keyword">const</span> std::string&amp; commandName, <span class="keyword">const</span> std::string&amp; description) {</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        commandDescriptions_[commandName] = description;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classMockHelpService.html#a75eea5375c564e93e597b8ccdb3181d8">wasCommandHelpCalled</a>(<span class="keyword">const</span> std::string&amp; commandName)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordflow">return</span> calledCommandHelp_.find(commandName) != calledCommandHelp_.end();</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    }</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMockHelpService.html#a1e5c10b1ef3a05be719dcaece9c8855e">clear</a>() {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        calledCommandHelp_.clear();</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        availableCommands_.clear();</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        commandDescriptions_.clear();</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    }</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>};</div>
-<div class="ttc" id="aHelpService_8hxx_html"><div class="ttname"><a href="HelpService_8hxx.html">HelpService.hxx</a></div><div class="ttdoc">Service for providing help information about commands.</div></div>
-<div class="ttc" id="aMockSubject_8hxx_html"><div class="ttname"><a href="MockSubject_8hxx.html">MockSubject.hxx</a></div><div class="ttdoc">Mock implementation of the ISubject interface for unit testing purposes.</div></div>
-<div class="ttc" id="aclassHelpService_html_ac380002930a510d355fe11cf11e946ce"><div class="ttname"><a href="classHelpService.html#ac380002930a510d355fe11cf11e946ce">HelpService::HelpService</a></div><div class="ttdeci">HelpService(std::shared_ptr&lt; ISubject &gt; bus, std::function&lt; std::vector&lt; std::string &gt;()&gt; getCommands, std::function&lt; std::string(const std::string &amp;)&gt; getDescription, std::function&lt; void(const std::string &amp;)&gt; showHelp, std::function&lt; std::string(const std::string &amp;)&gt; getUsage=nullptr)</div><div class="ttdoc">Constructs the HelpService by injecting necessary dependencies as callbacks.</div><div class="ttdef"><b>Definition</b> HelpService.cxx:17</div></div>
-<div class="ttc" id="aclassMockHelpService_html_a1e5c10b1ef3a05be719dcaece9c8855e"><div class="ttname"><a href="classMockHelpService.html#a1e5c10b1ef3a05be719dcaece9c8855e">MockHelpService::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Resets the mock&#39;s internal state (called commands, lists, and descriptions).</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:159</div></div>
-<div class="ttc" id="aclassMockHelpService_html_a48d91142003d63d20ca19b3215e2a5d2"><div class="ttname"><a href="classMockHelpService.html#a48d91142003d63d20ca19b3215e2a5d2">MockHelpService::getAvailableCommands</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getAvailableCommands() const</div><div class="ttdoc">Returns the pre-configured list of available commands.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:92</div></div>
-<div class="ttc" id="aclassMockHelpService_html_a75eea5375c564e93e597b8ccdb3181d8"><div class="ttname"><a href="classMockHelpService.html#a75eea5375c564e93e597b8ccdb3181d8">MockHelpService::wasCommandHelpCalled</a></div><div class="ttdeci">bool wasCommandHelpCalled(const std::string &amp;commandName) const</div><div class="ttdoc">Checks if showCommandHelp() was called for a specific command.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:151</div></div>
-<div class="ttc" id="aclassMockHelpService_html_a8b572032f59990e31da0835fbebda594"><div class="ttname"><a href="classMockHelpService.html#a8b572032f59990e31da0835fbebda594">MockHelpService::setAvailableCommands</a></div><div class="ttdeci">void setAvailableCommands(const std::vector&lt; std::string &gt; &amp;commands)</div><div class="ttdoc">Sets the list of command names to be returned by getAvailableCommands().</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:131</div></div>
-<div class="ttc" id="aclassMockHelpService_html_aa94f1b9dc36e19b7df936b93ff248a7d"><div class="ttname"><a href="classMockHelpService.html#aa94f1b9dc36e19b7df936b93ff248a7d">MockHelpService::showCommandHelp</a></div><div class="ttdeci">void showCommandHelp(const std::string &amp;commandName)</div><div class="ttdoc">Records that help was requested for the given command.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:116</div></div>
-<div class="ttc" id="aclassMockHelpService_html_ac0649bf36f4f4c90a5f59e6fa59d987b"><div class="ttname"><a href="classMockHelpService.html#ac0649bf36f4f4c90a5f59e6fa59d987b">MockHelpService::setCommandDescription</a></div><div class="ttdeci">void setCommandDescription(const std::string &amp;commandName, const std::string &amp;description)</div><div class="ttdoc">Configures a description for a specific command name.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:141</div></div>
-<div class="ttc" id="aclassMockHelpService_html_ac1c8570640107c6dd75b357a5bde10d3"><div class="ttname"><a href="classMockHelpService.html#ac1c8570640107c6dd75b357a5bde10d3">MockHelpService::MockHelpService</a></div><div class="ttdeci">MockHelpService(const std::shared_ptr&lt; MockSubject &gt; &amp;mockEventBus)</div><div class="ttdoc">Constructor for MockHelpService.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:74</div></div>
-<div class="ttc" id="aclassMockHelpService_html_acd98a15f199035212c810e95aa496a62"><div class="ttname"><a href="classMockHelpService.html#acd98a15f199035212c810e95aa496a62">MockHelpService::getCommandDescription</a></div><div class="ttdeci">std::string getCommandDescription(const std::string &amp;commandName) const</div><div class="ttdoc">Returns the pre-configured description for a given command.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:102</div></div>
-<div class="ttc" id="astructEvent_html_a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5"><div class="ttname"><a href="structEvent.html#a2abf13b5be49315e9e362af02029f058a2fa5ce44ebbb1c9456c22bea145181d5">Event::DEBUG_MESSAGE</a></div><div class="ttdeci">@ DEBUG_MESSAGE</div><div class="ttdoc">Debug message for development purposes.</div><div class="ttdef"><b>Definition</b> Event.hxx:96</div></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        calledCommandHelp_.insert(commandName);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">if</span> (mockEventBus_) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="comment">// Создаем объект Event правильно - используем поле details</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <a class="code hl_struct" href="structsvcs_1_1services_1_1Event.html">Event</a> event;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keyword">event</span>.<a class="code hl_variable" href="structsvcs_1_1services_1_1Event.html#ae80aa49e0553e08f27869fc37d240a1a">type</a> = <a class="code hl_enumvalue" href="structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df">Event::DEBUG_MESSAGE</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keyword">event</span>.details = <span class="stringliteral">&quot;MockHelpService: Showing help for &quot;</span> + commandName;</div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1a28b542c50a9fd1b461cdd109bd2cdb">  187</a></span>            <span class="keyword">event</span>.source_name = <span class="stringliteral">&quot;help&quot;</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            mockEventBus_-&gt;notify(event);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        }</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span></div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1f5322cdafe2abd087e09f294d38f163">  195</a></span><span class="comment">     * @details Also emits a debug message to the mock event bus.</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment">     *</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment">     * @russian</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="comment">     * @brief Записывает, что была запрошена общая справка.</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">     * @details Также отправляет отладочное сообщение в mock шину событий.</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">     */</span></div>
+</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a73471ad850ff48bb09a3a68383519f75">showGeneralHelp</a>() {</div>
+</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        wasGeneralHelpCalled_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">if</span> (mockEventBus_) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="comment">// Создаем объект Event правильно - используем поле details</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <a class="code hl_struct" href="structsvcs_1_1services_1_1Event.html">Event</a> event;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <span class="keyword">event</span>.<a class="code hl_variable" href="structsvcs_1_1services_1_1Event.html#ae80aa49e0553e08f27869fc37d240a1a">type</a> = <a class="code hl_enumvalue" href="structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df">Event::DEBUG_MESSAGE</a>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <span class="keyword">event</span>.details = <span class="stringliteral">&quot;MockHelpService: Showing general help&quot;</span>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keyword">event</span>.source_name = <span class="stringliteral">&quot;help&quot;</span>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            mockEventBus_-&gt;notify(event);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="comment">// --- Test Control Methods ---</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a29cfe1f86467c07e88b9c738af90b85d">setAvailableCommands</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; commands) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        availableCommands_ = commands;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#aa0a2290e2ce38092aee0e996ff281336">setCommandDescription</a>(<span class="keyword">const</span> std::string&amp; commandName, <span class="keyword">const</span> std::string&amp; description) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        commandDescriptions_[commandName] = description;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1dc6236f99eefa3b1767c0f9e56cc576">wasCommandHelpCalled</a>(<span class="keyword">const</span> std::string&amp; commandName)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="keywordflow">return</span> calledCommandHelp_.find(commandName) != calledCommandHelp_.end();</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1a28b542c50a9fd1b461cdd109bd2cdb">wasGeneralHelpCalled</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <span class="keywordflow">return</span> wasGeneralHelpCalled_;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1f5322cdafe2abd087e09f294d38f163">clear</a>() {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        calledCommandHelp_.clear();</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        availableCommands_.clear();</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        commandDescriptions_.clear();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        wasGeneralHelpCalled_ = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>};</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>} <span class="comment">// namespace svcs::test::cli::mocks</span></div>
+<div class="ttc" id="aEvent_8hxx_html"><div class="ttname"><a href="Event_8hxx.html">Event.hxx</a></div><div class="ttdoc">Defines the event structure used for the Observer pattern notifications.</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_a1a28b542c50a9fd1b461cdd109bd2cdb"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1a28b542c50a9fd1b461cdd109bd2cdb">svcs::test::cli::mocks::MockHelpService::wasGeneralHelpCalled</a></div><div class="ttdeci">bool wasGeneralHelpCalled() const</div><div class="ttdoc">Checks if showGeneralHelp() was called.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:187</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_a1dc6236f99eefa3b1767c0f9e56cc576"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1dc6236f99eefa3b1767c0f9e56cc576">svcs::test::cli::mocks::MockHelpService::wasCommandHelpCalled</a></div><div class="ttdeci">bool wasCommandHelpCalled(const std::string &amp;commandName) const</div><div class="ttdoc">Checks if showCommandHelp() was called for a specific command.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:178</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_a1f5322cdafe2abd087e09f294d38f163"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a1f5322cdafe2abd087e09f294d38f163">svcs::test::cli::mocks::MockHelpService::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Resets the mock&#39;s internal state (called commands, lists, and descriptions).</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:195</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_a29cfe1f86467c07e88b9c738af90b85d"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a29cfe1f86467c07e88b9c738af90b85d">svcs::test::cli::mocks::MockHelpService::setAvailableCommands</a></div><div class="ttdeci">void setAvailableCommands(const std::vector&lt; std::string &gt; &amp;commands)</div><div class="ttdoc">Sets the list of command names to be returned by getAvailableCommands().</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:158</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_a56a8ccf6fe0827c935c6e3ee81972841"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a56a8ccf6fe0827c935c6e3ee81972841">svcs::test::cli::mocks::MockHelpService::showCommandHelp</a></div><div class="ttdeci">void showCommandHelp(const std::string &amp;commandName)</div><div class="ttdoc">Records that help was requested for the given command.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:122</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_a73471ad850ff48bb09a3a68383519f75"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a73471ad850ff48bb09a3a68383519f75">svcs::test::cli::mocks::MockHelpService::showGeneralHelp</a></div><div class="ttdeci">void showGeneralHelp()</div><div class="ttdoc">Records that general help was requested.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:139</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_a7937d3fd7e2a22e3e7302f272cdcd16e"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a7937d3fd7e2a22e3e7302f272cdcd16e">svcs::test::cli::mocks::MockHelpService::getAvailableCommands</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getAvailableCommands() const</div><div class="ttdoc">Returns the pre-configured list of available commands.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:98</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_a7ce43b5a6c833311b3eff06df2155384"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#a7ce43b5a6c833311b3eff06df2155384">svcs::test::cli::mocks::MockHelpService::getCommandDescription</a></div><div class="ttdeci">std::string getCommandDescription(const std::string &amp;commandName) const</div><div class="ttdoc">Returns the pre-configured description for a given command.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:108</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_aa0a2290e2ce38092aee0e996ff281336"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#aa0a2290e2ce38092aee0e996ff281336">svcs::test::cli::mocks::MockHelpService::setCommandDescription</a></div><div class="ttdeci">void setCommandDescription(const std::string &amp;commandName, const std::string &amp;description)</div><div class="ttdoc">Configures a description for a specific command name.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:168</div></div>
+<div class="ttc" id="aclasssvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService_html_aea3d4e965231bcbd0192a21cafa727b5"><div class="ttname"><a href="classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html#aea3d4e965231bcbd0192a21cafa727b5">svcs::test::cli::mocks::MockHelpService::MockHelpService</a></div><div class="ttdeci">MockHelpService(const std::shared_ptr&lt; MockSubject &gt; &amp;mockEventBus)</div><div class="ttdoc">Constructor for MockHelpService.</div><div class="ttdef"><b>Definition</b> MockHelpService.hxx:87</div></div>
+<div class="ttc" id="acli_2mocks_2MockSubject_8hxx_html"><div class="ttname"><a href="cli_2mocks_2MockSubject_8hxx.html">MockSubject.hxx</a></div><div class="ttdoc">Mock implementation of the ISubject interface for unit testing purposes.</div></div>
+<div class="ttc" id="anamespacesvcs_1_1test_1_1cli_1_1mocks_html"><div class="ttname"><a href="namespacesvcs_1_1test_1_1cli_1_1mocks.html">svcs::test::cli::mocks</a></div><div class="ttdoc">Mock objects and test doubles for CLI command testing.</div></div>
+<div class="ttc" id="astructsvcs_1_1services_1_1Event_html"><div class="ttname"><a href="structsvcs_1_1services_1_1Event.html">svcs::services::Event</a></div><div class="ttdoc">Structure describing an event published by the VCS core.</div><div class="ttdef"><b>Definition</b> Event.hxx:30</div></div>
+<div class="ttc" id="astructsvcs_1_1services_1_1Event_html_a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df"><div class="ttname"><a href="structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a431acb8f4fff64b97cd5a6e9a94b03df">svcs::services::Event::DEBUG_MESSAGE</a></div><div class="ttdeci">@ DEBUG_MESSAGE</div><div class="ttdoc">Debug message for development purposes.</div><div class="ttdef"><b>Definition</b> Event.hxx:106</div></div>
+<div class="ttc" id="astructsvcs_1_1services_1_1Event_html_ae80aa49e0553e08f27869fc37d240a1a"><div class="ttname"><a href="structsvcs_1_1services_1_1Event.html#ae80aa49e0553e08f27869fc37d240a1a">svcs::services::Event::type</a></div><div class="ttdeci">Type type</div><div class="ttdoc">The type of event that occurred.</div><div class="ttdef"><b>Definition</b> Event.hxx:173</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

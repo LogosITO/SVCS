@@ -1,0 +1,150 @@
+\doxysection{Класс svcs\+::test\+::cli\+::Remove\+Command\+Test}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest}{}\label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest}\index{svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}}
+
+
+Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1cli_1_1RemoveCommand}{Remove\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Remove\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::Remove\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2ef82e3eb35524cb03c52c21c90464cf}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_ad8898643cfbd56795285652d4e72fe20}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2ac67cb8e099724403bf43fc04be1169}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content)
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл с указанным содержимым во временной директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2d0272bec4a1b0b56ec2ff4d7df3daa8}{create\+Test\+Directory}} (const std\+::string \&dirname)
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию во временном расположении. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_ab214dbf3bf67c4753286886f0c7f40e2}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Индексирует список файлов (используя логику команды add для удобства) в области индексации \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a1931f69729d419d077583c786bcc9ef7}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a75f7e27037c38937cc0b95d336d3eff1}\label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a75f7e27037c38937cc0b95d336d3eff1} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий (наблюдатель). \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a4fd9ddd32ff2bfd205c8124de6e671f9}\label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a4fd9ddd32ff2bfd205c8124de6e671f9} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Общий указатель на компонент основной логики репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_afb2b1aa37b3ec6cfeeaadb8d56185e2d}\label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_afb2b1aa37b3ec6cfeeaadb8d56185e2d} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1RemoveCommand}{Remove\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a9765d10d568f133f2ea70ec9a6228f00}\label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a9765d10d568f133f2ea70ec9a6228f00} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной тестовой директории репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1cli_1_1RemoveCommand}{Remove\+Command}. 
+
+Этот фикстур предоставляет необходимую инфраструктуру для тестирования команды удаления файлов, обеспечивая корректную индексацию файлов для удаления из репозитория, обработку ошибок и соблюдение параметров командной строки. 
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a1931f69729d419d077583c786bcc9ef7}\index{svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a1931f69729d419d077583c786bcc9ef7} 
+bool svcs\+::test\+::cli\+::utils\+::\+Remove\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2d0272bec4a1b0b56ec2ff4d7df3daa8}\index{svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2d0272bec4a1b0b56ec2ff4d7df3daa8} 
+void svcs\+::test\+::cli\+::utils\+::\+Remove\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию во временном расположении. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Относительный путь/имя директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2ac67cb8e099724403bf43fc04be1169}\index{svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2ac67cb8e099724403bf43fc04be1169} 
+void svcs\+::test\+::cli\+::utils\+::\+Remove\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл с указанным содержимым во временной директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Относительный путь/имя файла. \\
+\hline
+{\em content} & Содержимое для записи в файл. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2ef82e3eb35524cb03c52c21c90464cf}\index{svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_a2ef82e3eb35524cb03c52c21c90464cf} 
+void svcs\+::test\+::cli\+::utils\+::\+Remove\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение перед каждым тестом. 
+
+Инициализирует компоненты, создает временную директорию и инициализирует репозиторий. \Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_ab214dbf3bf67c4753286886f0c7f40e2}\index{svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_ab214dbf3bf67c4753286886f0c7f40e2} 
+void svcs\+::test\+::cli\+::utils\+::\+Remove\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Индексирует список файлов (используя логику команды add для удобства) в области индексации \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em files} & Вектор имен файлов для индексации. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_ad8898643cfbd56795285652d4e72fe20}\index{svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!svcs::test::cli::RemoveCommandTest@{svcs::test::cli::RemoveCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1RemoveCommandTest_ad8898643cfbd56795285652d4e72fe20} 
+void svcs\+::test\+::cli\+::utils\+::\+Remove\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение после каждого теста. 
+
+Очищает временную директорию и восстанавливает рабочий путь. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntRemoveCommandTest_8hxx}{Int\+Remove\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntRemoveCommandTest_8cxx}{Int\+Remove\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

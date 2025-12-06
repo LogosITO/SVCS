@@ -26,6 +26,8 @@
 #include <vector>
 #include <map>
 
+namespace svcs::core {
+
 namespace fs = std::filesystem;
 
 void Index::getFileMetaData(const fs::path& full_path, long long& size, fs::file_time_type& mtime) {
@@ -320,4 +322,6 @@ std::string Index::createTreeObject() {
     }
     
     return root_it->second;
+}
+
 }

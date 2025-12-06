@@ -13,30 +13,34 @@
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHelpCommand_a7dad941d44085add252579daf3faf8c0}{HelpCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classICommand}{ICommand}}\ \{}
-\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00047\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00056\ \ \ \ \ std::shared\_ptr<HelpService>\ helpService\_;}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classHelpCommand_a7dad941d44085add252579daf3faf8c0}{HelpCommand}}(std::shared\_ptr<ISubject>\ subject,}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<HelpService>\ helpService);}
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1cli}{svcs::cli}}\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a998f4d18c5386623edc1919b8e9f39db}{HelpCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1ICommand}{ICommand}}\ \{}
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ std::shared\_ptr<ISubject>\ eventBus\_;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::shared\_ptr<HelpService>\ helpService\_;}
 \DoxyCodeLine{00072\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHelpCommand_aacde352bc8bc40668b09415c07857ac7}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a998f4d18c5386623edc1919b8e9f39db}{HelpCommand}}(std::shared\_ptr<ISubject>\ subject,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<HelpService>\ helpService);}
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00097\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHelpCommand_ad7b1ec70f8f31646035b4bbb4ef94899}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}help"{}};\ \}}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00108\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHelpCommand_a236f111255786e8949a0bea269c48677}{getDescription}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00119\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classHelpCommand_a682a95b46e84c2489771dabb7c5e240d}{getUsage}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHelpCommand_afacdd5404027b7bd4dc7a6958b2e8c3a}{showHelp}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ showGeneralHelp()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ showCommandHelp(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00154\ \};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a52b3d59f5e7d2a1a813f51de285ba821}{execute}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00112\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a8af5d006b893f386c9dd0cbdbbe77d93}{getName}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}help"{}};\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00123\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a1b4bc5373f8ce27b7dd37d709771900c}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00134\ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a04b5a097d88ac3f5f7168e8974e091c9}{getUsage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1cli_1_1HelpCommand_a3f9e2f116424e6d9359252ff7de41d76}{showHelp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ showGeneralHelp()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ showCommandHelp(\textcolor{keyword}{const}\ std::string\&\ commandName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \}}
 
 \end{DoxyCode}

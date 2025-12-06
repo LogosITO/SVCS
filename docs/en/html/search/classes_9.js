@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['objectstorage_0',['ObjectStorage',['../classObjectStorage.html',1,'']]],
-  ['objectstoragetest_1',['ObjectStorageTest',['../classObjectStorageTest.html',1,'']]]
+  ['objectstorage_0',['ObjectStorage',['../classsvcs_1_1core_1_1ObjectStorage.html',1,'svcs::core']]],
+  ['objectstoragetest_1',['ObjectStorageTest',['../classsvcs_1_1test_1_1core_1_1ObjectStorageTest.html',1,'svcs::test::core']]]
 ];

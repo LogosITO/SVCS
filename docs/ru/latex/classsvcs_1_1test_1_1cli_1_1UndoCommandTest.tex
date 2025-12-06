@@ -1,0 +1,217 @@
+\doxysection{Класс svcs\+::test\+::cli\+::Undo\+Command\+Test}
+\hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest}{}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+
+
+Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Undo\+Command\+Test.\+hxx$>$}
+
+Граф наследования\+:svcs\+::test\+::cli\+::Undo\+Command\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsvcs_1_1test_1_1cli_1_1UndoCommandTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a53c5cb852211bccbc7a1e03feb642bd1}{Set\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Настраивает тестовое окружение перед каждым тестом. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_af0d8033860563fde4cc2dfcf27c0e84a}{Tear\+Down}} () override
+\begin{DoxyCompactList}\small\item\em Очищает тестовое окружение после каждого теста. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_afc9d9fbb2f627027862221f0dfcee525}{create\+Test\+File}} (const std\+::string \&filename, const std\+::string \&content) const
+\begin{DoxyCompactList}\small\item\em Создает тестовый файл с указанным содержимым во временной директории. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a79efd2f2923c988ef24a72fc66a7e0d1}{create\+Test\+Directory}} (const std\+::string \&dirname) const
+\begin{DoxyCompactList}\small\item\em Создает тестовую директорию во временном расположении. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aa17def28462c9dcfcdd97a93214d5de5}{stage\+Files}} (const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Индексирует список файлов с использованием логики индексации \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a40dc5b5a615dcd4aa8ca27fd232f3696}{create\+Test\+Commit}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Создает новый коммит (сохранение) с указанным сообщением. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a772a07002ec2f11a1249c7102ee69bc4}{contains\+Message}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a96bcf935bd4c8d4001c3989eb5f1c4c2}{count\+Messages}} (const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&notifications, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Подсчитывает количество вхождений конкретного сообщения (подстроки) во всех уведомлениях о событиях. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aceea988df9cf934a0015d32a0b61ef9a}{simulate\+User\+Input}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Имитирует пользовательский ввод, помещая строку в очередь ввода mock шины событий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a4c0d3317b257c3bd547f613dc5769cc5}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a4c0d3317b257c3bd547f613dc5769cc5} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject}} $>$ {\bfseries mock\+Event\+Bus}
+\begin{DoxyCompactList}\small\item\em Общий указатель на mock шину событий (наблюдатель/имитатор ввода). \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a9dc8a95df9c3d737052cd592a43ef4a6}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a9dc8a95df9c3d737052cd592a43ef4a6} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}} $>$ {\bfseries repo\+Manager}
+\begin{DoxyCompactList}\small\item\em Общий указатель на компонент основной логики репозитория. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a041b8944dd9d871b072fe7b39f64659a}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a041b8944dd9d871b072fe7b39f64659a} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}} $>$ {\bfseries command}
+\begin{DoxyCompactList}\small\item\em Уникальный указатель на тестируемую команду. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_ac00e70930db747ce1199dfae3a3e03c8}\label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_ac00e70930db747ce1199dfae3a3e03c8} 
+std\+::filesystem\+::path {\bfseries test\+Dir}
+\begin{DoxyCompactList}\small\item\em Путь к временной тестовой директории репозитория. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Google Test фикстур для запуска интеграционных тестов \doxylink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}. 
+
+Этот фикстур предоставляет необходимую инфраструктуру для тестирования команды undo\+:
+\begin{DoxyItemize}
+\item {\bfseries{Set\+Up/\+Tear\+Down\+:}} Управление временной директорией репозитория SVCS.
+\item {\bfseries{Основные компоненты\+:}} Экземпляры \doxylink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{Mock\+Subject} (для шины событий/вывода/имитации ввода) и \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager} (для основной логики).
+\item {\bfseries{Вспомогательные методы\+:}} Упрощают манипуляцию файлами, индексацию, коммиты и проверку уведомлений. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a772a07002ec2f11a1249c7102ee69bc4}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!containsMessage@{containsMessage}}
+\index{containsMessage@{containsMessage}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{containsMessage()}{containsMessage()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a772a07002ec2f11a1249c7102ee69bc4} 
+bool svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::contains\+Message (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Проверяет, существует ли конкретное сообщение (подстрока) в любом уведомлении о событии. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сообщение найдено в любом уведомлении, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a96bcf935bd4c8d4001c3989eb5f1c4c2}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!countMessages@{countMessages}}
+\index{countMessages@{countMessages}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{countMessages()}{countMessages()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a96bcf935bd4c8d4001c3989eb5f1c4c2} 
+int svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::count\+Messages (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}} $>$ \&}]{notifications}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Подсчитывает количество вхождений конкретного сообщения (подстроки) во всех уведомлениях о событиях. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em notifications} & Список захваченных событий. \\
+\hline
+{\em message} & Подстрока для подсчета. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество событий, содержащих подстроку. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a40dc5b5a615dcd4aa8ca27fd232f3696}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!createTestCommit@{createTestCommit}}
+\index{createTestCommit@{createTestCommit}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestCommit()}{createTestCommit()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a40dc5b5a615dcd4aa8ca27fd232f3696} 
+bool svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::create\+Test\+Commit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый коммит (сохранение) с указанным сообщением. 
+
+Внутренне индексирует файлы (если необходимо) и вызывает логику коммита менеджера репозитория. 
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение коммита. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если коммит успешен, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a79efd2f2923c988ef24a72fc66a7e0d1}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!createTestDirectory@{createTestDirectory}}
+\index{createTestDirectory@{createTestDirectory}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestDirectory()}{createTestDirectory()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a79efd2f2923c988ef24a72fc66a7e0d1} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::create\+Test\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовую директорию во временном расположении. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dirname} & Относительный путь/имя директории. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_afc9d9fbb2f627027862221f0dfcee525}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!createTestFile@{createTestFile}}
+\index{createTestFile@{createTestFile}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{createTestFile()}{createTestFile()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_afc9d9fbb2f627027862221f0dfcee525} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::create\+Test\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает тестовый файл с указанным содержимым во временной директории. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filename} & Относительный путь/имя файла. \\
+\hline
+{\em content} & Содержимое для записи в файл. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a53c5cb852211bccbc7a1e03feb642bd1}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_a53c5cb852211bccbc7a1e03feb642bd1} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::\+Set\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Настраивает тестовое окружение перед каждым тестом. 
+
+Инициализирует компоненты, создает временную директорию и инициализирует репозиторий. \Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aceea988df9cf934a0015d32a0b61ef9a}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!simulateUserInput@{simulateUserInput}}
+\index{simulateUserInput@{simulateUserInput}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{simulateUserInput()}{simulateUserInput()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aceea988df9cf934a0015d32a0b61ef9a} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::simulate\+User\+Input (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Имитирует пользовательский ввод, помещая строку в очередь ввода mock шины событий. 
+
+Это критически важно для тестирования подтверждающего запроса в \doxylink{classsvcs_1_1cli_1_1UndoCommand}{Undo\+Command}. 
+\begin{DoxyParams}{Аргументы}
+{\em input} & Строка для имитации пользовательского ввода (например, "{}y\textbackslash{}n"{} или "{}n\textbackslash{}n"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aa17def28462c9dcfcdd97a93214d5de5}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!stageFiles@{stageFiles}}
+\index{stageFiles@{stageFiles}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{stageFiles()}{stageFiles()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_aa17def28462c9dcfcdd97a93214d5de5} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::stage\+Files (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Индексирует список файлов с использованием логики индексации \doxylink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em files} & Вектор имен файлов для индексации. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_af0d8033860563fde4cc2dfcf27c0e84a}\index{svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!svcs::test::cli::UndoCommandTest@{svcs::test::cli::UndoCommandTest}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1test_1_1cli_1_1UndoCommandTest_af0d8033860563fde4cc2dfcf27c0e84a} 
+void svcs\+::test\+::cli\+::utils\+::\+Undo\+Command\+Test\+::\+Tear\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Очищает тестовое окружение после каждого теста. 
+
+Очищает временную директорию и восстанавливает рабочий путь. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+tests/cli/utils/\mbox{\hyperlink{IntUndoCommandTest_8hxx}{Int\+Undo\+Command\+Test.\+hxx}}\item 
+tests/cli/utils/\mbox{\hyperlink{IntUndoCommandTest_8cxx}{Int\+Undo\+Command\+Test.\+cxx}}\end{DoxyCompactItemize}

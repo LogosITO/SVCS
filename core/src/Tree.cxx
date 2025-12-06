@@ -17,6 +17,8 @@
 #include <algorithm>
 #include <sstream>
 
+namespace svcs::core {
+
 constexpr size_t HASH_BYTE_SIZE = 32;
 
 bool TreeEntry::operator<(const TreeEntry &other) const {
@@ -146,4 +148,6 @@ std::optional<TreeEntry> Tree::findEntry(const std::string& name) const {
 
 const std::vector<TreeEntry>& Tree::getEntries() const {
     return entries;
+}
+
 }

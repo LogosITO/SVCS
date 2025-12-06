@@ -31,6 +31,23 @@
 
 /**
  * @english
+ * @namespace svcs::cli
+ * @brief Command-line interface components and command implementations.
+ * @details Contains all CLI commands that users interact with directly,
+ * including AddCommand, CommitCommand, StatusCommand, etc.
+ *
+ * @russian
+ * @namespace svcs::cli
+ * @brief Компоненты командной строки и реализации команд.
+ * @details Содержит все CLI команды, с которыми пользователи взаимодействуют напрямую,
+ * включая AddCommand, CommitCommand, StatusCommand и другие.
+ */
+namespace svcs::cli {
+
+using namespace svcs::core;
+
+/**
+ * @english
  * @class UndoCommand
  * @brief Command to revert the repository state to a previous commit.
  * @details Implements the 'svcs undo' functionality. It uses the RepositoryManager
@@ -197,3 +214,5 @@ private:
      */
     std::shared_ptr<RepositoryManager> repo_manager;
 };
+
+}

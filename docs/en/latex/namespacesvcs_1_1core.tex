@@ -1,0 +1,172 @@
+\doxysection{svcs\+::core Namespace Reference}
+\hypertarget{namespacesvcs_1_1core}{}\label{namespacesvcs_1_1core}\index{svcs::core@{svcs::core}}
+
+
+Core VCS data structures and object model.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Blob}{Blob}}
+\begin{DoxyCompactList}\small\item\em Represents the content of a file (Binary Large Object). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1BranchManager}{Branch\+Manager}}
+\begin{DoxyCompactList}\small\item\em Core service for managing version control branches (creation, deletion, switching). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Commit}{Commit}}
+\begin{DoxyCompactList}\small\item\em Represents a single, immutable historical point (snapshot) in the repository\textquotesingle{}s history. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1CommitInfo}{Commit\+Info}}
+\begin{DoxyCompactList}\small\item\em Structure containing essential metadata for a single commit. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Index}{Index}}
+\begin{DoxyCompactList}\small\item\em Manages the Staging Area (\doxylink{classsvcs_1_1core_1_1Index}{Index}) of the VCS repository. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1IndexEntry}{Index\+Entry}}
+\begin{DoxyCompactList}\small\item\em Represents a single file entry in the staging area (\doxylink{classsvcs_1_1core_1_1Index}{Index}). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1ObjectStorage}{Object\+Storage}}
+\begin{DoxyCompactList}\small\item\em Manages the version control object database, including persistence and object restoration. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Repository}{Repository}}
+\begin{DoxyCompactList}\small\item\em Manages the version control directory structure and core operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{Repository\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages all physical file and directory operations within the SVCS repository. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1TestableObject}{Testable\+Object}}
+\begin{DoxyCompactList}\small\item\em Helper class for testing the non-\/abstract methods of \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1Tree}{Tree}}
+\begin{DoxyCompactList}\small\item\em Represents the state of a directory in the VCS, implementing the \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} contract. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}}
+\begin{DoxyCompactList}\small\item\em Represents a single item (file or subdirectory) within a \doxylink{classsvcs_1_1core_1_1Tree}{Tree} object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object}}
+\begin{DoxyCompactList}\small\item\em Abstract base class representing any storable, addressable object within the VCS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} \mbox{\hyperlink{namespacesvcs_1_1core_a0d0715b6f2a56f90b0f7fccbe3b2b1a9}{create\+Entry}} (std\+::string name, std\+::string hash\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creating tree entry. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a4568847d1748de37af94b13137664561}{read\+\_\+file\+\_\+to\+\_\+string}} (const fs\+::path \&full\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Reads the entire content of a file into a single std\+::string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_ae4589d250a2f03780b3dc5e4323a5d8d}{binary\+\_\+to\+\_\+hex\+\_\+string}} (const unsigned char \texorpdfstring{$\ast$}{*}binary\+\_\+data, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Converts a binary buffer (e.\+g., a raw SHA-\/1 hash) into its hexadecimal string representation. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a66002a699a8af234d86db96941733398}{hex\+\_\+to\+\_\+binary\+\_\+string}} (const std\+::string \&hex\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Converts a hexadecimal string (e.\+g., 40 chars) into its raw binary byte representation (e.\+g., 20 bytes). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1core_a1cabf85fbe47a7f75139b05f045d4a86}{compute\+\_\+sha256}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Computes the SHA-\/256 hash of the given input data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1core_a3a52be639bc44bbaf19b81cd17a7ee90}\label{namespacesvcs_1_1core_a3a52be639bc44bbaf19b81cd17a7ee90} 
+const size\+\_\+t {\bfseries CHUNK\+\_\+\+SIZE} = 16384
+\item 
+\Hypertarget{namespacesvcs_1_1core_a6c61f3309e13612b39fe80837500710c}\label{namespacesvcs_1_1core_a6c61f3309e13612b39fe80837500710c} 
+constexpr size\+\_\+t {\bfseries HASH\+\_\+\+BYTE\+\_\+\+SIZE} = 32
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core VCS data structures and object model. 
+
+Contains fundamental VCS object types like \doxylink{classsvcs_1_1core_1_1Blob}{Blob}, \doxylink{classsvcs_1_1core_1_1Tree}{Tree}, \doxylink{classsvcs_1_1core_1_1Commit}{Commit} that form the building blocks of the version control system. 
+
+\label{doc-func-members}
+\Hypertarget{namespacesvcs_1_1core_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesvcs_1_1core_ae4589d250a2f03780b3dc5e4323a5d8d}\index{svcs::core@{svcs::core}!binary\_to\_hex\_string@{binary\_to\_hex\_string}}
+\index{binary\_to\_hex\_string@{binary\_to\_hex\_string}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{binary\_to\_hex\_string()}{binary\_to\_hex\_string()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_ae4589d250a2f03780b3dc5e4323a5d8d} 
+std\+::string svcs\+::core\+::binary\+\_\+to\+\_\+hex\+\_\+string (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{binary\+\_\+data}{, }\item[{size\+\_\+t}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Converts a binary buffer (e.\+g., a raw SHA-\/1 hash) into its hexadecimal string representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em binary\+\_\+data} & Pointer to the raw binary data. \\
+\hline
+{\em length} & The length of the binary data in bytes (e.\+g., 20 for SHA-\/1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string containing the hexadecimal representation (e.\+g., 40 characters for SHA-\/1). 
+\end{DoxyReturn}
+\Hypertarget{namespacesvcs_1_1core_a1cabf85fbe47a7f75139b05f045d4a86}\index{svcs::core@{svcs::core}!compute\_sha256@{compute\_sha256}}
+\index{compute\_sha256@{compute\_sha256}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{compute\_sha256()}{compute\_sha256()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_a1cabf85fbe47a7f75139b05f045d4a86} 
+std\+::string svcs\+::core\+::compute\+\_\+sha256 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})}
+
+
+
+Computes the SHA-\/256 hash of the given input data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input data to hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string The SHA-\/256 hash as a hexadecimal string. 
+\end{DoxyReturn}
+\Hypertarget{namespacesvcs_1_1core_a0d0715b6f2a56f90b0f7fccbe3b2b1a9}\index{svcs::core@{svcs::core}!createEntry@{createEntry}}
+\index{createEntry@{createEntry}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{createEntry()}{createEntry()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_a0d0715b6f2a56f90b0f7fccbe3b2b1a9} 
+\mbox{\hyperlink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}} svcs\+::core\+::create\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{hash\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Creating tree entry. 
+
+\begin{DoxyReturn}{Returns}
+Returns finished \doxylink{structsvcs_1_1core_1_1TreeEntry}{Tree\+Entry}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of file or subdirectory. \\
+\hline
+{\em hash\+\_\+id} & The hash ID (SHA-\/256). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacesvcs_1_1core_a66002a699a8af234d86db96941733398}\index{svcs::core@{svcs::core}!hex\_to\_binary\_string@{hex\_to\_binary\_string}}
+\index{hex\_to\_binary\_string@{hex\_to\_binary\_string}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{hex\_to\_binary\_string()}{hex\_to\_binary\_string()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_a66002a699a8af234d86db96941733398} 
+std\+::string svcs\+::core\+::hex\+\_\+to\+\_\+binary\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hex\+\_\+string}{}\end{DoxyParamCaption})}
+
+
+
+Converts a hexadecimal string (e.\+g., 40 chars) into its raw binary byte representation (e.\+g., 20 bytes). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hex\+\_\+string} & The input hexadecimal string. Must have an even length. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string containing the raw binary bytes. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the input string has an odd length or contains invalid hex characters. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{namespacesvcs_1_1core_a4568847d1748de37af94b13137664561}\index{svcs::core@{svcs::core}!read\_file\_to\_string@{read\_file\_to\_string}}
+\index{read\_file\_to\_string@{read\_file\_to\_string}!svcs::core@{svcs::core}}
+\doxysubsubsection{\texorpdfstring{read\_file\_to\_string()}{read\_file\_to\_string()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1core_a4568847d1748de37af94b13137664561} 
+std\+::string svcs\+::core\+::read\+\_\+file\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{full\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Reads the entire content of a file into a single std\+::string. 
+
+This utility function is designed for reading small to medium-\/sized files and is crucial for creating \doxylink{classsvcs_1_1core_1_1VcsObject}{Vcs\+Object} contents (e.\+g., Blobs). It opens the file in binary mode to ensure all characters are read correctly across platforms. 
+\begin{DoxyParams}{Parameters}
+{\em full\+\_\+path} & The full, absolute path to the file on disk. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The entire content of the file as a single std\+::string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the file cannot be opened for reading. \\
+\hline
+\end{DoxyExceptions}

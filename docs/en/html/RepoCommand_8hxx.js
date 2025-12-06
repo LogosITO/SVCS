@@ -1,4 +1,4 @@
 var RepoCommand_8hxx =
 [
-    [ "RepoCommand", "classRepoCommand.html", "classRepoCommand" ]
+    [ "svcs::server::cli::RepoCommand", "classsvcs_1_1server_1_1cli_1_1RepoCommand.html", "classsvcs_1_1server_1_1cli_1_1RepoCommand" ]
 ];

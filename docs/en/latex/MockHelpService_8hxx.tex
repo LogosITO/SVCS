@@ -2,7 +2,7 @@
 \hypertarget{MockHelpService_8hxx}{}\label{MockHelpService_8hxx}\index{tests/cli/mocks/MockHelpService.hxx@{tests/cli/mocks/MockHelpService.hxx}}
 
 
-Mock implementation of the \doxylink{classHelpService}{Help\+Service} interface for unit testing purposes.  
+Mock implementation of the Help\+Service interface for unit testing purposes.  
 
 
 {\ttfamily \#include $<$string$>$}\newline
@@ -11,19 +11,28 @@ Mock implementation of the \doxylink{classHelpService}{Help\+Service} interface 
 {\ttfamily \#include $<$set$>$}\newline
 {\ttfamily \#include $<$functional$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
-{\ttfamily \#include "{}../../../cli/include/\+Help\+Service.\+hxx"{}}\newline
 {\ttfamily \#include "{}Mock\+Subject.\+hxx"{}}\newline
+{\ttfamily \#include "{}../../../services/\+Event.\+hxx"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classMockHelpService}{Mock\+Help\+Service}}
-\begin{DoxyCompactList}\small\item\em A mock implementation of the \doxylink{classHelpService}{Help\+Service} for testing the \doxylink{classHelpCommand}{Help\+Command}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService}{svcs\+::test\+::cli\+::mocks\+::\+Mock\+Help\+Service}}
+\begin{DoxyCompactList}\small\item\em A mock implementation of the \doxylink{classsvcs_1_1cli_1_1HelpService}{Help\+Service} for testing the \doxylink{classsvcs_1_1test_1_1cli_1_1HelpCommand}{Help\+Command}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsvcs_1_1test_1_1cli_1_1mocks_1_1Event}{svcs\+::test\+::cli\+::mocks\+::\+Event}}
+\begin{DoxyCompactList}\small\item\em Structure describing an event published by the VCS core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1mocks}{svcs\+::test\+::cli\+::mocks}}
+\begin{DoxyCompactList}\small\item\em Mock objects and test doubles for CLI command testing. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1cli}{svcs\+::test\+::cli}}
+\begin{DoxyCompactList}\small\item\em Unit tests for command-\/line interface components. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Mock implementation of the \doxylink{classHelpService}{Help\+Service} interface for unit testing purposes. 
+Mock implementation of the Help\+Service interface for unit testing purposes. 
 
 \begin{DoxyCopyright}{Copyright}
 Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
 \end{DoxyCopyright}
-This class inherits from \doxylink{classHelpService}{Help\+Service} and overrides its abstract methods ({\ttfamily get\+Available\+Commands}, {\ttfamily get\+Command\+Description}, {\ttfamily show\+Command\+Help}) with controlled implementations. It includes utility methods ({\ttfamily set\+Available\+Commands}, {\ttfamily was\+Command\+Help\+Called}, etc.) to allow tests to configure the mock\textquotesingle{}s behavior and inspect its interactions. This mock is essential for unit testing the {\bfseries{\doxylink{classHelpCommand}{Help\+Command}}} without depending on the actual implementation of the CLI command registration system. 
+This class provides a mock implementation with the same interface as Help\+Service but with controlled behavior for testing. It includes utility methods ({\ttfamily set\+Available\+Commands}, {\ttfamily was\+Command\+Help\+Called}, etc.) to allow tests to configure the mock\textquotesingle{}s behavior and inspect its interactions. This mock is essential for unit testing the {\bfseries{Help\+Command}} without depending on the actual implementation of the CLI command registration system. 

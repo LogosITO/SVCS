@@ -54,10 +54,6 @@ using svcs::core::RepositoryManager;
 using svcs::cli::UndoCommand;
 using svcs::test::cli::mocks::MockSubject;
 
-// Forward declarations for core components used in fixture
-class RepositoryManager;
-struct Event;
-
 /**
  * @english
  * @class UndoCommandTest

@@ -52,10 +52,6 @@ using svcs::core::RepositoryManager;
 using svcs::cli::HistoryCommand;
 using svcs::test::cli::mocks::MockSubject;
 
-// Forward declarations for core components used in fixture
-class RepositoryManager;
-struct Event;
-
 /**
  * @english
  * @class HistoryCommandTest

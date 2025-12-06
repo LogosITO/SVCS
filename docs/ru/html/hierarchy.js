@@ -71,6 +71,8 @@ var hierarchy =
     ] ],
     [ "svcs::server::Server", "classsvcs_1_1server_1_1Server.html", null ],
     [ "svcs::server::cli::ServerCommandFactory", "classsvcs_1_1server_1_1cli_1_1ServerCommandFactory.html", null ],
+    [ "svcs::server::ssh::SSHConfig", "structsvcs_1_1server_1_1ssh_1_1SSHConfig.html", null ],
+    [ "svcs::server::ssh::SSHServer", "classsvcs_1_1server_1_1ssh_1_1SSHServer.html", null ],
     [ "testing::Test", null, [
       [ "svcs::test::cli::utils::AddCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html", null ],
       [ "svcs::test::cli::utils::ClearCommandTest", "classsvcs_1_1test_1_1cli_1_1utils_1_1ClearCommandTest.html", null ],

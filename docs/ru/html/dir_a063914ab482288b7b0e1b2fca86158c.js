@@ -6,5 +6,8 @@ var dir_a063914ab482288b7b0e1b2fca86158c =
     [ "RepoCommand.cxx", "RepoCommand_8cxx.html", null ],
     [ "Server.cxx", "Server_8cxx.html", null ],
     [ "ServerBaseCommand.cxx", "ServerBaseCommand_8cxx.html", null ],
-    [ "ServerCommandFactory.cxx", "ServerCommandFactory_8cxx.html", null ]
+    [ "ServerCommandFactory.cxx", "ServerCommandFactory_8cxx.html", null ],
+    [ "SSHConfig.cxx", "SSHConfig_8cxx.html", null ],
+    [ "SSHServer.cxx", "SSHServer_8cxx.html", null ],
+    [ "SSHSession.cxx", "SSHSession_8cxx.html", null ]
 ];

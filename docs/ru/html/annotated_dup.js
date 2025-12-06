@@ -44,6 +44,10 @@ var annotated_dup =
           [ "ServerBaseCommand", "classsvcs_1_1server_1_1cli_1_1ServerBaseCommand.html", "classsvcs_1_1server_1_1cli_1_1ServerBaseCommand" ],
           [ "ServerCommandFactory", "classsvcs_1_1server_1_1cli_1_1ServerCommandFactory.html", "classsvcs_1_1server_1_1cli_1_1ServerCommandFactory" ]
         ] ],
+        [ "ssh", null, [
+          [ "SSHConfig", "structsvcs_1_1server_1_1ssh_1_1SSHConfig.html", "structsvcs_1_1server_1_1ssh_1_1SSHConfig" ],
+          [ "SSHServer", "classsvcs_1_1server_1_1ssh_1_1SSHServer.html", "classsvcs_1_1server_1_1ssh_1_1SSHServer" ]
+        ] ],
         [ "Remote", "structsvcs_1_1server_1_1Remote.html", "structsvcs_1_1server_1_1Remote" ],
         [ "RemoteManager", "classsvcs_1_1server_1_1RemoteManager.html", "classsvcs_1_1server_1_1RemoteManager" ],
         [ "RemoteProtocol", "classsvcs_1_1server_1_1RemoteProtocol.html", "classsvcs_1_1server_1_1RemoteProtocol" ],

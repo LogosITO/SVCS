@@ -88,13 +88,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AddCommandTest_8cxx.html",
-"classsvcs_1_1cli_1_1HelpCommand.html#a04b5a097d88ac3f5f7168e8974e091c9",
-"classsvcs_1_1core_1_1ObjectStorage.html#ab6ceb81115dacf56d6a99f5721e30c78",
-"classsvcs_1_1server_1_1cli_1_1ServerBaseCommand.html#aa74199cd1feddb12fe2afd072c9053ed",
-"classsvcs_1_1test_1_1cli_1_1utils_1_1AddCommandTest.html",
-"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#acdb90f4f22c89514d2429730b5a3623d",
-"dir_7aaa9be0db659c034f76fbd23c494013.html",
-"structsvcs_1_1test_1_1cli_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a6827e02397f1c41d06295d14a60cd45a"
+"classsvcs_1_1cli_1_1CommandFactory.html#a96259b5a9c0a59c3a5619cd6560daad5",
+"classsvcs_1_1core_1_1ObjectStorage.html",
+"classsvcs_1_1server_1_1cli_1_1ServerBaseCommand.html#a5643c9d9426f1813507672bcff2ca701",
+"classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0fb53dcfb9b83322eae1e259de0813a7",
+"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a529c5a70cc13ab92989e55f7db9f7882",
+"core_2include_2Utils_8hxx_source.html",
+"structsvcs_1_1test_1_1cli_1_1Event.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

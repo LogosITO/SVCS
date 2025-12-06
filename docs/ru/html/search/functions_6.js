@@ -1,7 +1,7 @@
 var searchData=
 [
   ['generatecommithash_0',['generateCommitHash',['../classsvcs_1_1core_1_1RepositoryManager.html#ac7de58f0405dc440d4de884fd2782e64',1,'svcs::core::RepositoryManager::generateCommitHash()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#ac7de58f0405dc440d4de884fd2782e64',1,'svcs::test::cli::utils::RepositoryManager::generateCommitHash()']]],
-  ['getactiveconnections_1',['getActiveConnections',['../classsvcs_1_1server_1_1Server.html#a77b63f3cabc921e87659d7174b8d7dfb',1,'svcs::server::Server']]],
+  ['getactiveconnections_1',['getActiveConnections',['../classsvcs_1_1server_1_1Server.html#a77b63f3cabc921e87659d7174b8d7dfb',1,'svcs::server::Server::getActiveConnections()'],['../classsvcs_1_1server_1_1ssh_1_1SSHServer.html#ac87f92791eb161eb9412f4ca9f0a978a',1,'svcs::server::ssh::SSHServer::getActiveConnections()']]],
   ['getallbranches_2',['getAllBranches',['../classsvcs_1_1core_1_1BranchManager.html#a4bca76c5b5a8fe745d9bf42a72d573b0',1,'svcs::core::BranchManager']]],
   ['getallcommandnames_3',['getAllCommandNames',['../classsvcs_1_1integration_1_1CompositeCommandFactory.html#a88cb2928eb70de2f204086111d3cc005',1,'svcs::integration::CompositeCommandFactory']]],
   ['getallfilesindirectory_4',['getAllFilesInDirectory',['../classsvcs_1_1cli_1_1AddCommand.html#a5692e4155843313da5dd625c556e04fd',1,'svcs::cli::AddCommand']]],

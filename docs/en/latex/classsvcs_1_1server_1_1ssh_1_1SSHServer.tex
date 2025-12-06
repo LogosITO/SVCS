@@ -1,0 +1,151 @@
+\doxysection{svcs\+::server\+::ssh\+::SSHServer Class Reference}
+\hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer}{}\label{classsvcs_1_1server_1_1ssh_1_1SSHServer}\index{svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}}
+
+
+Main SSH server class.  
+
+
+
+
+{\ttfamily \#include $<$SSHServer.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af}{SSHServer}} (const \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{SSHConfig}} \&config, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs\+::core\+::\+Repository\+Manager}} $>$ repo\+\_\+manager, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}} $>$ event\+\_\+bus)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_a696a68adf75b8ef4f96bf2986ce5a5ea}\label{classsvcs_1_1server_1_1ssh_1_1SSHServer_a696a68adf75b8ef4f96bf2986ce5a5ea} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+SSHServer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_a4174411bf223d68908044962bd6087b7}\label{classsvcs_1_1server_1_1ssh_1_1SSHServer_a4174411bf223d68908044962bd6087b7} 
+{\bfseries SSHServer} (const \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer}{SSHServer}} \&)=delete
+\item 
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_a4e5da9fc53b665d38d488e4d4a2da673}\label{classsvcs_1_1server_1_1ssh_1_1SSHServer_a4e5da9fc53b665d38d488e4d4a2da673} 
+\mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer}{SSHServer}} \& {\bfseries operator=} (const \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer}{SSHServer}} \&)=delete
+\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_ad0ee2521e37a28764a842682872aef4c}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start server. \end{DoxyCompactList}\item 
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_a3a73516d7e28efc88dc0550c9e9a7e49}\label{classsvcs_1_1server_1_1ssh_1_1SSHServer_a3a73516d7e28efc88dc0550c9e9a7e49} 
+void {\bfseries stop} ()
+\begin{DoxyCompactList}\small\item\em Stop server. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_abfd05729fa14d950c17e6849cdf82bd5}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Check if running. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_ac87f92791eb161eb9412f4ca9f0a978a}{get\+Active\+Connections}} () const
+\begin{DoxyCompactList}\small\item\em Get active connections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_ab35bc82da0eba8df79be3ea7ec9719ac}{add\+User\+Key}} (const std\+::string \&username, const std\+::string \&public\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Add public key for user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_a1113909a500f08a41bccf932493fca53}{set\+User\+Password}} (const std\+::string \&username, const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Set password for user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main SSH server class. 
+
+Manages SSH connections and executes repository operations 
+
+\label{doc-constructors}
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af}\index{svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}!SSHServer@{SSHServer}}
+\index{SSHServer@{SSHServer}!svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}}
+\doxysubsubsection{\texorpdfstring{SSHServer()}{SSHServer()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af} 
+svcs\+::server\+::ssh\+::\+SSHServer\+::\+SSHServer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{SSHConfig}} \&}]{config}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs\+::core\+::\+Repository\+Manager}} $>$}]{repo\+\_\+manager}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsvcs_1_1services_1_1ISubject}{svcs\+::services\+::\+ISubject}} $>$}]{event\+\_\+bus}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & \doxylink{classsvcs_1_1server_1_1Server}{Server} configuration \\
+\hline
+{\em repo\+\_\+manager} & \doxylink{classsvcs_1_1core_1_1Repository}{Repository} manager \\
+\hline
+{\em event\+\_\+bus} & \doxylink{structsvcs_1_1services_1_1Event}{Event} bus \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_ab35bc82da0eba8df79be3ea7ec9719ac}\index{svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}!addUserKey@{addUserKey}}
+\index{addUserKey@{addUserKey}!svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}}
+\doxysubsubsection{\texorpdfstring{addUserKey()}{addUserKey()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1ssh_1_1SSHServer_ab35bc82da0eba8df79be3ea7ec9719ac} 
+void svcs\+::server\+::ssh\+::\+SSHServer\+::add\+User\+Key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username}{, }\item[{const std\+::string \&}]{public\+\_\+key}{}\end{DoxyParamCaption})}
+
+
+
+Add public key for user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Username \\
+\hline
+{\em public\+\_\+key} & Public key in Open\+SSH format \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_ac87f92791eb161eb9412f4ca9f0a978a}\index{svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}!getActiveConnections@{getActiveConnections}}
+\index{getActiveConnections@{getActiveConnections}!svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}}
+\doxysubsubsection{\texorpdfstring{getActiveConnections()}{getActiveConnections()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1ssh_1_1SSHServer_ac87f92791eb161eb9412f4ca9f0a978a} 
+size\+\_\+t svcs\+::server\+::ssh\+::\+SSHServer\+::get\+Active\+Connections (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get active connections. 
+
+\begin{DoxyReturn}{Returns}
+Connection count 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_abfd05729fa14d950c17e6849cdf82bd5}\index{svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1ssh_1_1SSHServer_abfd05729fa14d950c17e6849cdf82bd5} 
+bool svcs\+::server\+::ssh\+::\+SSHServer\+::is\+Running (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if running. 
+
+\begin{DoxyReturn}{Returns}
+true if running 
+\end{DoxyReturn}
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_a1113909a500f08a41bccf932493fca53}\index{svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}!setUserPassword@{setUserPassword}}
+\index{setUserPassword@{setUserPassword}!svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}}
+\doxysubsubsection{\texorpdfstring{setUserPassword()}{setUserPassword()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1ssh_1_1SSHServer_a1113909a500f08a41bccf932493fca53} 
+void svcs\+::server\+::ssh\+::\+SSHServer\+::set\+User\+Password (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username}{, }\item[{const std\+::string \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Set password for user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Username \\
+\hline
+{\em password} & Plain text password \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsvcs_1_1server_1_1ssh_1_1SSHServer_ad0ee2521e37a28764a842682872aef4c}\index{svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}!start@{start}}
+\index{start@{start}!svcs::server::ssh::SSHServer@{svcs::server::ssh::SSHServer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{classsvcs_1_1server_1_1ssh_1_1SSHServer_ad0ee2521e37a28764a842682872aef4c} 
+bool svcs\+::server\+::ssh\+::\+SSHServer\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Start server. 
+
+\begin{DoxyReturn}{Returns}
+true if started 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{SSHServer_8hxx}{SSHServer.\+hxx}}\item 
+server/src/\mbox{\hyperlink{SSHServer_8cxx}{SSHServer.\+cxx}}\end{DoxyCompactItemize}

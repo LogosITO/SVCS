@@ -1,0 +1,86 @@
+\doxysection{Структура svcs\+::server\+::ssh\+::SSHConfig}
+\hypertarget{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{}\label{structsvcs_1_1server_1_1ssh_1_1SSHConfig}\index{svcs::server::ssh::SSHConfig@{svcs::server::ssh::SSHConfig}}
+
+
+Конфигурация SSH сервера  
+
+
+
+
+{\ttfamily \#include $<$SSHConfig.\+hxx$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig_a7360a741ad64ae7ea8792511fd157ee0}{save}} (const std\+::string \&path) const
+\begin{DoxyCompactList}\small\item\em Сохраняет в файл \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig_af55336aafb622ed4e2d3c950666c8efe}{validate}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет конфигурацию \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{SSHConfig}} \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig_ac78cd3cdd46298b806091c6a22b1ae78}{load}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Загружает из файла \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Конфигурация SSH сервера 
+
+\label{doc-func-members}
+\Hypertarget{structsvcs_1_1server_1_1ssh_1_1SSHConfig_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{structsvcs_1_1server_1_1ssh_1_1SSHConfig_ac78cd3cdd46298b806091c6a22b1ae78}\index{svcs::server::ssh::SSHConfig@{svcs::server::ssh::SSHConfig}!load@{load}}
+\index{load@{load}!svcs::server::ssh::SSHConfig@{svcs::server::ssh::SSHConfig}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{structsvcs_1_1server_1_1ssh_1_1SSHConfig_ac78cd3cdd46298b806091c6a22b1ae78} 
+\mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{SSHConfig}} svcs\+::server\+::ssh\+::\+SSHConfig\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Загружает из файла 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь к файлу \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Конфигурация 
+\end{DoxyReturn}
+\Hypertarget{structsvcs_1_1server_1_1ssh_1_1SSHConfig_a7360a741ad64ae7ea8792511fd157ee0}\index{svcs::server::ssh::SSHConfig@{svcs::server::ssh::SSHConfig}!save@{save}}
+\index{save@{save}!svcs::server::ssh::SSHConfig@{svcs::server::ssh::SSHConfig}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{structsvcs_1_1server_1_1ssh_1_1SSHConfig_a7360a741ad64ae7ea8792511fd157ee0} 
+bool svcs\+::server\+::ssh\+::\+SSHConfig\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Сохраняет в файл 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь к файлу \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если сохранено успешно 
+\end{DoxyReturn}
+\Hypertarget{structsvcs_1_1server_1_1ssh_1_1SSHConfig_af55336aafb622ed4e2d3c950666c8efe}\index{svcs::server::ssh::SSHConfig@{svcs::server::ssh::SSHConfig}!validate@{validate}}
+\index{validate@{validate}!svcs::server::ssh::SSHConfig@{svcs::server::ssh::SSHConfig}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily \label{structsvcs_1_1server_1_1ssh_1_1SSHConfig_af55336aafb622ed4e2d3c950666c8efe} 
+bool svcs\+::server\+::ssh\+::\+SSHConfig\+::validate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет конфигурацию 
+
+\begin{DoxyReturn}{Возвращает}
+true если конфигурация валидна 
+\end{DoxyReturn}
+
+
+Объявления и описания членов структур находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+server/include/\mbox{\hyperlink{SSHConfig_8hxx}{SSHConfig.\+hxx}}\item 
+server/src/\mbox{\hyperlink{SSHConfig_8cxx}{SSHConfig.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\doxysection{SSHServer.\+hxx}
+\hypertarget{SSHServer_8hxx_source}{}\label{SSHServer_8hxx_source}\index{server/include/SSHServer.hxx@{server/include/SSHServer.hxx}}
+\mbox{\hyperlink{SSHServer_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SSHConfig_8hxx}{SSHConfig.hxx}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SSHSession_8hxx}{SSHSession.hxx}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ISubject_8hxx}{../../services/ISubject.hxx}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RepositoryManager_8hxx}{../../core/include/RepositoryManager.hxx}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }svcs::server::ssh\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af}{SSHServer}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af}{SSHServer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{SSHConfig}}\&\ config,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<svcs::core::RepositoryManager>\ repo\_manager,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<svcs::services::ISubject>\ event\_bus);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_a696a68adf75b8ef4f96bf2986ce5a5ea}{\string~SSHServer}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af}{SSHServer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af}{SSHServer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af}{SSHServer}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_aa9f32038cbdf2896850c7a52e03091af}{SSHServer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_ad0ee2521e37a28764a842682872aef4c}{start}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_a3a73516d7e28efc88dc0550c9e9a7e49}{stop}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_abfd05729fa14d950c17e6849cdf82bd5}{isRunning}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ running\_;\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_ac87f92791eb161eb9412f4ca9f0a978a}{getActiveConnections}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_ab35bc82da0eba8df79be3ea7ec9719ac}{addUserKey}}(\textcolor{keyword}{const}\ std::string\&\ username,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ public\_key);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1server_1_1ssh_1_1SSHServer_a1113909a500f08a41bccf932493fca53}{setUserPassword}}(\textcolor{keyword}{const}\ std::string\&\ username,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ password);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ run();}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ handleClient(\textcolor{keywordtype}{int}\ client\_fd);}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ initializeSSH();}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanup();}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ logEvent(\textcolor{keyword}{const}\ std::string\&\ message,\ \textcolor{keywordtype}{bool}\ is\_error\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleSVCSCommand(\textcolor{keyword}{const}\ std::string\&\ command,\ ssh\_channel\ channel);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{SSHConfig}}\ config\_;}
+\DoxyCodeLine{00154\ \ \ \ \ std::shared\_ptr<svcs::core::RepositoryManager>\ repo\_manager\_;}
+\DoxyCodeLine{00155\ \ \ \ \ std::shared\_ptr<svcs::services::ISubject>\ event\_bus\_;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ std::atomic<bool>\ running\_\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00158\ \ \ \ \ std::thread\ server\_thread\_;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ server\_socket\_\ =\ -\/1;}
+\DoxyCodeLine{00161\ \ \ \ \ ssh\_bind\ ssh\_bind\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ connections\_mutex\_;}
+\DoxyCodeLine{00164\ \ \ \ \ std::vector<std::thread>\ client\_threads\_;}
+\DoxyCodeLine{00165\ \ \ \ \ std::atomic<size\_t>\ active\_connections\_\{0\};}
+\DoxyCodeLine{00166\ \};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \}}
+
+\end{DoxyCode}

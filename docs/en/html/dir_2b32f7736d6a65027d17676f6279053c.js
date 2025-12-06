@@ -6,5 +6,8 @@ var dir_2b32f7736d6a65027d17676f6279053c =
     [ "RepoCommand.hxx", "RepoCommand_8hxx.html", "RepoCommand_8hxx" ],
     [ "Server.hxx", "Server_8hxx.html", "Server_8hxx" ],
     [ "ServerBaseCommand.hxx", "ServerBaseCommand_8hxx.html", "ServerBaseCommand_8hxx" ],
-    [ "ServerCommandFactory.hxx", "ServerCommandFactory_8hxx.html", "ServerCommandFactory_8hxx" ]
+    [ "ServerCommandFactory.hxx", "ServerCommandFactory_8hxx.html", "ServerCommandFactory_8hxx" ],
+    [ "SSHConfig.hxx", "SSHConfig_8hxx.html", "SSHConfig_8hxx" ],
+    [ "SSHServer.hxx", "SSHServer_8hxx.html", "SSHServer_8hxx" ],
+    [ "SSHSession.hxx", "SSHSession_8hxx.html", null ]
 ];

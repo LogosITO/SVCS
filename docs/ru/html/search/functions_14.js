@@ -16,5 +16,6 @@ var searchData=
   ['_7erepository_13',['~Repository',['../classsvcs_1_1core_1_1Repository.html#a001f20d23fb977c871e2490bb48197af',1,'svcs::core::Repository']]],
   ['_7eserver_14',['~Server',['../classsvcs_1_1server_1_1Server.html#a1f2f56eea71047aa92720231a86eff82',1,'svcs::server::Server']]],
   ['_7eserverbasecommand_15',['~ServerBaseCommand',['../classsvcs_1_1server_1_1cli_1_1ServerBaseCommand.html#a374ba5faf54c31d80ffb397568060e21',1,'svcs::server::cli::ServerBaseCommand']]],
-  ['_7evcsobject_16',['~VcsObject',['../classsvcs_1_1core_1_1VcsObject.html#aa293cbc989a083b31c42f5505469f6c1',1,'svcs::core::VcsObject']]]
+  ['_7esshserver_16',['~SSHServer',['../classsvcs_1_1server_1_1ssh_1_1SSHServer.html#a696a68adf75b8ef4f96bf2986ce5a5ea',1,'svcs::server::ssh::SSHServer']]],
+  ['_7evcsobject_17',['~VcsObject',['../classsvcs_1_1core_1_1VcsObject.html#aa293cbc989a083b31c42f5505469f6c1',1,'svcs::core::VcsObject']]]
 ];

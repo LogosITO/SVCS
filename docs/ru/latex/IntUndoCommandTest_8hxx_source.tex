@@ -17,44 +17,40 @@
 \DoxyCodeLine{00034\ }
 \DoxyCodeLine{00050\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1test_1_1cli_1_1utils}{svcs::test::cli::utils}}\ \{}
 \DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \textcolor{keyword}{using\ }svcs::services::Event;}
+\DoxyCodeLine{00052\ \textcolor{keyword}{using\ }\mbox{\hyperlink{structsvcs_1_1services_1_1Event}{svcs::services::Event}};}
 \DoxyCodeLine{00053\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{svcs::core::RepositoryManager}};}
 \DoxyCodeLine{00054\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1cli_1_1UndoCommand}{svcs::cli::UndoCommand}};}
 \DoxyCodeLine{00055\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject}{svcs::test::cli::mocks::MockSubject}};}
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \textcolor{comment}{//\ Forward\ declarations\ for\ core\ components\ used\ in\ fixture}}
-\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1core_1_1RepositoryManager}{RepositoryManager}};}
-\DoxyCodeLine{00059\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsvcs_1_1services_1_1Event}{Event}};}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{UndoCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
-\DoxyCodeLine{00081\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a53c5cb852211bccbc7a1e03feb642bd1}{SetUp}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_af0d8033860563fde4cc2dfcf27c0e84a}{TearDown}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_afc9d9fbb2f627027862221f0dfcee525}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a79efd2f2923c988ef24a72fc66a7e0d1}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_aa17def28462c9dcfcdd97a93214d5de5}{stageFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files);}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a40dc5b5a615dcd4aa8ca27fd232f3696}{createTestCommit}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a772a07002ec2f11a1249c7102ee69bc4}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a96bcf935bd4c8d4001c3989eb5f1c4c2}{countMessages}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00183\ }
-\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_aceea988df9cf934a0015d32a0b61ef9a}{simulateUserInput}}(\textcolor{keyword}{const}\ std::string\&\ input);}
-\DoxyCodeLine{00196\ }
-\DoxyCodeLine{00204\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a4c0d3317b257c3bd547f613dc5769cc5}{mockEventBus}};}
-\DoxyCodeLine{00205\ }
-\DoxyCodeLine{00213\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a9dc8a95df9c3d737052cd592a43ef4a6}{repoManager}};}
-\DoxyCodeLine{00214\ }
-\DoxyCodeLine{00222\ \ \ \ \ std::unique\_ptr<UndoCommand>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a041b8944dd9d871b072fe7b39f64659a}{command}};}
-\DoxyCodeLine{00223\ }
-\DoxyCodeLine{00231\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_ac00e70930db747ce1199dfae3a3e03c8}{testDir}};}
-\DoxyCodeLine{00232\ \};}
-\DoxyCodeLine{00233\ }
-\DoxyCodeLine{00234\ \}}
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest}{UndoCommandTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00077\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a53c5cb852211bccbc7a1e03feb642bd1}{SetUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_af0d8033860563fde4cc2dfcf27c0e84a}{TearDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_afc9d9fbb2f627027862221f0dfcee525}{createTestFile}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::string\&\ content)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a79efd2f2923c988ef24a72fc66a7e0d1}{createTestDirectory}}(\textcolor{keyword}{const}\ std::string\&\ dirname)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_aa17def28462c9dcfcdd97a93214d5de5}{stageFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ files);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a40dc5b5a615dcd4aa8ca27fd232f3696}{createTestCommit}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a772a07002ec2f11a1249c7102ee69bc4}{containsMessage}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a96bcf935bd4c8d4001c3989eb5f1c4c2}{countMessages}}(\textcolor{keyword}{const}\ std::vector<Event>\&\ notifications,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_aceea988df9cf934a0015d32a0b61ef9a}{simulateUserInput}}(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00200\ \ \ \ \ std::shared\_ptr<MockSubject>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a4c0d3317b257c3bd547f613dc5769cc5}{mockEventBus}};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00209\ \ \ \ \ std::shared\_ptr<RepositoryManager>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a9dc8a95df9c3d737052cd592a43ef4a6}{repoManager}};}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00218\ \ \ \ \ std::unique\_ptr<UndoCommand>\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_a041b8944dd9d871b072fe7b39f64659a}{command}};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00227\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classsvcs_1_1test_1_1cli_1_1utils_1_1UndoCommandTest_ac00e70930db747ce1199dfae3a3e03c8}{testDir}};}
+\DoxyCodeLine{00228\ \};}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \}}
 
 \end{DoxyCode}

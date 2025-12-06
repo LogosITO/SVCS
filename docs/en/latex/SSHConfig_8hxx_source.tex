@@ -1,0 +1,32 @@
+\doxysection{SSHConfig.\+hxx}
+\hypertarget{SSHConfig_8hxx_source}{}\label{SSHConfig_8hxx_source}\index{server/include/SSHConfig.hxx@{server/include/SSHConfig.hxx}}
+\mbox{\hyperlink{SSHConfig_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }svcs::server::ssh\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{SSHConfig}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ host\ =\ \textcolor{stringliteral}{"{}0.0.0.0"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ uint16\_t\ port\ =\ 2222;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ host\_key;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ auth\_file;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ keys\_dir\ =\ \textcolor{stringliteral}{"{}/etc/svcs/ssh/keys"{}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ passwd\_dir\ =\ \textcolor{stringliteral}{"{}/etc/svcs/ssh"{}};\ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ max\_connections\ =\ 256;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ timeout\_sec\ =\ 300;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig}{SSHConfig}}\ load(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig_a7360a741ad64ae7ea8792511fd157ee0}{save}}(\textcolor{keyword}{const}\ std::string\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structsvcs_1_1server_1_1ssh_1_1SSHConfig_af55336aafb622ed4e2d3c950666c8efe}{validate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \}\ \textcolor{comment}{//\ namespace\ svcs::server::ssh}}
+
+\end{DoxyCode}

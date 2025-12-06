@@ -1,0 +1,77 @@
+\doxysection{SSHSession.\+hxx}
+\hypertarget{SSHSession_8hxx_source}{}\label{SSHSession_8hxx_source}\index{server/include/SSHSession.hxx@{server/include/SSHSession.hxx}}
+\mbox{\hyperlink{SSHSession_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#pragma\ GCC\ diagnostic\ push}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ GCC\ diagnostic\ ignored\ "{}-\/Wdeprecated-\/declarations"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SSHConfig_8hxx}{SSHConfig.hxx}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <libssh/libssh.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <libssh/server.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }svcs::server::ssh\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }SSHSession\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{using\ }CommandHandler\ =\ std::function<bool(\textcolor{keyword}{const}\ std::string\&,\ ssh\_channel)>;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00073\ \ \ \ \ SSHSession(ssh\_session\ session,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SSHConfig\&\ config,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CommandHandler\ handler);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00084\ \ \ \ \ \string~SSHSession();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Запрещаем\ копирование}}
+\DoxyCodeLine{00087\ \ \ \ \ SSHSession(\textcolor{keyword}{const}\ SSHSession\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00088\ \ \ \ \ SSHSession\&\ operator=(\textcolor{keyword}{const}\ SSHSession\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Разрешаем\ перемещение}}
+\DoxyCodeLine{00091\ \ \ \ \ SSHSession(SSHSession\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00092\ \ \ \ \ SSHSession\&\ operator=(SSHSession\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ process();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{bool}\ isAlive()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00125\ \ \ \ \ std::string\ getUsername()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ username\_;\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00136\ \ \ \ \ std::string\ getClientIp()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00147\ \ \ \ \ std::chrono::system\_clock::time\_point\ getStartTime()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ start\_time\_;\ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{bool}\ authenticate();}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{bool}\ handleCommand();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{bool}\ validatePublicKey(ssh\_key\ key);}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{bool}\ validatePassword(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password);}
+\DoxyCodeLine{00163\ \ \ \ \ std::vector<std::string>\ loadAuthorizedKeys(\textcolor{keyword}{const}\ std::string\&\ username)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00164\ \ \ \ \ std::string\ getPasswordHash(\textcolor{keyword}{const}\ std::string\&\ username)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00167\ \ \ \ \ ssh\_session\ session\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00168\ \ \ \ \ SSHConfig\ config\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00169\ \ \ \ \ CommandHandler\ handler\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00170\ \ \ \ \ std::string\ username\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{bool}\ authenticated\_\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00172\ \ \ \ \ std::chrono::system\_clock::time\_point\ start\_time\_;\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{bool}\ owns\_session\_\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00174\ \};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#pragma\ GCC\ diagnostic\ pop}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

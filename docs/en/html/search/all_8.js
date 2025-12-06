@@ -46,7 +46,7 @@ var searchData=
   ['ismergeinprogress_43',['isMergeInProgress',['../classsvcs_1_1core_1_1RepositoryManager.html#a45a6a691304ae0c2cad9fe10bfbca607',1,'svcs::core::RepositoryManager::isMergeInProgress()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a45a6a691304ae0c2cad9fe10bfbca607',1,'svcs::test::cli::utils::RepositoryManager::isMergeInProgress()']]],
   ['isrepository_44',['isRepository',['../classsvcs_1_1core_1_1Repository.html#adcb46c2b0c4c7c07d94332d69b2eccda',1,'svcs::core::Repository']]],
   ['isrepositoryinitialized_45',['isRepositoryInitialized',['../classsvcs_1_1core_1_1RepositoryManager.html#a529c5a70cc13ab92989e55f7db9f7882',1,'svcs::core::RepositoryManager::isRepositoryInitialized()'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a529c5a70cc13ab92989e55f7db9f7882',1,'svcs::test::cli::utils::RepositoryManager::isRepositoryInitialized()']]],
-  ['isrunning_46',['isRunning',['../classsvcs_1_1server_1_1Server.html#a25b1443769dcceef091b11611cce6600',1,'svcs::server::Server']]],
+  ['isrunning_46',['isRunning',['../classsvcs_1_1server_1_1Server.html#a25b1443769dcceef091b11611cce6600',1,'svcs::server::Server::isRunning()'],['../classsvcs_1_1server_1_1ssh_1_1SSHServer.html#abfd05729fa14d950c17e6849cdf82bd5',1,'svcs::server::ssh::SSHServer::isRunning()']]],
   ['isubject_47',['ISubject',['../classsvcs_1_1services_1_1ISubject.html',1,'svcs::services']]],
   ['isubject_2ehxx_48',['ISubject.hxx',['../ISubject_8hxx.html',1,'']]],
   ['isvalidbranchname_49',['isValidBranchName',['../classsvcs_1_1core_1_1BranchManager.html#a4765b6227f1462e74d7a3055598ee5c7',1,'svcs::core::BranchManager']]]

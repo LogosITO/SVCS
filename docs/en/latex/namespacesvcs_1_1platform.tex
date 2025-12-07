@@ -1,0 +1,145 @@
+\doxysection{svcs\+::platform Namespace Reference}
+\hypertarget{namespacesvcs_1_1platform}{}\label{namespacesvcs_1_1platform}\index{svcs::platform@{svcs::platform}}
+
+
+Platform abstraction layer.  
+
+
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1platform_afaadbda9c007912cd5d5368a9dd99021}\label{namespacesvcs_1_1platform_afaadbda9c007912cd5d5368a9dd99021} 
+typedef int {\bfseries Socket\+Handle}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacesvcs_1_1platform_ae94722dacd01ab675be39d96ab322ac7}{initialize\+Network}} ()
+\begin{DoxyCompactList}\small\item\em Initialize network subsystem (Windows only) \end{DoxyCompactList}\item 
+\Hypertarget{namespacesvcs_1_1platform_a14d8e77674aed178e9c3bc2fd3131f72}\label{namespacesvcs_1_1platform_a14d8e77674aed178e9c3bc2fd3131f72} 
+void {\bfseries cleanup\+Network} ()
+\begin{DoxyCompactList}\small\item\em Cleanup network subsystem (Windows only) \end{DoxyCompactList}\item 
+Socket\+Handle \mbox{\hyperlink{namespacesvcs_1_1platform_ac39287acfcfb991848ca55c8506aa57c}{create\+Server\+Socket}} (const std\+::string \&host, uint16\+\_\+t port)
+\begin{DoxyCompactList}\small\item\em Create server socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacesvcs_1_1platform_aeb9d2e4dfc4a0b9032bb1a33d57b6ff4}{close\+Socket}} (Socket\+Handle sock)
+\begin{DoxyCompactList}\small\item\em Close socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacesvcs_1_1platform_a6d2c331206c0ad8b34f3db9091545850}{set\+Socket\+Non\+Blocking}} (Socket\+Handle sock)
+\begin{DoxyCompactList}\small\item\em Set socket non-\/blocking. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1platform_a5ccf75a3d924757ba0eb3e846a3bb2e1}{get\+Client\+Ip\+From\+Socket}} (Socket\+Handle sock)
+\begin{DoxyCompactList}\small\item\em Get client IP from socket. \end{DoxyCompactList}\item 
+Socket\+Handle \mbox{\hyperlink{namespacesvcs_1_1platform_a9acb3101fa2e424726663ebd2ef6964e}{accept\+Connection}} (Socket\+Handle server\+Socket)
+\begin{DoxyCompactList}\small\item\em Accept a connection on a socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Platform abstraction layer. 
+
+This namespace contains cross-\/platform wrappers for operating system functionality, allowing the code to work seamlessly on Windows, Linux, mac\+OS, and other POSIX systems.
+
+Platform abstraction layer This namespace contains cross-\/platform wrappers for operating system functionality, allowing the code to work seamlessly on Windows, Linux, mac\+OS, and other POSIX systems. 
+
+\label{doc-func-members}
+\Hypertarget{namespacesvcs_1_1platform_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesvcs_1_1platform_a9acb3101fa2e424726663ebd2ef6964e}\index{svcs::platform@{svcs::platform}!acceptConnection@{acceptConnection}}
+\index{acceptConnection@{acceptConnection}!svcs::platform@{svcs::platform}}
+\doxysubsubsection{\texorpdfstring{acceptConnection()}{acceptConnection()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1platform_a9acb3101fa2e424726663ebd2ef6964e} 
+Socket\+Handle svcs\+::platform\+::accept\+Connection (\begin{DoxyParamCaption}\item[{Socket\+Handle}]{server\+Socket}{}\end{DoxyParamCaption})}
+
+
+
+Accept a connection on a socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+Socket} & Server socket handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Client socket handle or INVALID\+\_\+\+SOCKET\+\_\+\+HANDLE on error 
+\end{DoxyReturn}
+\Hypertarget{namespacesvcs_1_1platform_aeb9d2e4dfc4a0b9032bb1a33d57b6ff4}\index{svcs::platform@{svcs::platform}!closeSocket@{closeSocket}}
+\index{closeSocket@{closeSocket}!svcs::platform@{svcs::platform}}
+\doxysubsubsection{\texorpdfstring{closeSocket()}{closeSocket()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1platform_aeb9d2e4dfc4a0b9032bb1a33d57b6ff4} 
+void svcs\+::platform\+::close\+Socket (\begin{DoxyParamCaption}\item[{Socket\+Handle}]{sock}{}\end{DoxyParamCaption})}
+
+
+
+Close socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & Socket handle to close \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacesvcs_1_1platform_ac39287acfcfb991848ca55c8506aa57c}\index{svcs::platform@{svcs::platform}!createServerSocket@{createServerSocket}}
+\index{createServerSocket@{createServerSocket}!svcs::platform@{svcs::platform}}
+\doxysubsubsection{\texorpdfstring{createServerSocket()}{createServerSocket()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1platform_ac39287acfcfb991848ca55c8506aa57c} 
+Socket\+Handle svcs\+::platform\+::create\+Server\+Socket (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host}{, }\item[{uint16\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+
+
+Create server socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & Host address to bind to (empty string for any) \\
+\hline
+{\em port} & Port to bind to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Socket handle or INVALID\+\_\+\+SOCKET\+\_\+\+HANDLE on error 
+\end{DoxyReturn}
+\Hypertarget{namespacesvcs_1_1platform_a5ccf75a3d924757ba0eb3e846a3bb2e1}\index{svcs::platform@{svcs::platform}!getClientIpFromSocket@{getClientIpFromSocket}}
+\index{getClientIpFromSocket@{getClientIpFromSocket}!svcs::platform@{svcs::platform}}
+\doxysubsubsection{\texorpdfstring{getClientIpFromSocket()}{getClientIpFromSocket()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1platform_a5ccf75a3d924757ba0eb3e846a3bb2e1} 
+std\+::string svcs\+::platform\+::get\+Client\+Ip\+From\+Socket (\begin{DoxyParamCaption}\item[{Socket\+Handle}]{sock}{}\end{DoxyParamCaption})}
+
+
+
+Get client IP from socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & Socket handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Client IP address as string 
+\end{DoxyReturn}
+\Hypertarget{namespacesvcs_1_1platform_ae94722dacd01ab675be39d96ab322ac7}\index{svcs::platform@{svcs::platform}!initializeNetwork@{initializeNetwork}}
+\index{initializeNetwork@{initializeNetwork}!svcs::platform@{svcs::platform}}
+\doxysubsubsection{\texorpdfstring{initializeNetwork()}{initializeNetwork()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1platform_ae94722dacd01ab675be39d96ab322ac7} 
+bool svcs\+::platform\+::initialize\+Network (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize network subsystem (Windows only) 
+
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{namespacesvcs_1_1platform_a6d2c331206c0ad8b34f3db9091545850}\index{svcs::platform@{svcs::platform}!setSocketNonBlocking@{setSocketNonBlocking}}
+\index{setSocketNonBlocking@{setSocketNonBlocking}!svcs::platform@{svcs::platform}}
+\doxysubsubsection{\texorpdfstring{setSocketNonBlocking()}{setSocketNonBlocking()}}
+{\footnotesize\ttfamily \label{namespacesvcs_1_1platform_a6d2c331206c0ad8b34f3db9091545850} 
+bool svcs\+::platform\+::set\+Socket\+Non\+Blocking (\begin{DoxyParamCaption}\item[{Socket\+Handle}]{sock}{}\end{DoxyParamCaption})}
+
+
+
+Set socket non-\/blocking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & Socket handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}

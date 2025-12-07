@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SVCS - Русская документация: Файл tests/server/SSHSessionTest.cxx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SVCS - Русская документация
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('SSHSessionTest_8cxx.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл SSHSessionTest.cxx</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Unit tests for SSHSession class.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="SSHSession_8hxx_source.html">../../server/include/SSHSession.hxx</a>&quot;</code><br />
+<code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &lt;gmock/gmock.h&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Aserver_3A_3Assh_3A_3AMockSSHSession" id="r_svcs_3A_3Atest_3A_3Aserver_3A_3Assh_3A_3AMockSSHSession"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1MockSSHSession.html">svcs::test::server::ssh::MockSSHSession</a></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Aserver_3A_3Assh_3A_3ASSHSessionTest" id="r_svcs_3A_3Atest_3A_3Aserver_3A_3Assh_3A_3ASSHSessionTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">svcs::test::server::ssh::SSHSessionTest</a></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Aserver_3A_3Assh_3A_3ASSHSessionIntegrationTest" id="r_svcs_3A_3Atest_3A_3Aserver_3A_3Assh_3A_3ASSHSessionIntegrationTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionIntegrationTest.html">svcs::test::server::ssh::SSHSessionIntegrationTest</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:svcs_3A_3Atest" id="r_svcs_3A_3Atest"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test.html">svcs::test</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprehensive testing framework for SVCS version control system. <br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Aserver" id="r_svcs_3A_3Atest_3A_3Aserver"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1server.html">svcs::test::server</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1server"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server component testing. <br /></td></tr>
+<tr class="memitem:svcs_3A_3Atest_3A_3Aserver_3A_3Assh" id="r_svcs_3A_3Atest_3A_3Aserver_3A_3Assh"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesvcs_1_1test_1_1server_1_1ssh.html">svcs::test::server::ssh</a></td></tr>
+<tr class="memdesc:namespacesvcs_1_1test_1_1server_1_1ssh"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSH-specific test functionality. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a9d0b58ce2ec497fca2d1005919d37b08" id="r_a9d0b58ce2ec497fca2d1005919d37b08"><td class="memItemLeft" align="right" valign="top"><a id="a9d0b58ce2ec497fca2d1005919d37b08" name="a9d0b58ce2ec497fca2d1005919d37b08"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, ConstructorDestructor)</td></tr>
+<tr class="memitem:adf6ea7f3604cde380889d79849d9d199" id="r_adf6ea7f3604cde380889d79849d9d199"><td class="memItemLeft" align="right" valign="top"><a id="adf6ea7f3604cde380889d79849d9d199" name="adf6ea7f3604cde380889d79849d9d199"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, MoveConstructor)</td></tr>
+<tr class="memitem:abb02b6818b9860deb30b0c5d4c580c02" id="r_abb02b6818b9860deb30b0c5d4c580c02"><td class="memItemLeft" align="right" valign="top"><a id="abb02b6818b9860deb30b0c5d4c580c02" name="abb02b6818b9860deb30b0c5d4c580c02"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, MoveAssignment)</td></tr>
+<tr class="memitem:a72bde23135a93de9fcb82a016bdcbd22" id="r_a72bde23135a93de9fcb82a016bdcbd22"><td class="memItemLeft" align="right" valign="top"><a id="a72bde23135a93de9fcb82a016bdcbd22" name="a72bde23135a93de9fcb82a016bdcbd22"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, GetClientIp)</td></tr>
+<tr class="memitem:a8bfcae29e09031fceaac1ba5a321e133" id="r_a8bfcae29e09031fceaac1ba5a321e133"><td class="memItemLeft" align="right" valign="top"><a id="a8bfcae29e09031fceaac1ba5a321e133" name="a8bfcae29e09031fceaac1ba5a321e133"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, CloseMethod)</td></tr>
+<tr class="memitem:a96d184563478aca8c032ddb84fc49486" id="r_a96d184563478aca8c032ddb84fc49486"><td class="memItemLeft" align="right" valign="top"><a id="a96d184563478aca8c032ddb84fc49486" name="a96d184563478aca8c032ddb84fc49486"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, SessionStartTime)</td></tr>
+<tr class="memitem:a70f1ed35ed58797386036a36338a9488" id="r_a70f1ed35ed58797386036a36338a9488"><td class="memItemLeft" align="right" valign="top"><a id="a70f1ed35ed58797386036a36338a9488" name="a70f1ed35ed58797386036a36338a9488"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, LoadAuthorizedKeys)</td></tr>
+<tr class="memitem:a207d70d49cc82268bd6a880d23669a9f" id="r_a207d70d49cc82268bd6a880d23669a9f"><td class="memItemLeft" align="right" valign="top"><a id="a207d70d49cc82268bd6a880d23669a9f" name="a207d70d49cc82268bd6a880d23669a9f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, GetPasswordHash)</td></tr>
+<tr class="memitem:a5710dfe0f6d7e9ea98f2e5b37e268ba2" id="r_a5710dfe0f6d7e9ea98f2e5b37e268ba2"><td class="memItemLeft" align="right" valign="top"><a id="a5710dfe0f6d7e9ea98f2e5b37e268ba2" name="a5710dfe0f6d7e9ea98f2e5b37e268ba2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, ValidatePublicKey)</td></tr>
+<tr class="memitem:ab2f544f79fb402c1038f628b184b3e8f" id="r_ab2f544f79fb402c1038f628b184b3e8f"><td class="memItemLeft" align="right" valign="top"><a id="ab2f544f79fb402c1038f628b184b3e8f" name="ab2f544f79fb402c1038f628b184b3e8f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>svcs::test::server::ssh::TEST_F</b> (<a class="el" href="classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html">SSHSessionTest</a>, ValidatePassword)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Unit tests for SSHSession class. </p>
+<dl class="section copyright"><dt>Авторство</dt><dd>Copyright 2025 LogosITO Licensed under MIT-License</dd></dl>
+<p>Tests for SSH client session management functionality</p>
+<p>Модульные тесты для класса SSHSession</p>
+<p>Полный набор тестов для обработки SSH сессий, аутентификации, выполнения команд и управления ресурсами. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a href="dir_7a851fe282c2dc33ce16204337102c0e.html">server</a></li><li class="navelem"><a href="SSHSessionTest_8cxx.html">SSHSessionTest.cxx</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

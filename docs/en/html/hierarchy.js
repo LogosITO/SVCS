@@ -56,6 +56,7 @@ var hierarchy =
     ] ],
     [ "svcs::test::cli::mocks::MockHelpService", "classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html", null ],
     [ "svcs::test::cli::utils::MockHelpService", "classsvcs_1_1test_1_1cli_1_1utils_1_1MockHelpService.html", null ],
+    [ "svcs::test::server::ssh::MockSSHSession", "classsvcs_1_1test_1_1server_1_1ssh_1_1MockSSHSession.html", null ],
     [ "svcs::core::ObjectStorage", "classsvcs_1_1core_1_1ObjectStorage.html", [
       [ "svcs::test::core::MockObjectStorage", "classsvcs_1_1test_1_1core_1_1MockObjectStorage.html", null ]
     ] ],
@@ -94,7 +95,10 @@ var hierarchy =
       [ "svcs::test::server::RemoteProtocolIntegrationTest", "classsvcs_1_1test_1_1server_1_1RemoteProtocolIntegrationTest.html", null ],
       [ "svcs::test::server::RemoteProtocolTest", "classsvcs_1_1test_1_1server_1_1RemoteProtocolTest.html", null ],
       [ "svcs::test::server::RepoCommandTest", "classsvcs_1_1test_1_1server_1_1RepoCommandTest.html", null ],
-      [ "svcs::test::server::ServerIntegrationTest", "classsvcs_1_1test_1_1server_1_1ServerIntegrationTest.html", null ]
+      [ "svcs::test::server::ServerIntegrationTest", "classsvcs_1_1test_1_1server_1_1ServerIntegrationTest.html", null ],
+      [ "svcs::test::server::ssh::SSHConfigTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHConfigTest.html", null ],
+      [ "svcs::test::server::ssh::SSHSessionIntegrationTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionIntegrationTest.html", null ],
+      [ "svcs::test::server::ssh::SSHSessionTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html", null ]
     ] ],
     [ "svcs::core::TreeEntry", "structsvcs_1_1core_1_1TreeEntry.html", null ],
     [ "svcs::core::VcsObject", "classsvcs_1_1core_1_1VcsObject.html", [

@@ -14,6 +14,28 @@
 #include "../../core/include/Blob.hxx"
 
 #include <gtest/gtest.h>
+/**
+ * @brief Comprehensive testing framework for SVCS version control system
+ * @details Organized testing infrastructure covering all aspects of SVCS
+ * from core functionality to user interface and network services.
+ *
+ * @english
+ * Comprehensive testing framework for SVCS version control system
+ * @details Provides structured testing approach with clear separation of
+ * concerns between different system layers. Supports test-driven development,
+ * continuous integration, and quality assurance processes. Includes utilities
+ * for mocking, test data generation, and performance benchmarking.
+ *
+ * @russian
+ * Комплексная тестовая среда для системы контроля версий SVCS
+ * @details Предоставляет структурированный подход к тестированию с четким
+ * разделением ответственности между различными слоями системы. Поддерживает
+ * разработку через тестирование (TDD), непрерывную интеграцию и процессы
+ * обеспечения качества. Включает утилиты для мокинга, генерации тестовых
+ * данных и бенчмаркинга производительности.
+ */
+
+namespace svcs::test {}
 
 /**
  * @english

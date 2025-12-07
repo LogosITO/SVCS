@@ -16,8 +16,9 @@ var searchData=
   ['mockobjectstorage_13',['MockObjectStorage',['../classsvcs_1_1test_1_1core_1_1MockObjectStorage.html',1,'svcs::test::core']]],
   ['mockobserver_14',['MockObserver',['../classsvcs_1_1test_1_1core_1_1MockObserver.html',1,'svcs::test::core']]],
   ['mockrepositorymanager_15',['MockRepositoryManager',['../classsvcs_1_1test_1_1server_1_1MockRepositoryManager.html',1,'svcs::test::server']]],
-  ['mocksubject_16',['MockSubject',['../classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html',1,'svcs::test::cli::mocks::MockSubject'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject.html',1,'svcs::test::cli::utils::MockSubject'],['../classsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject.html',1,'svcs::test::core::mocks::MockSubject'],['../classsvcs_1_1test_1_1core_1_1MockSubject.html',1,'svcs::test::core::MockSubject']]],
-  ['mocksubject_2ehxx_17',['MockSubject.hxx',['../cli_2mocks_2MockSubject_8hxx.html',1,'(Global Namespace)'],['../core_2utils_2MockSubject_8hxx.html',1,'(Global Namespace)']]],
-  ['mode_18',['mode',['../structsvcs_1_1core_1_1TreeEntry.html#a9d03371221bfb4b5c8014afbfe591138',1,'svcs::core::TreeEntry']]],
-  ['modified_19',['MODIFIED',['../namespacesvcs_1_1cli.html#a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065',1,'svcs::cli']]]
+  ['mocksshsession_16',['MockSSHSession',['../classsvcs_1_1test_1_1server_1_1ssh_1_1MockSSHSession.html',1,'svcs::test::server::ssh']]],
+  ['mocksubject_17',['MockSubject',['../classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html',1,'svcs::test::cli::mocks::MockSubject'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject.html',1,'svcs::test::cli::utils::MockSubject'],['../classsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject.html',1,'svcs::test::core::mocks::MockSubject'],['../classsvcs_1_1test_1_1core_1_1MockSubject.html',1,'svcs::test::core::MockSubject']]],
+  ['mocksubject_2ehxx_18',['MockSubject.hxx',['../cli_2mocks_2MockSubject_8hxx.html',1,'(Global Namespace)'],['../core_2utils_2MockSubject_8hxx.html',1,'(Global Namespace)']]],
+  ['mode_19',['mode',['../structsvcs_1_1core_1_1TreeEntry.html#a9d03371221bfb4b5c8014afbfe591138',1,'svcs::core::TreeEntry']]],
+  ['modified_20',['MODIFIED',['../namespacesvcs_1_1cli.html#a42ce5643bd50b22be108e21e46f683aea40e3819215b52841e19a7cac06b5f065',1,'svcs::cli']]]
 ];

@@ -1,0 +1,55 @@
+\doxysection{Network\+Utils.\+hxx}
+\hypertarget{NetworkUtils_8hxx_source}{}\label{NetworkUtils_8hxx_source}\index{platform/include/NetworkUtils.hxx@{platform/include/NetworkUtils.hxx}}
+\mbox{\hyperlink{NetworkUtils_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \#include\ <winsock2.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ws2tcpip.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \#include\ <windows.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ comment(lib,\ "{}ws2\_32.lib"{})}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \#include\ <sys/socket.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ \#include\ <netinet/in.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \#include\ <arpa/inet.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \#include\ <netdb.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \#include\ <unistd.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \#include\ <fcntl.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \#include\ <sys/stat.h>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \#include\ <errno.h>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesvcs_1_1platform}{svcs::platform}}\ \{}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{typedef}\ SOCKET\ SocketHandle;}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ INVALID\_SOCKET\_HANDLE\ INVALID\_SOCKET}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ SOCKET\_ERROR\_CODE\ WSAGetLastError()}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ SocketHandle;}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ INVALID\_SOCKET\_HANDLE\ (-\/1)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SOCKET\_ERROR\_CODE\ errno}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacesvcs_1_1platform_ae94722dacd01ab675be39d96ab322ac7}{initializeNetwork}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacesvcs_1_1platform_a14d8e77674aed178e9c3bc2fd3131f72}{cleanupNetwork}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ SocketHandle\ \mbox{\hyperlink{namespacesvcs_1_1platform_ac39287acfcfb991848ca55c8506aa57c}{createServerSocket}}(\textcolor{keyword}{const}\ std::string\&\ host,\ uint16\_t\ port);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacesvcs_1_1platform_aeb9d2e4dfc4a0b9032bb1a33d57b6ff4}{closeSocket}}(SocketHandle\ sock);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacesvcs_1_1platform_a6d2c331206c0ad8b34f3db9091545850}{setSocketNonBlocking}}(SocketHandle\ sock);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacesvcs_1_1platform_a5ccf75a3d924757ba0eb3e846a3bb2e1}{getClientIpFromSocket}}(SocketHandle\ sock);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ SocketHandle\ \mbox{\hyperlink{namespacesvcs_1_1platform_a9acb3101fa2e424726663ebd2ef6964e}{acceptConnection}}(SocketHandle\ serverSocket);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \}}
+
+\end{DoxyCode}

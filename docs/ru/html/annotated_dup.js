@@ -60,7 +60,7 @@ var annotated_dup =
         [ "ISubject", "classsvcs_1_1services_1_1ISubject.html", "classsvcs_1_1services_1_1ISubject" ],
         [ "Logger", "classsvcs_1_1services_1_1Logger.html", "classsvcs_1_1services_1_1Logger" ]
       ] ],
-      [ "test", null, [
+      [ "test", "namespacesvcs_1_1test.html", [
         [ "cli", "namespacesvcs_1_1test_1_1cli.html", [
           [ "mocks", "namespacesvcs_1_1test_1_1cli_1_1mocks.html", [
             [ "Event", "structsvcs_1_1test_1_1cli_1_1mocks_1_1Event.html", "structsvcs_1_1test_1_1cli_1_1mocks_1_1Event" ],
@@ -115,7 +115,13 @@ var annotated_dup =
           [ "RepositoryManagerTest", "classsvcs_1_1test_1_1core_1_1RepositoryManagerTest.html", null ],
           [ "RepositoryTest", "classsvcs_1_1test_1_1core_1_1RepositoryTest.html", null ]
         ] ],
-        [ "server", null, [
+        [ "server", "namespacesvcs_1_1test_1_1server.html", [
+          [ "ssh", "namespacesvcs_1_1test_1_1server_1_1ssh.html", [
+            [ "MockSSHSession", "classsvcs_1_1test_1_1server_1_1ssh_1_1MockSSHSession.html", null ],
+            [ "SSHConfigTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHConfigTest.html", null ],
+            [ "SSHSessionIntegrationTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionIntegrationTest.html", null ],
+            [ "SSHSessionTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html", null ]
+          ] ],
           [ "HubCommandTest", "classsvcs_1_1test_1_1server_1_1HubCommandTest.html", null ],
           [ "MockEventBus", "classsvcs_1_1test_1_1server_1_1MockEventBus.html", "classsvcs_1_1test_1_1server_1_1MockEventBus" ],
           [ "MockRepositoryManager", "classsvcs_1_1test_1_1server_1_1MockRepositoryManager.html", null ],

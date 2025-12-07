@@ -28,7 +28,26 @@
 #include <fstream>
 #include <cstring>
 
-namespace svcs::tests::server::ssh {
+
+/**
+ * @brief SSH-specific test functionality
+ * @details Test classes and utilities specific to SSH protocol implementation.
+ * Focuses on session management, secure communication, and protocol compliance.
+ *
+ * @english
+ * SSH-specific test functionality
+ * @details Provides test infrastructure for SSH protocol features including
+ * session establishment, key exchange, authentication, and channel management.
+ * Ensures compliance with SSH protocol specifications and security requirements.
+ *
+ * @russian
+ * SSH-специфичная тестовая функциональность
+ * @details Предоставляет тестовую инфраструктуру для функций SSH протокола,
+ * включая установку сессий, обмен ключами, аутентификацию и управление каналами.
+ * Гарантирует соответствие спецификациям SSH протокола и требованиям безопасности.
+ */
+
+namespace svcs::test::server::ssh {
 
 using namespace svcs::server::ssh;
 

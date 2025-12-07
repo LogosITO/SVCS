@@ -1,0 +1,80 @@
+\doxysection{Файл tests/server/\+SSHSession\+Test.cxx}
+\hypertarget{SSHSessionTest_8cxx}{}\label{SSHSessionTest_8cxx}\index{tests/server/SSHSessionTest.cxx@{tests/server/SSHSessionTest.cxx}}
+
+
+Unit tests for SSHSession class.  
+
+
+{\ttfamily \#include "{}../../server/include/\+SSHSession.\+hxx"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$gmock/gmock.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1MockSSHSession}{svcs\+::test\+::server\+::ssh\+::\+Mock\+SSHSession}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{svcs\+::test\+::server\+::ssh\+::\+SSHSession\+Test}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionIntegrationTest}{svcs\+::test\+::server\+::ssh\+::\+SSHSession\+Integration\+Test}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test}{svcs\+::test}}
+\begin{DoxyCompactList}\small\item\em Comprehensive testing framework for SVCS version control system. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1server}{svcs\+::test\+::server}}
+\begin{DoxyCompactList}\small\item\em Server component testing. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1test_1_1server_1_1ssh}{svcs\+::test\+::server\+::ssh}}
+\begin{DoxyCompactList}\small\item\em SSH-\/specific test functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a9d0b58ce2ec497fca2d1005919d37b08}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a9d0b58ce2ec497fca2d1005919d37b08} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Constructor\+Destructor)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_adf6ea7f3604cde380889d79849d9d199}\label{namespacesvcs_1_1test_1_1server_1_1ssh_adf6ea7f3604cde380889d79849d9d199} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Move\+Constructor)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_abb02b6818b9860deb30b0c5d4c580c02}\label{namespacesvcs_1_1test_1_1server_1_1ssh_abb02b6818b9860deb30b0c5d4c580c02} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Move\+Assignment)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a72bde23135a93de9fcb82a016bdcbd22}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a72bde23135a93de9fcb82a016bdcbd22} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Get\+Client\+Ip)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a8bfcae29e09031fceaac1ba5a321e133}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a8bfcae29e09031fceaac1ba5a321e133} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Close\+Method)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a96d184563478aca8c032ddb84fc49486}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a96d184563478aca8c032ddb84fc49486} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Session\+Start\+Time)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a70f1ed35ed58797386036a36338a9488}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a70f1ed35ed58797386036a36338a9488} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Load\+Authorized\+Keys)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a207d70d49cc82268bd6a880d23669a9f}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a207d70d49cc82268bd6a880d23669a9f} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Get\+Password\+Hash)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a5710dfe0f6d7e9ea98f2e5b37e268ba2}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a5710dfe0f6d7e9ea98f2e5b37e268ba2} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Validate\+Public\+Key)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_ab2f544f79fb402c1038f628b184b3e8f}\label{namespacesvcs_1_1test_1_1server_1_1ssh_ab2f544f79fb402c1038f628b184b3e8f} 
+{\bfseries svcs\+::test\+::server\+::ssh\+::\+TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Validate\+Password)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Unit tests for SSHSession class. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License
+\end{DoxyCopyright}
+Tests for SSH client session management functionality
+
+Модульные тесты для класса SSHSession
+
+Полный набор тестов для обработки SSH сессий, аутентификации, выполнения команд и управления ресурсами. 

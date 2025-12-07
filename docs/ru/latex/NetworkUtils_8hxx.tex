@@ -1,0 +1,63 @@
+\doxysection{Файл platform/include/\+Network\+Utils.hxx}
+\hypertarget{NetworkUtils_8hxx}{}\label{NetworkUtils_8hxx}\index{platform/include/NetworkUtils.hxx@{platform/include/NetworkUtils.hxx}}
+
+
+Cross-\/platform network utilities.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+\doxysubsubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesvcs_1_1platform}{svcs\+::platform}}
+\begin{DoxyCompactList}\small\item\em Platform abstraction layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{NetworkUtils_8hxx_aa005b5d3f7630144434a6a3831b56349}\label{NetworkUtils_8hxx_aa005b5d3f7630144434a6a3831b56349} 
+\#define {\bfseries INVALID\+\_\+\+SOCKET\+\_\+\+HANDLE}~(-\/1)
+\item 
+\Hypertarget{NetworkUtils_8hxx_ae9900189a578f5075caadbead1ef5a25}\label{NetworkUtils_8hxx_ae9900189a578f5075caadbead1ef5a25} 
+\#define {\bfseries SOCKET\+\_\+\+ERROR\+\_\+\+CODE}~errno
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacesvcs_1_1platform_afaadbda9c007912cd5d5368a9dd99021}\label{namespacesvcs_1_1platform_afaadbda9c007912cd5d5368a9dd99021} 
+typedef int {\bfseries svcs\+::platform\+::\+Socket\+Handle}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacesvcs_1_1platform_ae94722dacd01ab675be39d96ab322ac7}{svcs\+::platform\+::initialize\+Network}} ()
+\begin{DoxyCompactList}\small\item\em Initialize network subsystem (Windows only) \end{DoxyCompactList}\item 
+\Hypertarget{namespacesvcs_1_1platform_a14d8e77674aed178e9c3bc2fd3131f72}\label{namespacesvcs_1_1platform_a14d8e77674aed178e9c3bc2fd3131f72} 
+void {\bfseries svcs\+::platform\+::cleanup\+Network} ()
+\begin{DoxyCompactList}\small\item\em Cleanup network subsystem (Windows only) \end{DoxyCompactList}\item 
+Socket\+Handle \mbox{\hyperlink{namespacesvcs_1_1platform_ac39287acfcfb991848ca55c8506aa57c}{svcs\+::platform\+::create\+Server\+Socket}} (const std\+::string \&host, uint16\+\_\+t port)
+\begin{DoxyCompactList}\small\item\em Create server socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacesvcs_1_1platform_aeb9d2e4dfc4a0b9032bb1a33d57b6ff4}{svcs\+::platform\+::close\+Socket}} (Socket\+Handle sock)
+\begin{DoxyCompactList}\small\item\em Close socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacesvcs_1_1platform_a6d2c331206c0ad8b34f3db9091545850}{svcs\+::platform\+::set\+Socket\+Non\+Blocking}} (Socket\+Handle sock)
+\begin{DoxyCompactList}\small\item\em Set socket non-\/blocking. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesvcs_1_1platform_a5ccf75a3d924757ba0eb3e846a3bb2e1}{svcs\+::platform\+::get\+Client\+Ip\+From\+Socket}} (Socket\+Handle sock)
+\begin{DoxyCompactList}\small\item\em Get client IP from socket. \end{DoxyCompactList}\item 
+Socket\+Handle \mbox{\hyperlink{namespacesvcs_1_1platform_a9acb3101fa2e424726663ebd2ef6964e}{svcs\+::platform\+::accept\+Connection}} (Socket\+Handle server\+Socket)
+\begin{DoxyCompactList}\small\item\em Accept a connection on a socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Cross-\/platform network utilities. 
+
+\begin{DoxyCopyright}{Авторство}
+Copyright 2025 Logos\+ITO Licensed under MIT-\/\+License 
+\end{DoxyCopyright}

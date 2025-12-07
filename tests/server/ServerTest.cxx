@@ -34,6 +34,25 @@
 
 using namespace std::chrono_literals;
 
+/**
+ * @brief Server component testing
+ * @details Tests for network server components including SSH server,
+ * remote protocol handling, and client-server communication.
+ *
+ * @english
+ * Server component testing
+ * @details Focuses on testing server-side functionality including network
+ * communication, protocol parsing, connection pooling, and server lifecycle
+ * management. Includes stress testing and concurrency validation.
+ *
+ * @russian
+ * Тестирование серверных компонентов
+ * @details Сфокусировано на тестировании серверной функциональности,
+ * включая сетевое взаимодействие, парсинг протоколов, пул соединений и
+ * управление жизненным циклом сервера. Включает стресс-тестирование и
+ * валидацию конкурентности.
+ */
+
 namespace svcs::test::server {
 
 class TestEventBus : public svcs::services::ISubject {

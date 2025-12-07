@@ -8,5 +8,6 @@ var searchData=
   ['mockobjectstorage_5',['MockObjectStorage',['../classsvcs_1_1test_1_1core_1_1MockObjectStorage.html',1,'svcs::test::core']]],
   ['mockobserver_6',['MockObserver',['../classsvcs_1_1test_1_1core_1_1MockObserver.html',1,'svcs::test::core']]],
   ['mockrepositorymanager_7',['MockRepositoryManager',['../classsvcs_1_1test_1_1server_1_1MockRepositoryManager.html',1,'svcs::test::server']]],
-  ['mocksubject_8',['MockSubject',['../classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html',1,'svcs::test::cli::mocks::MockSubject'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject.html',1,'svcs::test::cli::utils::MockSubject'],['../classsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject.html',1,'svcs::test::core::mocks::MockSubject'],['../classsvcs_1_1test_1_1core_1_1MockSubject.html',1,'svcs::test::core::MockSubject']]]
+  ['mocksshsession_8',['MockSSHSession',['../classsvcs_1_1test_1_1server_1_1ssh_1_1MockSSHSession.html',1,'svcs::test::server::ssh']]],
+  ['mocksubject_9',['MockSubject',['../classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html',1,'svcs::test::cli::mocks::MockSubject'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1MockSubject.html',1,'svcs::test::cli::utils::MockSubject'],['../classsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject.html',1,'svcs::test::core::mocks::MockSubject'],['../classsvcs_1_1test_1_1core_1_1MockSubject.html',1,'svcs::test::core::MockSubject']]]
 ];

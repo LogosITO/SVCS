@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a3c522df200bd216339feaac08ad45c03":[4,0,0,5,0,1,13,10],
 "classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a45a6a691304ae0c2cad9fe10bfbca607":[3,0,1,6,0,1,13,19],
 "classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a45a6a691304ae0c2cad9fe10bfbca607":[4,0,0,5,0,1,13,19],
 "classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a529c5a70cc13ab92989e55f7db9f7882":[3,0,1,6,0,1,13,20],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "classsvcs_1_1test_1_1server_1_1RepoCommandTest.html":[4,0,0,5,2,7],
 "classsvcs_1_1test_1_1server_1_1ServerIntegrationTest.html":[3,0,1,6,2,8],
 "classsvcs_1_1test_1_1server_1_1ServerIntegrationTest.html":[4,0,0,5,2,8],
-"classsvcs_1_1test_1_1server_1_1SimpleEventBus.html":[3,0,1,6,2,9],
-"classsvcs_1_1test_1_1server_1_1SimpleEventBus.html":[4,0,0,5,2,9]
+"classsvcs_1_1test_1_1server_1_1SimpleEventBus.html":[3,0,1,6,2,9]
 };

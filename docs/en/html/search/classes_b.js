@@ -10,8 +10,11 @@ var searchData=
   ['sshconfig_7',['SSHConfig',['../structsvcs_1_1server_1_1ssh_1_1SSHConfig.html',1,'svcs::server::ssh']]],
   ['sshconfigtest_8',['SSHConfigTest',['../classsvcs_1_1test_1_1server_1_1ssh_1_1SSHConfigTest.html',1,'svcs::test::server::ssh']]],
   ['sshserver_9',['SSHServer',['../classsvcs_1_1server_1_1ssh_1_1SSHServer.html',1,'svcs::server::ssh']]],
-  ['sshsessionintegrationtest_10',['SSHSessionIntegrationTest',['../classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionIntegrationTest.html',1,'svcs::test::server::ssh']]],
-  ['sshsessiontest_11',['SSHSessionTest',['../classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html',1,'svcs::test::server::ssh']]],
-  ['statuscommand_12',['StatusCommand',['../classsvcs_1_1cli_1_1StatusCommand.html',1,'svcs::cli::StatusCommand'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand.html',1,'svcs::test::cli::utils::StatusCommand']]],
-  ['statuscommandtest_13',['StatusCommandTest',['../classsvcs_1_1test_1_1cli_1_1StatusCommandTest.html',1,'svcs::test::cli::StatusCommandTest'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest.html',1,'svcs::test::cli::utils::StatusCommandTest']]]
+  ['sshserverintegrationtest_10',['SSHServerIntegrationTest',['../classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerIntegrationTest.html',1,'svcs::test::server::ssh']]],
+  ['sshservernolibsshtest_11',['SSHServerNoLibSSHTest',['../classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest.html',1,'svcs::test::server::ssh']]],
+  ['sshservertest_12',['SSHServerTest',['../classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest.html',1,'svcs::test::server::ssh']]],
+  ['sshsessionintegrationtest_13',['SSHSessionIntegrationTest',['../classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionIntegrationTest.html',1,'svcs::test::server::ssh']]],
+  ['sshsessiontest_14',['SSHSessionTest',['../classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html',1,'svcs::test::server::ssh']]],
+  ['statuscommand_15',['StatusCommand',['../classsvcs_1_1cli_1_1StatusCommand.html',1,'svcs::cli::StatusCommand'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommand.html',1,'svcs::test::cli::utils::StatusCommand']]],
+  ['statuscommandtest_16',['StatusCommandTest',['../classsvcs_1_1test_1_1cli_1_1StatusCommandTest.html',1,'svcs::test::cli::StatusCommandTest'],['../classsvcs_1_1test_1_1cli_1_1utils_1_1StatusCommandTest.html',1,'svcs::test::cli::utils::StatusCommandTest']]]
 ];

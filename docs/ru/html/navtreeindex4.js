@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html":[4,0,0,5,0,0,3],
 "classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0899f6d7dd77c329e9a899d65fda7910":[3,0,1,6,0,0,3,8],
 "classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0899f6d7dd77c329e9a899d65fda7910":[4,0,0,5,0,0,3,8],
 "classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0fb53dcfb9b83322eae1e259de0813a7":[3,0,1,6,0,0,3,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a303ff113df6c3fd0dbe0df7e98cfbc29":[4,0,0,5,0,1,13,24],
 "classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a34e211523257152d66477f6e9fa5d6ab":[3,0,1,6,0,1,13,27],
 "classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a34e211523257152d66477f6e9fa5d6ab":[4,0,0,5,0,1,13,27],
-"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a3c522df200bd216339feaac08ad45c03":[3,0,1,6,0,1,13,10],
-"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a3c522df200bd216339feaac08ad45c03":[4,0,0,5,0,1,13,10]
+"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a3c522df200bd216339feaac08ad45c03":[3,0,1,6,0,1,13,10]
 };

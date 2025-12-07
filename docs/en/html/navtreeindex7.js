@@ -1,5 +1,16 @@
 var NAVTREEINDEX7 =
 {
+"structsvcs_1_1server_1_1ssh_1_1SSHConfig.html#a7360a741ad64ae7ea8792511fd157ee0":[4,0,0,3,1,0,0],
+"structsvcs_1_1server_1_1ssh_1_1SSHConfig.html#af55336aafb622ed4e2d3c950666c8efe":[4,0,0,3,1,0,1],
+"structsvcs_1_1services_1_1Event.html":[3,0,1,5,0],
+"structsvcs_1_1services_1_1Event.html":[4,0,0,4,0],
+"structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5":[3,0,1,5,0,0],
+"structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5":[4,0,0,4,0,0],
+"structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a0a8956ed9793effa788ec7241cae6b4a":[3,0,1,5,0,0,3],
+"structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a0a8956ed9793effa788ec7241cae6b4a":[4,0,0,4,0,0,3],
+"structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a11ffd766199ab9a36c79efd1bf18a5c6":[3,0,1,5,0,0,17],
+"structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a11ffd766199ab9a36c79efd1bf18a5c6":[4,0,0,4,0,0,17],
+"structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea":[3,0,1,5,0,0,15],
 "structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea":[4,0,0,4,0,0,15],
 "structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a3d816618ae36f6da1a21a8fc6aefe5a6":[3,0,1,5,0,0,7],
 "structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a3d816618ae36f6da1a21a8fc6aefe5a6":[4,0,0,4,0,0,7],
@@ -209,6 +220,8 @@ var NAVTREEINDEX7 =
 "structsvcs_1_1test_1_1cli_1_1utils_1_1Event.html#ae80aa49e0553e08f27869fc37d240a1a":[4,0,0,5,0,1,2,3],
 "structsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject_1_1RecordedNotification.html":[3,0,1,6,1,0,0,0],
 "structsvcs_1_1test_1_1core_1_1mocks_1_1MockSubject_1_1RecordedNotification.html":[4,0,0,5,1,0,0,0],
+"structsvcs_1_1test_1_1server_1_1ssh_1_1MockEventBus_1_1EventRecord.html":[3,0,1,6,2,0,0,0],
+"structsvcs_1_1test_1_1server_1_1ssh_1_1MockEventBus_1_1EventRecord.html":[4,0,0,5,2,0,0,0],
 "utils_2ClearCommandTest_8cxx.html":[5,0,6,0,1,0],
 "":[3,0,1]
 };

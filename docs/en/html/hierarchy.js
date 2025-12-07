@@ -12,6 +12,7 @@ var hierarchy =
     [ "svcs::test::cli::Event", "structsvcs_1_1test_1_1cli_1_1Event.html", null ],
     [ "svcs::test::cli::mocks::Event", "structsvcs_1_1test_1_1cli_1_1mocks_1_1Event.html", null ],
     [ "svcs::test::cli::utils::Event", "structsvcs_1_1test_1_1cli_1_1utils_1_1Event.html", null ],
+    [ "svcs::test::server::ssh::MockEventBus::EventRecord", "structsvcs_1_1test_1_1server_1_1ssh_1_1MockEventBus_1_1EventRecord.html", null ],
     [ "svcs::cli::HelpService", "classsvcs_1_1cli_1_1HelpService.html", [
       [ "svcs::test::cli::mocks::MockHelpServiceAdapter", "classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpServiceAdapter.html", null ]
     ] ],
@@ -52,7 +53,8 @@ var hierarchy =
       [ "svcs::test::server::MockEventBus", "classsvcs_1_1test_1_1server_1_1MockEventBus.html", null ],
       [ "svcs::test::server::SimpleEventBus", "classsvcs_1_1test_1_1server_1_1SimpleEventBus.html", null ],
       [ "svcs::test::server::SimpleEventBus", "classsvcs_1_1test_1_1server_1_1SimpleEventBus.html", null ],
-      [ "svcs::test::server::TestEventBus", "classsvcs_1_1test_1_1server_1_1TestEventBus.html", null ]
+      [ "svcs::test::server::TestEventBus", "classsvcs_1_1test_1_1server_1_1TestEventBus.html", null ],
+      [ "svcs::test::server::ssh::MockEventBus", "classsvcs_1_1test_1_1server_1_1ssh_1_1MockEventBus.html", null ]
     ] ],
     [ "svcs::test::cli::mocks::MockHelpService", "classsvcs_1_1test_1_1cli_1_1mocks_1_1MockHelpService.html", null ],
     [ "svcs::test::cli::utils::MockHelpService", "classsvcs_1_1test_1_1cli_1_1utils_1_1MockHelpService.html", null ],
@@ -97,6 +99,9 @@ var hierarchy =
       [ "svcs::test::server::RepoCommandTest", "classsvcs_1_1test_1_1server_1_1RepoCommandTest.html", null ],
       [ "svcs::test::server::ServerIntegrationTest", "classsvcs_1_1test_1_1server_1_1ServerIntegrationTest.html", null ],
       [ "svcs::test::server::ssh::SSHConfigTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHConfigTest.html", null ],
+      [ "svcs::test::server::ssh::SSHServerIntegrationTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerIntegrationTest.html", null ],
+      [ "svcs::test::server::ssh::SSHServerNoLibSSHTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest.html", null ],
+      [ "svcs::test::server::ssh::SSHServerTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest.html", null ],
       [ "svcs::test::server::ssh::SSHSessionIntegrationTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionIntegrationTest.html", null ],
       [ "svcs::test::server::ssh::SSHSessionTest", "classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest.html", null ]
     ] ],

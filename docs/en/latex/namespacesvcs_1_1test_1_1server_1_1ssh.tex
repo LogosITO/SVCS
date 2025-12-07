@@ -8,9 +8,17 @@ SSH-\/specific test functionality.
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1MockEventBus}{Mock\+Event\+Bus}}
+\item 
 class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1MockSSHSession}{Mock\+SSHSession}}
 \item 
 class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHConfigTest}{SSHConfig\+Test}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerIntegrationTest}{SSHServer\+Integration\+Test}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest}{SSHServer\+No\+Lib\+SSHTest}}
+\item 
+class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}
 \item 
 class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionIntegrationTest}{SSHSession\+Integration\+Test}}
 \item 
@@ -72,6 +80,57 @@ class \mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSH
 \item 
 \Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a37c3e32b3d98589284f3b60d884bb0ae}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a37c3e32b3d98589284f3b60d884bb0ae} 
 {\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHConfigTest}{SSHConfig\+Test}}, Config\+With\+Special\+Characters)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a12836fc0d1f20697d58faf1fac1b5882}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a12836fc0d1f20697d58faf1fac1b5882} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Constructor)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a762b400001da17fbda69f2bee09c0ca3}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a762b400001da17fbda69f2bee09c0ca3} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Destructor\+Stops\+Server)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a907059b8ded7fa3f5b3f7c063b750edb}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a907059b8ded7fa3f5b3f7c063b750edb} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Invalid\+Config\+No\+Host\+Key)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_aa8ef2b0c4d981ac69c0f6d4c47469c0f}\label{namespacesvcs_1_1test_1_1server_1_1ssh_aa8ef2b0c4d981ac69c0f6d4c47469c0f} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Invalid\+Port)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a7c38444ac7d2789525c238d0d1f6f52e}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a7c38444ac7d2789525c238d0d1f6f52e} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Add\+User\+Key\+Creates\+File)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a7fd4ee4a089317f26f12809083e62505}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a7fd4ee4a089317f26f12809083e62505} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Add\+User\+Key\+Empty\+Parameters)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_adb50d0dc00b215fbd24cbe5ca84aa4e8}\label{namespacesvcs_1_1test_1_1server_1_1ssh_adb50d0dc00b215fbd24cbe5ca84aa4e8} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Set\+User\+Password\+Creates\+File)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a81b35a86a0b24a11add9069b332e2cdf}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a81b35a86a0b24a11add9069b332e2cdf} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Active\+Connections\+Initially\+Zero)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_aee6710bce34948ded879a7812f0c8824}\label{namespacesvcs_1_1test_1_1server_1_1ssh_aee6710bce34948ded879a7812f0c8824} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerTest}{SSHServer\+Test}}, Directory\+Creation\+In\+Constructor)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a0724f62a2fa7e5545113c803fafe7929}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a0724f62a2fa7e5545113c803fafe7929} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest}{SSHServer\+No\+Lib\+SSHTest}}, Config\+Validation)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_aabde4b90470a91a6d3c5375a994b8fa3}\label{namespacesvcs_1_1test_1_1server_1_1ssh_aabde4b90470a91a6d3c5375a994b8fa3} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest}{SSHServer\+No\+Lib\+SSHTest}}, Config\+Save\+Load)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_ac60658001ca11a22e37e4004f68a7aa3}\label{namespacesvcs_1_1test_1_1server_1_1ssh_ac60658001ca11a22e37e4004f68a7aa3} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest}{SSHServer\+No\+Lib\+SSHTest}}, Config\+Load\+Invalid\+File)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_aa1b6dfa119423c1cc3dd91fca4b9e2b2}\label{namespacesvcs_1_1test_1_1server_1_1ssh_aa1b6dfa119423c1cc3dd91fca4b9e2b2} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest}{SSHServer\+No\+Lib\+SSHTest}}, Test\+Hash\+Password)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a972a5b1dba94f4b7a722233773809e53}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a972a5b1dba94f4b7a722233773809e53} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest}{SSHServer\+No\+Lib\+SSHTest}}, Password\+File\+Operations)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_abef00e068f05c0f35f21f49bf8db7cf3}\label{namespacesvcs_1_1test_1_1server_1_1ssh_abef00e068f05c0f35f21f49bf8db7cf3} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest}{SSHServer\+No\+Lib\+SSHTest}}, Write\+Authorized\+Key)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_ac5e0cf476639de40f036a514b1f0683c}\label{namespacesvcs_1_1test_1_1server_1_1ssh_ac5e0cf476639de40f036a514b1f0683c} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerNoLibSSHTest}{SSHServer\+No\+Lib\+SSHTest}}, Repository\+Manager\+Creation)
+\item 
+\Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a592c082d4da78a2b044d4d5f7bfb0e4b}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a592c082d4da78a2b044d4d5f7bfb0e4b} 
+{\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHServerIntegrationTest}{SSHServer\+Integration\+Test}}, Full\+Start\+Stop\+Cycle)
 \item 
 \Hypertarget{namespacesvcs_1_1test_1_1server_1_1ssh_a9d0b58ce2ec497fca2d1005919d37b08}\label{namespacesvcs_1_1test_1_1server_1_1ssh_a9d0b58ce2ec497fca2d1005919d37b08} 
 {\bfseries TEST\+\_\+F} (\mbox{\hyperlink{classsvcs_1_1test_1_1server_1_1ssh_1_1SSHSessionTest}{SSHSession\+Test}}, Constructor\+Destructor)

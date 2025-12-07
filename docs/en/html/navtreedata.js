@@ -91,10 +91,10 @@ var NAVTREEINDEX =
 "classsvcs_1_1cli_1_1CommandFactory.html#a7ba6c891fb898a1e26bd6d2f48eba688",
 "classsvcs_1_1core_1_1Index.html#ae1b806d543dc61e0a0b36f14e521618b",
 "classsvcs_1_1server_1_1cli_1_1ServerBaseCommand.html#a374ba5faf54c31d80ffb397568060e21",
-"classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html#a0899f6d7dd77c329e9a899d65fda7910",
-"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a45a6a691304ae0c2cad9fe10bfbca607",
-"classsvcs_1_1test_1_1server_1_1SimpleEventBus.html#a0c05f07d47ff47259c4634fb9f1323dd",
-"structsvcs_1_1services_1_1Event.html#a398a548bdd41d5e1f9820d74962700b5a325cd0faa0c70a3f3715fe2d4970e3ea"
+"classsvcs_1_1test_1_1cli_1_1mocks_1_1MockSubject.html",
+"classsvcs_1_1test_1_1cli_1_1utils_1_1RepositoryManager.html#a3c522df200bd216339feaac08ad45c03",
+"classsvcs_1_1test_1_1server_1_1SimpleEventBus.html",
+"structsvcs_1_1server_1_1ssh_1_1SSHConfig.html#a7360a741ad64ae7ea8792511fd157ee0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

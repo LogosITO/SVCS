@@ -1,196 +1,196 @@
-/**
- * @file SSHSession.cxx
- * @copyright
- * Copyright 2025 LogosITO
- * Licensed under MIT-License
- */
+    /**
+     * @file SSHSession.cxx
+     * @copyright
+     * Copyright 2025 LogosITO
+     * Licensed under MIT-License
+     */
 
-#include "SSHSession.hxx"
-#include "../../platform/include/NetworkUtils.hxx"  // Используем платформенные утилиты
-#include <fstream>
-#include <filesystem>
-#include <cstring>
+    #include "SSHSession.hxx"
+    #include "../../platform/include/NetworkUtils.hxx"  // Используем платформенные утилиты
+    #include <fstream>
+    #include <filesystem>
+    #include <cstring>
 
-namespace svcs::server::ssh {
+    namespace svcs::server::ssh {
 
-namespace fs = std::filesystem;
+    namespace fs = std::filesystem;
 
-SSHSession::SSHSession(ssh_session session,
-                       const SSHConfig& config,
-                       CommandHandler handler)
-    : session_(session)
-    , config_(config)
-    , handler_(std::move(handler))
-    , start_time_(std::chrono::system_clock::now()) {
-}
+    SSHSession::SSHSession(ssh_session session,
+                           const SSHConfig& config,
+                           CommandHandler handler)
+        : session_(session)
+        , config_(config)
+        , handler_(std::move(handler))
+        , start_time_(std::chrono::system_clock::now()) {
+    }
 
-SSHSession::~SSHSession() {
-    close();
-}
-
-SSHSession::SSHSession(SSHSession&& other) noexcept
-    : session_(other.session_)
-    , config_(other.config_)
-    , handler_(std::move(other.handler_))
-    , username_(std::move(other.username_))
-    , authenticated_(other.authenticated_)
-    , start_time_(other.start_time_)
-    , owns_session_(other.owns_session_) {
-    other.session_ = nullptr;
-    other.owns_session_ = false;
-}
-
-SSHSession& SSHSession::operator=(SSHSession&& other) noexcept {
-    if (this != &other) {
+    SSHSession::~SSHSession() {
         close();
+    }
 
-        session_ = other.session_;
-        config_ = other.config_;
-        handler_ = std::move(other.handler_);
-        username_ = std::move(other.username_);
-        authenticated_ = other.authenticated_;
-        start_time_ = other.start_time_;
-        owns_session_ = other.owns_session_;
-
+    SSHSession::SSHSession(SSHSession&& other) noexcept
+        : session_(other.session_)
+        , config_(other.config_)
+        , handler_(std::move(other.handler_))
+        , username_(std::move(other.username_))
+        , authenticated_(other.authenticated_)
+        , start_time_(other.start_time_)
+        , owns_session_(other.owns_session_) {
         other.session_ = nullptr;
         other.owns_session_ = false;
     }
-    return *this;
-}
 
-bool SSHSession::process() {
-    if (!session_ || !owns_session_) {
-        return false;
+    SSHSession& SSHSession::operator=(SSHSession&& other) noexcept {
+        if (this != &other) {
+            close();
+
+            session_ = other.session_;
+            config_ = other.config_;
+            handler_ = std::move(other.handler_);
+            username_ = std::move(other.username_);
+            authenticated_ = other.authenticated_;
+            start_time_ = other.start_time_;
+            owns_session_ = other.owns_session_;
+
+            other.session_ = nullptr;
+            other.owns_session_ = false;
+        }
+        return *this;
     }
 
-    if (!authenticated_) {
-        // Простая аутентификация - принимаем всех
-        username_ = "testuser";
+    bool SSHSession::process() {
+        if (!session_ || !owns_session_) {
+            return false;
+        }
+
+        if (!authenticated_) {
+            // Простая аутентификация - принимаем всех
+            username_ = "testuser";
+            authenticated_ = true;
+            return true;
+        }
+
+        return handleCommand();
+    }
+
+    bool SSHSession::isAlive() const {
+        return session_ && owns_session_ && ssh_is_connected(session_);
+    }
+
+    std::string SSHSession::getClientIp() const {
+        if (!session_ || !owns_session_) {
+            return "";
+        }
+
+        // Получаем сокетный дескриптор из SSH сессии
+        int sock = ssh_get_fd(session_);
+        if (sock < 0) {
+            return "";
+        }
+
+        // Используем нашу платформенную функцию для получения IP
+        // Конвертируем int в SocketHandle
+        return svcs::platform::getClientIpFromSocket(static_cast<svcs::platform::SocketHandle>(sock));
+    }
+
+    void SSHSession::close() {
+        if (session_ && owns_session_) {
+            ssh_disconnect(session_);
+            ssh_free(session_);
+            session_ = nullptr;
+            owns_session_ = false;
+        }
+    }
+
+    bool SSHSession::authenticate() {
+        if (!session_ || !owns_session_) {
+            return false;
+        }
+
+        // Упрощенная аутентификация для теста
+        // В реальном проекте используйте ssh_userauth_none() и ssh_userauth_password()
+
+        // Просто ждем и устанавливаем флаг аутентификации
+        username_ = "anonymous";
         authenticated_ = true;
+
         return true;
     }
 
-    return handleCommand();
-}
+    bool SSHSession::handleCommand() {
+        if (!session_ || !owns_session_ || !authenticated_) {
+            return false;
+        }
 
-bool SSHSession::isAlive() const {
-    return session_ && owns_session_ && ssh_is_connected(session_);
-}
+        ssh_channel channel = ssh_channel_new(session_);
+        if (!channel) {
+            return false;
+        }
 
-std::string SSHSession::getClientIp() const {
-    if (!session_ || !owns_session_) {
-        return "";
-    }
+        if (ssh_channel_open_session(channel) != SSH_OK) {
+            ssh_channel_free(channel);
+            return false;
+        }
 
-    // Получаем сокетный дескриптор из SSH сессии
-    int sock = ssh_get_fd(session_);
-    if (sock < 0) {
-        return "";
-    }
+        // Упрощенная обработка команд
+        // Читаем из канала и выполняем команду
+        char buffer[1024];
+        int nbytes = ssh_channel_read(channel, buffer, sizeof(buffer), 0);
 
-    // Используем нашу платформенную функцию для получения IP
-    // Конвертируем int в SocketHandle
-    return svcs::platform::getClientIpFromSocket(static_cast<svcs::platform::SocketHandle>(sock));
-}
+        if (nbytes > 0) {
+            std::string command(buffer, nbytes);
 
-void SSHSession::close() {
-    if (session_ && owns_session_) {
-        ssh_disconnect(session_);
-        ssh_free(session_);
-        session_ = nullptr;
-        owns_session_ = false;
-    }
-}
+            // Убираем перевод строки в конце
+            if (!command.empty() && command.back() == '\n') {
+                command.pop_back();
+            }
 
-bool SSHSession::authenticate() {
-    if (!session_ || !owns_session_) {
-        return false;
-    }
+            if (handler_) {
+                bool success = handler_(command, channel);
 
-    // Упрощенная аутентификация для теста
-    // В реальном проекте используйте ssh_userauth_none() и ssh_userauth_password()
+                ssh_channel_send_eof(channel);
+                ssh_channel_close(channel);
+                ssh_channel_free(channel);
 
-    // Просто ждем и устанавливаем флаг аутентификации
-    username_ = "anonymous";
-    authenticated_ = true;
+                return success;
+            }
+        }
 
-    return true;
-}
-
-bool SSHSession::handleCommand() {
-    if (!session_ || !owns_session_ || !authenticated_) {
-        return false;
-    }
-
-    ssh_channel channel = ssh_channel_new(session_);
-    if (!channel) {
-        return false;
-    }
-
-    if (ssh_channel_open_session(channel) != SSH_OK) {
         ssh_channel_free(channel);
         return false;
     }
 
-    // Упрощенная обработка команд
-    // Читаем из канала и выполняем команду
-    char buffer[1024];
-    int nbytes = ssh_channel_read(channel, buffer, sizeof(buffer), 0);
+    bool SSHSession::validatePublicKey(ssh_key key) {
+        // Упрощенная проверка для теста
+        return true;
+    }
 
-    if (nbytes > 0) {
-        std::string command(buffer, nbytes);
+    bool SSHSession::validatePassword(const std::string& username,
+                                     const std::string& password) {
+        // Упрощенная проверка для теста
+        return true;
+    }
 
-        // Убираем перевод строки в конце
-        if (!command.empty() && command.back() == '\n') {
-            command.pop_back();
+    std::vector<std::string> SSHSession::loadAuthorizedKeys(const std::string& username) const {
+        std::vector<std::string> keys;
+
+        if (config_.keys_dir.empty()) {
+            return keys;
         }
 
-        if (handler_) {
-            bool success = handler_(command, channel);
-
-            ssh_channel_send_eof(channel);
-            ssh_channel_close(channel);
-            ssh_channel_free(channel);
-
-            return success;
+        std::string key_path = config_.keys_dir + "/" + username + "/authorized_keys";
+        if (!fs::exists(key_path)) {
+            key_path = config_.keys_dir + "/authorized_keys";
         }
-    }
 
-    ssh_channel_free(channel);
-    return false;
-}
+        if (!fs::exists(key_path)) {
+            return keys;
+        }
 
-bool SSHSession::validatePublicKey(ssh_key key) {
-    // Упрощенная проверка для теста
-    return true;
-}
-
-bool SSHSession::validatePassword(const std::string& username,
-                                 const std::string& password) {
-    // Упрощенная проверка для теста
-    return true;
-}
-
-std::vector<std::string> SSHSession::loadAuthorizedKeys(const std::string& username) const {
-    std::vector<std::string> keys;
-
-    if (config_.keys_dir.empty()) {
-        return keys;
-    }
-
-    std::string key_path = config_.keys_dir + "/" + username + "/authorized_keys";
-    if (!fs::exists(key_path)) {
-        key_path = config_.keys_dir + "/authorized_keys";
-    }
-
-    if (!fs::exists(key_path)) {
-        return keys;
-    }
-
-    std::ifstream file(key_path);
-    if (!file) {
-        return keys;
-    }
+        std::ifstream file(key_path);
+        if (!file) {
+            return keys;
+        }
 
     std::string line;
     while (std::getline(file, line)) {

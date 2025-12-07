@@ -12,7 +12,9 @@
 #include <fstream>
 #include <filesystem>
 
-namespace svcs::server::ssh {
+namespace svcs::tests::server::ssh {
+
+using namespace svcs::server::ssh;
 
 namespace fs = std::filesystem;
 

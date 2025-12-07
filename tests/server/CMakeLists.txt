@@ -49,6 +49,7 @@ set(SERVER_TEST_SOURCES
         ServerTest.cxx
         SSHConfigTest.cxx
         SSHSessionTest.cxx
+        SSHServerTest.cxx
 )
 
 add_executable(svcs_server_unit_tests ${SERVER_TEST_SOURCES})

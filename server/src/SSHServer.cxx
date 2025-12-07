@@ -3,6 +3,17 @@
  * @copyright
  * Copyright 2025 LogosITO
  * Licensed under MIT-License
+ *
+ * @english
+ * @brief Implementation of the SSHServer class for SVCS remote operations over SSH.
+ * @details Provides SSH server functionality for handling secure remote connections,
+ * authenticating users, and delegating SVCS operations to RemoteProtocol.
+ *
+ * @russian
+ * @brief Реализация класса SSHServer для удаленных операций SVCS через SSH.
+ * @details Предоставляет функциональность SSH-сервера для обработки защищенных
+ * удаленных соединений, аутентификации пользователей и делегирования операций
+ * SVCS в RemoteProtocol.
  */
 
 #include "SSHServer.hxx"
